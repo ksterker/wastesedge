@@ -30,7 +30,7 @@ elif input_has_been_pushed (SDLK_ESCAPE):
     # -- open main menu without animation, with saving and background enabled
     	#print "rt"
     menu = main_menu (1, 1, 1)
-    menu.thisown = 0
+    menu.thisown = C
 
     # -- this tells us when the main menu is closed
     menu.py_signal_connect (on_menu_close, win_event_CLOSE, (myself))
@@ -53,7 +53,7 @@ elif input_has_been_pushed (SDLK_l):
     s = data_screen (LOAD_SCREEN)
     s.thisown = 0
     s.set_activate (1)	
-#    s.py_signal_connect (on_menu_close, win_event_CLOSE, (myself))
+#    s.py_signal_connect (on_data_screen_close, win_event_CLOSE, (None))
     
     win_manager_add (s)
     win_manager_set_focus (s)

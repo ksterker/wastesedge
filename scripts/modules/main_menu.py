@@ -10,6 +10,8 @@ class main_menu (win_container):
     def __init__ (self, startup, enable_s, enable_b = 0):	
 	win_container.__init__(self)
 
+        self.startup = startup
+
 	# Init Position 
 	self.move (0,0)	
 	self.resize(320,240)
@@ -129,8 +131,10 @@ class main_menu (win_container):
             while done != 0:
                 for k in range (gametime_frames_to_do()+1):
                     win_manager_update ()
+                    self.update ()
                 done = self.create_menu (moves, goals)
-		win_manager_draw ()
+                win_manager_draw ()
+                self.draw ()
                 screen_show ()
                 gametime_update()
             
@@ -178,7 +182,7 @@ class main_menu (win_container):
     def __del__(self):
         del self.font
         del self.theme
-
+        
     # -- Callback to close the window
     def on_destroy (self):
         return self.quit
@@ -186,8 +190,8 @@ class main_menu (win_container):
 
     # -- pressing ESC will close the menu if it's open
     def on_update (self):
-        if input_has_been_pushed (SDLK_ESCAPE):
-            if self.lg == None:
+        if self.lg == None:
+            if input_has_been_pushed (SDLK_ESCAPE):
                 self.quit = 0
                 
 
@@ -208,16 +212,19 @@ class main_menu (win_container):
         # Load Game
         elif sel == 2:
             self.lg = data_screen (LOAD_SCREEN)
-            self.lg.py_signal_connect (self.on_load, win_event_CLOSE)
             self.lg.thisown = 0
 	    self.lg.set_activate (1)	
+            if self.startup != 0:
+                self.quit = 0
+            else:
+                self.lg.py_signal_connect (self.on_data_close, win_event_CLOSE)
             win_manager_add (self.lg)
             win_manager_set_focus (self.lg)
 
         # Save Game
         elif sel == 3:
+            self.quit = 0
             self.lg = data_screen (SAVE_SCREEN)
-            self.lg.py_signal_connect (self.on_load, win_event_CLOSE)
             self.lg.thisown = 0
 	    self.lg.set_activate(1)
             win_manager_add (self.lg)
@@ -227,12 +234,10 @@ class main_menu (win_container):
         elif sel == 5:
             self.quit = 0
 
-    # -- a game has been loaded
-    def on_load (self, retval):
+    def on_data_close (self, retval):
         self.lg = None
         if retval == 1:
             self.quit = 0
-
 
     # -- Scrolls the different menu options into view
     def create_menu (self, moves, goals):
