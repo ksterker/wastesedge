@@ -1,12 +1,10 @@
 Requirements:
 =============
-To install the Waste's Edge data package you need to have the adonthell 
-game engine version 0.3.3 installed. The configure script will check this 
-for you, but you can check whether you're ok or not by typing:
+To install the Waste's Edge data package you need to have the Adonthell 
+game engine version 0.3.3 or later installed. In order to make use of
+the included true type font you'll need at least version 0.3.4.
 
-$> adonthell -v
-
-This should print '0.3.3' and exit.
+Note that this package won't work with Adonthell >= 0.4.
 
 
 Installing:
@@ -15,7 +13,7 @@ Installing:
 From source:
 ------------
 
-In the toplevel wastesedge-0.3.3 directory type
+In the toplevel wastesedge-0.3.4 directory type
 
 $> ./configure
 $> make
@@ -34,7 +32,7 @@ You can automatically get an installable Debian package by typing
 
 $> debuild 
 
-within the wastesedge-0.3.3 directory. 'debbuild' is part of the
+within the wastesedge-0.3.4 directory. 'debbuild' is part of the
 'devscripts' package. You'll need a properly installed 'adonthell' 
 package of course, which you can get from Adonthell's sources.
 
@@ -50,7 +48,7 @@ RPM users:
 
 To create an installable RPM package, type
 
-$> rpm -tb wastesedge-0.3.3.tar.gz
+$> rpm -tb wastesedge-0.3.4.tar.gz
 
 Note that the 4.x versions of rpm are currently unsupported. Feel free
 to change that, if you want.

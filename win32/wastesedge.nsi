@@ -4,7 +4,7 @@
 ; NOTE: this .NSI script is designed for NSIS v1.8+
 
 Name "Waste's Edge"
-OutFile "wastesedge-0.3.3.exe"
+OutFile "wastesedge-0.3.4.exe"
 
 ; Some default compiler settings (uncomment and change at will):
 ; SetCompress auto ; (can be off or force)
@@ -362,6 +362,9 @@ Section "" ;
   FILE games\wastesedge\gfx\portraits\bjarn.pnm
   FILE games\wastesedge\gfx\portraits\player.pnm
   FILE games\wastesedge\gfx\portraits\erek.pnm
+
+  SetOutPath "$INSTDIR\games\wastesedge\gfx\window\font"
+  FILE games\wastesedge\gfx\window\font\avatar.ttf"
 
   SetOutPath "$INSTDIR\games\wastesedge\gfx\window\font\red"
   FILE games\wastesedge\gfx\window\font\red\font.font

@@ -20,7 +20,7 @@ Installation:
 See the INSTALL file for details.
 
 Note that this package is designed to run along with the adonthell
-game engine version 0.3.3. Therefore, you need it installed or you'll
+game engine version 0.3.x. Therefore, you need it installed or you'll
 be stuck at configure time. If you don't have it, download it from
 http://adonthell.linuxgames.com/download/.
 
@@ -63,9 +63,9 @@ Contact:
 
 You can reach us in various ways:
 
-Email:         adonthell@linuxgames.com
+Email:         adonthell-project@linuxgames.com
 Message Board: http://www.3dforums.com/?action=forumpage&loc=49&forum_id=158
-Mailing list:  adonthell-general@mail.freesoftware.fsf.org
+Mailing list:  adonthell-general@nongnu.org
 Web site:      http://adonthell.linuxgames.com
 
 
@@ -74,7 +74,7 @@ Reporting Bugs:
 
 We hope you'll never have to, but if you discover a problem, we
 would like to hear about it. Please use the Development mailing list
-(adonthell-devel@mail.freesoftware.fsf.org) for that. 
+(adonthell-devel@nongnu.org) for that. 
 
 You can subscribe to the mailing lists at
     http://adonthell.linuxgames.com/contact/mailinglist.shtml

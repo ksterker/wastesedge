@@ -68,17 +68,27 @@ Adonthell in fullscreen mode instead.<br>&nbsp;</li>
 
 <li><b>Language [locale]</b><br>
 Specifies which language to use. As long as this option is unset,
-the language is determined by one of the following environment
-variables: LANG, LC_ALL or LC_MESSAGES. Once the option is
-set, it overrides any environment variable.
+the language is determined by the system language.
  
 <p>Of course, the game you run has to provide the translation you 
-chose here, otherwise you'll get the default (i.e. English) text.</p>
+chose here, otherwise you'll get the default (i.e. English) text.
+Languages available in this package:</p>
+ 
+<table border="0" cellspacing="0" cellpadding="0">
+<tr><td width="100px"><i>Language</i></td><td><i>Locale</i></td></tr>
+<tr><td>Dutch</td><td>nl_NL</td></tr>
+<tr><td>English</td><td></td></tr>
+</table><br>
 
-As of today, no translation are available, but French, German and Russian 
-are underway. If you are interested in translating Waste's Edge to your 
-native language (which is as simple as taking the English sentences and 
-writing their translation below them), please contact us!<br>&nbsp;</li>
+If new languages become available, this will be announced on
+<a href="http://adonthell.linuxgames.com/">our website</a>.
+<br>&nbsp;</li>
+
+<li><b>Font [font.ttf]</b><br>
+Specify a true type font to use in the game. If this is empty,
+the default font will be used. Chose a different one if you
+don't like it or if does not fit the language you've selected.
+<br>&nbsp;</li>
 
 <li><b>Quick-load</b><br>
 Whether the last saved game should be automatically continued at
@@ -129,7 +139,7 @@ think we should know. Any feedback is appreciated, so don't hesitate!
 <table border="0" width="100%" cellspacing="0" cellpadding="0">
 <tr>
 <td>Email:</td>
-<td><a href="mailto:adonthell@linuxgames.com">adonthell@linuxgames.com</a></td>
+<td><a href="mailto:adonthell-project@linuxgames.com">adonthell-project@linuxgames.com</a></td>
 </tr>
 <tr>
 <td>Mailing List:</td>
@@ -158,9 +168,10 @@ think we should know. Any feedback is appreciated, so don't hesitate!
 <h3>Reporting Bugs</h3>
 
 <p>We hope you'll never have to, but if you discover a problem, we would
-like to hear about it. In that case, the files stdout.txt and
-stderr.txt might contain further details to locate the source of
-error. Please use the <a href="mailto:adonthell-devel@nongnu.org">Development mailing list</a> to contact us. Information on this and other mailing lists 
+like to hear about it. Error messages that may help us to locate the bug can 
+be found in <a href="/var/tmp/console.log">/var/tmp/console.log</a>. You can 
+access this file from a terminal or via the Apple System Profiler. 
+Please use the <a href="mailto:adonthell-devel@nongnu.org">Development mailing list</a> to contact us. Information on this and other mailing lists 
 is available at</p>
 
 <p style="margin-left:1cm"><a href="http://adonthell.linuxgames.com/contact/mailinglist.shtml">http://adonthell.linuxgames.com/contact/mailinglist.shtml</a></p>

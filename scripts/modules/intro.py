@@ -279,18 +279,18 @@ while not input_has_been_pushed (SDLK_ESCAPE) and not input_has_been_pushed (SDL
         draw_im (im3, x3)
 
     if status > 0 and status < 4:
-        bg.draw (0, -bgy, da)
-        inn_close.draw (0, inny, da)
-        player.draw (167, ply, da)
+        bg.draw (0, int(-bgy), da)
+        inn_close.draw (0, int(inny), da)
+        player.draw (167, int(ply), da)
 
     if status == -1:
         imblack.draw (0, 0)
 
     if status >= 4:
         if currentbg == 0:
-            bg.draw (0, -bgy, da)
-            inn_close.draw (0, inny, da)
-            player.draw (167, ply, da)
+            bg.draw (0, int(-bgy), da)
+            inn_close.draw (0, int(inny), da)
+            player.draw (167, int(ply), da)
             talan.draw (51, 39)
         else: bubbg[currentbg].draw (0, 0)
             

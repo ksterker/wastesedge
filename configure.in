@@ -3,23 +3,14 @@ dnl Process this file with autoconf to produce a configure script.
 dnl **************************************************************
 
 AC_PREREQ(2.50)
-AC_INIT(watesedge, 0.3.3, adonthell@linuxgames.com, wastesedge)
-AM_INIT_AUTOMAKE(wastesedge, 0.3.3)
+AC_INIT(watesedge, 0.3.4, adonthell-project@linuxgames.com, wastesedge)
+AM_INIT_AUTOMAKE(wastesedge, 0.3.4)
 
 dnl ***************
 dnl gettext support
 dnl ***************
 
-AC_MSG_CHECKING([whether NLS is requested])
-dnl Default is enabled NLS
-AC_ARG_ENABLE(nls,
-  [  --disable-nls           do not use Native Language Support],
-  USE_NLS=$enableval, USE_NLS=yes)
-AC_MSG_RESULT($USE_NLS)
-AC_SUBST(USE_NLS)
-
 AM_GNU_GETTEXT([external])
-ALL_LINGUAS=""
 
 dnl ********************
 dnl Additional arguments
@@ -46,10 +37,27 @@ fi
 
 dnl Checking for the proper version
 AC_MSG_CHECKING(for Adonthell's version)
-adonthellver=`$adonthell_binary -v`
+$adonthell_binary -v &> adonthell.ver
+
+changequote(<<, >>)
+adonthell_major_ver=`more adonthell.ver | sed 's/\([0-9]*\)\.[0-9]*\.[0-9]*/\1/p; d'`
+adonthell_minor_ver=`more adonthell.ver | sed 's/[0-9]*\.\([0-9]*\)\.[0-9]*/\1/p; d'`
+adonthell_micro_ver=`more adonthell.ver | sed 's/[0-9]*\.[0-9]*\.\([0-9]*\)/\1/p; d'`
+changequote([, ])
+
+rm -f adonthell.ver
+
+adonthellver="$adonthell_major_ver.$adonthell_minor_ver.$adonthell_micro_ver"
+
 AC_MSG_RESULT($adonthellver)
-if test x$adonthellver != x0.3.3 ; then
-   echo "*** This version of Waste's Edge requires Adonthell v0.3.3!"
+
+if test $adonthell_major_ver -eq 0 -a $adonthell_minor_ver -eq 3 -a $adonthell_micro_ver -gt 2 ;
+then
+    haveadonthell=yes
+fi
+
+if test x$haveadonthell != xyes ; then
+   echo "*** This version of Waste's Edge requires Adonthell v0.3.3 or greater!"
    exit 1
 fi
 
@@ -68,7 +76,7 @@ gamedatadir="${adonthelldatadir}/games/wastesedge"
 AC_SUBST(gamedatadir)
 AC_SUBST(adonthell_binary)
 
-AC_OUTPUT([ m4/Makefile 
+AC_OUTPUT([ 
 wastesedge.spec
 Makefile
 audio/Makefile
@@ -116,6 +124,7 @@ gfx/window/scrollbar/silverleaf/Makefile
 gfx/window/scrollbar/Makefile
 gfx/window/Makefile
 gfx/Makefile
+m4/Makefile
 maps/Makefile
 pixmaps/Makefile
 po/Makefile.in

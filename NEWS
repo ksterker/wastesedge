@@ -1,3 +1,6 @@
+version 0.3.4:
+- Dutch translation added
+- Some bugfixes
 version 0.3.3:
 - Many speed improvments with Python schedules.
 - Fixed some worrying in-game bugs.

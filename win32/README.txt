@@ -1,6 +1,6 @@
 
 
-                       Adonthell - Waste's Edge 0.3.3 
+                       Adonthell - Waste's Edge 0.3.4 
                            
 
     This program is free software; you can redistribute it and/or modify
@@ -76,10 +76,17 @@ The available options and what they do are:
   Of course, the game you run has to provide the translation you 
   chose here, otherwise you'll get the default (i.e. English) text.
 
-  As of today, no translation are available. if you are interested
-  in translating Waste's Edge to your native language (which is as
-  simple as taking the English sentences and writing their 
-  translation below them), please contact us!
+  With Waste's Edge 0.3.4 comes a Dutch translation (nl_NL).
+  Others might become available later.
+
+- Font [font.ttf]
+  Chose a true type font to use for displaying text. 
+  
+  If the default font doesn't suit you, or if it does not contain
+  the glyphs required by the Language you selected, you can specify
+  a different font here. Either enter an absolute path to a font
+  file in true type format or enter the font name and copy the font
+  into <gamedatadir>/gfx/window/font/ .
 
 - Quick-load
   Whether the last saved game should be automatically continued at
