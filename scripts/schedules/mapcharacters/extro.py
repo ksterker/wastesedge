@@ -162,9 +162,9 @@ class extro:
             ("No Yetis were harmed during\n the production of this game", 5), \
             ("presented in", 2), \
             ("Ogg Vorbis Stereo", 1), \
-            ("(where available)", 13), \
+            ("(where available)", 15), \
             ("The END", 6), \
-            ("Joel, you are fired!", -1)]
+            ("Joel, you're fired! ;)", -1)]
             
         # -- text colors
         self.colors = ["white", "yellow", "red", "violet", "blue", "green"]
