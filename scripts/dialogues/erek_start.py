@@ -77,19 +77,15 @@ class erek_start:
 				self.player.append (43)
 				self.cont.append (30)
 			self.player.append (-1)
-		elif self.the_npc.get_val ("apologise") == 0 and self.the_npc.get_val ("work_4_shair") != 0 and adonthell.gamedata_get_quest("demo").get_val ("work_4_shair") > 0:
-
-			self.color = 0
-			self.npc.append (45)
-			self.cont.append (31)
-			self.player.append (-1)
 		elif self.the_npc.get_val ("work_4_shair") == 0 and adonthell.gamedata_get_quest("demo").get_val ("work_4_shair") > 0:
 
 			self.color = 0
 			self.npc.append (49)
 			self.cont.append (34)
+			self.the_npc.set_val ("work_4_shair" , 1)
+
 			self.player.append (-1)
-		else:
+		elif self.the_npc.get_val ("apologise") == 1:
 
 			self.color = 0
 			self.npc.append (112)
@@ -97,176 +93,12 @@ class erek_start:
 			self.the_npc.set_val ("apologise" , 0)
 
 			self.player.append (-1)
+		else:
 
-	def answer112 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (113)
-		self.cont.append (-1)
-		self.player.append (115)
-		self.cont.append (74)
-		self.player.append (-1)
-
-	def answer115 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (114)
-		self.cont.append (73)
-		self.player.append (-1)
-
-	def answer114 (self):
-		self.color = 0
-		self.npc.append (102)
-		self.cont.append (66)
-		self.player.append (-1)
-
-	def answer102 (self):
-		self.color = 0
-		self.npc.append (103)
-		self.cont.append (67)
-		self.player.append (-1)
-
-	def answer103 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (104)
-		self.cont.append (-1)
-		if adonthell.gamedata_get_quest("demo").get_val ("gem_worthless") < 2:
-		    adonthell.gamedata_get_quest("demo").set_val ("gem_worthless" , adonthell.gamedata_get_quest("demo").get_val ("gem_worthless") + 2)
-
-		self.player.append (106)
-		self.cont.append (-1)
-		if adonthell.gamedata_get_quest("demo").get_val ("convince_jelom") == 1:
-
-			self.player.append (105)
-			self.cont.append (68)
-		self.player.append (-1)
-
-	def answer105 (self):
-		adonthell.gamedata_get_quest("demo").set_val ("convince_jelom" , 2)
-
-		self.color = self.the_npc.get_color()
-		self.npc.append (117)
-		self.cont.append (-1)
-		self.player.append (-1)
-
-	def answer106 (self):
-		pass
-
-	def answer49 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (50)
-		self.cont.append (-1)
-		self.player.append (51)
-		self.cont.append (35)
-		self.player.append (52)
-		self.cont.append (36)
-		self.player.append (-1)
-
-	def answer52 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (54)
-		self.cont.append (-1)
-		self.player.append (55)
-		self.cont.append (37)
-		self.player.append (56)
-		self.cont.append (38)
-		self.player.append (-1)
-
-	def answer56 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (57)
-		self.cont.append (39)
-		self.player.append (-1)
-
-	def answer57 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (58)
-		self.cont.append (-1)
-		self.player.append (59)
-		self.cont.append (40)
-		self.player.append (63)
-		self.cont.append (43)
-		self.player.append (-1)
-
-	def answer63 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (64)
-		self.cont.append (44)
-		self.player.append (-1)
-
-	def answer64 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (120)
-		self.cont.append (-1)
-		self.player.append (65)
-		self.cont.append (45)
-		self.player.append (-1)
-
-	def answer65 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (66)
-		self.cont.append (46)
-		self.player.append (-1)
-
-	def answer66 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (67)
-		self.cont.append (-1)
-		self.player.append (68)
-		self.cont.append (47)
-		self.player.append (-1)
-
-	def answer68 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (69)
-		self.cont.append (48)
-		self.player.append (-1)
-
-	def answer69 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (70)
-		self.cont.append (49)
-		self.player.append (-1)
-
-	def answer70 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (61)
-		self.cont.append (-1)
-		self.player.append (-1)
-
-	def answer59 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (60)
-		self.cont.append (41)
-		self.player.append (-1)
-
-	def answer60 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (61)
-		self.cont.append (-1)
-		self.player.append (-1)
-
-	def answer55 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (62)
-		self.cont.append (42)
-		self.player.append (-1)
-
-	def answer62 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (58)
-		self.cont.append (-1)
-		self.player.append (59)
-		self.cont.append (40)
-		self.player.append (63)
-		self.cont.append (43)
-		self.player.append (-1)
-
-	def answer51 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (53)
-		self.cont.append (-1)
-		self.player.append (55)
-		self.cont.append (37)
-		self.player.append (-1)
+			self.color = 0
+			self.npc.append (45)
+			self.cont.append (31)
+			self.player.append (-1)
 
 	def answer45 (self):
 		self.color = self.the_npc.get_color()
@@ -416,6 +248,38 @@ class erek_start:
 		self.npc.append (102)
 		self.cont.append (66)
 		self.player.append (-1)
+
+	def answer102 (self):
+		self.color = 0
+		self.npc.append (103)
+		self.cont.append (67)
+		self.player.append (-1)
+
+	def answer103 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (104)
+		self.cont.append (-1)
+		if adonthell.gamedata_get_quest("demo").get_val ("gem_worthless") < 2:
+		    adonthell.gamedata_get_quest("demo").set_val ("gem_worthless" , adonthell.gamedata_get_quest("demo").get_val ("gem_worthless") + 2)
+
+		self.player.append (106)
+		self.cont.append (-1)
+		if adonthell.gamedata_get_quest("demo").get_val ("convince_jelom") == 1:
+
+			self.player.append (105)
+			self.cont.append (68)
+		self.player.append (-1)
+
+	def answer105 (self):
+		adonthell.gamedata_get_quest("demo").set_val ("convince_jelom" , 2)
+
+		self.color = self.the_npc.get_color()
+		self.npc.append (117)
+		self.cont.append (-1)
+		self.player.append (-1)
+
+	def answer106 (self):
+		pass
 
 	def answer99 (self):
 		self.color = self.the_npc.get_color()
@@ -584,6 +448,144 @@ class erek_start:
 
 	def answer71 (self):
 		pass
+
+	def answer112 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (113)
+		self.cont.append (-1)
+		self.player.append (115)
+		self.cont.append (74)
+		self.player.append (-1)
+
+	def answer115 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (114)
+		self.cont.append (73)
+		self.player.append (-1)
+
+	def answer114 (self):
+		self.color = 0
+		self.npc.append (102)
+		self.cont.append (66)
+		self.player.append (-1)
+
+	def answer49 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (50)
+		self.cont.append (-1)
+		self.player.append (51)
+		self.cont.append (35)
+		self.player.append (52)
+		self.cont.append (36)
+		self.player.append (-1)
+
+	def answer52 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (54)
+		self.cont.append (-1)
+		self.player.append (55)
+		self.cont.append (37)
+		self.player.append (56)
+		self.cont.append (38)
+		self.player.append (-1)
+
+	def answer56 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (57)
+		self.cont.append (39)
+		self.player.append (-1)
+
+	def answer57 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (58)
+		self.cont.append (-1)
+		self.player.append (59)
+		self.cont.append (40)
+		self.player.append (63)
+		self.cont.append (43)
+		self.player.append (-1)
+
+	def answer63 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (64)
+		self.cont.append (44)
+		self.player.append (-1)
+
+	def answer64 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (120)
+		self.cont.append (-1)
+		self.player.append (65)
+		self.cont.append (45)
+		self.player.append (-1)
+
+	def answer65 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (66)
+		self.cont.append (46)
+		self.player.append (-1)
+
+	def answer66 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (67)
+		self.cont.append (-1)
+		self.player.append (68)
+		self.cont.append (47)
+		self.player.append (-1)
+
+	def answer68 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (69)
+		self.cont.append (48)
+		self.player.append (-1)
+
+	def answer69 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (70)
+		self.cont.append (49)
+		self.player.append (-1)
+
+	def answer70 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (61)
+		self.cont.append (-1)
+		self.player.append (-1)
+
+	def answer59 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (60)
+		self.cont.append (41)
+		self.player.append (-1)
+
+	def answer60 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (61)
+		self.cont.append (-1)
+		self.player.append (-1)
+
+	def answer55 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (62)
+		self.cont.append (42)
+		self.player.append (-1)
+
+	def answer62 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (58)
+		self.cont.append (-1)
+		self.player.append (59)
+		self.cont.append (40)
+		self.player.append (63)
+		self.cont.append (43)
+		self.player.append (-1)
+
+	def answer51 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (53)
+		self.cont.append (-1)
+		self.player.append (55)
+		self.cont.append (37)
+		self.player.append (-1)
 
 	def answer43 (self):
 		self.color = self.the_npc.get_color()

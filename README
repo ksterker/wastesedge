@@ -20,6 +20,7 @@ Installation:
 =============
 
 See the INSTALL file for details.
+
 Note that this package is designed to run along with the adonthell
 game engine version 0.3. Therefore, you need it installed or you'll
 be stuck at configure time. If you don't have it, download it from
@@ -33,10 +34,6 @@ If the installation process is successfull, you're ready to play.
 You can play by invoking 'adonthell wastesedge' but there is a little
 shell script named 'adonthell-wastesedge' that will do the work for 
 you.
-
-
-The Story So Far:
-=================
 
 
 Release Notes:
@@ -54,7 +51,7 @@ internals enable us to create a basic plot, so v0.3 is actually
 playable!
 
 You're greatly invited to report us bugs, problems, or anything you
-think we should now. Any feedback is appreciated, so don't hesitate!
+think we should know. Any feedback is appreciated, so don't hesitate!
 
 
 Contact:
@@ -73,9 +70,10 @@ Reporting Bugs:
 
 We hope you'll never have to, but if you discover a problem, we
 would like to hear about it. Please use the Development mailing list
-(adonthell-devel@mail.freesoftware.fsf.org) for that. You can 
-subscribe to the mailing lists at 
-http://savannah.gnu.org/mail/?group_id=702
+(adonthell-devel@mail.freesoftware.fsf.org) for that. 
+
+You can subscribe to the mailing lists at
+    http://savannah.gnu.org/mail/?group_id=702
 
 
 Thank you for trying this software.

@@ -1,9 +1,10 @@
 Requirements:
 =============
-You require to have the adonthell game engine version 0.3 running.
-The configure script will check this for you, but you can check 
-whether you're ok or not by typing:
-$>adonthell -v
+To install the Waste's Edge data package you need to have the adonthell 
+game engine version 0.3 installed. The configure script will check this 
+for you, but you can check can check whether you're ok or not by typing:
+
+$> adonthell -v
 
 This should print '0.3' and exit.
 
@@ -13,12 +14,12 @@ Installing:
 
 In the toplevel wastesedge-0.3 directory type
 
-$>./configure
-$>make
+$> ./configure
+$> make
 
 and (as root)
 
-$>make install
+$> make install
 
 For more information, see the README file.
 
