@@ -1,5 +1,5 @@
 #
-#  $Id: keyboard_control.py,v 1.8 2002/01/19 18:08:48 adondev Exp $
+#  $Id: keyboard_control.py,v 1.9 2002/01/28 15:08:49 adondev Exp $
 #
 #  (C) Copyright 2001 Alexandre Courbot
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -28,7 +28,8 @@ class keyboard_control:
             self.disable_veranda_hack ()
         
         # -- react to the action key
-        if adonthell.input_has_been_pushed (adonthell.SDLK_SPACE):
+        if adonthell.input_has_been_pushed (adonthell.SDLK_SPACE) or \
+		   adonthell.input_has_been_pushed (adonthell.SDLK_RETURN):
             # -- see whether a character(/object) is next to the player
             p = self.myself.whosnext ()
 
