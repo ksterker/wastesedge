@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wasstesedge 0.3.2\n"
-"POT-Creation-Date: Mon Apr 29 11:11:50 2002\n"
+"POT-Creation-Date: Wed Aug 21 22:44:32 2002\n"
 "PO-Revision-Date: 2002-04-14 13:32+0200\n"
 "Last-Translator: Alexandre Courbot <alexandrecourbot@linuxgames.com>\n"
 "Language-Team: French <alexandrecourbot@linuxgames.com>\n"
@@ -664,18 +664,18 @@ msgstr ""
 msgid "It was hidden in Lady Silverhair's luggage."
 msgstr "Pourquoi Lady Silverhair a-t-elle ete accusee?"
 
-#: ../scripts/dialogues/demo_intro_1.py:7
+#: ../scripts/dialogues/demo_intro_1.py:9
 msgid "Your employer, eh? Who might that be?"
 msgstr "Ton employeur? Qui cela peut-il bien etre?"
 
-#: ../scripts/dialogues/demo_intro_1.py:8
+#: ../scripts/dialogues/demo_intro_1.py:10
 msgid ""
 "The Lady Silverhair, and she must have great need of me, so let me pass!"
 msgstr ""
 "Lady Silverhair, et elle doit avoir grand besoin de moi, alors laisse moi "
 "passer!"
 
-#: ../scripts/dialogues/demo_intro_1.py:9
+#: ../scripts/dialogues/demo_intro_1.py:11
 msgid ""
 "Nay, if you are Silverhair's man, then I shall not let you pass. That one is "
 "the source of all this mess, and I'll be switched if I let her accomplice in "
@@ -684,17 +684,17 @@ msgstr ""
 "Ohh non. Si tu es avec Silverhair, tu ne rentres pas. C'est elle la cause de "
 "nos soucis, et je me ferais tuer si elle parvenait a s'evader. Pars!"
 
-#: ../scripts/dialogues/demo_intro_1.py:10
+#: ../scripts/dialogues/demo_intro_1.py:12
 msgid "What sort of mess, man? If my Lady is in trouble, I must know!"
 msgstr "Quels soucis? Si ma Maitresse a des problemes, je dois le savoir!"
 
-#: ../scripts/dialogues/demo_intro_1.py:11
+#: ../scripts/dialogues/demo_intro_1.py:13
 msgid "Don't be foolish! I must see my Lady at once. Open this gate!"
 msgstr ""
 "Ne sois pas ridicule! Je dois voir ma Maitresse sur-le-champ. Ouvre cette "
 "porte!"
 
-#: ../scripts/dialogues/demo_intro_1.py:12
+#: ../scripts/dialogues/demo_intro_1.py:14
 msgid ""
 "The sort of trouble we have no wish to put up with, that's certain. The Lady "
 "is being held for theft, and a grievous theft it was."
@@ -702,7 +702,7 @@ msgstr ""
 "Le genre de soucis auxquels on n'aurais pas envie d'etre meles, c'est sur. "
 "Elle est retenue pour vol, et pas des moindres."
 
-#: ../scripts/dialogues/demo_intro_1.py:13
+#: ../scripts/dialogues/demo_intro_1.py:15
 msgid ""
 "Theft? But that cannot be, the Lady Silverhair is a wealthy noble in her own "
 "right. She need not stoop to theft."
@@ -710,7 +710,7 @@ msgstr ""
 "Pour vol? C'est impossible, la Lady Silverhair est une noble riche et dans "
 "son droit. Elle n'a aucun besoin de voler."
 
-#: ../scripts/dialogues/demo_intro_1.py:14
+#: ../scripts/dialogues/demo_intro_1.py:16
 msgid ""
 "You speak madness, man! There can have been no theft. Allow me in, and I "
 "shall prove to you the Lady is innocent."
@@ -718,7 +718,7 @@ msgstr ""
 "Tu dis n'importe quoi! Il ne peut pas y avoir eu de vol. Laisse moi passer, "
 "et je vais prouver que la Lady est innocente."
 
-#: ../scripts/dialogues/demo_intro_1.py:15
+#: ../scripts/dialogues/demo_intro_1.py:17
 msgid ""
 "But I must! If my Lady is in need of me I cannot simply walk away! Please, I "
 "beg you to open the gate so I may aid her."
@@ -726,7 +726,7 @@ msgstr ""
 "Mais il le faut! Ma Maitresse a besoin de moi, je ne peux pas partir comme "
 "ca! Je t'en prie, ouvre la porte que je puisse l'aider."
 
-#: ../scripts/dialogues/demo_intro_1.py:16
+#: ../scripts/dialogues/demo_intro_1.py:18
 msgid ""
 "That is none of your concern. All you need know is that she is within your "
 "walls and will need me close if there is trouble at hand."
@@ -734,14 +734,14 @@ msgstr ""
 "Ca ne te regarde pas. Tout ce que tu dois savoir, c'est qu'elle est retenue "
 "dans tes murs et qu'elle aura besoin de moi s'il y a des problemes."
 
-#: ../scripts/dialogues/demo_intro_1.py:17
+#: ../scripts/dialogues/demo_intro_1.py:19
 msgid ""
 "She, eh? Your employer wouldn't be an elven lady named Silverhair, would she?"
 msgstr ""
 "Elle, hein? Ton employeur ne serait pas une noble appelee Silverhair, pas "
 "hasard?"
 
-#: ../scripts/dialogues/demo_intro_1.py:18
+#: ../scripts/dialogues/demo_intro_1.py:20
 msgid ""
 "Of course she is, you fool! Who else would it be? Are you going to open this "
 "gate or not?"
@@ -749,13 +749,13 @@ msgstr ""
 "Bien sur, idiot! Qui d'autre cela pourrait-il etre? Vas-tu ouvrir cette "
 "porte maintenant?"
 
-#: ../scripts/dialogues/demo_intro_1.py:19
+#: ../scripts/dialogues/demo_intro_1.py:21
 msgid "Er, no. No, it is not. In fact, my employer is no lady at all."
 msgstr ""
 "Euh, non. Non, pas du tout. En fait, mon employeur n'est pas plus noble que "
 "toi."
 
-#: ../scripts/dialogues/demo_intro_1.py:20
+#: ../scripts/dialogues/demo_intro_1.py:22
 msgid ""
 "Huh! You won't get in these doors by lying to me. You said your employer was "
 "a lady and there's only one in here who'd employ one of your sort."
@@ -764,11 +764,11 @@ msgstr ""
 "employeur est une femme, et il n'y a qu'une personne ici qui emploierait "
 "quelqu'un de ton espece."
 
-#: ../scripts/dialogues/demo_intro_1.py:21
+#: ../scripts/dialogues/demo_intro_1.py:23
 msgid "Very well then, my employer is Lady Silverhair. What of it?"
 msgstr "Bon, d'accord, mon employeur est Lady Silverhair. Et alors?"
 
-#: ../scripts/dialogues/demo_intro_1.py:22
+#: ../scripts/dialogues/demo_intro_1.py:24
 msgid ""
 "Your Lady is being held for theft, and a grievous theft it was! And you'll "
 "certainly not be coming in here to make the situation even worse."
@@ -776,7 +776,7 @@ msgstr ""
 "Ta Maitresse est retenue pour vol, et pas des moindres! Alors tu ne vas "
 "certainement pas venir encore aggraver les choses."
 
-#: ../scripts/dialogues/demo_intro_1.py:23
+#: ../scripts/dialogues/demo_intro_1.py:25
 msgid ""
 "That's what you are saying. But fact is, she first argued with the victim "
 "over his goods and the other morning they were gone. Now he demands justice "
@@ -788,12 +788,12 @@ msgstr ""
 "lendemain matin. Maintenant la victime demande justice. Ou est la verite "
 "selon toi?"
 
-#: ../scripts/dialogues/demo_intro_1.py:24
+#: ../scripts/dialogues/demo_intro_1.py:26
 msgid "I cannot tell you the truth unless you let me see for myself."
 msgstr ""
 "Je ne peux pas te dire la verite si tu ne me laisse pas voir par moi meme."
 
-#: ../scripts/dialogues/demo_intro_1.py:25
+#: ../scripts/dialogues/demo_intro_1.py:27
 msgid ""
 "You'll have a damned hard time doing that. The lady is guilty and has been "
 "seen to be guilty. The truth is that she is the thief and that is all there "
@@ -802,15 +802,15 @@ msgstr ""
 "Tu auras bien du mal. La Lady est coupable. La verite est qu'elle est le "
 "voleur et c'est tout ce qu'il y a a dire."
 
-#: ../scripts/dialogues/demo_intro_1.py:26
+#: ../scripts/dialogues/demo_intro_1.py:28
 msgid "I tell you again, you shall not come in."
 msgstr "Je te repete, tu ne peux pas rentrer."
 
-#: ../scripts/dialogues/demo_intro_1.py:27
+#: ../scripts/dialogues/demo_intro_1.py:29
 msgid "I tell you, I cannot. My orders..."
 msgstr "Je te le dit, je ne peux pas. Mes ordres..."
 
-#: ../scripts/dialogues/demo_intro_1.py:28
+#: ../scripts/dialogues/demo_intro_1.py:30
 msgid ""
 "I am sick of arguing with you. Are you about to let me in, or will I be "
 "forced to take action? And believe me, you would not enjoy it."
@@ -818,23 +818,25 @@ msgstr ""
 "J'en ai marre de debattre avec toi. Vas-tu me laisser rentrer, ou tu prefere "
 "que je passe a l'action? Crois moi, tu ne vas pas aimer."
 
-#: ../scripts/dialogues/demo_intro_1.py:29
+#: ../scripts/dialogues/demo_intro_1.py:31
+#, fuzzy
 msgid ""
-"The guard hesitates for a bit, and even from where you stand you can see he "
-"is uncertain."
+"The guard hesitates for a moment, and even from where you stand you can see "
+"he is uncertain."
 msgstr ""
 "Le garde hesite un instant, et d'ou vous vous tenez vous voyez qu'il est "
 "incertain."
 
-#: ../scripts/dialogues/demo_intro_1.py:30
+#: ../scripts/dialogues/demo_intro_1.py:32
+#, fuzzy
 msgid ""
-"You'll be in more trouble for not opening that gate than you will for "
+"You'll be in more trouble for not opening that gate than you will be for "
 "letting me in, I assure you of that. Now do as I say!"
 msgstr ""
 "Tu auras plus de problemes pour ne pas ouvrir cette porte que pour ne pas "
 "m'avoir laisse rentrer, crois moi. Maintenant fais ce que je dis!"
 
-#: ../scripts/dialogues/demo_intro_1.py:31
+#: ../scripts/dialogues/demo_intro_1.py:33
 msgid ""
 "But finally he seems to reach a conclusion, and after carefully scanning the "
 "surroundings, he beckons you in."
@@ -842,7 +844,7 @@ msgstr ""
 "Mais finalement, il semble se decider, et apres avoir examine les alentours "
 "il vous invite a rentrer."
 
-#: ../scripts/dialogues/demo_intro_1.py:32
+#: ../scripts/dialogues/demo_intro_1.py:34
 msgid ""
 "Aid her? That is why you can't be allowed in. If you aid her too much, she "
 "might escape."
@@ -850,20 +852,20 @@ msgstr ""
 "L'aider? Voila pourquoi tu ne peux pas entrer. Si tu l'aide trop, elle "
 "pourrait s'echapper."
 
-#: ../scripts/dialogues/demo_intro_1.py:33
+#: ../scripts/dialogues/demo_intro_1.py:35
 msgid "I promise, please. I am becoming sick with worry. Can you not help me?"
 msgstr ""
 "Je le promet, s'il te plait. Je suis ronge par l'inquietude. Tu ne peux pas "
 "m'aider?"
 
-#: ../scripts/dialogues/demo_intro_1.py:34
+#: ../scripts/dialogues/demo_intro_1.py:36
 msgid ""
 "How could she escape from a guarded camp, even if I did help? Now let me in!"
 msgstr ""
 "Comment pourrait-elle s'evader d'un camp garde, meme si je l'aide? Laisse "
 "moi entrer!"
 
-#: ../scripts/dialogues/demo_intro_1.py:35
+#: ../scripts/dialogues/demo_intro_1.py:37
 msgid ""
 "I wish I could, friend. But If I were to open this gate, I would be in "
 "terrible trouble."
@@ -871,7 +873,7 @@ msgstr ""
 "J'aimerais bien, mon ami. Mais si j'ouvre cette porte, je vais avoir de gros "
 "ennuis."
 
-#: ../scripts/dialogues/demo_intro_1.py:36
+#: ../scripts/dialogues/demo_intro_1.py:38
 msgid ""
 "I am beginning to lose my patience, man. I don't wish you trouble, but I "
 "must be allowed in."
@@ -879,7 +881,7 @@ msgstr ""
 "Je commence a perdre ma patience. Je ne te veux aucun probleme, mais je dois "
 "entrer."
 
-#: ../scripts/dialogues/demo_intro_1.py:37
+#: ../scripts/dialogues/demo_intro_1.py:39
 msgid "I tell you I can't allow you in."
 msgstr "Je te dis que je ne peux pas te laisser entrer."
 
@@ -1541,15 +1543,15 @@ msgid ""
 "and good!"
 msgstr ""
 
-#: ../scripts/dialogues/erek_start.py:313
+#: ../scripts/dialogues/erek_start.py:321
 msgid "Master Orloth"
 msgstr ""
 
-#: ../scripts/dialogues/erek_start.py:315
+#: ../scripts/dialogues/erek_start.py:323
 msgid "the mercenary"
 msgstr ""
 
-#: ../scripts/dialogues/erek_start.py:317
+#: ../scripts/dialogues/erek_start.py:325
 msgid "Tristan the merchant"
 msgstr ""
 
@@ -2904,7 +2906,7 @@ msgstr ""
 #: ../scripts/dialogues/lucia_start.py:31
 msgid ""
 "He stays here quite often, and has done that for many years. I wouldn't say "
-"that I know him well, though. He behaves quite retained and formal, but he "
+"that I know him well, though. He behaves quite reserved and formal, but he "
 "is a pleasant character. Not like the other types we get here usually."
 msgstr ""
 
@@ -3040,7 +3042,7 @@ msgstr ""
 
 #: ../scripts/dialogues/lucia_start.py:55
 msgid ""
-"I am afraid there is only little I know about him. He is so retained and "
+"I am afraid there is only little I know about him. He is so reserved and "
 "formal, a calm and pleasant character. But he stays here regularly."
 msgstr ""
 
@@ -4384,15 +4386,15 @@ msgstr ""
 msgid "No, the only way to calm her is to set things right."
 msgstr ""
 
-#: ../scripts/dialogues/orloth_start.py:331
+#: ../scripts/dialogues/orloth_start.py:330
 msgid "responsible to their"
 msgstr ""
 
-#: ../scripts/dialogues/orloth_start.py:333
+#: ../scripts/dialogues/orloth_start.py:332
 msgid "thief to her"
 msgstr ""
 
-#: ../scripts/dialogues/orloth_start.py:337
+#: ../scripts/dialogues/orloth_start.py:336
 msgid "your "
 msgstr ""
 
@@ -5706,7 +5708,8 @@ msgid "I have already bathed this month!"
 msgstr "J'ai deja pris mon bain ce mois ci!"
 
 #: ../scripts/modules/player_text.py:16
-msgid "Well, I can't dig into my mistress' chest!"
+#, fuzzy
+msgid "No, I won't touch my mistress' belongings!"
 msgstr "Eh, je ne vais pas fouiller le coffre de ma Maitresse!"
 
 #: ../scripts/modules/player_text.py:17
@@ -5766,39 +5769,39 @@ msgstr "Le bagage de Lady Silverhair, mais pas ce que je cherche."
 msgid "An old, empty crate!"
 msgstr "Une vieille caisse vide!"
 
-#: ../scripts/schedules/mapcharacters/alek.py:27
+#: ../scripts/schedules/mapcharacters/alek.py:29
 msgid "More Ale!"
 msgstr "Encore une biere!"
 
-#: ../scripts/schedules/mapcharacters/alek.py:28
+#: ../scripts/schedules/mapcharacters/alek.py:30
 msgid "I'll cut 'em open like ripe fruits."
 msgstr ""
 
-#: ../scripts/schedules/mapcharacters/alek.py:29
+#: ../scripts/schedules/mapcharacters/alek.py:31
 msgid "They should sort out this business like real men!"
 msgstr "Ils devraient regler ca comme de vrais hommes!"
 
-#: ../scripts/schedules/mapcharacters/bjarn.py:26
+#: ../scripts/schedules/mapcharacters/bjarn.py:29
 msgid "Ha! A tradesman is an honourable person, they say!"
 msgstr "Ah! un commercant est une personne honorable, qu'ils disaient!"
 
-#: ../scripts/schedules/mapcharacters/bjarn.py:27
+#: ../scripts/schedules/mapcharacters/bjarn.py:30
 msgid "Why don't they just take that Silverhair woman to prison!?"
 msgstr "Pourquoi me mettent-ils pas cette Silverhair directement en prison!?"
 
-#: ../scripts/schedules/mapcharacters/bjarn.py:28
+#: ../scripts/schedules/mapcharacters/bjarn.py:31
 msgid "Elves! The head in the sky and the mind full of clouds!"
 msgstr "Les Elfes! La tete en l'air et l'esprit plein de nuages!"
 
-#: ../scripts/schedules/mapcharacters/erek.py:28
+#: ../scripts/schedules/mapcharacters/erek.py:30
 msgid "How could they do that to the Master?"
 msgstr "Comment ont-ils pu faire cela au Maitre?"
 
-#: ../scripts/schedules/mapcharacters/erek.py:29
+#: ../scripts/schedules/mapcharacters/erek.py:31
 msgid "This place is so much different from home."
 msgstr "Cet endroit est tellement different de la maison."
 
-#: ../scripts/schedules/mapcharacters/erek.py:30
+#: ../scripts/schedules/mapcharacters/erek.py:32
 msgid "Who could have taken the gems?"
 msgstr "Qui peut avoir pris les gemmes?"
 
@@ -6216,149 +6219,149 @@ msgstr ""
 msgid "Joel, you are fired! ;)"
 msgstr ""
 
-#: ../scripts/schedules/mapcharacters/fellnir.py:26
+#: ../scripts/schedules/mapcharacters/fellnir.py:29
 msgid "Master Orloth should throw out that brute!"
 msgstr "Maitre Orloth devrait mettre cette brute a la porte!"
 
-#: ../scripts/schedules/mapcharacters/fellnir.py:27
+#: ../scripts/schedules/mapcharacters/fellnir.py:30
 msgid "Take equal parts of vitriol, nitre and sal ammoniac ..."
 msgstr "Melanger du vitriol, du nitrate et le l'ammoniaque..."
 
-#: ../scripts/schedules/mapcharacters/frostbloom.py:33
+#: ../scripts/schedules/mapcharacters/frostbloom.py:35
 msgid "This tree is so inspiring."
 msgstr "Cet arbre a tellement d'inspiration."
 
-#: ../scripts/schedules/mapcharacters/frostbloom.py:34
+#: ../scripts/schedules/mapcharacters/frostbloom.py:36
 msgid "I wonder why everybody seems so excited."
 msgstr "Je me demande pourquoi tout le monde est si enerve."
 
-#: ../scripts/schedules/mapcharacters/frostbloom.py:35
+#: ../scripts/schedules/mapcharacters/frostbloom.py:37
 msgid "Do you know a creature more lovely than the yeti?"
 msgstr "Y a-t-il une creature plus adorable que le Yeti?"
 
-#: ../scripts/schedules/mapcharacters/janesta.py:26
+#: ../scripts/schedules/mapcharacters/janesta.py:29
 msgid "Oh, dear. Oh, dear."
 msgstr "Oh seigneur. Seigneur."
 
-#: ../scripts/schedules/mapcharacters/janesta.py:27
+#: ../scripts/schedules/mapcharacters/janesta.py:30
 msgid "What will happen to us if they take the Mistress?"
 msgstr "Que va-t-il nous arriver s'ils emmenent la Maitresse?"
 
-#: ../scripts/schedules/mapcharacters/janesta.py:28
+#: ../scripts/schedules/mapcharacters/janesta.py:31
 msgid "I must do something about this awful room."
 msgstr "Je dois faire quelque chose de cette horrible chambre."
 
-#: ../scripts/schedules/mapcharacters/janesta.py:29
+#: ../scripts/schedules/mapcharacters/janesta.py:32
 msgid "Oh, how do they expect us to live decently in a place like this?"
 msgstr ""
 "Oh, comment esperent-ils que nous vivions dans un endroit comme celui-la?"
 
-#: ../scripts/schedules/mapcharacters/jelom.py:28
+#: ../scripts/schedules/mapcharacters/jelom.py:30
 msgid "Someone fetch me a drink!"
 msgstr "Qu'on m'amene a boire!"
 
-#: ../scripts/schedules/mapcharacters/jelom.py:29
+#: ../scripts/schedules/mapcharacters/jelom.py:31
 msgid "That'll teach them fancy Elves a lesson!"
 msgstr "Ca va donner une bonne lecon a ces Elfes!"
 
-#: ../scripts/schedules/mapcharacters/jelom.py:30
+#: ../scripts/schedules/mapcharacters/jelom.py:32
 msgid "Send them to the cursed island, I say!"
 msgstr "Qu'on les envoie sur l'ile maudite!"
 
-#: ../scripts/schedules/mapcharacters/lucia.py:28
+#: ../scripts/schedules/mapcharacters/lucia.py:30
 msgid "When can I finally rest a bit?"
 msgstr "Quand vais-je pouvoir me reposer?"
 
-#: ../scripts/schedules/mapcharacters/lucia.py:29
+#: ../scripts/schedules/mapcharacters/lucia.py:31
 msgid "I told Orloth this place would bring us nothing but trouble!"
 msgstr "J'ai bien dit a Orloth que cet endroit nous attirerait des ennuis."
 
-#: ../scripts/schedules/mapcharacters/lucia.py:30
+#: ../scripts/schedules/mapcharacters/lucia.py:32
 msgid "This smoke! I'm dying!"
 msgstr "Cette fumee! Je vais mourir!"
 
-#: ../scripts/schedules/mapcharacters/lucia.py:64
+#: ../scripts/schedules/mapcharacters/lucia.py:51
 msgid "Ah, some fresh air!"
 msgstr "Ah, de l'air!"
 
-#: ../scripts/schedules/mapcharacters/oliver.py:27
+#: ../scripts/schedules/mapcharacters/oliver.py:29
 msgid "It's so exciting. An Elven Lady, here at Waste's Edge!"
 msgstr "C'est incroyable. Une Dame Elfe, ici a Waste's Edge!"
 
-#: ../scripts/schedules/mapcharacters/oliver.py:28
+#: ../scripts/schedules/mapcharacters/oliver.py:30
 msgid "I gotta hurry before mother complains again."
 msgstr "Je vais me depecher avant que maman se plaigne encore."
 
-#: ../scripts/schedules/mapcharacters/oliver.py:29
+#: ../scripts/schedules/mapcharacters/oliver.py:31
 msgid "Why can't I have a little dog!?"
 msgstr "Pourquoi je peux pas avoir un petit chien!?"
 
-#: ../scripts/schedules/mapcharacters/orloth.py:28
+#: ../scripts/schedules/mapcharacters/orloth.py:30
 msgid "I gotta clean this mug!"
 msgstr "Je dois nettoyer ce bock!"
 
-#: ../scripts/schedules/mapcharacters/orloth.py:29
+#: ../scripts/schedules/mapcharacters/orloth.py:31
 msgid "That barrel is leaking."
 msgstr "Ce barril a une fuite."
 
-#: ../scripts/schedules/mapcharacters/orloth.py:30
+#: ../scripts/schedules/mapcharacters/orloth.py:32
 msgid "I hope they'll find the thief!"
 msgstr "J'espere qu'il vont trouver le voleur!"
 
-#: ../scripts/schedules/mapcharacters/orloth.py:89
+#: ../scripts/schedules/mapcharacters/orloth.py:65
 msgid "That clock is late again!"
 msgstr "Cette horloge est encore en retard!"
 
-#: ../scripts/schedules/mapcharacters/sarin.py:35
+#: ../scripts/schedules/mapcharacters/sarin.py:38
 msgid "Ruffinans, the lot of them!"
 msgstr "Des brutes. Tous des brutes!"
 
-#: ../scripts/schedules/mapcharacters/sarin.py:36
+#: ../scripts/schedules/mapcharacters/sarin.py:39
 msgid "How dare they imprison one better than they?"
 msgstr "Comment osent-ils imprisonner meilleure personne qu'eux?"
 
-#: ../scripts/schedules/mapcharacters/sarin.py:37
+#: ../scripts/schedules/mapcharacters/sarin.py:40
 msgid "This is an insult to all of the High Born."
 msgstr "C'est une insulte envers tous les nobles."
 
-#: ../scripts/schedules/mapcharacters/sarin.py:38
+#: ../scripts/schedules/mapcharacters/sarin.py:41
 msgid "I cannot believe such disrespect. Barbarians!"
 msgstr "Je ne peux pas croire autant d'irrespect. Barbares!"
 
-#: ../scripts/schedules/mapcharacters/silverhair.py:28
+#: ../scripts/schedules/mapcharacters/silverhair.py:29
 msgid "In truth, Sarin, it is no bother. I am not offended."
 msgstr "En verite, Sarin, il n'y a pas de probleme. Je ne suis pas offensee."
 
-#: ../scripts/schedules/mapcharacters/silverhair.py:29
+#: ../scripts/schedules/mapcharacters/silverhair.py:30
 msgid "Janesta, dear, worry not. I am content here."
 msgstr "Janesta, ma chere, ne t'en fais pas. Je me plais ici."
 
-#: ../scripts/schedules/mapcharacters/silverhair.py:30
+#: ../scripts/schedules/mapcharacters/silverhair.py:31
 msgid "Janesta, please bring my figurine. I wish to see it more closely."
 msgstr ""
 "Janesta, veux-tu ramener ma figurine? J'aimerais la regarder de plus pres."
 
-#: ../scripts/schedules/mapcharacters/silverhair.py:31
+#: ../scripts/schedules/mapcharacters/silverhair.py:32
 msgid "It truly is a lovely day. I expect we will have time yet to enjoy it."
 msgstr ""
 "Quelle belle journee. J'imagine que nous aurons du temps pour l'apprecier."
 
-#: ../scripts/schedules/mapcharacters/talan.py:27
+#: ../scripts/schedules/mapcharacters/talan.py:29
 msgid "Halt! Who goes there?"
 msgstr "Halte! Qui va la?"
 
-#: ../scripts/schedules/mapcharacters/talan.py:29
+#: ../scripts/schedules/mapcharacters/talan.py:31
 msgid "Nobody may pass through the gate!"
 msgstr "Personne ne va passer cette porte!"
 
-#: ../scripts/schedules/mapcharacters/tristan.py:28
+#: ../scripts/schedules/mapcharacters/tristan.py:30
 msgid "Don't they know that I am losing money by the hour!?"
 msgstr "Ne savent-ils pas que je perd de l'argent a chaque heure!?"
 
-#: ../scripts/schedules/mapcharacters/tristan.py:29
+#: ../scripts/schedules/mapcharacters/tristan.py:31
 msgid "What a fuss about a few worthless gems!"
 msgstr "Quel tapage pour quelques pierres sans valeur!"
 
-#: ../scripts/schedules/mapcharacters/tristan.py:30
+#: ../scripts/schedules/mapcharacters/tristan.py:32
 msgid "Ye gods! It cannot be that hard to find the thief!"
 msgstr "Mon dieu! Ca ne doit pas etre si dur que ca de trouver le voleur!"
