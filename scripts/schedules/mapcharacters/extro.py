@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2003 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -30,15 +30,16 @@ class extro:
         erek = adonthell.gamedata_get_character ("Erek Stonebreaker")
         jelom = adonthell.gamedata_get_character ("Jelom Rasgar")
         talan = adonthell.gamedata_get_character ("Talan Wendth")
-        talan.set_schedule_active (0)
         silverhair = adonthell.gamedata_get_character ("Imoen Silverhair")
         player = adonthell.gamedata_player ()
+
+        talan.pause ()
 
         # -- init the bubble texts
         #    (character, text)
         self.text = [(bjarn, N_("There is no denying it. Yes, I feigned the theft. ")), \
             (erek, N_("But Master? How could you do such an infamous deed? ")), \
-			(jelom, N_("That I would know as well! And where are the gems then? ")), \
+            (jelom, N_("That I would know as well! And where are the gems then? ")), \
             (bjarn, N_("What? Haven't I made myself clear already? ")), \
             (bjarn, N_("I despise those Elves and their uncanny ways. ")), \
             (bjarn, N_("Their ... meddling with reality contradicts all principles I learnt to hold true.     ")), \
@@ -49,7 +50,7 @@ class extro:
             (bjarn, N_("Theft by a high born like Lady Silverhair would have been considered a grave insult by the clan elders.     ")), \
             (bjarn, N_("Had she been convicted, they might have chosen to cease trading with her likes. ")), \
             (bjarn, N_("It might have been years before any Elf got his filthy hands on our beloved gems again! ")), \
-			(silverhair, N_("I feared as much and I       feared the consequences.")), \
+            (silverhair, N_("I feared as much and I       feared the consequences.")), \
             (silverhair, N_("Without the arcane arts my kind would soon succumb to the human tides. ")), \
             (silverhair, N_("But without gems and ores purchased from the small folk we cannot create magic. ")), \
             (jelom, N_("Who would have thought that? ")), \
@@ -225,7 +226,6 @@ class extro:
         elif self.index == 20:
             bjarn = self.text[3][0]
             if self.done == 0:
-                bjarn.set_schedule_active (0)
                 bjarn.set_goal (7, 3, adonthell.STAND_NORTH)
                 self.done = 1
                 
@@ -242,7 +242,6 @@ class extro:
             bjarn = self.text[3][0]
             bjarn.go_south ()
             bjarn.load ('bjarn_crying.mchar')
-            bjarn.pause ()
             
             talan = adonthell.gamedata_get_character ('Talan Wendth')
             talan.load ("talan_beaten.mchar")
@@ -576,7 +575,7 @@ class extro:
             update = 1
             self.alek_run.update ()
             self.x[2] = self.update_wood (self.wood3, self.x[2])
-        	
+
             if self.anim % 4 == 0:
                 self.x[0] = self.update_wood (self.wood1, self.x[0])
 

@@ -1,5 +1,7 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  $Id: talk.py,v 1.8 2003/01/27 19:53:40 ksterker Exp $
+#
+#  (C) Copyright 2001/2003 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -10,7 +12,7 @@
 #  See the COPYING file for more details
 #
 
-# -- Map Character Action Event to launch a dialogue with the requester.
+# -- mapcharacter Action Event to launch a dialogue with the requester.
 
 
 import adonthell
@@ -23,14 +25,18 @@ class talk:
     def restore_schedule (self, retval, args):
         # -- activate the characters' schedules
         # player isn't event-driven yet
-        args[0].set_schedule_active (1)
-        args[0].resume ()
-        args[1].resume ()
+        args[2].set_schedule_active (1)
+        if not args[0]: args[2].resume ()
+        if not args[1]: args[3].resume ()
 
         adonthell.gamedata_engine ().set_control_active (1)
 
     def run (self, requester):
         if requester.get_name() == adonthell.gamedata_player ().get_name():
+            # -- get characters' current state
+            player_state = requester.is_paused ()
+            npc_state = self.myself.is_paused ()
+            
             # -- deactivate the schedule of the characters involved
             self.myself.pause ()
             requester.pause ()
@@ -50,7 +56,7 @@ class talk:
             dlg.thisown = 0
 
             # -- attach the callback
-            dlg.py_signal_connect (self.restore_schedule, adonthell.win_event_CLOSE, (requester, self.myself))
+            dlg.py_signal_connect (self.restore_schedule, adonthell.win_event_CLOSE, (player_state, npc_state, requester, self.myself))
 
             # -- add the dialogue window to the win_manager
             adonthell.win_manager_get_active ().add (dlg)

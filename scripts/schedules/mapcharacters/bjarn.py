@@ -42,7 +42,7 @@ class bjarn (schedule.speak):
     # -- Get at the proper place when Erek lets the player into the room
     #    and at the end of the game.
     def await_player (self):
-        self.myself.jump_to (self.myself.submap (), 3, 6)
+        self.myself.jump_to (7, 3, 6)
         self.myself.stand_west ()
     
     def start_talking (self):

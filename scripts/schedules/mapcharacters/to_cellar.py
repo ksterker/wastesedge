@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002/2003 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -83,6 +83,7 @@ class to_cellar:
             self.myself.set_schedule ("keyboard_control")
             bjarn = adonthell.gamedata_get_character ("Bjarn Fingolson")
             bjarn.set_dialogue ("dialogues.extro")
+            bjarn.pause ()
             bjarn.launch_action (self.myself)
                         
         else:
