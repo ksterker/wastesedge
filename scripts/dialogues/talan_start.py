@@ -87,6 +87,8 @@ class talan_start (dialogue.base):
 		_("Frostbloom? Then it must have been a Yeti, I suppose."),\
 		_("But seriously, I did not notice anything. I'm sorry, $name.")]
 
+	loop = [8, 9]
+
 	cond = [\
 		"adonthell.gamedata_get_quest(\"demo\").get_val (\"silverhair_free\") != 1\n",\
 		"self.the_npc.get_val (\"apologised\") != 1\n",\
