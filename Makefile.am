@@ -7,7 +7,7 @@ pkgdata_DATA = gamename.txt character.data mapengine.data quest.data audio.data
 EXTRA_DIST = config.rpath  $(pkgdata_DATA) PLAYING autogen.sh ABOUT-NLS \
 	debian/README.debian debian/adonthell-wastesedge.6 debian/changelog \
         debian/control debian/copyright debian/dirs debian/rules debian/menu \
-        wastesedge.spec.in wastesedge.spec
+        debian/compat debian/docs wastesedge.spec.in wastesedge.spec
 
 bin_SCRIPTS = adonthell-wastesedge
 
