@@ -1,0 +1,65 @@
+dnl **************************************************************
+dnl Process this file with autoconf to produce a configure script.
+dnl **************************************************************
+
+AC_INIT(README)
+
+AM_INIT_AUTOMAKE(wastesedge, 0.3pre1)
+
+dnl Should get the datadir from adonthell itself later
+gamedatadir=\${datadir}/adonthell
+
+AC_SUBST(gamedatadir)
+
+AC_OUTPUT([
+Makefile
+audio/Makefile
+gfx/cutscene/Makefile
+gfx/mapcharacters/Makefile
+gfx/mapobjects/exteriors/Makefile
+gfx/mapobjects/floorings/Makefile
+gfx/mapobjects/furnitures/Makefile
+gfx/mapobjects/houses/redwyne-inn/Makefile
+gfx/mapobjects/houses/Makefile
+gfx/mapobjects/icons/arrows/Makefile
+gfx/mapobjects/icons/Makefile
+gfx/mapobjects/terrains/Makefile
+gfx/mapobjects/walls/inside/Makefile
+gfx/mapobjects/walls/stone/Makefile
+gfx/mapobjects/walls/Makefile
+gfx/mapobjects/Makefile
+gfx/window/background/original/Makefile
+gfx/window/background/silverleaf/Makefile
+gfx/window/background/Makefile
+gfx/window/border/original/mini/Makefile
+gfx/window/border/original/normal/Makefile
+gfx/window/border/original/Makefile
+gfx/window/border/silverleaf/mini/Makefile
+gfx/window/border/silverleaf/normal/Makefile
+gfx/window/border/silverleaf/Makefile
+gfx/window/border/Makefile
+gfx/window/cursor/original/Makefile
+gfx/window/cursor/silverleaf/Makefile
+gfx/window/cursor/Makefile
+gfx/window/font/blue/Makefile
+gfx/window/font/green/Makefile
+gfx/window/font/original/Makefile
+gfx/window/font/red/Makefile
+gfx/window/font/silverleaf/Makefile
+gfx/window/font/violet/Makefile
+gfx/window/font/white/Makefile
+gfx/window/font/yellow/Makefile
+gfx/window/font/Makefile
+gfx/window/scrollbar/original/Makefile
+gfx/window/scrollbar/silverleaf/Makefile
+gfx/window/scrollbar/Makefile
+gfx/window/Makefile
+gfx/Makefile
+maps/Makefile
+scripts/dialogues/Makefile
+scripts/events/Makefile
+scripts/modules/Makefile
+scripts/schedules/Makefile
+scripts/Makefile
+scripts/actions/Makefile
+])

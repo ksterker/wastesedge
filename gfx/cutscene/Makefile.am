@@ -1,0 +1,6 @@
+pkgdatadir = $(gamedatadir)/gfx/cutscene
+
+pkgdata_DATA = adonthell_03.pnm adonthell_green.pnm jewelbag_closed.pnm \
+	jewelbag_open.pnm
+
+EXTRA_DIST = $(pkgdata_DATA)
