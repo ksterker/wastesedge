@@ -1,5 +1,6 @@
 pkgdatadir = $(gamedatadir)/gfx/mapcharacters
 
-pkgdata_DATA = frostbloom.mchar player.mchar servant1.mchar silverhair.mchar
+pkgdata_DATA = frostbloom.mchar player.mchar servant1.mchar silverhair.mchar orloth.mchar \
+	bjarn.mchar oliver.mchar lucia.mchar servant2.mchar
 
 EXTRA_DIST = $(pkgdata_DATA)

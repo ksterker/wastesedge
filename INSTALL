@@ -1,1 +1,35 @@
-Installation file for Waste's Edge.
+Requirements:
+=============
+You require to have the adonthell game engine version 0.3 running.
+The configure script will check this for you, but you can check 
+whether you're ok or not by typing:
+$>adonthell -v
+
+This should print '0.3' and exit.
+
+
+Installing:
+===========
+
+In the toplevel wastesedge-0.3 directory type
+
+$>./configure
+$>make
+
+and (as root)
+
+$>make install
+
+For more information, see the README file.
+
+You can then check whether the game is correctly installed by invoking
+'adonthell -l', which should list 'wastesedge'.
+
+Then, typing 'adonthell wastesedge' or simply 'adonthell-wastesedge' will
+get you into the game.
+
+
+**************************************************************
+* That's it! Enjoy the game and let us know what you think!! *
+**************************************************************
+					- The Adonthell Team

@@ -6,6 +6,9 @@ def restore_schedule (retval, args):
     args[1].set_schedule_active (1)
 
 if requester.get_name()==the_player.get_name():
+    # -- deactivate the schedule of the characters involved
+    myself.set_schedule_active (0)
+    requester.set_schedule_active (0)
     # -- look into the player's face
     myself.look_invert(requester.currentmove())
 
@@ -16,7 +19,7 @@ if requester.get_name()==the_player.get_name():
     dlg.thisown = 0
 
     # -- attach the callback
-    dlg.py_signal_connect (restore_schedule, WIN_SIG_CLOSE, (requester, myself))
+    dlg.py_signal_connect (restore_schedule, win_event_CLOSE, (requester, myself))
 
     # -- add the dialogue window to the win_manager
     win_manager_add (dlg)
@@ -24,3 +27,4 @@ if requester.get_name()==the_player.get_name():
 
     # -- start the dialogue
     dlg.run ()
+

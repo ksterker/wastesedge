@@ -16,12 +16,6 @@ if input_has_been_pushed (SDLK_SPACE):
 
     # - Yes :)
     if p != None and p.currentmove() < WALK_NORTH:
-        # -- deactivate the schedule of the characters involved
-	# FIXME: this should be done in the action script, as if
-	# there is no action script the schedules will remain deactivated
-        myself.set_schedule_active (0)
-        p.set_schedule_active (0)
-
         # -- launch the other guy's (object's) action script 
         p.launch_action (myself)
 
@@ -32,21 +26,20 @@ if input_has_been_pushed (SDLK_SPACE):
 # -- bring up the main menu
 elif input_has_been_pushed (SDLK_ESCAPE):
     # -- deactivate the player's schedule, so he can't move while the menu is open
-    # myself.set_schedule_active (0)
+    myself.set_schedule_active (0)
 
     # -- open main menu without animation, with saving and background enabled
+    	#print "rt"
     menu = main_menu (1, 1, 1)
     menu.thisown = 0
 
     # -- this tells us when the main menu is closed
-    menu.py_signal_connect (on_menu_close, WIN_SIG_CLOSE, (myself))
+    menu.py_signal_connect (on_menu_close, win_event_CLOSE, (myself))
 
     # -- add stuff to the win_manager
     win_manager_add (menu)
     win_manager_set_focus (menu)
-
     menu = None
-
 
 # -- move the player around
 elif input_is_pushed (SDLK_UP): myself.go_north ()
@@ -58,11 +51,10 @@ elif input_is_pushed (SDLK_LEFT): myself.go_west ()
 # -- shortcut to the load screen
 elif input_has_been_pushed (SDLK_l):
     # myself.set_schedule_active (0)
-
     s = data_screen (LOAD_SCREEN)
     s.thisown = 0
-
-    s.py_signal_connect (on_menu_close, WIN_SIG_CLOSE, (myself))
+    s.set_activate (1)	
+    s.py_signal_connect (on_menu_close, win_event_CLOSE, (myself))
     
     win_manager_add (s)
     win_manager_set_focus (s)
@@ -74,8 +66,20 @@ elif input_has_been_pushed (SDLK_s):
 
     s = data_screen (SAVE_SCREEN)
     s.thisown = 0
-
-    s.py_signal_connect (on_menu_close, WIN_SIG_CLOSE, (myself))
-
+    s.set_activate (1)	
+    s.py_signal_connect (on_menu_close, win_event_CLOSE, (myself))
     win_manager_add (s)
     win_manager_set_focus (s)
+
+
+
+
+
+
+
+
+
+
+
+
+

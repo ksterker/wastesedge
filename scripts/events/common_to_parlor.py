@@ -9,7 +9,7 @@ while i < 60:
   gametime_update ()
   i = i + (gametime_frames_to_do () * 2)
 
-p.jump_to (2, 1, 3, STAND_EAST)
+p.jump_to (2, 1, 4, STAND_EAST)
 i=60
 
 while i > 0:
