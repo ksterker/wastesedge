@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.83 2002/01/19 17:21:03 adondev Exp $
+#  $Id: init.py,v 1.84 2002/01/23 19:08:08 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -926,6 +926,16 @@ class title_screen:
         ev = action_event ()
         ev.thisown = C
         ev.submap = 0
+        ev.x = 10
+        ev.y = 17
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "No. I certainly won't climb up there!"))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 0
         ev.x = 18
         ev.y = 14
         ev.dir = STAND_NORTH
@@ -1006,6 +1016,16 @@ class title_screen:
         lm.add_event (ev)
 
         # -- Bath
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 5
+        ev.x = 2
+        ev.y = 3
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "Hm, nothing hidden in there!"))
+        lm.add_event (ev)
+
         ev = action_event ()
         ev.thisown = C
         ev.submap = 5
