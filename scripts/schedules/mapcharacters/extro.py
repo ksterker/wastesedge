@@ -27,7 +27,7 @@ class extro:
         player = adonthell.gamedata_player ()
         
         # -- init the bubble texts
-        #    (character, wait until spoken?, text)
+        #    (character, text)
         self.text = [(bjarn, "There is no denying it. Yes, I feigned the theft."), \
             (jelom, "But why? And where are the gems then?"), \
             (bjarn, "Why? Haven't I made myself clear already?"), \
@@ -71,6 +71,7 @@ class extro:
             "Soon after his return, young Erek\naccomplished the Rite of Passage and\njoined adult society. To his surprise, he\nwas sent to the Elvish Council at the\nHigh City of Elgilad, as an ambassador\nfor his people."]
 
         # -- the credits
+        #    (text, delay)
         self.credits = [("Adonthell", 1), \
             ("- Waste's Edge -", 3), \
             ("directed by:", 1), \
@@ -160,9 +161,9 @@ class extro:
             ("presented in", 2), \
             ("Ogg Vorbis Stereo", 1), \
             ("(where available)", 7), \
-            ("The END", 13), \
-            ("Joel, you're fired!", -1)]
-
+            ("The END", 6), \
+            ("Joel, you are fired!", -1)]
+            
         # -- text colors
         self.colors = ["white", "yellow", "red", "violet", "blue", "green"]
          
@@ -481,14 +482,6 @@ class extro:
         self.alek_run.load ("gfx/cutscene/running_alek.anim")
         self.alek_run.play ()
 
-        while not adonthell.input_has_been_pushed (adonthell.SDLK_ESCAPE):
-            adonthell.screen_clear ()
-            self.alek_run.update ()
-            self.alek_run.draw (100,100)
-            adonthell.input_update ()
-            adonthell.screen_show ()
-            adonthell.gametime_update ()
-
         self.black = adonthell.win_image ()
         self.black.resize (320, 240)
         self.black.fillrect (0, 0, 320, 240, 0)
@@ -545,6 +538,7 @@ class extro:
         self.anim = self.anim + 1
         if self.anim % 2 == 0:
             update = 1
+            self.alek_run.update ()
             self.x[2] = self.update_wood (self.wood3, self.x[2])
         
         if self.anim % 3 == 0:
@@ -555,14 +549,12 @@ class extro:
             update = 1
             self.x[0] = self.update_wood (self.wood1, self.x[0])
 
-        self.alek_run.update ()
-        
         # -- draw
         if update == 1:
             self.draw_wood (self.wood1, self.x[0])
             self.draw_wood (self.wood2, self.x[1])
+            self.alek_run.draw (110, 120, self.da, self.target)
             self.draw_wood (self.wood3, self.x[2])
-            self.alek_run.draw (100, 100)
         
         # -- fade in
         if self.step == 0:
@@ -640,6 +632,7 @@ class extro:
 
         # -- list of visible credit lines        
         self.labels = []
+        self.step = 0
         self.index = 0
         self.anim = 0
         
@@ -652,9 +645,6 @@ class extro:
     
     # -- make a credit label
     def make_credit_label (self, ypos):
-        if self.index >= len (self.credits):
-            return             
-        
         if self.index > 0:
              ypos = ypos + (self.credits[self.index - 1][1] - 1) * 14
 
@@ -679,24 +669,43 @@ class extro:
     def scroll_credits (self):
         self.anim = self.anim + 1
         if self.anim % 3 != 0: return
+
+        if self.step == 0:
+            idx = 0
         
-        idx = 0
-        
-        # -- scroll all visible labels
-        while idx < len (self.labels):
-            label = self.labels[idx]
-            label.move (label.x (), label.y () - 1)
+            # -- scroll all visible labels
+            while idx < len (self.labels):
+                label = self.labels[idx]
+                label.move (label.x (), label.y () - 1)
             
-            # -- remove label once it is through
-            if label.y () + label.height () < -5:
-                self.labels.remove (label)
-            else:
-                idx = idx + 1
-        
-        # -- add new line if necessary
-        if label.y () - 180 < 0:
-            self.make_credit_label (label.y () + label.height ())
+                # -- remove label once it is through
+                if label.y () + label.height () < -5:
+                    self.labels.remove (label)
+
+                # -- next
+                else:
+                    idx = idx + 1
             
-        # -- finished
-        if len (self.labels) == 0:
-            adonthell.gamedata_engine ().main_quit ()
+            # -- stop 'The END' in the middle of the screen 
+            if self.credits[self.index][1] == -1:
+                if label.y () + label.height ()/2 == 90:
+                    self.labels.remove (label)
+                    self.delay = 0
+                    self.step = 1
+        
+            # -- else, add new line if necessary
+            elif label.y () - 180 < 0:
+                self.make_credit_label (label.y () + label.height ())
+        
+        # -- wait a little
+        elif self.step == 1:
+            self.delay = self.delay + 1
+            if self.delay == 70:
+                  self.make_credit_label (90)
+                  self.step = 2
+
+        # -- finish
+        elif self.step == 2:
+            self.delay = self.delay + 1
+            if self.delay == 100:
+                adonthell.gamedata_engine ().main_quit ()
