@@ -18,7 +18,6 @@ import adonthell
 class center_character:
 
     # Parameters:
-    # mapviewinstance: Python instance of the controlled mapview
     # mapcharinstance: Name of the mapcharacter to follow
     def __init__ (self, mapviewinstance, mapcharname):
         self.myself = mapviewinstance
@@ -28,3 +27,4 @@ class center_character:
         p = self.tofollow
         self.myself.center_on(p.submap(), p.posx(),
                               p.posy(), p.offx(), p.offy())
+        
