@@ -73,12 +73,14 @@ class orloth_start:
         self.color = the_npc.get_color()
         self.npc.append (41)
         self.cont.append (-1)
-        self.player.append (46)
-        self.cont.append (31)
         if quests["demo"].get_val ("complain_about_wastesedge") == 1:
 
             self.player.append (42)
             self.cont.append (28)
+        if self.introduce_guests == 0:
+
+            self.player.append (46)
+            self.cont.append (31)
         if the_npc.get_val ("explain_events") == 0:
 
             self.player.append (45)
@@ -129,12 +131,14 @@ class orloth_start:
         self.cont.append (-1)
         self.player.append (80)
         self.cont.append (-1)
-        self.player.append (46)
-        self.cont.append (31)
         if quests["demo"].get_val ("complain_about_wastesedge") == 1:
 
             self.player.append (42)
             self.cont.append (28)
+        if self.introduce_guests == 0:
+
+            self.player.append (46)
+            self.cont.append (31)
         self.player.append (-1)
 
     def answer80 (self):
@@ -270,12 +274,14 @@ class orloth_start:
         self.cont.append (-1)
         self.player.append (80)
         self.cont.append (-1)
-        self.player.append (46)
-        self.cont.append (31)
         if quests["demo"].get_val ("complain_about_wastesedge") == 1:
 
             self.player.append (42)
             self.cont.append (28)
+        if self.introduce_guests == 0:
+
+            self.player.append (46)
+            self.cont.append (31)
         self.player.append (-1)
 
     def answer56 (self):
@@ -366,7 +372,7 @@ class orloth_start:
         self.cont.append (-1)
         self.player.append (111)
         self.cont.append (81)
-        if the_npc.get_val ("introduce_guests") == 0:
+        if self.introduce_guests == 0:
 
             self.player.append (112)
             self.cont.append (82)
@@ -376,7 +382,7 @@ class orloth_start:
         self.color = the_npc.get_color()
         self.npc.append (9)
         self.cont.append (7)
-        the_npc.set_val ("introduce_guests" , 1)
+        self.introduce_guests = 1
 
         self.player.append (-1)
 
@@ -402,10 +408,12 @@ class orloth_start:
         self.color = the_npc.get_color()
         self.npc.append (47)
         self.cont.append (-1)
-        self.player.append (46)
-        self.cont.append (31)
         self.player.append (30)
         self.cont.append (21)
+        if self.introduce_guests == 0:
+
+            self.player.append (46)
+            self.cont.append (31)
         if the_npc.get_val ("explain_events") == 1 and self.first_run != 1:
 
             self.player.append (43)
@@ -643,6 +651,14 @@ class orloth_start:
         self.cont.append (69)
         self.player.append (-1)
 
+    def answer46 (self):
+        self.color = the_npc.get_color()
+        self.npc.append (9)
+        self.cont.append (7)
+        self.introduce_guests = 1
+
+        self.player.append (-1)
+
     def answer42 (self):
         self.color = the_npc.get_color()
         self.npc.append (37)
@@ -673,8 +689,10 @@ class orloth_start:
         self.cont.append (-1)
         self.player.append (80)
         self.cont.append (-1)
-        self.player.append (46)
-        self.cont.append (31)
+        if self.introduce_guests == 0:
+
+            self.player.append (46)
+            self.cont.append (31)
         if the_npc.get_val ("explain_events") == 1 and self.first_run != 1:
 
             self.player.append (43)
@@ -685,24 +703,18 @@ class orloth_start:
             self.cont.append (30)
         self.player.append (-1)
 
-    def answer46 (self):
-        self.color = the_npc.get_color()
-        self.npc.append (9)
-        self.cont.append (7)
-        the_npc.set_val ("introduce_guests" , 1)
-
-        self.player.append (-1)
-
     def answer40 (self):
         self.color = the_npc.get_color()
         self.npc.append (41)
         self.cont.append (-1)
-        self.player.append (46)
-        self.cont.append (31)
         if quests["demo"].get_val ("complain_about_wastesedge") == 1:
 
             self.player.append (42)
             self.cont.append (28)
+        if self.introduce_guests == 0:
+
+            self.player.append (46)
+            self.cont.append (31)
         if the_npc.get_val ("explain_events") == 0:
 
             self.player.append (45)
@@ -767,7 +779,7 @@ class orloth_start:
         self.color = the_npc.get_color()
         self.npc.append (9)
         self.cont.append (7)
-        the_npc.set_val ("introduce_guests" , 1)
+        self.introduce_guests = 1
 
         self.player.append (-1)
 
