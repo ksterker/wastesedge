@@ -77,7 +77,7 @@ class erek_start:
 				self.player.append (43)
 				self.cont.append (30)
 			self.player.append (-1)
-		elif self.the_npc.get_val ("apologie") == 0:
+		elif self.the_npc.get_val ("apologise") == 0 and self.the_npc.get_val ("work_4_shair") != 0 and adonthell.gamedata_get_quest("demo").get_val ("work_4_shair") > 0:
 
 			self.color = 0
 			self.npc.append (45)
@@ -501,7 +501,7 @@ class erek_start:
 		self.player.append (-1)
 
 	def answer30 (self):
-		self.set_npc (self.the_npc.get_name())
+		self.set_npc (self.the_npc.get_id())
 		self.color = self.the_npc.get_color()
 		self.npc.append (31)
 		self.cont.append (-1)
