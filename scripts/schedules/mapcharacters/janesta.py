@@ -14,22 +14,24 @@
 #
 #    She'll busy herself in Silverhair's room
 
-from adonthell import STAND_NORTH, STAND_SOUTH, STAND_WEST, STAND_EAST
-from random import randint
+import adonthell
+import random
+
+def _(message): return message
 
 class janesta:
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
-        self.speech = ["Oh, dear. Oh, dear.", \
-                       "What will happen to us if they take the Mistress?", \
-                       "I must do something about this awful room.", \
-                       "Oh, how do they expect us to live decently in a place like this?"]
+        self.speech = [_("Oh, dear. Oh, dear."), \
+                       _("What will happen to us if they take the Mistress?"), \
+                       _("I must do something about this awful room."), \
+                       _("Oh, how do they expect us to live decently in a place like this?")]
 
-        self.coords = [(1, 3, STAND_NORTH), \
-                       (6, 3, STAND_NORTH), \
-                       (1, 5, STAND_SOUTH), \
-                       (4, 2, STAND_WEST)]
+        self.coords = [(1, 3, adonthell.STAND_NORTH), \
+                       (6, 3, adonthell.STAND_NORTH), \
+                       (1, 5, adonthell.STAND_SOUTH), \
+                       (4, 2, adonthell.STAND_WEST)]
 
     def run (self):
         myself = self.myself
@@ -47,7 +49,7 @@ class janesta:
 
         # -- engage a new movement
         elif todo == 1:
-            x, y, dir = self.coords[randint (0, 3)]
+            x, y, dir = self.coords[random.randrange (0, 4)]
 
             myself.set_goal (x, y, dir)
             myself.set_val ("todo", 2)
@@ -56,7 +58,7 @@ class janesta:
         elif todo == 2:
             if myself.follow_path () == 1:
                 # -- the time we stay at the same place
-                delay = randint (20, 60) * 10
+                delay = random.randrange (20, 60) * 10
 
                 myself.set_val ("delay", delay)
                 myself.set_val ("todo", 0)
@@ -66,6 +68,6 @@ class janesta:
         tmp = myself.get_val ("say_something")
         myself.set_val ("say_something", tmp - 1)
         if tmp <= 0:
-            myself.speak (self.speech[randint (0, 3)])
-            delay = randint (50, 75) * 35
+            myself.speak (self.speech[random.randrange (0, 4)])
+            delay = random.randrange (50, 75) * 35
             myself.set_val ("say_something", delay)

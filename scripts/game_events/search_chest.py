@@ -14,6 +14,9 @@
 
 import adonthell
 
+# -- pygettext support
+def _(message): return message
+
 class search_chest:
 
     # Parameters:
@@ -35,7 +38,7 @@ class search_chest:
             adonthell.gamedata_get_quest ("demo").set_val ("get_item", 2)
             adonthell.gamedata_get_quest ("demo").set_val ("have_gem", 1)
         else:
-            self.mapchar.speak ("I know this chest. The Lady uses it on her journeys.")
+            self.mapchar.speak (_("I know this chest. The Lady uses it on her journeys."))
 
 
 class find_gem_screen (adonthell.win_container):
@@ -61,7 +64,7 @@ class find_gem_screen (adonthell.win_container):
         self.text.resize (120, 0)
         self.text.set_font (self.font)
         self.text.set_form (adonthell.label_AUTO_HEIGHT)
-        self.text.set_text ("Upon opening the chest, a small green something catches your attention ...")
+        self.text.set_text (_("Upon opening the chest, a small green something catches your attention ..."))
         self.text.pack ()
         self.text.move (80, (self.height () - self.text.height ())/2)
 
@@ -90,7 +93,7 @@ class find_gem_screen (adonthell.win_container):
            
             # -- display second part of text
             if self.state == 1:
-                self.text.set_text ("There, inmidst your mistress' luggage, lies one of Master Fingolson's gems.")
+                self.text.set_text (_("There, inmidst your mistress' luggage, lies one of Master Fingolson's gems."))
                 self.text.pack ()
                 self.text.move (80, (self.height () - self.text.height ())/2)
                 self.state = 2

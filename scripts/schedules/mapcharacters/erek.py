@@ -15,37 +15,38 @@
 #    Erek will either be in the parlour or the common room.
 #    He'll also help the player to get into Bjarn's room.
 
-from adonthell import STAND_NORTH, STAND_SOUTH, STAND_EAST, STAND_WEST
 import adonthell
-from random import randint
+import random
+
+def _(message): return message
 
 class erek:
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
 
-        self.speech = ["How could they do that to the Master?", \
-                  "This place is so much different from home.", \
-                  "Who could have taken the gems?"]
+        self.speech = [_("How could they do that to the Master?"), \
+                  _("This place is so much different from home."), \
+                  _("Who could have taken the gems?")]
 
         # -- the coordinates for normal schedule
         self.coords = \
-            [(5, 5, STAND_NORTH), \
-            (10, 6, STAND_WEST), \
-            (5, 3, STAND_NORTH), \
-            (4, 5, STAND_SOUTH)]
+            [(5, 5, adonthell.STAND_NORTH), \
+            (10, 6, adonthell.STAND_WEST), \
+            (5, 3, adonthell.STAND_NORTH), \
+            (4, 5, adonthell.STAND_SOUTH)]
 
         # -- the coordinates for getting back to common room
         self.to_common = \
-            [(0, 7, STAND_WEST), \
-            (6, 1, STAND_NORTH)]
+            [(0, 7, adonthell.STAND_WEST), \
+            (6, 1, adonthell.STAND_NORTH)]
 
         # -- the coordinates for getting back to the 1st floor
         self.to_1st = \
-            [(0, 7, STAND_WEST), \
-            (6, 1, STAND_NORTH), \
-            (12, 1, STAND_NORTH), \
-            (2, 4, STAND_SOUTH)]
+            [(0, 7, adonthell.STAND_WEST), \
+            (6, 1, adonthell.STAND_NORTH), \
+            (12, 1, adonthell.STAND_NORTH), \
+            (2, 4, adonthell.STAND_SOUTH)]
 
         self.index = 0
 
@@ -85,7 +86,7 @@ class erek:
             else:
                 myself.set_val ("leave_bjarn", 0)
                 if myself.submap () == 1:
-                    x, y, dir = self.coords[randint (0, 1)]
+                    x, y, dir = self.coords[random.randrange (0, 2)]
                     myself.set_goal (x, y, dir)
                 else:
                     myself.set_schedule_active (0)
@@ -117,11 +118,11 @@ class erek:
             else:
                 # -- in common room -> goto parlour
                 if myself.submap () == 1:
-                    myself.set_goal (14, 4, STAND_EAST)
+                    myself.set_goal (14, 4, adonthell.STAND_EAST)
 
                 # -- in parlour -> goto common room
                 else:
-                    myself.set_goal (0, 4, STAND_WEST)
+                    myself.set_goal (0, 4, adonthell.STAND_WEST)
 
             myself.set_val ("todo", 2)
 
@@ -130,18 +131,18 @@ class erek:
             if myself.follow_path () == 1:
                 # -- reached common room
                 if myself.submap () == 1 and myself.posx () == 13:
-                    x, y, dir = self.coords[randint (0, 1)]
+                    x, y, dir = self.coords[random.randrange (0, 2)]
                     myself.set_goal (x, y, dir)
 
-                    delay = randint (50, 150) * 20
+                    delay = random.randrange (50, 150) * 20
                     myself.set_val ("delay", delay)
 
                 # -- reached parlour
                 elif myself.submap () == 2 and myself.posx () == 1:
-                    x, y, dir = self.coords[randint (2, 3)]
+                    x, y, dir = self.coords[random.randrange (2, 4)]
                     myself.set_goal (x, y, dir)
 
-                    delay = randint (60, 180) * 30
+                    delay = random.randrange (60, 180) * 30
                     myself.set_val ("delay", delay)
 
                 # -- reached our final destination
@@ -154,6 +155,6 @@ class erek:
         myself.set_val ("say_something", tmp - 1)
 
         if tmp == 0:
-            myself.speak (self.speech[randint (0, 2)])
-            delay = randint (60, 180) * 15
+            myself.speak (self.speech[random.randrange (0, 2)])
+            delay = random.randrange (60, 180) * 15
             myself.set_val ("say_something", delay)

@@ -17,8 +17,9 @@
 
 from adonthell import WALK_NORTH, WALK_SOUTH, WALK_EAST, WALK_WEST, \
      STAND_NORTH, STAND_SOUTH, STAND_WEST, STAND_EAST
-from random import randint
+import random
 
+def _(message): return message
 
 class sarin:
     
@@ -31,10 +32,10 @@ class sarin:
         self.min_y = 2
         self.max_y = 6
 
-        self.speech = ["Ruffinans, the lot of them!", \
-                       "How dare they imprison one better than they?", \
-                       "This is an insult to all of the High Born.", \
-                       "I cannot believe such disrespect. Barbarians!"]
+        self.speech = [_("Ruffinans, the lot of them!"), \
+                       _("How dare they imprison one better than they?"), \
+                       _("This is an insult to all of the High Born."), \
+                       _("I cannot believe such disrespect. Barbarians!")]
 
     def run (self):
         myself = self.myself
@@ -49,12 +50,12 @@ class sarin:
 
             # -- ... and set the new one accordingly
             if dir == WALK_EAST or dir == WALK_WEST:
-                dir = randint (WALK_NORTH, WALK_SOUTH)
+                dir = random.randrange (WALK_NORTH, WALK_SOUTH + 1)
             else:
-                dir = randint (WALK_WEST, WALK_EAST)
+                dir = random.randrange (WALK_WEST, WALK_EAST + 1)
 
             # -- time until the next orientation change
-            delay = randint (100, 200) * 15
+            delay = random.randrange (100, 200) * 15
             myself.set_val ("direction", dir)
             myself.set_val ("delay", delay)
             myself.set_val ("todo", 1)
@@ -104,7 +105,7 @@ class sarin:
         elif todo == 2:
             if myself.follow_path () == 1:
                 # -- wait a little on the current tile
-                delay = randint (15, 30) * 10
+                delay = random.randrange (15, 30) * 10
                 myself.set_val ("switch_direction", delay)
 
                 myself.set_val ("todo", 0)
@@ -114,6 +115,6 @@ class sarin:
         tmp = myself.get_val ("say_something")
         myself.set_val ("say_something", tmp - 1)
         if tmp == 0:
-            myself.speak (self.speech[randint (0, 3)])
-            delay = randint (50, 150) * 15
+            myself.speak (self.speech[random.randrange (0, 4)])
+            delay = random.randrange (50, 150) * 15
             myself.set_val ("say_something", delay)

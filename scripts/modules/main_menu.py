@@ -1,5 +1,5 @@
 #
-#  $Id: main_menu.py,v 1.17 2001/12/19 17:07:35 adondev Exp $
+#  $Id: main_menu.py,v 1.18 2002/05/06 13:47:18 ksterker Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -13,6 +13,9 @@
 #
 
 from adonthell import *
+
+# -- pygettext support
+def _(message): return nls_translate (message)
 
 # The Game Menu
 class main_menu (win_container):
@@ -60,8 +63,8 @@ class main_menu (win_container):
         self.new_game = win_label()
         self.new_game.set_font(self.font)
        	self.new_game.set_form (label_AUTO_SIZE)
-        if enable_s == 0: self.new_game.set_text ("New Game")
-        else: self.new_game.set_text ("Continue")
+        if enable_s == 0: self.new_game.set_text (_("New Game"))
+        else: self.new_game.set_text (_("Continue"))
         self.new_game.move (-self.new_game.length (), y_pos)
         self.new_game.pack()
         self.new_game.thisown = 0
@@ -70,7 +73,7 @@ class main_menu (win_container):
         self.load_game = win_label ()
         self.load_game.set_font(self.font)
         self.load_game.set_form (label_AUTO_SIZE)
-        self.load_game.set_text ("Load Game")
+        self.load_game.set_text (_("Load Game"))
         self.load_game.move (self.length (), y_pos)
         self.load_game.pack()
         self.load_game.thisown = 0
@@ -79,7 +82,7 @@ class main_menu (win_container):
         self.save_game = win_label ()
         self.save_game.set_font(self.font)
         self.save_game.set_form (label_AUTO_SIZE)
-        self.save_game.set_text ("Save Game")
+        self.save_game.set_text (_("Save Game"))
         self.save_game.move (-self.save_game.length (), y_pos)  
        	self.save_game.pack()
         self.save_game.thisown = 0
@@ -88,7 +91,7 @@ class main_menu (win_container):
         self.options = win_label ()
         self.options.set_font (self.font)
         self.options.set_form (label_AUTO_SIZE)
-        self.options.set_text ("Options")
+        self.options.set_text (_("Options"))
         self.options.move (-self.options.length (), y_pos)
         self.options.pack()
         self.options.set_can_be_selected (0)
@@ -99,7 +102,7 @@ class main_menu (win_container):
         self.labquit = win_label ()
         self.labquit.set_font(self.font)
         self.labquit.set_form (label_AUTO_SIZE)
-        self.labquit.set_text ("Quit")
+        self.labquit.set_text (_("Quit"))
         self.labquit.move (self.length (), y_pos)
         self.labquit.pack()
         self.labquit.thisown = 0

@@ -15,17 +15,20 @@
 #    She will mainly stand still, but occasionally walk up to the
 #    window and make a remark about the weather.
 
-from adonthell import STAND_EAST, STAND_SOUTH
-from random import randint
+import adonthell
+import random
+
+# -- pygettext support
+def _(message): return message
 
 class silverhair:
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
-        self.speech = ["In truth, Sarin, it is no bother. I am not offended.", \
-                       "Janesta, dear, worry not. I am content here.", \
-                       "Janesta, please bring my figurine. I wish to see it more closely.", \
-                       "It truly is a lovely day. I expect we will have time yet to enjoy it."]
+        self.speech = [_("In truth, Sarin, it is no bother. I am not offended."), \
+                       _("Janesta, dear, worry not. I am content here."), \
+                       _("Janesta, please bring my figurine. I wish to see it more closely."), \
+                       _("It truly is a lovely day. I expect we will have time yet to enjoy it.")]
 
     def run (self):
         myself = self.myself
@@ -47,16 +50,16 @@ class silverhair:
             # -- goto the window
             if myself.posx () == 4:
                 # ... and speak about the weather
-                say = randint (33, 66) * 10
-                delay = randint (50, 75) * 15
+                say = random.randrange (33, 66) * 10
+                delay = random.randrange (50, 75) * 15
                 myself.set_val ("say_something", say)
-                myself.set_goal (6, 4, STAND_EAST)
+                myself.set_goal (6, 4, adonthell.STAND_EAST)
 
             # -- go back to our normal position
             else:
-                say = randint (33, 66) * 10
-                delay = randint (100, 200) * 35
-                if myself.set_goal (4, 4, STAND_SOUTH) == 0:
+                say = random.randrange (33, 66) * 10
+                delay = random.randrange (100, 200) * 35
+                if myself.set_goal (4, 4, adonthell.STAND_SOUTH) == 0:
                     return
 
             myself.set_val ("say_something", say)
@@ -75,7 +78,7 @@ class silverhair:
             if myself.posx () == 6:
                 myself.speak (self.speech[3])
             else:
-                myself.speak (self.speech[randint (0, 2)])
+                myself.speak (self.speech[random.randrange (0, 3)])
 
-            say = randint (60, 180) * 20
+            say = random.randrange (60, 180) * 20
             myself.set_val ("say_something", say)

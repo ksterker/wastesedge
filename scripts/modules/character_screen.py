@@ -1,5 +1,5 @@
 #
-#  $Id: character_screen.py,v 1.4 2001/12/27 00:40:49 adondev Exp $
+#  $Id: character_screen.py,v 1.5 2002/05/06 13:47:18 ksterker Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -13,6 +13,9 @@
 #
 
 import adonthell
+
+# -- pygettext support
+def _(message): return adonthell.nls_translate (message)
 
 # -- GUI for chosing the name of the main character
 class character_screen (adonthell.win_container):
@@ -37,7 +40,7 @@ class character_screen (adonthell.win_container):
         self.title.resize (0, 20)
         self.title.set_font (self.font)
         self.title.set_form (adonthell.label_AUTO_SIZE)
-        self.title.set_text ("Enter your character's name")
+        self.title.set_text (_("Enter your character's name"))
         self.title.pack ()
         self.title.move ((self.length () - self.title.length ())/2, 10)
 

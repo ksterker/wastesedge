@@ -15,17 +15,18 @@
 #    He'll walk around in the stable and yard.
 #    When summoned by Orloth, he'll show the player to his room
 
-from adonthell import STAND_NORTH, NO_MOVE
 import adonthell
-from random import randint
+import random
+
+def _(message): return message
 
 class oliver:
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
         
-        self.speech = ["It's so exciting. An Elven Lady, here at Waste's Edge!", \
-                  "I gotta hurry before mother complains again.", \
-                  "Why can't I have a little dog!?"]
+        self.speech = [_("It's so exciting. An Elven Lady, here at Waste's Edge!"), \
+                  _("I gotta hurry before mother complains again."), \
+                  _("Why can't I have a little dog!?")]
 
         # -- the tiles around Orloth
         self.offsets = [(1,1),(1,-1),(-1,1),(-1,-1),(1,0),(0,1),(-1,0),(0,-1)]
@@ -38,7 +39,7 @@ class oliver:
         if myself.get_val ("goto_players_room") == 1:
             # -- beam him directly there, as it is faster that way
             if myself.submap () != 1:
-                myself.jump_to (1, 13, 7, STAND_NORTH)
+                myself.jump_to (1, 13, 7, adonthell.STAND_NORTH)
 
             # -- find a free spot near Orloth and the player
             i = 0
@@ -117,6 +118,6 @@ class oliver:
         myself.set_val ("say_something", tmp - 1)
 
         if tmp == 0:
-            myself.speak (self.speech[randint (0, 2)])
-            delay = randint (80, 160) * 10
+            myself.speak (self.speech[random.randrange (0, 3)])
+            delay = random.randrange (80, 160) * 10
             myself.set_val ("say_something", delay)

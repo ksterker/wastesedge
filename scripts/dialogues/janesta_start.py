@@ -1,63 +1,30 @@
-import adonthell
+import dialogue
+# -- pygettext support
+def _(message): return message
 
-class janesta_start:
-	loop = []
-	strings = ["Oh, $name, we've been so worried for the Mistress.  Can't you do something to set her free?", "I will try, Janesta.  But you must be brave.  This is a difficult time for Lady Silverhair, and she needs us all to help her though.", "I will try.  Thank you, $name.", "Perhaps.  Do you know anything about this dwarf, Fingolson?", "Nothing, I'm afraid.  This is my first time here, and I was brought straight to the Mistress' room to make it ready.  This room is so awful, I cannot see how they expect a High Born to stand it.", "I see.  Thank you, Janesta.  I'm glad you are here to care for our Lady.", "Oh, $name.  I pray that this will turn out right.", ""]
+class janesta_start (dialogue.base):
+	text = [None,\
+		_("Oh, $name, we've been so worried for the Mistress.  Can't you do something to set her free?"),\
+		_("I will try, Janesta.  But you must be brave.  This is a difficult time for Lady Silverhair, and she needs us all to help her though."),\
+		_("I will try.  Thank you, $name."),\
+		_("Perhaps.  Do you know anything about this dwarf, Fingolson?"),\
+		_("Nothing, I'm afraid.  This is my first time here, and I was brought straight to the Mistress' room to make it ready.  This room is so awful, I cannot see how they expect a High Born to stand it."),\
+		_("I see.  Thank you, Janesta.  I'm glad you are here to care for our Lady."),\
+		_("Oh, $name.  I pray that this will turn out right.")]
 
-	def set_name (self, new_name):
-		pass
+	# -- (speaker, code, ((text, operation, condition), ...))
+	dlg = [\
+		(None, -1, ((1, 0, -1), )),\
+		("Janesta Skywind", -1, ((2, 0, -1), (4, 0, -1), )),\
+		(None, -1, ((3, 0, -1), )),\
+		("Janesta Skywind", -1, ()),\
+		(None, -1, ((5, 0, -1), )),\
+		("Janesta Skywind", -1, ((6, 0, -1), )),\
+		(None, -1, ((7, 0, -1), )),\
+		("Default", -1, ())]
 
-	def set_npc (self, new_npc):
-		pass
-
-	def set_portrait (self, new_portrait):
-		pass
 
 	def __init__(self, p, n):
+		self.namespace = globals ()
 		self.the_player = p
 		self.the_npc = n
-
-		self.dialogue = [self.start, self.answer1, self.answer3, self.answer5, None]
-
-	def clear (self):
-		del self.dialogue
-
-	def __getattr__ (self, name):
-		return 0
-
-	def run (self, answer):
-		self.npc = []
-		self.player = []
-		self.cont = []
-		self.dialogue[answer]()
-
-	def start (self):
-		self.color = adonthell.gamedata_get_character("Janesta Skywind").get_color()
-		self.npc.append (0)
-		self.cont.append (-1)
-		self.player.append (1)
-		self.cont.append (1)
-		self.player.append (3)
-		self.cont.append (2)
-		self.player.append (-1)
-
-	def answer3 (self):
-		self.color = adonthell.gamedata_get_character("Janesta Skywind").get_color()
-		self.npc.append (4)
-		self.cont.append (-1)
-		self.player.append (5)
-		self.cont.append (3)
-		self.player.append (-1)
-
-	def answer5 (self):
-		self.set_npc (self.the_npc.get_name())
-		self.color = self.the_npc.get_color()
-		self.npc.append (6)
-		self.cont.append (-1)
-		self.player.append (-1)
-
-	def answer1 (self):
-		self.color = adonthell.gamedata_get_character("Janesta Skywind").get_color()
-		self.npc.append (2)
-		self.cont.append (-1)
-		self.player.append (-1)

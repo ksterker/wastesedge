@@ -14,17 +14,19 @@
 #
 #    He'll walk between his table and the bar
 
-from adonthell import STAND_NORTH, STAND_SOUTH
-from random import randint
+import adonthell
+import random
+
+def _(message): return message
 
 class alek:
     
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
         
-        self.speech = ["More Ale!", \
-                       "I'll cut 'em open like ripe fruits.", \
-                       "They should sort out this business like real men!"]
+        self.speech = [_("More Ale!"), \
+                       _("I'll cut 'em open like ripe fruits."), \
+                       _("They should sort out this business like real men!")]
 
     def run (self):
         myself = self.myself
@@ -44,10 +46,10 @@ class alek:
         elif todo == 1:
             # -- walk to table
             if myself.posx () == 1:
-                myself.set_goal (12, 5, STAND_NORTH)
+                myself.set_goal (12, 5, adonthell.STAND_NORTH)
             # -- walk to bar
             else:
-                myself.set_goal (1, 3, STAND_SOUTH)
+                myself.set_goal (1, 3, adonthell.STAND_SOUTH)
 
             myself.set_val ("todo", 2)
 
@@ -55,7 +57,7 @@ class alek:
         elif todo == 2:
             if myself.follow_path () == 1:
                 # -- the time we stay at the same place
-                delay = randint (60, 150) * 20
+                delay = random.randrange (60, 150) * 20
 
                 myself.set_val ("delay", delay)
                 myself.set_val ("todo", 0)
@@ -65,6 +67,6 @@ class alek:
         tmp = myself.get_val ("say_something")
         myself.set_val ("say_something", tmp - 1)
         if tmp == 0:
-            myself.speak (self.speech[randint (0, 2)])
-            delay = randint (40, 80) * 25
+            myself.speak (self.speech[random.randrange (0, 3)])
+            delay = random.randrange (40, 80) * 25
             myself.set_val ("say_something", delay)

@@ -1,0 +1,46 @@
+# -- dialogues
+scripts/dialogues/alek_start.py
+scripts/dialogues/bjarn_start.py
+scripts/dialogues/demo_intro_1.py 
+scripts/dialogues/erek_start.py
+scripts/dialogues/extro.py
+scripts/dialogues/fellnir_start.py
+scripts/dialogues/frostbloom_start.py
+scripts/dialogues/janesta_start.py
+scripts/dialogues/jelom_2nd.py
+scripts/dialogues/jelom_start.py
+scripts/dialogues/lucia_start.py
+scripts/dialogues/oliver_start.py
+scripts/dialogues/orloth_start.py
+scripts/dialogues/sarin_start.py
+scripts/dialogues/silverhair_start.py
+scripts/dialogues/talan_start.py
+scripts/dialogues/tristan_start.py
+
+# -- text bubbles in schedules
+scripts/schedules/mapcharacters/alek.py
+scripts/schedules/mapcharacters/bjarn.py
+scripts/schedules/mapcharacters/erek.py
+scripts/schedules/mapcharacters/extro.py
+scripts/schedules/mapcharacters/fellnir.py
+scripts/schedules/mapcharacters/frostbloom.py
+scripts/schedules/mapcharacters/intro.py
+scripts/schedules/mapcharacters/janesta.py
+scripts/schedules/mapcharacters/jelom.py
+scripts/schedules/mapcharacters/lucia.py
+scripts/schedules/mapcharacters/oliver.py
+scripts/schedules/mapcharacters/orloth.py
+scripts/schedules/mapcharacters/sarin.py
+scripts/schedules/mapcharacters/silverhair.py
+scripts/schedules/mapcharacters/talan.py
+scripts/schedules/mapcharacters/tristan.py
+
+# -- dummy module with all the player text
+scripts/modules/player_text.py
+
+# --misc stuff
+scripts/modules/character_screen.py
+scripts/modules/intro.py
+scripts/modules/main_menu.py
+scripts/game_events/search_chest.py
+

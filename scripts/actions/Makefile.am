@@ -2,7 +2,7 @@ pkgdatadir = $(gamedatadir)/scripts/actions
 
 pkgdata_DATA = *.pyc
 
-EXTRA_DIST = talk.py
+EXTRA_DIST = talk.py __init__.py
 
 all:
 	$(adonthell_binary) -c

@@ -18,14 +18,16 @@
 import adonthell
 import random
 
+def _(message): return message
+
 class lucia:
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
         
-        self.speech = ["When can I finally rest a bit?", \
-                       "I told Orloth this place would bring us nothing but trouble!", \
-                       "This smoke! I'm dying!"]
+        self.speech = [_("When can I finally rest a bit?"), \
+                       _("I told Orloth this place would bring us nothing but trouble!"), \
+                       _("This smoke! I'm dying!")]
 
         self.coords = [(3, 3, adonthell.STAND_NORTH), \
                   (6, 3, adonthell.STAND_EAST)]
@@ -50,7 +52,7 @@ class lucia:
             if myself.posx () != 3:
                 x, y, dir = self.coords[0]
             else:
-                x, y, dir = self.coords[random.randint(0, 1)]
+                x, y, dir = self.coords[random.randrange(0, 2)]
             myself.set_goal (x, y, dir)
             myself.set_val ("todo", 2)
 
@@ -59,14 +61,14 @@ class lucia:
             if myself.follow_path () == 1:
                 # -- standing in front of the exit
                 if myself.posx () == 6:
-                    myself.speak ("Ah, some fresh air!")
+                    myself.speak (_("Ah, some fresh air!"))
 
                     tmp = myself.get_val ("say_something")
                     myself.set_val ("say_something", tmp + 75)
                     myself.set_val ("delay", 300)
 
                 else:
-                    myself.set_val ("delay", 1000 + random.randint (0, 2000))
+                    myself.set_val ("delay", 1000 + random.randrange (0, 2000))
                                     
                 myself.set_val ("todo", 0)
 
@@ -76,6 +78,6 @@ class lucia:
         tmp = myself.get_val ("say_something")
         myself.set_val ("say_something", tmp - 1)
         if tmp == 0:
-            myself.speak (self.speech[random.randint (0, 2)])
-            delay = random.randint (50, 100) * 20
+            myself.speak (self.speech[random.randrange (0, 3)])
+            delay = random.randrange (50, 100) * 20
             myself.set_val ("say_something", delay)

@@ -16,6 +16,8 @@
 import adonthell
 import events
 
+def _(message): return message
+
 class to_storage:
 
     # Parameters:
@@ -38,6 +40,6 @@ class to_storage:
             adonthell.gamedata_get_quest ("demo").set_val("pantry_locked", 1)
             p.stand ()
             p.go_east ()
-            p.speak ("The door to the pantry is locked.")
+            p.speak (_("The door to the pantry is locked."))
         else:
             events.switch_submap (p, self.smdest, self.xdest, self.ydest, self.destdir)

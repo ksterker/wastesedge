@@ -2,7 +2,7 @@ pkgdatadir = $(gamedatadir)/scripts/schedules/audio
 
 pkgdata_DATA = *.pyc
 
-EXTRA_DIST = in_game.py
+EXTRA_DIST = in_game.py __init__.py
 
 all:
 	$(adonthell_binary) -c

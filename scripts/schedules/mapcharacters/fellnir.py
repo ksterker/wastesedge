@@ -14,20 +14,22 @@
 #
 #    He'll busy himself in his room
 
-from adonthell import gamedata_player, STAND_NORTH, STAND_SOUTH, STAND_WEST, STAND_EAST
-from random import randint
+import adonthell
+import random
+
+def _(message): return message
 
 class fellnir:
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
-        self.speech = ["Master Orloth should throw out that brute!", \
-                       "Take equal parts of vitriol, nitre and sal ammoniac ..."]
+        self.speech = [_("Master Orloth should throw out that brute!"), \
+                       _("Take equal parts of vitriol, nitre and sal ammoniac ...")]
 
-        self.coords = [(2, 5, STAND_EAST), \
-                       (4, 4, STAND_SOUTH), \
-                       (4, 2, STAND_NORTH), \
-                       (6, 5, STAND_WEST)]
+        self.coords = [(2, 5, adonthell.STAND_EAST), \
+                       (4, 4, adonthell.STAND_SOUTH), \
+                       (4, 2, adonthell.STAND_NORTH), \
+                       (6, 5, adonthell.STAND_WEST)]
 
     def run (self):
         myself = self.myself
@@ -45,7 +47,7 @@ class fellnir:
 
         # -- engage a new movement
         elif todo == 1:
-            x, y, dir = self.coords[randint (0, 3)]
+            x, y, dir = self.coords[random.randrange (0, 4)]
 
             myself.set_goal (x, y, dir)
             myself.set_val ("todo", 2)
@@ -54,7 +56,7 @@ class fellnir:
         elif todo == 2:
             if myself.follow_path () == 1:
                 # -- the time we stay at the same place
-                delay = randint (30, 60) * 25
+                delay = random.randrange (30, 60) * 25
 
                 myself.set_val ("delay", delay)
                 myself.set_val ("todo", 0)
@@ -64,6 +66,6 @@ class fellnir:
         tmp = myself.get_val ("say_something")
         myself.set_val ("say_something", tmp - 1)
         if tmp <= 0:
-            myself.speak (self.speech[randint (0, 1)])
-            delay = randint (20, 40) * 40
+            myself.speak (self.speech[random.randrange (0, 2)])
+            delay = random.randrange (20, 40) * 40
             myself.set_val ("say_something", delay)

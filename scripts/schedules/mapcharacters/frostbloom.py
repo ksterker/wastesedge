@@ -15,7 +15,9 @@
 #    She just walks around the tree in the yard
 
 import adonthell
-from random import randint
+import random
+
+def _(message): return message
 
 class frostbloom:
     
@@ -24,13 +26,13 @@ class frostbloom:
         
         # -- Borders of the area she will stay in
         self.min_x = 16
-        self.max_x = 24
+        self.max_x = 25
         self.min_y = 21
-        self.max_y = 28
+        self.max_y = 29
 
-        self.speech = ["This tree is so inspiring.", \
-                  "I wonder why everybody seems so excited.", \
-                  "Do you know a creature more lovely than the yeti?"]
+        self.speech = [_("This tree is so inspiring."), \
+                  _("I wonder why everybody seems so excited."), \
+                  _("Do you know a creature more lovely than the yeti?")]
 
     def run (self):
         myself = self.myself
@@ -50,12 +52,12 @@ class frostbloom:
         # -- get movement target
         elif todo == 1:
             # -- the position we want to reach
-            x = randint (self.min_x, self.max_x)
-            y = randint (self.min_y, self.max_y)
+            x = random.randrange (self.min_x, self.max_x)
+            y = random.randrange (self.min_y, self.max_y)
 
             myself.set_goal (x, y)
 
-            delay = randint (30, 90) * 30
+            delay = random.randrange (30, 90) * 30
             myself.set_val ("delay", delay)
             myself.set_val ("todo", 2)
 
@@ -69,6 +71,6 @@ class frostbloom:
         tmp = myself.get_val ("say_something")
         myself.set_val ("say_something", tmp - 1)
         if tmp == 0:
-            myself.speak (self.speech[randint (0, 2)])
-            delay = randint (50, 150) * 20
+            myself.speak (self.speech[random.randrange (0, 3)])
+            delay = random.randrange (50, 150) * 20
             myself.set_val ("say_something", delay)

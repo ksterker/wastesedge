@@ -4,7 +4,7 @@ pkgdatadir = $(gamedatadir)/scripts/schedules
 
 pkgdata_DATA = *.pyc
 
-EXTRA_DIST = control.py
+EXTRA_DIST = control.py __init__.py
 
 *.pyc: *.py
 	$(adonthell_binary) -c

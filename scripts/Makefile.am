@@ -1,4 +1,4 @@
-SUBDIRS = dialogues events modules schedules actions
+SUBDIRS = dialogues game_events modules schedules actions
 
 pkgdatadir = $(gamedatadir)/scripts
 

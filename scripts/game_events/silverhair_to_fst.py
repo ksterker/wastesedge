@@ -15,6 +15,8 @@
 import adonthell
 import events
 
+def _(message): return message
+
 class silverhair_to_fst:
 
     # Parameters:
@@ -35,7 +37,7 @@ class silverhair_to_fst:
         if p.get_val ("came_from_barn") == 1:
             p.stand ()
             p.go_south ()
-            p.speak ("I better leave the way I came.")
+            p.speak (_("I better leave the way I came."))
         else:
             events.switch_submap (p, self.smdest, self.xdest, self.ydest, self.destdir)
             adonthell.audio_fade_out_background (500)

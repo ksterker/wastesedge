@@ -14,17 +14,19 @@
 #
 #    He guards the gate
 
-from adonthell import STAND_NORTH, STAND_SOUTH
-from random import randint
+import adonthell
+import random
+
+def _(message): return message
 
 class talan:
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
         
-        self.speech = ["Halt! Who goes there?", \
+        self.speech = [_("Halt! Who goes there?"), \
                        "\"Ai! laurie lantar lassi surinen ...\"", \
-                       "Nobody may pass through the gate!"]
+                       _("Nobody may pass through the gate!")]
 
     def run (self):
         # Caching this often used variable for faster access
@@ -45,9 +47,9 @@ class talan:
             # Choose where to move, if destination is already occupied we'll
             # fall into the wait state (0) again automatically next time
             if myself.posy () == 17:
-                myself.set_goal (11, 19, STAND_NORTH)
+                myself.set_goal (11, 19, adonthell.STAND_NORTH)
             else:
-                myself.set_goal (11, 17, STAND_SOUTH)
+                myself.set_goal (11, 17, adonthell.STAND_SOUTH)
 
             # Next time we'll actually move!
             myself.set_val ("todo", 2)
@@ -56,13 +58,13 @@ class talan:
         elif todo == 2:
             # Reached the goal? Wait a while then...
             if myself.follow_path ():
-                myself.set_val ("delay", randint (25, 50) * 20)
+                myself.set_val ("delay", random.randrange (25, 50) * 20)
                 myself.set_val ("todo", 0)
 
         # -- utter a random remark
         tmp = myself.get_val ("say_something")
         myself.set_val ("say_something", tmp - 1)
         if tmp <= 0:
-            myself.speak (self.speech[randint (0, 2)])
-            delay = randint (50, 150) * 20
+            myself.speak (self.speech[random.randrange (0, 3)])
+            delay = random.randrange (50, 150) * 20
             myself.set_val ("say_something", delay)

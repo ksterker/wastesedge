@@ -15,6 +15,10 @@
 import adonthell
 import events
 
+# -- pygettext support
+def N_(message): return message
+def _(message): return adonthell.nls_translate (message)
+
 class extro:
     def __init__(self, mapchar):
         # -- audio
@@ -29,127 +33,127 @@ class extro:
         talan.set_schedule_active (0)
         silverhair = adonthell.gamedata_get_character ("Imoen Silverhair")
         player = adonthell.gamedata_player ()
-        
+
         # -- init the bubble texts
         #    (character, text)
-        self.text = [(bjarn, "There is no denying it. Yes, I feigned the theft. "), \
-            (erek, "But Master? How could you do such an infamous deed? "), \
-			(jelom, "That I would know as well! And where are the gems then? "), \
-            (bjarn, "What? Haven't I made myself clear already? "), \
-            (bjarn, "I despise those Elves and their uncanny ways. "), \
-            (bjarn, "Their ... meddling with reality contradicts all principles I learnt to hold true.     "), \
-            (bjarn, "And yet, I had to provide them with the reagents they need to perform their dark art.     "), \
-            (bjarn, "I felt so ... ashamed! "), \
-            (player, "And you believe this justifies the discomfort you caused my mistress? "), \
-            (bjarn, "You cannot think further than your mistress, can you? "), \
-            (bjarn, "Theft by a high born like Lady Silverhair would have been considered a grave insult by the clan elders.     "), \
-            (bjarn, "Had she been convicted, they might have chosen to cease trading with her likes. "), \
-            (bjarn, "It might have been years before any Elf got his filthy hands on our beloved gems again! "), \
-			(silverhair, "I feared as much and I       feared the consequences."), \
-            (silverhair, "Without the arcane arts my kind would soon succumb to the human tides. "), \
-            (silverhair, "But without gems and ores purchased from the small folk we cannot create magic. "), \
-            (jelom, "Who would have thought that? "), \
-            (jelom, "Seems you owe " + player.get_name() + " here a big favour, if I may say so, Lady. "), \
-            (silverhair, "Rest assured that " + player.get_name() + "'s deeds will not be forgotten, good man. "), \
-            (jelom, "Well, this is settled then. What remains now are the whereabouts of the gems. "), \
-            (jelom, "Master Fingolson! "), \
-            (None, "They were here all the time, safe from thieving hands, ..."), \
-            (None, "... well hidden in a niche I carved during my previous visits."), \
-            (None, "Right here."), \
-            (None, "But ..."), \
-            (None, "... they are gone!"), \
-            (talan, "Sir, sir! To the gate! Quick! The thief is loose!"), \
-            (bjarn, "My jewels, oh my jewels!"), \
-            (player, "By Andomiel's Tree! What happened to you, Talan?!"), \
-            (talan, "It was the mercenary, sir! He sneaked upon me and hit me over the head."), \
-            (silverhair, "O sweet irony."), \
-            (jelom, "Then the gems have been stolen after all?!"), \
-            (jelom, "By that scum, Alek!? Now that's funny."), \
-            (bjarn, "How can you say that? And why are you still here?"), \
-            (bjarn, "Will nobody go after my gems!?"), \
-            (jelom, "What for?"), \
-            (jelom, "Where you are going you won't need them any more. Besides, Alek is probably long gone by now ...")]
+        self.text = [(bjarn, N_("There is no denying it. Yes, I feigned the theft. ")), \
+            (erek, N_("But Master? How could you do such an infamous deed? ")), \
+			(jelom, N_("That I would know as well! And where are the gems then? ")), \
+            (bjarn, N_("What? Haven't I made myself clear already? ")), \
+            (bjarn, N_("I despise those Elves and their uncanny ways. ")), \
+            (bjarn, N_("Their ... meddling with reality contradicts all principles I learnt to hold true.     ")), \
+            (bjarn, N_("And yet, I had to provide them with the reagents they need to perform their dark art.     ")), \
+            (bjarn, N_("I felt so ... ashamed! ")), \
+            (player, N_("And you believe this justifies the discomfort you caused my mistress? ")), \
+            (bjarn, N_("You cannot think further than your mistress, can you? ")), \
+            (bjarn, N_("Theft by a high born like Lady Silverhair would have been considered a grave insult by the clan elders.     ")), \
+            (bjarn, N_("Had she been convicted, they might have chosen to cease trading with her likes. ")), \
+            (bjarn, N_("It might have been years before any Elf got his filthy hands on our beloved gems again! ")), \
+			(silverhair, N_("I feared as much and I       feared the consequences.")), \
+            (silverhair, N_("Without the arcane arts my kind would soon succumb to the human tides. ")), \
+            (silverhair, N_("But without gems and ores purchased from the small folk we cannot create magic. ")), \
+            (jelom, N_("Who would have thought that? ")), \
+            (jelom, _("Seems you owe %s here a big favour, if I may say so, Lady. ") % player.get_name()), \
+            (silverhair, _("Rest assured that %s's deeds will not be forgotten, good man. ") %  player.get_name()), \
+            (jelom, N_("Well, this is settled then. What remains now are the whereabouts of the gems. ")), \
+            (jelom, N_("Master Fingolson! ")), \
+            (None, N_("They were here all the time, safe from thieving hands, ...")), \
+            (None, N_("... well hidden in a niche I carved during my previous visits.")), \
+            (None, N_("Right here.")), \
+            (None, N_("But ...")), \
+            (None, N_("... they are gone!")), \
+            (talan, N_("Sir, sir! To the gate! Quick! The thief is loose!")), \
+            (bjarn, N_("My jewels, oh my jewels!")), \
+            (player, N_("By Andomiel's Tree! What happened to you, Talan?!")), \
+            (talan, N_("It was the mercenary, sir! He sneaked upon me and hit me over the head.")), \
+            (silverhair, N_("O sweet irony.")), \
+            (jelom, N_("Then the gems have been stolen after all?!")), \
+            (jelom, N_("By that scum, Alek!? Now that's funny.")), \
+            (bjarn, N_("How can you say that? And why are you still here?")), \
+            (bjarn, N_("Will nobody go after my gems!?")), \
+            (jelom, N_("What for?")), \
+            (jelom, N_("Where you are going you won't need them any more. Besides, Alek is probably long gone by now ..."))]
 
         # -- the typeover text
-        self.typeover = ["And so Alek Endhelm escaped into the\nNorth, where he spent his newly gained\nwealth for Ale and other pleasures.", \
-            "Bjarn Fingolson however, bereft of all\nhonour, was taken to Uzdun'kal and\nsentenced to the lowest labour.\nNowadays his fate serves as an example\nand a warning to generations of young Dwarves.", \
-            "Lady Imoen Silverhair received the finest\nChrysoberyl Catseyes as a token of\nregret, and the magic rings and amulets\nshe crafted were of wondrous might and\nbeauty, desired and admired throughout\nthe realm.", \
-            "Soon after his return, young Erek\naccomplished the Rite of Passage and\njoined adult society. To his surprise, he\nwas sent to the Elvish Council at the\nHigh City of Elgilad, as an ambassador\nfor his people."]
+        self.typeover = [N_("And so Alek Endhelm escaped into the\nNorth, where he spent his newly gained\nwealth for Ale and other pleasures."), \
+            N_("Bjarn Fingolson however, bereft of all\nhonour, was taken to Uzdun'kal and\nsentenced to the lowest labour.\nNowadays his fate serves as an example\nand a warning to generations of young Dwarves."), \
+            N_("Lady Imoen Silverhair received the finest\nChrysoberyl Catseyes as a token of\nregret, and the magic rings and amulets\nshe crafted were of wondrous might and\nbeauty, desired and admired throughout\nthe realm."), \
+            N_("Soon after his return, young Erek\naccomplished the Rite of Passage and\njoined adult society. To his surprise, he\nwas sent to the Elvish Council at the\nHigh City of Elgilad, as an ambassador\nfor his people.")]
 
         # -- the credits
         #    (text, delay)
         self.credits = [("Adonthell", 1), \
             ("- Waste's Edge -", 3), \
-            ("directed by:", 1), \
+            (_("directed by:"), 1), \
             ("Alexandre Courbot", 1), \
             ("Kai Sterker", 3), \
-            ("written by:", 1), \
+            (_("written by:"), 1), \
             ("Kai Sterker", 1), \
             ("Mike Nieforth", 1), \
             ("Josh Glover", 3), \
-            ("based on an original idea by:", 1), \
+            (_("based on an original idea by:"), 1), \
             ("Kai Sterker", 3), \
-            ("produced by:", 1), \
-            ("the Adonthell team", 3), \
-            ("executive producers:", 1), \
+            (_("produced by:"), 1), \
+            (_("the Adonthell team"), 3), \
+            (_("executive producers:"), 1), \
             ("Sourceforge.net", 1), \
             ("GNU Savannah", 1), \
             ("Linuxgames.com", 5), \
-            ("cast:", 1), \
-            (adonthell.gamedata_player ().get_name () + " - you", 1), \
-            ("Imoen Silverhair - herself", 1), \
-            ("Bjarn Fingolson - himself", 1), \
-            ("Erek Stonebreaker - himself", 1), \
-            ("Orloth Redwyne - himself", 1), \
-            ("Alek Endhelm - himself", 1), \
-            ("Oliver Redwyne - himself", 1), \
-            ("Talan Wendth - himself", 1), \
-            ("Jelom Rasgar - himself", 1), \
-            ("Tristan Illig - himself", 1), \
-            ("Fellnir Kezular - himself", 1), \
-            ("Lucia Redwyne - herself", 1), \
-            ("Rhayne Frostbloom - herself", 1), \
-            ("Sarin Trailfollower - himself", 1), \
-            ("Janesta Skywind - herself", 2), \
-            ("Mrs. Frostbloom's assistant:", 1), \
+            (_("cast:"), 1), \
+            (adonthell.gamedata_player ().get_name () + _(" - you"), 1), \
+            (_("Imoen Silverhair - herself"), 1), \
+            (_("Bjarn Fingolson - himself"), 1), \
+            (_("Erek Stonebreaker - himself"), 1), \
+            (_("Orloth Redwyne - himself"), 1), \
+            (_("Alek Endhelm - himself"), 1), \
+            (_("Oliver Redwyne - himself"), 1), \
+            (_("Talan Wendth - himself"), 1), \
+            (_("Jelom Rasgar - himself"), 1), \
+            (_("Tristan Illig - himself"), 1), \
+            (_("Fellnir Kezular - himself"), 1), \
+            (_("Lucia Redwyne - herself"), 1), \
+            (_("Rhayne Frostbloom - herself"), 1), \
+            (_("Sarin Trailfollower - himself"), 1), \
+            (_("Janesta Skywind - herself"), 2), \
+            (_("Mrs. Frostbloom's assistant:"), 1), \
             ("Yeti", 2), \
-            ("casting:", 1), \
+            (_("casting:"), 1), \
             ("Benjamin Walther-Franks", 5), \
-            ("director of photography:", 1), \
+            (_("director of photography:"), 1), \
             ("Alexandre Courbot", 2), \
-            ("art director:", 1), \
+            (_("art director:"), 1), \
             ("James Nash", 2), \
-            ("assistant art director:", 1), \
+            (_("assistant art director:"), 1), \
             ("Benjamin Walther-Franks", 2), \
-            ("wardrobe:", 1), \
+            (_("wardrobe:"), 1), \
             ("Benjamin Walther-Franks", 2), \
-            ("props masters:", 1), \
+            (_("props masters:"), 1), \
             ("James Nash", 1), \
             ("Kai Sterker", 2), \
-            ("location managers:", 1), \
+            (_("location managers:"), 1), \
             ("Alexandre Courbot", 1), \
             ("James Nash", 2), \
-            ("grip:", 1), \
+            (_("grip:"), 1), \
             ("Alexandre Courbot", 5), \
-            ("\"Window\" unit:", 2), \
-            ("director:", 1), \
+            (_("\"Window\" unit:"), 2), \
+            (_("director:"), 1), \
             ("Joel Vennin", 2), \
-            ("assistant director:", 1), \
+            (_("assistant director:"), 1), \
             ("Joel Vennin", 2), \
-            ("best boy:", 1), \
+            (_("best boy:"), 1), \
             ("Yeti", 2), \
-            ("runner:", 1), \
+            (_("runner:"), 1), \
             ("Joel Vennin", 5), \
-            ("music by:", 1), \
+            (_("music by:"), 1), \
             ("Joseph Toscano", 2), \
-            ("foley artist:", 1), \
+            (_("foley artist:"), 1), \
             ("Joseph Toscano", 2), \
-            ("title design:", 1), \
+            (_("title design:"), 1), \
             ("John Havard", 1), \
             ("James Nash", 2), \
-            ("soundtrack available on:", 1), \
+            (_("soundtrack available on:"), 1), \
             ("http://zhaymusic.com/wastesedge/", 5), \
-            ("the Adonthell team wishes to thank:", 2), \
+            (_("the Adonthell team wishes to thank:"), 2), \
             ("Al Koskelin", 1), \
             ("Andrew Henderson", 1), \
             ("Chris Harris", 1), \
@@ -158,18 +162,19 @@ class extro:
             ("Ryan O'Neil", 1), \
             ("Meandus", 1), \
             ("Deniz Oezsen", 2), \
-            ("The people behind SDL, Ogg Vorbis,", 1), \
-            ("Python, SWIG and all the other Free", 1), \
-            ("Software developers whose work", 1), \
-            ("made Adonthell possible", 3), \
-            ("career portal:", 1), \
+            (_("The people behind SDL, Ogg Vorbis,"), 1), \
+            (_("Python, SWIG and all the other Free"), 1), \
+            (_("Software developers whose work"), 1), \
+            (_("made Adonthell possible"), 3), \
+            (_("career portal:"), 1), \
             ("http://adonthell.linuxgames.com/development/", 5), \
-            ("No Yetis were harmed during\n the production of this game", 5), \
-            ("presented in", 2), \
-            ("Ogg Vorbis Stereo", 1), \
-            ("(where available)", 14), \
-            ("The END", 6), \
-            ("Joel, you are fired! ;)", -1)]
+            (_("No Yetis were harmed during\n the production of this game"), 5), \
+            (_("presented in"), 2), \
+            (_("Ogg Vorbis Stereo"), 1), \
+            (_("(where available)"), 14), \
+            (_("The END"), 6), \
+            (_("Joel, you are fired! ;)"), -1)]
+
             
         # -- text colors
         self.colors = ["white", "yellow", "red", "violet", "blue", "green"]
@@ -210,7 +215,6 @@ class extro:
         # -- set new audio schedule and play extro music
         adonthell.audio_load_background (0, "audio/at-demo-9.ogg")
         adonthell.audio_play_background (0)
-    
     
     def run (self):
         # -- deactivate game controls

@@ -2,27 +2,42 @@ dnl **************************************************************
 dnl Process this file with autoconf to produce a configure script.
 dnl **************************************************************
 
-AC_INIT(README)
+AC_PREREQ(2.50)
+AC_INIT(watesedge, 0.3.2pre1, adonthell@linuxgames.com, wastesedge)
+AM_INIT_AUTOMAKE(wastesedge, 0.3.2pre1)
 
-AM_INIT_AUTOMAKE(wastesedge, 0.3.1)
+dnl ***************
+dnl gettext support
+dnl ***************
+
+AC_MSG_CHECKING([whether NLS is requested])
+dnl Default is enabled NLS
+AC_ARG_ENABLE(nls,
+  [  --disable-nls           do not use Native Language Support],
+  USE_NLS=$enableval, USE_NLS=yes)
+AC_MSG_RESULT($USE_NLS)
+AC_SUBST(USE_NLS)
+
+AM_PO_SUBDIRS
+dnl ALL_LINGUAS="fr"
 
 dnl ********************
 dnl Additional arguments
 dnl ********************
 
 AC_ARG_WITH(data-dir,
-[  --with-data-dir=DIR    Directory where datas will be installed],
+[  --with-data-dir=DIR     Directory where data files will be installed],
             adonthelldatadir="$withval", adonthelldatadir=none)
 
 AC_ARG_WITH(adonthell-binary,
-[  --with-adonthell-binary=FILE    The Adonthell engine binary],
+[  --with-adonthell-binary=PATH  to the 'adonthell' binary],
             adonthell_binary="$withval", adonthell_binary=none)
 
 dnl Checking for Adonthell
 if test x$adonthelldatadir = xnone; then
    AC_PATH_PROG(adonthell_binary, adonthell)
    if test x$adonthell_binary = x ; then
-       echo "Waste's Edge requires the Adonthell game engine. Exiting..."
+       echo "Waste's Edge requires the Adonthell game engine. Exiting ..."
        exit 1
    fi
 else 
@@ -92,9 +107,11 @@ gfx/window/scrollbar/silverleaf/Makefile
 gfx/window/scrollbar/Makefile
 gfx/window/Makefile
 gfx/Makefile
+intl/Makefile
 maps/Makefile
+po/Makefile.in
 scripts/dialogues/Makefile
-scripts/events/Makefile
+scripts/game_events/Makefile
 scripts/modules/Makefile
 scripts/schedules/Makefile
 scripts/schedules/audio/Makefile

@@ -17,13 +17,15 @@
 import adonthell
 import random
 
+def _(message): return message
+
 class bjarn:
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
-        self.speech = ["Ha! A tradesman is an honourable person, they say!", \
-                       "Why don't they just take that Silverhair woman to prison!?", \
-                       "Elves! The head in the sky and the mind full of clouds!"]
+        self.speech = [_("Ha! A tradesman is an honourable person, they say!"), \
+                       _("Why don't they just take that Silverhair woman to prison!?"), \
+                       _("Elves! The head in the sky and the mind full of clouds!")]
 
         self.coords = [(7, 5, adonthell.STAND_WEST), \
                        (2, 4, adonthell.STAND_SOUTH), \

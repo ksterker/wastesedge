@@ -18,14 +18,16 @@
 import adonthell
 import random
 
+def _(message): return message
+
 class tristan:
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
 
-        self.speech = ["Don't they know that I am losing money by the hour!?", \
-                       "What a fuss about a few worthless gems!", \
-                       "Ye gods! It cannot be that hard to find the thief!"]
+        self.speech = [_("Don't they know that I am losing money by the hour!?"), \
+                       _("What a fuss about a few worthless gems!"), \
+                       _("Ye gods! It cannot be that hard to find the thief!")]
 
 
     def run (self):

@@ -1,243 +1,99 @@
+import dialogue
 import adonthell
 
-class oliver_start:
-	loop = []
-	strings = ["As he notices you, the boy stops whatever he's been doing. With a cheerful grin on his face, he turns towards you.", "Hello sir! Welcome to Waste's Edge.", "Oh! I am Oliver, sir. I help Mum and Dad with the Inn. Looking after the stables and such.", "Why yes! Would you belive that we have an actual Elven Lady staying at the Inn?", "Really? An Elven Lady?", "Yes, sir. Lady Silverbeard. From Cirdanth. And her two servants! She frightened me a bit, but now she's locked up in her room.", "And who would you be?", "You can surely tell me something about Waste's Edge, then.", "Did something unusual happen here lately, Oliver?", "Have you heard about the theft, sir? Everybody speaks about it.", "Then I don't want to keep you off your work any longer.", "Are there other guests too?", "Yes, but they are just ordinary people. Merchants and such.", "What can you tell me about that?", "Can you imagine, sir? The Elven Lady robbed Master Fingolson in his sleep. And none of the adults noticed anything.", "Why would anyone want to lock her up?", "Then you better tell me about the Elven Lady, Oliver.", "Well, thank you for the information. Until later.", "Who is Master Fingolson?", "But you heard something that night?", "Just another Dwarf from Uzdun'kal. He sells jewels and such. We get a lot of them here, but none of them got robbed so far.", "Speaking of that, you say you noticed something that night?", "Yeah. Someone must have been in the stables. But when I went and had a look, they were gone.", "I see. Thank you for your help, Oliver. Until later.", "Oliver looks pleased as he sees you nearing.", "Uh, hello again sir. Do you have more questions?", "Can you tell me something about Waste's Edge, Oliver?", "What do you know about the theft?", "Oliver leads you to a room on the first floor.", "I hope you like it, sir. All the other rooms are occupied.", "You have a lot of guests here at the moment, then?", "Don't worry Oliver. This one is fine.", "Yes sir. And with that theft, nobody can leave.", "Nobody can leave?", "No. As long as Master Fingolson's jewels are not found, the guards don't allow it.", "I see. Thank you Oliver. Until later.", ""]
+# -- pygettext support
+def _(message): return message
 
-	def set_name (self, new_name):
-		pass
+class oliver_start (dialogue.base):
+	text = [None,\
+		_("As he notices you, the boy stops whatever he's been doing. With a cheerful grin on his face, he turns towards you."),\
+		_("Hello sir! Welcome to Waste's Edge."),\
+		_("Oh! I am Oliver, sir. I help Mum and Dad with the Inn. Looking after the stables and such."),\
+		_("Why yes! Would you belive that we have an actual Elven Lady staying at the Inn?"),\
+		_("Really? An Elven Lady?"),\
+		_("Yes, sir. Lady Silverbeard. From Cirdanth. And her two servants! She frightened me a bit, but now she's locked up in her room."),\
+		_("And who would you be?"),\
+		_("You can surely tell me something about Waste's Edge, then."),\
+		_("Did something unusual happen here lately, Oliver?"),\
+		_("Have you heard about the theft, sir? Everybody speaks about it."),\
+		_("Then I don't want to keep you off your work any longer."),\
+		_("Are there other guests too?"),\
+		_("Yes, but they are just ordinary people. Merchants and such."),\
+		_("What can you tell me about that?"),\
+		_("Can you imagine, sir? The Elven Lady robbed Master Fingolson in his sleep. And none of the adults noticed anything."),\
+		_("Why would anyone want to lock her up?"),\
+		_("Then you better tell me about the Elven Lady, Oliver."),\
+		_("Well, thank you for the information. Until later."),\
+		_("Who is Master Fingolson?"),\
+		_("But you heard something that night?"),\
+		_("Just another Dwarf from Uzdun'kal. He sells jewels and such. We get a lot of them here, but none of them got robbed so far."),\
+		_("Speaking of that, you say you noticed something that night?"),\
+		_("Yeah. Someone must have been in the stables. But when I went and had a look, they were gone."),\
+		_("I see. Thank you for your help, Oliver. Until later."),\
+		_("Oliver looks pleased as he sees you nearing."),\
+		_("Uh, hello again sir. Do you have more questions?"),\
+		_("Can you tell me something about Waste's Edge, Oliver?"),\
+		_("What do you know about the theft?"),\
+		_("Oliver leads you to a room on the first floor."),\
+		_("I hope you like it, sir. All the other rooms are occupied."),\
+		_("You have a lot of guests here at the moment, then?"),\
+		_("Don't worry Oliver. This one is fine."),\
+		_("Yes sir. And with that theft, nobody can leave."),\
+		_("Nobody can leave?"),\
+		_("No. As long as Master Fingolson's jewels are not found, the guards don't allow it."),\
+		_("I see. Thank you Oliver. Until later.")]
 
-	def set_npc (self, new_npc):
-		pass
+	cond = [\
+		"self.the_npc.get_val (\"talked_to\") == 0\n",\
+		"self.the_npc.get_val (\"goto_players_room\") == 3\n"]
 
-	def set_portrait (self, new_portrait):
-		pass
+	code = [\
+		"self.the_npc.set_val (\"talked_to\" , 1)\n",\
+		"adonthell.gamedata_get_quest(\"demo\").set_val (\"know_olivers_noise\" , 1)\n",\
+		"self.the_npc.set_val (\"goto_players_room\" , 0)\nself.the_npc.set_val (\"talked_to\" , 1)\nself.the_npc.set_val (\"goto_barn\" , 1)\n"]
+
+	# -- (speaker, code, ((text, operation, condition), ...))
+	dlg = [\
+		(None, -1, ((29, 0, 1), (1, 1, 0), (25, 1, -1), )),\
+		("Narrator", 0, ((2, 0, -1), )),\
+		("Default", -1, ((7, 0, -1), )),\
+		("Default", -1, ((11, 0, -1), (8, 0, -1), (9, 0, -1), )),\
+		("Default", -1, ((12, 0, -1), (5, 0, -1), )),\
+		(None, -1, ((6, 0, -1), )),\
+		("Default", -1, ((16, 0, -1), )),\
+		(None, -1, ((3, 0, -1), )),\
+		(None, -1, ((4, 0, -1), )),\
+		(None, -1, ((10, 0, -1), )),\
+		("Default", -1, ((14, 0, -1), )),\
+		(None, -1, ()),\
+		(None, -1, ((13, 0, -1), )),\
+		("Default", -1, ((18, 0, -1), (17, 0, -1), )),\
+		(None, -1, ((15, 0, -1), )),\
+		("Default", -1, ((19, 0, -1), (20, 0, -1), )),\
+		(None, -1, ((15, 0, -1), )),\
+		(None, -1, ((6, 0, -1), )),\
+		(None, -1, ()),\
+		(None, -1, ((21, 0, -1), )),\
+		(None, -1, ((23, 0, -1), )),\
+		("Default", -1, ((22, 0, -1), )),\
+		(None, -1, ((23, 0, -1), )),\
+		("Default", 1, ((24, 0, -1), )),\
+		(None, -1, ()),\
+		("Narrator", -1, ((26, 0, -1), )),\
+		("Default", -1, ((27, 0, -1), (28, 0, -1), )),\
+		(None, -1, ((4, 0, -1), )),\
+		(None, -1, ((15, 0, -1), )),\
+		("Narrator", 2, ((30, 0, -1), )),\
+		("Default", -1, ((31, 0, -1), (32, 0, -1), )),\
+		(None, -1, ((33, 0, -1), )),\
+		(None, -1, ()),\
+		("Default", -1, ((28, 0, -1), (34, 0, -1), )),\
+		(None, -1, ((35, 0, -1), )),\
+		("Default", -1, ((36, 0, -1), )),\
+		(None, -1, ())]
+
 
 	def __init__(self, p, n):
+		self.namespace = globals ()
 		self.the_player = p
 		self.the_npc = n
-
-		self.dialogue = [self.start, self.answer0, self.answer4, self.answer6, self.answer7, self.answer8, self.answer11, self.answer13, self.answer15, self.answer16, self.answer18, self.answer19, self.answer21, self.answer24, self.answer26, self.answer27, self.answer28, self.answer30, self.answer33, None]
-
-	def clear (self):
-		del self.dialogue
-
-	def __getattr__ (self, name):
-		return 0
-
-	def run (self, answer):
-		self.npc = []
-		self.player = []
-		self.cont = []
-		self.dialogue[answer]()
-
-	def start (self):
-		if self.the_npc.get_val ("goto_players_room") == 3:
-
-			self.color = 0
-			self.npc.append (28)
-			self.cont.append (16)
-			self.the_npc.set_val ("goto_players_room" , 0)
-			self.the_npc.set_val ("talked_to" , 1)
-			self.the_npc.set_val ("goto_barn" , 1)
-
-			self.player.append (-1)
-		elif self.the_npc.get_val ("talked_to") == 0:
-
-			self.color = 0
-			self.npc.append (0)
-			self.cont.append (1)
-			self.the_npc.set_val ("talked_to" , 1)
-
-			self.player.append (-1)
-		else:
-
-			self.color = 0
-			self.npc.append (24)
-			self.cont.append (13)
-			self.player.append (-1)
-
-	def answer24 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (25)
-		self.cont.append (-1)
-		self.player.append (26)
-		self.cont.append (14)
-		self.player.append (27)
-		self.cont.append (15)
-		self.player.append (-1)
-
-	def answer27 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (14)
-		self.cont.append (-1)
-		self.player.append (19)
-		self.cont.append (11)
-		self.player.append (18)
-		self.cont.append (10)
-		self.player.append (-1)
-
-	def answer18 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (20)
-		self.cont.append (-1)
-		self.player.append (21)
-		self.cont.append (12)
-		self.player.append (-1)
-
-	def answer21 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (22)
-		self.cont.append (-1)
-		adonthell.gamedata_get_quest("demo").set_val ("know_olivers_noise" , 1)
-
-		self.player.append (23)
-		self.cont.append (-1)
-		self.player.append (-1)
-
-	def answer23 (self):
-		pass
-
-	def answer19 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (22)
-		self.cont.append (-1)
-		adonthell.gamedata_get_quest("demo").set_val ("know_olivers_noise" , 1)
-
-		self.player.append (23)
-		self.cont.append (-1)
-		self.player.append (-1)
-
-	def answer26 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (3)
-		self.cont.append (-1)
-		self.player.append (4)
-		self.cont.append (2)
-		self.player.append (11)
-		self.cont.append (6)
-		self.player.append (-1)
-
-	def answer11 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (12)
-		self.cont.append (-1)
-		self.player.append (16)
-		self.cont.append (9)
-		self.player.append (17)
-		self.cont.append (-1)
-		self.player.append (-1)
-
-	def answer17 (self):
-		pass
-
-	def answer16 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (5)
-		self.cont.append (-1)
-		self.player.append (15)
-		self.cont.append (8)
-		self.player.append (-1)
-
-	def answer15 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (14)
-		self.cont.append (-1)
-		self.player.append (19)
-		self.cont.append (11)
-		self.player.append (18)
-		self.cont.append (10)
-		self.player.append (-1)
-
-	def answer4 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (5)
-		self.cont.append (-1)
-		self.player.append (15)
-		self.cont.append (8)
-		self.player.append (-1)
-
-	def answer0 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (1)
-		self.cont.append (-1)
-		self.player.append (6)
-		self.cont.append (3)
-		self.player.append (-1)
-
-	def answer6 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (2)
-		self.cont.append (-1)
-		self.player.append (7)
-		self.cont.append (4)
-		self.player.append (8)
-		self.cont.append (5)
-		self.player.append (10)
-		self.cont.append (-1)
-		self.player.append (-1)
-
-	def answer10 (self):
-		pass
-
-	def answer8 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (9)
-		self.cont.append (-1)
-		self.player.append (13)
-		self.cont.append (7)
-		self.player.append (-1)
-
-	def answer13 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (14)
-		self.cont.append (-1)
-		self.player.append (19)
-		self.cont.append (11)
-		self.player.append (18)
-		self.cont.append (10)
-		self.player.append (-1)
-
-	def answer7 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (3)
-		self.cont.append (-1)
-		self.player.append (4)
-		self.cont.append (2)
-		self.player.append (11)
-		self.cont.append (6)
-		self.player.append (-1)
-
-	def answer28 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (29)
-		self.cont.append (-1)
-		self.player.append (30)
-		self.cont.append (17)
-		self.player.append (31)
-		self.cont.append (-1)
-		self.player.append (-1)
-
-	def answer31 (self):
-		pass
-
-	def answer30 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (32)
-		self.cont.append (-1)
-		self.player.append (27)
-		self.cont.append (15)
-		self.player.append (33)
-		self.cont.append (18)
-		self.player.append (-1)
-
-	def answer33 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (34)
-		self.cont.append (-1)
-		self.player.append (35)
-		self.cont.append (-1)
-		self.player.append (-1)
-
-	def answer35 (self):
-		pass

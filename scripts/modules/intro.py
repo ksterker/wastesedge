@@ -16,6 +16,9 @@
 
 from adonthell import *
 
+# -- pygettext support
+def _(message): return nls_translate (message)
+
 def update_im (im, x):
     if x <= -im.length (): x = x + im.length ()
     else: x = x - 1
@@ -87,22 +90,22 @@ lab.pack ()
 
 cont.add (lab)
 
-wintext = ("One week out of Cirdanth, the trail had\nbecome hard. I had begun to wonder\ndays ago whether \
-it could still be called\na trail, but it was the only way the\ncaravans had.",
-           "There were no caravans now, only me,\nand I had seen few others on the road.\nEven those had \
-become more scarce\nthe further I went.",
-           "It was easy to see why.",
-           "The Lady Silverhair, intent on her\nmission, had gone on ahead while I was\nleft to complete \
-business in her name,\ntrusting me to follow in good speed.",
-           "A lone Half-Elf may travel with much\nmore speed than an Elven lady and her\nservants, so she \
+wintext = (_("One week out of Cirdanth, the trail had\nbecome hard. I had begun to wonder\ndays ago whether \
+it could still be called\na trail, but it was the only way the\ncaravans had."),
+           _("There were no caravans now, only me,\nand I had seen few others on the road.\nEven those had \
+become more scarce\nthe further I went."),
+           _("It was easy to see why."),
+           _("The Lady Silverhair, intent on her\nmission, had gone on ahead while I was\nleft to complete \
+business in her name,\ntrusting me to follow in good speed."),
+           _("A lone Half-Elf may travel with much\nmore speed than an Elven lady and her\nservants, so she \
 was now only a day\nahead.  The thought nearly caused me\nto forget \
-the harshness of the road.",
-           "Still, Waste's Edge was a welcome sight.",
-           "As you approach the trading post, there\nseems to be little sign of life.      \
-           \n       \nEventually you find the Redwyne Inn,\nwhich seems to be the main building\nhere.",
-           "The heavy wooden doors are closed,\nand no one is there \
-to let you in. As you\napproach the gate, you suddenly hear a voice from within.",
-           "                      \nSuddenly, it looked like the day would\nbe harder than I thought ...")
+the harshness of the road."),
+           _("Still, Waste's Edge was a welcome sight."),
+           _("As you approach the trading post, there\nseems to be little sign of life.      \
+           \n       \nEventually you find the Redwyne Inn,\nwhich seems to be the main building\nhere."),
+           _("The heavy wooden doors are closed,\nand no one is there \
+to let you in. As you\napproach the gate, you suddenly hear a voice from within."),
+           _("                      \nSuddenly, it looked like the day would\nbe harder than I thought ..."))
 
 cont.set_visible_background (0);
 cont.set_visible_border (0);
@@ -118,19 +121,19 @@ bubbg[2].load_raw ("gfx/cutscene/intro_player.img")
 if gamedata_player () != None: myname = gamedata_player ().get_name ()
 else: myname = "Banec"
 
-bubtext = (("Halt! Stand and declare yourself, stranger!", "red", 25, 5, 350, 1),
-           ("I am " + myname + ", come as an agent for my employer. Tell me, is this the trading \
-post of Waste's Edge?", "yellow", 130, 5, 500, 2),
-           ("That it is, but this is all you'll see of it.", "red", 25, 5, 300, 1),
-           ("If you turn now and make haste, you should be able to make safe camping \
-before dark.", "red", 25, 5, 400, 1),
-           ("Turn back?  Whatever for?  And why is the gate of a free Inn locked \
-against a footsore traveller?", "yellow", 140, 20, 500, 0),
-           ("I am sorry, traveller, but the Inn is barred and you must be off.", "red", 25, 5, 300, 0),
-           ("There has been trouble inside and I have instructions to turn away all who \
-need not be here.", "red", 25, 5, 400, 0),
-           ("Trouble?  Why then, I must get inside.  My employer will need me close at \
-hand!", "yellow", 140, 30, 500, 0))
+bubtext = ((_("Halt! Stand and declare yourself, stranger!"), "red", 25, 5, 350, 1),
+           (_("I am ") + myname + _(", come as an agent for my employer. Tell me, is this the trading \
+post of Waste's Edge?"), "yellow", 130, 5, 500, 2),
+           (_("That it is, but this is all you'll see of it."), "red", 25, 5, 300, 1),
+           (_("If you turn now and make haste, you should be able to make safe camping \
+before dark."), "red", 25, 5, 400, 1),
+           (_("Turn back?  Whatever for?  And why is the gate of a free Inn locked \
+against a footsore traveller?"), "yellow", 140, 20, 500, 0),
+           (_("I am sorry, traveller, but the Inn is barred and you must be off."), "red", 25, 5, 300, 0),
+           (_("There has been trouble inside and I have instructions to turn away all who \
+need not be here."), "red", 25, 5, 400, 0),
+           (_("Trouble?  Why then, I must get inside.  My employer will need me close at \
+hand!"), "yellow", 140, 30, 500, 0))
 
 # The audio
 audio_load_background (0, "audio/at-demo-2.ogg");

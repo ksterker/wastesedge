@@ -32,7 +32,7 @@ class talk:
             # -- deactivate the schedule of the characters involved
             self.myself.set_schedule_active (0)
             requester.set_schedule_active (0)
-            
+
             # -- don't allow access to main menu and stuff
             adonthell.gamedata_engine ().set_control_active (0)
 
@@ -41,10 +41,10 @@ class talk:
 
             # -- init the dialogue engine
             dlg = adonthell.dialog_screen (self.myself, self.myself.get_dialogue (), 0)
-            
+
             # -- make sure the engine isn't deleted when we leave the script
             dlg.thisown = 0
-                
+
             # -- attach the callback
             dlg.py_signal_connect (self.restore_schedule, adonthell.win_event_CLOSE, (requester, self.myself))
 
