@@ -1,5 +1,5 @@
 #
-#  $Id: schedules.py,v 1.1 2001/08/08 09:15:56 adondev Exp $
+#  $Id: schedules.py,v 1.2 2001/08/08 17:00:47 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -80,8 +80,9 @@ def go_east_west (mychar, dist_x, dist_y, count):
 
 # -- display a "bubble" with some text above a character
 def speak (mychar, text):
-    # -- but only if he's on the player's submap
+    # -- ... but only if he's on the player's submap
     if mychar.submap () == gamedata_player ().submap ():
+
         b = bubble (mychar, text)
         b.thisown = 0
 
@@ -94,12 +95,20 @@ class bubble (win_container):
     def __init__ (self, mychar, text):
         win_container.__init__(self)
 
-        self.remain = len (text) * 10
+        # -- the time the bubble will remain open
+        self.remain = 75 + len (text) * 4
 
         self.py_signal_connect (self.on_destroy, win_event_DESTROY)
         self.py_signal_connect (self.on_update, win_event_UPDATE, mychar)
 
-        self.font = win_font (WIN_THEME_ORIGINAL)
+        # -- get the font that matches the NPC's text color
+        if mychar.get_color () == 1: self.font = win_font ("yellow/")
+        elif mychar.get_color () == 2: self.font = win_font ("red/")
+        elif mychar.get_color () == 3: self.font = win_font ("violet/")
+        elif mychar.get_color () == 4: self.font = win_font ("blue/")
+        elif mychar.get_color () == 5: self.font = win_font ("green/")
+        else: self.font = win_font( "white/")
+
         self.theme = win_theme (WIN_THEME_ORIGINAL)
 
         # -- if the submap is smaller than the mapview, we have to
@@ -118,12 +127,12 @@ class bubble (win_container):
         # -- get the postion above the character's head
         x, y = self.get_window_pos (mychar)
 
-        self.resize (100, 30)
+        self.resize (120, 55)
         self.move (x, y)	
 
         self.bubble = win_label ()
         self.bubble.set_font (self.font)
-        self.bubble.resize (90, 0)
+        self.bubble.resize (110, 0)
         self.bubble.set_form (label_AUTO_HEIGHT)
         self.bubble.set_text (text)
 
@@ -148,9 +157,11 @@ class bubble (win_container):
         del self.theme
         del self.font
 
+    # -- once this returns 0, the bubble will close
     def on_destroy (self):
         return self.remain
 
+    # -- draws the bubble above the character's head
     def on_update (self, mychar):
         x, y = self.get_window_pos (mychar)
         self.move (x, y)
@@ -160,8 +171,8 @@ class bubble (win_container):
     def get_window_pos (self, mychar):
         view = gamedata_map_engine ().get_mapview ()
         x = (mychar.posx () - view.posx () - mychar.base_x ()) * MAPSQUARE_SIZE
-        x = x + mychar.offx () - view.offx () - 45 + self.offx
+        x = x + mychar.offx () - view.offx () - 55 + self.offx
         y = (mychar.posy () - view.posy () - mychar.base_y ()) * MAPSQUARE_SIZE
-        y = y + mychar.offy () - view.offy () - 25 + self.offy
+        y = y + mychar.offy () - view.offy () - 40 + self.offy
 
         return (x, y)

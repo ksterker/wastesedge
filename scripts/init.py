@@ -491,6 +491,7 @@ if retval < 5:
         frostbloom.jump_to (0, 18, 22)
         frostbloom.set_action ("action_talk")
         frostbloom.stand_north ()
+        frostbloom.set_schedule ("frostbloom")
 
         bjarn = characters ["Bjarn Fingolson"]
         bjarn.set_dialogue ("dialogues/bjarn_start")
@@ -506,6 +507,7 @@ if retval < 5:
         silverhair.jump_to (13, 4, 6)
         silverhair.set_action ("action_talk")
         silverhair.stand_north ()
+        silverhair.set_schedule ("silverhair")
 
         sarin = characters ["Sarin Trailfollower"]
         sarin.set_dialogue ("dialogues/sarin_start")
@@ -513,7 +515,8 @@ if retval < 5:
         sarin.set_map (map_engine.get_landmap ())
         sarin.jump_to (13, 7, 3)
         sarin.set_action ("action_talk")
-        sarin.stand_east ()
+        sarin.stand_west ()
+        sarin.set_schedule ("sarin")
 
         janesta = characters ["Janesta Skywind"]
         janesta.set_dialogue ("dialogues/janesta_start")
@@ -521,7 +524,7 @@ if retval < 5:
         janesta.set_map (map_engine.get_landmap ())
         janesta.jump_to (13, 1, 4)
         janesta.set_action ("action_talk")
-        janesta.stand_west ()
+        janesta.stand_east ()
 
         # Once we want to generate the data context files,
         # just call gamedata::save (1) and copy the .data files

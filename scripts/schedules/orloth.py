@@ -11,15 +11,26 @@
 #
 
 # -- Movement schedule for Orloth Redwyne
+#
+#    He'll walk up to a table occasionally and either set or clean it
+#    From time to time he'll complain about the grandfather clock
+
 import schedules
 import random
 
-speech = ["I gotta clean this mug!", "That barrel is leaking.", "I hope they'll find the thief!"]
-coords = [(3, 5, STAND_SOUTH), (7, 6, STAND_EAST), (12, 3, STAND_SOUTH), (7, 4, STAND_WEST), (10, 3, STAND_NORTH)]
+speech = ["I gotta clean this mug!", \
+          "That barrel is leaking.", \
+          "I hope they'll find the thief!"]
+
+coords = [(3, 5, STAND_SOUTH), \
+          (7, 6, STAND_EAST), \
+          (12, 3, STAND_SOUTH), \
+          (7, 4, STAND_WEST), \
+          (10, 3, STAND_NORTH)]
 
 todo = character_base.get (myself, "wait_behind_bar")
 
-# -- leave the barcharacter_base.get (myself, "wait_behind_bar") == 0
+# -- leave the bar
 if todo == 0:
     # -- get the position we want to reach
     goal = character_base.get (myself, "goal")
