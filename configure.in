@@ -118,6 +118,7 @@ gfx/window/Makefile
 gfx/Makefile
 intl/Makefile
 maps/Makefile
+pixmaps/Makefile
 po/Makefile.in
 scripts/dialogues/Makefile
 scripts/game_events/Makefile

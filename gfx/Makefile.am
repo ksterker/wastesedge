@@ -1,4 +1,4 @@
-SUBDIRS = cutscene mapcharacters mapobjects window portraits
+SUBDIRS = cutscene mapcharacters mapobjects portraits window 
 
 pkgdatadir = $(gamedatadir)/gfx
 

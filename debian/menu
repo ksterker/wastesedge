@@ -1,3 +1,4 @@
 ?package(adonthell-data):needs=X11 section=Games/Adventure \
   title="Adonthell - Waste's Edge" \
-  command="/usr/games/adonthell-wastesedge"
+  command="/usr/games/adonthell-wastesedge" \
+  icon="/usr/share/pixmaps/wastesedge_16x16.xpm"

@@ -1,4 +1,4 @@
-SUBDIRS = . audio gfx intl maps po scripts 
+SUBDIRS = . audio gfx intl maps pixmaps po scripts 
 
 pkgdatadir = $(gamedatadir)
 
