@@ -570,6 +570,7 @@ if retval < 5:
         talan.stand_north ()
         talan.set_schedule ("talan")
 
+        # -- that's a clone for now
         alek = characters ["Alek Endhelm"]
         alek.set_dialogue ("dialogues/alek_start")
         alek.load ("servant2.mchar")

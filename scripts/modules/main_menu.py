@@ -208,18 +208,24 @@ class main_menu (win_container):
             self.lg.thisown = 0
             self.lg.set_activate (1)	
             if self.startup != 0:
-                self.quit = 0
+                # In game
+                self.set_visible (0)
+                gamedata_map_engine ().set_should_update_map (0)
+                self.lg.py_signal_connect (self.on_ingame_data_close, win_event_CLOSE)
             else:
+                # Title screen
                 self.lg.py_signal_connect (self.on_data_close, win_event_CLOSE)
             win_manager_add (self.lg)
             win_manager_set_focus (self.lg)
 
         # Save Game
         elif sel == 3:
-            self.quit = 0
             self.lg = data_screen (SAVE_SCREEN)
             self.lg.thisown = 0
             self.lg.set_activate(1)
+            self.set_visible (0)
+            gamedata_map_engine ().set_should_update_map (0)
+            self.lg.py_signal_connect (self.on_ingame_data_close, win_event_CLOSE)
             win_manager_add (self.lg)
             win_manager_set_focus (self.lg)
 
@@ -231,6 +237,11 @@ class main_menu (win_container):
         self.lg = None
         if retval == 1:
             self.quit = 0
+
+    def on_ingame_data_close (self, retval):
+        self.lg = None
+        gamedata_map_engine ().set_should_update_map (1)
+        self.quit = 0
 
     # -- Scrolls the different menu options into view
     def create_menu (self, moves, goals):

@@ -1,10 +1,14 @@
 # -- When the menu is closing, react accordingly
 def on_menu_close (retval, player):
-    # -- Reactivate the player's schedule
-#    player.set_schedule_active (1)
+    # Tells the map engine to update the map
+    map_engine.set_should_update_map (1)
     # -- Quit was selected, so that's what we do :)
     if retval == 5:
         map_engine.quit ()
+
+# Reactive map update when data_screen closed
+def on_data_screen_close (retval, player):
+    map_engine.set_should_update_map (1)
 
 # Opens the gate
 def open_gate ():
@@ -72,6 +76,9 @@ elif input_has_been_pushed (SDLK_ESCAPE):
     # -- open main menu without animation, with saving and background enabled
     menu = main_menu.main_menu (1, 1, 1)
     menu.thisown = C
+    
+    # Stop updating the map
+    map_engine.set_should_update_map (0)
 
     # -- this tells us when the main menu is closed
     menu.py_signal_connect (on_menu_close, win_event_CLOSE, (myself))
@@ -106,6 +113,9 @@ elif input_has_been_pushed (SDLK_p):
 elif input_has_been_pushed (SDLK_l):
     s = data_screen (LOAD_SCREEN)
     s.thisown = C
+    s.py_signal_connect (on_data_screen_close, win_event_CLOSE, None)
+    # Stop updating the map
+    map_engine.set_should_update_map (0)
     s.set_activate (1)	
     win_manager_add (s)
     win_manager_set_focus (s)
@@ -115,6 +125,9 @@ elif input_has_been_pushed (SDLK_l):
 elif input_has_been_pushed (SDLK_s):
     s = data_screen (SAVE_SCREEN)
     s.thisown = C
+    s.py_signal_connect (on_data_screen_close, win_event_CLOSE, None)
+    # Stop updating the map
+    map_engine.set_should_update_map (0)
     s.set_activate (1)	
     win_manager_add (s)
     win_manager_set_focus (s)

@@ -1,5 +1,5 @@
 #
-#  $Id: schedules.py,v 1.4 2001/08/15 20:48:26 adondev Exp $
+#  $Id: schedules.py,v 1.5 2001/08/18 13:29:27 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -177,13 +177,15 @@ class bubble (win_container):
 
     # -- draws the bubble above the character's head
     def on_update (self, mychar):
-        # -- but only if on the same submap as the player
-        if mychar.submap () == gamedata_player ().submap ():
-            x, y = self.get_window_pos (mychar)
-            self.move (x, y)
-            self.remain = self.remain - 1
-        else:
-            self.remain = 0
+        # -- but only if the map should be updated
+        if gamedata_map_engine ().should_update_map ():
+            # -- and if on the same submap as the player
+            if mychar.submap () == gamedata_player ().submap ():
+                x, y = self.get_window_pos (mychar)
+                self.move (x, y)
+                self.remain = self.remain - 1
+            else:
+                self.remain = 0
 
     # -- center the window above the characters head
     def get_window_pos (self, mychar):
