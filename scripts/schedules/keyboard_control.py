@@ -8,6 +8,52 @@ def on_menu_close (retval, player):
     if retval == 5:
         map_engine.quit ()
 
+# Opens the gate
+def open_gate ():
+    # Get the mapobjects
+    gate_fore = map_engine.get_landmap ().get_mapobject (90)
+    gate_back = map_engine.get_landmap ().get_mapobject (89)
+
+    # Only open the gate if it's closed...
+    if (gate_fore.get_animation (0).currentframe () == 0):
+        # Plays the gate back animation
+        gate_back.get_animation (0).next_frame ()
+        # Plays the gate fore animation
+        gate_fore.get_animation (0).next_frame ()
+
+        # Update squares walkability
+        sm = map_engine.get_landmap ().get_submap (0)
+        sm.get_square (6, 18).set_walkable_west (1)
+        sm.get_square (6, 19).set_walkable_west (1)
+        sm.get_square (6, 20).set_walkable_west (1)
+
+# Close the gate
+def close_gate ():
+    # Get the mapobjects
+    gate_fore = map_engine.get_landmap ().get_mapobject (90)
+    gate_back = map_engine.get_landmap ().get_mapobject (89)
+
+    # Only close the gate if it's opened
+    if (gate_fore.get_animation (0).currentframe () == 4):
+        # Plays the gate back animation
+        gate_back.get_animation (0).next_frame ()
+        # Plays the gate fore animation
+        gate_fore.get_animation (0).next_frame ()
+
+        # Update squares walkability
+        sm = map_engine.get_landmap ().get_submap (0)
+        sm.get_square (6, 18).set_walkable_west (0)
+        sm.get_square (6, 19).set_walkable_west (0)
+        sm.get_square (6, 20).set_walkable_west (0)
+
+#print "%d %d %d" % (myself.submap (), myself.posx (), myself.posy ())
+
+if input_has_been_pushed (SDLK_o):
+    open_gate ()
+
+if input_has_been_pushed (SDLK_c):
+    close_gate ()
+
 # -- react to the action key
 if input_has_been_pushed (SDLK_SPACE):
     # -- see whether a character(/object) is next to the player
@@ -45,7 +91,6 @@ elif input_is_pushed (SDLK_UP): myself.go_north ()
 elif input_is_pushed (SDLK_DOWN): myself.go_south ()
 elif input_is_pushed (SDLK_RIGHT): myself.go_east ()
 elif input_is_pushed (SDLK_LEFT): myself.go_west ()
-
 
 # Special tip! :)
 elif input_has_been_pushed (SDLK_KP_PLUS):

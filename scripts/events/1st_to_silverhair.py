@@ -2,10 +2,6 @@ p = characters [name]
 p.set_schedule_active (0)
 p.stand ()
 
-# Close the inn door.
-if p.submap () == 0:
-  map_engine.get_landmap ().get_mapobject (0).get_animation (0).next_frame ()
-
 if p == the_player:
   i = 0
   while i < 60:
@@ -15,10 +11,10 @@ if p == the_player:
     gametime_update ()
     i = i + (gametime_frames_to_do () * 2)
 
-if p.submap () == 1:
-  p.jump_to (0, 18, 14, STAND_SOUTH)
+if p.submap () == 9:
+  p.jump_to (13, 7, 2, STAND_SOUTH)
 else:
-  p.jump_to (1, 13, 7, STAND_NORTH)
+  p.jump_to (9, 1, 7, STAND_NORTH)
 
 if p == the_player:
   i=60
