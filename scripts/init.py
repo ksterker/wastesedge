@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.51 2001/09/20 22:42:14 adondev Exp $
+#  $Id: init.py,v 1.52 2001/09/22 14:28:54 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -116,8 +116,8 @@ class title_screen:
 
         # -- launch the mapengine
         gametime_start_action ()
-        map_engine.set_should_update_map (0)
-        map_engine.run ()
+        gamedata_map_engine ().set_should_update_map (0)
+        gamedata_map_engine ().run ()
 
     def __del__ (self):
         print "Destructor called"
@@ -190,7 +190,7 @@ class title_screen:
         self.menu = main_menu (a, b)
         self.menu.thisown = C
         self.menu.py_signal_connect (self.on_menu_close, win_event_CLOSE)
-        
+
         win_manager_add (self.menu)
         win_manager_set_focus (self.menu)
 
@@ -198,8 +198,7 @@ class title_screen:
     def on_menu_close (self, retval):
         fade_out ()
 
-        screen_display.fillrect (0, 0, screen_length (),
-                                 screen_height (), 0)
+        screen_display.fillrect (0, 0, screen_length (), screen_height (), 0)
         screen_show ()
 
         # -- cleanup
@@ -225,20 +224,19 @@ class title_screen:
                 gamedata_load_characters (0)
                 gamedata_load_quests (0)
 
-                map_engine=gamedata_map_engine ()
-                the_player=gamedata_player ()
+                the_player = gamedata_player ()
 
                 # Creates the map engine context for the game start
-                map_engine.load_map ("test.map")
+                gamedata_map_engine ().load_map ("test.map")
 
-                lm = map_engine.get_landmap ()
+                lm = gamedata_map_engine ().get_landmap ()
                 the_player.set_val ("gender", MALE)
                 the_player.set_val ("race", HALFELF)
                 the_player.load ("player.mchar")
                 the_player.set_map (lm)
                 the_player.jump_to (0, 11, 18, STAND_EAST)
                 the_player.set_schedule ("keyboard_control")
-                map_engine.set_mapview_schedule ("center_character", (gamedata_player ().get_name (),))
+                gamedata_map_engine ().set_mapview_schedule ("center_character", (the_player.get_name (),))
 
 
                 # Setting up the map events
@@ -778,7 +776,7 @@ class title_screen:
                 lucia = gamedata_get_character ("Lucia Redwyne")
                 lucia.set_dialogue ("dialogues/lucia_start")
                 lucia.load ("lucia.mchar")
-                lucia.set_map (map_engine.get_landmap ())
+                lucia.set_map (gamedata_map_engine ().get_landmap ())
                 lucia.jump_to (3, 4, 2)
                 lucia.set_action ("talk")
                 lucia.stand_south ()
@@ -787,7 +785,7 @@ class title_screen:
                 orloth = gamedata_get_character ("Orloth Redwyne")
                 orloth.set_dialogue ("dialogues/orloth_start")
                 orloth.load ("orloth.mchar")
-                orloth.set_map (map_engine.get_landmap ())
+                orloth.set_map (gamedata_map_engine ().get_landmap ())
                 orloth.jump_to (1, 2, 2)
                 orloth.set_action ("talk")
                 orloth.stand_south ()
@@ -797,7 +795,7 @@ class title_screen:
                 erek = gamedata_get_character ("Erek Stonebreaker")
                 erek.set_dialogue ("dialogues/erek_start")
                 erek.load ("erek.mchar")
-                erek.set_map (map_engine.get_landmap ())
+                erek.set_map (gamedata_map_engine ().get_landmap ())
                 erek.jump_to (1, 5, 5)
                 erek.set_action ("talk")
                 erek.stand_north ()
@@ -819,7 +817,7 @@ class title_screen:
                 jelom = gamedata_get_character ("Jelom Rasgar")
                 jelom.set_dialogue ("dialogues/jelom_start")
                 jelom.load ("jelom.mchar")
-                jelom.set_map (map_engine.get_landmap ())
+                jelom.set_map (gamedata_map_engine ().get_landmap ())
                 jelom.jump_to (9, 2, 6)
                 jelom.set_action ("talk")
                 jelom.stand_north ()
@@ -829,7 +827,7 @@ class title_screen:
                 alek = gamedata_get_character ("Alek Endhelm")
                 alek.set_dialogue ("dialogues/alek_start")
                 alek.load ("alek.mchar")
-                alek.set_map (map_engine.get_landmap ())
+                alek.set_map (gamedata_map_engine ().get_landmap ())
                 alek.jump_to (1, 1, 3)
                 alek.set_action ("talk")
                 alek.stand_south ()
@@ -839,7 +837,7 @@ class title_screen:
                 oliver = gamedata_get_character ("Oliver Redwyne")
                 oliver.set_dialogue ("dialogues/oliver_start")
                 oliver.load ("oliver.mchar")
-                oliver.set_map (map_engine.get_landmap ())
+                oliver.set_map (gamedata_map_engine ().get_landmap ())
                 oliver.jump_to (0, 25, 15)
                 oliver.set_action ("talk")
                 oliver.stand_west ()
@@ -849,7 +847,7 @@ class title_screen:
                 frostbloom = gamedata_get_character ("Rhayne Frostbloom")
                 frostbloom.set_dialogue ("dialogues/frostbloom_start")
                 frostbloom.load ("frostbloom.mchar")
-                frostbloom.set_map (map_engine.get_landmap ())
+                frostbloom.set_map (gamedata_map_engine ().get_landmap ())
                 frostbloom.jump_to (0, 18, 22)
                 frostbloom.set_action ("talk")
                 frostbloom.stand_north ()
@@ -859,7 +857,7 @@ class title_screen:
                 bjarn = gamedata_get_character ("Bjarn Fingolson")
                 bjarn.set_dialogue ("dialogues/bjarn_start")
                 bjarn.load ("bjarn.mchar")
-                bjarn.set_map (map_engine.get_landmap ())
+                bjarn.set_map (gamedata_map_engine ().get_landmap ())
                 bjarn.jump_to (7, 3, 6)
                 bjarn.set_action ("talk")
                 bjarn.stand_west ()
@@ -867,7 +865,7 @@ class title_screen:
 
                 silverhair = gamedata_get_character ("Imoen Silverhair")
                 silverhair.load ("silverhair.mchar")
-                silverhair.set_map (map_engine.get_landmap ())
+                silverhair.set_map (gamedata_map_engine ().get_landmap ())
                 silverhair.jump_to (13, 4, 4)
                 silverhair.set_action ("talk")
                 silverhair.stand_south ()
@@ -877,7 +875,7 @@ class title_screen:
                 sarin = gamedata_get_character ("Sarin Trailfollower")
                 sarin.set_dialogue ("dialogues/sarin_start")
                 sarin.load ("servant2.mchar")
-                sarin.set_map (map_engine.get_landmap ())
+                sarin.set_map (gamedata_map_engine ().get_landmap ())
                 sarin.jump_to (13, 5, 3)
                 sarin.set_action ("talk")
                 sarin.stand_west ()
@@ -887,7 +885,7 @@ class title_screen:
                 janesta = gamedata_get_character ("Janesta Skywind")
                 janesta.set_dialogue ("dialogues/janesta_start")
                 janesta.load ("servant1.mchar")
-                janesta.set_map (map_engine.get_landmap ())
+                janesta.set_map (gamedata_map_engine ().get_landmap ())
                 janesta.jump_to (13, 6, 3)
                 janesta.set_action ("talk")
                 janesta.stand_north ()
@@ -897,7 +895,7 @@ class title_screen:
                 fellnir = gamedata_get_character ("Fellnir Kezular")
                 fellnir.set_dialogue ("dialogues/fellnir_start")
                 fellnir.load ("fellnir.mchar")
-                fellnir.set_map (map_engine.get_landmap ())
+                fellnir.set_map (gamedata_map_engine ().get_landmap ())
                 fellnir.jump_to (10, 4, 4)
                 fellnir.set_action ("talk")
                 fellnir.stand_south ()
@@ -907,7 +905,7 @@ class title_screen:
                 tristan = gamedata_get_character ("Tristan Illig")
                 tristan.set_dialogue ("dialogues/tristan_start")
                 tristan.load ("illig.mchar")
-                tristan.set_map (map_engine.get_landmap ())
+                tristan.set_map (gamedata_map_engine ().get_landmap ())
                 tristan.jump_to (1, 4, 6)
                 tristan.set_action ("talk")
                 tristan.stand_west ()

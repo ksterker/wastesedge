@@ -25,6 +25,5 @@ class center_character:
 
     def run (self):
         p = self.tofollow
-        self.myself.center_on(p.submap(), p.posx(),
-                              p.posy(), p.offx(), p.offy())
+        self.myself.center_on(p.submap(), p.posx(), p.posy(), p.offx(), p.offy())
         
