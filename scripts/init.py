@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.88 2002/05/06 13:47:17 ksterker Exp $
+#  $Id: init.py,v 1.89 2002/05/26 08:53:33 ksterker Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -20,9 +20,6 @@ class title_screen:
     def __init__ (self):
         # -- load our music
         adonthell.audio_load_background (0, "audio/at-demo-1.ogg")
-        adonthell.audio_load_wave (0, "audio/select.wav")
-        adonthell.audio_load_wave (1, "audio/switch.wav")
-        adonthell.audio_load_wave (2, "audio/unselect.wav")
 
         # -- The themes and fonts we'll use
         adonthell.win_manager_add_theme ("original")
@@ -221,4 +218,13 @@ class title_screen:
         adonthell.gamedata_engine ().fade_in ()
 
 # -- Main --
-title = title_screen ()
+adonthell.audio_load_wave (0, "audio/select.wav")
+adonthell.audio_load_wave (1, "audio/switch.wav")
+adonthell.audio_load_wave (2, "audio/unselect.wav")
+
+if adonthell.gamedata_load_newest () == 0:
+    title = title_screen ()
+else:
+    # -- Quick-load
+    adonthell.gametime_start_action ()
+    adonthell.gamedata_engine ().main ()
