@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.77 2002/01/02 19:01:05 adondev Exp $
+#  $Id: init.py,v 1.78 2002/01/03 23:29:04 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -1227,7 +1227,7 @@ class title_screen:
         ev.y = 5
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-            "The Lady's luggage, but not what I am looking for."))
+            "Lady Silverhair's luggage, but not what I am looking for."))
         lm.add_event (ev)
 
         ev = action_event ()

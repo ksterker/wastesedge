@@ -13,6 +13,7 @@
 # -- the game's extro
 
 import adonthell
+import events
 
 class extro:
     def __init__(self, mapchar):
@@ -129,8 +130,8 @@ class extro:
             bjarn.go_south ()
             bjarn.load ('bjarn_crying.mchar')
             
-            import events
             talan = adonthell.gamedata_get_character ('Talan Wendth')
+            talan.load ("talan_beaten.mchar")
             events.switch_submap (talan, 7, 1, 6, adonthell.STAND_EAST)
             talan.go_east ()
             talan.stand_south ()
@@ -189,11 +190,11 @@ class extro:
         bubble.set_visible (1)
         adonthell.win_manager_get_active ().add (bubble)
         
-        if wait == 1:
-            bubble.py_signal_connect (self.on_close_bubble, adonthell.win_event_CLOSE)
-            return bubble
+        # if wait == 1:
+        bubble.py_signal_connect (self.on_close_bubble, adonthell.win_event_CLOSE)
+        return bubble
             
-        else: return None
+        # else: return None
 
     # -- bubble death callback
     def on_close_bubble (self, retval):
@@ -360,6 +361,7 @@ class extro:
             adonthell.gamedata_engine ().main_quit ()
             adonthell.gamedata_player ().set_schedule_active (1)
             self.done = 0
+            self.index = 23
         
     # -- forest sequence
     def fade_to_forest (self):
@@ -466,7 +468,7 @@ class extro:
                 if self.cursor < len (self.typeover[self.index]):
                     self.delay = self.delay + 1
                     
-                    if self.delay >= 10:
+                    if self.delay >= 7:
                         if self.cursor == 0: self.label.set_text ("")
                         txt = self.typeover[self.index][self.cursor]
                         self.label.add_text (txt)
@@ -494,12 +496,12 @@ class extro:
 
     # -- update the forest position
     def update_wood (self, pic, x):
-        if x <= -pic.length (): x = x + pic.length ()
-        else: x = x - 1
+        if x >= pic.length (): x = x - pic.length ()
+        else: x = x + 1
         return x
 
     # -- draw the forest
     def draw_wood (self, pic, x):
-        pic.draw (x, 0, self.da, self.target)
-        if x < adonthell.screen_length () - pic.length (): 
-            pic.draw (pic.length () + x, 0, self.da, self.target)
+        pic.draw (x - pic.length (), 0, self.da, self.target)
+        if x < adonthell.screen_length (): 
+            pic.draw (x, 0, self.da, self.target)
