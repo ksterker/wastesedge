@@ -562,10 +562,9 @@ if retval < 5:
         erek.stand_north ()
         erek.set_schedule ("erek")
 
-        # -- that's a clone for now
         talan = characters ["Talan Wendth"]
         talan.set_dialogue ("dialogues/talan_start")
-        talan.load ("servant2.mchar")
+        talan.load ("talan.mchar")
         talan.set_map (map_engine.get_landmap ())
         talan.jump_to (0, 11, 20)
         talan.set_action ("action_talk")
