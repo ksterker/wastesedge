@@ -36,6 +36,7 @@ gfx/mapobjects/houses/redwyne-inn/Makefile
 gfx/mapobjects/houses/Makefile
 gfx/mapobjects/icons/arrows/Makefile
 gfx/mapobjects/icons/Makefile
+gfx/mapobjects/stairs/Makefile
 gfx/mapobjects/terrains/Makefile
 gfx/mapobjects/walls/cellar/Makefile
 gfx/mapobjects/walls/inside/Makefile
