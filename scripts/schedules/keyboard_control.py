@@ -51,108 +51,108 @@ def close_gate ():
         sm.get_square (6, 19).set_walkable_west (0)
         sm.get_square (6, 20).set_walkable_west (0)
 
-#print "%d %d %d" % (myself.submap (), myself.posx (), myself.posy ())
 
-if input_has_been_pushed (SDLK_o):
-    open_gate ()
+def run ():
+    if input_has_been_pushed (SDLK_o):
+        open_gate ()
 
-if input_has_been_pushed (SDLK_c):
-    close_gate ()
+    if input_has_been_pushed (SDLK_c):
+        close_gate ()
 
-# -- react to the action key
-if input_has_been_pushed (SDLK_SPACE):
-    # -- see whether a character(/object) is next to the player
-    p = myself.whosnext ()
+    # -- react to the action key
+    if input_has_been_pushed (SDLK_SPACE):
+        # -- see whether a character(/object) is next to the player
+        p = myself.whosnext ()
 
-    # - Yes :)
-    if p != None and p.currentmove() < WALK_NORTH:
-        # -- launch the other guy's (object's) action script 
-        p.launch_action (myself)
+        # - Yes :)
+        if p != None and p.currentmove() < WALK_NORTH:
+            # -- launch the other guy's (object's) action script
+            p.launch_action (myself)
 
-        # -- Cleanup
-        p = None
-    elif p == None:
-        evt = action_event ()
-        evt.submap = myself.submap ()
-        evt.x = myself.posx ()
-        evt.y = myself.posy ()
-        evt.dir = myself.currentmove ()
-        evt.c = myself
-        event_handler_raise_event (evt)
+            # -- Cleanup
+            p = None
+        elif p == None:
+            evt = action_event ()
+            evt.submap = myself.submap ()
+            evt.x = myself.posx ()
+            evt.y = myself.posy ()
+            evt.dir = myself.currentmove ()
+            evt.c = myself
+            event_handler_raise_event (evt)
 
-# -- bring up the main menu
-elif input_has_been_pushed (SDLK_ESCAPE):
-    import main_menu
+    # -- bring up the main menu
+    elif input_has_been_pushed (SDLK_ESCAPE):
+        import main_menu
 
-    # -- open main menu without animation, with saving and background enabled
-    menu = main_menu.main_menu (1, 1, 1)
-    menu.thisown = C
-    
-    # Stop updating the map
-    map_engine.set_should_update_map (0)
+        # -- open main menu without animation, with saving and background enabled
+        menu = main_menu.main_menu (1, 1, 1)
+        menu.thisown = C
 
-    # -- this tells us when the main menu is closed
-    menu.py_signal_connect (on_menu_close, win_event_CLOSE, (myself))
+        # Stop updating the map
+        map_engine.set_should_update_map (0)
 
-    # -- add stuff to the win_manager
-    win_manager_add (menu)
-    win_manager_set_focus (menu)
-    menu = None
+        # -- this tells us when the main menu is closed
+        menu.py_signal_connect (on_menu_close, win_event_CLOSE, (myself))
 
-# -- move the player around
-elif input_is_pushed (SDLK_UP): myself.go_north ()
-elif input_is_pushed (SDLK_DOWN): myself.go_south ()
-elif input_is_pushed (SDLK_RIGHT): myself.go_east ()
-elif input_is_pushed (SDLK_LEFT): myself.go_west ()
+        # -- add stuff to the win_manager
+        win_manager_add (menu)
+        win_manager_set_focus (menu)
+        menu = None
 
-# Special tip! :)
-elif input_has_been_pushed (SDLK_n):
-    if myself.submap () < map_engine.get_landmap ().nbr_of_submaps () - 1:
-        myself.jump_to (myself.submap () + 1, 5, 3)
-    else:
-        myself.jump_to (0, 7, 18)
+    # -- move the player around
+    elif input_is_pushed (SDLK_UP): myself.go_north ()
+    elif input_is_pushed (SDLK_DOWN): myself.go_south ()
+    elif input_is_pushed (SDLK_RIGHT): myself.go_east ()
+    elif input_is_pushed (SDLK_LEFT): myself.go_west ()
 
-elif input_has_been_pushed (SDLK_p):
-    if myself.submap () > 1:
-        myself.jump_to (myself.submap () - 1, 5, 3)
-    elif myself.submap () == 1:
-        myself.jump_to (0, 7, 18)        
-    else:
-        myself.jump_to (map_engine.get_landmap ().nbr_of_submaps () - 1, 5, 3)
+    # Special tip! :)
+    elif input_has_been_pushed (SDLK_n):
+        if myself.submap () < map_engine.get_landmap ().nbr_of_submaps () - 1:
+            myself.jump_to (myself.submap () + 1, 5, 3)
+        else:
+            myself.jump_to (0, 7, 18)
 
-# -- shortcut to the load screen
-elif input_has_been_pushed (SDLK_l):
-    s = data_screen (LOAD_SCREEN)
-    s.thisown = C
-    s.py_signal_connect (on_data_screen_close, win_event_CLOSE)
-    # Stop updating the map
-    map_engine.set_should_update_map (0)
-    s.set_activate (1)	
-    win_manager_add (s)
-    win_manager_set_focus (s)
+    elif input_has_been_pushed (SDLK_p):
+        if myself.submap () > 1:
+            myself.jump_to (myself.submap () - 1, 5, 3)
+        elif myself.submap () == 1:
+            myself.jump_to (0, 7, 18)
+        else:
+            myself.jump_to (map_engine.get_landmap ().nbr_of_submaps () - 1, 5, 3)
 
-
-# -- and to the save screen
-elif input_has_been_pushed (SDLK_s):
-    s = data_screen (SAVE_SCREEN)
-    s.thisown = C
-    s.py_signal_connect (on_data_screen_close, win_event_CLOSE)
-    # Stop updating the map
-    map_engine.set_should_update_map (0)
-    s.set_activate (1)	
-    win_manager_add (s)
-    win_manager_set_focus (s)
+    # -- shortcut to the load screen
+    elif input_has_been_pushed (SDLK_l):
+        s = data_screen (LOAD_SCREEN)
+        s.thisown = C
+        s.py_signal_connect (on_data_screen_close, win_event_CLOSE)
+        # Stop updating the map
+        map_engine.set_should_update_map (0)
+        s.set_activate (1)	
+        win_manager_add (s)
+        win_manager_set_focus (s)
 
 
-# -- python console
-elif input_has_been_pushed (SDLK_TAB):
-    import console
-    c = console.console (globals ())
-    c.thisown = C
-    c.py_signal_connect (on_data_screen_close, win_event_CLOSE)
-    # Stop updating the map
-    map_engine.set_should_update_map (0)
-    c.set_activate (1)
-    win_manager_add (c)
-    win_manager_set_focus (c)
-    c = None
+    # -- and to the save screen
+    elif input_has_been_pushed (SDLK_s):
+        s = data_screen (SAVE_SCREEN)
+        s.thisown = C
+        s.py_signal_connect (on_data_screen_close, win_event_CLOSE)
+        # Stop updating the map
+        map_engine.set_should_update_map (0)
+        s.set_activate (1)	
+        win_manager_add (s)
+        win_manager_set_focus (s)
+
+
+    # -- python console
+    elif input_has_been_pushed (SDLK_TAB):
+        import console
+        c = console.console (globals ())
+        c.thisown = C
+        c.py_signal_connect (on_data_screen_close, win_event_CLOSE)
+        # Stop updating the map
+        map_engine.set_should_update_map (0)
+        c.set_activate (1)
+        win_manager_add (c)
+        win_manager_set_focus (c)
+        c = None

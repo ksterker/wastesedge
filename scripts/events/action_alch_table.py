@@ -1,1 +1,2 @@
-the_player.speak ("I'd better not touch this... What if it explodes??")
+def run ():
+    the_player.speak ("I'd better not touch this... What if it explodes??")
