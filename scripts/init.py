@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.65 2001/11/02 14:25:40 adondev Exp $
+#  $Id: init.py,v 1.66 2001/12/04 21:40:27 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -916,6 +916,7 @@ class title_screen:
         jelom.jump_to (9, 2, 6)
         jelom.set_action ("talk")
         jelom.stand_north ()
+        jelom.set_color (5)
         jelom.set_schedule ("jelom")
         jelom.set_portrait ("jelom.pnm")
 

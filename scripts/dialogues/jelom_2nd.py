@@ -120,12 +120,14 @@ class jelom_2nd:
 		self.player.append (-1)
 
 	def answer34 (self):
-		self.color = self.the_npc.get_color()
+		self.set_npc ("Erek Stonebreaker")
+		self.color = adonthell.gamedata_get_character("Erek Stonebreaker").get_color()
 		self.npc.append (35)
 		self.cont.append (21)
 		self.player.append (-1)
 
 	def answer35 (self):
+		self.set_npc (self.the_npc.get_id())
 		self.color = self.the_npc.get_color()
 		self.npc.append (36)
 		self.cont.append (-1)
