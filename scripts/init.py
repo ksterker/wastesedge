@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.91 2002/08/21 16:28:41 ksterker Exp $
+#  $Id: init.py,v 1.92 2002/09/02 10:59:50 ksterker Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -181,6 +181,8 @@ class title_screen:
             
         # -- Load game
         elif retval == 2:
+            adonthell.gamedata_player ().set_schedule_active (1)
+
             self.window.set_visible (0)
             self.cleanup ()
             adonthell.gamedata_engine ().mapview_start ()
@@ -226,5 +228,6 @@ if adonthell.gamedata_load_newest () == 0:
     title = title_screen ()
 else:
     # -- Quick-load
+    adonthell.gamedata_player ().set_schedule_active (1)
     adonthell.gametime_start_action ()
     adonthell.gamedata_engine ().main ()

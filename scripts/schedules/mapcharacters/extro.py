@@ -242,6 +242,7 @@ class extro:
             bjarn = self.text[3][0]
             bjarn.go_south ()
             bjarn.load ('bjarn_crying.mchar')
+            bjarn.pause ()
             
             talan = adonthell.gamedata_get_character ('Talan Wendth')
             talan.load ("talan_beaten.mchar")

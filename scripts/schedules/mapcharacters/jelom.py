@@ -48,4 +48,4 @@ class jelom (schedule.speak):
     def start_talking (self):
         self.myself.launch_action (adonthell.gamedata_player ())
         adonthell.gamedata_get_character ("Erek Stonebreaker").pause ()
-        
+        adonthell.gamedata_get_quest ("demo").set_val ("convince_jelom", 3)

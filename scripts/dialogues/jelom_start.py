@@ -59,7 +59,8 @@ class jelom_start (dialogue.base):
 		_("You investigate the theft? You don't look at all like the officer I sent Bregon for. What makes you believe you could meddle in my affairs?"),\
 		_("My mistress has been wrongly accused, and I intend to clear her name."),\
 		_("Listen, Half-Elf! The theft and any investigations are business of the guard and none of yours! But by the looks of it, the only way to keep your nose out would be to lock you up."),\
-		_("So I won't prevent you from pestering the folk at the Inn. But should you find out anything, you report to me, you understand! Now, what is it you want from me?")]
+		_("So I won't prevent you from pestering the folk at the Inn. But should you find out anything, you report to me, you understand! Now, what is it you want from me?"),\
+		_("I actually have found out something that should interest you.")]
 
 	cond = [\
 		"self.the_player.get_val (\"at_silverhairs_door\") == 1 and adonthell.gamedata_get_quest(\"demo\").get_val (\"know_jelom\") != 2\n",\
@@ -72,7 +73,8 @@ class jelom_start (dialogue.base):
 		"adonthell.gamedata_get_quest(\"demo\").get_val (\"know_alek_eavesdrop\") == 1 and adonthell.gamedata_get_quest(\"demo\").get_val (\"know_talan_singing\") != 2\n",\
 		"adonthell.gamedata_get_quest(\"demo\").get_val (\"know_talan_singing\") != 2\n",\
 		"adonthell.gamedata_get_quest(\"demo\").get_val (\"know_talan_singing\") == 2 and self.the_npc.get_val (\"not_convinced\") == 1\n",\
-		"self.the_npc.get_val (\"allows_meddling\") == 0\n"]
+		"self.the_npc.get_val (\"allows_meddling\") == 0\n",\
+		"adonthell.gamedata_get_quest(\"demo\").get_val (\"know_talan_singing\") == 2 and adonthell.gamedata_get_quest(\"demo\").get_val (\"know_olivers_noise\") == 1\n"]
 
 	code = [\
 		"adonthell.gamedata_get_quest(\"demo\").set_val (\"told_on_talan\" , 1)\n",\
@@ -137,7 +139,8 @@ class jelom_start (dialogue.base):
 		("Default", -1, ((52, 0, -1), )),\
 		(None, -1, ((53, 0, 10), )),\
 		("Default", 4, ((54, 0, -1), )),\
-		("Default", -1, ((23, 0, 7), (22, 0, 6), (29, 0, 8), ))]
+		("Default", -1, ((55, 0, 11), (23, 0, 7), (22, 0, 6), (29, 0, 8), )),\
+		(None, -1, ((13, 0, -1), ))]
 
 
 	def __init__(self, p, n):

@@ -51,11 +51,11 @@ class to_cellar:
             self.myself.set_callback (self.goal_reached)
             
             submap = self.myself.mymap ().get_submap (self.myself.submap ())
-            x = random.randint (1, 4)
+            x = random.randint (2, 5)
             y = random.randint (5, 9)
 
             while not submap.get_square (x, y).is_free () or (y == 5 and x > 2):
-                x = random.randint (1, 4)
+                x = random.randint (2, 5)
                 y = random.randint (5, 9)
 
             # -- calculate direction
