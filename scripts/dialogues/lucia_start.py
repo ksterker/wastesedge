@@ -28,7 +28,7 @@ class lucia_start (dialogue.base):
 		_("The Dwarf, madam! Do you know him?"),\
 		_("In Cirdanth that wouldn't have happened. And even if it had, there would be proper guards to track the thief down. But whom do I tell? Surely, you are from Cirdanth, ain't you?"),\
 		_("What about the guards here?"),\
-		_("He stays here quite often, and has done that for many years. I wouldn't say that I know him well, though. He behaves quite retained and formal, but he is a pleasant character. Not like the other types we get here usually."),\
+		_("He stays here quite often, and has done that for many years. I wouldn't say that I know him well, though. He behaves quite reserved and formal, but he is a pleasant character. Not like the other types we get here usually."),\
 		_("Oh, you mean Jelom and Talan. They are good men, no doubt. Their task is to keep the peace, and usually they are well up to it."),\
 		_("My name is $name. I am investigating the theft."),\
 		_("You should have said so! It is about time that something is going to happen. I tell you, in Cirdanth, everything would have been solved by now."),\
@@ -52,7 +52,7 @@ class lucia_start (dialogue.base):
 		_("How should I know? But he does look suspicious to me. More than any others of our guests."),\
 		_("Can you tell me a little more about them?"),\
 		_("Well, you were very ... helpful, madam. But if you'll excuse me now, I've got a thief to catch."),\
-		_("I am afraid there is only little I know about him. He is so retained and formal, a calm and pleasant character. But he stays here regularly."),\
+		_("I am afraid there is only little I know about him. He is so reserved and formal, a calm and pleasant character. But he stays here regularly."),\
 		_("Which is no surprise; much of the trade with the mines of Uzdun'kal is done here, and Master Fingolson is one of the few tradesmen the Dwarfs have."),\
 		_("I didn't know that much trade with the Dwarfs runs through Waste's Edge."),\
 		_("Lunch can wait, but if you don't help with my investigation, the thief might get away!"),\
