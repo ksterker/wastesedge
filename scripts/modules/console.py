@@ -1,5 +1,5 @@
 #
-#  $Id: console.py,v 1.9 2001/10/30 23:43:09 adondev Exp $
+#  $Id: console.py,v 1.10 2001/11/01 18:01:14 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -50,7 +50,7 @@ class console (adonthell.win_container):
         # -- causes a crash:
         # self.entry.set_form (label_AUTO_HEIGHT)
         self.entry.set_font (self.font)
-        self.entry.set_cursor (1)
+        self.entry.set_cursor_visible (1)
         self.entry.set_cursor_moveable (1)
         self.entry.set_text ("")
         self.entry.pack ()

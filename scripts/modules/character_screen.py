@@ -1,5 +1,5 @@
 #
-#  $Id: character_screen.py,v 1.2 2001/10/29 17:04:25 adondev Exp $
+#  $Id: character_screen.py,v 1.3 2001/11/01 18:01:14 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -57,7 +57,7 @@ class character_screen (adonthell.win_container):
         self.entry.move (90, 62)
         self.entry.resize (100, 20)
         self.entry.set_font (self.font)
-        self.entry.set_cursor (1)
+        self.entry.set_cursor_visible (1)
         self.entry.set_cursor_moveable (1)
         self.entry.set_text ("Banec")
         self.entry.pack ()
