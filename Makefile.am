@@ -1,4 +1,4 @@
-SUBDIRS = audio gfx maps scripts 
+SUBDIRS = . audio gfx maps scripts 
 
 pkgdatadir = $(gamedatadir)
 
@@ -8,10 +8,13 @@ EXTRA_DIST = $(pkgdata_DATA)
 
 bin_SCRIPTS = adonthell-wastesedge
 
+# -- clean game directory before installing
+install-exec-local:
+	rm -Rf $(gamedatadir)
 
 adonthell-wastesedge:
 	echo -e "#!/bin/sh\n\n$(adonthell_binary) wastesedge" > adonthell-wastesedge
 
-## Be sure the data directory gets deleted
+# -- make sure the data directory gets deleted
 uninstall-local:
 	rm -Rf $(gamedatadir)

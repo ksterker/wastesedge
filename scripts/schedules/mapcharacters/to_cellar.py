@@ -93,5 +93,9 @@ class to_cellar:
                 if myself.submap () == 7 and myself.posx () != 1:
                     if myself.get_name () == adonthell.gamedata_player ().get_name ():
                         myself.set_schedule ("keyboard_control")
+                        bjarn = adonthell.gamedata_get_character ("Bjarn Fingolson")
+                        bjarn.set_dialogue ("dialogues/extro")
+                        bjarn.launch_action (myself)
+                        
                     else:
                         myself.set_schedule_active (0)

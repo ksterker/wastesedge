@@ -107,7 +107,7 @@ class jelom_2nd:
 
 				self.player.append (38)
 				self.cont.append (22)
-			if bjarn_lies == 1:
+			if adonthell.gamedata_get_quest("demo").get_val ("bjarn_lies") == 1:
 
 				self.player.append (33)
 				self.cont.append (19)
@@ -127,7 +127,7 @@ class jelom_2nd:
 		self.player.append (-1)
 
 	def answer35 (self):
-		self.set_npc (self.the_npc.get_name())
+		self.set_npc (self.the_npc.get_id())
 		self.color = self.the_npc.get_color()
 		self.npc.append (36)
 		self.cont.append (-1)
@@ -150,7 +150,7 @@ class jelom_2nd:
 		self.player.append (-1)
 
 	def answer24 (self):
-		self.set_npc (self.the_npc.get_name())
+		self.set_npc (self.the_npc.get_id())
 		self.color = self.the_npc.get_color()
 		self.npc.append (25)
 		self.cont.append (-1)
@@ -166,7 +166,7 @@ class jelom_2nd:
 		self.cont.append (-1)
 		self.player.append (31)
 		self.cont.append (18)
-		if bjarn_lies == 1:
+		if adonthell.gamedata_get_quest("demo").get_val ("bjarn_lies") == 1:
 
 			self.player.append (33)
 			self.cont.append (19)
@@ -190,7 +190,7 @@ class jelom_2nd:
 		self.cont.append (-1)
 		self.player.append (31)
 		self.cont.append (18)
-		if bjarn_lies == 1:
+		if adonthell.gamedata_get_quest("demo").get_val ("bjarn_lies") == 1:
 
 			self.player.append (33)
 			self.cont.append (19)
