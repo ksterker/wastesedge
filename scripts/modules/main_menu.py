@@ -10,8 +10,6 @@ class main_menu (win_container):
     def __init__ (self, startup, enable_s, enable_b = 0):	
         win_container.__init__(self)
 
-        self.startup = startup
-
         # Init Position
         self.move (0,0)	
         self.resize(320,240)
@@ -20,12 +18,11 @@ class main_menu (win_container):
 
         # load font and theme
         self.font = win_manager_get_font ("original")
-        ##win_font (WIN_THEME_ORIGINAL)
         self.theme = win_manager_get_theme ("original")
-        ##win_theme (WIN_THEME_ORIGINAL)
 
         self.enable_save = enable_s
-        
+        self.enable_b = enable_b
+
         self.lg = None
         
         self.quit = 1
@@ -107,89 +104,80 @@ class main_menu (win_container):
         
         for label in self.labels:
             self.add (label)    
-
 	   	
         # activate self object
         self.set_activate (1)
         self.set_visible_all (1)	
 
         if startup == 0:
-            done = 1
+            self.startup = 1
             sign = 1
-            goals = ()
-            moves = ()
+            self.goals = ()
+            self.moves = ()
 
             for label in self.labels:
-                goals = goals + ((self.length () - label.length ())/2,)
-                moves = moves + (3*sign,)
+                self.goals = self.goals + ((self.length () - label.length ())/2,)
+                self.moves = self.moves + (3*sign,)
                 sign = sign * -1
 
-            gametime_start_action ()
-            while done != 0:
-                for k in range (gametime_frames_to_do()):
-                    win_manager_update ()
-                    self.update ()
-                    done = self.create_menu (moves, goals)
-                win_manager_draw ()
-                self.draw ()
-                screen_show ()
-                gametime_update()
-            
         else:
+            self.startup = 0
             for label in self.labels:
                 label.move ((self.length()-label.length())/2, label.y ())
-            
+            self.add_to_select ()
+
+    def add_to_select (self):
         self.select = win_select()
-        self.select.move(70,10)
-        self.select.resize(180, 220)
-	
-        self.select.set_mode ( win_select_MODE_BRIGHTNESS )
+        self.select.move (70,10)
+        self.select.resize (180, 220)
+            	
+        self.select.set_mode (win_select_MODE_BRIGHTNESS)
         self.select.py_signal_connect (self.on_select, win_event_ACTIVATE_KEY);
-        
-        self.select.set_background(self.theme)
-        self.select.set_visible_background (enable_b)
+
+        self.select.set_background (self.theme)
+        self.select.set_visible_background (self.enable_b)
         self.select.set_trans_background (1)
-        
+
         self.select.set_border(self.theme, win_border_MINI)
-        self.select.set_visible_border (enable_b)
-        
+        self.select.set_visible_border (self.enable_b)
+
         self.select.set_circle (1)
         self.select.set_visible_all (1)
         self.select.thisown = 0
-        
+
         self.select.set_activate (1)
-        self.set_focus_object ( self.select )
-        
+        self.set_focus_object (self.select)
+
         self.add (self.select)
 
         for label in self.labels:
             self.remove (label)
             label.move (label.x () - 70, label.y () - 10)
             self.select.add (label)
-            
+
         # add the title
         self.set_align (win_base_ALIGN_CENTER)
         self.add (self.a_title)
         self.add (self.title)
         self.set_visible_all (1)
 
-    # -- cleanup --
-    def __del__(self):
-        pass
-##        del self.font
-##        del self.theme
-        
     # -- Callback to close the window
     def on_destroy (self):
         return self.quit
 
     # -- pressing ESC will close the menu if it's open
     def on_update (self):
-        if self.lg == None:
+        if self.startup > 0:
+            self.startup = self.create_menu (self.moves, self.goals)
+
+            if self.startup == 0:
+                self.add_to_select ()
+
+        elif self.lg == None:
             if input_has_been_pushed (SDLK_ESCAPE):
                 self.quit = 0
                 # If we're on the title screen, then leave.
-                if self.startup == 0:
+                if self.enable_save == 0:
                     self.set_return_code (5)
 
     # -- Callback to get informed of the player's choice
