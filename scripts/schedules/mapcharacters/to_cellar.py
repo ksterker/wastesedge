@@ -71,6 +71,12 @@ class to_cellar:
         if not self.myself.set_goal (x, y, dir):
             self.myself.time_callback ("1t", self.walk)
 
+    # -- teleport to the next exit
+    def warp (self):
+        x, y, dir = self.exits[self.myself.submap ()]
+        self.myself.jump_to (self.myself.submap (), x, y, dir)
+        self.myself.time_callback ("1t", self.walk)
+
     # -- reached Bjarn's room
     def goal_reached (self):
         if self.myself.get_name () == adonthell.gamedata_player ().get_name ():
@@ -80,4 +86,7 @@ class to_cellar:
             bjarn.launch_action (self.myself)
                         
         else:
-            self.myself.pause ()
+            if self.myself.posx () == 1 and self.myself.posy () == 7:
+                self.walk ()
+            else:
+                self.myself.pause ()

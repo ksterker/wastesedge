@@ -121,7 +121,7 @@ class jelom_2nd (dialogue.base):
 		    # make all dudes go down to Bjarn
 		    shair = adonthell.gamedata_get_character("Imoen Silverhair")
 		    shair.set_schedule ("to_cellar")
-		    shair.time_callback_string ("2t", "walk")
+		    shair.time_callback_string ("3t", "warp")
 		
 		    jelom = adonthell.gamedata_get_character("Jelom Rasgar")
 		    jelom.set_schedule ("to_cellar")
