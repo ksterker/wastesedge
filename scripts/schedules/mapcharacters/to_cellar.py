@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -40,10 +40,49 @@ class to_cellar:
             (5, 1, adonthell.STAND_NORTH), \
             (5, 1, adonthell.STAND_NORTH)]
 
-        self.myself.set_val ("todo", 0)
+        self.myself.set_callback (self.walk)
 
 
-    def run (self):
+    def walk (self):        
+        x, y, dir = self.exits[self.myself.submap ()]
+
+        # -- in Bjarn's room
+        if x == -1:
+            self.myself.set_callback (self.goal_reached)
+            
+            submap = self.myself.mymap ().get_submap (self.myself.submap ())
+            x = random.randint (1, 4)
+            y = random.randint (5, 9)
+
+            while not submap.get_square (x, y).is_free () or (y == 5 and x > 2):
+                x = random.randint (1, 4)
+                y = random.randint (5, 9)
+
+            # -- calculate direction
+            # -- north-western area
+            if x + y < 10:
+                if x + 3 > y: dir = adonthell.STAND_SOUTH
+                else: dir = adonthell.STAND_EAST
+            # -- south-east corner
+            else:
+                if y - (x + 3) > 0: dir = adonthell.STAND_NORTH
+                else: dir = adonthell.STAND_WEST
+
+        self.myself.set_goal (x, y, dir)
+
+    # -- reached Bjarn's room
+    def goal_reached (self):
+        if self.myself.get_name () == adonthell.gamedata_player ().get_name ():
+            self.myself.set_schedule ("keyboard_control")
+            bjarn = adonthell.gamedata_get_character ("Bjarn Fingolson")
+            bjarn.set_dialogue ("dialogues.extro")
+            bjarn.launch_action (self.myself)
+                        
+        else:
+            self.myself.pause ()
+
+
+    def run_old (self):
         myself = self.myself
         todo = myself.get_val ("todo")
 

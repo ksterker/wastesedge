@@ -53,102 +53,66 @@ class erek (schedule.speak):
             (2, 4, adonthell.STAND_SOUTH)]
 
         self.index = 0
-
-    def run_old (self):
-        myself = self.myself
+        self.walk_delay = "45t"
         
-        # -- lead the player into bjarn's room
-        if adonthell.gamedata_get_quest ("demo").get_val ("bjarn_door_open") == 2:
-            myself.set_schedule_active (0)
-            # -- start Bjanr's conversation with the player and Erek
-            fingolson = adonthell.gamedata_get_character ("Bjarn Fingolson")
-            fingolson.launch_action (adonthell.gamedata_player ())
+        if self.myself.get_val ("goto") != 0:
+            self.myself.set_callback (self.leave_cellar)
+        else:
+            self.myself.set_callback (self.goal_reached)
+        
+    def walk (self):
+        # -- in common room -> goto parlour
+        if self.myself.submap () == 1:
+            self.myself.set_goal (14, 4, adonthell.STAND_EAST)
+            self.walk_delay = "%it" % random.randrange (36, 108)
+            
+        # -- in parlour -> goto common room
+        else:
+            self.myself.set_goal (0, 4, adonthell.STAND_WEST)
+            self.walk_delay = "%it" % random.randrange (20, 60)
 
-        # -- help the player with jelom
-        elif adonthell.gamedata_get_quest ("demo").get_val ("convince_jelom") == 2:
-            myself.set_schedule_active (0)
-            # -- start Jelom's conversation with the player and Erek
-            jelom = adonthell.gamedata_get_character ("Jelom Rasgar")
-            jelom.launch_action (adonthell.gamedata_player ())
+    def goal_reached (self):
+        # -- reached common room
+        if self.myself.submap () == 1 and self.myself.posx () == 13:
+            x, y, dir = self.coords[random.randrange (0, 2)]
+            self.myself.set_goal (x, y, dir)
+        # -- reached parlour
+        elif self.myself.submap () == 2 and self.myself.posx () == 1:
+            x, y, dir = self.coords[random.randrange (2, 4)]
+            self.myself.set_goal (x, y, dir)
+        # -- reached our final destination
+        else:
+            self.myself.time_callback (self.walk_delay, self.walk)
 
-        # -- leave Bjarn's room
-        elif myself.get_val ("leave_bjarn") == 1:
-            goto = myself.get_val ("goto")
-            myself.set_val ("delay", 0)
+    # -- leave Bjarn's room
+    def leave_bjarn (self):
+        # -- set alternative schedule
+        self.myself.set_callback (self.leave_cellar)
 
-            # -- goto first floor
-            if goto == 9: coords = self.to_1st
-            # -- goto common room
-            else: coords = self.to_common
+        x, y, dir = self.to_common[self.index]
+        self.myself.set_goal (x, y, dir)
+    
+    def leave_cellar (self):
+        self.index = self.index + 1
+        goto = self.myself.get_val ("goto")
+        
+        # -- goto first floor
+        if goto == 9: coords = self.to_1st
+        # -- goto common room
+        else: coords = self.to_common
+    
+        if self.index < len (coords):
+            x, y, dir = coords[self.index]
+            self.myself.set_goal (x, y, dir)
 
-            if self.index < len (coords):
-                myself.set_val ("leave_bjarn", 2)
-                x, y, dir = coords[self.index]
-                myself.set_goal (x, y, dir)
-
-            # -- arrived
+        # -- arrived
+        else:
+            # -- restore normal schedule
+            self.myself.set_callback (self.goal_reached)
+            self.myself.set_val ("goto", 0)
+            
+            if self.myself.submap () == 1:
+                x, y, dir = self.coords[random.randrange (0, 2)]
+                self.myself.set_goal (x, y, dir)
             else:
-                myself.set_val ("leave_bjarn", 0)
-                if myself.submap () == 1:
-                    x, y, dir = self.coords[random.randrange (0, 2)]
-                    myself.set_goal (x, y, dir)
-                else:
-                    myself.set_schedule_active (0)
-
-            myself.set_val ("todo", 2)
-
-
-        # -- "normal" schedule
-        todo = myself.get_val ("todo")
-
-        # -- waiting
-        if todo == 0:
-            delay = myself.get_val ("delay")
-
-            # If standing delay expired, move around next time
-            if delay == 0:
-                myself.set_val ("todo", 1)
-            else:
-                myself.set_val ("delay", delay - 1)
-
-        # -- get movement target
-        elif todo == 1:
-            # -- on our way back from bjarn's room
-            if myself.get_val ("leave_bjarn") == 2:
-                myself.set_val ("leave_bjarn", 1)
-                self.index = self.index + 1
-
-            # -- switch places
-            else:
-                # -- in common room -> goto parlour
-                if myself.submap () == 1:
-                    myself.set_goal (14, 4, adonthell.STAND_EAST)
-
-                # -- in parlour -> goto common room
-                else:
-                    myself.set_goal (0, 4, adonthell.STAND_WEST)
-
-            myself.set_val ("todo", 2)
-
-        # -- move
-        elif todo == 2:
-            if myself.follow_path () == 1:
-                # -- reached common room
-                if myself.submap () == 1 and myself.posx () == 13:
-                    x, y, dir = self.coords[random.randrange (0, 2)]
-                    myself.set_goal (x, y, dir)
-
-                    delay = random.randrange (50, 150) * 20
-                    myself.set_val ("delay", delay)
-
-                # -- reached parlour
-                elif myself.submap () == 2 and myself.posx () == 1:
-                    x, y, dir = self.coords[random.randrange (2, 4)]
-                    myself.set_goal (x, y, dir)
-
-                    delay = random.randrange (60, 180) * 30
-                    myself.set_val ("delay", delay)
-
-                # -- reached our final destination
-                else:
-                    myself.set_val ("todo", 0)
+                self.myself.pause ()

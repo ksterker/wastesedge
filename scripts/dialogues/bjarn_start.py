@@ -73,7 +73,7 @@ class bjarn_start (dialogue.base):
 	code = [\
 		"adonthell.gamedata_get_quest(\"demo\").set_val (\"bjarn_door_open\" , 1)\n",\
 		"adonthell.gamedata_get_quest(\"demo\").set_val (\"bjarn_door_open\" , 3)\n",\
-		"adonthell.gamedata_get_character(\"Erek Stonebreaker\").set_val (\"leave_bjarn\" , 1)\nadonthell.gamedata_get_character(\"Erek Stonebreaker\").set_schedule_active (1)\n",\
+		"adonthell.gamedata_get_character(\"Erek Stonebreaker\").do_stuff (\"leave_bjarn\")\nadonthell.gamedata_get_character(\"Erek Stonebreaker\").resume ()\n",\
 		"adonthell.gamedata_get_quest(\"demo\").set_val (\"ask_packed_gems\" , 3)\n",\
 		"adonthell.gamedata_get_quest(\"demo\").set_val (\"bjarn_lies\" , 1)\n"]
 

@@ -37,41 +37,22 @@ class bjarn (schedule.speak):
                        (7, 3, adonthell.STAND_NORTH), \
                        (3, 6, adonthell.STAND_WEST)]
 
-    def run_old (self):
-        myself = self.myself
+        self.myself.set_callback (self.goal_reached)
 
-        # -- Get at the proper place when Erek lets the player into the room
-        #    and at the end of the game.
-        if adonthell.gamedata_get_quest ("demo").get_val("the_end") == 1 or \
-           adonthell.gamedata_get_quest ("demo").get_val("bjarn_door_open") == 2:
-            myself.jump_to (myself.submap (), 3, 6)
-            myself.stand_west ()
-            myself.set_val ("delay", 150)
-            return
-
-        todo = myself.get_val ("todo")
-
-        # -- waiting
-        if todo == 0:
-            delay = myself.get_val ("delay")
-            # If standing delay expired, move around next time
-            if delay == 0:
-                myself.set_val ("todo", 1)
-            else:
-                myself.set_val ("delay", delay - 1)
-
-        # -- engage a new movement
-        elif todo == 1:
-            x, y, dir = self.coords[random.randint (0, 3)]
-
-            myself.set_goal (x, y, dir)
-            myself.set_val ("todo", 2)
-
-        # -- moving
-        elif todo == 2:
-            if myself.follow_path () == 1:
-                # -- the time we stay at the same place
-                delay = random.randint (30, 60) * 25
-
-                myself.set_val ("delay", delay)
-                myself.set_val ("todo", 0)
+    # -- Get at the proper place when Erek lets the player into the room
+    #    and at the end of the game.
+    def await_player (self):
+        self.myself.jump_to (self.myself.submap (), 3, 6)
+        self.myself.stand_west ()
+    
+    def start_talking (self):
+        self.myself.launch_action (adonthell.gamedata_player ())
+        adonthell.gamedata_get_character ("Erek Stonebreaker").pause ()
+        
+    def walk (self):
+        x, y, dir = self.coords[random.randint (0, 3)]
+        self.myself.set_goal (x, y, dir)
+    
+    def goal_reached (self):
+        delay = "%it" % random.randrange (15, 30)
+        self.myself.time_callback (delay, self.walk)

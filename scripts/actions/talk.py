@@ -24,7 +24,7 @@ class talk:
         # -- activate the characters' schedules
         # player isn't event-driven yet
         args[0].set_schedule_active (1)
-        # args[0].resume ()
+        args[0].resume ()
         args[1].resume ()
 
         adonthell.gamedata_engine ().set_control_active (1)
@@ -33,8 +33,8 @@ class talk:
         if requester.get_name() == adonthell.gamedata_player ().get_name():
             # -- deactivate the schedule of the characters involved
             self.myself.pause ()
+            requester.pause ()
             # player isn't event-driven yet
-            # requester.pause ()
             requester.set_schedule_active (0)
 
             # -- don't allow access to main menu and stuff

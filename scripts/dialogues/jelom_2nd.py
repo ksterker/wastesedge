@@ -115,30 +115,33 @@ class jelom_2nd (dialogue.base):
 
 	def __del__(self):
 		if adonthell.gamedata_get_quest("demo").get_val ("the_end") == 1:
+		    bjarn = adonthell.gamedata_get_character("Bjarn Fingolson")
+		    bjarn.do_stuff ("await_player")
+		
 		    # make all dudes go down to Bjarn
 		    shair = adonthell.gamedata_get_character("Imoen Silverhair")
 		    shair.set_schedule ("to_cellar")
-		    shair.set_val ("delay", 5)
+		    shair.time_callback_string ("2t", "walk")
 		
 		    jelom = adonthell.gamedata_get_character("Jelom Rasgar")
-		    jelom.set_val ("delay", 20)
 		    jelom.set_schedule ("to_cellar")
+		    jelom.time_callback_string ("1t", "walk")
 				
 		    player = adonthell.gamedata_player ()
-		    player.set_val ("delay", 35)
 		    player.set_schedule ("to_cellar")
+		    player.time_callback_string ("2t", "walk")
 				
 		    erek = adonthell.gamedata_get_character("Erek Stonebreaker")
-		    erek.set_schedule_active (1)
+		    erek.resume ()
 		    erek.set_schedule ("to_cellar")
-		    erek.set_val ("delay", 45)
+		    erek.time_callback_string ("3t", "walk")
 				
 		    fnir = adonthell.gamedata_get_character("Fellnir Kezular")
 		    fnir.set_schedule ("to_cellar")
-		    fnir.set_val ("delay", 130)
+		    fnir.time_callback_string ("4t", "walk")
 				
 		    illig = adonthell.gamedata_get_character("Tristan Illig")
 		    illig.set_schedule ("to_cellar")
-		    illig.set_val ("delay", 300)
+		    illig.time_callback_string ("7t", "walk")
 		
 

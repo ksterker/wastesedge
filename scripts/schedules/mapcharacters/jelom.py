@@ -44,3 +44,8 @@ class jelom (schedule.speak):
     def goal_reached (self):
         delay = "%it" % random.randrange (20, 65)
         self.myself.time_callback (delay, self.walk)
+
+    def start_talking (self):
+        self.myself.launch_action (adonthell.gamedata_player ())
+        adonthell.gamedata_get_character ("Erek Stonebreaker").pause ()
+        

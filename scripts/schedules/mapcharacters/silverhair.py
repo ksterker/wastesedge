@@ -39,12 +39,12 @@ class silverhair (schedule.speak):
         # -- goto the window
         if self.myself.posx () == 4:
             # ... and speak about the weather
-            self.delay = "%it" % random.randrange (15, 22)
+            self.myself.set_val ("delay", random.randrange (15, 22))
             self.myself.set_goal (6, 4, adonthell.STAND_EAST)
 
         # -- go back to our normal position
         else:
-            self.delay = "%it" % random.randrange (70, 140)
+            self.myself.set_val ("delay", random.randrange (15, 22))
             if self.myself.set_goal (4, 4, adonthell.STAND_SOUTH) == 0:
                 self.myself.go_north ()
                                 
@@ -53,4 +53,5 @@ class silverhair (schedule.speak):
         if self.myself.posx () == 6:
             self.myself.speak (self.speech[3])
         
-        self.myself.time_callback (self.delay, self.walk)
+        delay = "%it" % self.myself.get_val ("delay")
+        self.myself.time_callback (delay, self.walk)

@@ -291,6 +291,10 @@ class erek_start (dialogue.base):
 	def __del__(self):
 		# -- 'teleport' to Bjarn's room
 		if adonthell.gamedata_get_quest("demo").get_val ("bjarn_door_open") == 2:
+		    bjarn = adonthell.gamedata_get_character ("Bjarn Fingolson")
+		    bjarn.do_stuff ("await_player")
+		    bjarn.time_callback_string ("1t", "start_talking")
+		
 		    erek = adonthell.gamedata_get_character ("Erek Stonebreaker")
 		    import events
 		    erek.set_val ("goto", erek.submap ())
@@ -299,6 +303,10 @@ class erek_start (dialogue.base):
 		
 		# -- Teleport to Jelom
 		if adonthell.gamedata_get_quest("demo").get_val ("convince_jelom") == 2:
+		    jelom = adonthell.gamedata_get_character ("Jelom Rasgar")
+		    jelom.jump_to (9, 2, 3, 1)
+		    jelom.time_callback_string ("1t", "start_talking")
+		
 		    erek = adonthell.gamedata_get_character ("Erek Stonebreaker")
 		    erek.set_schedule_active (0)
 		    import events
