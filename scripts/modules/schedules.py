@@ -1,5 +1,5 @@
 #
-#  $Id: schedules.py,v 1.5 2001/08/18 13:29:27 adondev Exp $
+#  $Id: schedules.py,v 1.6 2001/08/18 17:48:30 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -99,9 +99,9 @@ def speak (mychar, text):
 
         b = bubble (mychar, text)
         b.thisown = 0
-
+        
         # -- add the bubble to the win_manager, but don't give it the focus
-        win_manager_add (b)
+        win_manager_add_after (b, gamedata_map_engine ().get_mapview ())
 
 
 # -- the "bubble"-window
