@@ -44,7 +44,7 @@ elif myself.get_val ("leave_bjarn") == 1:
 
     # -- in the Cellar
     elif submap == 4:
-        schedules.simple_goto_xy (myself, 5, 2)
+        schedules.simple_goto_xy (myself, 6, 1)
 
     # -- hopefully in the common room
     else:

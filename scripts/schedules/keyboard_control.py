@@ -93,13 +93,13 @@ elif input_is_pushed (SDLK_RIGHT): myself.go_east ()
 elif input_is_pushed (SDLK_LEFT): myself.go_west ()
 
 # Special tip! :)
-elif input_has_been_pushed (SDLK_KP_PLUS):
+elif input_has_been_pushed (SDLK_n):
     if myself.submap () < map_engine.get_landmap ().nbr_of_submaps () - 1:
         myself.jump_to (myself.submap () + 1, 5, 3)
     else:
         myself.jump_to (0, 7, 18)
 
-elif input_has_been_pushed (SDLK_KP_MINUS):
+elif input_has_been_pushed (SDLK_p):
     if myself.submap () > 1:
         myself.jump_to (myself.submap () - 1, 5, 3)
     elif myself.submap () == 1:

@@ -1,5 +1,5 @@
 #
-#  $Id: schedules.py,v 1.3 2001/08/15 13:23:40 adondev Exp $
+#  $Id: schedules.py,v 1.4 2001/08/15 20:48:26 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -45,10 +45,17 @@ def simple_goto_xy (mychar, goal_x, goal_y):
 
 # -- try to walk in the direction that leads to the goal
 def go_north_south (mychar, dist_x, dist_y, count):
+###   Continue current movment if moving
+##    if mychar.offx () or mychar.offy ():
+##        if mychar.currentmove () == WALK_NORTH:
+##            mychar.go_north ()
+##        elif mychar.currentmove () == WALK_SOUTH:
+##            mychar.go_south ()
+##        return
 
     # -- All four directions blocked -> wait a turn
     if count >= 4: return
-
+        
     # -- try to approach goal in y direction first,
     #    if blocked, try x direction, and if that's not
     #    possible then walk back
@@ -62,7 +69,14 @@ def go_north_south (mychar, dist_x, dist_y, count):
 
 # -- try to walk in the direction that leads to the goal
 def go_east_west (mychar, dist_x, dist_y, count):
-
+###   Continue current movment if moving
+##    if mychar.offx () or mychar.offy ():
+##        if mychar.currentmove () == WALK_WEST:
+##            mychar.go_west ()
+##        elif mychar.currentmove () == WALK_EAST:
+##            mychar.go_east ()
+##        return
+    
     # -- All four directions blocked -> wait a turn
     if count >= 4: return
 

@@ -20,7 +20,7 @@ import random
 
 # -- Borders of the area he should stay in
 min_x = 1
-max_x = 7
+max_x = 6
 min_y = 2
 max_y = 6
 

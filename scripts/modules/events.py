@@ -52,9 +52,12 @@ def switch_submap (mychar, x, y, submap, dir):
 
     # -- comparing mychar and player directly does not work (???)
     if mychar.get_name () == gamedata_player ().get_name ():
+        mychar.set_schedule_active (0)
+        mychar.stand ()
         fade_out ()
         mychar.jump_to (x, y, submap, dir)
         fade_in ()
+        mychar.set_schedule_active (1)
     else:
         mychar.jump_to (x, y, submap, dir)
 

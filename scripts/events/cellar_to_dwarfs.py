@@ -8,6 +8,7 @@ if p.submap () == 4:
     if open == 0 or open == 1:
         if p == the_player:
             characters["Bjarn Fingolson"].launch_action (p)
+            p.stand ()
             p.go_west ()
     else:
         switch_submap (p, 7, 1, 6 + (p.posy () - 6), STAND_EAST)

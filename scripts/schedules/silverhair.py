@@ -46,7 +46,7 @@ if todo == 0:
 
 # -- walk up to the window and wait a little
 elif todo < 0:
-    if schedules.simple_goto_xy (myself, 7, 5) == 1:
+    if schedules.simple_goto_xy (myself, 6, 4) == 1:
         myself.stand_east ()
 
         # -- speak

@@ -39,6 +39,7 @@ elif myself.get_val ("goto_players_room") == 2:
     myself.launch_action (the_player)
     # -- does not make a change
     myself.set_schedule_active (0)
+    the_player.set_schedule_active (0)
 
 # -- leave the player's room and goto the barn
 elif myself.get_val ("goto_barn") == 1:
@@ -50,11 +51,18 @@ elif myself.get_val ("goto_barn") == 1:
 
     # -- First floor
     elif location == 9:
-        schedules.simple_goto_xy (myself, 6, 1)
+        schedules.simple_goto_xy (myself, 7, 1)
 
     # -- Common Room
     elif location == 1:
         schedules.simple_goto_xy (myself, 13, 8)
+
+    # -- Yard
+    elif location == 0:
+        if myself.posx () == 25 and myself.posy () == 15:
+            myself.set_val ("goto_barn", 0)
+        else:
+            schedules.simple_goto_xy (myself, 25, 15)
 
     # -- should be outside the inn!
     else:
