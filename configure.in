@@ -4,7 +4,7 @@ dnl **************************************************************
 
 AC_INIT(README)
 
-AM_INIT_AUTOMAKE(wastesedge, 0.3pre1)
+AM_INIT_AUTOMAKE(wastesedge, 0.3)
 
 dnl Checking for Adonthell
 AC_PATH_PROG(adonthell_binary, adonthell)

@@ -17,6 +17,9 @@ import events
 
 class extro:
     def __init__(self, mapchar):
+        # -- audio
+        adonthell.audio_fade_out_background (1000)
+        
         # -- grab the character's we need
         bjarn = adonthell.gamedata_get_character ("Bjarn Fingolson")
         erek = adonthell.gamedata_get_character ("Erek Stonebreaker")
@@ -143,7 +146,7 @@ class extro:
             ("James Nash", 2), \
             ("soundtrack available on:", 1), \
             ("http://zhaymusic.com/wastesedge/", 5), \
-            ("the Adonthell team whishes to thank:", 2), \
+            ("the Adonthell team wishes to thank:", 2), \
             ("Al Koskelin", 1), \
             ("Andrew Henderson", 1), \
             ("Chris Harris", 1), \
@@ -157,7 +160,7 @@ class extro:
             ("Software developers whose work", 1), \
             ("made Adonthell possible", 3), \
             ("career portal:", 1), \
-            ("http://adonthell.linuxgames.com/development/", 3), \
+            ("http://adonthell.linuxgames.com/development/", 5), \
             ("No Yetis were harmed during\n the production of this game", 5), \
             ("presented in", 2), \
             ("Ogg Vorbis Stereo", 1), \
@@ -201,7 +204,12 @@ class extro:
         self.bjarn.pack ()
         self.bjarn.thisown = 0
 
-
+        # -- set new audio schedule and play extro music
+        adonthell.audio_load_background (0, "audio/at-demo-9.ogg")
+        adonthell.audio_play_background (0)
+        adonthell.audio_set_schedule ("extro")
+    
+    
     def run (self):
         # -- deactivate game controls
         if self.index == 0:
@@ -435,6 +443,10 @@ class extro:
 
         # -- zoom to bjarn's face        
         elif self.step == 601:
+            # -- audio
+            adonthell.audio_load_background (1, "audio/at-demo-a.ogg")
+            adonthell.audio_play_background (1)
+            
             self.bjarn.set_visible (1)
             self.window.add (self.bjarn)
             self.window.remove (self.c_bag)
@@ -527,6 +539,12 @@ class extro:
         
         self.draw_func = self.forest_animation
         
+        # -- audio
+        adonthell.audio_fade_out_background (500)
+        adonthell.gamedata_get_quest ("demo").set_val ("music", 1)
+        adonthell.audio_load_background (2, "audio/at-demo-2.ogg")
+        adonthell.audio_play_background (2)
+        
         # -- misc stuff
         self.step = 0       # -- for the extro control
         self.anim = 0       # -- for the forest animation control
@@ -601,6 +619,9 @@ class extro:
         elif self.step == 2:
             self.delay = self.delay + 1
             if self.delay == 350:
+                  # -- audio
+                  adonthell.audio_set_schedule_active (0)
+                  adonthell.audio_fade_out_background (2000)
                   self.window.add (self.black)
                   self.step = 3
         
@@ -631,7 +652,6 @@ class extro:
     # -- prepare credits
     def make_credits (self):
         # -- audio
-        adonthell.audio_fade_out_background (500)
         adonthell.audio_load_background (0, "audio/at-demo-8.ogg")
         adonthell.audio_play_background (0)
 
