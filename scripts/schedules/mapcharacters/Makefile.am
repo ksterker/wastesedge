@@ -6,10 +6,10 @@ EXTRA_DIST = alek.py erek.py frostbloom.py janesta.py jelom.py \
 	keyboard_control.py oliver.py orloth.py sarin.py silverhair.py \
 	talan.py tristan.py fellnir.py to_cellar.py lucia.py intro.py
 
-all: *.pyc
+all:
+	$(adonthell_binary) -c
 
 *.pyc: *.py
-	python -c 'import compileall; compileall.compile_dir (".", 0);'
 
 clean:
-	rm *.pyc
+	rm -f *.pyc

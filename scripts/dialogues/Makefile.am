@@ -7,10 +7,10 @@ EXTRA_DIST = orloth_start.py lucia_start.py sarin_start.py \
     frostbloom_start.py talan_start.py alek_start.py jelom_start.py \
     tristan_start.py jelom_2nd.py demo_intro_1.py
 
-all: *.pyc
+all:
+	$(adonthell_binary) -c
 
 *.pyc: *.py
-	python -c 'import compileall; compileall.compile_dir (".", 0);'
 
 clean:
-	rm *.pyc
+	rm -f *.pyc

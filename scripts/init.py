@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.60 2001/10/24 14:14:26 adondev Exp $
+#  $Id: init.py,v 1.61 2001/10/27 17:03:53 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -20,8 +20,7 @@ import time
 class title_screen:
     def __init__ (self):
         # -- load our music
-        audio_load_background (0, "audio/at-menu-full.ogg")
-        audio_load_background (1, "audio/at-dummy-1.ogg")
+        audio_load_background (0, "audio/at-demo-1.ogg")
         audio_load_wave (0, "audio/select.wav")
         audio_load_wave (1, "audio/switch.wav")
         audio_load_wave (2, "audio/unselect.wav")
@@ -170,6 +169,8 @@ class title_screen:
 
     # -- on to the main menu
     def on_menu_close (self, retval):
+        audio_pause_music ()
+        audio_unload_background (0)
         if retval < 5:
             gamedata_map_engine ().set_should_update_map (1)
 
@@ -211,6 +212,7 @@ class title_screen:
 
         self.retval = 0
         audio_pause_music ()
+        audio_unload_background (0)
 
         screen_display.fillrect (0, 0, 320, 240, 0)
         screen_show ()
@@ -1018,7 +1020,6 @@ class title_screen:
         # just call gamedata::save (1) and copy the .data files
         # to the game's root directory.
 
-        audio_play_background (1)
         gametime_update ()
         gamedata_map_engine ().fade_in ()
 

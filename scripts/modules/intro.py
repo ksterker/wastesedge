@@ -109,6 +109,11 @@ need not be here.", "red", 25, 5, 400, 0),
            ("Trouble?  Why then, I must get inside.  My employer will need me close at \
 hand!", "yellow", 130, 15, 500, 0))
 
+# The audio
+audio_load_background (0, "audio/at-demo-2.ogg");
+audio_load_background (1, "audio/at-demo-3.ogg");
+audio_load_background (2, "audio/at-demo-4.ogg");
+
 wintextocc = 0
 wincpt = 0
 windelay = 0
@@ -121,6 +126,7 @@ letsexit = 0
 screen_clear ()
 
 gametime_start_action ()
+audio_play_background (0)
 
 while not input_has_been_pushed (SDLK_ESCAPE) and not input_has_been_pushed (SDLK_SPACE) and not letsexit:
     # Update the stuff
@@ -168,6 +174,7 @@ while not input_has_been_pushed (SDLK_ESCAPE) and not input_has_been_pushed (SDL
             else:
                 # Switch to close inn view?
                 if windelay == -300:
+                    audio_play_background (2)
                     status = 4
                     windelay = 0
                     wintextocc = 0
@@ -188,6 +195,7 @@ while not input_has_been_pushed (SDLK_ESCAPE) and not input_has_been_pushed (SDL
                     if bg.alpha () == 150:
                         # Start scrolling
                         status = 2
+                        audio_play_background (1)
 
             if status == 2:
                 if bgy < bg.height () - screen_height ():
@@ -232,6 +240,10 @@ while not input_has_been_pushed (SDLK_ESCAPE) and not input_has_been_pushed (SDL
     
     screen_show ()
     gametime_update ()
+
+audio_unload_background (0)
+audio_unload_background (1)
+audio_unload_background (2)
 
 # Avoid a bad crash...
 cont.remove (lab)
