@@ -468,6 +468,7 @@ if retval < 5:
         orloth.jump_to (1, 2, 2)
         orloth.set_action ("action_talk")
         orloth.stand_south ()
+        orloth.set_schedule ("orloth")
 
         # Once we want to generate the data context files,
         # just call gamedata::save (1) and copy the .data files
