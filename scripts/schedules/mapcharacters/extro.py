@@ -18,6 +18,7 @@ import events
 class extro:
     def __init__(self, mapchar):
         # -- audio
+        adonthell.audio_set_schedule_active (0)
         adonthell.audio_fade_out_background (1000)
         
         # -- grab the character's we need
@@ -31,25 +32,27 @@ class extro:
         
         # -- init the bubble texts
         #    (character, text)
-        self.text = [(bjarn, "There is no denying it. Yes, I feigned the theft."), \
-            (jelom, "But why? And where are the gems then?"), \
-            (bjarn, "Why? Haven't I made myself clear already?"), \
-            (bjarn, "I despise those Elves and their uncanny ways."), \
-            (bjarn, "Their ... meddling with reality contradicts all principles I learnt to hold true."), \
-            (bjarn, "And yet, I had to provide them with the reagents they need to perform their dark art."), \
-            (bjarn, "I felt so ... ashamed!"), \
-            (player, "And you believe that justifies the discomfort you caused my mistress?"), \
-            (bjarn, "You cannot think further than your mistress, can you?"), \
-            (bjarn, "Theft by a high born like Lady Silverhair would have been considered a grave insult by the clan elders."), \
-            (bjarn, "Had she been convicted, they might have chosen to cease trading with her people. And that probably for many years!"), \
-            (silverhair, "I feared as much and I feared the consequences."), \
-            (silverhair, "Without the arcane arts my kind would soon succumb to the human tides."), \
-            (silverhair, "But without gems and ores purchased from the small folk we cannot create magic."), \
-            (jelom, "Who would have thought that?"), \
-            (jelom, "Seems you owe " + player.get_name() + " here a big favour, if I may say so, Lady."), \
-            (silverhair, "Rest assured that " + player.get_name() + "'s deeds will not be forgotten, good man."), \
-            (jelom, "Well, this is settled then. What remains now are the whereabouts of the gems."), \
-            (jelom, "Master Fingolson!"), \
+        self.text = [(bjarn, "There is no denying it. Yes, I feigned the theft. "), \
+            (erek, "But Master? How could you do such an infamous deed? "), \
+			(jelom, "That I would know as well! And where are the gems then? "), \
+            (bjarn, "What? Haven't I made myself clear already? "), \
+            (bjarn, "I despise those Elves and their uncanny ways. "), \
+            (bjarn, "Their ... meddling with reality contradicts all principles I learnt to hold true.     "), \
+            (bjarn, "And yet, I had to provide them with the reagents they need to perform their dark art.     "), \
+            (bjarn, "I felt so ... ashamed! "), \
+            (player, "And you believe this justifies the discomfort you caused my mistress? "), \
+            (bjarn, "You cannot think further than your mistress, can you? "), \
+            (bjarn, "Theft by a high born like Lady Silverhair would have been considered a grave insult by the clan elders.     "), \
+            (bjarn, "Had she been convicted, they might have chosen to cease trading with her likes. "), \
+            (bjarn, "It might have been years before any Elf got his filthy hands on our beloved gems again! "), \
+			(silverhair, "I feared as much and I       feared the consequences."), \
+            (silverhair, "Without the arcane arts my kind would soon succumb to the human tides. "), \
+            (silverhair, "But without gems and ores purchased from the small folk we cannot create magic. "), \
+            (jelom, "Who would have thought that? "), \
+            (jelom, "Seems you owe " + player.get_name() + " here a big favour, if I may say so, Lady. "), \
+            (silverhair, "Rest assured that " + player.get_name() + "'s deeds will not be forgotten, good man. "), \
+            (jelom, "Well, this is settled then. What remains now are the whereabouts of the gems. "), \
+            (jelom, "Master Fingolson! "), \
             (None, "They were here all the time, safe from thieving hands, ..."), \
             (None, "... well hidden in a niche I carved during my previous visits."), \
             (None, "Right here."), \
@@ -207,7 +210,6 @@ class extro:
         # -- set new audio schedule and play extro music
         adonthell.audio_load_background (0, "audio/at-demo-9.ogg")
         adonthell.audio_play_background (0)
-        adonthell.audio_set_schedule ("extro")
     
     
     def run (self):
@@ -216,8 +218,8 @@ class extro:
             adonthell.gamedata_engine ().set_control_active (0)
 
         # -- Bjarn walks up to chest
-        elif self.index == 18:
-            bjarn = self.text[2][0]
+        elif self.index == 20:
+            bjarn = self.text[3][0]
             if self.done == 0:
                 bjarn.set_schedule_active (0)
                 bjarn.set_goal (7, 3, adonthell.STAND_NORTH)
@@ -232,8 +234,8 @@ class extro:
                 return
         
         # -- Talan bursts in
-        elif self.index == 23 and self.done == 0:
-            bjarn = self.text[2][0]
+        elif self.index == 25 and self.done == 0:
+            bjarn = self.text[3][0]
             bjarn.go_south ()
             bjarn.load ('bjarn_crying.mchar')
             
@@ -251,7 +253,7 @@ class extro:
             talan.stand_south ()
             self.done = 1
         
-        elif self.index == 34 and self.bubble == None:
+        elif self.index == 36 and self.bubble == None:
             # -- shutdown the mapview, it's no longer needed
             adonthell.gamedata_player ().set_schedule_active (0)
             adonthell.gamedata_engine ().fade_out ()
@@ -411,6 +413,7 @@ class extro:
         elif self.step > 1 and self.step <= 255:
             self.c_bag.set_alpha (self.step)
             self.step = self.step + 1
+            return
         
         # -- fading done
         elif self.step == 256:
@@ -420,29 +423,33 @@ class extro:
             del self.wall
             self.step = 257
 
-        elif self.step == 257 and self.bubble == None:            
-            self.step = 258
+        elif self.step > 256 and self.step <= 306:
+            self.step = self.step + 1
+            return
+
+        elif self.step == 307 and self.bubble == None:            
+            self.step = 308
             self.index = self.index + 1
-            # -- "Here"
+            # -- "Right Here"
             self.bubble = self.make_bubble ()
         
         # -- fade in open bag 
-        elif self.step == 258:
+        elif self.step == 308:
             self.o_bag.set_alpha (3)
             self.o_bag.set_visible (1)
             self.window.add (self.o_bag)
             self.step = self.step + 1
 
-        elif self.step > 258 and self.step <= 511:
-            self.o_bag.set_alpha (self.step - 256)
+        elif self.step > 308 and self.step <= 561:
+            self.o_bag.set_alpha (self.step - 307)
             self.step = self.step + 1
         
         # -- wait a little
-        elif self.step > 511 and self.step <= 600:
+        elif self.step > 561 and self.step <= 650:
             self.step = self.step + 1
 
         # -- zoom to bjarn's face        
-        elif self.step == 601:
+        elif self.step == 651:
             # -- audio
             adonthell.audio_load_background (1, "audio/at-demo-a.ogg")
             adonthell.audio_play_background (1)
@@ -454,29 +461,29 @@ class extro:
             del self.c_bag
             del self.o_bag
             
-            self.step = 602
+            self.step = 652
             self.index = self.index + 1
             # -- "But ..."
             self.bubble = self.make_bubble ()
         
-        elif self.step == 602 and self.bubble == None:            
-            self.step = 603
+        elif self.step == 652 and self.bubble == None:            
+            self.step = 653
             self.index = self.index + 1
             # -- "... they are gone"
             self.bubble = self.make_bubble ()
 
         # -- wait a little more
-        elif self.step > 602 and self.step <= 800:
+        elif self.step > 652 and self.step <= 850:
             if self.bubble == None: self.step = self.step + 1
             
-        elif self.step == 801:
+        elif self.step == 851:
             if self.bubble != None: 
                 adonthell.win_manager_get_active ().remove (self.bubble)
                 self.bubble = None
             adonthell.gamedata_engine ().main_quit ()
             adonthell.gamedata_player ().set_schedule_active (1)
             self.done = 0
-            self.index = 23
+            self.index = 25
         
     # -- forest sequence
     def fade_to_forest (self):
@@ -541,9 +548,6 @@ class extro:
         
         # -- audio
         adonthell.audio_fade_out_background (500)
-        adonthell.gamedata_get_quest ("demo").set_val ("music", 1)
-        adonthell.audio_load_background (2, "audio/at-demo-2.ogg")
-        adonthell.audio_play_background (2)
         
         # -- misc stuff
         self.step = 0       # -- for the extro control
@@ -567,15 +571,15 @@ class extro:
             update = 1
             self.alek_run.update ()
             self.x[2] = self.update_wood (self.wood3, self.x[2])
+        	
+            if self.anim % 4 == 0:
+                self.x[0] = self.update_wood (self.wood1, self.x[0])
+
         
         if self.anim % 3 == 0:
             update = 1
             self.x[1] = self.update_wood (self.wood2, self.x[1])
         
-        if self.anim % 4 == 0:
-            update = 1
-            self.x[0] = self.update_wood (self.wood1, self.x[0])
-
         # -- draw
         if update == 1:
             self.draw_wood (self.wood1, self.x[0])
@@ -590,6 +594,9 @@ class extro:
                 self.black.set_alpha (alpha - 1)
                 return
             else:
+                adonthell.audio_load_background (2, "audio/at-demo-2.ogg")
+                adonthell.audio_play_background (2)
+
                 self.window.remove (self.black)
                 self.step = 1
         
@@ -598,7 +605,7 @@ class extro:
                 if self.cursor < len (self.typeover[self.index]):
                     self.delay = self.delay + 1
                     
-                    if self.delay >= 7:
+                    if self.delay >= 6:
                         if self.cursor == 0: self.label.set_text ("")
                         txt = self.typeover[self.index][self.cursor]
                         self.label.add_text (txt)
@@ -610,7 +617,7 @@ class extro:
                 else:
                     self.index = self.index + 1
                     self.cursor = 0
-                    self.delay = -350
+                    self.delay = -200
             else:
                 self.delay = 0
                 self.step = 2
@@ -620,7 +627,6 @@ class extro:
             self.delay = self.delay + 1
             if self.delay == 350:
                   # -- audio
-                  adonthell.audio_set_schedule_active (0)
                   adonthell.audio_fade_out_background (2000)
                   self.window.add (self.black)
                   self.step = 3
