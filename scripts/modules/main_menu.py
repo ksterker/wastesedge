@@ -126,10 +126,10 @@ class main_menu (win_container):
 
             gametime_start_action ()
             while done != 0:
-                for k in range (gametime_frames_to_do()+1):
+                for k in range (gametime_frames_to_do()):
                     win_manager_update ()
                     self.update ()
-                done = self.create_menu (moves, goals)
+                    done = self.create_menu (moves, goals)
                 win_manager_draw ()
                 self.draw ()
                 screen_show ()

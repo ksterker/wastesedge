@@ -43,6 +43,7 @@ gfx/mapobjects/walls/inside/Makefile
 gfx/mapobjects/walls/stone/Makefile
 gfx/mapobjects/walls/Makefile
 gfx/mapobjects/Makefile
+gfx/portraits/Makefile
 gfx/window/background/original/Makefile
 gfx/window/background/silverleaf/Makefile
 gfx/window/background/Makefile

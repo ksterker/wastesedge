@@ -8,9 +8,9 @@ if p.submap () == 9:
     if not free and p == the_player:
         # -- we only need that for the dialogue, ...
         p.set_val ("at_silverhairs_door", 1)
-        characters["Jelom Rasgar"].launch_action (p)
         p.stand ()
         p.go_north ()
+        characters["Jelom Rasgar"].launch_action (p)
         # -- ... so remove it again afterwards
         p.set_val ("at_silverhairs_door", 0)
     else:

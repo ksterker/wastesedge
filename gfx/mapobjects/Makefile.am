@@ -1,4 +1,4 @@
-SUBDIRS = exteriors floorings furnitures houses icons terrains walls
+SUBDIRS = exteriors floorings furnitures houses icons terrains walls stairs
 
 pkgdatadir = $(gamedatadir)/gfx/mapobjects
 
