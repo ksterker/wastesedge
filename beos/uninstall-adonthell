@@ -1,0 +1,25 @@
+#!/bin/sh
+
+if test -t 0
+then :
+else
+	alert 'Please run uninstall-adonthell from Terminal!'
+	exit 1
+fi
+
+echo
+echo "Removing Desktop shortcut ..."
+
+rm -f "/boot/home/Desktop/Waste's Edge" 
+
+echo "Removing Application menu entry ..."
+
+rm -f "/boot/apps/Waste's Edge"
+rm -f "/boot/beos/apps/Waste's Edge"
+
+echo
+echo "Done. You can now delete this directory to remove Adonthell -"
+echo "Waste's Edge entirely from your system."
+echo
+echo "We hope you enjoyed it! See you with version 0.4!"
+echo

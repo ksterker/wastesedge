@@ -1,0 +1,36 @@
+This file describes how to install the binary release of Adonthell -
+Waste's Edge for Beos 5 (x86).
+
+Requirements:
+=============
+
+Adonthell requires Python 2.2 to be installed. Otherwise it won't run.
+You can get it at BeBits:
+
+	http://www.bebits.com/app/2206
+
+
+Installation:
+=============
+
+Once Python is installed, open a Terminal and change into the 
+wastesedge-0.3.3 directory. In there, execute
+
+	install-adonthell
+	
+That's it. Now you'll find shortcuts to Waste's Edge on your Desktop
+and your Application menu. Use either of them to launch it.
+
+Note that if you move the wastesedge-0.3.3 directory after the 
+installation, you'll have to rerun install-adonthell.
+
+
+If you'd rather run Waste's Edge from a Terminal, enter
+
+	adonthell wastesedge
+
+
+To finally remove Adonthell, run the script called uninstall-adonthell.
+It will remove those shortcuts from Desktop and Application menu. 
+Afterwards you can manually delete the wastesedge-0.3.3 directory.
+

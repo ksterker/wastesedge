@@ -1,0 +1,54 @@
+#!/bin/sh
+
+if test -t 0
+then :
+else
+	alert 'Please run install-adonthell from Terminal!'
+	exit 1
+fi
+
+echo
+
+if test -e 'adonthell' 
+then :
+else
+	echo '*** Please run install-adonthell from within the wastesedge-0.3.3 directory!'
+	echo
+	exit 1
+fi
+
+mydir=`pwd`
+myapp="${mydir}/adonthell-wastesedge"
+
+echo "Creating start script ..."
+
+rm -f $myapp
+echo -e "#!/bin/sh\n\ncd ${mydir}\n./adonthell wastesedge" > $myapp
+settype -t application/x-vnd.Adonthell-Wastesedge $myapp
+xres -o adonthell ${mydir}/wastesedge.rsrc
+mimeset -f adonthell
+chmod 755 $myapp
+
+echo "Creating Desktop shortcut ..."
+
+rm -f "/boot/home/Desktop/Waste's Edge" 
+ln -s $myapp "/boot/home/Desktop/Waste's Edge" 
+
+echo "Creating Application menu entry ..."
+
+rm -f "/boot/apps/Waste's Edge"
+ln -s $myapp "/boot/apps/Waste's Edge" 
+
+rm -f "/boot/beos/apps/Waste's Edge"
+ln -s $myapp "/boot/beos/apps/Waste's Edge" 
+
+echo
+echo "Okay, now you are ready to launch Adonthell - Waste's Edge."
+echo "To change the program settings, please edit the config file"
+echo
+echo "    $mydir/adonthellrc"
+echo
+echo "with your favourite text editor."
+echo
+echo "Have Fun!"
+echo
