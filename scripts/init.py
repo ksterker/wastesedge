@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.75 2001/12/28 18:39:20 adondev Exp $
+#  $Id: init.py,v 1.76 2001/12/31 15:33:31 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -96,6 +96,7 @@ class title_screen:
         if self.draw_func != None:
             # -- Skip intro sequence
             if input_has_been_pushed (SDLK_ESCAPE):
+                audio_fade_out_background (500)
                 self.bag_t.set_visible (0)
                 self.bag_c.set_visible (0)
                 self.bag_o.set_visible (1)

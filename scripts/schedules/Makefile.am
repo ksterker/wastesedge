@@ -1,4 +1,4 @@
-SUBDIRS = mapcharacters mapviews
+SUBDIRS = audio mapcharacters mapviews
 
 pkgdatadir = $(gamedatadir)/scripts/schedules
 

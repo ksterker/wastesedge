@@ -76,6 +76,7 @@ scripts/dialogues/Makefile
 scripts/events/Makefile
 scripts/modules/Makefile
 scripts/schedules/Makefile
+scripts/schedules/audio/Makefile
 scripts/schedules/mapcharacters/Makefile
 scripts/schedules/mapviews/Makefile
 scripts/Makefile

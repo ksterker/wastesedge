@@ -125,7 +125,6 @@ class extro:
         
         # -- Talan bursts in
         elif self.index == 23 and self.done == 0:
-            self.bubble = None
             bjarn = self.text[2][0]
             bjarn.go_south ()
             bjarn.load ('bjarn_crying.mchar')
@@ -355,9 +354,12 @@ class extro:
             if self.bubble == None: self.step = self.step + 1
             
         elif self.step == 801:
-            self.done = 0
+            if self.bubble != None: 
+                adonthell.win_manager_get_active ().remove (self.bubble)
+                self.bubble = None
             adonthell.gamedata_engine ().main_quit ()
             adonthell.gamedata_player ().set_schedule_active (1)
+            self.done = 0
         
     # -- forest sequence
     def fade_to_forest (self):
@@ -394,7 +396,7 @@ class extro:
         self.label = adonthell.win_label ()
         self.label.set_font (adonthell.win_manager_get_font ("white"))
         self.label.resize (240, 90)
-        self.label.move (40, 20)
+        self.label.move (40, 30)
         self.label.thisown = 0
         self.label.pack ()
         
