@@ -17,13 +17,6 @@ class bjarn_start:
     def clear (self):
         del self.dialogue
 
-        quests["demo"].set_val( "bjarn_door_open", 2 );
-        quests["demo"].set_val( "ask_packed_gems", 1 );
-        quests["demo"].set_val( "know_alek_eavesdrop", 1 );
-        quests["demo"].set_val( "know_bjarns_insult", 1 );
-        
-
-
     def __getattr__ (self, name):
         return 0
 
@@ -48,7 +41,7 @@ class bjarn_start:
             quests["demo"].set_val( "bjarn_door_open", 3 )
 
             self.player.append (-1)
-        if quests["demo"].get_val("bjarn_door_open") == 0:
+        if quests["demo"].get_val ("bjarn_door_open") == 0 or quests["demo"].get_val ("bjarn_door_open") == 1:
 
             self.color = 0
             self.npc.append (0)
@@ -99,6 +92,9 @@ class bjarn_start:
         self.color = the_npc.get_color()
         self.npc.append (9)
         self.cont.append (-1)
+        characters["Erek Stonebreaker"].set_val ("leave_bjarn" , 1)
+        characters["Erek Stonebreaker"].set_schedule_active (1)
+
         self.player.append (10)
         self.cont.append (7)
         self.player.append (-1)

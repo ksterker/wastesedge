@@ -43,8 +43,12 @@ def fade_in ():
 # -- switch submaps (character, new coordinates, new submap,
 #    direction the character shall face)
 def switch_submap (mychar, x, y, submap, dir):
-    mychar.set_schedule_active (0)
-    mychar.stand ()
+    if mychar.is_schedule_activated ():
+        mychar.set_schedule_active (0)
+        mychar.stand ()
+        schedule_active = 1
+    else:
+        schedule_active = 0
 
     # -- comparing mychar and player directly does not work (???)
     if mychar.get_name () == gamedata_player ().get_name ():
@@ -54,4 +58,5 @@ def switch_submap (mychar, x, y, submap, dir):
     else:
         mychar.jump_to (x, y, submap, dir)
 
-    mychar.set_schedule_active (1)
+    if schedule_active == 1:
+        mychar.set_schedule_active (1)

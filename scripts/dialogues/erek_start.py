@@ -19,7 +19,6 @@ class erek_start:
 
     # Returns whom the Player told about his connection
     # with Lady Silverhair
-    
     def get_right_npc (self):
         if quests["demo"].get_val ("work_4_shair") & 1 == 1:
             return "Master Orloth"
@@ -29,6 +28,15 @@ class erek_start:
     
         else:
             return "Tristan the merchant"
+    
+    # -- 'teleport' to Bjarn's room
+    def __del__ (self):
+        if quests["demo"].get_val ("bjarn_door_open") == 2:
+            erek = characters["Erek Stonebreaker"]
+            from events import switch_submap
+            switch_submap (the_player, 7, 1, 6, 3)
+            switch_submap (erek, 7, 2, 7, 0)
+    
 
 
     def __getattr__ (self, name):
@@ -76,22 +84,52 @@ class erek_start:
         self.cont.append (-1)
         self.player.append (73)
         self.cont.append (-1)
-        self.player.append (49)
-        self.cont.append (33)
         self.player.append (48)
         self.cont.append (32)
         if quests["demo"].get_val ("bjarn_door_open") == 1:
 
             self.player.append (84)
             self.cont.append (53)
+        if quests["demo"].get_val ("know_bjarns_insult") == 1:
+
+            self.player.append (49)
+            self.cont.append (33)
         self.player.append (-1)
         self.color = the_npc.get_color()
         self.npc.append (47)
         self.cont.append (-1)
         self.player.append (73)
         self.cont.append (-1)
-        self.player.append (49)
-        self.cont.append (33)
+        self.player.append (48)
+        self.cont.append (32)
+        if quests["demo"].get_val ("bjarn_door_open") == 1:
+
+            self.player.append (84)
+            self.cont.append (53)
+        if quests["demo"].get_val ("know_bjarns_insult") == 1:
+
+            self.player.append (49)
+            self.cont.append (33)
+        self.player.append (-1)
+
+    def answer49 (self):
+        self.color = the_npc.get_color()
+        self.npc.append (75)
+        self.cont.append (49)
+        self.player.append (-1)
+
+    def answer75 (self):
+        self.color = the_npc.get_color()
+        self.npc.append (76)
+        self.cont.append (50)
+        self.player.append (-1)
+
+    def answer76 (self):
+        self.color = the_npc.get_color()
+        self.npc.append (77)
+        self.cont.append (-1)
+        self.player.append (78)
+        self.cont.append (-1)
         self.player.append (48)
         self.cont.append (32)
         if quests["demo"].get_val ("bjarn_door_open") == 1:
@@ -99,6 +137,9 @@ class erek_start:
             self.player.append (84)
             self.cont.append (53)
         self.player.append (-1)
+
+    def answer78 (self):
+        pass
 
     def answer84 (self):
         self.color = the_npc.get_color()
@@ -264,35 +305,6 @@ class erek_start:
         self.cont.append (51)
         self.player.append (-1)
 
-    def answer49 (self):
-        self.color = the_npc.get_color()
-        self.npc.append (75)
-        self.cont.append (49)
-        self.player.append (-1)
-
-    def answer75 (self):
-        self.color = the_npc.get_color()
-        self.npc.append (76)
-        self.cont.append (50)
-        self.player.append (-1)
-
-    def answer76 (self):
-        self.color = the_npc.get_color()
-        self.npc.append (77)
-        self.cont.append (-1)
-        self.player.append (78)
-        self.cont.append (-1)
-        self.player.append (48)
-        self.cont.append (32)
-        if quests["demo"].get_val ("bjarn_door_open") == 1:
-
-            self.player.append (84)
-            self.cont.append (53)
-        self.player.append (-1)
-
-    def answer78 (self):
-        pass
-
     def answer73 (self):
         pass
 
@@ -372,14 +384,16 @@ class erek_start:
         self.cont.append (-1)
         self.player.append (74)
         self.cont.append (-1)
-        self.player.append (49)
-        self.cont.append (33)
         self.player.append (48)
         self.cont.append (32)
         if quests["demo"].get_val ("bjarn_door_open") == 1:
 
             self.player.append (84)
             self.cont.append (53)
+        if quests["demo"].get_val ("know_bjarns_insult") == 1:
+
+            self.player.append (49)
+            self.cont.append (33)
         self.player.append (-1)
 
     def answer74 (self):
@@ -399,12 +413,14 @@ class erek_start:
         self.cont.append (-1)
         self.player.append (48)
         self.cont.append (32)
-        self.player.append (49)
-        self.cont.append (33)
         if quests["demo"].get_val ("bjarn_door_open") == 1:
 
             self.player.append (84)
             self.cont.append (53)
+        if quests["demo"].get_val ("know_bjarns_insult") == 1:
+
+            self.player.append (49)
+            self.cont.append (33)
         self.player.append (-1)
 
     def answer56 (self):
