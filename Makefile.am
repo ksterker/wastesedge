@@ -17,4 +17,4 @@ adonthell-wastesedge:
 
 # -- make sure the data directory gets deleted
 uninstall-local:
-	rm -Rf $(gamedatadir)
+	rm -rf $(gamedatadir)

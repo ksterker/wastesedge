@@ -6,10 +6,7 @@ pkgdata_DATA = *.pyc
 
 EXTRA_DIST = control.py
 
-all:
+*.pyc: *.py
 	$(adonthell_binary) -c
 
-*.pyc: *.py
-
-clean:
-	rm -f *.pyc
+CLEANFILES = *.pyc

@@ -11,5 +11,4 @@ all:
 
 *.pyc: *.py
 
-clean:
-	rm -f *.pyc
+CLEANFILES = *.pyc
