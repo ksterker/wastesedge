@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.56 2001/10/12 09:49:41 adondev Exp $
+#  $Id: init.py,v 1.57 2001/10/17 14:27:28 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -789,6 +789,107 @@ class title_screen:
                                            "I'd better not touch this... What if it explodes??"))
         lm.add_event (ev)
 
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 0
+        ev.x = 6
+        ev.y = 17
+        ev.dir = STAND_WEST
+        ev.set_script ("character_speak", (the_player.get_name (), \
+                                           "Closed. We are all emprisonned here..."))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 0
+        ev.x = 6
+        ev.y = 18
+        ev.dir = STAND_WEST
+        ev.set_script ("character_speak", (the_player.get_name (), \
+                                           "Closed. We are all emprisonned here..."))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 0
+        ev.x = 6
+        ev.y = 19
+        ev.dir = STAND_WEST
+        ev.set_script ("character_speak", (the_player.get_name (), \
+                                           "Closed. We are all emprisonned here..."))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 17
+        ev.x = 1
+        ev.y = 6
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (the_player.get_name (), \
+                                           "It's locked."))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 19
+        ev.x = 2
+        ev.y = 5
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (the_player.get_name (), \
+                                           "It's locked."))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 19
+        ev.x = 6
+        ev.y = 4
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (the_player.get_name (), \
+                                           "It's locked."))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 19
+        ev.x = 6
+        ev.y = 8
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (the_player.get_name (), \
+                                           "It's locked."))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 6
+        ev.x = 1
+        ev.y = 4
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (the_player.get_name (), \
+                                           "It's locked."))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 7
+        ev.x = 7
+        ev.y = 3
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (the_player.get_name (), \
+                                           "I doubt Master Fingolson would be happy if I go through his things..."))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 13
+        ev.x = 1
+        ev.y = 6
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (the_player.get_name (), \
+                                           "Well, I can't dig into my mistress' shelf!"))
+        lm.add_event (ev)
+
+
         # Now setup the characters
         player = gamedata_player ()
         player.jump_to (0, 4, 18)
@@ -799,8 +900,9 @@ class title_screen:
         lucia.set_dialogue ("dialogues/lucia_start")
         lucia.load ("lucia.mchar")
         lucia.set_map (gamedata_map_engine ().get_landmap ())
-        lucia.jump_to (3, 4, 2)
+        lucia.jump_to (3, 4, 3)
         lucia.set_action ("talk")
+        lucia.set_schedule ("lucia")
         lucia.stand_south ()
         lucia.set_portrait ("lucia.pnm")
 
