@@ -12,6 +12,9 @@ This should print '0.3' and exit.
 Installing:
 ===========
 
+From source:
+------------
+
 In the toplevel wastesedge-0.3 directory type
 
 $> ./configure
@@ -22,6 +25,14 @@ and (as root)
 $> make install
 
 For more information, see the README file.
+
+Debian users:
+-------------
+
+You can automatically get an installable Debian package by typing
+'debuild', which comes in the 'devscripts' package. You'll of course
+need a properly installed 'adonthell' package, which you can get from
+Adonthell's sources.
 
 You can then check whether the game is correctly installed by invoking
 'adonthell -l', which should list 'wastesedge'.

@@ -1,0 +1,3 @@
+?package(wastesedge):needs=X11 section=Games/Adventure \
+  title="Adonthell - Waste's Edge" \
+  command="/usr/games/adonthell-wastesedge"

@@ -4,22 +4,42 @@ dnl **************************************************************
 
 AC_INIT(README)
 
-AM_INIT_AUTOMAKE(wastesedge, 0.3)
+AM_INIT_AUTOMAKE(wastesedge, 0.3.1)
+
+dnl ********************
+dnl Additional arguments
+dnl ********************
+
+AC_ARG_WITH(data-dir,
+[  --with-data-dir=DIR    Directory where datas will be installed],
+            adonthelldatadir="$withval", adonthelldatadir=none)
+
+AC_ARG_WITH(adonthell-binary,
+[  --with-adonthell-binary=FILE    The Adonthell engine binary],
+            adonthell_binary="$withval", adonthell_binary=none)
 
 dnl Checking for Adonthell
-AC_PATH_PROG(adonthell_binary, adonthell)
-if test x$adonthell_binary == x ; then
-    echo "Waste's Edge requires the Adonthell game engine. Exiting..."
-    exit 1
+if test x$adonthelldatadir = xnone; then
+   AC_PATH_PROG(adonthell_binary, adonthell)
+   if test x$adonthell_binary == x ; then
+       echo "Waste's Edge requires the Adonthell game engine. Exiting..."
+       exit 1
+   fi
+else 
+   echo "Using $adonthell_binary as the Adonthell binary"
 fi
 
 dnl Checking for the Adonthell data directory
-AC_MSG_CHECKING(for Adonthell data directory)
-adonthelldatadir=`$adonthell_binary -d`
-AC_MSG_RESULT($adonthelldatadir)
+if test x$adonthelldatadir = xnone; then
+   AC_MSG_CHECKING(for Adonthell data directory)
+   adonthelldatadir=`$adonthell_binary -d`
+   AC_MSG_RESULT($adonthelldatadir)
+else
+   echo "Destination directory: $adonthelldatadir"
+fi
 
 dnl Sets where the game will install itself
-gamedatadir=${adonthelldatadir}/games/wastesedge
+gamedatadir="${adonthelldatadir}/games/wastesedge"
 
 AC_SUBST(gamedatadir)
 AC_SUBST(adonthell_binary)

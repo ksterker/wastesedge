@@ -2,17 +2,21 @@ SUBDIRS = . audio gfx maps scripts
 
 pkgdatadir = $(gamedatadir)
 
-pkgdata_DATA = gamename.txt character.data mapengine.data quest.data audio.data PLAYING
+pkgdata_DATA = gamename.txt character.data mapengine.data quest.data audio.data
 
-EXTRA_DIST = $(pkgdata_DATA)
+EXTRA_DIST = $(pkgdata_DATA) PLAYING autogen.sh \
+	debian/README.debian debian/adonthell-wastesedge.6 debian/changelog debian/control \
+	debian/copyright debian/dirs debian/rules debian/menu
 
 bin_SCRIPTS = adonthell-wastesedge
+
+CLEANFILES = $(bin_SCRIPTS)
 
 # -- clean game directory before installing
 install-exec-local:
 	rm -Rf $(gamedatadir)
 
-adonthell-wastesedge:
+adonthell-wastesedge: Makefile
 	echo -e "#!/bin/sh\n\n$(adonthell_binary) wastesedge" > adonthell-wastesedge
 
 # -- make sure the data directory gets deleted

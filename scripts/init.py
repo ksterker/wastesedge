@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.86 2002/01/26 00:12:54 adondev Exp $
+#  $Id: init.py,v 1.87 2002/02/05 15:09:21 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -179,7 +179,7 @@ class title_screen:
             # -- load the initial game
             gamedata_load (0)
             adonthell.gamedata_player ().set_name (cs.name)
-                
+            
             # -- on to the intro
             self.play_intro ()
             

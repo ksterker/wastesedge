@@ -22,8 +22,7 @@ class fellnir:
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
         self.speech = ["Master Orloth should throw out that brute!", \
-                       "Take equal parts of vitriol, nitre and sal ammoniac ...", \
-                       "I have to talk with %s." % gamedata_player().get_name ()]
+                       "Take equal parts of vitriol, nitre and sal ammoniac ..."]
 
         self.coords = [(2, 5, STAND_EAST), \
                        (4, 4, STAND_SOUTH), \
@@ -65,6 +64,6 @@ class fellnir:
         tmp = myself.get_val ("say_something")
         myself.set_val ("say_something", tmp - 1)
         if tmp <= 0:
-            myself.speak (self.speech[randint (0, 2)])
+            myself.speak (self.speech[randint (0, 1)])
             delay = randint (20, 40) * 40
             myself.set_val ("say_something", delay)

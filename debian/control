@@ -1,0 +1,17 @@
+Source: wastesedge
+Section: games
+Priority: extra
+Maintainer: Alexandre Courbot <alexandrecourbot@linuxgames.com>
+Standards-Version: 3.2.1
+
+Package: wastesedge
+Architecture: any
+Depends: adonthell (>= 0.3), adonthell(<< 0.4)
+Description: Official game for Adonthell 0.3 
+ Official game for Adonthell 0.3
+ . 
+ As a loyal servant of the elven Lady Silverhair, you arrive at the remote
+ trading post of Waste's Edge, where she is engaged in negotiations with the
+ dwarish merchant Bjarn Fingolson. But not all is well at Waste's Edge, and
+ soon you are confronted with circumstances that are about to destroy your
+ mistress' high reputation. And you are the only one to avert this ...
