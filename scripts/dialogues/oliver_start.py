@@ -9,7 +9,7 @@ class oliver_start (dialogue.base):
 		_("As he notices you, the boy stops whatever he's been doing. With a cheerful grin on his face, he turns towards you."),\
 		_("Hello sir! Welcome to Waste's Edge."),\
 		_("Oh! I am Oliver, sir. I help Mum and Dad with the Inn. Looking after the stables and such."),\
-		_("Why yes! Would you belive that we have an actual Elven Lady staying at the Inn?"),\
+		_("Why yes! Would you believe that we have an actual Elven Lady staying at the Inn?"),\
 		_("Really? An Elven Lady?"),\
 		_("Yes, sir. Lady Silverbeard. From Cirdanth. And her two servants! She frightened me a bit, but now she's locked up in her room."),\
 		_("And who would you be?"),\
