@@ -65,5 +65,5 @@ if say == 0:
     else:
         myself.speak (speech[randint (0, 2)])
 
-    say = randint (50, 150) * 20
+    say = randint (60, 180) * 20
     myself.set_val ("say_something", say)

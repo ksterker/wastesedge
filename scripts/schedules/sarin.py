@@ -104,5 +104,5 @@ tmp = myself.get_val ("say_something")
 myself.set_val ("say_something", tmp - 1)
 if tmp == 0:
     myself.speak (speech[randint (0, 3)])
-    delay = randint (50, 150) * 10
+    delay = randint (50, 150) * 15
     myself.set_val ("say_something", delay)

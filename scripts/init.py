@@ -754,9 +754,10 @@ if retval < 5:
         janesta.set_dialogue ("dialogues/janesta_start")
         janesta.load ("servant1.mchar")
         janesta.set_map (map_engine.get_landmap ())
-        janesta.jump_to (13, 1, 4)
+        janesta.jump_to (13, 6, 3)
         janesta.set_action ("action_talk")
-        janesta.stand_east ()
+        janesta.stand_north ()
+        janesta.set_schedule ("janesta")
 
         # Once we want to generate the data context files,
         # just call gamedata::save (1) and copy the .data files
