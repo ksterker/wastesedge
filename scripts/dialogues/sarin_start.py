@@ -69,8 +69,10 @@ class sarin_start:
 		self.cont.append (-1)
 		self.player.append (7)
 		self.cont.append (4)
-		self.player.append (9)
-		self.cont.append (5)
+		if adonthell.gamedata_get_quest("demo").get_val ("know_frostbloom") == 1:
+
+			self.player.append (9)
+			self.cont.append (5)
 		self.player.append (-1)
 
 	def answer9 (self):

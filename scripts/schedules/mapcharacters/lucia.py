@@ -48,7 +48,10 @@ class lucia:
 
         # -- engage a new movement
         elif todo == 1:
-            x, y, dir = self.coords[randint(0, 1)]
+            if myself.posx () != 3:
+                x, y, dir = self.coords[0]
+            else:
+                x, y, dir = self.coords[randint(0, 1)]
             myself.set_goal (x, y, dir)
             myself.set_val ("todo", 2)
 
