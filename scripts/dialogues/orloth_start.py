@@ -465,10 +465,10 @@ class orloth_start:
 
 	def answer32 (self):
 		self.the_npc.set_val ("told_about_shair", 1)
-		myquest = quests["demo"]
-		myvar = myquest.get_val ("work_4_shair")
+		
+		myvar = adonthell.gamedata_get_quest("demo").get_val ("work_4_shair")
 		myvar = myvar | 1
-		myquest.set_val ("work_4_shair", myvar)
+		adonthell.gamedata_get_quest("demo").set_val ("work_4_shair" , myvar)
 		
 
 		self.color = self.the_npc.get_color()
