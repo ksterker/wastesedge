@@ -2,7 +2,7 @@ import adonthell
 
 class jelom_start:
 	loop = []
-	strings = ["Halt there! No-one is allowed into the prisoner's room!", "Stop right there, half-elf! You know that you are not allowed in there!", "No-one is allowed into the prisoner's room, so please leave this hallway!", "You again, half-elf? What do you want this time?", "Ah, you must be Jelom. Talan told me that I could find you here.", "And just who are you to prevent me from entering, sir?", "Nice to see you again, Jelom. Look, I have some more questions for you.", "Look, Jelom, I found out something that will cast some serious doubt on Lady Silverhair having committed the theft!", "My name is Jelom, and I am the chief of the guard at Waste's Edge! Who the hell are you?", "Who are you, and why were you looking for me?", "My name is $name. I'm investigating the theft and I have a few questions for you.", "And what might those questions be, half-elf?", "I doubt that, but since I won't get any peace from your pestering until you tell me, go ahead.", "You trust in the overactive imagination of some little kid? I know from Talan that everything was quiet during the night.  And I take the word of my own guard over Oliver's!", "Talan did not hear anything that night, because he was not at his post.", "What do you mean? Why wasn't he at his post?", "He sneaked away to take a nap.", "He wandered off to practise singing, of all things!", "A nap? I knew it! I had suspected that he caught some shuteye on duty from time to time, but have never caught him at it! He is in big trouble, this time!", "Singing? What, does the fool want to be a bard now? He is in big trouble now!", "But regardless of that, how do you know that it was not Silverhair herself who went to the stables and caused the noise? After stealing Master Fingolson's gems!", "Erek actually packed the gems, according to Alek. Do you think he could be mixed up in this?", "Alek Endhelm was eavesdropping outside the room during the negotiations, according to Erek. Do you think he could be mixed up in this?", "Erek? Come on, don't be stupid. You are a more likely thief than Erek, and you weren't even here! It is just like Alek to tell you things like that!", "Why do you say that?", "Don't get excited, half-elf. Alek looks like scum, and probably is, being a mercenary, but there is no reason to suspect him of the theft. In fact, I hear that he offered his services to Bjarn as a guard.", "You don't think that is a little suspicious?", "Look, half-elf, I am getting pretty damn tired of you and your questions. This investigation has nothing to do with you, so why don't you keep your nose out of it? Now get the hell out of here!", "Can you tell me what happened on the night of the theft?", "No, I can't. Talan was on guard duty. Go bother him.", "You won't tell me anything about your own investigation, then?", "I am Lady Silverhair's clerk. I demand to see her immediately!", "It does not matter who you are. None may leave this room and none may enter. 'Tis as simple as that.", "Who's order is this?", "What harm could it do if I spoke to my mistress?", "Mine! As long as Silverhair does not give in and hands out Master Fingolson's gems she's staying where she is. On her own!", "I assure you, Lady Silverhair is innocent.", "Really? Too bad then, that all the facts I know prove the opposite.", "Now get lost!", "How should I know!? But I'm not taking any risk.", "The stableboy, Oliver, heard a noise in the stables, well after everyone had gone to sleep.", "But that noise might have been caused by the real thief!", "I say this is crap. You'll need better arguments then mere fantasies of a child to convince me. Now don't hold me off my duty!", "Did you know that Talan left his post during the night of the theft?", "Her servants could certainly confirm that she did not leave the room that night.", "Ha! They'd do everything to please their mistress. I wouldn't trust in any of their words.", "Well, everybody knows that Elves can move with absolute silence.", "Hm ... yes, that's a fact. You are right, Half-Elf. Something strange is going on.", "Maybe you should go in and see if your mistress can shed some light on the whole affair. However, until we find a new suspect, I'll be keeping an eye on her.", "What!? Are you telling me the kid was right after all? I don't believe it! Can't I even trust my own men any more!? Tell me, what was he doing?", ""]
+	strings = ["Halt there! No-one is allowed into the prisoner's room!", "Stop right there, Half-Elf! You know that you are not allowed in there!", "No-one is allowed into the prisoner's room, so please leave this hallway!", "You again, Half-Elf? What do you want this time?", "Ah, you must be Jelom. Talan told me that I could find you here.", "And just who are you to prevent me from entering, sir?", "Nice to see you again, Jelom. Look, I have some more questions regarding the theft.", "Look, Jelom, I found out something that will cast some serious doubt on Lady Silverhair having committed the theft!", "My name is Jelom, and I am the chief of the guard at Waste's Edge! Who the hell are you?", "Who are you, and why were you looking for me?", "My name is $name. I'm investigating the theft and I have a few questions for you.", "And what might those questions be, Half-Elf?", "I doubt that, but since I won't get any peace from your pestering until you tell me, go ahead.", "You trust in the overactive imagination of some little kid? I know from Talan that everything was quiet during the night.  And I take the word of my own guard over Oliver's!", "Talan did not hear anything that night, because he was not at his post.", "What do you mean? Why wasn't he at his post?", "He sneaked away to take a nap.", "He wandered off to practise singing, of all things!", "A nap? I knew it! I had suspected that he caught some shuteye on duty from time to time, but have never caught him at it! He is in big trouble, this time!", "Singing? What, does the fool want to be a bard now? He is in big trouble now!", "But regardless of that, how do you know that it was not Silverhair herself who went to the stables and caused the noise? After stealing Master Fingolson's gems!", "Erek actually packed the gems, according to Alek. Do you think he could be mixed up in this?", "Alek Endhelm was eavesdropping outside the room during the negotiations, according to Erek. Do you think he could be mixed up in this?", "Erek? Come on, don't be stupid. You are a more likely thief than Erek, and you weren't even here! It is just like Alek to tell you things like that!", "Why do you say that?", "Don't get excited, half-elf. Alek looks like scum, and probably is, being a mercenary, but there is no reason to suspect him of the theft. In fact, I hear that he offered his services to Bjarn as a guard.", "You don't think that is a little suspicious?", "Look, Half-Elf, I am getting pretty damn tired of you and your questions. This investigation has nothing to do with you, so why don't you keep your nose out of it? Now get the hell out of here!", "Can you tell me what happened on the night of the theft?", "No, I can't. Talan was on guard duty. Go bother him.", "You won't tell me anything about your own investigation, then?", "I am Lady Silverhair's clerk. I demand to see her immediately!", "It does not matter who you are. None may leave this room and none may enter. 'Tis as simple as that.", "Who's order is this?", "What harm could it do if I spoke to my mistress?", "Mine! As long as Silverhair does not give in and hands out Master Fingolson's gems she's staying where she is. On her own!", "I assure you, Lady Silverhair is innocent.", "Really? Too bad then, that all the facts I know prove the opposite.", "Now get lost!", "How should I know!? But I'm not taking any risk.", "The stableboy, Oliver, heard a noise in the stables, well after everyone had gone to sleep.", "But that noise might have been caused by the real thief!", "I say this is crap. You'll need better arguments then mere fantasies of a child to convince me. Now don't hold me off my duty!", "Did you know that Talan left his post during the night of the theft?", "Her servants could certainly confirm that she did not leave the room that night.", "Ha! They'd do everything to please their mistress. I wouldn't trust in any of their words.", "Well, everybody knows that Elves can move with absolute silence.", "Hm ... yes, that's a fact. You are right, Half-Elf. Something strange is going on.", "Maybe you should go in and see if your mistress can shed some light on the whole affair. However, until we find a new suspect, I'll be keeping an eye on her.", "What!? Are you telling me the kid was right after all? I don't believe it! Can't I even trust my own men any more!? Tell me, what was he doing?", "You investigate the theft? You don't look at all like the officer I sent Bregon for. What makes you believe you could meddle in my affairs?", "My mistress has been wrongly accused, and I intend to clear her name.", "Listen, Half-Elf! The theft and any investigations are business of the guard and none of yours! But by the looks of it, the only way to keep your nose out would be to lock you up.", "So I won't prevent you from pestering the folk at the Inn. But should you find out anything, you report to me, you understand! Now, what is it you want from me?", ""]
 
 	def set_name (self, new_name):
 		pass
@@ -17,7 +17,7 @@ class jelom_start:
 		self.the_player = p
 		self.the_npc = n
 
-		self.dialogue = [self.start, self.answer4, self.answer5, self.answer6, self.answer7, self.answer10, self.answer14, self.answer16, self.answer17, self.answer18, self.answer19, self.answer21, self.answer22, self.answer24, self.answer26, self.answer28, self.answer30, self.answer31, self.answer33, self.answer34, self.answer36, self.answer37, self.answer39, self.answer40, self.answer41, self.answer43, self.answer44, self.answer46, self.answer47, None]
+		self.dialogue = [self.start, self.answer4, self.answer5, self.answer6, self.answer7, self.answer10, self.answer14, self.answer16, self.answer17, self.answer18, self.answer19, self.answer21, self.answer22, self.answer24, self.answer26, self.answer28, self.answer30, self.answer31, self.answer33, self.answer34, self.answer36, self.answer37, self.answer39, self.answer40, self.answer41, self.answer43, self.answer44, self.answer46, self.answer47, self.answer51, self.answer52, None]
 
 	def clear (self):
 		del self.dialogue
@@ -58,15 +58,15 @@ class jelom_start:
 			self.cont.append (-1)
 			self.player.append (31)
 			self.cont.append (17)
-			if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 2 and self.the_npc.get_val ("not_convinced") == 1:
-
-				self.player.append (43)
-				self.cont.append (25)
-			if adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") == 1 and self.the_npc.get_val ("not_convinced") == 0:
+			if adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") == 1 and self.the_npc.get_val ("not_convinced") == 0 and self.the_npc.get_val ("allows_meddling") == 1:
 
 				self.player.append (7)
 				self.cont.append (4)
-			if adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") != 1 and adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
+			elif adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 2 and self.the_npc.get_val ("not_convinced") == 1:
+
+				self.player.append (43)
+				self.cont.append (25)
+			else:
 
 				self.player.append (6)
 				self.cont.append (3)
@@ -91,61 +91,51 @@ class jelom_start:
 			self.color = self.the_npc.get_color()
 			self.npc.append (3)
 			self.cont.append (-1)
-			if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 2 and self.the_npc.get_val ("not_convinced") == 1:
-
-				self.player.append (43)
-				self.cont.append (25)
-			if adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") != 1 and adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
-
-				self.player.append (6)
-				self.cont.append (3)
-			if adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") == 1 and self.the_npc.get_val ("not_convinced") == 0:
+			if adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") == 1 and self.the_npc.get_val ("not_convinced") == 0 and self.the_npc.get_val ("allows_meddling") == 1:
 
 				self.player.append (7)
 				self.cont.append (4)
+			elif adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 2 and self.the_npc.get_val ("not_convinced") == 1:
+
+				self.player.append (43)
+				self.cont.append (25)
+			else:
+
+				self.player.append (6)
+				self.cont.append (3)
 			self.player.append (-1)
 
 	def answer6 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (11)
-		self.cont.append (-1)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 2 and self.the_npc.get_val ("not_convinced") == 1:
+		if self.the_npc.get_val ("allows_meddling") == 0:
 
-			self.player.append (43)
-			self.cont.append (25)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_alek_eavesdrop") == 1 and adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") != 1 and adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
+			self.color = self.the_npc.get_color()
+			self.npc.append (52)
+			self.cont.append (30)
+			self.the_npc.set_val ("allows_meddling" , 1)
 
-			self.player.append (22)
-			self.cont.append (12)
-		if adonthell.gamedata_get_quest("demo").get_val ("ask_packed_gems") == 1 and adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") != 1 and adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
-
-			self.player.append (21)
-			self.cont.append (11)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") == 1 and self.the_npc.get_val ("not_convinced") == 0:
-
-			self.player.append (7)
-			self.cont.append (4)
+			self.player.append (-1)
 		else:
 
-			self.player.append (28)
-			self.cont.append (15)
-		self.player.append (-1)
+			self.color = self.the_npc.get_color()
+			self.npc.append (11)
+			self.cont.append (-1)
+			if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
 
-	def answer28 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (29)
-		self.cont.append (-1)
-		self.player.append (30)
-		self.cont.append (16)
-		self.player.append (-1)
+				self.player.append (28)
+				self.cont.append (15)
+			if adonthell.gamedata_get_quest("demo").get_val ("know_alek_eavesdrop") == 1 and adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
 
-	def answer30 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (27)
-		self.cont.append (-1)
-		adonthell.gamedata_get_quest("demo").set_val ("know_jelom" , 2)
+				self.player.append (22)
+				self.cont.append (12)
+			if adonthell.gamedata_get_quest("demo").get_val ("ask_packed_gems") == 1 and adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
 
-		self.player.append (-1)
+				self.player.append (21)
+				self.cont.append (11)
+			elif adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 2 and self.the_npc.get_val ("not_convinced") == 1:
+
+				self.player.append (43)
+				self.cont.append (25)
+			self.player.append (-1)
 
 	def answer21 (self):
 		self.color = self.the_npc.get_color()
@@ -179,29 +169,43 @@ class jelom_start:
 		self.cont.append (14)
 		self.player.append (-1)
 
-	def answer7 (self):
+	def answer28 (self):
 		self.color = self.the_npc.get_color()
-		self.npc.append (12)
+		self.npc.append (29)
 		self.cont.append (-1)
-		self.player.append (40)
-		self.cont.append (23)
+		self.player.append (30)
+		self.cont.append (16)
 		self.player.append (-1)
 
-	def answer40 (self):
+	def answer30 (self):
 		self.color = self.the_npc.get_color()
-		self.npc.append (13)
+		self.npc.append (27)
 		self.cont.append (-1)
-		self.player.append (41)
-		self.cont.append (24)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 2:
+		adonthell.gamedata_get_quest("demo").set_val ("know_jelom" , 2)
 
-			self.player.append (14)
-			self.cont.append (6)
 		self.player.append (-1)
 
-	def answer14 (self):
+	def answer52 (self):
 		self.color = self.the_npc.get_color()
-		self.npc.append (15)
+		self.npc.append (53)
+		self.cont.append (-1)
+		if adonthell.gamedata_get_quest("demo").get_val ("know_alek_eavesdrop") == 1 and adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
+
+			self.player.append (22)
+			self.cont.append (12)
+		if adonthell.gamedata_get_quest("demo").get_val ("ask_packed_gems") == 1 and adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
+
+			self.player.append (21)
+			self.cont.append (11)
+		if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
+
+			self.player.append (28)
+			self.cont.append (15)
+		self.player.append (-1)
+
+	def answer43 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (49)
 		self.cont.append (-1)
 		self.player.append (16)
 		self.cont.append (7)
@@ -266,22 +270,42 @@ class jelom_start:
 		self.cont.append (27)
 		self.player.append (-1)
 
+	def answer7 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (12)
+		self.cont.append (-1)
+		self.player.append (40)
+		self.cont.append (23)
+		self.player.append (-1)
+
+	def answer40 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (13)
+		self.cont.append (-1)
+		self.player.append (41)
+		self.cont.append (24)
+		if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 2:
+
+			self.player.append (14)
+			self.cont.append (6)
+		self.player.append (-1)
+
+	def answer14 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (15)
+		self.cont.append (-1)
+		self.player.append (16)
+		self.cont.append (7)
+		self.player.append (17)
+		self.cont.append (8)
+		self.player.append (-1)
+
 	def answer41 (self):
 		self.color = self.the_npc.get_color()
 		self.npc.append (42)
 		self.cont.append (-1)
 		self.the_npc.set_val ("not_convinced" , 1     )
 
-		self.player.append (-1)
-
-	def answer43 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (49)
-		self.cont.append (-1)
-		self.player.append (16)
-		self.cont.append (7)
-		self.player.append (17)
-		self.cont.append (8)
 		self.player.append (-1)
 
 	def answer31 (self):
@@ -344,29 +368,21 @@ class jelom_start:
 
 	def answer10 (self):
 		self.color = self.the_npc.get_color()
-		self.npc.append (11)
+		self.npc.append (50)
 		self.cont.append (-1)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 2 and self.the_npc.get_val ("not_convinced") == 1:
-
-			self.player.append (43)
-			self.cont.append (25)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_alek_eavesdrop") == 1 and adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") != 1 and adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
-
-			self.player.append (22)
-			self.cont.append (12)
-		if adonthell.gamedata_get_quest("demo").get_val ("ask_packed_gems") == 1 and adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") != 1 and adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
-
-			self.player.append (21)
-			self.cont.append (11)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") == 1 and self.the_npc.get_val ("not_convinced") == 0:
-
-			self.player.append (7)
-			self.cont.append (4)
-		else:
-
-			self.player.append (28)
-			self.cont.append (15)
+		self.player.append (51)
+		self.cont.append (29)
 		self.player.append (-1)
+
+	def answer51 (self):
+		if self.the_npc.get_val ("allows_meddling") == 0:
+
+			self.color = self.the_npc.get_color()
+			self.npc.append (52)
+			self.cont.append (30)
+			self.the_npc.set_val ("allows_meddling" , 1)
+
+			self.player.append (-1)
 
 	def answer4 (self):
 		self.color = self.the_npc.get_color()
