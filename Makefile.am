@@ -9,7 +9,8 @@ EXTRA_DIST = config.rpath  $(pkgdata_DATA) PLAYING autogen.sh ABOUT-NLS \
         debian/control debian/copyright debian/dirs debian/rules debian/menu \
         debian/compat debian/docs wastesedge.spec.in wastesedge.spec \
 	win32/COPYING win32/PLAYING.txt win32/prepare.bat win32/README.txt \
-	win32/wastesedge.ico win32/wastesedge.nsi
+	win32/wastesedge.ico win32/wastesedge.nsi \
+	pixmaps/wastesedge_16x16.xpm pixmaps/wastesedge_32x32.xpm
 
 bin_SCRIPTS = adonthell-wastesedge
 
