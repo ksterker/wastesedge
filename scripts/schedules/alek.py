@@ -15,51 +15,46 @@
 #    He'll walk between his table and the bar
 
 
-def init ():
-    speech = ["More Ale!", \
-              "I'll cut 'em open like ripe fruits.", \
-              "They should sort out this business like real men!"]
-    print "*** locals after init:", locals (), "\n"
+speech = ["More Ale!", \
+          "I'll cut 'em open like ripe fruits.", \
+          "They should sort out this business like real men!"]
 
-def run ():
-    print "*** locals:", locals (), "\n"
+todo = myself.get_val ("todo")
 
-    todo = myself.get_val ("todo")
+# -- waiting
+if todo == 0:
+    delay = myself.get_val ("delay")
+    # If standing delay expired, move around next time
+    if delay == 0:
+        myself.set_val ("todo", 1)
+    else:
+        myself.set_val ("delay", delay - 1)
 
-    # -- waiting
-    if todo == 0:
-        delay = myself.get_val ("delay")
-        # If standing delay expired, move around next time
-        if delay == 0:
-            myself.set_val ("todo", 1)
-        else:
-            myself.set_val ("delay", delay - 1)
+# -- engage a new movement
+elif todo == 1:
+    # -- walk to table
+    if myself.posx () == 1:
+        myself.set_goal (12, 5, STAND_NORTH)
+    # -- walk to bar
+    else:
+        myself.set_goal (1, 3, STAND_SOUTH)
 
-    # -- engage a new movement
-    elif todo == 1:
-        # -- walk to table
-        if myself.posx () == 1:
-            myself.set_goal (12, 5, STAND_NORTH)
-        # -- walk to bar
-        else:
-            myself.set_goal (1, 3, STAND_SOUTH)
+    myself.set_val ("todo", 2)
 
-        myself.set_val ("todo", 2)
+# -- moving
+elif todo == 2:
+    if myself.follow_path () == 1:
+        # -- the time we stay at the same place
+        delay = randint (60, 150) * 20
 
-    # -- moving
-    elif todo == 2:
-        if myself.follow_path () == 1:
-            # -- the time we stay at the same place
-            delay = randint (60, 150) * 20
-
-            myself.set_val ("delay", delay)
-            myself.set_val ("todo", 0)
+        myself.set_val ("delay", delay)
+        myself.set_val ("todo", 0)
 
 
-    # -- utter a random remark
-    tmp = myself.get_val ("say_something")
-    myself.set_val ("say_something", tmp - 1)
-    if tmp == 0:
-        myself.speak (speech[randint (0, 2)])
-        delay = randint (40, 80) * 25
-        myself.set_val ("say_something", delay)
+# -- utter a random remark
+tmp = myself.get_val ("say_something")
+myself.set_val ("say_something", tmp - 1)
+if tmp == 0:
+    myself.speak (speech[randint (0, 2)])
+    delay = randint (40, 80) * 25
+    myself.set_val ("say_something", delay)
