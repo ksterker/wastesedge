@@ -148,6 +148,8 @@ if retval < 5:
         # Creates the context for the game start
         map_engine.load_map ("test.map")
         lm = map_engine.get_landmap ()
+        the_player.set_val ("gender", MALE)
+        the_player.set_val ("race", HALFELF)
         the_player.load ("player.mchar")
         the_player.set_map (lm)
         the_player.jump_to (0, 11, 18, STAND_EAST)
@@ -479,6 +481,16 @@ if retval < 5:
         erek.set_action ("action_talk")
         erek.stand_north ()
         erek.set_schedule ("erek")
+
+        # -- that's a clone for now
+        talan = characters ["Talan Wendth"]
+        talan.set_dialogue ("dialogues/talan_start")
+        talan.load ("servant2.mchar")
+        talan.set_map (map_engine.get_landmap ())
+        talan.jump_to (0, 11, 20)
+        talan.set_action ("action_talk")
+        talan.stand_north ()
+        talan.set_schedule ("talan")
 
         oliver = characters ["Oliver Redwyne"]
         oliver.set_dialogue ("dialogues/oliver_start")
