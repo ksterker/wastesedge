@@ -5,3 +5,8 @@ pkgdatadir = $(gamedatadir)
 pkgdata_DATA = character.data mapengine.data quest.data save.data
 
 EXTRA_DIST = $(pkgdata_DATA)
+
+
+## Be sure the data directory gets deleted
+uninstall-local:
+	rm -Rf $(gamedatadir)
