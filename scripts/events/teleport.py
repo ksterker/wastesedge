@@ -25,15 +25,12 @@ class teleport:
     # xdest: X position on smdest
     # ydest: Y position on smdest
     # destdir: direction where to look at after the teleport
-    # fade: if 0, won't fade in/out even if the trigger is the player
-    def __init__ (self, eventinstance, smdest, xdest, ydest, destdir, fade = 1):
+    def __init__ (self, eventinstance, smdest, xdest, ydest, destdir):
         self.smdest = smdest
         self.xdest = xdest
         self.ydest = ydest
         self.destdir = destdir
-        self.fade = fade
     
     def run (self, submap, x, y, dir, name):
         events.switch_submap (adonthell.gamedata_get_character (name),
-                              self.smdest, self.xdest, self.ydest, self.destdir,
-                              self.fade)
+            self.smdest, self.xdest, self.ydest, self.destdir)

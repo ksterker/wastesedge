@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.82 2002/01/19 13:38:19 adondev Exp $
+#  $Id: init.py,v 1.83 2002/01/19 17:21:03 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -778,7 +778,7 @@ class title_screen:
         ev.submap = 21
         ev.x = 0
         ev.y = 7
-        ev.set_script ("teleport", (0, 23, 12, STAND_WEST))
+        ev.set_script ("lft_to_vnd", (0, 23, 12, STAND_WEST))
         lm.add_event (ev)
 
         # From veranda to loft
@@ -787,25 +787,7 @@ class title_screen:
         ev.submap = 0
         ev.x = 24
         ev.y = 12
-        ev.set_script ("teleport", (21, 1, 7, STAND_EAST))
-        lm.add_event (ev)
-
-        # From veranda right to veranda left
-        ev = enter_event ()
-        ev.thisown = C
-        ev.submap = 0
-        ev.x = 19
-        ev.y = 12
-        ev.set_script ("teleport", (0, 16, 12, STAND_WEST, 0))
-        lm.add_event (ev)
-
-        # From veranda left to veranda right
-        ev = enter_event ()
-        ev.thisown = C
-        ev.submap = 0
-        ev.x = 17
-        ev.y = 12
-        ev.set_script ("teleport", (0, 20, 12, STAND_EAST, 0))
+        ev.set_script ("vnd_to_lft", (21, 1, 7, STAND_EAST))
         lm.add_event (ev)
 
         # From veranda to silverhair
@@ -817,7 +799,7 @@ class title_screen:
         ev.set_script ("brn_to_silverhair", (13, 6, 4, STAND_WEST))
         lm.add_event (ev)
 
-        # From silverhair to loft
+        # From silverhair to veranda
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 13

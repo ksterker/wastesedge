@@ -12,9 +12,10 @@
 
 import adonthell
 
+
 # -- switch submaps (character, new coordinates, new submap,
 #    direction the character shall face)
-def switch_submap (mychar, x, y, submap, dir, fade = 1):
+def switch_submap (mychar, x, y, submap, dir):
     # -- deactivate schedule during teleport
     if mychar.is_schedule_activated ():
         mychar.set_schedule_active (0)
@@ -23,7 +24,7 @@ def switch_submap (mychar, x, y, submap, dir, fade = 1):
         schedule_active = 0
 
     # -- only fade for the player
-    if mychar.get_id () == "Player" and fade != 0:
+    if mychar.get_id () == "Player":
         # -- fade the new submap in if we teleport the player
         adonthell.gamedata_engine ().fade_out ()
         mychar.jump_to (x, y, submap, dir)

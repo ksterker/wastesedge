@@ -10,12 +10,13 @@
 #  See the COPYING file for more details
 #
 
-# -- Map Event to teleport a character from the barn into Silverhair's room
+# -- Map Event to teleport a character from the barn onto 
+#    the veranda
 
 import adonthell
 import events
 
-class silverhair_to_brn:
+class lft_to_vnd:
 
     # Parameters:
     # smdest: destination submap
@@ -30,10 +31,6 @@ class silverhair_to_brn:
 
     def run (self, submap, x, y, dir, name):
         p = adonthell.gamedata_get_character (name)
-
-        if p.get_val ("came_from_barn") == 1:
-            p.set_val ("came_from_barn", 0)
-            p.set_val ("on_veranda", 1)
+        p.set_val ("on_veranda", 1)
             
-            events.switch_submap (p, self.smdest, self.xdest, self.ydest, self.destdir)
-            adonthell.audio_fade_out_background (500)
+        events.switch_submap (p, self.smdest, self.xdest, self.ydest, self.destdir)

@@ -31,9 +31,11 @@ class brn_to_silverhair:
     def run (self, submap, x, y, dir, name):
         p = adonthell.gamedata_get_character (name)
         p.set_val ("came_from_barn", 1)
-
+        p.set_val ("on_veranda", 0)
+         
         events.switch_submap (p, self.smdest, self.xdest, self.ydest, self.destdir)
         adonthell.audio_fade_out_background (500)
+
         p.stand ()
         p.go_west ()
         adonthell.gamedata_get_character ("Imoen Silverhair").launch_action (p)
