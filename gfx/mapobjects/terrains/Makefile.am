@@ -7,6 +7,7 @@ pkgdata_DATA = grass1.mobj grass2.mobj ground-stone-1.mobj ground-stone2.mobj \
 	road_to_stone_bot-left.mobj road_to_stone_left.mobj grass_medium-height_front.mobj \
 	grass_medium-height.mobj forest_bot.mobj forest_bot_leaves.mobj forest_left.mobj \
 	forest_left_leaves.mobj forest_mid.mobj forest_mid_leaves.mobj \
-	ground_to_grass.mobj grass_to_ground.mobj
+	stone_to_grass.mobj grass_to_stone.mobj forest_tr.mobj \
+	forest_tr_leaves.mobj
 
 EXTRA_DIST = $(pkgdata_DATA)
