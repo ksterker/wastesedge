@@ -131,6 +131,8 @@ title.loop ()
 retval = title.quit
 del bag_o
 
+audio_pause_music ()
+
 if retval < 5: 
     if retval == 1: gamedata_load(0)
     audio_play_background (1)
