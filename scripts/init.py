@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.72 2001/12/13 14:26:19 adondev Exp $
+#  $Id: init.py,v 1.73 2001/12/27 22:46:43 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -383,14 +383,14 @@ class title_screen:
         ev.submap = 4
         ev.x = 0
         ev.y = 9
-        ev.set_script ("teleport", (8, 6, 3, STAND_WEST))
+        ev.set_script ("to_storage", (8, 6, 3, STAND_WEST))
         lm.add_event (ev)
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 4
         ev.x = 0
         ev.y = 10
-        ev.set_script ("teleport", (8, 6, 4, STAND_WEST))
+        ev.set_script ("to_storage", (8, 6, 4, STAND_WEST))
         lm.add_event (ev)
 
         # From storage to cellar

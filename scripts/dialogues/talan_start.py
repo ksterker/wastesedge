@@ -66,7 +66,7 @@ class talan_start:
 			self.player.append (-1)
 
 	def answer44 (self):
-		if adonthell.gamedata_get_quest("demo").get_val ("told_on_talan") != 1:
+		if adonthell.gamedata_get_quest("demo").get_val ("told_on_talan") < 1:
 
 			self.color = self.the_npc.get_color()
 			self.npc.append (45)
@@ -81,6 +81,8 @@ class talan_start:
 			self.color = self.the_npc.get_color()
 			self.npc.append (46)
 			self.cont.append (-1)
+			adonthell.gamedata_get_quest("demo").set_val ("told_on_talan" , 2)
+
 			self.player.append (47)
 			self.cont.append (-1)
 			self.player.append (-1)
