@@ -3,8 +3,7 @@ from main_menu import *
 # -- When the menu is closing, react accordingly
 def on_menu_close (retval, player):
     # -- Reactivate the player's schedule
-    player.set_schedule_active (1)
-    
+#    player.set_schedule_active (1)
     # -- Quit was selected, so that's what we do :)
     if retval == 5:
         map_engine.quit ()
@@ -26,7 +25,7 @@ if input_has_been_pushed (SDLK_SPACE):
 # -- bring up the main menu
 elif input_has_been_pushed (SDLK_ESCAPE):
     # -- deactivate the player's schedule, so he can't move while the menu is open
-    myself.set_schedule_active (0)
+#    myself.set_schedule_active (0)
 
     # -- open main menu without animation, with saving and background enabled
     	#print "rt"
@@ -54,7 +53,7 @@ elif input_has_been_pushed (SDLK_l):
     s = data_screen (LOAD_SCREEN)
     s.thisown = 0
     s.set_activate (1)	
-    s.py_signal_connect (on_menu_close, win_event_CLOSE, (myself))
+#    s.py_signal_connect (on_menu_close, win_event_CLOSE, (myself))
     
     win_manager_add (s)
     win_manager_set_focus (s)
@@ -67,19 +66,6 @@ elif input_has_been_pushed (SDLK_s):
     s = data_screen (SAVE_SCREEN)
     s.thisown = 0
     s.set_activate (1)	
-    s.py_signal_connect (on_menu_close, win_event_CLOSE, (myself))
+#    s.py_signal_connect (on_menu_close, win_event_CLOSE, (myself))
     win_manager_add (s)
     win_manager_set_focus (s)
-
-
-
-
-
-
-
-
-
-
-
-
-
