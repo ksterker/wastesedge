@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.46 2001/09/06 19:59:13 adondev Exp $
+#  $Id: init.py,v 1.47 2001/09/10 13:22:14 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -814,10 +814,9 @@ class title_screen:
                 talan.set_schedule ("talan")
                 talan.set_portrait ("talan.pnm")
 
-                # -- that's a clone for now
                 jelom = characters ["Jelom Rasgar"]
                 jelom.set_dialogue ("dialogues/jelom_start")
-                jelom.load ("talan.mchar")
+                jelom.load ("jelom.mchar")
                 jelom.set_map (map_engine.get_landmap ())
                 jelom.jump_to (9, 2, 6)
                 jelom.set_action ("talk")
@@ -825,10 +824,9 @@ class title_screen:
                 jelom.set_schedule ("jelom")
                 jelom.set_portrait ("jelom.pnm")
 
-                # -- that's a clone for now
                 alek = characters ["Alek Endhelm"]
                 alek.set_dialogue ("dialogues/alek_start")
-                alek.load ("servant2.mchar")
+                alek.load ("alek.mchar")
                 alek.set_map (map_engine.get_landmap ())
                 alek.jump_to (1, 1, 3)
                 alek.set_action ("talk")
