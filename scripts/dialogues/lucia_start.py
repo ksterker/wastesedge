@@ -18,7 +18,7 @@ class lucia_start:
         del self.dialogue
 
     def who_heard_noise (self):
-        n = quests.get_val ("demo").get_val ("know_noise")
+        n = quests["demo"].get_val ("know_noise")
         if n == 1:
             return "Lady Silverhair has"
         elif n == 2:
@@ -93,11 +93,11 @@ class lucia_start:
             self.cont.append (-1)
             self.player.append (18)
             self.cont.append (11)
-            if quests.get_val ("demo").get_val ("know_noise") != 0 and quests.get_val ("demo").get_val ("know_olivers_noise") == 0:
+            if quests["demo"].get_val ("know_noise") != 0 and quests["demo"].get_val ("know_olivers_noise") == 0:
 
                 self.player.append (84)
                 self.cont.append (51)
-            if quests.get_val ("demo").get_val ("know_olivers_noise") == 1:
+            if quests["demo"].get_val ("know_olivers_noise") == 1:
 
                 self.player.append (67)
                 self.cont.append (42)
@@ -115,7 +115,7 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (70)
         self.cont.append (-1)
-        if quests.get_val ("demo").get_val ("know_talan_singing") == 0:
+        if quests["demo"].get_val ("know_talan_singing") == 0:
 
             self.player.append (71)
             self.cont.append (44)
@@ -179,7 +179,7 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (74)
         self.cont.append (-1)
-        quests.get_val ("demo").set_val ("know_talan_singing", 1)
+        quests["demo"].set_val ("know_talan_singing" , 1)
 
         self.player.append (75)
         self.cont.append (-1)
@@ -202,7 +202,7 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (74)
         self.cont.append (-1)
-        quests.get_val ("demo").set_val ("know_talan_singing", 1)
+        quests["demo"].set_val ("know_talan_singing" , 1)
 
         self.player.append (75)
         self.cont.append (-1)
@@ -212,7 +212,7 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (85)
         self.cont.append (-1)
-        if quests.get_val ("demo").get_val ("know_talan_singing") == 0:
+        if quests["demo"].get_val ("know_talan_singing") == 0:
 
             self.player.append (71)
             self.cont.append (44)
@@ -333,11 +333,11 @@ class lucia_start:
         self.cont.append (-1)
         self.player.append (56)
         self.cont.append (36)
-        if quests.get_val ("demo").get_val ("know_noise") != 0 and quests.get_val ("demo").get_val ("know_olivers_noise") == 0:
+        if quests["demo"].get_val ("know_noise") != 0 and quests["demo"].get_val ("know_olivers_noise") == 0:
 
             self.player.append (84)
             self.cont.append (51)
-        if quests.get_val ("demo").get_val ("know_olivers_noise") == 1:
+        if quests["demo"].get_val ("know_olivers_noise") == 1:
 
             self.player.append (67)
             self.cont.append (42)
@@ -417,11 +417,11 @@ class lucia_start:
         self.cont.append (-1)
         self.player.append (65)
         self.cont.append (41)
-        if quests.get_val ("demo").get_val ("know_noise") != 0 and quests.get_val ("demo").get_val ("know_olivers_noise") == 0:
+        if quests["demo"].get_val ("know_noise") != 0 and quests["demo"].get_val ("know_olivers_noise") == 0:
 
             self.player.append (84)
             self.cont.append (51)
-        if quests.get_val ("demo").get_val ("know_olivers_noise") == 1:
+        if quests["demo"].get_val ("know_olivers_noise") == 1:
 
             self.player.append (67)
             self.cont.append (42)
@@ -453,11 +453,11 @@ class lucia_start:
             self.cont.append (-1)
             self.player.append (18)
             self.cont.append (11)
-            if quests.get_val ("demo").get_val ("know_noise") != 0 and quests.get_val ("demo").get_val ("know_olivers_noise") == 0:
+            if quests["demo"].get_val ("know_noise") != 0 and quests["demo"].get_val ("know_olivers_noise") == 0:
 
                 self.player.append (84)
                 self.cont.append (51)
-            if quests.get_val ("demo").get_val ("know_olivers_noise") == 1:
+            if quests["demo"].get_val ("know_olivers_noise") == 1:
 
                 self.player.append (67)
                 self.cont.append (42)
@@ -572,11 +572,11 @@ class lucia_start:
             self.cont.append (-1)
             self.player.append (18)
             self.cont.append (11)
-            if quests.get_val ("demo").get_val ("know_noise") != 0 and quests.get_val ("demo").get_val ("know_olivers_noise") == 0:
+            if quests["demo"].get_val ("know_noise") != 0 and quests["demo"].get_val ("know_olivers_noise") == 0:
 
                 self.player.append (84)
                 self.cont.append (51)
-            if quests.get_val ("demo").get_val ("know_olivers_noise") == 1:
+            if quests["demo"].get_val ("know_olivers_noise") == 1:
 
                 self.player.append (67)
                 self.cont.append (42)
