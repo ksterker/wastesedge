@@ -49,7 +49,7 @@ class extro:
             (jelom, "Master Fingolson!"), \
             (None, "They were here all the time, safe from thieving hands, ..."), \
             (None, "... well hidden in a niche I carved during my previous visits."), \
-            (None, "Here."), \
+            (None, "Right here."), \
             (None, "But ..."), \
             (None, "... they are gone!"), \
             (talan, "Sir, sir! To the gate! Quick! The thief is loose!"), \
@@ -139,11 +139,9 @@ class extro:
             ("Joseph Toscano", 2), \
             ("title design:", 1), \
             ("John Havard", 1), \
-            ("James Nash", 3), \
+            ("James Nash", 2), \
             ("soundtrack available on:", 1), \
-            (adonthell.gamedata_game_data_dir () + "/audio", 3), \
-            ("more music available on:", 1), \
-            ("http://zhaymusic.com/...", 3), \
+            ("http://zhaymusic.com/wastesedge/", 5), \
             ("the Adonthell team whishes to thank:", 2), \
             ("Al Koskelin", 1), \
             ("Andrew Henderson", 1), \
@@ -162,7 +160,7 @@ class extro:
             ("No Yetis were harmed during\n the production of this game", 5), \
             ("presented in", 2), \
             ("Ogg Vorbis Stereo", 1), \
-            ("(where available)", 15), \
+            ("(where available)", 14), \
             ("The END", 6), \
             ("Joel, you are fired! ;)", -1)]
             
