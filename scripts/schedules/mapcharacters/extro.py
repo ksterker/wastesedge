@@ -69,12 +69,98 @@ class extro:
             "Bjarn Fingolson however, bereft of all\nhonour, was taken to Uzdun'kal and\nsentenced to the lowest labour.\nNowadays his fate serves as an example\nand a warning to generations of young Dwarves.", \
             "Lady Imoen Silverhair received the finest\nChrysoberyl Catseyes as a token of\nregret, and the magic rings and amulets\nshe crafted were of wondrous might and\nbeauty, desired and admired throughout\nthe realm.", \
             "Soon after his return, young Erek\naccomplished the Rite of Passage and\njoined adult society. To his surprise, he\nwas sent to the Elvish Council at the\nHigh City of Elgilad, as an ambassador\nfor his people."]
-        
+
+        # -- the credits
+        self.credits = [("Adonthell", 3), \
+            ("directed by:", 1), \
+            ("Alexandre Courbot", 1), \
+            ("Kai Sterker", 3), \
+            ("written by:", 1), \
+            ("Kai Sterker", 1), \
+            ("Mike Nieforth", 1), \
+            ("Josh Glover", 3), \
+            ("based on an orignal idea by:", 1), \
+            ("Kai Sterker", 3), \
+            ("produced by:", 1), \
+            ("the Adonthell team", 3), \
+            ("executive producers:", 1), \
+            ("GNU Savannah", 1), \
+            ("Linuxgames.com", 5), \
+            ("cast:", 1), \
+            (adonthell.gamedata_player ().get_name () + " - you", 1), \
+            ("Imoen Silverhair - herself", 1), \
+            ("Bjarn Fingolson - himself", 1), \
+            ("Erek Stonebreaker - himself", 1), \
+            ("Orloth Redewyne - himself", 1), \
+            ("Alek Endhelm - himself", 1), \
+            ("Oliver Redwyne - himself", 1), \
+            ("Talan Wendth - himself", 1), \
+            ("Jelom Rasgar - himself", 1), \
+            ("Tristan Illig - himself", 1), \
+            ("Fellnir Kezular - himself", 1), \
+            ("Lucia Redwyne - herself", 1), \
+            ("Rhayne Frostbloom - herself", 1), \
+            ("Sarin Trailfollower - himself", 1), \
+            ("Janesta Skywind - herself", 2), \
+            ("Mrs. Frostbloom's assistant:", 1), \
+            ("Yeti", 2), \
+            ("casting:", 1), \
+            ("Benjamin Walther-Franks", 5), \
+            ("director of photography:", 1), \
+            ("Alexandre Courbot", 2), \
+            ("art director:", 1), \
+            ("James Nash", 2), \
+            ("assistant art director:", 1), \
+            ("Benjamin Walther-Franks", 2), \
+            ("wardrobe:", 1), \
+            ("Benjamin Walther-Franks", 2), \
+            ("props masters:", 1), \
+            ("James Nash", 1), \
+            ("Kai Sterker", 3), \
+            ("location managers:", 1), \
+            ("Alexandre Courbot", 1), \
+            ("James Nash", 3), \
+            ("grip:", 1), \
+            ("Alexandre Courbot", 5), \
+            ("\"Window\" unit:", 2), \
+            ("director:", 1), \
+            ("Joel Vennin", 2), \
+            ("assistant director:", 1), \
+            ("Joel Vennin", 2), \
+            ("best boy:", 1), \
+            ("Yeti", 2), \
+            ("runner:", 1), \
+            ("Joel Vennin", 5), \
+            ("music by:", 1), \
+            ("Joseph Toscano", 2), \
+            ("foley artist:", 1), \
+            ("Joseph Toscano", 2), \
+            ("title design:", 1), \
+            ("John Havard", 1), \
+            ("James Nash", 5), \
+            ("soundtrack available on:", 1), \
+            ("http://www.zhaytee.com/...", 3), \
+            ("No Yetis where harmed during\n the production of this game", 3), \
+            ("the Adonthell team whishes to thank:", 2), \
+            ("Al Koskelin", 1), \
+            ("Andrew Henderson", 1), \
+            ("Chris Harris", 1), \
+            ("Mark Howson", 1), \
+            ("Dave Peticolas", 1), \
+            ("Josh's friend doing the CVS", 1), \
+            ("Deniz Oezsen", 1), \
+            ("Python crew", 5), \
+            ("presented in", 2), \
+            ("Ogg Vorbis Stereo", 2), \
+            ("(where available)", 7), \
+            ("The END", 13), \
+            ("Joel, you're fired!", 7)]
+
         # -- text colors
         self.colors = ["white", "yellow", "red", "violet", "blue", "green"]
          
         # -- misc stuff
-        self.index = 0
+        self.index = 34
         self.bubble = self.make_bubble ()
         self.done = 0
         
@@ -423,7 +509,7 @@ class extro:
         # -- misc stuff
         self.step = 0       # -- for the extro control
         self.anim = 0       # -- for the forest animation control
-        self.index = 0      # -- index in the typeover array       
+        self.index = 3      # -- index in the typeover array       
         self.delay = 0      # -- delay before adding new text
         self.cursor = 0     # -- cursor in the typeover text
         self.x = [0, 0, 0]  # -- offsets of the 3 forest pics
@@ -460,7 +546,6 @@ class extro:
                 return
             else:
                 self.window.remove (self.black)
-                del self.black
                 self.step = 1
         
         elif self.step == 1:
@@ -480,7 +565,7 @@ class extro:
                 else:
                     self.index = self.index + 1
                     self.cursor = 0
-                    self.delay = -450
+                    self.delay = -350
             else:
                 self.delay = 0
                 self.step = 2
@@ -488,12 +573,22 @@ class extro:
         # -- wait some more
         elif self.step == 2:
             self.delay = self.delay + 1
-            if self.delay == 500:
+            if self.delay == 350:
+                  self.window.add (self.black)
                   self.step = 3
         
+        # -- fade out
         elif self.step == 3:
-            adonthell.gamedata_engine ().main_quit ()
-
+            alpha = self.black.alpha ()
+            if alpha != 255:
+                self.black.set_alpha (alpha + 1)
+                return
+            else:
+                self.draw_func = self.scroll_credits
+                adonthell.win_manager_get_active ().remove (self.window)
+                del self.window
+                adonthell.win_manager_get_active ().add (self.make_credits ())        
+    
     # -- update the forest position
     def update_wood (self, pic, x):
         if x >= pic.length (): x = x - pic.length ()
@@ -505,3 +600,76 @@ class extro:
         pic.draw (x - pic.length (), 0, self.da, self.target)
         if x < adonthell.screen_length (): 
             pic.draw (x, 0, self.da, self.target)
+
+    # -- prepare credits
+    def make_credits (self):
+        # -- window
+        self.window = adonthell.win_container ()
+        self.window.move (0, 30)
+        self.window.resize (320, 180)
+        self.window.set_visible_border (0)
+        self.window.set_trans_background (1)
+        self.window.set_activate (1)
+        self.window.set_visible (1)
+
+        # -- list of visible credit lines        
+        self.labels = []
+        self.index = 0
+        self.anim = 0
+        
+        # -- first label
+        self.make_credit_label (190)
+        
+        self.window.py_signal_connect (self.on_draw, adonthell.win_event_UPDATE)
+        
+        return self.window
+    
+    # -- make a credit label
+    def make_credit_label (self, ypos):
+        if self.index >= len (self.credits):
+            return             
+        
+        if self.index > 0:
+             ypos = ypos + (self.credits[self.index - 1][1] - 1) * 14
+
+        label = adonthell.win_label ()
+        label.resize (10, 0)
+        label.set_font (adonthell.win_manager_get_font ("white"))
+        label.set_align (adonthell.win_base_ALIGN_CENTER)
+        label.set_form (adonthell.label_AUTO_SIZE)
+        label.set_text (self.credits[self.index][0])
+        label.move (label.x (), ypos)
+        label.set_visible (1)
+        label.thisown = 0
+        label.pack ()
+
+        self.labels.append (label)
+        self.window.add (label)
+            
+        self.index = self.index + 1
+        
+        
+    # -- scroll credits
+    def scroll_credits (self):
+        self.anim = self.anim + 1
+        if self.anim % 3 != 0: return
+        
+        idx = 0
+        
+        # -- scroll all visible labels
+        while idx < len (self.labels):
+            label = self.labels[idx]
+            label.move (label.x (), label.y () - 1)
+            
+            if label.y () + label.height () < -5:
+                self.labels.remove (label)
+            else:
+                idx = idx + 1
+        
+        # -- add new line if necessary
+        if label.y () - 180 < 0:
+            self.make_credit_label (label.y () + label.height ())
+            
+        # -- finished
+        if len (self.labels) == 0:
+            adonthell.gamedata_engine ().main_quit ()

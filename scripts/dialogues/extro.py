@@ -43,6 +43,7 @@ class extro:
 		self.player.append (-1)
 
 	def answer0 (self):
+           if 1 == 0:
 		self.set_npc ("Jelom Rasgar")
 		self.color = adonthell.gamedata_get_character("Jelom Rasgar").get_color()
 		self.npc.append (1)
