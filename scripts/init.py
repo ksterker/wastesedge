@@ -141,6 +141,8 @@ del bag_o
 
 audio_pause_music ()
 
+##retval = 1
+
 if retval < 5: 
     if retval == 1:
         gamedata_load (0)
@@ -563,6 +565,7 @@ if retval < 5:
         # changed Erek's text color to violet
         erek.set_color (3)
         erek.set_schedule ("erek")
+        erek.set_portrait ("erek.pnm")
 
         talan = characters ["Talan Wendth"]
         talan.set_dialogue ("dialogues/talan_start")
@@ -582,6 +585,7 @@ if retval < 5:
         jelom.set_action ("action_talk")
         jelom.stand_north ()
         jelom.set_schedule ("jelom")
+        jelom.set_portrait ("jelom.pnm")
 
         # -- that's a clone for now
         alek = characters ["Alek Endhelm"]

@@ -46,7 +46,7 @@ if myself.get_val ("goto_players_room") == 1:
 elif myself.get_val ("goto_players_room") == 3:
     # -- start talking to the player
     myself.launch_action (the_player)
-
+    
 # -- leave the player's room and goto the barn
 elif myself.get_val ("goto_barn") == 1:
     location = myself.submap ()

@@ -32,6 +32,7 @@ class console (win_container):
         
         self.entry = win_write ()
         self.entry.thisown = 0
+
         self.entry.py_signal_connect (self.on_execute, win_event_ACTIVATE_KEY)
         self.entry.move (5, 5)
         self.entry.resize (290, 70)
