@@ -685,6 +685,7 @@ if retval < 5:
         talan.set_action ("action_talk")
         talan.stand_north ()
         talan.set_schedule ("talan")
+        talan.set_portrait ("talan.pnm")
 
         # -- that's a clone for now
         jelom = characters ["Jelom Rasgar"]
