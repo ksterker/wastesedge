@@ -22,36 +22,6 @@ class jelom_2nd:
 	def clear (self):
 		del self.dialogue
 
-	def __del__(self):
-	    if adonthell.gamedata_get_quest("demo").get_val ("the_end") == 1:
-	        # make all dudes go down to Bjarn
-	        shair = adonthell.gamedata_get_character("Imoen Silverhair")
-	        shair.set_schedule ("to_cellar")
-	        shair.set_val ("delay", 5)
-	
-	        jelom = adonthell.gamedata_get_character("Jelom Rasgar")
-	        jelom.set_val ("delay", 20)
-	        jelom.set_schedule ("to_cellar")
-			
-	        player = adonthell.gamedata_player ()
-	        player.set_val ("delay", 35)
-	        player.set_schedule ("to_cellar")
-			
-	        erek = adonthell.gamedata_get_character("Erek Stonebreaker")
-	        erek.set_schedule_active (1)
-	        erek.set_schedule ("to_cellar")
-	        erek.set_val ("delay", 45)
-			
-	        fnir = adonthell.gamedata_get_character("Fellnir Kezular")
-	        fnir.set_schedule ("to_cellar")
-	        fnir.set_val ("delay", 130)
-			
-	        illig = adonthell.gamedata_get_character("Tristan Illig")
-	        illig.set_schedule ("to_cellar")
-	        illig.set_val ("delay", 300)
-	
-
-
 	def __getattr__ (self, name):
 		return 0
 
@@ -90,13 +60,11 @@ class jelom_2nd:
 				self.player.append (12)
 				self.cont.append (7)
 			self.player.append (-1)
-		else:
+		elif adonthell.gamedata_get_quest("demo").get_val ("convince_jelom") == 2:
 
 			self.color = self.the_npc.get_color()
 			self.npc.append (23)
 			self.cont.append (13)
-			adonthell.gamedata_get_quest("demo").set_val ("convince_jelom" , 3)
-
 			self.player.append (-1)
 
 	def answer23 (self):
@@ -145,9 +113,6 @@ class jelom_2nd:
 		self.color = self.the_npc.get_color()
 		self.npc.append (36)
 		self.cont.append (-1)
-		# make all dudes go down to Bjarn
-		adonthell.gamedata_get_quest("demo").set_val ("the_end" , 1)
-
 		self.player.append (-1)
 
 	def answer31 (self):

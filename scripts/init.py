@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.58 2001/10/17 20:58:08 adondev Exp $
+#  $Id: init.py,v 1.59 2001/10/19 22:09:47 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -796,7 +796,7 @@ class title_screen:
         ev.y = 17
         ev.dir = STAND_WEST
         ev.set_script ("character_speak", (the_player.get_name (), \
-                                           "Closed. We are all emprisonned here..."))
+                                           "Closed. We are all imprisoned here..."))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -806,7 +806,7 @@ class title_screen:
         ev.y = 18
         ev.dir = STAND_WEST
         ev.set_script ("character_speak", (the_player.get_name (), \
-                                           "Closed. We are all emprisonned here..."))
+                                           "Closed. We are all imprisoned here..."))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -816,7 +816,7 @@ class title_screen:
         ev.y = 19
         ev.dir = STAND_WEST
         ev.set_script ("character_speak", (the_player.get_name (), \
-                                           "Closed. We are all emprisonned here..."))
+                                           "Closed. We are all imprisoned here..."))
         lm.add_event (ev)
 
         ev = action_event ()
