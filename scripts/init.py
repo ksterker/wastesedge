@@ -147,6 +147,7 @@ if retval < 5:
 
         # Creates the context for the game start
         map_engine.load_map ("test.map")
+        
         lm = map_engine.get_landmap ()
         the_player.set_val ("gender", MALE)
         the_player.set_val ("race", HALFELF)
