@@ -485,8 +485,10 @@ if retval < 5:
         oliver.jump_to (0, 25, 15)
         oliver.set_action ("action_talk")
         oliver.stand_west ()
+        oliver.set_schedule ("oliver")
 
         frostbloom = characters ["Rhayne Frostbloom"]
+        frostbloom.set_dialogue ("dialogues/frostbloom_start")
         frostbloom.load ("frostbloom.mchar")
         frostbloom.set_map (map_engine.get_landmap ())
         frostbloom.jump_to (0, 18, 22)

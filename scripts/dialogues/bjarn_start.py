@@ -17,10 +17,10 @@ class bjarn_start:
     def clear (self):
         del self.dialogue
 
-        quests["demo"].set( "bjarn_door_open", 2 );
-        quests["demo"].set( "ask_packed_gems", 1 );
-        quests["demo"].set( "know_alek_eavesdrop", 1 );
-        quests["demo"].set( "know_bjarns_insult", 1 );
+        quests["demo"].set_val( "bjarn_door_open", 2 );
+        quests["demo"].set_val( "ask_packed_gems", 1 );
+        quests["demo"].set_val( "know_alek_eavesdrop", 1 );
+        quests["demo"].set_val( "know_bjarns_insult", 1 );
         
 
 
@@ -34,26 +34,26 @@ class bjarn_start:
         self.dialogue[answer]()
 
     def start (self):
-        if quests["demo"].get("bjarn_door_open") == 3:
+        if quests["demo"].get_val("bjarn_door_open") == 3:
 
             self.color = 0
             self.npc.append (12)
             self.cont.append (8)
             self.player.append (-1)
-        if quests["demo"].get("bjarn_door_open") == 2:
+        if quests["demo"].get_val("bjarn_door_open") == 2:
 
             self.color = 0
             self.npc.append (1)
             self.cont.append (2)
-            quests["demo"].set( "bjarn_door_open", 3 )
+            quests["demo"].set_val( "bjarn_door_open", 3 )
 
             self.player.append (-1)
-        if quests["demo"].get("bjarn_door_open") == 0:
+        if quests["demo"].get_val("bjarn_door_open") == 0:
 
             self.color = 0
             self.npc.append (0)
             self.cont.append (1)
-            quests.get ("demo").set ("bjarn_door_open" , 1)
+            quests["demo"].set_val ("bjarn_door_open" , 1)
 
             self.player.append (-1)
 
@@ -113,15 +113,15 @@ class bjarn_start:
         self.color = the_npc.get_color()
         self.npc.append (13)
         self.cont.append (-1)
-        if quests["demo"].get( "know_alek_eavesdrop" ) == 1:
+        if quests["demo"].get_val( "know_alek_eavesdrop" ) == 1:
 
             self.player.append (16)
             self.cont.append (11)
-        if quests["demo"].get( "know_bjarns_insult" ) == 1:
+        if quests["demo"].get_val( "know_bjarns_insult" ) == 1:
 
             self.player.append (15)
             self.cont.append (10)
-        if quests["demo"].get( "ask_packed_gems" ) == 1:
+        if quests["demo"].get_val( "ask_packed_gems" ) == 1:
 
             self.player.append (14)
             self.cont.append (9)

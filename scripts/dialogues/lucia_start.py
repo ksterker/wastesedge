@@ -12,13 +12,13 @@ class lucia_start:
         pass
 
     def __init__(self):
-        self.dialogue = [self.start, self.answer0, self.answer2, self.answer3, self.answer6, self.answer8, self.answer10, self.answer11, self.answer13, self.answer15, self.answer16, self.answer18, self.answer19, self.answer21, self.answer22, self.answer23, self.answer24, self.answer25, self.answer27, self.answer29, self.answer30, self.answer32, self.answer33, self.answer35, self.answer36, self.answer38, self.answer40, self.answer41, self.answer42, self.answer44, self.answer46, self.answer48, self.answer49, self.answer50, self.answer53, self.answer54, self.answer56, self.answer57, self.answer59, self.answer61, self.answer62, self.answer65, self.answer67, self.answer69, self.answer71, self.answer73, self.answer77, self.answer79, self.answer80, self.answer81, self.answer82, self.answer84, self.answer86, self.answer88, self.answer89, self.answer90, self.answer92, self.answer94, self.answer95, self.answer199, None]
+        self.dialogue = [self.start, self.answer0, self.answer2, self.answer3, self.answer6, self.answer8, self.answer10, self.answer11, self.answer13, self.answer15, self.answer16, self.answer18, self.answer19, self.answer21, self.answer22, self.answer23, self.answer24, self.answer25, self.answer27, self.answer29, self.answer30, self.answer32, self.answer33, self.answer35, self.answer36, self.answer38, self.answer40, self.answer41, self.answer42, self.answer44, self.answer46, self.answer48, self.answer49, self.answer50, self.answer53, self.answer54, self.answer56, self.answer57, self.answer59, self.answer61, self.answer62, self.answer65, self.answer67, self.answer69, self.answer71, self.answer73, self.answer77, self.answer79, self.answer80, self.answer81, self.answer82, self.answer84, self.answer86, self.answer88, self.answer89, self.answer90, self.answer92, self.answer94, self.answer95, self.answer97, None]
 
     def clear (self):
         del self.dialogue
 
     def who_heard_noise (self):
-        n = quests.get ("demo").get ("know_noise")
+        n = quests.get_val ("demo").get_val ("know_noise")
         if n == 1:
             return "Lady Silverhair has"
         elif n == 2:
@@ -37,13 +37,13 @@ class lucia_start:
         self.dialogue[answer]()
 
     def start (self):
-        if the_npc.get ("talked_to") == 0:
+        if the_npc.get_val ("talked_to") == 0:
 
             self.color = 0
             self.npc.append (0)
             self.cont.append (1)
             self.player.append (-1)
-        elif quests.get ("demo").get ("told_on_talan") == 1:
+        elif quests["demo"].get_val ("told_on_talan") == 1:
 
             self.color = 0
             self.npc.append (91)
@@ -62,7 +62,7 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (87)
         self.cont.append (-1)
-        if the_npc.get ("talked_about_theft") == 1:
+        if the_npc.get_val ("talked_about_theft") == 1:
 
             self.player.append (88)
             self.cont.append (53)
@@ -72,12 +72,12 @@ class lucia_start:
             self.cont.append (59)
         self.player.append (-1)
 
-    def answer199 (self):
+    def answer97 (self):
         self.color = the_npc.get_color()
         self.npc.append (16)
         self.cont.append (10)
         self.talked_about_fingolson = 1
-        the_npc.set ("talked_about_theft", 1)
+        the_npc.set_val ("talked_about_theft", 1)
 
         self.player.append (-1)
 
@@ -93,11 +93,11 @@ class lucia_start:
             self.cont.append (-1)
             self.player.append (18)
             self.cont.append (11)
-            if quests.get ("demo").get ("know_noise") != 0 and quests.get ("demo").get ("know_olivers_noise") == 0:
+            if quests.get_val ("demo").get_val ("know_noise") != 0 and quests.get_val ("demo").get_val ("know_olivers_noise") == 0:
 
                 self.player.append (84)
                 self.cont.append (51)
-            if quests.get ("demo").get ("know_olivers_noise") == 1:
+            if quests.get_val ("demo").get_val ("know_olivers_noise") == 1:
 
                 self.player.append (67)
                 self.cont.append (42)
@@ -115,7 +115,7 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (70)
         self.cont.append (-1)
-        if quests.get ("demo").get ("know_talan_singing") == 0:
+        if quests.get_val ("demo").get_val ("know_talan_singing") == 0:
 
             self.player.append (71)
             self.cont.append (44)
@@ -140,7 +140,7 @@ class lucia_start:
         self.player.append (-1)
 
     def answer71 (self):
-        if the_npc.get ("know_shairs_clerk") == 1:
+        if the_npc.get_val ("know_shairs_clerk") == 1:
 
             self.color = the_npc.get_color()
             self.npc.append (72)
@@ -179,7 +179,7 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (74)
         self.cont.append (-1)
-        quests.get ("demo").set ("know_talan_singing", 1)
+        quests.get_val ("demo").set_val ("know_talan_singing", 1)
 
         self.player.append (75)
         self.cont.append (-1)
@@ -202,7 +202,7 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (74)
         self.cont.append (-1)
-        quests.get ("demo").set ("know_talan_singing", 1)
+        quests.get_val ("demo").set_val ("know_talan_singing", 1)
 
         self.player.append (75)
         self.cont.append (-1)
@@ -212,7 +212,7 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (85)
         self.cont.append (-1)
-        if quests.get ("demo").get ("know_talan_singing") == 0:
+        if quests.get_val ("demo").get_val ("know_talan_singing") == 0:
 
             self.player.append (71)
             self.cont.append (44)
@@ -297,7 +297,7 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (12)
         self.cont.append (-1)
-        quests.get ("demo").set ("complain_about_wastesedge" , 1)
+        quests["demo"].set_val ("complain_about_wastesedge" , 1)
 
         self.player.append (29)
         self.cont.append (19)
@@ -323,7 +323,7 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (54)
         self.cont.append (35)
-        the_npc.set ("talked_about_theft", 1) 
+        the_npc.set_val ("talked_about_theft", 1) 
 
         self.player.append (-1)
 
@@ -333,11 +333,11 @@ class lucia_start:
         self.cont.append (-1)
         self.player.append (56)
         self.cont.append (36)
-        if quests.get ("demo").get ("know_noise") != 0 and quests.get ("demo").get ("know_olivers_noise") == 0:
+        if quests.get_val ("demo").get_val ("know_noise") != 0 and quests.get_val ("demo").get_val ("know_olivers_noise") == 0:
 
             self.player.append (84)
             self.cont.append (51)
-        if quests.get ("demo").get ("know_olivers_noise") == 1:
+        if quests.get_val ("demo").get_val ("know_olivers_noise") == 1:
 
             self.player.append (67)
             self.cont.append (42)
@@ -417,11 +417,11 @@ class lucia_start:
         self.cont.append (-1)
         self.player.append (65)
         self.cont.append (41)
-        if quests.get ("demo").get ("know_noise") != 0 and quests.get ("demo").get ("know_olivers_noise") == 0:
+        if quests.get_val ("demo").get_val ("know_noise") != 0 and quests.get_val ("demo").get_val ("know_olivers_noise") == 0:
 
             self.player.append (84)
             self.cont.append (51)
-        if quests.get ("demo").get ("know_olivers_noise") == 1:
+        if quests.get_val ("demo").get_val ("know_olivers_noise") == 1:
 
             self.player.append (67)
             self.cont.append (42)
@@ -453,11 +453,11 @@ class lucia_start:
             self.cont.append (-1)
             self.player.append (18)
             self.cont.append (11)
-            if quests.get ("demo").get ("know_noise") != 0 and quests.get ("demo").get ("know_olivers_noise") == 0:
+            if quests.get_val ("demo").get_val ("know_noise") != 0 and quests.get_val ("demo").get_val ("know_olivers_noise") == 0:
 
                 self.player.append (84)
                 self.cont.append (51)
-            if quests.get ("demo").get ("know_olivers_noise") == 1:
+            if quests.get_val ("demo").get_val ("know_olivers_noise") == 1:
 
                 self.player.append (67)
                 self.cont.append (42)
@@ -499,7 +499,7 @@ class lucia_start:
         pass
 
     def answer3 (self):
-        the_npc.set ("talked_to", 1)
+        the_npc.set_val ("talked_to", 1)
 
         self.color = the_npc.get_color()
         self.npc.append (4)
@@ -544,17 +544,17 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (54)
         self.cont.append (35)
-        the_npc.set ("talked_about_theft", 1) 
+        the_npc.set_val ("talked_about_theft", 1) 
 
         self.player.append (-1)
 
     def answer27 (self):
-        the_npc.set ("know_shairs_clerk", 1)
+        the_npc.set_val ("know_shairs_clerk", 1)
 
         self.color = the_npc.get_color()
         self.npc.append (28)
         self.cont.append (-1)
-        quests.get ("demo").set ("complain_about_wastesedge" , 1)
+        quests["demo"].set_val ("complain_about_wastesedge" , 1)
 
         self.player.append (29)
         self.cont.append (19)
@@ -572,11 +572,11 @@ class lucia_start:
             self.cont.append (-1)
             self.player.append (18)
             self.cont.append (11)
-            if quests.get ("demo").get ("know_noise") != 0 and quests.get ("demo").get ("know_olivers_noise") == 0:
+            if quests.get_val ("demo").get_val ("know_noise") != 0 and quests.get_val ("demo").get_val ("know_olivers_noise") == 0:
 
                 self.player.append (84)
                 self.cont.append (51)
-            if quests.get ("demo").get ("know_olivers_noise") == 1:
+            if quests.get_val ("demo").get_val ("know_olivers_noise") == 1:
 
                 self.player.append (67)
                 self.cont.append (42)
@@ -595,7 +595,7 @@ class lucia_start:
         self.npc.append (16)
         self.cont.append (10)
         self.talked_about_fingolson = 1
-        the_npc.set ("talked_about_theft", 1)
+        the_npc.set_val ("talked_about_theft", 1)
 
         self.player.append (-1)
 
@@ -618,7 +618,7 @@ class lucia_start:
         self.player.append (-1)
 
     def answer2 (self):
-        the_npc.set ("talked_to", 1)
+        the_npc.set_val ("talked_to", 1)
 
         self.color = the_npc.get_color()
         self.npc.append (7)
@@ -636,7 +636,7 @@ class lucia_start:
         self.player.append (-1)
 
     def answer8 (self):
-        the_npc.set ("know_shairs_clerk", 1)
+        the_npc.set_val ("know_shairs_clerk", 1)
 
         self.color = the_npc.get_color()
         self.npc.append (9)
@@ -655,7 +655,7 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (14)
         self.cont.append (-1)
-        quests.get ("demo").set ("complain_about_wastesedge" , 1)
+        quests["demo"].set_val ("complain_about_wastesedge" , 1)
 
         self.player.append (15)
         self.cont.append (9)
@@ -666,7 +666,7 @@ class lucia_start:
         self.npc.append (16)
         self.cont.append (10)
         self.talked_about_fingolson = 1
-        the_npc.set ("talked_about_theft", 1)
+        the_npc.set_val ("talked_about_theft", 1)
 
         self.player.append (-1)
 
@@ -674,7 +674,7 @@ class lucia_start:
         self.color = the_npc.get_color()
         self.npc.append (12)
         self.cont.append (-1)
-        quests.get ("demo").set ("complain_about_wastesedge" , 1)
+        quests["demo"].set_val ("complain_about_wastesedge" , 1)
 
         self.player.append (29)
         self.cont.append (19)

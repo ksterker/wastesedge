@@ -27,29 +27,29 @@ speech = ["This tree is so inspiring.", \
           "I wonder why everybody seems so excited.", \
           "Do you know a creature more lovely than the yeti?"]
 
-todo = character_base.get (myself, "stand_still")
+todo = myself.get_val ("stand_still")
 
 # -- calculate a new position
 if todo == 0:
     # -- the position we want to reach
-    character_base.set (myself, "goal_x", random.randint (min_x, max_x))
-    character_base.set (myself, "goal_y", random.randint (min_y, max_y))
+    myself.set_val ("goal_x", random.randint (min_x, max_x))
+    myself.set_val ("goal_y", random.randint (min_y, max_y))
 
     delay = random.randint (30, 90) * 30
-    character_base.set (myself, "stand_still", delay)
+    myself.set_val ("stand_still", delay)
 
 # -- walk to the new position and wait a while
 else:
-    x = character_base.get (myself, "goal_x")
-    y = character_base.get (myself, "goal_y")
+    x = myself.get_val ("goal_x")
+    y = myself.get_val ("goal_y")
 
     schedules.simple_goto_xy (myself, x, y)
-    character_base.set (myself, "stand_still", todo - 1)
+    myself.set_val ("stand_still", todo - 1)
 
     # -- utter a random remark
-    tmp = character_base.get (myself, "say_something")
-    character_base.set (myself, "say_something", tmp - 1)
+    tmp = myself.get_val ("say_something")
+    myself.set_val ("say_something", tmp - 1)
     if tmp == 0:
         schedules.speak (myself, speech[random.randint (0, 2)])
         delay = random.randint (50, 150) * 20
-        character_base.set (myself, "say_something", delay)
+        myself.set_val ("say_something", delay)

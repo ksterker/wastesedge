@@ -24,10 +24,10 @@ class erek_start:
     # with Lady Silverhair
     
     def get_right_npc (self):
-        if self.demo.get ("work_4_shair") & 1 == 1:
+        if self.demo.get_val ("work_4_shair") & 1 == 1:
             return "Master Orloth"
     
-        elif self.demo.get ("work_4_shair") & 2 == 2:
+        elif self.demo.get_val ("work_4_shair") & 2 == 2:
             return "the mercenary"
     
         else:
@@ -44,14 +44,14 @@ class erek_start:
         self.dialogue[answer]()
 
     def start (self):
-        if the_npc.get ("talked_to") == 0:
+        if the_npc.get_val ("talked_to") == 0:
 
             self.color = 0
             self.npc.append (0)
             self.cont.append (-1)
-            the_npc.set ("talked_to", 1)
+            the_npc.set_val ("talked_to", 1)
 
-            if self.demo.get ("know_erek") == 1:
+            if self.demo.get_val ("know_erek") == 1:
 
                 self.player.append (1)
                 self.cont.append (1)
@@ -60,7 +60,7 @@ class erek_start:
                 self.player.append (43)
                 self.cont.append (30)
             self.player.append (-1)
-        elif the_npc.get ("work_4_shair") == 0 and self.demo.get ("work_4_shair") > 0:
+        elif the_npc.get_val ("work_4_shair") == 0 and self.get_val ("demo").get_val ("work_4_shair") > 0:
 
             self.color = 0
             self.npc.append (50)
@@ -83,7 +83,7 @@ class erek_start:
         self.cont.append (33)
         self.player.append (48)
         self.cont.append (32)
-        if quests.get ("demo").get ("bjarn_door_open") == 1:
+        if quests["demo"].get_val ("bjarn_door_open") == 1:
 
             self.player.append (84)
             self.cont.append (53)
@@ -97,7 +97,7 @@ class erek_start:
         self.cont.append (33)
         self.player.append (48)
         self.cont.append (32)
-        if quests.get ("demo").get ("bjarn_door_open") == 1:
+        if quests["demo"].get_val ("bjarn_door_open") == 1:
 
             self.player.append (84)
             self.cont.append (53)
@@ -133,7 +133,7 @@ class erek_start:
         self.color = 0
         self.npc.append (92)
         self.cont.append (-1)
-        quests.get ("demo").set ("bjarn_door_open" , 2)
+        quests["demo"].set_val ("bjarn_door_open" , 2)
 
         self.player.append (-1)
 
@@ -287,7 +287,7 @@ class erek_start:
         self.cont.append (-1)
         self.player.append (48)
         self.cont.append (32)
-        if quests.get ("demo").get ("bjarn_door_open") == 1:
+        if quests["demo"].get_val ("bjarn_door_open") == 1:
 
             self.player.append (84)
             self.cont.append (53)
@@ -379,7 +379,7 @@ class erek_start:
         self.cont.append (33)
         self.player.append (48)
         self.cont.append (32)
-        if quests.get ("demo").get ("bjarn_door_open") == 1:
+        if quests["demo"].get_val ("bjarn_door_open") == 1:
 
             self.player.append (84)
             self.cont.append (53)
@@ -404,7 +404,7 @@ class erek_start:
         self.cont.append (32)
         self.player.append (49)
         self.cont.append (33)
-        if quests.get ("demo").get ("bjarn_door_open") == 1:
+        if quests["demo"].get_val ("bjarn_door_open") == 1:
 
             self.player.append (84)
             self.cont.append (53)
@@ -458,13 +458,13 @@ class erek_start:
         self.color = the_npc.get_color()
         self.npc.append (17)
         self.cont.append (-1)
-        the_npc.set ("work_4_shair", 1)
+        the_npc.set_val ("work_4_shair", 1)
 
         self.player.append (19)
         self.cont.append (11)
         self.player.append (20)
         self.cont.append (12)
-        if self.demo.get ("know_argument") != 0:
+        if self.demo.get_val ("know_argument") != 0:
 
             self.player.append (38)
             self.cont.append (26)
@@ -488,9 +488,9 @@ class erek_start:
         self.color = the_npc.get_color()
         self.npc.append (21)
         self.cont.append (-1)
-        self.demo.set ("know_alek_eavesdrop", 1)
+        self.demo.set_val ("know_alek_eavesdrop", 1)
 
-        if self.demo.get ("know_argument") == 0:
+        if self.demo.get_val ("know_argument") == 0:
 
             self.player.append (22)
             self.cont.append (13)
@@ -536,23 +536,23 @@ class erek_start:
         self.color = the_npc.get_color()
         self.npc.append (18)
         self.cont.append (-1)
-        the_npc.set ("work_4_shair", 1)
+        the_npc.set_val ("work_4_shair", 1)
 
         self.player.append (19)
         self.cont.append (11)
-        if self.demo.get ("know_argument") != 0:
+        if self.demo.get_val ("know_argument") != 0:
 
             self.player.append (38)
             self.cont.append (26)
         self.player.append (-1)
 
     def answer3 (self):
-        if self.demo.get ("work_4_shair") != 0:
+        if self.demo.get_val ("work_4_shair") != 0:
 
             self.color = the_npc.get_color()
             self.npc.append (6)
             self.cont.append (-1)
-            the_npc.set ("insulted", 1)
+            the_npc.set_val ("insulted", 1)
 
             self.player.append (8)
             self.cont.append (5)
@@ -587,7 +587,7 @@ class erek_start:
         self.player.append (-1)
 
     def answer12 (self):
-        the_npc.set ("insulted", 1)
+        the_npc.set_val ("insulted", 1)
 
         self.color = 0
         self.npc.append (14)

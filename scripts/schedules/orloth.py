@@ -28,17 +28,17 @@ coords = [(3, 5, STAND_SOUTH), \
           (7, 4, STAND_WEST), \
           (10, 3, STAND_NORTH)]
 
-todo = character_base.get (myself, "wait_behind_bar")
+todo = myself.get_val ("wait_behind_bar")
 
 # -- leave the bar
 if todo == 0:
     # -- get the position we want to reach
-    goal = character_base.get (myself, "goal")
+    goal = myself.get_val ("goal")
     x, y, dir = coords[goal]
 
     if schedules.simple_goto_xy (myself, x, y) == 1:
         # -- wait a little
-        character_base.set (myself, "wait_behind_bar", -150)
+        myself.set_val ("wait_behind_bar", -150)
 
         if dir == STAND_NORTH: myself.stand_north ()
         elif dir == STAND_EAST: myself.stand_east ()
@@ -52,25 +52,25 @@ if todo == 0:
 
 # -- stand still
 elif todo < 0:
-    character_base.set (myself, "wait_behind_bar", todo + 1)
+    myself.set_val ("wait_behind_bar", todo + 1)
     if todo == -1:
         # -- calculate the next move
         delay = random.randint (40, 120) * 20
-        character_base.set (myself, "wait_behind_bar", delay)
-        character_base.set (myself, "goal", random.randint (0, 4))
+        myself.set_val ("wait_behind_bar", delay)
+        myself.set_val ("goal", random.randint (0, 4))
 
 # -- go to/stay behind bar
 else:
-    character_base.set (myself, "wait_behind_bar", todo - 1)
+    myself.set_val ("wait_behind_bar", todo - 1)
 
     # -- reached the bar
     if schedules.simple_goto_xy (myself, 2, 2) == 1:
         myself.stand_south ()
 
     # -- utter a random remark
-    tmp = character_base.get (myself, "say_something")
-    character_base.set (myself, "say_something", tmp - 1)
+    tmp = myself.get_val ("say_something")
+    myself.set_val ("say_something", tmp - 1)
     if tmp == 0:
         schedules.speak (myself, speech[random.randint (0, 2)])
         delay = random.randint (50, 150) * 20
-        character_base.set (myself, "say_something", delay)
+        myself.set_val ("say_something", delay)

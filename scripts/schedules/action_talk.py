@@ -1,14 +1,13 @@
 def restore_schedule (retval, args):
-    # -- the_player always points to the player
+    # -- activate the character's schedules
     args[0].set_schedule_active (1)
-
-    # -- the_npc always points to the last character the player talked to
     args[1].set_schedule_active (1)
 
 if requester.get_name()==the_player.get_name():
     # -- deactivate the schedule of the characters involved
     myself.set_schedule_active (0)
     requester.set_schedule_active (0)
+
     # -- look into the player's face
     myself.look_invert(requester.currentmove())
 
