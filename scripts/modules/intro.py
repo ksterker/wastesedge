@@ -98,7 +98,7 @@ business in her name,\ntrusting me to follow in good speed.",
 was now only a day\nahead.  The thought nearly caused me\nto forget \
 the harshness of the road.",
            "Still, Waste's Edge was a welcome sight.",
-           "As you approach the trading post, there\nseems to be little sign of life.                 \
+           "As you approach the trading post, there\nseems to be little sign of life.      \
            \nEventually you find the Redwyne Inn,\nwhich seems to be the main building\nhere.",
            "The heavy wooden doors are closed,\nand no one is there \
 to let you in. As you\napproach the gate, you suddenly hear a voice from within.",
@@ -193,8 +193,9 @@ while not input_has_been_pushed (SDLK_ESCAPE) and not input_has_been_pushed (SDL
                     if windelay >= 10:
                         if wincpt == 0: lab.set_text ("")
                         lab.add_text (wintext[wintextocc][wincpt])
+                        if wintext[wintextocc][wincpt] == '.': windelay = -50
+                        else: windelay = 0
                         wincpt = wincpt + 1
-                        windelay = 0
                     else:
                         windelay = windelay + 1
                         # Shall we fade to the Inn view?

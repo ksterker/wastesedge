@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.81 2002/01/18 20:00:45 adondev Exp $
+#  $Id: init.py,v 1.82 2002/01/19 13:38:19 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -785,7 +785,7 @@ class title_screen:
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 0
-        ev.x = 23
+        ev.x = 24
         ev.y = 12
         ev.set_script ("teleport", (21, 1, 7, STAND_EAST))
         lm.add_event (ev)
@@ -796,7 +796,7 @@ class title_screen:
         ev.submap = 0
         ev.x = 19
         ev.y = 12
-        ev.set_script ("teleport", (0, 16, 12, STAND_WEST))
+        ev.set_script ("teleport", (0, 16, 12, STAND_WEST, 0))
         lm.add_event (ev)
 
         # From veranda left to veranda right
@@ -805,7 +805,7 @@ class title_screen:
         ev.submap = 0
         ev.x = 17
         ev.y = 12
-        ev.set_script ("teleport", (0, 20, 12, STAND_EAST))
+        ev.set_script ("teleport", (0, 20, 12, STAND_EAST, 0))
         lm.add_event (ev)
 
         # From veranda to silverhair
