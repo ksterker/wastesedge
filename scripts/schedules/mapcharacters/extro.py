@@ -164,7 +164,7 @@ class extro:
             ("Ogg Vorbis Stereo", 1), \
             ("(where available)", 15), \
             ("The END", 6), \
-            ("Joel, you're fired! ;)", -1)]
+            ("Joel, you are fired! ;)", -1)]
             
         # -- text colors
         self.colors = ["white", "yellow", "red", "violet", "blue", "green"]
@@ -233,6 +233,13 @@ class extro:
             talan = adonthell.gamedata_get_character ('Talan Wendth')
             talan.load ("talan_beaten.mchar")
             events.switch_submap (talan, 7, 1, 6, adonthell.STAND_EAST)
+            
+            # -- everyone look at Talan
+            adonthell.gamedata_get_character ("Erek Stonebreaker").stand_west ()
+            adonthell.gamedata_get_character ("Jelom Rasgar").stand_west ()
+            adonthell.gamedata_get_character ("Imoen Silverhair").stand_west ()
+            adonthell.gamedata_player ().stand_west ()
+            
             talan.go_east ()
             talan.stand_south ()
             self.done = 1

@@ -22,8 +22,8 @@ def switch_submap (mychar, x, y, submap, dir):
     else:
         schedule_active = 0
 
-    # -- comparing mychar and player directly does not work (???)
-    if mychar.get_name () == adonthell.gamedata_player ().get_name ():
+    # -- only fade for the player
+    if mychar.get_id () == "Player":
         # -- fade the new submap in if we teleport the player
         adonthell.gamedata_engine ().fade_out ()
         mychar.jump_to (x, y, submap, dir)

@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.80 2002/01/18 12:39:25 adondev Exp $
+#  $Id: init.py,v 1.81 2002/01/18 20:00:45 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -807,7 +807,6 @@ class title_screen:
         ev.y = 12
         ev.set_script ("teleport", (0, 20, 12, STAND_EAST))
         lm.add_event (ev)
-
 
         # From veranda to silverhair
         ev = enter_event ()

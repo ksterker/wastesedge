@@ -56,7 +56,8 @@ class silverhair:
             else:
                 say = randint (33, 66) * 10
                 delay = randint (100, 200) * 35
-                myself.set_goal (4, 4, STAND_SOUTH)
+                if myself.set_goal (4, 4, STAND_SOUTH) == 0:
+                    return
 
             myself.set_val ("say_something", say)
             myself.set_val ("delay", delay)
