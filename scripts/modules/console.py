@@ -1,5 +1,5 @@
 #
-#  $Id: console.py,v 1.8 2001/09/23 15:09:57 adondev Exp $
+#  $Id: console.py,v 1.9 2001/10/30 23:43:09 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -25,13 +25,10 @@ class console (adonthell.win_container):
         self.namespace = ns
         self.history = []
         self.hist_idx = 0
-        self.thisown = 0
-        self.quit = 1
 
         # read the old history
         self.read_history ()
 
-        self.py_signal_connect (self.on_destroy, adonthell.win_event_DESTROY)
         self.py_signal_connect (self.on_update, adonthell.win_event_UPDATE)
         
         # -- get font and theme
@@ -69,10 +66,6 @@ class console (adonthell.win_container):
         self.entry.set_focus (1)
         self.entry.set_activate (1)
 
-    # -- cleanup --
-    def __del__(self):
-        self.write_history ()
-
     # -- callback for command execution
     def on_execute (self):
         text = self.entry.text_char ()
@@ -94,16 +87,13 @@ class console (adonthell.win_container):
                 error = "Error:\n  " + str (type) + ":\n  \"" + str (value) + "\""
                 self.entry.set_text (error)
 
-    # -- callback to close the window
-    def on_destroy (self):
-        return self.quit
-
-    # -- catch relevant keypresses 
+    # -- catch relevant keypresses
     def on_update (self):
         # -- quit
         if adonthell.input_has_been_pushed (adonthell.SDLK_TAB):
-            self.quit = 0
-        
+            self.write_history ()
+            adonthell.gamedata_engine ().main_quit ()
+
         # -- clear screen
         elif adonthell.input_has_been_pushed (adonthell.SDLK_DELETE):
             self.entry.set_text ("")

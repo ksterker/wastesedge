@@ -152,12 +152,17 @@ class keyboard_control:
         # -- python console
         elif input_has_been_pushed (SDLK_TAB):
             import console
+
             c = console.console (globals ())
-            c.thisown = C
-            # c.py_signal_connect (self.on_data_screen_close, win_event_CLOSE)
-            # Stop updating the map
-            # gamedata_map_engine ().set_should_update_map (0)
             c.set_activate (1)
-            win_manager_add (c)
-            win_manager_set_focus (c)
+
+            # -- Stop updating the map
+            gamedata_engine ().set_update_map (0)
+
+            # -- open the console
+            gamedata_engine ().main (c, "console")
+
+            # -- continue
+            gamedata_engine ().set_update_map (1)
+
             c = None
