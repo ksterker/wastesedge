@@ -47,6 +47,21 @@ elif input_is_pushed (SDLK_RIGHT): myself.go_east ()
 elif input_is_pushed (SDLK_LEFT): myself.go_west ()
 
 
+# Special tip! :)
+elif input_has_been_pushed (SDLK_KP_PLUS):
+    if myself.submap () < map_engine.get_landmap ().nbr_of_submaps () - 1:
+        myself.jump_to (myself.submap () + 1, 5, 3)
+    else:
+        myself.jump_to (0, 7, 18)
+
+elif input_has_been_pushed (SDLK_KP_MINUS):
+    if myself.submap () > 1:
+        myself.jump_to (myself.submap () - 1, 5, 3)
+    elif myself.submap () == 1:
+        myself.jump_to (0, 7, 18)        
+    else:
+        myself.jump_to (map_engine.get_landmap ().nbr_of_submaps () - 1, 5, 3)
+
 # -- shortcut to the load screen
 elif input_has_been_pushed (SDLK_l):
     # myself.set_schedule_active (0)
