@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.76 2001/12/31 15:33:31 adondev Exp $
+#  $Id: init.py,v 1.77 2002/01/02 19:01:05 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -1215,6 +1215,27 @@ class title_screen:
         ev.x = 1
         ev.y = 6
         ev.dir = STAND_WEST
+        ev.set_script ("character_speak", (player.get_id (), \
+            "An old, dusty chest."))
+        lm.add_event (ev)
+        
+        # -- pantry
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 8
+        ev.x = 3
+        ev.y = 5
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "The Lady's luggage, but not what I am looking for."))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 8
+        ev.x = 4
+        ev.y = 5
+        ev.dir = STAND_NORTH
         ev.set_script ("search_chest", (player.get_id (),))
         lm.add_event (ev)
 
