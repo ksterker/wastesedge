@@ -1,5 +1,5 @@
 #
-#  $Id: keyboard_control.py,v 1.7 2002/01/19 17:21:06 adondev Exp $
+#  $Id: keyboard_control.py,v 1.8 2002/01/19 18:08:48 adondev Exp $
 #
 #  (C) Copyright 2001 Alexandre Courbot
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -70,7 +70,8 @@ class keyboard_control:
         self.wnd = None
     
     def on_draw (self, mychar):
-        if mychar.posx () >= 17 and mychar.posx () <= 19:
+        if mychar.submap () == 0 and mychar.posx () >= 17 and mychar.posx () <= 19 \
+        and mychar.posy () == 12:
             view = adonthell.gamedata_engine ().get_mapview ()
             
             x = (mychar.posx () - view.posx () - mychar.base_x ()) * 20 \
