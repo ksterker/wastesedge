@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.67 2001/12/10 23:12:26 adondev Exp $
+#  $Id: init.py,v 1.68 2001/12/11 22:12:19 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -777,6 +777,7 @@ class title_screen:
             "I'd better not touch this ... What if it explodes??"))
         lm.add_event (ev)
 
+        # -- Outside
         ev = action_event ()
         ev.thisown = C
         ev.submap = 0
@@ -819,6 +820,16 @@ class title_screen:
 
         ev = action_event ()
         ev.thisown = C
+        ev.submap = 0
+        ev.x = 13
+        ev.y = 23
+        ev.dir = STAND_WEST
+        ev.set_script ("character_speak", (player.get_id (), \
+            "That's the guard's house."))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
         ev.submap = 17
         ev.x = 1
         ev.y = 6
@@ -835,7 +846,7 @@ class title_screen:
         ev.y = 5
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-            "It's locked."))
+            "Hm. There are plenty of books on singing inside."))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -879,6 +890,27 @@ class title_screen:
             "I doubt Master Fingolson would be happy if I went through his things ..."))
         lm.add_event (ev)
 
+        # -- Bath
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 5
+        ev.x = 4
+        ev.y = 3
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "I have already bathed this month!"))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 5
+        ev.x = 5
+        ev.y = 3
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "I have already bathed this month!"))
+        lm.add_event (ev)
+
         # -- Silverhair
         ev = action_event ()
         ev.thisown = C
@@ -908,7 +940,7 @@ class title_screen:
         ev.y = 4
         ev.dir = STAND_WEST
         ev.set_script ("character_speak", (player.get_id (), \
-            "I'm sure Master Redwyne won't mind if I try a bit."))
+            "I'm sure Master Redwyne won't mind if I take a sip."))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -1023,7 +1055,27 @@ class title_screen:
             "Hey, that looks like Adonthell!"))
         lm.add_event (ev)
 
-        # -- Now setup the characters
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 12
+        ev.x = 1
+        ev.y = 3
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "I cannot rest when my mistress needs me!"))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 12
+        ev.x = 2
+        ev.y = 3
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "I cannot rest when my mistress needs me!"))
+        lm.add_event (ev)
+
+       # -- Now setup the characters
         lucia = gamedata_get_character ("Lucia Redwyne")
         lucia.set_dialogue ("dialogues/lucia_start")
         lucia.load ("lucia.mchar")
@@ -1118,6 +1170,7 @@ class title_screen:
         bjarn.set_portrait ("bjarn.pnm")
 
         silverhair = gamedata_get_character ("Imoen Silverhair")
+        silverhair.set_dialogue ("dialogues/silverhair_start")
         silverhair.load ("silverhair.mchar")
         silverhair.set_map (gamedata_engine ().get_landmap ())
         silverhair.jump_to (13, 4, 4)
