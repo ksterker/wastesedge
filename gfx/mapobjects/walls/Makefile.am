@@ -1,4 +1,4 @@
-SUBDIRS = inside stone
+SUBDIRS = inside stone cellar
 
 pkgdatadir = $(gamedatadir)/gfx/mapobjects/walls
 
