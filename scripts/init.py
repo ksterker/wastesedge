@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.62 2001/10/29 17:04:23 adondev Exp $
+#  $Id: init.py,v 1.63 2001/10/30 01:45:54 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -180,9 +180,9 @@ class title_screen:
             self.cleanup ()
 
             # -- load the initial game
-            gamedata_load (0)
-            # gamedata_load_characters (0)
-            # gamedata_load_quests (0)
+            # gamedata_load (0)
+            gamedata_load_characters (0)
+            gamedata_load_quests (0)
             adonthell.gamedata_player ().rename (cs.name)
                 
             # -- on to the intro
@@ -221,7 +221,7 @@ class title_screen:
 
         # Creates the map engine context for the game start
         lm = gamedata_engine ().get_landmap ()
-        # lm.load ("test.map")
+        lm.load ("test.map")
         
         player = gamedata_player ()
         player.set_val ("gender", MALE)
