@@ -572,6 +572,16 @@ if retval < 5:
         talan.stand_north ()
         talan.set_schedule ("talan")
 
+        # -- that's a clone for now
+        alek = characters ["Alek Endhelm"]
+        alek.set_dialogue ("dialogues/alek_start")
+        alek.load ("servant2.mchar")
+        alek.set_map (map_engine.get_landmap ())
+        alek.jump_to (1, 1, 3)
+        alek.set_action ("action_talk")
+        alek.stand_south ()
+        alek.set_schedule ("alek")
+
         oliver = characters ["Oliver Redwyne"]
         oliver.set_dialogue ("dialogues/oliver_start")
         oliver.load ("oliver.mchar")

@@ -390,6 +390,8 @@ class orloth_start:
         self.color = the_npc.get_color()
         self.npc.append (14)
         self.cont.append (-1)
+        quests["demo"].set_val ("know_aleks_room" , 1)
+
         self.player.append (15)
         self.cont.append (11)
         self.player.append (16)
