@@ -15,12 +15,12 @@ CLEANFILES = $(bin_SCRIPTS)
 
 # -- clean game directory before installing
 install-exec-local:
-	rm -Rf $(gamedatadir)
+	rm -Rf $DESTDIR$(gamedatadir)
 
 adonthell-wastesedge: Makefile
 	echo -e "#!/bin/sh\n\n$(adonthell_binary) wastesedge" > adonthell-wastesedge
 
 # -- make sure the data directory gets deleted
 uninstall-local:
-	rm -rf $(gamedatadir)
+	rm -rf $DESTDIR$(gamedatadir)
 
