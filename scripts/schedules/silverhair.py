@@ -47,7 +47,7 @@ elif todo == 1:
     # -- go back to our normal position
     else:
         delay = randint (100, 200) * 35
-        myself.set_goal (4, 5, STAND_SOUTH)
+        myself.set_goal (4, 4, STAND_SOUTH)
 
     myself.set_val ("say_something", say)
     myself.set_val ("delay", delay)

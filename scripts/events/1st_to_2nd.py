@@ -6,5 +6,5 @@ mychar = characters [name]
 if mychar.submap() == 9:
     switch_submap (mychar, 14, 4, 2, STAND_SOUTH)
 else:
-    switch_submap (mychar, 9, 5, 2, STAND_SOUTH)
+    switch_submap (mychar, 9, 6, 2, STAND_SOUTH)
 

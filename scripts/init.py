@@ -345,7 +345,7 @@ if retval < 5:
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 9
-        ev.x = 8
+        ev.x = 9
         ev.y = 2
         ev.set_script ("1st_to_fellnir")
         lm.add_event (ev)
@@ -369,7 +369,7 @@ if retval < 5:
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 11
-        ev.x = 6
+        ev.x = 5
         ev.y = 3
         ev.set_script ("1st_to_frostbloom")
         lm.add_event (ev)
@@ -377,7 +377,7 @@ if retval < 5:
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 9
-        ev.x = 6
+        ev.x = 7
         ev.y = 4
         ev.set_script ("1st_to_player")
         lm.add_event (ev)
@@ -401,7 +401,7 @@ if retval < 5:
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 13
-        ev.x = 6
+        ev.x = 5
         ev.y = 1
         ev.set_script ("1st_to_silverhair")
         lm.add_event (ev)
@@ -465,7 +465,7 @@ if retval < 5:
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 9
-        ev.x = 7
+        ev.x = 8
         ev.y = 1
         ev.set_script ("common_to_1st")
         lm.add_event (ev)
@@ -473,7 +473,7 @@ if retval < 5:
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 9
-        ev.x = 5
+        ev.x = 6
         ev.y = 1
         ev.set_script ("1st_to_2nd")
         lm.add_event (ev)

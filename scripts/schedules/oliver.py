@@ -51,7 +51,7 @@ elif myself.get_val ("goto_barn") == 1:
 
     # -- First floor
     elif location == 9:
-        schedules.simple_goto_xy (myself, 7, 1)
+        schedules.simple_goto_xy (myself, 8, 1)
 
     # -- Common Room
     elif location == 1:
