@@ -1,6 +1,3 @@
-from main_menu import *
-from console import *
-
 # -- When the menu is closing, react accordingly
 def on_menu_close (retval, player):
     # -- Reactivate the player's schedule
@@ -70,11 +67,9 @@ if input_has_been_pushed (SDLK_SPACE):
 
 # -- bring up the main menu
 elif input_has_been_pushed (SDLK_ESCAPE):
-    # -- deactivate the player's schedule, so he can't move while the menu is open
-#    myself.set_schedule_active (0)
+    from main_menu import *
 
     # -- open main menu without animation, with saving and background enabled
-    	#print "rt"
     menu = main_menu (1, 1, 1)
     menu.thisown = C
 
@@ -127,6 +122,7 @@ elif input_has_been_pushed (SDLK_s):
 
 # -- python console
 elif input_has_been_pushed (SDLK_TAB):
+    from console import *
     c = console (globals ())
     c.thisown = C
     c.set_activate (1)
