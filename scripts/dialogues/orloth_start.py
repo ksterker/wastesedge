@@ -31,11 +31,11 @@ class orloth_start:
     
     def __del__ (self):
         oliver = characters["Oliver Redwyne"]
-        if oliver.get_val ("goto_players_room") == 1:
+        if oliver.get_val ("goto_players_room") == 2:
             from events import switch_submap
             switch_submap (the_player, 12, 5, 3, 1)
             switch_submap (oliver, 12, 5, 4, 0)
-            oliver.set_val ("goto_players_room", 2)
+            oliver.set_val ("goto_players_room", 3)
     
 
 

@@ -7,7 +7,7 @@ def on_menu_close (retval, player):
         map_engine.quit ()
 
 # Reactive map update when data_screen closed
-def on_data_screen_close (retval, player):
+def on_data_screen_close (retval):
     map_engine.set_should_update_map (1)
 
 # Opens the gate
@@ -113,7 +113,7 @@ elif input_has_been_pushed (SDLK_p):
 elif input_has_been_pushed (SDLK_l):
     s = data_screen (LOAD_SCREEN)
     s.thisown = C
-    s.py_signal_connect (on_data_screen_close, win_event_CLOSE, None)
+    s.py_signal_connect (on_data_screen_close, win_event_CLOSE)
     # Stop updating the map
     map_engine.set_should_update_map (0)
     s.set_activate (1)	
@@ -125,7 +125,7 @@ elif input_has_been_pushed (SDLK_l):
 elif input_has_been_pushed (SDLK_s):
     s = data_screen (SAVE_SCREEN)
     s.thisown = C
-    s.py_signal_connect (on_data_screen_close, win_event_CLOSE, None)
+    s.py_signal_connect (on_data_screen_close, win_event_CLOSE)
     # Stop updating the map
     map_engine.set_should_update_map (0)
     s.set_activate (1)	
@@ -138,6 +138,9 @@ elif input_has_been_pushed (SDLK_TAB):
     import console
     c = console.console (globals ())
     c.thisown = C
+    c.py_signal_connect (on_data_screen_close, win_event_CLOSE)
+    # Stop updating the map
+    map_engine.set_should_update_map (0)
     c.set_activate (1)
     win_manager_add (c)
     win_manager_set_focus (c)

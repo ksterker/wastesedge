@@ -80,7 +80,7 @@ class title_screen:
         self.quit = 0
         self.bgimage = win_image ()
         self.bgimage.move (0, 0)
-        image_copy (self.bgimage, background)
+        image.copy (self.bgimage, background)
         self.bgimage.pack ()
         
         self.window = win_container ()
@@ -560,6 +560,8 @@ if retval < 5:
         erek.jump_to (1, 5, 5)
         erek.set_action ("action_talk")
         erek.stand_north ()
+        # changed Erek's text color to violet
+        erek.set_color (3)
         erek.set_schedule ("erek")
 
         talan = characters ["Talan Wendth"]
@@ -570,6 +572,16 @@ if retval < 5:
         talan.set_action ("action_talk")
         talan.stand_north ()
         talan.set_schedule ("talan")
+
+        # -- that's a clone for now
+        jelom = characters ["Jelom Rasgar"]
+        jelom.set_dialogue ("dialogues/jelom_start")
+        jelom.load ("talan.mchar")
+        jelom.set_map (map_engine.get_landmap ())
+        jelom.jump_to (9, 2, 6)
+        jelom.set_action ("action_talk")
+        jelom.stand_north ()
+        jelom.set_schedule ("jelom")
 
         # -- that's a clone for now
         alek = characters ["Alek Endhelm"]

@@ -27,7 +27,7 @@ class oliver_start:
         self.dialogue[answer]()
 
     def start (self):
-        if the_npc.get_val ("goto_players_room") == 2:
+        if the_npc.get_val ("goto_players_room") == 3:
 
             self.color = 0
             self.npc.append (28)
