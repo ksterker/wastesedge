@@ -1,5 +1,5 @@
 #
-#  $Id: console.py,v 1.11 2002/08/20 17:42:28 ksterker Exp $
+#  $Id: console.py,v 1.12 2004/05/28 21:07:03 ksterker Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -79,7 +79,7 @@ class console (adonthell.win_container):
                 self.hist_idx = len (self.history)
     
             # -- quit?
-            if text == "quit":
+            if text == "quit" or text == "exit":
                 self.write_history ()
                 adonthell.gamedata_engine ().main_quit ()
             

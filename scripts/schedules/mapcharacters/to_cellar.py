@@ -38,7 +38,8 @@ class to_cellar:
             (0, 3, adonthell.STAND_WEST), \
             (5, 3, adonthell.STAND_EAST), \
             (5, 1, adonthell.STAND_NORTH), \
-            (5, 1, adonthell.STAND_NORTH)]
+            (5, 1, adonthell.STAND_NORTH), \
+            (4, 1, adonthell.STAND_SOUTH)]
 
         self.myself.set_callback (self.walk)
 

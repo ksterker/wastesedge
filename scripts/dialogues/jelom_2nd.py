@@ -103,7 +103,7 @@ class jelom_2nd (dialogue.base):
 		("Default", -1, ((36, 0, -1), )),\
 		("Erek Stonebreaker", -1, ((37, 0, -1), )),\
 		("Default", 2, ()),\
-		("Default", -1, ((39, 0, 8), (34, 0, 7), (32, 0, -1), )),\
+		("Default", -1, ((39, 0, 8), (34, 0, 7), )),\
 		(None, -1, ((40, 0, -1), )),\
 		("Default", -1, ())]
 
@@ -126,21 +126,21 @@ class jelom_2nd (dialogue.base):
 		    jelom = adonthell.gamedata_get_character("Jelom Rasgar")
 		    jelom.set_schedule ("to_cellar")
 		    jelom.time_callback_string ("1t", "walk")
-				
+		
 		    player = adonthell.gamedata_player ()
+		    player.set_schedule_active (1)
 		    player.set_schedule ("to_cellar")
-		    player.resume ()
 		    player.time_callback_string ("2t", "walk")
-				
+		
 		    erek = adonthell.gamedata_get_character("Erek Stonebreaker")
 		    erek.resume ()
 		    erek.set_schedule ("to_cellar")
 		    erek.time_callback_string ("3t", "walk")
-				
+		
 		    fnir = adonthell.gamedata_get_character("Fellnir Kezular")
 		    fnir.set_schedule ("to_cellar")
 		    fnir.time_callback_string ("4t", "walk")
-				
+		
 		    illig = adonthell.gamedata_get_character("Tristan Illig")
 		    illig.set_schedule ("to_cellar")
 		    illig.time_callback_string ("7t", "walk")
