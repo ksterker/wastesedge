@@ -1,5 +1,5 @@
 #
-#  $Id: main_menu.py,v 1.15 2001/10/24 14:14:27 adondev Exp $
+#  $Id: main_menu.py,v 1.16 2001/10/29 17:04:25 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -24,27 +24,20 @@ class main_menu (win_container):
     def __init__ (self, startup, enable_s, enable_b = 0):	
         win_container.__init__(self)
 
-        # Init Position
-        self.move (0,0)	
-        self.resize(320,240)
+        # -- Init Position
+        self.move (0, 0)	
+        self.resize (320, 240)
         
-        self.thisown = 0
-
-        # load font and theme
+        # -- load font and theme
         self.font = win_manager_get_font ("original")
         self.theme = win_manager_get_theme ("original")
 
         self.enable_save = enable_s
         self.enable_b = enable_b
 
-        self.lg = None
-        
-        self.quit = 1
-
         y_pos = 30
         if enable_s: y_pos = 15
 
-        self.py_signal_connect (self.on_destroy, win_event_DESTROY)
         self.py_signal_connect (self.on_update, win_event_UPDATE)
         
         self.a_title = win_image()
@@ -119,7 +112,6 @@ class main_menu (win_container):
         for label in self.labels:
             self.add (label)    
 	   	
-        # activate self object
         self.set_activate (1)
         self.set_visible_all (1)	
 
@@ -140,6 +132,8 @@ class main_menu (win_container):
                 label.move ((self.length()-label.length())/2, label.y ())
             self.add_to_select ()
 
+
+    # -- make the menu options available for selecting
     def add_to_select (self):
         self.select = win_select()
         self.select.move (70,10)
@@ -175,77 +169,67 @@ class main_menu (win_container):
         self.add (self.title)
         self.set_visible_all (1)
 
-    # -- Callback to close the window
-    def on_destroy (self):
-        if self.quit == 0:
-            print "Closing Main Menu ..."
-        return self.quit
 
-    # -- pressing ESC will close the menu if it's open
+    # -- after closing the menu, this returns the selected option
+    def get_result (self):
+        return self.retval
+    
+
+    # -- callback for custom updating
     def on_update (self):
+        # -- slide in the menu options
         if self.startup > 0:
-            self.startup = self.create_menu (self.moves, self.goals)
-
-            if self.startup == 0:
+            if self.create_menu (self.moves, self.goals) == 0:
                 self.add_to_select ()
-
-        elif self.lg == None:
-            if input_has_been_pushed (SDLK_ESCAPE):
-                self.quit = 0
-                # If we're on the title screen, then leave.
-                if self.enable_save == 0:
-                    self.set_return_code (5)
+                self.startup = 0
+                
+        # -- pressing ESC will close the menu if it's open
+        if input_has_been_pushed (SDLK_ESCAPE):
+            # -- If we're on the title screen, then exit the game
+            if self.enable_save == 0: self.retval = 5
+            else: self.retval = 0
+            gamedata_engine ().main_quit ()
+                    
 
     # -- Callback to get informed of the player's choice
     def on_select (self):
-        sel = self.select.get_selected_position ()
+        self.retval = self.select.get_selected_position ()
 
-        if self.enable_save == 0 and sel > 2:
-            sel = sel + 1
-
-        self.set_return_code (sel)
+        # -- skip save option on title screen
+        if self.enable_save == 0 and self.retval > 2:
+            self.retval = self.retval + 1
        
-        # New Game
-        if sel == 1:
-            self.quit = 0
-
-        # Load Game
-        elif sel == 2:
-            self.lg = data_screen (LOAD_SCREEN)
-            self.lg.thisown = 0
-            self.lg.set_activate (1)	
-            if self.startup != 0:
-                # In game
-                self.lg.py_signal_connect (self.on_ingame_data_close, win_event_CLOSE)
+        # -- Load Game
+        if self.retval == 2:
+            lg = data_screen (LOAD_SCREEN)
+            lg.set_activate (1)	
+            
+            # -- hide the game menu if we are not on the title screen
+            if self.enable_save == 1:
                 self.set_visible (0)
-            else:
-                # Title screen
-                self.lg.py_signal_connect (self.on_data_close, win_event_CLOSE)
-            win_manager_add (self.lg)
-            win_manager_set_focus (self.lg)
-
-        # Save Game
-        elif sel == 3:
-            self.lg = data_screen (SAVE_SCREEN)
-            self.lg.thisown = 0
-            self.lg.set_activate(1)
-            self.lg.py_signal_connect (self.on_ingame_data_close, win_event_CLOSE)
+            
+            # -- open the Load screen
+            gamedata_engine ().main (lg, "load_screen")
+            
+            # -- if we are on the title screen, only close the 
+            #    game menu if a game has been loaded
+            if self.enable_save == 0 and lg.get_result () == 0:
+                return
+            
+        # -- Save Game
+        elif self.retval == 3:
+            lg = data_screen (SAVE_SCREEN)
+            lg.set_activate (1)
+            
+            # -- hide the game menu
             self.set_visible (0)
-            win_manager_add (self.lg)
-            win_manager_set_focus (self.lg)
+            
+            # -- open the Load screen
+            gamedata_engine ().main (lg, "save_screen")
 
-        # Quit
-        elif sel == 5:
-            self.quit = 0
+        # -- close the main menu        
+        gamedata_engine ().main_quit ()
 
-    def on_data_close (self, retval):
-        self.lg = None
-        if retval == 1:
-            self.quit = 0
-
-    def on_ingame_data_close (self, retval):
-        self.lg = None
-        self.quit = 0
 
     # -- Scrolls the different menu options into view
     def create_menu (self, moves, goals):

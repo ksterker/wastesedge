@@ -16,8 +16,7 @@
 #    From time to time he'll complain about the grandfather clock
 
 import adonthell
-from adonthell import STAND_NORTH, STAND_SOUTH, STAND_WEST, STAND_EAST
-from random import randint
+import random
 
 class orloth:
 
@@ -28,11 +27,11 @@ class orloth:
                   "That barrel is leaking.", \
                   "I hope they'll find the thief!"]
 
-        self.coords = [(10, 3, STAND_NORTH), \
-                  (3, 5, STAND_SOUTH), \
-                  (7, 6, STAND_EAST), \
-                  (12, 3, STAND_SOUTH), \
-                  (7, 4, STAND_WEST), \
+        self.coords = [(10, 3, adonthell.STAND_NORTH), \
+                  (3, 5, adonthell.STAND_SOUTH), \
+                  (7, 6, adonthell.STAND_EAST), \
+                  (12, 3, adonthell.STAND_SOUTH), \
+                  (7, 4, adonthell.STAND_WEST), \
                   (3, 7, 0), \
                   (9, 7, 0), \
                   (12, 5, 0), \
@@ -54,44 +53,25 @@ class orloth:
 
                 # -- put/take the first mug
                 if delay == 100:
-                    index = myself.get_val ("table_num")
-                    if index > 0:
-                        key = "table%i_set" % index
-                        val = myself.get_val (key)
-
-                        x, y = self.coords[index+4][:2]
-                        if val == 0:
-                            adonthell.gamedata_map_engine ().get_landmap ().put_mapobject (1, x, y, 106)
-                        else:
-                            adonthell.gamedata_map_engine ().get_landmap ().remove_mapobject (1, x, y, 106)
-
+                    self.put_object (106, 0)
+                    
                 # -- put/take the second mug
                 elif delay == 50:
-                    index = myself.get_val ("table_num")
-                    if index > 0:
-                        key = "table%i_set" % index
-                        val = myself.get_val (key)
-                        myself.set_val (key, ~val)
-
-                        x, y = self.coords[index+4][:2]
-                        if val == 0:
-                            adonthell.gamedata_map_engine ().get_landmap ().put_mapobject (1, x, y, 107)
-                        else:
-                            adonthell.gamedata_map_engine ().get_landmap ().remove_mapobject (1, x, y, 107)
+                    self.put_object (107, 1)
 
         # -- engage a new movement
         elif todo == 1:
             # -- when we are at the bar, then wait a while before
             #    moving again
             if myself.posx () != 2:
-                delay = randint (40, 120) * 20
+                delay = random.randint (40, 120) * 20
                 myself.set_val ("delay", delay)
-                myself.set_goal (2, 2, STAND_SOUTH)
+                myself.set_goal (2, 2, adonthell.STAND_SOUTH)
                 myself.set_val ("table_num", 0)
 
             # -- otherwise only wait a little
             else:
-                index = randint (0, 4)
+                index = random.randint (0, 4)
                 x, y, dir = self.coords[index]
                 myself.set_goal (x, y, dir)
                 myself.set_val ("delay", 150)
@@ -116,6 +96,27 @@ class orloth:
         tmp = myself.get_val ("say_something")
         myself.set_val ("say_something", tmp - 1)
         if tmp == 0:
-            myself.speak (self.speech[randint (0, 2)])
-            delay = randint (50, 150) * 20
+            myself.speak (self.speech[random.randint (0, 2)])
+            delay = random.randint (50, 150) * 20
             myself.set_val ("say_something", delay)
+
+
+    # -- put/remove something from the table we're standing next to
+    def put_object (self, object, update):
+        myself = self.myself
+        
+        # -- the table we're next to
+        index = myself.get_val ("table_num")
+        if index > 0:
+            # -- see whether table is laid or not
+            key = "table%i_set" % index
+            val = myself.get_val (key)
+
+            x, y = self.coords[index+4][:2]
+            if val == 0:
+                adonthell.gamedata_engine ().get_landmap ().put_mapobject (1, x, y, object)
+                if update == 1: myself.set_val (key, 1)
+            else:
+                adonthell.gamedata_engine ().get_landmap ().remove_mapobject (1, x, y, object)
+                if update == 1: myself.set_val (key, 0)
+    

@@ -1,5 +1,5 @@
 #
-#  $Id: character_screen.py,v 1.1 2001/09/23 15:09:57 adondev Exp $
+#  $Id: character_screen.py,v 1.2 2001/10/29 17:04:25 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -20,11 +20,6 @@ class character_screen (adonthell.win_container):
     # -- Constructor
     def __init__(self):	
         adonthell.win_container.__init__(self)
-
-        self.thisown = 0
-        self.quit = 1
-
-        self.py_signal_connect (self.on_destroy, adonthell.win_event_DESTROY)
 
         # -- get font and theme
         self.font = adonthell.win_manager_get_font ("original")
@@ -82,10 +77,5 @@ class character_screen (adonthell.win_container):
 
     # -- callback for accepting name
     def on_enter (self):
-        name = self.entry.text_char ()
-        adonthell.gamedata_player ().rename (name)
-        self.quit = 0
-
-    # -- callback to close the window
-    def on_destroy (self):
-        return self.quit
+        self.name = self.entry.text_char ()
+        adonthell.gamedata_engine ().main_quit ()

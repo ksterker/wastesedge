@@ -131,7 +131,7 @@ audio_play_background (0)
 while not input_has_been_pushed (SDLK_ESCAPE) and not input_has_been_pushed (SDLK_SPACE) and not letsexit:
     # Update the stuff
     input_update ()
-    for i in range (0, gametime_frames_to_do ()):
+    for i in range (0, gametime_frames_to_skip ()):
 
         # 1st part: forest scrolling and fade to the inn, with
         #the text appearing letter-by-letter

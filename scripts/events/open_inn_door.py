@@ -20,5 +20,5 @@ class open_inn_door:
         pass
 
     def run (self, submap, x, y, dir, name):
-        adonthell.gamedata_map_engine ().get_landmap ().get_mapobject (0).\
-                                      get_animation (0).next_frame ()
+        adonthell.gamedata_engine ().get_landmap ().get_mapobject (0).\
+                                     get_animation (0).next_frame ()

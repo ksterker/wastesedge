@@ -1,4 +1,6 @@
 #
+#  $Id: intro.py,v 1.3 2001/10/29 17:04:26 adondev Exp $
+#
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
@@ -51,8 +53,8 @@ class intro:
     # -- Opens the gate
     def open_gate (self):
         # Get the mapobjects
-        gate_fore = adonthell.gamedata_map_engine ().get_landmap ().get_mapobject (90)
-        gate_back = adonthell.gamedata_map_engine ().get_landmap ().get_mapobject (89)
+        gate_fore = adonthell.gamedata_engine ().get_landmap ().get_mapobject (90)
+        gate_back = adonthell.gamedata_engine ().get_landmap ().get_mapobject (89)
 
         # Only open the gate if it's closed...
         if (gate_fore.get_animation (0).currentframe () == 0):
@@ -62,7 +64,7 @@ class intro:
             gate_fore.get_animation (0).next_frame ()
 
             # Update squares walkability
-            sm = adonthell.gamedata_map_engine ().get_landmap ().get_submap (0)
+            sm = adonthell.gamedata_engine ().get_landmap ().get_submap (0)
             sm.get_square (6, 17).set_walkable_south (0)
             sm.get_square (7, 17).set_walkable_south (0)
             sm.get_square (6, 18).set_walkable_west (1)
@@ -71,8 +73,8 @@ class intro:
     # Close the gate
     def close_gate (self):
         # Get the mapobjects
-        gate_fore = adonthell.gamedata_map_engine ().get_landmap ().get_mapobject (90)
-        gate_back = adonthell.gamedata_map_engine ().get_landmap ().get_mapobject (89)
+        gate_fore = adonthell.gamedata_engine ().get_landmap ().get_mapobject (90)
+        gate_back = adonthell.gamedata_engine ().get_landmap ().get_mapobject (89)
 
         # Only close the gate if it's opened
         if (gate_fore.get_animation (0).currentframe () == 4):
@@ -82,7 +84,7 @@ class intro:
             gate_fore.get_animation (0).next_frame ()
 
             # Update squares walkability
-            sm = adonthell.gamedata_map_engine ().get_landmap ().get_submap (0)
+            sm = adonthell.gamedata_engine ().get_landmap ().get_submap (0)
             sm.get_square (6, 17).set_walkable_south (1)
             sm.get_square (7, 17).set_walkable_south (1)
             sm.get_square (6, 18).set_walkable_west (0)

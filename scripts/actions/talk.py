@@ -32,7 +32,7 @@ class talk:
             requester.set_schedule_active (0)
 
             # -- look into the player's face
-            self.myself.look_invert(requester.currentmove())
+            self.myself.look_invert (requester.currentmove ())
 
             # -- init the dialogue engine
             dlg = adonthell.dialog_screen (self.myself, self.myself.get_dialogue (), 0)
@@ -44,8 +44,8 @@ class talk:
             dlg.py_signal_connect (self.restore_schedule, adonthell.win_event_CLOSE, (requester, self.myself))
 
             # -- add the dialogue window to the win_manager
-            adonthell.win_manager_add (dlg)
-            adonthell.win_manager_set_focus (dlg)
+            adonthell.win_manager_get_active ().add (dlg)
+            adonthell.win_manager_get_active ().set_focus (dlg)
 
             # -- start the dialogue
             dlg.run ()

@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.61 2001/10/27 17:03:53 adondev Exp $
+#  $Id: init.py,v 1.62 2001/10/29 17:04:23 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -79,21 +79,17 @@ class title_screen:
         self.draw_func = self.initial_fade_in
 
         self.alpha = 0
-        self.retval = 1
-
-        # -- let the win_manager handle everything
-        win_manager_add (self.window)
-        win_manager_set_focus (self.window)
 
         audio_play_background (0)
 
-        # -- launch the mapengine
+        # -- launch the engine
         gametime_start_action ()
-        gamedata_map_engine ().set_should_update_map (0)
-        gamedata_map_engine ().run ()
+        gamedata_engine ().main (self.window, "title_sequence")
+
 
     def __del__ (self):
         print "Destructor called"
+        gamedata_engine ().main_quit ()
 
     # -- catch ESC key
     def on_update (self):
@@ -107,7 +103,8 @@ class title_screen:
                 self.draw_func = None
                 self.show_menu (1, 0)
 
-        return self.retval
+        # return self.retval
+        return 1
 
     # -- callback for drawing operations
     def on_draw (self):
@@ -124,7 +121,7 @@ class title_screen:
 
         else:
             # -- fade in
-            self.alpha = self.alpha + gametime_frames_to_do()
+            self.alpha = self.alpha + gametime_frames_to_skip()
             if self.alpha > 255: self.alpha = 255
             self.bag_c.set_alpha (self.alpha)
 
@@ -154,53 +151,57 @@ class title_screen:
 
         else:
             # -- fade in
-            self.alpha = self.alpha + gametime_frames_to_do()
+            self.alpha = self.alpha + gametime_frames_to_skip()
             if self.alpha > 255: self.alpha = 255
             self.bag_o.set_alpha (self.alpha)
 
     # -- Show the main menu
     def show_menu (self, a, b):
-        self.menu = main_menu (a, b)
-        self.menu.thisown = C
-        self.menu.py_signal_connect (self.on_menu_close, win_event_CLOSE)
+        menu = main_menu (a, b)
+        
+        # -- open the menu
+        gamedata_engine ().main (menu, "game_menu")
+        
+        # -- once the menu is closed, see what we got
+        retval = menu.get_result ()
+        print "Main menu closed with retval", retval
 
-        win_manager_add (self.menu)
-        win_manager_set_focus (self.menu)
-
-    # -- on to the main menu
-    def on_menu_close (self, retval):
         audio_pause_music ()
         audio_unload_background (0)
-        if retval < 5:
-            gamedata_map_engine ().set_should_update_map (1)
+        
+        # -- start new game
+        if retval == 1:
+            # -- let the player chose a name for his character
+            from character_screen import *
+            cs = character_screen ()
+            gamedata_engine ().main (cs, "character_screen")
+                
+            gamedata_engine ().fade_out ()
+            self.cleanup ()
 
-            # -- start new game
-            if retval == 1:
-                gamedata_map_engine ().fade_out ()
-                self.cleanup ()
+            # -- load the initial game
+            gamedata_load (0)
+            # gamedata_load_characters (0)
+            # gamedata_load_quests (0)
+            adonthell.gamedata_player ().rename (cs.name)
+                
+            # -- on to the intro
+            self.play_intro ()
+            
+        # -- Load game
+        elif retval == 2:
+            self.window.set_visible (0)
+            self.cleanup ()
+            gamedata_engine ().mapview_start ()
+            gamedata_engine ().fade_in ()
 
-                gamedata_load_characters (0)
-                gamedata_load_quests (0)
-
-                # let the player chose a name for his character
-                from character_screen import *
-                self.cs = character_screen ()
-                self.cs.thisown = C
-                self.cs.py_signal_connect (self.on_cs_close, win_event_CLOSE)
-
-                win_manager_add (self.cs)
-                win_manager_set_focus (self.cs)
-            # -- Load game
-            else:
-                self.cleanup ()
-                gamedata_map_engine ().fade_in ()
-
+        # -- quit the game
         else:
-            gamedata_map_engine ().quit ()
+            gamedata_engine ().main_quit ()
 
     # -- cleanup
     def cleanup (self):
-        win_manager_remove (self.window)
+        win_manager_get_active ().remove (self.window)
 
         self.window.remove (self.bag_o)
         self.window.remove (self.bag_c)
@@ -210,30 +211,28 @@ class title_screen:
         del self.bag_c
         del self.bag_t
 
-        self.retval = 0
         audio_pause_music ()
         audio_unload_background (0)
 
-        screen_display.fillrect (0, 0, 320, 240, 0)
-        screen_show ()
 
-    def on_cs_close (self, retval):
+    def play_intro (self):
         # Launches the intro
         import intro
 
         # Creates the map engine context for the game start
-        gamedata_map_engine ().load_map ("test.map")
-        lm = gamedata_map_engine ().get_landmap ()
-
-        the_player = gamedata_player ()
-
-        the_player.set_val ("gender", MALE)
-        the_player.set_val ("race", HALFELF)
-        the_player.load ("player.mchar")
-        the_player.set_map (lm)
-        the_player.jump_to (0, 11, 18, STAND_EAST)
-        the_player.set_schedule ("keyboard_control")
-        gamedata_map_engine ().set_mapview_schedule ("center_character", (the_player.get_name (),))
+        lm = gamedata_engine ().get_landmap ()
+        # lm.load ("test.map")
+        
+        player = gamedata_player ()
+        player.set_val ("gender", MALE)
+        player.set_val ("race", HALFELF)
+        player.load ("player.mchar")
+        player.set_map (lm)
+        player.jump_to (0, 4, 18)
+        player.stand_east ()
+        player.set_schedule ("intro")
+        
+        gamedata_engine ().set_mapview_schedule ("center_character", (player.get_name (),))
 
         # Setting up the map events
         # Teleport events
@@ -704,7 +703,7 @@ class title_screen:
         ev.x = 10
         ev.y = 2
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "That clock seems to be late!"))
         lm.add_event (ev)
 
@@ -714,7 +713,7 @@ class title_screen:
         ev.x = 3
         ev.y = 6
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "I'd better not touch this... What if it explodes??"))
         lm.add_event (ev)
 
@@ -724,7 +723,7 @@ class title_screen:
         ev.x = 4
         ev.y = 6
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "I'd better not touch this... What if it explodes??"))
         lm.add_event (ev)
 
@@ -734,7 +733,7 @@ class title_screen:
         ev.x = 2
         ev.y = 5
         ev.dir = STAND_EAST
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "I'd better not touch this... What if it explodes??"))
         lm.add_event (ev)
 
@@ -744,7 +743,7 @@ class title_screen:
         ev.x = 5
         ev.y = 5
         ev.dir = STAND_WEST
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "I'd better not touch this... What if it explodes??"))
         lm.add_event (ev)
 
@@ -754,7 +753,7 @@ class title_screen:
         ev.x = 3
         ev.y = 4
         ev.dir = STAND_SOUTH
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "I'd better not touch this... What if it explodes??"))
         lm.add_event (ev)
 
@@ -764,7 +763,7 @@ class title_screen:
         ev.x = 4
         ev.y = 4
         ev.dir = STAND_SOUTH
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "I'd better not touch this... What if it explodes??"))
         lm.add_event (ev)
 
@@ -774,7 +773,7 @@ class title_screen:
         ev.x = 6
         ev.y = 17
         ev.dir = STAND_WEST
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "Closed. We are all imprisoned here..."))
         lm.add_event (ev)
 
@@ -784,7 +783,7 @@ class title_screen:
         ev.x = 6
         ev.y = 18
         ev.dir = STAND_WEST
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "Closed. We are all imprisoned here..."))
         lm.add_event (ev)
 
@@ -794,7 +793,7 @@ class title_screen:
         ev.x = 6
         ev.y = 19
         ev.dir = STAND_WEST
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "Closed. We are all imprisoned here..."))
         lm.add_event (ev)
 
@@ -804,7 +803,7 @@ class title_screen:
         ev.x = 1
         ev.y = 6
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "It's locked."))
         lm.add_event (ev)
 
@@ -814,7 +813,7 @@ class title_screen:
         ev.x = 2
         ev.y = 5
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "It's locked."))
         lm.add_event (ev)
 
@@ -824,7 +823,7 @@ class title_screen:
         ev.x = 6
         ev.y = 4
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "It's locked."))
         lm.add_event (ev)
 
@@ -834,7 +833,7 @@ class title_screen:
         ev.x = 6
         ev.y = 8
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "It's locked."))
         lm.add_event (ev)
 
@@ -844,7 +843,7 @@ class title_screen:
         ev.x = 1
         ev.y = 4
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "It's locked."))
         lm.add_event (ev)
 
@@ -854,7 +853,7 @@ class title_screen:
         ev.x = 7
         ev.y = 3
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "I doubt Master Fingolson would be happy if I go through his things..."))
         lm.add_event (ev)
 
@@ -864,21 +863,16 @@ class title_screen:
         ev.x = 1
         ev.y = 6
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (the_player.get_name (), \
+        ev.set_script ("character_speak", (player.get_name (), \
                                            "Well, I can't dig into my mistress' shelf!"))
         lm.add_event (ev)
 
 
         # Now setup the characters
-        player = gamedata_player ()
-        player.jump_to (0, 4, 18)
-        player.stand_east ()
-        player.set_schedule ("intro")
-
         lucia = gamedata_get_character ("Lucia Redwyne")
         lucia.set_dialogue ("dialogues/lucia_start")
         lucia.load ("lucia.mchar")
-        lucia.set_map (gamedata_map_engine ().get_landmap ())
+        lucia.set_map (gamedata_engine ().get_landmap ())
         lucia.jump_to (3, 4, 3)
         lucia.set_action ("talk")
         lucia.set_schedule ("lucia")
@@ -888,7 +882,7 @@ class title_screen:
         orloth = gamedata_get_character ("Orloth Redwyne")
         orloth.set_dialogue ("dialogues/orloth_start")
         orloth.load ("orloth.mchar")
-        orloth.set_map (gamedata_map_engine ().get_landmap ())
+        orloth.set_map (gamedata_engine ().get_landmap ())
         orloth.jump_to (1, 2, 2)
         orloth.set_action ("talk")
         orloth.stand_south ()
@@ -898,7 +892,7 @@ class title_screen:
         erek = gamedata_get_character ("Erek Stonebreaker")
         erek.set_dialogue ("dialogues/erek_start")
         erek.load ("erek.mchar")
-        erek.set_map (gamedata_map_engine ().get_landmap ())
+        erek.set_map (gamedata_engine ().get_landmap ())
         erek.jump_to (1, 5, 5)
         erek.set_action ("talk")
         erek.stand_north ()
@@ -910,7 +904,7 @@ class title_screen:
         talan = gamedata_get_character ("Talan Wendth")
         talan.set_dialogue ("dialogues/demo_intro_1")
         talan.load ("talan.mchar")
-        talan.set_map (gamedata_map_engine ().get_landmap ())
+        talan.set_map (gamedata_engine ().get_landmap ())
         talan.jump_to (0, 7, 17)
         talan.set_action ("talk")
         talan.stand_west ()
@@ -920,7 +914,7 @@ class title_screen:
         jelom = gamedata_get_character ("Jelom Rasgar")
         jelom.set_dialogue ("dialogues/jelom_start")
         jelom.load ("jelom.mchar")
-        jelom.set_map (gamedata_map_engine ().get_landmap ())
+        jelom.set_map (gamedata_engine ().get_landmap ())
         jelom.jump_to (9, 2, 6)
         jelom.set_action ("talk")
         jelom.stand_north ()
@@ -930,7 +924,7 @@ class title_screen:
         alek = gamedata_get_character ("Alek Endhelm")
         alek.set_dialogue ("dialogues/alek_start")
         alek.load ("alek.mchar")
-        alek.set_map (gamedata_map_engine ().get_landmap ())
+        alek.set_map (gamedata_engine ().get_landmap ())
         alek.jump_to (1, 1, 3)
         alek.set_action ("talk")
         alek.stand_south ()
@@ -940,7 +934,7 @@ class title_screen:
         oliver = gamedata_get_character ("Oliver Redwyne")
         oliver.set_dialogue ("dialogues/oliver_start")
         oliver.load ("oliver.mchar")
-        oliver.set_map (gamedata_map_engine ().get_landmap ())
+        oliver.set_map (gamedata_engine ().get_landmap ())
         oliver.jump_to (0, 25, 15)
         oliver.set_action ("talk")
         oliver.stand_west ()
@@ -950,7 +944,7 @@ class title_screen:
         frostbloom = gamedata_get_character ("Rhayne Frostbloom")
         frostbloom.set_dialogue ("dialogues/frostbloom_start")
         frostbloom.load ("frostbloom.mchar")
-        frostbloom.set_map (gamedata_map_engine ().get_landmap ())
+        frostbloom.set_map (gamedata_engine ().get_landmap ())
         frostbloom.jump_to (0, 18, 22)
         frostbloom.set_action ("talk")
         frostbloom.stand_north ()
@@ -960,7 +954,7 @@ class title_screen:
         bjarn = gamedata_get_character ("Bjarn Fingolson")
         bjarn.set_dialogue ("dialogues/bjarn_start")
         bjarn.load ("bjarn.mchar")
-        bjarn.set_map (gamedata_map_engine ().get_landmap ())
+        bjarn.set_map (gamedata_engine ().get_landmap ())
         bjarn.jump_to (7, 3, 6)
         bjarn.set_action ("talk")
         bjarn.stand_west ()
@@ -969,7 +963,7 @@ class title_screen:
 
         silverhair = gamedata_get_character ("Imoen Silverhair")
         silverhair.load ("silverhair.mchar")
-        silverhair.set_map (gamedata_map_engine ().get_landmap ())
+        silverhair.set_map (gamedata_engine ().get_landmap ())
         silverhair.jump_to (13, 4, 4)
         silverhair.set_action ("talk")
         silverhair.stand_south ()
@@ -979,7 +973,7 @@ class title_screen:
         sarin = gamedata_get_character ("Sarin Trailfollower")
         sarin.set_dialogue ("dialogues/sarin_start")
         sarin.load ("servant2.mchar")
-        sarin.set_map (gamedata_map_engine ().get_landmap ())
+        sarin.set_map (gamedata_engine ().get_landmap ())
         sarin.jump_to (13, 5, 3)
         sarin.set_action ("talk")
         sarin.stand_west ()
@@ -989,7 +983,7 @@ class title_screen:
         janesta = gamedata_get_character ("Janesta Skywind")
         janesta.set_dialogue ("dialogues/janesta_start")
         janesta.load ("servant1.mchar")
-        janesta.set_map (gamedata_map_engine ().get_landmap ())
+        janesta.set_map (gamedata_engine ().get_landmap ())
         janesta.jump_to (13, 6, 3)
         janesta.set_action ("talk")
         janesta.stand_north ()
@@ -999,7 +993,7 @@ class title_screen:
         fellnir = gamedata_get_character ("Fellnir Kezular")
         fellnir.set_dialogue ("dialogues/fellnir_start")
         fellnir.load ("fellnir.mchar")
-        fellnir.set_map (gamedata_map_engine ().get_landmap ())
+        fellnir.set_map (gamedata_engine ().get_landmap ())
         fellnir.jump_to (10, 4, 4)
         fellnir.set_action ("talk")
         fellnir.stand_south ()
@@ -1009,7 +1003,7 @@ class title_screen:
         tristan = gamedata_get_character ("Tristan Illig")
         tristan.set_dialogue ("dialogues/tristan_start")
         tristan.load ("illig.mchar")
-        tristan.set_map (gamedata_map_engine ().get_landmap ())
+        tristan.set_map (gamedata_engine ().get_landmap ())
         tristan.jump_to (1, 4, 6)
         tristan.set_action ("talk")
         tristan.stand_west ()
@@ -1019,9 +1013,11 @@ class title_screen:
         # Once we want to generate the data context files,
         # just call gamedata::save (1) and copy the .data files
         # to the game's root directory.
-
+        
+        # -- start the mapengine
+        gamedata_engine ().mapview_start ()
         gametime_update ()
-        gamedata_map_engine ().fade_in ()
+        gamedata_engine ().fade_in ()
 
 # -- Main --
 title = title_screen ()
