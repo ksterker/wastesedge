@@ -1,5 +1,5 @@
 #
-#  $Id: in_game.py,v 1.1 2001/12/31 15:33:32 adondev Exp $
+#  $Id: in_game.py,v 1.2 2001/12/31 18:08:37 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -18,12 +18,16 @@ import adonthell
 
 class in_game:
     def __init__ (self):
-        self.playing = adonthell.audio_get_current_background ()
-        
+        pass
+    
+    # -- method called everytime a song has finished playing
+    #    load song before playing, as the mixer seems to discard it
+    #    after it's been played once
     def music_finished (self, song):
         if song == 0:
+            adonthell.audio_load_background (1, "audio/at-demo-6.ogg")
             adonthell.audio_play_background (1)
-            self.playing = 1
         else:
+            adonthell.audio_load_background (0, "audio/at-demo-5.ogg")
             adonthell.audio_play_background (0)
-            self.playing = 0
+            

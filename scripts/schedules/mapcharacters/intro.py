@@ -1,5 +1,5 @@
 #
-#  $Id: intro.py,v 1.5 2001/12/31 15:33:33 adondev Exp $
+#  $Id: intro.py,v 1.6 2001/12/31 18:08:38 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -40,10 +40,9 @@ class intro:
         
             # -- start music
             adonthell.audio_load_background (0, "audio/at-demo-5.ogg")
-            adonthell.audio_load_background (1, "audio/at-demo-6.ogg")
+            adonthell.audio_play_background (0)
             adonthell.audio_set_schedule ("in_game")
             adonthell.audio_set_schedule_active (1)
-            adonthell.audio_play_background (0)
                         
             self.open_gate ()
 
