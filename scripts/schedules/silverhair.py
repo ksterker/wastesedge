@@ -34,8 +34,6 @@ if todo == 0:
 
 # -- get movement target
 elif todo == 1:
-    from random import randint
-
     # -- goto the window
     if myself.posx () == 4:
         # ... and speak about the weather
@@ -62,13 +60,10 @@ elif todo == 2:
 say = myself.get_val ("say_something")
 myself.set_val ("say_something", say - 1)
 if say == 0:
-    from schedules import speak
-    from random import randint
-
     if myself.posx () == 6:
-        speak (myself, speech[3])
+        schedules.speak (myself, speech[3])
     else:
-        speak (myself, speech[randint (0, 2)])
+        schedules.speak (myself, speech[randint (0, 2)])
 
     say = randint (50, 150) * 20
     myself.set_val ("say_something", say)

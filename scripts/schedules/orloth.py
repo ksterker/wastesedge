@@ -39,8 +39,6 @@ if todo == 0:
 
 # -- engage a new movement
 elif todo == 1:
-    from random import randint
-
     # -- when we are at the bar, then wait a while before
     #    moving again
     if myself.posx () == 2:
@@ -61,8 +59,7 @@ elif todo == 2:
     if myself.follow_path () == 1:
         # -- standing in front of the clock
         if myself.posx () == 10:
-            from schedules import speak
-            speak (myself, "That clock is late again!")
+            schedules.speak (myself, "That clock is late again!")
 
             tmp = myself.get_val ("say_something")
             myself.set_val ("say_something", tmp + 75)
@@ -74,9 +71,6 @@ elif todo == 2:
 tmp = myself.get_val ("say_something")
 myself.set_val ("say_something", tmp - 1)
 if tmp == 0:
-    from schedules import speak
-    from random import randint
-
-    speak (myself, speech[randint (0, 2)])
+    schedules.speak (myself, speech[randint (0, 2)])
     delay = randint (50, 150) * 20
     myself.set_val ("say_something", delay)

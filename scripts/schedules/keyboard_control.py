@@ -67,10 +67,10 @@ if input_has_been_pushed (SDLK_SPACE):
 
 # -- bring up the main menu
 elif input_has_been_pushed (SDLK_ESCAPE):
-    from main_menu import *
+    import main_menu
 
     # -- open main menu without animation, with saving and background enabled
-    menu = main_menu (1, 1, 1)
+    menu = main_menu.main_menu (1, 1, 1)
     menu.thisown = C
 
     # -- this tells us when the main menu is closed
@@ -122,8 +122,8 @@ elif input_has_been_pushed (SDLK_s):
 
 # -- python console
 elif input_has_been_pushed (SDLK_TAB):
-    from console import *
-    c = console (globals ())
+    import console
+    c = console.console (globals ())
     c.thisown = C
     c.set_activate (1)
     win_manager_add (c)

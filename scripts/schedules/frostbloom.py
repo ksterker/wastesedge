@@ -38,8 +38,6 @@ if todo == 0:
 
 # -- get movement target
 elif todo == 1:
-    from random import randint
-
     # -- the position we want to reach
     x = randint (min_x, max_x)
     y = randint (min_y, max_y)
@@ -60,9 +58,6 @@ elif todo == 2:
 tmp = myself.get_val ("say_something")
 myself.set_val ("say_something", tmp - 1)
 if tmp == 0:
-    from schedules import speak
-    from random import randint
-
-    speak (myself, speech[randint (0, 2)])
+    schedules.speak (myself, speech[randint (0, 2)])
     delay = randint (50, 150) * 20
     myself.set_val ("say_something", delay)

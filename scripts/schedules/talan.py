@@ -45,8 +45,7 @@ elif todo == 1:
 elif todo == 2:
     # Reached the goal? Wait a while then...
     if myself.follow_path ():
-        import random
-        myself.set_val ("delay", random.randint (25, 50) * 20)
+        myself.set_val ("delay", randint (25, 50) * 20)
         myself.set_val ("todo", 0)
 
 
@@ -54,8 +53,6 @@ elif todo == 2:
 tmp = myself.get_val ("say_something")
 myself.set_val ("say_something", tmp - 1)
 if tmp <= 0:
-    import schedules
-    import random
-    schedules.speak (myself, speech[random.randint (0, 2)])
-    delay = random.randint (50, 150) * 20
+    schedules.speak (myself, speech[randint (0, 2)])
+    delay = randint (50, 150) * 20
     myself.set_val ("say_something", delay)

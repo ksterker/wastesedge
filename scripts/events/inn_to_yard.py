@@ -1,5 +1,3 @@
-from events import switch_submap
-
 mychar = characters [name]
 
 # Close the inn door.
@@ -8,6 +6,6 @@ if mychar.submap () == 0:
 
 # -- From Common Room to Yard
 if mychar.submap () == 1:
-    switch_submap (mychar, 0, 18, 14, STAND_SOUTH)
+    events.switch_submap (mychar, 0, 18, 14, STAND_SOUTH)
 else:
-    switch_submap (mychar, 1, 13, 7, STAND_NORTH)
+    events.switch_submap (mychar, 1, 13, 7, STAND_NORTH)

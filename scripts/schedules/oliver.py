@@ -15,9 +15,6 @@
 #    He'll walk around in the stable and yard.
 #    When summoned by Orloth, he'll show the player to his room
 
-import schedules
-import random
-
 speech = ["It's so exciting. An Elven Lady at Waste's Edge!", \
           "I gotta hurry before mother complains again.", \
           "I want a little dog!"]

@@ -45,7 +45,6 @@ elif todo == 1:
 elif todo == 2:
     if myself.follow_path () == 1:
         # -- the time we stay at the same place
-        from random import randint
         delay = randint (60, 150) * 20
 
         myself.set_val ("delay", delay)
@@ -56,9 +55,6 @@ elif todo == 2:
 tmp = myself.get_val ("say_something")
 myself.set_val ("say_something", tmp - 1)
 if tmp == 0:
-    from schedules import speak
-    from random import randint
-
-    speak (myself, speech[randint (0, 2)])
+    schedules.speak (myself, speech[randint (0, 2)])
     delay = randint (40, 80) * 25
     myself.set_val ("say_something", delay)

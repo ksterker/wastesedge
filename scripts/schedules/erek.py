@@ -48,7 +48,6 @@ elif myself.get_val ("leave_bjarn") == 1:
 
     # -- hopefully in the common room
     else:
-        from random import randint
         myself.set_val ("leave_bjarn", 0)
         x, y, dir = coords[randint (0, 1)]
         myself.set_goal (x, y, dir)
@@ -90,8 +89,6 @@ elif todo == 1:
 # -- move
 elif todo == 2:
     if myself.follow_path () == 1:
-        from random import randint
-
         # -- reached common room
         if myself.submap () == 1 and myself.posx () == 13:
             x, y, dir = coords[randint (0, 1)]
@@ -118,9 +115,6 @@ tmp = myself.get_val ("say_something")
 myself.set_val ("say_something", tmp - 1)
 
 if tmp == 0:
-    from schedules import speak
-    from random import randint
-
-    speak (myself, speech[randint (0, 2)])
+    schedules.speak (myself, speech[randint (0, 2)])
     delay = randint (60, 180) * 15
     myself.set_val ("say_something", delay)

@@ -33,8 +33,6 @@ delay = myself.get_val ("delay")
 
 # -- switch orientation
 if delay == 0:
-    from random import randint
-
     # -- get the current direction ...
     dir = myself.get_val ("direction")
 
@@ -94,8 +92,6 @@ elif todo == 1:
 # -- move
 elif todo == 2:
     if myself.follow_path () == 1:
-        from random import randint
-
         # -- wait a little on the current tile
         delay = randint (15, 30) * 10
         myself.set_val ("switch_direction", delay)
@@ -107,9 +103,6 @@ elif todo == 2:
 tmp = myself.get_val ("say_something")
 myself.set_val ("say_something", tmp - 1)
 if tmp == 0:
-    from schedules import speak
-    from random import randint
-
-    speak (myself, speech[randint (0, 3)])
+    schedules.speak (myself, speech[randint (0, 3)])
     delay = randint (50, 150) * 10
     myself.set_val ("say_something", delay)

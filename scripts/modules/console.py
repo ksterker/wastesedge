@@ -89,12 +89,11 @@ class console (win_container):
 
     # -- catch relevant keypresses 
     def on_update (self):
-        
         # -- quit
         if input_has_been_pushed (SDLK_TAB):
             # print "Quitting ..."
             self.quit = 0
-
+        
         # -- clear screen
         elif input_has_been_pushed (SDLK_DELETE):
             # print "Deleting ..."
