@@ -6,10 +6,23 @@ AC_INIT(README)
 
 AM_INIT_AUTOMAKE(wastesedge, 0.3pre1)
 
-dnl Should get the datadir from adonthell itself later
-gamedatadir=\${datadir}/adonthell
+dnl Checking for Adonthell
+AC_PATH_PROG(adonthell_binary, adonthell)
+if test x$adonthell_binary == x ; then
+    echo "Waste's Edge requires the Adonthell game engine. Exiting..."
+    exit 1
+fi
+
+dnl Checking for the Adonthell data directory
+AC_MSG_CHECKING(for Adonthell data directory)
+adonthelldatadir=`$adonthell_binary -d`
+AC_MSG_RESULT($adonthelldatadir)
+
+dnl Sets where the game will install itself
+gamedatadir=${adonthelldatadir}/games/wastesedge
 
 AC_SUBST(gamedatadir)
+AC_SUBST(adonthell_binary)
 
 AC_OUTPUT([
 Makefile
