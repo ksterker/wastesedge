@@ -1,5 +1,5 @@
 #
-#  $Id: main_menu.py,v 1.14 2001/10/10 19:50:56 adondev Exp $
+#  $Id: main_menu.py,v 1.15 2001/10/24 14:14:27 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -177,6 +177,8 @@ class main_menu (win_container):
 
     # -- Callback to close the window
     def on_destroy (self):
+        if self.quit == 0:
+            print "Closing Main Menu ..."
         return self.quit
 
     # -- pressing ESC will close the menu if it's open

@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.59 2001/10/19 22:09:47 adondev Exp $
+#  $Id: init.py,v 1.60 2001/10/24 14:14:26 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -16,32 +16,6 @@
 from adonthell import *
 from main_menu import *
 import time
-
-# -- Fade the screen out
-def fade_out ():
-    i = 0
-
-    while i < 60:
-        gamedata_map_engine ().mainloop ()
-
-        screen_transition (i * 2)
-        screen_show ()
-
-        gametime_update ()
-        i = i + (gametime_frames_to_do () * 2)
-
-# -- Fade the screen in
-def fade_in ():
-    i = 60
-
-    while i > 0:
-        gamedata_map_engine ().mainloop ()
-
-        screen_transition (i * 2)
-        screen_show ()
-
-        gametime_update ()
-        i = i - (gametime_frames_to_do () * 2)
 
 class title_screen:
     def __init__ (self):
@@ -196,12 +170,35 @@ class title_screen:
 
     # -- on to the main menu
     def on_menu_close (self, retval):
-        fade_out ()
+        if retval < 5:
+            gamedata_map_engine ().set_should_update_map (1)
 
-        screen_display.fillrect (0, 0, screen_length (), screen_height (), 0)
-        screen_show ()
+            # -- start new game
+            if retval == 1:
+                gamedata_map_engine ().fade_out ()
+                self.cleanup ()
 
-        # -- cleanup
+                gamedata_load_characters (0)
+                gamedata_load_quests (0)
+
+                # let the player chose a name for his character
+                from character_screen import *
+                self.cs = character_screen ()
+                self.cs.thisown = C
+                self.cs.py_signal_connect (self.on_cs_close, win_event_CLOSE)
+
+                win_manager_add (self.cs)
+                win_manager_set_focus (self.cs)
+            # -- Load game
+            else:
+                self.cleanup ()
+                gamedata_map_engine ().fade_in ()
+
+        else:
+            gamedata_map_engine ().quit ()
+
+    # -- cleanup
+    def cleanup (self):
         win_manager_remove (self.window)
 
         self.window.remove (self.bag_o)
@@ -215,28 +212,8 @@ class title_screen:
         self.retval = 0
         audio_pause_music ()
 
-        ##retval = 1
-
-        if retval < 5:
-            gamedata_map_engine ().set_should_update_map (1)
-
-            # -- start new game
-            if retval == 1:
-                gamedata_load_characters (0)
-                gamedata_load_quests (0)
-
-                # let the player chose a name for his character
-                from character_screen import *
-                self.cs = character_screen ()
-                self.cs.thisown = C
-                self.cs.py_signal_connect (self.on_cs_close, win_event_CLOSE)
-
-                win_manager_add (self.cs)
-                win_manager_set_focus (self.cs)
-
-        else:
-            gamedata_map_engine ().quit ()
-
+        screen_display.fillrect (0, 0, 320, 240, 0)
+        screen_show ()
 
     def on_cs_close (self, retval):
         # Launches the intro
@@ -1043,7 +1020,7 @@ class title_screen:
 
         audio_play_background (1)
         gametime_update ()
-        fade_in ()
+        gamedata_map_engine ().fade_in ()
 
 # -- Main --
 title = title_screen ()
