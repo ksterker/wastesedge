@@ -47,7 +47,7 @@ class oliver:
                 x, y = self.offsets[i][:2]
                 x = x + orloth.posx ()
                 y = y + orloth.posy ()
-                if myself.set_goal (x, y, NO_MOVE): break
+                if myself.set_goal (x, y): break
                 i = i + 1
 
             myself.set_val ("goto_players_room", 2)
@@ -65,23 +65,23 @@ class oliver:
 
             # -- Player's room
             if location == 12:
-                myself.set_goal (5, 1, NO_MOVE)
+                myself.set_goal (5, 1)
 
             # -- First floor
             elif location == 9:
-                myself.set_goal (8, 1, NO_MOVE)
+                myself.set_goal (8, 1)
 
             # -- Second floor (this shouldn't happen, but it once did ...)
             elif location == 14:
-                myself.set_goal (4, 1, NO_MOVE)
+                myself.set_goal (4, 1)
 
             # -- Common Room
             elif location == 1:
-                myself.set_goal (13, 8, NO_MOVE)
+                myself.set_goal (13, 8)
 
             # -- Yard, our final goal (for now)
             elif location == 0:
-                myself.set_goal (25, 15, NO_MOVE)
+                myself.set_goal (25, 15)
                 myself.set_val ("goto_barn", 0)
 
             myself.set_val ("todo", 2)

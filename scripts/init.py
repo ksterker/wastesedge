@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.54 2001/09/29 12:47:38 adondev Exp $
+#  $Id: init.py,v 1.55 2001/10/10 19:50:55 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -67,21 +67,21 @@ class title_screen:
 
         # -- load our images
         self.bag_o = win_image ()
-        self.bag_o.load_pnm ("gfx/cutscene/jewelbag_open.pnm")
+        self.bag_o.load_raw ("gfx/cutscene/jewelbag_open.img")
         self.bag_o.set_alpha (0)
         self.bag_o.move (0, 0)
         self.bag_o.pack ()
         self.bag_o.set_visible (0)
 
         self.bag_c = win_image ()
-        self.bag_c.load_pnm ("gfx/cutscene/jewelbag_closed.pnm")
+        self.bag_c.load_raw ("gfx/cutscene/jewelbag_closed.img")
         self.bag_c.set_visible (1)
         self.bag_c.set_alpha (0)
         self.bag_c.move (0, 0)
         self.bag_c.pack ()
 
         self.bag_t = win_image ()
-        self.bag_t.load_pnm ("gfx/cutscene/adonthell_03.pnm")
+        self.bag_t.load_raw ("gfx/cutscene/adonthell_03.img")
         self.bag_t.move (33, 86)
         self.bag_t.pack ()
         self.bag_t.set_visible (0)

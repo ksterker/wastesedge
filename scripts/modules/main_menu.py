@@ -1,5 +1,5 @@
 #
-#  $Id: main_menu.py,v 1.13 2001/09/04 19:34:29 adondev Exp $
+#  $Id: main_menu.py,v 1.14 2001/10/10 19:50:56 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -48,7 +48,7 @@ class main_menu (win_container):
         self.py_signal_connect (self.on_update, win_event_UPDATE)
         
         self.a_title = win_image()
-        self.a_title.load_pnm ("gfx/cutscene/adonthell_green.pnm")
+        self.a_title.load_raw ("gfx/cutscene/adonthell_green.img")
         self.a_title.set_mask (1)
         self.a_title.move ((self.length() - self.a_title.length())/2, y_pos)
         self.a_title.thisown = 0
