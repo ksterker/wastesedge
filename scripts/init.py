@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.50 2001/09/19 19:35:43 adondev Exp $
+#  $Id: init.py,v 1.51 2001/09/20 22:42:14 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -782,6 +782,7 @@ class title_screen:
                 lucia.jump_to (3, 4, 2)
                 lucia.set_action ("talk")
                 lucia.stand_south ()
+                lucia.set_portrait ("lucia.pnm")
 
                 orloth = gamedata_get_character ("Orloth Redwyne")
                 orloth.set_dialogue ("dialogues/orloth_start")
@@ -791,6 +792,7 @@ class title_screen:
                 orloth.set_action ("talk")
                 orloth.stand_south ()
                 orloth.set_schedule ("orloth")
+                orloth.set_portrait ("orloth.pnm")
 
                 erek = gamedata_get_character ("Erek Stonebreaker")
                 erek.set_dialogue ("dialogues/erek_start")
@@ -832,6 +834,7 @@ class title_screen:
                 alek.set_action ("talk")
                 alek.stand_south ()
                 alek.set_schedule ("alek")
+                alek.set_portrait ("alek.pnm")
 
                 oliver = gamedata_get_character ("Oliver Redwyne")
                 oliver.set_dialogue ("dialogues/oliver_start")
@@ -841,6 +844,7 @@ class title_screen:
                 oliver.set_action ("talk")
                 oliver.stand_west ()
                 oliver.set_schedule ("oliver")
+                oliver.set_portrait ("oliver.pnm")
 
                 frostbloom = gamedata_get_character ("Rhayne Frostbloom")
                 frostbloom.set_dialogue ("dialogues/frostbloom_start")
@@ -850,6 +854,7 @@ class title_screen:
                 frostbloom.set_action ("talk")
                 frostbloom.stand_north ()
                 frostbloom.set_schedule ("frostbloom")
+                frostbloom.set_portrait ("frostbloom.pnm")
 
                 bjarn = gamedata_get_character ("Bjarn Fingolson")
                 bjarn.set_dialogue ("dialogues/bjarn_start")
@@ -858,6 +863,7 @@ class title_screen:
                 bjarn.jump_to (7, 3, 6)
                 bjarn.set_action ("talk")
                 bjarn.stand_west ()
+                bjarn.set_portrait ("bjarn.pnm")
 
                 silverhair = gamedata_get_character ("Imoen Silverhair")
                 silverhair.load ("silverhair.mchar")
@@ -866,6 +872,7 @@ class title_screen:
                 silverhair.set_action ("talk")
                 silverhair.stand_south ()
                 silverhair.set_schedule ("silverhair")
+                silverhair.set_portrait ("silverhair.pnm")
 
                 sarin = gamedata_get_character ("Sarin Trailfollower")
                 sarin.set_dialogue ("dialogues/sarin_start")
@@ -875,6 +882,7 @@ class title_screen:
                 sarin.set_action ("talk")
                 sarin.stand_west ()
                 sarin.set_schedule ("sarin")
+                sarin.set_portrait ("sarin.pnm")
 
                 janesta = gamedata_get_character ("Janesta Skywind")
                 janesta.set_dialogue ("dialogues/janesta_start")
@@ -884,6 +892,7 @@ class title_screen:
                 janesta.set_action ("talk")
                 janesta.stand_north ()
                 janesta.set_schedule ("janesta")
+                janesta.set_portrait ("janesta.pnm")
 
                 fellnir = gamedata_get_character ("Fellnir Kezular")
                 fellnir.set_dialogue ("dialogues/fellnir_start")
@@ -893,6 +902,7 @@ class title_screen:
                 fellnir.set_action ("talk")
                 fellnir.stand_south ()
                 fellnir.set_schedule ("fellnir")
+                fellnir.set_portrait ("fellnir.pnm")
 
                 tristan = gamedata_get_character ("Tristan Illig")
                 tristan.set_dialogue ("dialogues/tristan_start")
@@ -902,6 +912,7 @@ class title_screen:
                 tristan.set_action ("talk")
                 tristan.stand_west ()
                 tristan.set_schedule ("tristan")
+                tristan.set_portrait ("illig.pnm")
 
                 # Once we want to generate the data context files,
                 # just call gamedata::save (1) and copy the .data files
