@@ -33,6 +33,10 @@ Section "" ;
 
   ; add files / whatever that need to be installed here.
 
+  FILE README.txt
+  FILE PLAYING.txt
+  FILE adonthell.ini
+
   FILE adonthell.exe
   FILE ogg.dll
   FILE python22.dll
@@ -557,14 +561,20 @@ SectionEnd
 ; start menu entries
 Section "Start Menu Entry"
   SectionIn 1
-  SetOutPath "$SMPROGRAMS\Waste's Edge"
-  WriteINIStr "$SMPROGRAMS\Waste's Edge\adonthell.linuxgames.com.url" \
+  SetOutPath "$SMPROGRAMS\Adonthell - Waste's Edge"
+  WriteINIStr "$SMPROGRAMS\Adonthell - Waste's Edge\Adonthell Website.url" \
               "InternetShortcut" "URL" \
               "http://adonthell.linuxgames.com/"
   SetOutPath "$INSTDIR"
-  CreateShortCut "$SMPROGRAMS\Waste's Edge\Waste's Edge.lnk" \
+  CreateShortCut "$SMPROGRAMS\Adonthell - Waste's Edge\Waste's Edge.lnk" \
                  "$INSTDIR\adonthell.exe" "wastesedge" "$INSTDIR\wastesedge.ico"
-  CreateShortCut "$SMPROGRAMS\Waste's Edge\Uninstall Waste's Edge.lnk" \
+  CreateShortCut "$SMPROGRAMS\Adonthell - Waste's Edge\READ ME.lnk" \
+                 "$INSTDIR\README.txt"
+  CreateShortCut "$SMPROGRAMS\Adonthell - Waste's Edge\How to play.lnk" \
+                 "$INSTDIR\PLAYING.txt"
+  CreateShortCut "$SMPROGRAMS\Adonthell - Waste's Edge\Edit Configuration.lnk" \
+                 "$INSTDIR\adonthell.ini"
+  CreateShortCut "$SMPROGRAMS\Adonthell - Waste's Edge\Uninstall Waste's Edge.lnk" \
                  "$INSTDIR\uninstall.exe"
 SectionEnd
 
