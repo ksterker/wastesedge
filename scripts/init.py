@@ -114,10 +114,6 @@ class title_screen:
                 win_manager_input_update ()
                 win_manager_update ()
 
-            if input_has_been_pushed (SDLK_ESCAPE):
-                self.quit = 5
-                break
-    
             win_manager_draw ()
             screen_show ()
             gametime_update()

@@ -193,7 +193,9 @@ class main_menu (win_container):
         if self.lg == None:
             if input_has_been_pushed (SDLK_ESCAPE):
                 self.quit = 0
-                
+                # If we're on the title screen, then leave.
+                if self.startup == 0:
+                    self.set_return_code (5)
 
     # -- Callback to get informed of the player's choice
     def on_select (self):
