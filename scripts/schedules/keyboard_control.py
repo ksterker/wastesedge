@@ -47,7 +47,7 @@ def close_gate ():
         sm.get_square (6, 19).set_walkable_west (0)
         sm.get_square (6, 20).set_walkable_west (0)
 
-print "%d %d %d" % (myself.submap (), myself.posx (), myself.posy ())
+#print "%d %d %d" % (myself.submap (), myself.posx (), myself.posy ())
 
 if input_has_been_pushed (SDLK_o):
     open_gate ()
