@@ -1,3 +1,16 @@
+# The themes and fonts we'll use
+win_manager_add_theme ("original")
+win_manager_add_theme ("silverleaf")
+
+win_manager_add_font ("yellow")
+win_manager_add_font ("red")
+win_manager_add_font ("violet")
+win_manager_add_font ("blue")
+win_manager_add_font ("green")
+win_manager_add_font ("white")
+win_manager_add_font ("original")
+win_manager_add_font ("silverleaf")
+
 from main_menu import *
 import time
 
@@ -575,6 +588,8 @@ if retval < 5:
         talan.set_action ("action_talk")
         talan.stand_north ()
         talan.set_schedule ("talan")
+        talan.set_val ("say_something", 0)
+        talan.set_val ("delay", 0)
 
         # -- that's a clone for now
         jelom = characters ["Jelom Rasgar"]

@@ -59,7 +59,7 @@ elif todo == 2:
     if myself.follow_path () == 1:
         # -- standing in front of the clock
         if myself.posx () == 10:
-            schedules.speak (myself, "That clock is late again!")
+            myself.speak ("That clock is late again!")
 
             tmp = myself.get_val ("say_something")
             myself.set_val ("say_something", tmp + 75)
@@ -71,6 +71,6 @@ elif todo == 2:
 tmp = myself.get_val ("say_something")
 myself.set_val ("say_something", tmp - 1)
 if tmp == 0:
-    schedules.speak (myself, speech[randint (0, 2)])
+    myself.speak (speech[randint (0, 2)])
     delay = randint (50, 150) * 20
     myself.set_val ("say_something", delay)

@@ -61,9 +61,9 @@ say = myself.get_val ("say_something")
 myself.set_val ("say_something", say - 1)
 if say == 0:
     if myself.posx () == 6:
-        schedules.speak (myself, speech[3])
+        myself.speak (speech[3])
     else:
-        schedules.speak (myself, speech[randint (0, 2)])
+        myself.speak (speech[randint (0, 2)])
 
     say = randint (50, 150) * 20
     myself.set_val ("say_something", say)

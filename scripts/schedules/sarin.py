@@ -103,6 +103,6 @@ elif todo == 2:
 tmp = myself.get_val ("say_something")
 myself.set_val ("say_something", tmp - 1)
 if tmp == 0:
-    schedules.speak (myself, speech[randint (0, 3)])
+    myself.speak (speech[randint (0, 3)])
     delay = randint (50, 150) * 10
     myself.set_val ("say_something", delay)

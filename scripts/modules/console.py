@@ -20,9 +20,9 @@ class console (win_container):
         self.py_signal_connect (self.on_destroy, win_event_DESTROY)
         self.py_signal_connect (self.on_update, win_event_UPDATE)
         
-        # -- load font and theme
-        self.font = win_font (WIN_THEME_ORIGINAL)
-        self.theme = win_theme (WIN_THEME_ORIGINAL)
+        # -- get font and theme
+        self.font = win_manager_get_font ("silverleaf")
+        self.theme = win_manager_get_theme ("silverleaf")
         
         self.move (10, 150)	
         self.resize (300, 80)
@@ -58,9 +58,6 @@ class console (win_container):
     # -- cleanup --
     def __del__(self):
         self.write_history ()
-
-        del self.font
-        del self.theme
 
     # -- callback for command execution
     def on_execute (self):

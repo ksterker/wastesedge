@@ -19,8 +19,10 @@ class main_menu (win_container):
         self.thisown = 0
 
         # load font and theme
-        self.font = win_font (WIN_THEME_ORIGINAL)
-        self.theme = win_theme (WIN_THEME_ORIGINAL)
+        self.font = win_manager_get_font ("original")
+        ##win_font (WIN_THEME_ORIGINAL)
+        self.theme = win_manager_get_theme ("original")
+        ##win_theme (WIN_THEME_ORIGINAL)
 
         self.enable_save = enable_s
         
@@ -173,8 +175,9 @@ class main_menu (win_container):
 
     # -- cleanup --
     def __del__(self):
-        del self.font
-        del self.theme
+        pass
+##        del self.font
+##        del self.theme
         
     # -- Callback to close the window
     def on_destroy (self):
