@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.49 2001/09/11 11:56:37 adondev Exp $
+#  $Id: init.py,v 1.50 2001/09/19 19:35:43 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -894,10 +894,9 @@ class title_screen:
                 fellnir.stand_south ()
                 fellnir.set_schedule ("fellnir")
 
-                # -- A clone for now
                 tristan = gamedata_get_character ("Tristan Illig")
                 tristan.set_dialogue ("dialogues/tristan_start")
-                tristan.load ("servant2.mchar")
+                tristan.load ("illig.mchar")
                 tristan.set_map (map_engine.get_landmap ())
                 tristan.jump_to (1, 4, 6)
                 tristan.set_action ("talk")
