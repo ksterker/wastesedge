@@ -26,8 +26,8 @@ class demo_intro_1 (dialogue.base):
 		_("I tell you again, you shall not come in."),\
 		_("I tell you, I cannot. My orders..."),\
 		_("I am sick of arguing with you. Are you about to let me in, or will I be forced to take action? And believe me, you would not enjoy it."),\
-		_("The guard hesitates for a bit, and even from where you stand you can see he is uncertain."),\
-		_("You'll be in more trouble for not opening that gate than you will for letting me in, I assure you of that. Now do as I say!"),\
+		_("The guard hesitates for a moment, and even from where you stand you can see he is uncertain."),\
+		_("You'll be in more trouble for not opening that gate than you will be for letting me in, I assure you of that. Now do as I say!"),\
 		_("But finally he seems to reach a conclusion, and after carefully scanning the surroundings, he beckons you in."),\
 		_("Aid her? That is why you can't be allowed in. If you aid her too much, she might escape."),\
 		_("I promise, please. I am becoming sick with worry. Can you not help me?"),\
