@@ -14,44 +14,50 @@
 #
 #    He guards the gate
 
-import schedules
-import random
-
 speech = ["Halt! Who goes there?", \
           "\"Ai! laurie lantar lassi surinen ...\"", \
           "Nobody may pass through the gate!"]
 
-todo = myself.get_val ("switch_direction")
+todo = myself.get_val ("todo")
 
-# -- calculate a new direction
+# If standing
 if todo == 0:
-    # -- the time we stay at one side of the gata
-    delay = random.randint (25, 50) * 20
-
-    # -- walk downwards
-    if myself.posy () == 17:
-        myself.set_val ("switch_direction", -delay)
-
-    # -- walk upwards
+    delay = myself.get_val ("delay")
+    # If standing delay expired, move around next time
+    if delay == 0:
+        myself.set_val ("todo", 1)
     else:
-        myself.set_val ("switch_direction", delay)
+        myself.set_val ("delay", delay - 1)
 
-# -- walk downwards
-elif todo < 0:
-    myself.set_val ("switch_direction", todo + 1)
-    if schedules.simple_goto_xy (myself, 11, 20) == 1:
-        myself.stand_north ()
-
-# -- walk upwards
-else:
-    myself.set_val ("switch_direction", todo - 1)
-    if schedules.simple_goto_xy (myself, 11, 17) == 1:
-        myself.stand_south ()
+# Moving, follow the path until it is reached.
+elif todo == 2:
+    # Reached the goal? Wait a while then...
+    if myself.follow_path ():
+        if myself.posy () == 17: myself.stand_south ()
+        else: myself.stand_north ()
+        import random
+        myself.set_val ("delay", random.randint (25, 50) * 20)
+        myself.set_val ("todo", 0)
+        
+        
+# Engage a new movement
+elif todo == 1:
+    # Choose where to move, if destination is already occupied we'll
+    # fall into the wait state (0) again automatically next time
+    if myself.posy () == 17:
+        myself.set_goal (11, 20)
+    else:
+        myself.set_goal (11, 17)
+        
+    # Next time we'll actually move!
+    myself.set_val ("todo", 2)
 
 # -- utter a random remark
 tmp = myself.get_val ("say_something")
 myself.set_val ("say_something", tmp - 1)
-if tmp == 0:
+if tmp <= 0:
+    import schedules
+    import random
     schedules.speak (myself, speech[random.randint (0, 2)])
-    delay = random.randint (40, 120) * 15
+    delay = random.randint (50, 150) * 20
     myself.set_val ("say_something", delay)

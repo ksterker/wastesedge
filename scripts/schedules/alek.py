@@ -25,7 +25,7 @@ todo = myself.get_val ("switch_direction")
 
 # -- calculate a new direction
 if todo == 0:
-    # -- the time we stay at one side of the gata
+    # -- the time we stay at the same place
     delay = random.randint (60, 150) * 20
 
     # -- walk to table
