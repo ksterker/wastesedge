@@ -112,7 +112,7 @@ hear from you.  Please have a look at our developer's corner
 
 for further details.
 
-Adonthell - Waste's Edge -, or v0.3 for short is no complete RPG.
+Adonthell - Waste's Edge, or v0.3 for short is no complete RPG.
 As the v0.3 implies, the engine is far from being finished, although
 it should be free of severe bugs.  Missing features include combat, 
 items and magic.  But you can interact with NPCs and the game world, 
@@ -145,9 +145,11 @@ Reporting Bugs:
 ===============
 
 We hope you'll never have to, but if you discover a problem, we
-would like to hear about it. Please use the Development mailing list
-(adonthell-devel@mail.freesoftware.fsf.org) for that. You can find
-informations on this and other mailing lists at 
+would like to hear about it. In that case, the files stdout.txt and
+stderr.txt might contain further details to locate the source of
+error. Please use the Development mailing list to contact us
+(adonthell-devel@mail.freesoftware.fsf.org). Information on this and 
+other mailing lists are available at 
 
     http://adonthell.linuxgames.com/contact/mailinglist.shtml
 

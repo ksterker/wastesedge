@@ -50,4 +50,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc AUTHORS COPYING NEWS PLAYING README
 %{bindir}/adonthell-wastesedge
+%{datadir}/pixmaps/wastesedge_16x16.xpm
+%{datadir}/pixmaps/wastesedge_32x32.xpm
 %{gamedatadir}
