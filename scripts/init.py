@@ -552,10 +552,9 @@ if retval < 5:
         orloth.stand_south ()
         orloth.set_schedule ("orloth")
 
-        # -- that's a clone for now
         erek = characters ["Erek Stonebreaker"]
         erek.set_dialogue ("dialogues/erek_start")
-        erek.load ("bjarn.mchar")
+        erek.load ("erek.mchar")
         erek.set_map (map_engine.get_landmap ())
         erek.jump_to (1, 5, 5)
         erek.set_action ("action_talk")
@@ -571,7 +570,6 @@ if retval < 5:
         talan.stand_north ()
         talan.set_schedule ("talan")
 
-        # -- that's a clone for now
         alek = characters ["Alek Endhelm"]
         alek.set_dialogue ("dialogues/alek_start")
         alek.load ("servant2.mchar")
