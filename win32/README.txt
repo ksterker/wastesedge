@@ -71,11 +71,15 @@ The available options and what they do are:
   Specifies which language to use. As long as this option is unset,
   the language is determined by one of the following environment
   variables: LANG, LC_ALL or LC_MESSAGES. Once the option is set,
-  it overrides any environment variable. For a listing of valid
-  locale strings, run 'locale -a'.
+  it overrides any environment variable.
   
   Of course, the game you run has to provide the translation you 
   chose here, otherwise you'll get the default (i.e. English) text.
+
+  As of today, no translation are available. if you are interested
+  in translating Waste's Edge to your native language (which is as
+  simple as taking the English sentences and writing their 
+  translation below them), please contact us!
 
 - Quick-load
   Whether the last saved game should be automatically continued at
