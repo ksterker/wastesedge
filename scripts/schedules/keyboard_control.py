@@ -71,6 +71,14 @@ if input_has_been_pushed (SDLK_SPACE):
 
         # -- Cleanup
         p = None
+    elif p == None:
+        evt = action_event ()
+        evt.submap = myself.submap ()
+        evt.x = myself.posx ()
+        evt.y = myself.posy ()
+        evt.dir = myself.currentmove ()
+        evt.c = myself
+        event_handler_raise_event (evt)
 
 # -- bring up the main menu
 elif input_has_been_pushed (SDLK_ESCAPE):

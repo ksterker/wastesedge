@@ -582,6 +582,71 @@ if retval < 5:
         ev.set_script ("guards_ground_to_1st")
         lm.add_event (ev)
 
+
+        # Action events
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 1
+        ev.x = 10
+        ev.y = 2
+        ev.dir = STAND_NORTH
+        ev.set_script ("action_clock")
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 10
+        ev.x = 3
+        ev.y = 6
+        ev.dir = STAND_NORTH
+        ev.set_script ("action_alch_table")
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 10
+        ev.x = 4
+        ev.y = 6
+        ev.dir = STAND_NORTH
+        ev.set_script ("action_alch_table")
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 10
+        ev.x = 2
+        ev.y = 5
+        ev.dir = STAND_EAST
+        ev.set_script ("action_alch_table")
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 10
+        ev.x = 5
+        ev.y = 5
+        ev.dir = STAND_WEST
+        ev.set_script ("action_alch_table")
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 10
+        ev.x = 3
+        ev.y = 4
+        ev.dir = STAND_SOUTH
+        ev.set_script ("action_alch_table")
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 10
+        ev.x = 4
+        ev.y = 4
+        ev.dir = STAND_SOUTH
+        ev.set_script ("action_alch_table")
+        lm.add_event (ev)
+
         # Now setup the characters
         lucia = characters ["Lucia Redwyne"]
         lucia.set_dialogue ("dialogues/lucia_start")

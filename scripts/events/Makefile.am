@@ -6,6 +6,7 @@ pkgdata_DATA = common_to_kitchen.py common_to_parlor.py inn_to_yard.py \
 	2nd_to_redwyne.py cellar_to_alek.py cellar_to_bath.py cellar_to_dwarfs.py \
 	cellar_to_storage.py common_to_1st.py 1st_to_2nd.py common_to_cellar.py \
 	barn_to_cellar.py kitchen_to_cellar.py yard_to_guards.py \
-	guards_ground_to_1st.py
+	guards_ground_to_1st.py \
+	action_clock.py action_alch_table.py
 
 EXTRA_DIST = $(pkgdata_DATA)
