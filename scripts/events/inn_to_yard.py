@@ -1,32 +1,13 @@
-p = characters [name]
-p.set_schedule_active (0)
-p.stand ()
+from events import switch_submap
+
+mychar = characters [name]
 
 # Close the inn door.
-if p.submap () == 0:
-  map_engine.get_landmap ().get_mapobject (0).get_animation (0).next_frame ()
+if mychar.submap () == 0:
+    map_engine.get_landmap ().get_mapobject (0).get_animation (0).next_frame ()
 
-if p == the_player:
-  i = 0
-  while i < 60:
-    map_engine.mainloop ()
-    screen_transition (i * 2)
-    screen_show ()
-    gametime_update ()
-    i = i + (gametime_frames_to_do () * 2)
-
-if p.submap () == 1:
-  p.jump_to (0, 18, 14, STAND_SOUTH)
+# -- From Common Room to Yard
+if mychar.submap () == 1:
+    switch_submap (mychar, 0, 18, 14, STAND_SOUTH)
 else:
-  p.jump_to (1, 13, 7, STAND_NORTH)
-
-if p == the_player:
-  i=60
-  while i > 0:
-    map_engine.mainloop ()
-    screen_transition (i * 2)
-    screen_show ()
-    gametime_update ()
-    i = i - (gametime_frames_to_do () * 2)
-    
-p.set_schedule_active (1)
+    switch_submap (mychar, 1, 13, 7, STAND_NORTH)

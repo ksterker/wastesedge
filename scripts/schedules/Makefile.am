@@ -1,5 +1,5 @@
 pkgdatadir = $(gamedatadir)/scripts/schedules
 
-pkgdata_DATA = action_talk.py center_player.py keyboard_control.py
+pkgdata_DATA = action_talk.py center_player.py keyboard_control.py orloth.py
 
 EXTRA_DIST = $(pkgdata_DATA)

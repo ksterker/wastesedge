@@ -1,4 +1,5 @@
 from main_menu import *
+from console import *
 
 # -- When the menu is closing, react accordingly
 def on_menu_close (retval, player):
@@ -67,7 +68,6 @@ if input_has_been_pushed (SDLK_SPACE):
         # -- Cleanup
         p = None
 
-
 # -- bring up the main menu
 elif input_has_been_pushed (SDLK_ESCAPE):
     # -- deactivate the player's schedule, so he can't move while the menu is open
@@ -109,23 +109,27 @@ elif input_has_been_pushed (SDLK_KP_MINUS):
 
 # -- shortcut to the load screen
 elif input_has_been_pushed (SDLK_l):
-    # myself.set_schedule_active (0)
     s = data_screen (LOAD_SCREEN)
-    s.thisown = 0
+    s.thisown = C
     s.set_activate (1)	
-#    s.py_signal_connect (on_data_screen_close, win_event_CLOSE, (None))
-    
     win_manager_add (s)
     win_manager_set_focus (s)
 
 
 # -- and to the save screen
 elif input_has_been_pushed (SDLK_s):
-    # myself.set_schedule_active (0)
-
     s = data_screen (SAVE_SCREEN)
-    s.thisown = 0
+    s.thisown = C
     s.set_activate (1)	
-#    s.py_signal_connect (on_menu_close, win_event_CLOSE, (myself))
     win_manager_add (s)
     win_manager_set_focus (s)
+
+
+# -- python console
+elif input_has_been_pushed (SDLK_TAB):
+    c = console (globals ())
+    c.thisown = C
+    c.set_activate (1)
+    win_manager_add (c)
+    win_manager_set_focus (c)
+    c = None
