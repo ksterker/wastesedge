@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.66 2001/12/04 21:40:27 adondev Exp $
+#  $Id: init.py,v 1.67 2001/12/10 23:12:26 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -695,6 +695,7 @@ class title_screen:
 
 
         # Action events
+        # -- Common room
         ev = action_event ()
         ev.thisown = C
         ev.submap = 1
@@ -702,7 +703,18 @@ class title_screen:
         ev.y = 2
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "That clock seems to be late!"))
+            "That clock seems to be late!"))
+        lm.add_event (ev)
+
+        # -- Fellnir
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 10
+        ev.x = 4
+        ev.y = 2
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "Aw, a midget yeti, how cute!"))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -712,7 +724,7 @@ class title_screen:
         ev.y = 6
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "I'd better not touch this... What if it explodes??"))
+            "I'd better not touch this ... What if it explodes??"))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -722,7 +734,7 @@ class title_screen:
         ev.y = 6
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "I'd better not touch this... What if it explodes??"))
+            "I'd better not touch this ... What if it explodes??"))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -732,7 +744,7 @@ class title_screen:
         ev.y = 5
         ev.dir = STAND_EAST
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "I'd better not touch this... What if it explodes??"))
+            "I'd better not touch this ... What if it explodes??"))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -742,7 +754,7 @@ class title_screen:
         ev.y = 5
         ev.dir = STAND_WEST
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "I'd better not touch this... What if it explodes??"))
+            "I'd better not touch this ... What if it explodes??"))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -752,7 +764,7 @@ class title_screen:
         ev.y = 4
         ev.dir = STAND_SOUTH
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "I'd better not touch this... What if it explodes??"))
+            "I'd better not touch this ... What if it explodes??"))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -762,7 +774,7 @@ class title_screen:
         ev.y = 4
         ev.dir = STAND_SOUTH
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "I'd better not touch this... What if it explodes??"))
+            "I'd better not touch this ... What if it explodes??"))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -772,7 +784,7 @@ class title_screen:
         ev.y = 17
         ev.dir = STAND_WEST
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "Closed. We are all imprisoned here..."))
+            "Closed. We are all imprisoned here ..."))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -782,7 +794,7 @@ class title_screen:
         ev.y = 18
         ev.dir = STAND_WEST
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "Closed. We are all imprisoned here..."))
+            "Closed. We are all imprisoned here ..."))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -792,7 +804,17 @@ class title_screen:
         ev.y = 19
         ev.dir = STAND_WEST
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "Closed. We are all imprisoned here..."))
+            "Closed. We are all imprisoned here ..."))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 0
+        ev.x = 18
+        ev.y = 14
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "The entrance to the Inn."))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -802,9 +824,10 @@ class title_screen:
         ev.y = 6
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "It's locked."))
+            "It's locked."))
         lm.add_event (ev)
 
+        # -- Guard's house
         ev = action_event ()
         ev.thisown = C
         ev.submap = 19
@@ -812,7 +835,7 @@ class title_screen:
         ev.y = 5
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "It's locked."))
+            "It's locked."))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -822,7 +845,7 @@ class title_screen:
         ev.y = 4
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "It's locked."))
+            "It's locked."))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -832,7 +855,7 @@ class title_screen:
         ev.y = 8
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "It's locked."))
+            "It's locked."))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -842,9 +865,10 @@ class title_screen:
         ev.y = 4
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "It's locked."))
+            "It's locked."))
         lm.add_event (ev)
 
+        # -- Fingolson
         ev = action_event ()
         ev.thisown = C
         ev.submap = 7
@@ -852,9 +876,10 @@ class title_screen:
         ev.y = 3
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "I doubt Master Fingolson would be happy if I go through his things..."))
+            "I doubt Master Fingolson would be happy if I went through his things ..."))
         lm.add_event (ev)
 
+        # -- Silverhair
         ev = action_event ()
         ev.thisown = C
         ev.submap = 13
@@ -862,11 +887,143 @@ class title_screen:
         ev.y = 6
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-                                           "Well, I can't dig into my mistress' shelf!"))
+            "Well, I can't dig into my mistress' chest!"))
         lm.add_event (ev)
 
+        # -- Barrels in the cellar hallway
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 4
+        ev.x = 7
+        ev.y = 3
+        ev.dir = STAND_SOUTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "Mmmh ... this wine is really tasty!"))
+        lm.add_event (ev)
 
-        # Now setup the characters
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 4
+        ev.x = 8
+        ev.y = 4
+        ev.dir = STAND_WEST
+        ev.set_script ("character_speak", (player.get_id (), \
+            "I'm sure Master Redwyne won't mind if I try a bit."))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 4
+        ev.x = 7
+        ev.y = 5
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "Hic! Whoa, that's quite strong!"))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 4
+        ev.x = 4
+        ev.y = 10
+        ev.dir = STAND_SOUTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "'Made in Cirdanth', now that's more like it!"))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 4
+        ev.x = 4
+        ev.y = 11
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "'Made in Cirdanth', now that's more like it!"))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 4
+        ev.x = 4
+        ev.y = 10
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "'Made in Uzdun' kal'? How cheap is this Master Redwyne?"))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 4
+        ev.x = 4
+        ev.y = 8
+        ev.dir = STAND_SOUTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "'Made in Uzdun' kal'? How cheap is this Master Redwyne?"))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 4
+        ev.x = 3
+        ev.y = 9
+        ev.dir = STAND_EAST
+        ev.set_script ("character_speak", (player.get_id (), \
+            "'Made in Uzdun' kal'? How cheap is this Master Redwyne?"))
+        lm.add_event (ev)
+
+        # -- Parlour
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 2
+        ev.x = 1
+        ev.y = 2
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "\"Teach yourself Elvish in 21 days\"?"))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 2
+        ev.x = 2
+        ev.y = 2
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "\"There and back again\", how unimaginative!"))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 2
+        ev.x = 4
+        ev.y = 2
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "Oh dear, \"The Art of making Yetis\", by R. Frostbloom"))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 2
+        ev.x = 5
+        ev.y = 2
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "This is nothing compared to Lady Silverhair's reading room!"))
+        lm.add_event (ev)
+
+        # -- Player's room
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 12
+        ev.x = 3
+        ev.y = 2
+        ev.dir = STAND_NORTH
+        ev.set_script ("character_speak", (player.get_id (), \
+            "Hey, that looks like Adonthell!"))
+        lm.add_event (ev)
+
+        # -- Now setup the characters
         lucia = gamedata_get_character ("Lucia Redwyne")
         lucia.set_dialogue ("dialogues/lucia_start")
         lucia.load ("lucia.mchar")
