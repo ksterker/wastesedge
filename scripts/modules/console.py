@@ -1,5 +1,5 @@
 #
-#  $Id: console.py,v 1.12 2004/05/28 21:07:03 ksterker Exp $
+#  $Id: console.py,v 1.13 2004/12/13 08:54:35 ksterker Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -41,12 +41,22 @@ class console (adonthell.win_container):
         self.set_background (self.theme)
         self.set_trans_background (1)
         
+        self.info = adonthell.win_label ()
+        self.info.thisown = 0
+        self.info.move (5, 5)
+        self.info.resize (290, 15)
+        self.info.set_cursor_visible (0)
+        self.info.set_cursor_moveable (0)
+        self.info.set_font (adonthell.win_manager_get_font ("blue"))
+        self.info.set_text ("Python console (type 'quit' to exit)")
+        self.info.pack ()
+        
         self.entry = adonthell.win_write ()
         self.entry.thisown = 0
 
         self.entry.py_signal_connect (self.on_execute, adonthell.win_event_ACTIVATE_KEY)
-        self.entry.move (5, 5)
-        self.entry.resize (290, 70)
+        self.entry.move (5, 20)
+        self.entry.resize (290, 55)
         # -- causes a crash:
         # self.entry.set_form (label_AUTO_HEIGHT)
         self.entry.set_font (self.font)
@@ -55,6 +65,7 @@ class console (adonthell.win_container):
         self.entry.set_text ("")
         self.entry.pack ()
         
+        self.add (self.info)
         self.add (self.entry)
         self.set_focus_object (self.entry)
         

@@ -1,5 +1,5 @@
 #
-#  $Id: talk.py,v 1.8 2003/01/27 19:53:40 ksterker Exp $
+#  $Id: talk.py,v 1.9 2004/12/13 08:54:34 ksterker Exp $
 #
 #  (C) Copyright 2001/2003 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -29,7 +29,8 @@ class talk:
         if not args[0]: args[2].resume ()
         if not args[1]: args[3].resume ()
 
-        adonthell.gamedata_engine ().set_control_active (1)
+        if adonthell.gamedata_get_quest ("demo").get_val ("the_end") != 1:
+            adonthell.gamedata_engine ().set_control_active (1)
 
     def run (self, requester):
         if requester.get_name() == adonthell.gamedata_player ().get_name():

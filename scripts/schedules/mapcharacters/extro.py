@@ -518,11 +518,6 @@ class extro:
         self.black.fillrect (0, 0, 320, 240, 0)
         self.black.thisown = 0
         self.black.pack ()
-
-        self.target = adonthell.win_image ()
-        self.target.resize (320, 240)
-        self.target.thisown = 0
-        self.target.pack ()
         
         # -- label
         self.label = adonthell.win_label ()
@@ -539,28 +534,40 @@ class extro:
         self.window.set_visible_border (0)
         self.window.set_trans_background (1)
         
-        self.window.add (self.target)
         self.window.add (self.black)
         self.window.add (self.label)
         
         self.window.set_activate (1)
         self.window.set_visible_all (1)
         
-        self.window.py_signal_connect (self.on_draw, adonthell.win_event_UPDATE)
-        
-        self.draw_func = self.forest_animation
-        
         # -- audio
         adonthell.audio_fade_out_background (500)
         
         # -- misc stuff
         self.step = 0       # -- for the extro control
-        self.anim = 0       # -- for the forest animation control
+        self.a1 = 0
+        self.a2 = 0
+        self.a3 = 0         # -- for the forest animation control
         self.index = 0      # -- index in the typeover array
         self.delay = 0      # -- delay before adding new text
         self.cursor = 0     # -- cursor in the typeover text
-        self.x = [0, 0, 0]  # -- offsets of the 3 forest pics
+        self.x = [0, 0, 0]  # -- offsets of the 3 forest pics and Alek
 
+        adonthell.gamedata_engine ().set_update_map (0)
+        self.letsexit = 0
+        
+        adonthell.gametime_update ()
+        while self.letsexit != 1:
+            for i in range (0, adonthell.gametime_frames_to_skip ()):
+                 self.forest_animation ()
+                 self.alek_run.update ()
+                 self.window.update ()
+                 adonthell.gametime_update ()
+            
+            if self.letsexit != 1: 
+                self.window.draw ()
+                adonthell.screen_show ()
+        
         adonthell.gamedata_engine ().main (self.window, 'fmv')
         
         # -- quit!
@@ -569,33 +576,34 @@ class extro:
         
     def forest_animation (self):
         # -- animate
-        update = 0
-        self.anim = self.anim + 1
-        if self.anim % 2 == 0:
-            update = 1
-            self.alek_run.update ()
-            self.x[2] = self.update_wood (self.wood3, self.x[2])
+        if self.a1 >= 4:
+            self.x[0] = self.update_wood (self.wood1, self.x[0])
+            self.a1 = 0
+        else: self.a1 = self.a1 + 1
 
-            if self.anim % 4 == 0:
-                self.x[0] = self.update_wood (self.wood1, self.x[0])
-
-        
-        if self.anim % 3 == 0:
-            update = 1
+        # Magic number
+        if self.a2 >= 2:
             self.x[1] = self.update_wood (self.wood2, self.x[1])
-        
+            self.a2 = 0
+        else: self.a2 = self.a2 + 1
+
+        # Magic number
+        if self.a3 >= 1:
+            self.x[2] = self.update_wood (self.wood3, self.x[2])
+            self.a3 = 0
+        else: self.a3 = self.a3 + 1
+ 
         # -- draw
-        if update == 1:
-            self.draw_wood (self.wood1, self.x[0])
-            self.draw_wood (self.wood2, self.x[1])
-            self.alek_run.draw (110, 120, self.da, self.target)
-            self.draw_wood (self.wood3, self.x[2])
+        self.draw_wood (self.wood1, self.x[0])
+        self.draw_wood (self.wood2, self.x[1])
+        self.alek_run.draw (110, 120, self.da)
+        self.draw_wood (self.wood3, self.x[2])
         
         # -- fade in
         if self.step == 0:
-            alpha = self.black.alpha ()
-            if alpha != 0:
-                self.black.set_alpha (alpha - 1)
+            alpha = self.black.alpha () - 2
+            if alpha >= 0:
+                self.black.set_alpha (alpha)
                 return
             else:
                 adonthell.audio_load_background (2, "audio/at-demo-2.ogg")
@@ -604,10 +612,11 @@ class extro:
                 self.window.remove (self.black)
                 self.step = 1
         
+        # Alek running ...
         elif self.step == 1:
             if self.index < len (self.typeover):
                 if self.cursor < len (self.typeover[self.index]):
-                    self.delay = self.delay + 1
+                    self.delay = self.delay + 2.8
                     
                     if self.delay >= 6:
                         if self.cursor == 0: self.label.set_text ("")
@@ -625,11 +634,11 @@ class extro:
             else:
                 self.delay = 0
                 self.step = 2
-        
+                
         # -- wait some more
         elif self.step == 2:
-            self.delay = self.delay + 1
-            if self.delay == 350:
+            self.delay = self.delay + 3
+            if self.delay >= 300:
                   # -- audio
                   adonthell.audio_fade_out_background (2000)
                   self.window.add (self.black)
@@ -637,27 +646,29 @@ class extro:
         
         # -- fade out
         elif self.step == 3:
-            alpha = self.black.alpha ()
-            if alpha != 255:
-                self.black.set_alpha (alpha + 1)
+            alpha = self.black.alpha () + 2
+            if alpha <= 255:
+                self.black.set_alpha (alpha)
                 return
             else:
+                self.letsexit = 1
+
                 self.draw_func = self.scroll_credits
-                adonthell.win_manager_get_active ().remove (self.window)
-                del self.window
-                adonthell.win_manager_get_active ().add (self.make_credits ())        
+                self.window = self.make_credits ()
+                self.window.py_signal_connect (self.on_draw, adonthell.win_event_UPDATE)
+                adonthell.win_manager_get_active ().add (self.window)        
     
     # -- update the forest position
     def update_wood (self, pic, x):
-        if x >= pic.length (): x = x - pic.length ()
+        if x >= adonthell.screen_length (): x = x - pic.length ()
         else: x = x + 1
         return x
 
     # -- draw the forest
     def draw_wood (self, pic, x):
-        pic.draw (x - pic.length (), 0, self.da, self.target)
-        if x < adonthell.screen_length (): 
-            pic.draw (x, 0, self.da, self.target)
+        pic.draw (x, 0, self.da)
+        if x > 0: 
+            pic.draw (x - pic.length (), 0, self.da)
 
     # -- prepare credits
     def make_credits (self):
