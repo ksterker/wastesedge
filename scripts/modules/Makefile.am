@@ -1,5 +1,5 @@
 pkgdatadir = $(gamedatadir)/scripts/modules
 
-pkgdata_DATA = console.py main_menu.py events.py
+pkgdata_DATA = console.py main_menu.py events.py character_screen.py
 
 EXTRA_DIST = $(pkgdata_DATA)
