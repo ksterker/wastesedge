@@ -19,25 +19,25 @@ class intro:
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
 
-        self.myself.set_val ("talk_to_talan", 1)
+        adonthell.gamedata_get_quest ("demo").set_val ("intro_on", 1)
 
 
     def run (self):
         myself = self.myself
-        talk = myself.get_val ("talk_to_talan")
+        talk = adonthell.gamedata_get_quest ("demo").get_val ("intro_on")
 
         # -- first talk to talan to get into the inn
         if talk == 1:
             talan = adonthell.gamedata_get_character ("Talan Wendth")
             talan.launch_action (myself)
 
-            myself.set_val ("talk_to_talan", 2)
+            adonthell.gamedata_get_quest ("demo").set_val ("intro_on", 2)
 
         # -- open the gate
         elif talk == 2:
             self.open_gate ()
 
-            myself.set_val ("talk_to_talan", 0)
+            adonthell.gamedata_get_quest ("demo").set_val ("intro_on", 0)
             myself.set_goal (10, 18, adonthell.STAND_EAST)
 
         # -- move in and finally enable keyboard control

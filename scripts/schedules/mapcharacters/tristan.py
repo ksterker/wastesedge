@@ -15,9 +15,8 @@
 #    Illig will either be in the common room or outside at the gate.
 
 
-from adonthell import STAND_NORTH, STAND_SOUTH, STAND_EAST, STAND_WEST
 import adonthell
-from random import randint
+import random
 
 class tristan:
 
@@ -46,13 +45,17 @@ class tristan:
         # -- get movement target
         elif todo == 1:
             # -- in common room -> go outside
-            if myself.submap () == 1:
-                myself.set_goal (13, 8, STAND_SOUTH)
+            if myself.submap () == 1 and \
+                adonthell.gamedata_get_quest ("demo").get_val ("intro_on") == 0:
+                myself.set_goal (13, 8, adonthell.STAND_SOUTH)
+                delay = random.randint (100, 150) * 30
 
             # -- outside -> goto common room
             else:
-                myself.set_goal (18, 13, STAND_NORTH)
+                myself.set_goal (18, 13, adonthell.STAND_NORTH)
+                delay = random.randint (75, 150) * 30
 
+            myself.set_val ("delay", delay)
             myself.set_val ("todo", 2)
 
         # -- move
@@ -60,17 +63,11 @@ class tristan:
             if myself.follow_path () == 1:
                 # -- reached common room
                 if myself.submap () == 1 and myself.posx () == 13:
-                    myself.set_goal (4, 6, STAND_WEST)
-
-                    delay = randint (75, 150) * 30
-                    myself.set_val ("delay", delay)
+                    myself.set_goal (4, 6, adonthell.STAND_WEST)
 
                 # -- reached yard
                 elif myself.submap () == 0 and myself.posx () == 18:
-                    myself.set_goal (12, 18, STAND_WEST)
-
-                    delay = randint (100, 150) * 30
-                    myself.set_val ("delay", delay)
+                    myself.set_goal (12, 18, adonthell.STAND_WEST)
 
                 # -- reached our final destination
                 else:
@@ -82,6 +79,6 @@ class tristan:
         myself.set_val ("say_something", tmp - 1)
 
         if tmp == 0:
-            myself.speak (self.speech[randint (0, 2)])
-            delay = randint (50, 150) * 22
+            myself.speak (self.speech[random.randint (0, 2)])
+            delay = random.randint (50, 150) * 22
             myself.set_val ("say_something", delay)
