@@ -141,8 +141,6 @@ del bag_o
 
 audio_pause_music ()
 
-retval = 1
-
 if retval < 5: 
     if retval == 1:
         gamedata_load (0)
