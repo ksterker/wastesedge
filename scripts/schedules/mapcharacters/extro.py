@@ -143,7 +143,7 @@ class extro:
             ("James Nash", 5), \
             ("soundtrack available on:", 1), \
             ("http://www.zhaytee.com/...", 3), \
-            ("No Yetis where harmed during\n the production of this game", 3), \
+            ("No Yetis were harmed during\n the production of this game", 3), \
             ("the Adonthell team whishes to thank:", 2), \
             ("Al Koskelin", 1), \
             ("Andrew Henderson", 1), \
