@@ -1,5 +1,5 @@
 #
-#  $Id: console.py,v 1.10 2001/11/01 18:01:14 adondev Exp $
+#  $Id: console.py,v 1.11 2002/08/20 17:42:28 ksterker Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -78,6 +78,11 @@ class console (adonthell.win_container):
                 self.history.append (text + '\n')
                 self.hist_idx = len (self.history)
     
+            # -- quit?
+            if text == "quit":
+                self.write_history ()
+                adonthell.gamedata_engine ().main_quit ()
+            
             # -- ... and try to execute it
             try:
                 result = eval (text, self.namespace)

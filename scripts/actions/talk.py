@@ -21,16 +21,20 @@ class talk:
         self.myself = mapcharacterinstance
 
     def restore_schedule (self, retval, args):
-        # -- activate the character's schedules
+        # -- activate the characters' schedules
+        # player isn't event-driven yet
         args[0].set_schedule_active (1)
-        args[1].set_schedule_active (1)
+        # args[0].resume ()
+        args[1].resume ()
 
         adonthell.gamedata_engine ().set_control_active (1)
 
     def run (self, requester):
         if requester.get_name() == adonthell.gamedata_player ().get_name():
             # -- deactivate the schedule of the characters involved
-            self.myself.set_schedule_active (0)
+            self.myself.pause ()
+            # player isn't event-driven yet
+            # requester.pause ()
             requester.set_schedule_active (0)
 
             # -- don't allow access to main menu and stuff

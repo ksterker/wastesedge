@@ -1,7 +1,7 @@
 #
-#  $Id: intro.py,v 1.7 2002/08/19 19:59:06 ksterker Exp $
+#  $Id: intro.py,v 1.8 2002/08/20 17:42:28 ksterker Exp $
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -20,43 +20,37 @@ class intro:
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
-
+        self.myself.set_callback (self.goal_reached)
         adonthell.gamedata_get_quest ("demo").set_val ("intro_on", 1)
 
+    # -- first talk to talan to get into the inn
+    def talk_to_talan (self):
+        talan = adonthell.gamedata_get_character ("Talan Wendth")
+        talan.launch_action (self.myself)
 
-    def run (self):
-        myself = self.myself
-        talk = adonthell.gamedata_get_quest ("demo").get_val ("intro_on")
-
-        # -- first talk to talan to get into the inn
-        if talk == 1:
-            talan = adonthell.gamedata_get_character ("Talan Wendth")
-            talan.launch_action (myself)
-
-            adonthell.gamedata_get_quest ("demo").set_val ("intro_on", 2)
-
-        # -- open the gate
-        elif talk == 2:
-        
-            # -- start music
-            adonthell.audio_load_background (0, "audio/at-demo-5.ogg")
-            adonthell.audio_play_background (0)
-            adonthell.audio_set_schedule ("in_game")
-            adonthell.audio_set_schedule_active (1)
+    # -- finally enter the inn
+    def enter_inn (self):
+        # -- start music
+        adonthell.audio_load_background (0, "audio/at-demo-5.ogg")
+        adonthell.audio_play_background (0)
+        adonthell.audio_set_schedule ("in_game")
+        adonthell.audio_set_schedule_active (1)
                         
-            self.open_gate ()
+        self.open_gate ()
 
-            adonthell.gamedata_get_quest ("demo").set_val ("intro_on", 0)
-            myself.set_goal (10, 18, adonthell.STAND_EAST)
+        adonthell.gamedata_get_quest ("demo").set_val ("intro_on", 0)
+        self.myself.set_goal (10, 18, adonthell.STAND_EAST)
 
-        # -- move in and finally enable keyboard control
-        else:
-            if myself.follow_path () == 1:
-                myself.set_schedule ("keyboard_control")
-                self.close_gate ()
-                myself.go_east ()
-                talan = adonthell.gamedata_get_character ("Talan Wendth")
-                talan.time_callback_string ("3t", "walk")
+    # -- inside the inn
+    def goal_reached (self):
+        talan = adonthell.gamedata_get_character ("Talan Wendth")
+        talan.time_callback_string ("3t", "walk")
+        
+        self.myself.set_callback (None)
+        self.myself.set_schedule ("keyboard_control")
+        self.myself.set_schedule_active (1)
+        self.close_gate ()
+        self.myself.go_east ()
 
 
     # -- open the gate
