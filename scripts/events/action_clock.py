@@ -1,2 +1,1 @@
-def run ():
-    the_player.speak ("That clock seems to be late!")
+the_player.speak ("That clock seems to be late!")
