@@ -249,7 +249,7 @@ if retval < 5:
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 4
-        ev.x = 2
+        ev.x = 3
         ev.y = 5
         ev.set_script ("cellar_to_bath")
         lm.add_event (ev)
@@ -257,7 +257,7 @@ if retval < 5:
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 5
-        ev.x = 3
+        ev.x = 4
         ev.y = 7
         ev.set_script ("cellar_to_bath")
         lm.add_event (ev)
