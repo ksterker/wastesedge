@@ -1,5 +1,5 @@
 #
-#  $Id: character_screen.py,v 1.3 2001/11/01 18:01:14 adondev Exp $
+#  $Id: character_screen.py,v 1.4 2001/12/27 00:40:49 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -67,9 +67,9 @@ class character_screen (adonthell.win_container):
         self.add (self.entry)
         self.set_focus_object (self.entry)
         
-        self.set_visible_background (1);
-        self.set_visible_border (1);
-        self.set_visible_all (1);
+        self.set_visible_background (1)
+        self.set_visible_border (1)
+        self.set_visible_all (1)
         self.set_activate (1)
 
         self.entry.set_focus (1)
