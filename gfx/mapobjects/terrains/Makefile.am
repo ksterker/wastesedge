@@ -1,6 +1,10 @@
 pkgdatadir = $(gamedatadir)/gfx/mapobjects/terrains
 
 pkgdata_DATA = grass1.mobj grass2.mobj ground-stone-1.mobj ground-stone2.mobj \
-	hay-bot.mobj hay.mobj stoneflower.mobj stone_ground.mobj tree_ground.mobj
+	hay-bot.mobj hay.mobj stoneflower.mobj stone_ground.mobj tree_ground.mobj \
+	road_sandy.mobj road_sandy_to_grass_bot.mobj road_sandy_to_grass_top.mobj \
+	road_sandy_to_grass_left.mobj road_sandy_to_grass_right.mobj \
+	road_to_stone_bot-left.mobj road_to_stone_left.mobj grass_medium-height_front.mobj \
+	grass_medium-height.mobj
 
 EXTRA_DIST = $(pkgdata_DATA)

@@ -34,7 +34,7 @@ elif todo == 1:
     # Choose where to move, if destination is already occupied we'll
     # fall into the wait state (0) again automatically next time
     if myself.posy () == 17:
-        myself.set_goal (11, 20, STAND_NORTH)
+        myself.set_goal (11, 19, STAND_NORTH)
     else:
         myself.set_goal (11, 17, STAND_SOUTH)
         

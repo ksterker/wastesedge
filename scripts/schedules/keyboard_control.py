@@ -25,9 +25,10 @@ def open_gate ():
 
         # Update squares walkability
         sm = map_engine.get_landmap ().get_submap (0)
+        sm.get_square (6, 17).set_walkable_south (0)
+        sm.get_square (7, 17).set_walkable_south (0)
         sm.get_square (6, 18).set_walkable_west (1)
         sm.get_square (6, 19).set_walkable_west (1)
-        sm.get_square (6, 20).set_walkable_west (1)
 
 # Close the gate
 def close_gate ():
@@ -44,6 +45,8 @@ def close_gate ():
 
         # Update squares walkability
         sm = map_engine.get_landmap ().get_submap (0)
+        sm.get_square (6, 17).set_walkable_south (1)
+        sm.get_square (7, 17).set_walkable_south (1)
         sm.get_square (6, 18).set_walkable_west (0)
         sm.get_square (6, 19).set_walkable_west (0)
         sm.get_square (6, 20).set_walkable_west (0)

@@ -554,7 +554,7 @@ if retval < 5:
         ev.thisown = C
         ev.submap = 0
         ev.x = 12
-        ev.y = 24
+        ev.y = 23
         ev.set_script ("yard_to_guards")
         lm.add_event (ev)
 
@@ -616,7 +616,7 @@ if retval < 5:
         talan.set_dialogue ("dialogues/talan_start")
         talan.load ("talan.mchar")
         talan.set_map (map_engine.get_landmap ())
-        talan.jump_to (0, 11, 20)
+        talan.jump_to (0, 11, 19)
         talan.set_action ("action_talk")
         talan.stand_north ()
         talan.set_schedule ("talan")
