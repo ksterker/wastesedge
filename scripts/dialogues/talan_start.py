@@ -17,7 +17,7 @@ class talan_start:
 		self.the_player = p
 		self.the_npc = n
 
-		self.dialogue = [self.start, self.answer2, self.answer4, self.answer6, self.answer7, self.answer10, self.answer11, self.answer13, self.answer15, self.answer18, self.answer20, self.answer23, self.answer25, self.answer27, self.answer28, self.answer29, self.answer31, self.answer32, self.answer35, self.answer36, self.answer39, self.answer44, self.answer49, self.answer50, self.answer51, self.answer54, self.answer55, self.answer56, self.answer57, self.answer58, self.answer60, self.answer61, self.answer62, self.answer63, self.answer64, self.answer66, self.answer67, self.answer70, self.answer72, self.answer74, self.answer75, self.answer76, self.answer169, self.answer171, None]
+		self.dialogue = [self.start, self.answer2, self.answer4, self.answer6, self.answer7, self.answer10, self.answer11, self.answer13, self.answer15, self.answer18, self.answer20, self.answer23, self.answer25, self.answer27, self.answer28, self.answer29, self.answer31, self.answer32, self.answer35, self.answer36, self.answer39, self.answer44, self.answer49, self.answer50, self.answer51, self.answer54, self.answer55, self.answer56, self.answer57, self.answer58, self.answer60, self.answer61, self.answer62, self.answer63, self.answer64, self.answer66, self.answer67, self.answer70, self.answer72, self.answer74, self.answer75, self.answer76, self.answer77, self.answer78, None]
 
 	def clear (self):
 		del self.dialogue
@@ -460,15 +460,13 @@ class talan_start:
 
 		pass
 
-	def answer169 (self):
-		if adonthell.gamedata_get_quest("demo").get_val ("know_noise") == 2:
-
+	def answer77 (self):
 		self.color = self.the_npc.get_color()
 		self.npc.append (78)
 		self.cont.append (43)
 		self.player.append (-1)
 
-	def answer171 (self):
+	def answer78 (self):
 		self.color = self.the_npc.get_color()
 		self.npc.append (79)
 		self.cont.append (-1)
