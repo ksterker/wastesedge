@@ -35,7 +35,7 @@ class talk:
             self.myself.look_invert(requester.currentmove())
 
             # -- init the dialogue engine
-            dlg = adonthell.dialog_engine (self.myself, self.myself.get_dialogue (), 0)
+            dlg = adonthell.dialog_screen (self.myself, self.myself.get_dialogue (), 0)
             
             # -- make sure the engine isn't deleted when we leave the script
             dlg.thisown = 0

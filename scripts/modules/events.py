@@ -10,35 +10,33 @@
 #  See the COPYING file for more details
 #
 
-from adonthell import gamedata_player, gamedata_map_engine, mapcharacter
-from adonthell import screen_transition, screen_show, gametime_update
-from adonthell import gametime_frames_to_do, mapengine
+import adonthell
 
 # -- Fade the screen out
 def fade_out ():
     i = 0
 
     while i < 60:
-        gamedata_map_engine ().mainloop ()
+        adonthell.gamedata_map_engine ().mainloop ()
 
-        screen_transition (i * 2)
-        screen_show ()
+        adonthell.screen_transition (i * 2)
+        adonthell.screen_show ()
 
-        gametime_update ()
-        i = i + (gametime_frames_to_do () * 2)
+        adonthell.gametime_update ()
+        i = i + (adonthell.gametime_frames_to_do () * 2)
 
 # -- Fade the screen in
 def fade_in ():
     i = 60
 
     while i > 0:
-        gamedata_map_engine ().mainloop ()
+        adonthell.gamedata_map_engine ().mainloop ()
 
-        screen_transition(i * 2)
-        screen_show ()
+        adonthell.screen_transition(i * 2)
+        adonthell.screen_show ()
 
-        gametime_update ()
-        i = i - (gametime_frames_to_do () * 2)
+        adonthell.gametime_update ()
+        i = i - (adonthell.gametime_frames_to_do () * 2)
 
 # -- switch submaps (character, new coordinates, new submap,
 #    direction the character shall face)
@@ -50,7 +48,7 @@ def switch_submap (mychar, x, y, submap, dir):
         schedule_active = 0
 
     # -- comparing mychar and player directly does not work (???)
-    if mychar.get_name () == gamedata_player ().get_name ():
+    if mychar.get_name () == adonthell.gamedata_player ().get_name ():
         mychar.set_schedule_active (0)
         mychar.stand ()
         fade_out ()
