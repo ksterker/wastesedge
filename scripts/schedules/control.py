@@ -1,7 +1,7 @@
 #
-#  $Id: control.py,v 1.1 2001/11/01 22:05:13 adondev Exp $
+#  $Id: control.py,v 1.2 2002/08/25 15:35:53 ksterker Exp $
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -25,8 +25,8 @@ class control:
             #    with saving and background enabled
             menu = main_menu.main_menu (1, 1, 1)
 
-            # -- Stop updating the map
-            gamedata_engine ().set_update_map (0)
+            # -- Stop updating the player
+            gamedata_player ().set_schedule_active (0)
             gamedata_engine ().set_control_active (0)
 
             # -- open the main menu
@@ -38,7 +38,7 @@ class control:
                 gamedata_engine ().main_quit ()
             else:
                 # -- continue
-                gamedata_engine ().set_update_map (1)
+                gamedata_player ().set_schedule_active (1)
                 gamedata_engine ().set_control_active (1)
            
 
@@ -47,15 +47,15 @@ class control:
             s = data_screen (LOAD_SCREEN)
             s.set_activate (1)	
 
-            # -- Stop updating the map
-            gamedata_engine ().set_update_map (0)
+            # -- Stop updating the player
+            gamedata_player ().set_schedule_active (0)
             gamedata_engine ().set_control_active (0)
             
             # -- open the load screen
             gamedata_engine ().main (s, "load_screen")
             
             # -- continue
-            gamedata_engine ().set_update_map (1)
+            gamedata_player ().set_schedule_active (1)
             gamedata_engine ().set_control_active (1)
             
 
@@ -64,15 +64,15 @@ class control:
             s = data_screen (SAVE_SCREEN)
             s.set_activate (1)	
 
-            # -- Stop updating the map
-            gamedata_engine ().set_update_map (0)
+            # -- Stop updating the player
+            gamedata_player ().set_schedule_active (0)
             gamedata_engine ().set_control_active (0)
             
             # -- open the save screen
             gamedata_engine ().main (s, "save_screen")
 
             # -- continue
-            gamedata_engine ().set_update_map (1)
+            gamedata_player ().set_schedule_active (1)
             gamedata_engine ().set_control_active (1)
 
 
@@ -83,13 +83,13 @@ class control:
             c = console.console (globals ())
             c.set_activate (1)
 
-            # -- Stop updating the map
-            gamedata_engine ().set_update_map (0)
+            # -- Stop updating the player
+            gamedata_player ().set_schedule_active (0)
             gamedata_engine ().set_control_active (0)
 
             # -- open the console
             gamedata_engine ().main (c, "console")
 
             # -- continue
-            gamedata_engine ().set_update_map (1)
+            gamedata_player ().set_schedule_active (1)
             gamedata_engine ().set_control_active (1)
