@@ -7,7 +7,7 @@ rm -f `find . -name 'Makefile'`
 
 # Regenerate everything
 aclocal -I .
-automake --add-missing --gnu
+automake --add-missing --gnu --copy
 autoconf 
 
 echo

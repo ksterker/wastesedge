@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wasstesedge 0.3.2\n"
-"POT-Creation-Date: 2002-08-22 18:47+0200\n"
+"POT-Creation-Date: 2002-09-15 18:00+0200\n"
 "PO-Revision-Date: 2002-04-14 13:32+0200\n"
 "Last-Translator: Alexandre Courbot <alexandrecourbot@linuxgames.com>\n"
 "Language-Team: French <alexandrecourbot@linuxgames.com>\n"
@@ -2791,6 +2791,10 @@ msgid ""
 "want from me?"
 msgstr ""
 
+#: scripts/dialogues/jelom_start.py:63
+msgid "I actually have found out something that should interest you."
+msgstr ""
+
 #: scripts/dialogues/lucia_start.py:9
 msgid ""
 "There is little doubt that this busy-looking woman is the unchallenged "
@@ -5482,6 +5486,90 @@ msgstr "Cet endroit est tellement different de la maison."
 msgid "Who could have taken the gems?"
 msgstr "Qui peut avoir pris les gemmes?"
 
+#: scripts/schedules/mapcharacters/extro.py:39
+msgid "There is no denying it. Yes, I feigned the theft. "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:40
+msgid "But Master? How could you do such an infamous deed? "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:41
+msgid "That I would know as well! And where are the gems then? "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:42
+msgid "What? Haven't I made myself clear already? "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:43
+msgid "I despise those Elves and their uncanny ways. "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:44
+msgid ""
+"Their ... meddling with reality contradicts all principles I learnt to hold "
+"true.     "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:45
+msgid ""
+"And yet, I had to provide them with the reagents they need to perform their "
+"dark art.     "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:46
+msgid "I felt so ... ashamed! "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:47
+#, fuzzy
+msgid "And you believe this justifies the discomfort you caused my mistress? "
+msgstr ""
+"Je devrais y penser Talan, considerant l'incomfort que tu as cause a ma "
+"Maitresse."
+
+#: scripts/schedules/mapcharacters/extro.py:48
+msgid "You cannot think further than your mistress, can you? "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:49
+msgid ""
+"Theft by a high born like Lady Silverhair would have been considered a grave "
+"insult by the clan elders.     "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:50
+msgid ""
+"Had she been convicted, they might have chosen to cease trading with her "
+"likes. "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:51
+msgid ""
+"It might have been years before any Elf got his filthy hands on our beloved "
+"gems again! "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:52
+msgid "I feared as much and I       feared the consequences."
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:53
+msgid "Without the arcane arts my kind would soon succumb to the human tides. "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:54
+msgid ""
+"But without gems and ores purchased from the small folk we cannot create "
+"magic. "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:55
+#, fuzzy
+msgid "Who would have thought that? "
+msgstr "Qui peut avoir pris les gemmes?"
+
 #: scripts/schedules/mapcharacters/extro.py:56
 #, python-format
 msgid "Seems you owe %s here a big favour, if I may say so, Lady. "
@@ -5490,6 +5578,118 @@ msgstr ""
 #: scripts/schedules/mapcharacters/extro.py:57
 #, python-format
 msgid "Rest assured that %s's deeds will not be forgotten, good man. "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:58
+msgid ""
+"Well, this is settled then. What remains now are the whereabouts of the "
+"gems. "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:59
+msgid "Master Fingolson! "
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:60
+msgid "They were here all the time, safe from thieving hands, ..."
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:61
+msgid "... well hidden in a niche I carved during my previous visits."
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:62
+msgid "Right here."
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:63
+msgid "But ..."
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:64
+msgid "... they are gone!"
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:65
+msgid "Sir, sir! To the gate! Quick! The thief is loose!"
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:66
+msgid "My jewels, oh my jewels!"
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:67
+msgid "By Andomiel's Tree! What happened to you, Talan?!"
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:68
+msgid "It was the mercenary, sir! He sneaked upon me and hit me over the head."
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:69
+msgid "O sweet irony."
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:70
+msgid "Then the gems have been stolen after all?!"
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:71
+msgid "By that scum, Alek!? Now that's funny."
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:72
+msgid "How can you say that? And why are you still here?"
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:73
+msgid "Will nobody go after my gems!?"
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:74
+msgid "What for?"
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:75
+msgid ""
+"Where you are going you won't need them any more. Besides, Alek is probably "
+"long gone by now ..."
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:78
+msgid ""
+"And so Alek Endhelm escaped into the\n"
+"North, where he spent his newly gained\n"
+"wealth for Ale and other pleasures."
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:79
+msgid ""
+"Bjarn Fingolson however, bereft of all\n"
+"honour, was taken to Uzdun'kal and\n"
+"sentenced to the lowest labour.\n"
+"Nowadays his fate serves as an example\n"
+"and a warning to generations of young Dwarves."
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:80
+msgid ""
+"Lady Imoen Silverhair received the finest\n"
+"Chrysoberyl Catseyes as a token of\n"
+"regret, and the magic rings and amulets\n"
+"she crafted were of wondrous might and\n"
+"beauty, desired and admired throughout\n"
+"the realm."
+msgstr ""
+
+#: scripts/schedules/mapcharacters/extro.py:81
+msgid ""
+"Soon after his return, young Erek\n"
+"accomplished the Rite of Passage and\n"
+"joined adult society. To his surprise, he\n"
+"was sent to the Elvish Council at the\n"
+"High City of Elgilad, as an ambassador\n"
+"for his people."
 msgstr ""
 
 #: scripts/schedules/mapcharacters/extro.py:87
@@ -6172,10 +6372,3 @@ msgstr ""
 msgid ""
 "There, inmidst your mistress' luggage, lies one of Master Fingolson's gems."
 msgstr ""
-
-#, fuzzy
-#~ msgid ""
-#~ "And you believe this justifies the discomfort you caused my mistress? "
-#~ msgstr ""
-#~ "Je devrais y penser Talan, considerant l'incomfort que tu as cause a ma "
-#~ "Maitresse."
