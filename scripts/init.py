@@ -479,6 +479,7 @@ if retval < 5:
         # erek.stand_north ()
 
         oliver = characters ["Oliver Redwyne"]
+        oliver.set_dialogue ("dialogues/oliver_start")
         oliver.load ("oliver.mchar")
         oliver.set_map (map_engine.get_landmap ())
         oliver.jump_to (0, 25, 15)
