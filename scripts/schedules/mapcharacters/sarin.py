@@ -15,8 +15,7 @@
 #    He walks from one end of the room to the other. From time to
 #    to time he'll stop and chose another direction
 
-from adonthell import WALK_NORTH, WALK_SOUTH, WALK_EAST, WALK_WEST, \
-     STAND_NORTH, STAND_SOUTH, STAND_WEST, STAND_EAST
+import adonthell
 import schedule 
 import random
 
@@ -33,6 +32,8 @@ class sarin (schedule.speak):
         self.min_y = 2
         self.max_y = 6
 
+        self.direction = self.myself.get_val ("direction")
+
         # -- make random remarks
         self.speech = [_("Ruffinans, the lot of them!"), \
                        _("How dare they imprison one better than they?"), \
@@ -40,80 +41,54 @@ class sarin (schedule.speak):
                        _("I cannot believe such disrespect. Barbarians!")]
         self.speech_delay = (20, 40)
         schedule.speak.__init__(self)
+
+        delay = "%it" % random.randrange (3, 6)
+        self.walk_event = adonthell.time_event (delay)
+        self.walk_event.set_callback (self.walk)
+        adonthell.event_handler_register_event (self.walk_event)
         
-    def walk (self):
-        pass
-    def goal_reached (self):
-        pass
-    def run_old (self):
-        myself = self.myself
+        self.myself.set_callback (self.goal_reached)
 
-        # -- delay for orientation change
-        delay = myself.get_val ("delay")
+        #delay = "%it" % random.randrange (13, 16)
+        #self.switch_event = adonthell.time_event (delay)
+        #self.switch_event.set_callback (self.switch_direction)
+        #adonthell.event_handler_register_event (self.switch_event)
 
-        # -- switch orientation
-        if delay == 0:
-            # -- get the current direction ...
-            dir = myself.get_val ("direction")
-
-            # -- ... and set the new one accordingly
-            if dir == WALK_EAST or dir == WALK_WEST:
-                dir = random.randrange (WALK_NORTH, WALK_SOUTH + 1)
-            else:
-                dir = random.randrange (WALK_WEST, WALK_EAST + 1)
-
-            # -- time until the next orientation change
-            delay = random.randrange (100, 200) * 15
-            myself.set_val ("direction", dir)
-            myself.set_val ("delay", delay)
-            myself.set_val ("todo", 1)
-
+    def switch_direction (self):        
+        # -- ... and set the new one accordingly
+        if self.direction == adonthell.WALK_EAST or self.direction == adonthell.WALK_WEST:
+            self.direction = random.randrange (adonthell.WALK_NORTH, adonthell.WALK_SOUTH + 1)
         else:
-            myself.set_val ("delay", delay - 1)
+            self.direction = random.randrange (adonthell.WALK_WEST, adonthell.WALK_EAST + 1)
+        
+        delay = "%it" % random.randrange (13, 16)
+        self.switch_event = adonthell.time_event (delay)
+        self.switch_event.set_callback (self.switch_direction)
+        adonthell.event_handler_register_event (self.switch_event)
 
+        self.walk ()
+    
+    def walk (self):
+        # -- switch direction
+        if self.direction == adonthell.WALK_NORTH:
+            goal = (self.myself.posx (), self.min_y, adonthell.STAND_SOUTH, 0, 1)
+        elif self.direction == adonthell.WALK_SOUTH:
+            goal = (self.myself.posx (), self.max_y, adonthell.STAND_NORTH, 0, -1)
+        elif self.direction == adonthell.WALK_EAST:
+            goal = (self.max_x, self.myself.posy (), adonthell.STAND_WEST, -1, 0)
+        else:
+            goal = (self.min_x, self.myself.posy (), adonthell.STAND_EAST, 1, 0)
 
-        todo = myself.get_val ("todo")
+        x, y, d = goal[:3]
+        self.direction = d + 4
 
-        # -- waiting
-        if todo == 0:
-            # -- delay for direction change
-            delay = myself.get_val ("switch_direction")
+        while not self.myself.set_goal (x, y, d):
+            offx, offy = goal [-2:]
+            x = x + offx
+            y = y + offy
 
-            if delay == 0:
-                myself.set_val ("todo", 1)
-            else:
-                myself.set_val ("switch_direction", delay - 1)
-
-        # -- get movement target
-        elif todo == 1:
-            # -- get the current direction ...
-            dir = myself.get_val ("direction")
-
-            # -- switch direction
-            if dir == WALK_NORTH:
-                goal = (myself.posx (), self.min_y, STAND_SOUTH, 0, 1)
-            elif dir == WALK_SOUTH:
-                goal = (myself.posx (), self.max_y, STAND_NORTH, 0, -1)
-            elif dir == WALK_EAST:
-                goal = (self.max_x, myself.posy(), STAND_WEST, -1, 0)
-            else:
-                goal = (self.min_x, myself.posy (), STAND_EAST, 1, 0)
-
-            x, y, d = goal[:3]
-            myself.set_val ("direction", d + 4)
-
-            while not myself.set_goal (x, y, d):
-                offx, offy = goal [-2:]
-                x = x + offx
-                y = y + offy
-
-            myself.set_val ("todo", 2)
-
-        # -- move
-        elif todo == 2:
-            if myself.follow_path () == 1:
-                # -- wait a little on the current tile
-                delay = random.randrange (15, 30) * 10
-                myself.set_val ("switch_direction", delay)
-
-                myself.set_val ("todo", 0)
+    def goal_reached (self):
+        delay = "%it" % random.randrange (3, 6)
+        self.walk_event = adonthell.time_event (delay)
+        self.walk_event.set_callback (self.walk)
+        adonthell.event_handler_register_event (self.walk_event)
