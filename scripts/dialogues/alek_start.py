@@ -32,6 +32,8 @@ class alek_start:
             self.color = 0
             self.npc.append (56)
             self.cont.append (33)
+            the_npc.set_val ("talked_to" , 1)
+
             self.player.append (-1)
         else:
 
