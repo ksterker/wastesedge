@@ -16,7 +16,7 @@
 Synopsis:
 =========
 
-Below you will find a description on Adonthell's configuration options, 
+Below you will find a description of Adonthell's configuration options, 
 release notes and contact informations. If you need help with playing
 Adonthell - Waste's Edge, please refer to the PLAYING file.
 
@@ -35,7 +35,7 @@ conditions.
 
 In turn, Adonthell itself depends on various projects that are sharing 
 the same philosophy, like SDL, Ogg Vorbis, Python and SWIG to name just
-a few. Without these fundamental works of dozends of developers, we
+a few. Without these fundamental works of dozens of developers, we
 wouldn't be where we are today. 
 
 The same is true for the many individuals that contributed bugfixes or
@@ -59,9 +59,6 @@ The available options and what they do are:
   Whether Adonthell should run fullscreen or in windowed mode 
   0 = Windowed mode, 1 = Fullscreen mode
   
-  (If you have trouble with the fullscreen mode, refer to the 
-  FULLSCREEN.howto file for help)
-
 - Double-size
   Whether resolution should be scaled to 640x480 or not
   0 = disable, 1 = enable
@@ -109,7 +106,7 @@ The main purpose of this release is to attract new programmers,
 artists and writers in order to shorten the time until the next 
 version.  So if you have experience in C++ (and optionally Python), 
 or if you are good at computer graphics or writing we would like to
-hear from you.  Please have a look at our development site 
+hear from you.  Please have a look at our developer's corner
   
   http://adonthell.linuxgames.com/development/
 
@@ -118,7 +115,7 @@ for further details.
 Adonthell - Waste's Edge -, or v0.3 for short is no complete RPG.
 As the v0.3 implies, the engine is far from being finished, although
 it should be free of severe bugs.  Missing features include combat, 
-items and magic.  But you can interact with NPC's and the game world, 
+items and magic.  But you can interact with NPCs and the game world, 
 and the internals enable us to create a basic plot, so v0.3 is actually
 playable!
 
