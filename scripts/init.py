@@ -1,15 +1,17 @@
-# -- The themes and fonts we'll use
-win_manager_add_theme ("original")
-win_manager_add_theme ("silverleaf")
+#
+#  $Id: init.py,v 1.45 2001/09/04 19:34:28 adondev Exp $
+#
+#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  Part of the Adonthell Project http://adonthell.linuxgames.com
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License.
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY.
+#
+#  See the COPYING file for more details
+#
 
-win_manager_add_font ("yellow")
-win_manager_add_font ("red")
-win_manager_add_font ("violet")
-win_manager_add_font ("blue")
-win_manager_add_font ("green")
-win_manager_add_font ("white")
-win_manager_add_font ("original")
-win_manager_add_font ("silverleaf")
 
 from main_menu import *
 import time
@@ -44,12 +46,24 @@ class title_screen:
     def __init__ (self):
         # -- load our music
         audio_load_background (0, "audio/at-menu-full.ogg")
+        audio_play_background (0)
         audio_load_background (1, "audio/at-dummy-1.ogg")
         audio_load_wave (0, "audio/select.wav")
         audio_load_wave (1, "audio/switch.wav")
         audio_load_wave (2, "audio/unselect.wav")
 
-        audio_play_background (0)
+        # -- The themes and fonts we'll use
+        win_manager_add_theme ("original")
+        win_manager_add_theme ("silverleaf")
+
+        win_manager_add_font ("yellow")
+        win_manager_add_font ("red")
+        win_manager_add_font ("violet")
+        win_manager_add_font ("blue")
+        win_manager_add_font ("green")
+        win_manager_add_font ("white")
+        win_manager_add_font ("original")
+        win_manager_add_font ("silverleaf")
 
         # -- load our images
         self.bag_o = win_image ()
@@ -130,12 +144,12 @@ class title_screen:
         if self.alpha == 255:
             # -- display "Adonthell v0.3"
             self.bag_t.set_visible (1)
-            self.wait_time = 25
+            self.wait_time = 30
             self.draw_func = self.wait
 
         else:
             # -- fade in
-            self.alpha = self.alpha + gametime_frames_to_do() + 1
+            self.alpha = self.alpha + gametime_frames_to_do()
             if self.alpha > 255: self.alpha = 255
             self.bag_c.set_alpha (self.alpha)
 
@@ -165,7 +179,7 @@ class title_screen:
 
         else:
             # -- fade in
-            self.alpha = self.alpha + gametime_frames_to_do() + 1
+            self.alpha = self.alpha + gametime_frames_to_do()
             if self.alpha > 255: self.alpha = 255
             self.bag_o.set_alpha (self.alpha)
 
