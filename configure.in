@@ -3,8 +3,8 @@ dnl Process this file with autoconf to produce a configure script.
 dnl **************************************************************
 
 AC_PREREQ(2.50)
-AC_INIT(watesedge, 0.3.2pre1, adonthell@linuxgames.com, wastesedge)
-AM_INIT_AUTOMAKE(wastesedge, 0.3.2pre1)
+AC_INIT(watesedge, 0.3.3, adonthell@linuxgames.com, wastesedge)
+AM_INIT_AUTOMAKE(wastesedge, 0.3.3)
 
 dnl ***************
 dnl gettext support
@@ -18,8 +18,8 @@ AC_ARG_ENABLE(nls,
 AC_MSG_RESULT($USE_NLS)
 AC_SUBST(USE_NLS)
 
-AM_PO_SUBDIRS
-dnl ALL_LINGUAS="fr"
+AM_GNU_GETTEXT
+ALL_LINGUAS="fr"
 
 dnl ********************
 dnl Additional arguments
