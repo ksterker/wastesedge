@@ -1,5 +1,5 @@
 #
-#  $Id: main_menu.py,v 1.16 2001/10/29 17:04:25 adondev Exp $
+#  $Id: main_menu.py,v 1.17 2001/12/19 17:07:35 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -91,6 +91,8 @@ class main_menu (win_container):
         self.options.set_text ("Options")
         self.options.move (-self.options.length (), y_pos)
         self.options.pack()
+        self.options.set_can_be_selected (0)
+        self.options.set_brightness (1)
         self.options.thisown = 0
         y_pos = y_pos + 30
 	
