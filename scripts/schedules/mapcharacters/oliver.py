@@ -42,7 +42,7 @@ class oliver:
 
             # -- find a free spot near Orloth and the player
             i = 0
-            orloth = adonthell.characters ["Orloth Redwyne"]
+            orloth = adonthell.gamedata_get_character ("Orloth Redwyne")
             while i < 7:
                 x, y = self.offsets[i][:2]
                 x = x + orloth.posx ()
@@ -56,7 +56,7 @@ class oliver:
         # -- in the player's room
         elif myself.get_val ("goto_players_room") == 3:
             # -- start talking to the player
-            myself.launch_action (adonthell.the_player)
+            myself.launch_action (adonthell.gamedata_player ())
 
         # -- leave the player's room and goto the barn
         elif myself.get_val ("goto_barn") == 1:

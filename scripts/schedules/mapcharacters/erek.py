@@ -38,10 +38,11 @@ class erek:
         myself = self.myself
         
         # -- lead the player into bjarn's room
-        if adonthell.quests["demo"].get_val ("bjarn_door_open") == 2:
+        if adonthell.gamedata_get_quest ("demo").get_val ("bjarn_door_open") == 2:
             myself.set_schedule_active (0)
             # -- start Bjanr's conversation with the player and Erek
-            adonthell.characters["Bjarn Fingolson"].launch_action (adonthell.the_player)
+            fingolson = adonthell.gamedata_get_character ("Bjarn Fingolson")
+            fingolson.launch_action (adonthell.gamedata_player ())
 
         # -- leave cellar again
         elif myself.get_val ("leave_bjarn") == 1:

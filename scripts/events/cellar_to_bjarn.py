@@ -34,7 +34,7 @@ class cellar_to_bjarn:
     def run (self, submap, x, y, dir, name):
         p = adonthell.gamedata_get_character (name)
         # -- bjarn's door closed?
-        open = adonthell.quests["demo"].get_val("bjarn_door_open")
+        open = adonthell.gamedata_get_quest ("demo").get_val("bjarn_door_open")
         if open == 0 or open == 1:
             if p.get_name () == adonthell.gamedata_player ().get_name ():
                 adonthell.gamedata_get_character ("Bjarn Fingolson").launch_action (p)

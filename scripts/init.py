@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.47 2001/09/10 13:22:14 adondev Exp $
+#  $Id: init.py,v 1.48 2001/09/10 18:06:25 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -775,7 +775,7 @@ class title_screen:
                 lm.add_event (ev)
 
                 # Now setup the characters
-                lucia = characters ["Lucia Redwyne"]
+                lucia = gamedata_get_character ("Lucia Redwyne")
                 lucia.set_dialogue ("dialogues/lucia_start")
                 lucia.load ("lucia.mchar")
                 lucia.set_map (map_engine.get_landmap ())
@@ -783,7 +783,7 @@ class title_screen:
                 lucia.set_action ("talk")
                 lucia.stand_south ()
 
-                orloth = characters ["Orloth Redwyne"]
+                orloth = gamedata_get_character ("Orloth Redwyne")
                 orloth.set_dialogue ("dialogues/orloth_start")
                 orloth.load ("orloth.mchar")
                 orloth.set_map (map_engine.get_landmap ())
@@ -792,7 +792,7 @@ class title_screen:
                 orloth.stand_south ()
                 orloth.set_schedule ("orloth")
 
-                erek = characters ["Erek Stonebreaker"]
+                erek = gamedata_get_character ("Erek Stonebreaker")
                 erek.set_dialogue ("dialogues/erek_start")
                 erek.load ("erek.mchar")
                 erek.set_map (map_engine.get_landmap ())
@@ -814,7 +814,7 @@ class title_screen:
                 talan.set_schedule ("talan")
                 talan.set_portrait ("talan.pnm")
 
-                jelom = characters ["Jelom Rasgar"]
+                jelom = gamedata_get_character ("Jelom Rasgar")
                 jelom.set_dialogue ("dialogues/jelom_start")
                 jelom.load ("jelom.mchar")
                 jelom.set_map (map_engine.get_landmap ())
@@ -824,7 +824,7 @@ class title_screen:
                 jelom.set_schedule ("jelom")
                 jelom.set_portrait ("jelom.pnm")
 
-                alek = characters ["Alek Endhelm"]
+                alek = gamedata_get_character ("Alek Endhelm")
                 alek.set_dialogue ("dialogues/alek_start")
                 alek.load ("alek.mchar")
                 alek.set_map (map_engine.get_landmap ())
@@ -833,7 +833,7 @@ class title_screen:
                 alek.stand_south ()
                 alek.set_schedule ("alek")
 
-                oliver = characters ["Oliver Redwyne"]
+                oliver = gamedata_get_character ("Oliver Redwyne")
                 oliver.set_dialogue ("dialogues/oliver_start")
                 oliver.load ("oliver.mchar")
                 oliver.set_map (map_engine.get_landmap ())
@@ -842,7 +842,7 @@ class title_screen:
                 oliver.stand_west ()
                 oliver.set_schedule ("oliver")
 
-                frostbloom = characters ["Rhayne Frostbloom"]
+                frostbloom = gamedata_get_character ("Rhayne Frostbloom")
                 frostbloom.set_dialogue ("dialogues/frostbloom_start")
                 frostbloom.load ("frostbloom.mchar")
                 frostbloom.set_map (map_engine.get_landmap ())
@@ -851,7 +851,7 @@ class title_screen:
                 frostbloom.stand_north ()
                 frostbloom.set_schedule ("frostbloom")
 
-                bjarn = characters ["Bjarn Fingolson"]
+                bjarn = gamedata_get_character ("Bjarn Fingolson")
                 bjarn.set_dialogue ("dialogues/bjarn_start")
                 bjarn.load ("bjarn.mchar")
                 bjarn.set_map (map_engine.get_landmap ())
@@ -859,7 +859,7 @@ class title_screen:
                 bjarn.set_action ("talk")
                 bjarn.stand_west ()
 
-                silverhair = characters ["Imoen Silverhair"]
+                silverhair = gamedata_get_character ("Imoen Silverhair")
                 silverhair.load ("silverhair.mchar")
                 silverhair.set_map (map_engine.get_landmap ())
                 silverhair.jump_to (13, 4, 4)
@@ -867,7 +867,7 @@ class title_screen:
                 silverhair.stand_south ()
                 silverhair.set_schedule ("silverhair")
 
-                sarin = characters ["Sarin Trailfollower"]
+                sarin = gamedata_get_character ("Sarin Trailfollower")
                 sarin.set_dialogue ("dialogues/sarin_start")
                 sarin.load ("servant2.mchar")
                 sarin.set_map (map_engine.get_landmap ())
@@ -876,7 +876,7 @@ class title_screen:
                 sarin.stand_west ()
                 sarin.set_schedule ("sarin")
 
-                janesta = characters ["Janesta Skywind"]
+                janesta = gamedata_get_character ("Janesta Skywind")
                 janesta.set_dialogue ("dialogues/janesta_start")
                 janesta.load ("servant1.mchar")
                 janesta.set_map (map_engine.get_landmap ())

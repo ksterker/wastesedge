@@ -36,7 +36,7 @@ class jelom_start:
 		self.dialogue[answer]()
 
 	def start (self):
-		if the_player.get_val ("at_silverhairs_door") == 1 and adonthell.gamedata_get_quest("demo").get_val ("know_jelom") != 2:
+		if self.the_player.get_val ("at_silverhairs_door") == 1 and adonthell.gamedata_get_quest("demo").get_val ("know_jelom") != 2:
 		
 
 			self.color = self.the_npc.get_color()

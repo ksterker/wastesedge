@@ -34,7 +34,7 @@ class fst_to_silverhair:
     def run (self, submap, x, y, dir, name):
         p = adonthell.gamedata_get_character (name)
 
-        free = adonthell.quests["demo"].get_val("silverhair_free")
+        free = adonthell.gamedata_get_quest ("demo").get_val("silverhair_free")
 
         # -- Jelom not convinced of Silverhair's innocence
         if not free and p.get_name () == adonthell.gamedata_player ().get_name ():
