@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.70 2001/12/13 00:02:53 adondev Exp $
+#  $Id: init.py,v 1.71 2001/12/13 00:45:29 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -1207,7 +1207,28 @@ class title_screen:
             "I cannot rest when my mistress needs me!"))
         lm.add_event (ev)
 
-       # -- Now setup the characters
+        # -- stables
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 21
+        ev.x = 1
+        ev.y = 6
+        ev.dir = STAND_WEST
+        ev.set_script ("search_chest", (player.get_id (),))
+        lm.add_event (ev)
+
+        ev = action_event ()
+        ev.thisown = C
+        ev.submap = 21
+        ev.x = 2
+        ev.y = 4
+        ev.dir = STAND_EAST
+        ev.set_script ("character_speak", (player.get_id (), \
+            "An old, empty crate!"))
+        lm.add_event (ev)
+
+
+        # -- Now setup the characters
         lucia = gamedata_get_character ("Lucia Redwyne")
         lucia.set_dialogue ("dialogues/lucia_start")
         lucia.load ("lucia.mchar")
