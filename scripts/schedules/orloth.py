@@ -19,11 +19,15 @@ speech = ["I gotta clean this mug!", \
           "That barrel is leaking.", \
           "I hope they'll find the thief!"]
 
-coords = [(3, 5, STAND_SOUTH), \
+coords = [(10, 3, STAND_NORTH), \
+          (3, 5, STAND_SOUTH), \
           (7, 6, STAND_EAST), \
           (12, 3, STAND_SOUTH), \
           (7, 4, STAND_WEST), \
-          (10, 3, STAND_NORTH)]
+          (3, 7, 0), \
+          (9, 7, 0), \
+          (12, 5, 0), \
+          (6, 5, 0)]
 
 todo = myself.get_val ("todo")
 
@@ -35,22 +39,52 @@ if todo == 0:
     if delay == 0:
         myself.set_val ("todo", 1)
     else:
+        # -- put/take the first mug
+        if delay == 100:
+            index = myself.get_val ("table_num")
+            if index > 0:
+                key = "table%i_set" % index
+                val = myself.get_val (key)
+
+                x, y = coords[index+4][:2]
+                if val == 0:
+                    map_engine.get_landmap ().put_mapobject (1,x,y,106)
+                else:
+                    map_engine.get_landmap ().remove_mapobject (1,x,y,106)
+
+        # -- put/take the second mug
+        elif delay == 50:
+            index = myself.get_val ("table_num")
+            if index > 0:
+                key = "table%i_set" % index
+                val = myself.get_val (key)
+                myself.set_val (key, ~val)
+
+                x, y = coords[index+4][:2]
+                if val == 0:
+                    map_engine.get_landmap ().put_mapobject (1,x,y,107)
+                else:
+                    map_engine.get_landmap ().remove_mapobject (1,x,y,107)
+
         myself.set_val ("delay", delay - 1)
 
 # -- engage a new movement
 elif todo == 1:
     # -- when we are at the bar, then wait a while before
     #    moving again
-    if myself.posx () == 2:
-        x, y, dir = coords[randint (0, 4)]
-        myself.set_goal (x, y, dir)
-        myself.set_val ("delay", 150)
-
-    # -- otherwise only wait a little
-    else:
+    if myself.posx () != 2:
         delay = randint (40, 120) * 20
         myself.set_val ("delay", delay)
         myself.set_goal (2, 2, STAND_SOUTH)
+        myself.set_val ("table_num", 0)
+
+    # -- otherwise only wait a little
+    else:
+        index = randint (0, 4)
+        x, y, dir = coords[index]
+        myself.set_goal (x, y, dir)
+        myself.set_val ("delay", 150)
+        myself.set_val ("table_num", index)
 
     myself.set_val ("todo", 2)
 
