@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.48 2001/09/10 18:06:25 adondev Exp $
+#  $Id: init.py,v 1.49 2001/09/11 11:56:37 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -884,6 +884,25 @@ class title_screen:
                 janesta.set_action ("talk")
                 janesta.stand_north ()
                 janesta.set_schedule ("janesta")
+
+                fellnir = gamedata_get_character ("Fellnir Kezular")
+                fellnir.set_dialogue ("dialogues/fellnir_start")
+                fellnir.load ("fellnir.mchar")
+                fellnir.set_map (map_engine.get_landmap ())
+                fellnir.jump_to (10, 4, 4)
+                fellnir.set_action ("talk")
+                fellnir.stand_south ()
+                fellnir.set_schedule ("fellnir")
+
+                # -- A clone for now
+                tristan = gamedata_get_character ("Tristan Illig")
+                tristan.set_dialogue ("dialogues/tristan_start")
+                tristan.load ("servant2.mchar")
+                tristan.set_map (map_engine.get_landmap ())
+                tristan.jump_to (1, 4, 6)
+                tristan.set_action ("talk")
+                tristan.stand_west ()
+                tristan.set_schedule ("tristan")
 
                 # Once we want to generate the data context files,
                 # just call gamedata::save (1) and copy the .data files
