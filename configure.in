@@ -19,7 +19,7 @@ AC_MSG_RESULT($USE_NLS)
 AC_SUBST(USE_NLS)
 
 AM_GNU_GETTEXT
-ALL_LINGUAS="fr"
+ALL_LINGUAS=""
 
 dnl ********************
 dnl Additional arguments
