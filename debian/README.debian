@@ -1,6 +1,8 @@
-wastesedge for Debian
-----------------------
+adonthell-data for Debian
+-------------------------
 
-Comments regarding the Package
+This is the official game-data for Adonthell 0.3, and it is
+a demo of the current engine. Story and gameplay will change
+with newer releases.
 
-Alexandre Courbot <alexandrecourbot@linuxgames.com>, Sat,  2 Feb 2002 17:59:49 +0100
+ -- Gordon Fraser <gordon@debian.org>, Tue, 17 Sep 2002 15:16:21 +0200

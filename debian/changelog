@@ -1,13 +1,26 @@
-wastesedge (0.3.1-1) unstable; urgency=low
+adonthell-data (0.3.3-1) unstable; urgency=low
 
-  * Using code base 0.3.1.
+  * New upstream release
 
- -- Alexandre Courbot <alexandrecourbot@linuxgames.com>  Tue,  5 Feb 2002 13:33:47 +0100
+ -- Gordon Fraser <gordon@debian.org>  Thu, 19 Sep 2002 16:28:26 +0200
 
-wastesedge (0.3-1) unstable; urgency=low
+adonthell-data (0.3.1.cvs.20020917-2) unstable; urgency=low
 
-  * Initial release.
+  * Change Architecture to all
 
- -- Alexandre Courbot <alexandrecourbot@linuxgames.com>  Sat,  2 Feb 2002 17:59:49 +0100
+ -- Gordon Fraser <gordon@debian.org>  Wed, 18 Sep 2002 22:23:40 +0200
 
+adonthell-data (0.3.1.cvs.20020917-1) unstable; urgency=low
 
+  * New CVS snapshot:
+    Lady Silverhair now follows to the cellar (Closes: #160820)
+  * Includes PLAYING file (Closes: #160814)
+  * Updated Debian standards version
+
+ -- Gordon Fraser <gordon@debian.org>  Tue, 17 Sep 2002 15:16:21 +0200
+
+adonthell-data (0.3.1.cvs.20020906-1) unstable; urgency=low
+
+  * Initial Debian upload (Closes: #158681)
+
+ -- Gordon Fraser <gordon@debian.org>  Wed, 28 Aug 2002 22:43:42 +0200

@@ -1,21 +1,20 @@
-This package was debianized by Alexandre Courbot alexandrecourbot@linuxgames.com on
-Sat,  2 Feb 2002 17:59:49 +0100.
+This package was debianized by Gordon Fraser <gordon@debian.org> on
+Wed, 28 Aug 2002 20:37:34 +0200.
 
 It was downloaded from http://adonthell.linuxgames.com/download/
 
-Copyright: (c) 2000/2001 Kai Sterker & the Adonthell team.
+Upstream Authors: Kai Sterker & the Adonthell team <adonthell@linuxgames.com>
+
+Copyright:
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2, or (at your option)
 any later version.
- 
+
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
- 
-You should have received a copy of the GNU General Public License
-along with Debian system; see the file /usr/doc/copyright/GPL. If not,
-write to the Free Software Foundation, Inc., 59 Temple Place - Suite
-330, Boston, MA 02111-1307, USA.
+
+The GNU GPL may be viewed on Debian systems in /usr/share/common-licenses/GPL

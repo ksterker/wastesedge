@@ -1,15 +1,16 @@
-Source: wastesedge
+Source: adonthell-data
 Section: games
-Priority: extra
-Maintainer: Alexandre Courbot <alexandrecourbot@linuxgames.com>
-Standards-Version: 3.2.1
+Priority: optional
+Maintainer: Gordon Fraser <gordon@debian.org>
+Build-Depends-Indep: debhelper (>= 4), adonthell (>= 0.3), adonthell (<< 0.4)
+Standards-Version: 3.5.7
 
-Package: wastesedge
+Package: adonthell-data
 Architecture: all
-Depends: adonthell (>= 0.3), adonthell(<< 0.4)
-Description: Official game for Adonthell 0.3 
- Official game for Adonthell 0.3
- . 
+Depends: adonthell (>= 0.3), adonthell (<< 0.4)
+Description: Data files needed by Adonthell
+ This is the official game for Adonthell 0.3
+ .
  As a loyal servant of the elven Lady Silverhair, you arrive at the remote
  trading post of Waste's Edge, where she is engaged in negotiations with the
  dwarish merchant Bjarn Fingolson. But not all is well at Waste's Edge, and
