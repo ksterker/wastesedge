@@ -91,7 +91,7 @@ class silverhair_start (dialogue.base):
 		(None, -1, ((1, 0, 0), (2, 1, 1), (23, 1, 3), (54, 1, 6), (50, 1, -1), )),\
 		("Janesta Skywind", 0, ((3, 0, -1), )),\
 		("Imoen Silverhair", -1, ((15, 0, -1), )),\
-		(None, -1, ((4, 0, -1), )),\
+		("Janesta Skywind", -1, ((4, 0, -1), )),\
 		("Imoen Silverhair", -1, ((5, 0, -1), )),\
 		(None, -1, ((6, 0, -1), )),\
 		("Imoen Silverhair", -1, ((10, 0, -1), (7, 0, -1), )),\
