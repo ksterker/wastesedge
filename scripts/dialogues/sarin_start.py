@@ -32,6 +32,7 @@ class sarin_start:
 		self.dialogue[answer]()
 
 	def start (self):
+		self.set_npc ("Sarin Trailfollower")
 		self.color = adonthell.gamedata_get_character("Sarin Trailfollower").get_color()
 		self.npc.append (0)
 		self.cont.append (-1)
@@ -77,7 +78,7 @@ class sarin_start:
 		self.cont.append (-1)
 		self.player.append (7)
 		self.cont.append (5)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_frostbloom") == 1:
+		if adonthell.gamedata_get_quest("demo").get_val ("talked_about_yeti") == 1:
 
 			self.player.append (9)
 			self.cont.append (6)
