@@ -28,11 +28,26 @@ class erek:
                   "This place is so much different from home.", \
                   "Who could have taken the gems?"]
 
-        self.coords = [(5, 5, STAND_NORTH), \
-                       (10, 6, STAND_WEST), \
-                       (5, 3, STAND_NORTH), \
-                       (4, 5, STAND_SOUTH)]
+        # -- the coordinates for normal schedule
+        self.coords = \
+            [(5, 5, STAND_NORTH), \
+            (10, 6, STAND_WEST), \
+            (5, 3, STAND_NORTH), \
+            (4, 5, STAND_SOUTH)]
 
+        # -- the coordinates for getting back to common room
+        self.to_common = \
+            [(0, 7, STAND_WEST), \
+            (6, 1, STAND_NORTH)]
+
+        # -- the coordinates for getting back to the 1st floor
+        self.to_1st = \
+            [(0, 7, STAND_WEST), \
+            (6, 1, STAND_NORTH), \
+            (12, 1, STAND_NORTH), \
+            (2, 4, STAND_SOUTH)]
+
+        self.index = 0
 
     def run (self):
         myself = self.myself
@@ -44,26 +59,36 @@ class erek:
             fingolson = adonthell.gamedata_get_character ("Bjarn Fingolson")
             fingolson.launch_action (adonthell.gamedata_player ())
 
-        # -- leave cellar again
+        # -- help the player with jelom
+        elif adonthell.gamedata_get_quest ("demo").get_val ("convince_jelom") == 2:
+            myself.set_schedule_active (0)
+            # -- start Jelom's conversation with the player and Erek
+            jelom = adonthell.gamedata_get_character ("Jelom Rasgar")
+            jelom.launch_action (adonthell.gamedata_player ())
+
+        # -- leave Bjarn's room
         elif myself.get_val ("leave_bjarn") == 1:
-            submap = myself.submap ()
+            goto = myself.get_val ("goto")
+            myself.set_val ("delay", 0)
 
-            # -- in Bjarn's room
-            if submap == 7:
-                myself.set_val ("delay", 0)
-                myself.set_goal (0, 7, STAND_WEST)
+            # -- goto first floor
+            if goto == 9: coords = self.to_1st
+            # -- goto common room
+            else: coords = self.to_common
+
+            if self.index < len (coords):
                 myself.set_val ("leave_bjarn", 2)
+                x, y, dir = coords[self.index]
+                myself.set_goal (x, y, dir)
 
-            # -- in the Cellar
-            elif submap == 4:
-                myself.set_goal (6, 1, STAND_NORTH)
-                myself.set_val ("leave_bjarn", 2)
-
-            # -- hopefully in the common room
+            # -- arrived
             else:
                 myself.set_val ("leave_bjarn", 0)
-                x, y, dir = self.coords[randint (0, 1)]
-                myself.set_goal (x, y, dir)
+                if myself.submap () == 1:
+                    x, y, dir = self.coords[randint (0, 1)]
+                    myself.set_goal (x, y, dir)
+                else:
+                    myself.set_schedule_active (0)
 
             myself.set_val ("todo", 2)
 
@@ -86,6 +111,7 @@ class erek:
             # -- on our way back from bjarn's room
             if myself.get_val ("leave_bjarn") == 2:
                 myself.set_val ("leave_bjarn", 1)
+                self.index = self.index + 1
 
             # -- switch places
             else:

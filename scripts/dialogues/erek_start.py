@@ -39,9 +39,16 @@ class erek_start:
 	    if adonthell.gamedata_get_quest("demo").get_val ("bjarn_door_open") == 2:
 	        erek = adonthell.gamedata_get_character ("Erek Stonebreaker")
 	        from events import switch_submap
+		erek.set_val ("goto", erek.submap ())
 	        switch_submap (self.the_player, 7, 1, 6, 3)
 	        switch_submap (erek, 7, 2, 7, 0)
 	
+	    if adonthell.gamedata_get_quest("demo").get_val ("convince_jelom") == 2:
+	        erek = adonthell.gamedata_get_character ("Erek Stonebreaker")
+	        erek.set_schedule_active (0)
+	        from events import switch_submap
+	        switch_submap (self.the_player, 9, 1, 3, 3)
+	        switch_submap (erek, 9, 2, 4, 0)
 
 
 	def __getattr__ (self, name):

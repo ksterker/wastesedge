@@ -38,6 +38,7 @@ class jelom_2nd:
 	        player.set_schedule ("to_cellar")
 			
 	        erek = adonthell.gamedata_get_character("Erek Stonebreaker")
+	        erek.set_schedule_active (1)
 	        erek.set_schedule ("to_cellar")
 	        erek.set_val ("delay", 45)
 			
@@ -89,11 +90,13 @@ class jelom_2nd:
 				self.player.append (12)
 				self.cont.append (7)
 			self.player.append (-1)
-		elif adonthell.gamedata_get_quest("demo").get_val ("convince_jelom") == 2:
+		else:
 
 			self.color = self.the_npc.get_color()
 			self.npc.append (23)
 			self.cont.append (13)
+			adonthell.gamedata_get_quest("demo").set_val ("convince_jelom" , 3)
+
 			self.player.append (-1)
 
 	def answer23 (self):
