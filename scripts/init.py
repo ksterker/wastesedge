@@ -1,4 +1,4 @@
-# The themes and fonts we'll use
+### The themes and fonts we'll use
 win_manager_add_theme ("original")
 win_manager_add_theme ("silverleaf")
 
