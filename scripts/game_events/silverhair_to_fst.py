@@ -32,9 +32,10 @@ class silverhair_to_fst:
 
     def run (self, submap, x, y, dir, name):
         p = adonthell.gamedata_get_character (name)
-
+        free = adonthell.gamedata_get_quest ("demo").get_val("silverhair_free")
+        
         # -- Jelom not convinced of Silverhair's innocence
-        if p.get_val ("came_from_barn") == 1:
+        if p.get_val ("came_from_barn") == 1 and not free:
             p.stand ()
             p.go_south ()
             p.speak (_("I better leave the way I came."))
