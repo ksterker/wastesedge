@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -17,11 +17,12 @@
 
 from adonthell import WALK_NORTH, WALK_SOUTH, WALK_EAST, WALK_WEST, \
      STAND_NORTH, STAND_SOUTH, STAND_WEST, STAND_EAST
+import schedule 
 import random
 
 def _(message): return message
 
-class sarin:
+class sarin (schedule.speak):
     
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
@@ -32,11 +33,14 @@ class sarin:
         self.min_y = 2
         self.max_y = 6
 
+        # -- make random remarks
         self.speech = [_("Ruffinans, the lot of them!"), \
                        _("How dare they imprison one better than they?"), \
                        _("This is an insult to all of the High Born."), \
                        _("I cannot believe such disrespect. Barbarians!")]
-
+        self.speech_delay = (20, 40)
+        schedule.speak.__init__(self)
+        
     def run (self):
         myself = self.myself
 
@@ -109,12 +113,3 @@ class sarin:
                 myself.set_val ("switch_direction", delay)
 
                 myself.set_val ("todo", 0)
-
-
-        # -- utter a random remark
-        tmp = myself.get_val ("say_something")
-        myself.set_val ("say_something", tmp - 1)
-        if tmp == 0:
-            myself.speak (self.speech[random.randrange (0, 4)])
-            delay = random.randrange (50, 150) * 15
-            myself.set_val ("say_something", delay)

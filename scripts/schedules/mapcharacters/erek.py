@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -16,19 +16,23 @@
 #    He'll also help the player to get into Bjarn's room.
 
 import adonthell
+import schedule
 import random
 
 def _(message): return message
 
-class erek:
+class erek (schedule.speak):
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
 
+        # -- make random remarks
         self.speech = [_("How could they do that to the Master?"), \
                   _("This place is so much different from home."), \
                   _("Who could have taken the gems?")]
-
+        self.speech_delay = (20, 40)
+        schedule.speak.__init__(self)
+        
         # -- the coordinates for normal schedule
         self.coords = \
             [(5, 5, adonthell.STAND_NORTH), \
@@ -148,13 +152,3 @@ class erek:
                 # -- reached our final destination
                 else:
                     myself.set_val ("todo", 0)
-
-
-        # -- do some random babbling
-        tmp = myself.get_val ("say_something")
-        myself.set_val ("say_something", tmp - 1)
-
-        if tmp == 0:
-            myself.speak (self.speech[random.randrange (0, 2)])
-            delay = random.randrange (60, 180) * 15
-            myself.set_val ("say_something", delay)

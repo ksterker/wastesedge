@@ -15,18 +15,23 @@
 #    She'll busy herself in Silverhair's room
 
 import adonthell
+import schedule
 import random
 
 def _(message): return message
 
-class janesta:
+class janesta (schedule.speak):
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
+        
+        # -- make random remarks
         self.speech = [_("Oh, dear. Oh, dear."), \
                        _("What will happen to us if they take the Mistress?"), \
                        _("I must do something about this awful room."), \
                        _("Oh, how do they expect us to live decently in a place like this?")]
+        self.speech_delay = (25, 45)
+        schedule.speak.__init__(self)
 
         self.coords = [(1, 3, adonthell.STAND_NORTH), \
                        (6, 3, adonthell.STAND_NORTH), \
@@ -62,12 +67,3 @@ class janesta:
 
                 myself.set_val ("delay", delay)
                 myself.set_val ("todo", 0)
-
-
-        # -- utter a random remark
-        tmp = myself.get_val ("say_something")
-        myself.set_val ("say_something", tmp - 1)
-        if tmp <= 0:
-            myself.speak (self.speech[random.randrange (0, 4)])
-            delay = random.randrange (50, 75) * 35
-            myself.set_val ("say_something", delay)

@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -16,18 +16,22 @@
 #    From time to time he'll complain about the grandfather clock
 
 import adonthell
+import schedule
 import random
 
 def _(message): return message
 
-class orloth:
+class orloth (schedule.speak):
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
         
+        # -- make random remarks
         self.speech = [_("I gotta clean this mug!"), \
                   _("That barrel is leaking."), \
                   _("I hope they'll find the thief!")]
+        self.speech_delay = (25, 60)
+        schedule.speak.__init__(self)
 
         self.coords = [(10, 3, adonthell.STAND_NORTH), \
                   (3, 5, adonthell.STAND_SOUTH), \
@@ -92,15 +96,6 @@ class orloth:
                     myself.set_val ("say_something", tmp + 75)
 
                 myself.set_val ("todo", 0)
-
-
-        # -- utter a random remark
-        tmp = myself.get_val ("say_something")
-        myself.set_val ("say_something", tmp - 1)
-        if tmp == 0:
-            myself.speak (self.speech[random.randrange (0, 3)])
-            delay = random.randrange (50, 150) * 20
-            myself.set_val ("say_something", delay)
 
 
     # -- put/remove something from the table we're standing next to

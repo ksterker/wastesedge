@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -15,11 +15,12 @@
 #    She just walks around the tree in the yard
 
 import adonthell
+import schedule
 import random
 
 def _(message): return message
 
-class frostbloom:
+class frostbloom (schedule.speak):
     
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
@@ -30,10 +31,13 @@ class frostbloom:
         self.min_y = 21
         self.max_y = 29
 
+        # -- make random remarks
         self.speech = [_("This tree is so inspiring."), \
                   _("I wonder why everybody seems so excited."), \
                   _("Do you know a creature more lovely than the yeti?")]
-
+        self.speech_delay = (20, 55)
+        schedule.speak.__init__(self)
+        
     def run (self):
         myself = self.myself
         
@@ -65,12 +69,3 @@ class frostbloom:
         elif todo == 2:
             if myself.follow_path () == 1:
                 myself.set_val ("todo", 0)
-
-
-        # -- utter a random remark
-        tmp = myself.get_val ("say_something")
-        myself.set_val ("say_something", tmp - 1)
-        if tmp == 0:
-            myself.speak (self.speech[random.randrange (0, 3)])
-            delay = random.randrange (50, 150) * 20
-            myself.set_val ("say_something", delay)

@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -16,17 +16,21 @@
 
 import adonthell
 import random
+import schedule
 
 def _(message): return message
 
-class talan:
+class talan (schedule.speak):
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
         
+        # -- make random remarks
         self.speech = [_("Halt! Who goes there?"), \
                        "\"Ai! laurie lantar lassi surinen ...\"", \
                        _("Nobody may pass through the gate!")]
+        self.speech_delay = (30, 60)
+        schedule.speak.__init__(self)
 
     def run (self):
         # Caching this often used variable for faster access
@@ -60,11 +64,3 @@ class talan:
             if myself.follow_path ():
                 myself.set_val ("delay", random.randrange (25, 50) * 20)
                 myself.set_val ("todo", 0)
-
-        # -- utter a random remark
-        tmp = myself.get_val ("say_something")
-        myself.set_val ("say_something", tmp - 1)
-        if tmp <= 0:
-            myself.speak (self.speech[random.randrange (0, 3)])
-            delay = random.randrange (50, 150) * 20
-            myself.set_val ("say_something", delay)

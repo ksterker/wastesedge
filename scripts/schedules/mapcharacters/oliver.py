@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -16,18 +16,22 @@
 #    When summoned by Orloth, he'll show the player to his room
 
 import adonthell
+import schedule
 import random
 
 def _(message): return message
 
-class oliver:
+class oliver (schedule.speak):
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
         
+        # -- make random remarks
         self.speech = [_("It's so exciting. An Elven Lady, here at Waste's Edge!"), \
                   _("I gotta hurry before mother complains again."), \
                   _("Why can't I have a little dog!?")]
-
+        self.speech_delay = (20, 40)
+        schedule.speak.__init__(self)
+        
         # -- the tiles around Orloth
         self.offsets = [(1,1),(1,-1),(-1,1),(-1,-1),(1,0),(0,1),(-1,0),(0,-1)]
 
@@ -111,13 +115,3 @@ class oliver:
         elif todo == 2:
             if myself.follow_path () == 1:
                 myself.set_val ("todo", 0)
-
-
-        # -- do some random babbling
-        tmp = myself.get_val ("say_something")
-        myself.set_val ("say_something", tmp - 1)
-
-        if tmp == 0:
-            myself.speak (self.speech[random.randrange (0, 3)])
-            delay = random.randrange (80, 160) * 10
-            myself.set_val ("say_something", delay)

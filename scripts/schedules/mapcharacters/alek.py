@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -15,19 +15,23 @@
 #    He'll walk between his table and the bar
 
 import adonthell
+import schedule
 import random
 
 def _(message): return message
 
-class alek:
+class alek (schedule.speak):
     
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
         
+        # -- make random remarks
         self.speech = [_("More Ale!"), \
                        _("I'll cut 'em open like ripe fruits."), \
                        _("They should sort out this business like real men!")]
-
+        self.speech_delay = (20, 40)
+        schedule.speak.__init__(self)
+        
     def run (self):
         myself = self.myself
 
@@ -61,12 +65,3 @@ class alek:
 
                 myself.set_val ("delay", delay)
                 myself.set_val ("todo", 0)
-
-
-        # -- utter a random remark
-        tmp = myself.get_val ("say_something")
-        myself.set_val ("say_something", tmp - 1)
-        if tmp == 0:
-            myself.speak (self.speech[random.randrange (0, 3)])
-            delay = random.randrange (40, 80) * 25
-            myself.set_val ("say_something", delay)

@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Alexandre Courbot <alexandrecourbot@linuxgames.com>
+#  (C) Copyright 2001/2002 Alexandre Courbot <alexandrecourbot@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -16,19 +16,23 @@
 # complaining about her life.
 
 import adonthell
+import schedule
 import random
 
 def _(message): return message
 
-class lucia:
+class lucia (schedule.speak):
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
         
+        # -- make random remarks
         self.speech = [_("When can I finally rest a bit?"), \
                        _("I told Orloth this place would bring us nothing but trouble!"), \
                        _("This smoke! I'm dying!")]
-
+        self.speech_delay = (20, 40)
+        schedule.speak.__init__(self)
+        
         self.coords = [(3, 3, adonthell.STAND_NORTH), \
                   (6, 3, adonthell.STAND_EAST)]
 
@@ -71,13 +75,3 @@ class lucia:
                     myself.set_val ("delay", 1000 + random.randrange (0, 2000))
                                     
                 myself.set_val ("todo", 0)
-
-
-
-        # -- utter a random remark
-        tmp = myself.get_val ("say_something")
-        myself.set_val ("say_something", tmp - 1)
-        if tmp == 0:
-            myself.speak (self.speech[random.randrange (0, 3)])
-            delay = random.randrange (50, 100) * 20
-            myself.set_val ("say_something", delay)

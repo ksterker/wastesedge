@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -15,20 +15,24 @@
 #    He guards the door to Lady Silverhair's room
 
 import adonthell
+import schedule
 import random
 
 # -- pygettext support
 def _(message): return message
 
-class jelom:
+class jelom (schedule.speak):
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
         
+        # -- make random remarks
         self.speech = [_("Someone fetch me a drink!"), \
                        _("That'll teach them fancy Elves a lesson!"), \
                        _("Send them to the cursed island, I say!")]
-
+        self.speech_delay = (30, 60)
+        schedule.speak.__init__(self)
+        
     def run (self):
         myself = self.myself
         
@@ -61,12 +65,3 @@ class jelom:
             if myself.follow_path ():
                 myself.set_val ("delay", random.randrange (30, 60) * 20)
                 myself.set_val ("todo", 0)
-
-
-        # -- utter a random remark
-        tmp = myself.get_val ("say_something")
-        myself.set_val ("say_something", tmp - 1)
-        if tmp <= 0:
-            myself.speak (self.speech[random.randrange (0, 3)])
-            delay = random.randrange (75, 150) * 20
-            myself.set_val ("say_something", delay)

@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -15,18 +15,23 @@
 #    He'll busy himself in his room
 
 import adonthell
+import schedule
 import random
 
 def _(message): return message
 
-class bjarn:
+class bjarn (schedule.speak):
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
+        
+        # -- make random remarks
         self.speech = [_("Ha! A tradesman is an honourable person, they say!"), \
                        _("Why don't they just take that Silverhair woman to prison!?"), \
                        _("Elves! The head in the sky and the mind full of clouds!")]
-
+        self.speech_delay = (20, 40)
+        schedule.speak.__init__(self)
+        
         self.coords = [(7, 5, adonthell.STAND_WEST), \
                        (2, 4, adonthell.STAND_SOUTH), \
                        (7, 3, adonthell.STAND_NORTH), \
@@ -70,12 +75,3 @@ class bjarn:
 
                 myself.set_val ("delay", delay)
                 myself.set_val ("todo", 0)
-
-
-        # -- utter a random remark
-        tmp = myself.get_val ("say_something")
-        myself.set_val ("say_something", tmp - 1)
-        if tmp <= 0:
-            myself.speak (self.speech[random.randint (0, 2)])
-            delay = random.randint (20, 40) * 40
-            myself.set_val ("say_something", delay)

@@ -16,19 +16,22 @@
 
 
 import adonthell
+import schedule
 import random
 
 def _(message): return message
 
-class tristan:
+class tristan (schedule.speak):
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
 
+        # -- make random remarks
         self.speech = [_("Don't they know that I am losing money by the hour!?"), \
                        _("What a fuss about a few worthless gems!"), \
                        _("Ye gods! It cannot be that hard to find the thief!")]
-
+        self.speech_delay = (20, 55)
+        schedule.speak.__init__(self)
 
     def run (self):
         myself = self.myself
@@ -74,13 +77,3 @@ class tristan:
                 # -- reached our final destination
                 else:
                     myself.set_val ("todo", 0)
-
-
-        # -- do some random babbling
-        tmp = myself.get_val ("say_something")
-        myself.set_val ("say_something", tmp - 1)
-
-        if tmp == 0:
-            myself.speak (self.speech[random.randint (0, 2)])
-            delay = random.randint (50, 150) * 22
-            myself.set_val ("say_something", delay)
