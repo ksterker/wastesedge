@@ -17,6 +17,7 @@ Copyright: GPL
 Group: Amusements/Games
 Source: http://freesoftware.fsf.org/download/adonthell/%{name}-%{ver}.tar.gz
 URL: http://adonthell.linuxgames.com
+BuildArch: noarch
 BuildRoot: /tmp/wastesedge
 Requires: adonthell >= %ver
 Prefix: %prefix
@@ -41,7 +42,7 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make prefix=$RPM_BUILD_ROOT%{prefix} bindir=$RPM_BUILD_ROOT%{bindir} gamedatadir=$RPM_BUILD_ROOT%{gamedatadir} install
+make prefix=$RPM_BUILD_ROOT%{prefix} bindir=$RPM_BUILD_ROOT%{bindir} gamedatadir=$RPM_BUILD_ROOT%{gamedatadir} datadir=$RPM_BUILD_ROOT%{datadir} install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
