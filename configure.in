@@ -21,7 +21,7 @@ AC_ARG_WITH(adonthell-binary,
 dnl Checking for Adonthell
 if test x$adonthelldatadir = xnone; then
    AC_PATH_PROG(adonthell_binary, adonthell)
-   if test x$adonthell_binary == x ; then
+   if test x$adonthell_binary = x ; then
        echo "Waste's Edge requires the Adonthell game engine. Exiting..."
        exit 1
    fi
