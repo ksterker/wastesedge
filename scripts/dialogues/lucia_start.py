@@ -154,7 +154,7 @@ class lucia_start (dialogue.base):
 		"adonthell.gamedata_get_quest(\"demo\").set_val (\"know_talan_singing\" , 1)\n",\
 		"self.talked_about_fingolson = 1\nself.asked_about_noise = 1\n",\
 		"adonthell.gamedata_get_quest(\"demo\").set_val (\"pantry_locked\" , 2)\n",\
-		"self.the_npc.set_val (\"refuses_key\" , 1)\n",\
+		"self.the_npc.set_val (\"refuses_key\" , 1)\nadonthell.gamedata_get_quest(\"demo\").set_val (\"soothe_lucia\" , 1)\n",\
 		"adonthell.gamedata_get_quest(\"demo\").set_val (\"soothe_lucia\" , 0)\nadonthell.gamedata_get_quest(\"demo\").set_val (\"told_on_talan\" , 3)\nadonthell.gamedata_get_quest(\"demo\").set_val (\"pantry_locked\" , 2)\n"]
 
 	# -- (speaker, code, ((text, operation, condition), ...))
@@ -269,7 +269,7 @@ class lucia_start (dialogue.base):
 		("Default", -1, ((108, 0, -1), )),\
 		("Narrator", -1, ()),\
 		(None, -1, ((110, 0, -1), )),\
-		("Default", 10, ((95, 0, -1), (111, 0, -1), )),\
+		("Default", 10, ((117, 0, 13), (95, 0, -1), (111, 0, -1), )),\
 		(None, -1, ((112, 0, -1), )),\
 		("Default", -1, ((113, 0, -1), (115, 0, -1), )),\
 		(None, -1, ((114, 0, -1), )),\
