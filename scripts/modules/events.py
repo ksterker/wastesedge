@@ -45,7 +45,6 @@ def fade_in ():
 def switch_submap (mychar, x, y, submap, dir):
     if mychar.is_schedule_activated ():
         mychar.set_schedule_active (0)
-        mychar.stand ()
         schedule_active = 1
     else:
         schedule_active = 0
