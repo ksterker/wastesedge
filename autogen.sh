@@ -30,6 +30,6 @@ fi
 autoconf 
 
 echo
-echo "Now type './configure' to prepare Adonthell for compilation."
-echo "Afterwards, 'make' will build Adonthell."
+echo "Now type './configure' to prepare Waste's Edge for compilation."
+echo "Afterwards, 'make install' will install it."
 echo
