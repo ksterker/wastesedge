@@ -237,7 +237,7 @@ class talan_start:
 		self.player.append (-1)
 
 	def answer57 (self):
-		if quests["demo"].get_val( "know_jelom" ) != 2:
+		if adonthell.gamedata_get_quest("demo").get_val ("know_jelom") != 2:
 
 			self.color = self.the_npc.get_color()
 			self.npc.append (38)
@@ -277,7 +277,7 @@ class talan_start:
 		self.player.append (-1)
 
 	def answer37 (self):
-		if quests["demo"].get_val( "know_jelom" ) != 2:
+		if adonthell.gamedata_get_quest("demo").get_val ("know_jelom") != 2:
 
 			self.color = self.the_npc.get_color()
 			self.npc.append (38)
