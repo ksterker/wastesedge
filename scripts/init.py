@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.57 2001/10/17 14:27:28 adondev Exp $
+#  $Id: init.py,v 1.58 2001/10/17 20:58:08 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -985,6 +985,7 @@ class title_screen:
         bjarn.jump_to (7, 3, 6)
         bjarn.set_action ("talk")
         bjarn.stand_west ()
+        bjarn.set_schedule ("bjarn")
         bjarn.set_portrait ("bjarn.pnm")
 
         silverhair = gamedata_get_character ("Imoen Silverhair")
