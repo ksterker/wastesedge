@@ -92,8 +92,11 @@ bubbg[1].load_raw ("gfx/cutscene/intro_guard.img")
 bubbg[2].load_raw ("gfx/cutscene/intro_player.img")
 
 # Text for the speech
+if gamedata_player () != None: myname = gamedata_player ().get_name ()
+else: myname = "Banec"
+
 bubtext = (("Halt! Stand and declare yourself, stranger!", "red", 25, 5, 350, 1),
-           ("I am $name, come as an agent for my employer. Tell me, is this the trading \
+           ("I am " + myname + ", come as an agent for my employer. Tell me, is this the trading \
 post of Waste's Edge?", "yellow", 130, 5, 500, 2),
            ("That it is, but this is all you'll see of it.", "red", 25, 5, 300, 1),
            ("If you turn now and make haste, you should be able to make safe camping \
