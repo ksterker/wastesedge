@@ -2,7 +2,7 @@ SUBDIRS = . audio gfx maps scripts
 
 pkgdatadir = $(gamedatadir)
 
-pkgdata_DATA = gamename.txt character.data mapengine.data quest.data
+pkgdata_DATA = gamename.txt character.data mapengine.data quest.data audio.data PLAYING
 
 EXTRA_DIST = $(pkgdata_DATA)
 
