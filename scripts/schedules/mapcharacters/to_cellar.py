@@ -31,7 +31,7 @@ class to_cellar:
             (6, 6, adonthell.STAND_SOUTH), \
             (10, 7, adonthell.STAND_EAST), \
             (4, 7, adonthell.STAND_SOUTH), \
-            (6, 6, adonthell.STAND_SOUTH), \
+            (6, 6, adonthell.STAND_EAST), \
             (-1, -1, -1), \
             (7, 3, adonthell.STAND_EAST), \
             (8, 1, adonthell.STAND_NORTH), \
@@ -67,7 +67,7 @@ class to_cellar:
                 x = random.randint (1, 4)
                 y = random.randint (5, 9)
 
-                while not submap.get_square (x, y).is_free ():
+                while not submap.get_square (x, y).is_free () or (y == 5 and x > 2):
                     x = random.randint (1, 4)
                     y = random.randint (5, 9)
 

@@ -22,6 +22,10 @@ class extro:
 	def clear (self):
 		del self.dialogue
 
+	def __del__(self):
+	    adonthell.gamedata_player ().set_schedule ("extro")
+
+
 	def __getattr__ (self, name):
 		return 0
 
