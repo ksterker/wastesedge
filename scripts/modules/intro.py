@@ -99,7 +99,7 @@ was now only a day\nahead.  The thought nearly caused me\nto forget \
 the harshness of the road.",
            "Still, Waste's Edge was a welcome sight.",
            "As you approach the trading post, there\nseems to be little sign of life.      \
-           \nEventually you find the Redwyne Inn,\nwhich seems to be the main building\nhere.",
+           \n       \nEventually you find the Redwyne Inn,\nwhich seems to be the main building\nhere.",
            "The heavy wooden doors are closed,\nand no one is there \
 to let you in. As you\napproach the gate, you suddenly hear a voice from within.",
            "                      \nSuddenly, it looked like the day would\nbe harder than I thought ...")

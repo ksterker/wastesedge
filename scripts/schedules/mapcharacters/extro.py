@@ -86,6 +86,7 @@ class extro:
             ("produced by:", 1), \
             ("the Adonthell team", 3), \
             ("executive producers:", 1), \
+            ("Sourceforge.net", 1), \
             ("GNU Savannah", 1), \
             ("Linuxgames.com", 5), \
             ("cast:", 1), \
