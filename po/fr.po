@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wasstesedge 0.3.2\n"
-"POT-Creation-Date: 2002-09-15 18:00+0200\n"
+"POT-Creation-Date: 2002-09-15 10:32+0200\n"
 "PO-Revision-Date: 2002-04-14 13:32+0200\n"
 "Last-Translator: Alexandre Courbot <alexandrecourbot@linuxgames.com>\n"
 "Language-Team: French <alexandrecourbot@linuxgames.com>\n"

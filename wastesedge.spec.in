@@ -3,10 +3,10 @@
 
 %define ver         @VERSION@
 %define rel         1
-%define prefix      @prefix@
+%define prefix      /usr
 %define name        @PACKAGE@
-%define bindir      @prefix@/bin
-%define datadir     @prefix@/share
+%define bindir      %prefix/bin
+%define datadir     %prefix/share
 %define gamedatadir @gamedatadir@
 
 Summary: Official game package for Adonthell %ver
@@ -17,7 +17,7 @@ Copyright: GPL
 Group: Amusements/Games
 Source: http://freesoftware.fsf.org/download/adonthell/%{name}-%{ver}.tar.gz
 URL: http://adonthell.linuxgames.com
-BuildRoot: /tmp/adonthell
+BuildRoot: /tmp/wastesedge
 Requires: adonthell >= %ver
 Prefix: %prefix
 Docdir: %{prefix}/doc

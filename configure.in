@@ -37,11 +37,20 @@ dnl Checking for Adonthell
 if test x$adonthelldatadir = xnone; then
    AC_PATH_PROG(adonthell_binary, adonthell)
    if test x$adonthell_binary = x ; then
-       echo "Waste's Edge requires the Adonthell game engine. Exiting ..."
+       echo "*** Waste's Edge requires the Adonthell game engine. Exiting ..."
        exit 1
    fi
-else 
+else
    echo "Using $adonthell_binary as the Adonthell binary"
+fi
+
+dnl Checking for the proper version
+AC_MSG_CHECKING(for Adonthell's version)
+adonthellver=`$adonthell_binary -v`
+AC_MSG_RESULT($adonthellver)
+if test x$adonthellver != x0.3.3 ; then
+   echo "*** This version of Waste's Edge requires Adonthell v0.3.3!"
+   exit 1
 fi
 
 dnl Checking for the Adonthell data directory

@@ -20,7 +20,7 @@ Installation:
 See the INSTALL file for details.
 
 Note that this package is designed to run along with the adonthell
-game engine version 0.3. Therefore, you need it installed or you'll
+game engine version 0.3.3. Therefore, you need it installed or you'll
 be stuck at configure time. If you don't have it, download it from
 http://adonthell.linuxgames.com/download/.
 
