@@ -17,6 +17,9 @@ import events
 
 class extro:
     def __init__(self, mapchar):
+        # -- deactivate game controls
+        adonthell.gamedata_engine ().set_control_active (0)
+        
         # -- grab the character's we need
         bjarn = adonthell.gamedata_get_character ("Bjarn Fingolson")
         erek = adonthell.gamedata_get_character ("Erek Stonebreaker")
@@ -515,7 +518,10 @@ class extro:
         self.x = [0, 0, 0]  # -- offsets of the 3 forest pics
 
         adonthell.gamedata_engine ().main (self.window, 'fmv')
-
+        
+        # -- quit!
+        adonthell.gamedata_engine ().main_quit ()
+        
     def forest_animation (self):
         # -- animate
         update = 0
