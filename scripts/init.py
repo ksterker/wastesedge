@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.64 2001/11/01 22:05:11 adondev Exp $
+#  $Id: init.py,v 1.65 2001/11/02 14:25:40 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -179,7 +179,7 @@ class title_screen:
             # gamedata_load (0)
             gamedata_load_characters (0)
             gamedata_load_quests (0)
-            adonthell.gamedata_player ().rename (cs.name)
+            adonthell.gamedata_player ().set_name (cs.name)
                 
             # -- on to the intro
             self.play_intro ()
@@ -223,13 +223,14 @@ class title_screen:
         player = gamedata_player ()
         player.set_val ("gender", MALE)
         player.set_val ("race", HALFELF)
+        player.set_val ("type", PLAYER)
         player.load ("player.mchar")
         player.set_map (lm)
         player.jump_to (0, 4, 18)
         player.stand_east ()
         player.set_schedule ("intro")
         
-        gamedata_engine ().set_mapview_schedule ("center_character", (player.get_name (),))
+        gamedata_engine ().set_mapview_schedule ("center_character", (player.get_id (),))
 
         # Setting up the map events
         # Teleport events
@@ -700,7 +701,7 @@ class title_screen:
         ev.x = 10
         ev.y = 2
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "That clock seems to be late!"))
         lm.add_event (ev)
 
@@ -710,7 +711,7 @@ class title_screen:
         ev.x = 3
         ev.y = 6
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "I'd better not touch this... What if it explodes??"))
         lm.add_event (ev)
 
@@ -720,7 +721,7 @@ class title_screen:
         ev.x = 4
         ev.y = 6
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "I'd better not touch this... What if it explodes??"))
         lm.add_event (ev)
 
@@ -730,7 +731,7 @@ class title_screen:
         ev.x = 2
         ev.y = 5
         ev.dir = STAND_EAST
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "I'd better not touch this... What if it explodes??"))
         lm.add_event (ev)
 
@@ -740,7 +741,7 @@ class title_screen:
         ev.x = 5
         ev.y = 5
         ev.dir = STAND_WEST
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "I'd better not touch this... What if it explodes??"))
         lm.add_event (ev)
 
@@ -750,7 +751,7 @@ class title_screen:
         ev.x = 3
         ev.y = 4
         ev.dir = STAND_SOUTH
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "I'd better not touch this... What if it explodes??"))
         lm.add_event (ev)
 
@@ -760,7 +761,7 @@ class title_screen:
         ev.x = 4
         ev.y = 4
         ev.dir = STAND_SOUTH
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "I'd better not touch this... What if it explodes??"))
         lm.add_event (ev)
 
@@ -770,7 +771,7 @@ class title_screen:
         ev.x = 6
         ev.y = 17
         ev.dir = STAND_WEST
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "Closed. We are all imprisoned here..."))
         lm.add_event (ev)
 
@@ -780,7 +781,7 @@ class title_screen:
         ev.x = 6
         ev.y = 18
         ev.dir = STAND_WEST
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "Closed. We are all imprisoned here..."))
         lm.add_event (ev)
 
@@ -790,7 +791,7 @@ class title_screen:
         ev.x = 6
         ev.y = 19
         ev.dir = STAND_WEST
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "Closed. We are all imprisoned here..."))
         lm.add_event (ev)
 
@@ -800,7 +801,7 @@ class title_screen:
         ev.x = 1
         ev.y = 6
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "It's locked."))
         lm.add_event (ev)
 
@@ -810,7 +811,7 @@ class title_screen:
         ev.x = 2
         ev.y = 5
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "It's locked."))
         lm.add_event (ev)
 
@@ -820,7 +821,7 @@ class title_screen:
         ev.x = 6
         ev.y = 4
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "It's locked."))
         lm.add_event (ev)
 
@@ -830,7 +831,7 @@ class title_screen:
         ev.x = 6
         ev.y = 8
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "It's locked."))
         lm.add_event (ev)
 
@@ -840,7 +841,7 @@ class title_screen:
         ev.x = 1
         ev.y = 4
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "It's locked."))
         lm.add_event (ev)
 
@@ -850,7 +851,7 @@ class title_screen:
         ev.x = 7
         ev.y = 3
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "I doubt Master Fingolson would be happy if I go through his things..."))
         lm.add_event (ev)
 
@@ -860,7 +861,7 @@ class title_screen:
         ev.x = 1
         ev.y = 6
         ev.dir = STAND_NORTH
-        ev.set_script ("character_speak", (player.get_name (), \
+        ev.set_script ("character_speak", (player.get_id (), \
                                            "Well, I can't dig into my mistress' shelf!"))
         lm.add_event (ev)
 
