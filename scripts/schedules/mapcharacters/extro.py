@@ -32,7 +32,7 @@ class extro:
             (jelom, "But why? And where are the gems then?"), \
             (bjarn, "Why? Haven't I made myself clear already?"), \
             (bjarn, "I despise those Elves and their uncanny ways."), \
-            (bjarn, "Their ... meddling with reality contradicts all principles I learned to hold true."), \
+            (bjarn, "Their ... meddling with reality contradicts all principles I learnt to hold true."), \
             (bjarn, "And yet, I had to provide them with the reagents they need to perform their dark art."), \
             (bjarn, "I felt so ... ashamed!"), \
             (player, "And you believe that justifies the discomfort you caused my mistress?"), \
@@ -81,7 +81,7 @@ class extro:
             ("Kai Sterker", 1), \
             ("Mike Nieforth", 1), \
             ("Josh Glover", 3), \
-            ("based on an orignal idea by:", 1), \
+            ("based on an original idea by:", 1), \
             ("Kai Sterker", 3), \
             ("produced by:", 1), \
             ("the Adonthell team", 3), \
@@ -141,6 +141,8 @@ class extro:
             ("John Havard", 1), \
             ("James Nash", 3), \
             ("soundtrack available on:", 1), \
+            (adonthell.gamedata_game_data_dir () + "/audio", 3), \
+            ("more music available on:", 1), \
             ("http://zhaymusic.com/...", 3), \
             ("the Adonthell team whishes to thank:", 2), \
             ("Al Koskelin", 1), \
@@ -152,7 +154,7 @@ class extro:
             ("Meandus", 1), \
             ("Deniz Oezsen", 2), \
             ("The people behind SDL, Ogg Vorbis,", 1), \
-            ("Python and all the other Free", 1), \
+            ("Python, SWIG and all the other Free", 1), \
             ("Software developers whose work", 1), \
             ("made Adonthell possible", 3), \
             ("career portal:", 1), \
@@ -160,7 +162,7 @@ class extro:
             ("No Yetis were harmed during\n the production of this game", 5), \
             ("presented in", 2), \
             ("Ogg Vorbis Stereo", 1), \
-            ("(where available)", 7), \
+            ("(where available)", 13), \
             ("The END", 6), \
             ("Joel, you are fired!", -1)]
             
