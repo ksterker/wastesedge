@@ -1,5 +1,5 @@
 #
-#  $Id: intro.py,v 1.3 2001/10/29 17:04:26 adondev Exp $
+#  $Id: intro.py,v 1.4 2001/12/15 11:40:22 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -85,7 +85,7 @@ class intro:
 
             # Update squares walkability
             sm = adonthell.gamedata_engine ().get_landmap ().get_submap (0)
-            sm.get_square (6, 17).set_walkable_south (1)
+            sm.get_square (6, 17).set_walkable (0)
             sm.get_square (7, 17).set_walkable_south (1)
             sm.get_square (6, 18).set_walkable_west (0)
             sm.get_square (6, 19).set_walkable_west (0)

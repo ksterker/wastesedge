@@ -1,5 +1,5 @@
 #
-#  $Id: keyboard_control.py,v 1.5 2001/11/01 22:05:13 adondev Exp $
+#  $Id: keyboard_control.py,v 1.6 2001/12/15 11:40:22 adondev Exp $
 #
 #  (C) Copyright 2001 Alexandre Courbot
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -54,7 +54,7 @@ class keyboard_control:
 
             # Update squares walkability
             sm = gamedata_engine ().get_landmap ().get_submap (0)
-            sm.get_square (6, 17).set_walkable_south (1)
+            sm.get_square (6, 17).set_walkable (0)
             sm.get_square (7, 17).set_walkable_south (1)
             sm.get_square (6, 18).set_walkable_west (0)
             sm.get_square (6, 19).set_walkable_west (0)
