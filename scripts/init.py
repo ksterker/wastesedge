@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.84 2002/01/23 19:08:08 adondev Exp $
+#  $Id: init.py,v 1.85 2002/01/25 21:57:19 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -1352,6 +1352,7 @@ class title_screen:
         silverhair.set_map (gamedata_engine ().get_landmap ())
         silverhair.jump_to (13, 4, 4)
         silverhair.set_action ("talk")
+        silverhair.set_color (4)
         silverhair.stand_south ()
         silverhair.set_schedule ("silverhair")
         silverhair.set_portrait ("silverhair.pnm")

@@ -348,7 +348,7 @@ class talan_start:
 		self.cont.append (-1)
 		self.player.append (23)
 		self.cont.append (11)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_noise") == 2:
+		if adonthell.gamedata_get_quest("demo").get_val ("know_noise") & 2 == 2:
 
 			self.player.append (77)
 			self.cont.append (42)
@@ -451,14 +451,13 @@ class talan_start:
 		self.color = self.the_npc.get_color()
 		self.npc.append (21)
 		self.cont.append (-1)
+		adonthell.gamedata_get_quest("demo").set_val ("know_talan_singing" , 2)
+
 		self.player.append (22)
 		self.cont.append (-1)
 		self.player.append (-1)
 
 	def answer22 (self):
-		adonthell.gamedata_get_quest("demo").set_val ("know_talan_singing" , 2)
-		
-
 		pass
 
 	def answer77 (self):

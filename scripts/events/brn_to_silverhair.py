@@ -10,7 +10,8 @@
 #  See the COPYING file for more details
 #
 
-# -- Map Event to teleport a character from the barn into Silverhair's room
+# -- Map Event to teleport a character from the veranda into 
+#    Silverhair's room
 
 import adonthell
 import events
@@ -38,4 +39,9 @@ class brn_to_silverhair:
 
         p.stand ()
         p.go_west ()
-        adonthell.gamedata_get_character ("Imoen Silverhair").launch_action (p)
+        
+        silverhair = adonthell.gamedata_get_character ("Imoen Silverhair")
+        
+        # -- only initiate dialogue the first time the player enters
+        if silverhair.get_val ("talked_to") == 0:
+            silverhair.launch_action (p)

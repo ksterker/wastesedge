@@ -324,6 +324,8 @@ class erek_start:
 		self.color = adonthell.gamedata_get_character("Imoen Silverhair").get_color()
 		self.npc.append (24)
 		self.cont.append (15)
+		adonthell.gamedata_get_quest("demo").set_val ("know_argument" , 1)
+
 		self.player.append (-1)
 
 	def answer24 (self):
@@ -670,6 +672,8 @@ class erek_start:
 		self.color = adonthell.gamedata_get_character("Imoen Silverhair").get_color()
 		self.npc.append (24)
 		self.cont.append (15)
+		adonthell.gamedata_get_quest("demo").set_val ("know_argument" , 1)
+
 		self.player.append (-1)
 
 	def answer22 (self):
@@ -695,6 +699,8 @@ class erek_start:
 		self.color = adonthell.gamedata_get_character("Imoen Silverhair").get_color()
 		self.npc.append (24)
 		self.cont.append (15)
+		adonthell.gamedata_get_quest("demo").set_val ("know_argument" , 1)
+
 		self.player.append (-1)
 
 	def answer13 (self):
