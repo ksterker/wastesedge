@@ -32,7 +32,7 @@ class extro:
             (bjarn, 1, "Why? Haven't I made myself clear already?"), \
             (bjarn, 1, "I despise those Elves and their uncanny ways."), \
             (bjarn, 1, "Their ... meddling with reality contradicts all principles I learned to hold true."), \
-            (bjarn, 1, "And yet, I had to provide them with the reagents they needed to perform their dark art."), \
+            (bjarn, 1, "And yet, I had to provide them with the reagents they need to perform their dark art."), \
             (bjarn, 1, "I felt so ... ashamed!"), \
             (player, 1, "And you believe that justifies the discomfort you caused my mistress?"), \
             (bjarn, 1, "You cannot think further than your mistress, can you?"), \
@@ -125,14 +125,16 @@ class extro:
         
         # -- Talan bursts in
         elif self.index == 23 and self.done == 0:
+            self.bubble = None
             bjarn = self.text[2][0]
             bjarn.go_south ()
             bjarn.load ('bjarn_crying.mchar')
             
             import events
             talan = adonthell.gamedata_get_character ('Talan Wendth')
-            events.switch_submap (talan, 7, 1, 7, adonthell.STAND_EAST)
+            events.switch_submap (talan, 7, 1, 6, adonthell.STAND_EAST)
             talan.go_east ()
+            talan.stand_south ()
             self.done = 1
         
         elif self.index == 34 and self.bubble == None:
@@ -354,8 +356,8 @@ class extro:
             
         elif self.step == 801:
             self.done = 0
-            adonthell.gamedata_player ().set_schedule_active (1)
             adonthell.gamedata_engine ().main_quit ()
+            adonthell.gamedata_player ().set_schedule_active (1)
         
     # -- forest sequence
     def fade_to_forest (self):
@@ -417,7 +419,6 @@ class extro:
         # -- misc stuff
         self.step = 0       # -- for the extro control
         self.anim = 0       # -- for the forest animation control
-        # self.done = 1
         self.index = 0      # -- index in the typeover array       
         self.delay = 0      # -- delay before adding new text
         self.cursor = 0     # -- cursor in the typeover text
@@ -431,7 +432,7 @@ class extro:
         self.anim = self.anim + 1
         if self.anim % 2 == 0:
             update = 1
-            self.x[0] = self.update_wood (self.wood1, self.x[0])
+            self.x[2] = self.update_wood (self.wood3, self.x[2])
         
         if self.anim % 3 == 0:
             update = 1
@@ -439,8 +440,7 @@ class extro:
         
         if self.anim % 4 == 0:
             update = 1
-            self.x[1] = self.update_wood (self.wood2, self.x[1])
-            self.x[2] = self.update_wood (self.wood3, self.x[2])
+            self.x[0] = self.update_wood (self.wood1, self.x[0])
         
         # -- draw
         if update == 1:
@@ -466,13 +466,17 @@ class extro:
                     
                     if self.delay >= 10:
                         if self.cursor == 0: self.label.set_text ("")
-                        self.label.add_text (self.typeover[self.index][self.cursor])
+                        txt = self.typeover[self.index][self.cursor]
+                        self.label.add_text (txt)
                         self.cursor = self.cursor + 1
-                        self.delay = 0
+                        
+                        # -- little pause at the end of a sentence
+                        if txt == '.': self.delay = -50
+                        else: self.delay = 0
                 else:
                     self.index = self.index + 1
                     self.cursor = 0
-                    self.delay = -500
+                    self.delay = -450
             else:
                 self.delay = 0
                 self.step = 2
