@@ -132,10 +132,12 @@ class talan_start:
 		self.color = self.the_npc.get_color()
 		self.npc.append (3)
 		self.cont.append (-1)
-		self.player.append (76)
-		self.cont.append (41)
 		self.player.append (75)
 		self.cont.append (40)
+		if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
+
+			self.player.append (76)
+			self.cont.append (41)
 		if adonthell.gamedata_get_quest("demo").get_val ("know_alek_eavesdrop") == 1:
 
 			self.player.append (10)
@@ -156,14 +158,161 @@ class talan_start:
 		self.cont.append (-1)
 		self.player.append (75)
 		self.cont.append (40)
-		self.player.append (76)
-		self.cont.append (41)
+		if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") != 2:
+
+			self.player.append (76)
+			self.cont.append (41)
 		self.player.append (-1)
 
 	def answer9 (self):
 		pass
 
-	def answer75 (self):
+	def answer76 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (7)
+		self.cont.append (4)
+		self.the_npc.set_val ("heard_nothing" , 1)
+
+		self.loop.append (7)
+		self.player.append (-1)
+
+	def answer7 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (8)
+		self.cont.append (-1)
+		self.player.append (9)
+		self.cont.append (-1)
+		self.player.append (23)
+		self.cont.append (11)
+		if adonthell.gamedata_get_quest("demo").get_val ("know_noise") & 2 == 2:
+
+			self.player.append (77)
+			self.cont.append (42)
+		if adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") == 1:
+
+			self.player.append (67)
+			self.cont.append (36)
+		if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 1 and adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") != 1:
+
+			self.player.append (54)
+			self.cont.append (25)
+		if adonthell.gamedata_get_quest("demo").get_val ("know_alek_eavesdrop") == 1:
+
+			self.player.append (10)
+			self.cont.append (5)
+		self.player.append (-1)
+
+	def answer54 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (14)
+		self.cont.append (-1)
+		self.player.append (15)
+		self.cont.append (8)
+		self.player.append (63)
+		self.cont.append (33)
+		self.player.append (-1)
+
+	def answer63 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (65)
+		self.cont.append (-1)
+		self.player.append (66)
+		self.cont.append (35)
+		if adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") == 1:
+
+			self.player.append (67)
+			self.cont.append (36)
+		self.player.append (-1)
+
+	def answer66 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (17)
+		self.cont.append (-1)
+		self.player.append (18)
+		self.cont.append (9)
+		self.player.append (-1)
+
+	def answer18 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (19)
+		self.cont.append (-1)
+		self.player.append (70)
+		self.cont.append (37)
+		self.player.append (-1)
+
+	def answer70 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (71)
+		self.cont.append (-1)
+		adonthell.gamedata_get_quest("demo").set_val ("know_talan_singing" , 2)
+
+		self.player.append (-1)
+
+	def answer15 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (16)
+		self.cont.append (-1)
+		self.player.append (64)
+		self.cont.append (34)
+		self.player.append (63)
+		self.cont.append (33)
+		self.player.append (-1)
+
+	def answer64 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (17)
+		self.cont.append (-1)
+		self.player.append (18)
+		self.cont.append (9)
+		self.player.append (-1)
+
+	def answer67 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (68)
+		self.cont.append (-1)
+		if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 1:
+
+			self.player.append (20)
+			self.cont.append (10)
+		else:
+
+			self.player.append (69)
+			self.cont.append (-1)
+		self.player.append (-1)
+
+	def answer69 (self):
+		pass
+
+	def answer20 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (21)
+		self.cont.append (-1)
+		adonthell.gamedata_get_quest("demo").set_val ("know_talan_singing" , 2)
+
+		self.player.append (22)
+		self.cont.append (-1)
+		self.player.append (-1)
+
+	def answer22 (self):
+		pass
+
+	def answer77 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (78)
+		self.cont.append (43)
+		self.player.append (-1)
+
+	def answer78 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (79)
+		self.cont.append (-1)
+		if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 1:
+
+			self.player.append (20)
+			self.cont.append (10)
+		self.player.append (-1)
+
+	def answer23 (self):
 		self.color = self.the_npc.get_color()
 		self.npc.append (24)
 		self.cont.append (-1)
@@ -331,152 +480,7 @@ class talan_start:
 		self.cont.append (16)
 		self.player.append (-1)
 
-	def answer76 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (7)
-		self.cont.append (4)
-		self.the_npc.set_val ("heard_nothing" , 1)
-
-		self.loop.append (7)
-		self.player.append (-1)
-
-	def answer7 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (8)
-		self.cont.append (-1)
-		self.player.append (9)
-		self.cont.append (-1)
-		self.player.append (23)
-		self.cont.append (11)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_noise") & 2 == 2:
-
-			self.player.append (77)
-			self.cont.append (42)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") == 1:
-
-			self.player.append (67)
-			self.cont.append (36)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 1 and adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") != 1:
-
-			self.player.append (54)
-			self.cont.append (25)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_alek_eavesdrop") == 1:
-
-			self.player.append (10)
-			self.cont.append (5)
-		self.player.append (-1)
-
-	def answer54 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (14)
-		self.cont.append (-1)
-		self.player.append (15)
-		self.cont.append (8)
-		self.player.append (63)
-		self.cont.append (33)
-		self.player.append (-1)
-
-	def answer63 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (65)
-		self.cont.append (-1)
-		self.player.append (66)
-		self.cont.append (35)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_olivers_noise") == 1:
-
-			self.player.append (67)
-			self.cont.append (36)
-		self.player.append (-1)
-
-	def answer66 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (17)
-		self.cont.append (-1)
-		self.player.append (18)
-		self.cont.append (9)
-		self.player.append (-1)
-
-	def answer18 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (19)
-		self.cont.append (-1)
-		self.player.append (70)
-		self.cont.append (37)
-		self.player.append (-1)
-
-	def answer70 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (71)
-		self.cont.append (-1)
-		adonthell.gamedata_get_quest("demo").set_val ("know_talan_singing" , 2)
-
-		self.player.append (-1)
-
-	def answer15 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (16)
-		self.cont.append (-1)
-		self.player.append (64)
-		self.cont.append (34)
-		self.player.append (63)
-		self.cont.append (33)
-		self.player.append (-1)
-
-	def answer64 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (17)
-		self.cont.append (-1)
-		self.player.append (18)
-		self.cont.append (9)
-		self.player.append (-1)
-
-	def answer67 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (68)
-		self.cont.append (-1)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 1:
-
-			self.player.append (20)
-			self.cont.append (10)
-		else:
-
-			self.player.append (69)
-			self.cont.append (-1)
-		self.player.append (-1)
-
-	def answer69 (self):
-		pass
-
-	def answer20 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (21)
-		self.cont.append (-1)
-		adonthell.gamedata_get_quest("demo").set_val ("know_talan_singing" , 2)
-
-		self.player.append (22)
-		self.cont.append (-1)
-		self.player.append (-1)
-
-	def answer22 (self):
-		pass
-
-	def answer77 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (78)
-		self.cont.append (43)
-		self.player.append (-1)
-
-	def answer78 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (79)
-		self.cont.append (-1)
-		if adonthell.gamedata_get_quest("demo").get_val ("know_talan_singing") == 1:
-
-			self.player.append (20)
-			self.cont.append (10)
-		self.player.append (-1)
-
-	def answer23 (self):
+	def answer75 (self):
 		self.color = self.the_npc.get_color()
 		self.npc.append (24)
 		self.cont.append (-1)
