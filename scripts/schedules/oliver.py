@@ -50,21 +50,23 @@ elif myself.get_val ("goto_players_room") == 3:
 # -- leave the player's room and goto the barn
 elif myself.get_val ("goto_barn") == 1:
     location = myself.submap ()
+    myself.set_val ("goto_barn", 2)
 
     # -- Player's room
     if location == 12:
         myself.set_goal (5, 1, NO_MOVE)
-        myself.set_val ("goto_barn", 2)
 
     # -- First floor
     elif location == 9:
         myself.set_goal (8, 1, NO_MOVE)
-        myself.set_val ("goto_barn", 2)
+
+    # -- Second floor (this shouldn't happen, but it once did ...)
+    elif location == 14:
+        myself.set_goal (4, 1, NO_MOVE)
 
     # -- Common Room
     elif location == 1:
         myself.set_goal (13, 8, NO_MOVE)
-        myself.set_val ("goto_barn", 2)
 
     # -- Yard, our final goal (for now)
     elif location == 0:
