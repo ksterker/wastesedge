@@ -91,7 +91,7 @@ class console (win_container):
     def on_update (self):
         
         # -- quit
-        if input_has_been_pushed (SDLK_ESCAPE):
+        if input_has_been_pushed (SDLK_TAB):
             # print "Quitting ..."
             self.quit = 0
 
@@ -120,7 +120,11 @@ class console (win_container):
         dir = dir + "/history"
 
         # -- try to open the file
-        file = open (dir, 'r')
+        try:
+            file = open (dir, 'r')
+        except IOError:
+            return
+
         if file != None:
             self.history = file.readlines ()
             self.hist_idx = len (self.history)

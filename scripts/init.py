@@ -470,6 +470,59 @@ if retval < 5:
         orloth.stand_south ()
         orloth.set_schedule ("orloth")
 
+        # erek = characters ["Erek Stonebreaker"]
+        # erek.set_dialogue ("dialogues/erek_start")
+        # erek.load ("erek.mchar")
+        # erek.set_map (map_engine.get_landmap ())
+        # erek.jump_to (1, 5, 5)
+        # erek.set_action ("action_talk")
+        # erek.stand_north ()
+
+        oliver = characters ["Oliver Redwyne"]
+        oliver.load ("oliver.mchar")
+        oliver.set_map (map_engine.get_landmap ())
+        oliver.jump_to (0, 25, 15)
+        oliver.set_action ("action_talk")
+        oliver.stand_west ()
+
+        frostbloom = characters ["Rhayne Frostbloom"]
+        frostbloom.load ("frostbloom.mchar")
+        frostbloom.set_map (map_engine.get_landmap ())
+        frostbloom.jump_to (0, 18, 22)
+        frostbloom.set_action ("action_talk")
+        frostbloom.stand_north ()
+
+        bjarn = characters ["Bjarn Fingolson"]
+        bjarn.set_dialogue ("dialogues/bjarn_start")
+        bjarn.load ("bjarn.mchar")
+        bjarn.set_map (map_engine.get_landmap ())
+        bjarn.jump_to (7, 3, 6)
+        bjarn.set_action ("action_talk")
+        bjarn.stand_west ()
+
+        silverhair = characters ["Imoen Silverhair"]
+        silverhair.load ("silverhair.mchar")
+        silverhair.set_map (map_engine.get_landmap ())
+        silverhair.jump_to (13, 4, 6)
+        silverhair.set_action ("action_talk")
+        silverhair.stand_north ()
+
+        sarin = characters ["Sarin Trailfollower"]
+        sarin.set_dialogue ("dialogues/sarin_start")
+        sarin.load ("servant2.mchar")
+        sarin.set_map (map_engine.get_landmap ())
+        sarin.jump_to (13, 7, 3)
+        sarin.set_action ("action_talk")
+        sarin.stand_east ()
+
+        janesta = characters ["Janesta Skywind"]
+        janesta.set_dialogue ("dialogues/janesta_start")
+        janesta.load ("servant1.mchar")
+        janesta.set_map (map_engine.get_landmap ())
+        janesta.jump_to (13, 1, 4)
+        janesta.set_action ("action_talk")
+        janesta.stand_west ()
+
         # Once we want to generate the data context files,
         # just call gamedata::save (1) and copy the .data files
         # to the game's root directory.
