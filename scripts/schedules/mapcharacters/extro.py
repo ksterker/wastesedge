@@ -31,41 +31,41 @@ class extro:
         
         # -- init the bubble texts
         #    (character, wait until spoken?, text)
-        self.text = [(bjarn, 1, "There is no denying it. Yes, I feigned the theft."), \
-            (jelom, 1, "But why? And where are the gems then?"), \
-            (bjarn, 1, "Why? Haven't I made myself clear already?"), \
-            (bjarn, 1, "I despise those Elves and their uncanny ways."), \
-            (bjarn, 1, "Their ... meddling with reality contradicts all principles I learned to hold true."), \
-            (bjarn, 1, "And yet, I had to provide them with the reagents they need to perform their dark art."), \
-            (bjarn, 1, "I felt so ... ashamed!"), \
-            (player, 1, "And you believe that justifies the discomfort you caused my mistress?"), \
-            (bjarn, 1, "You cannot think further than your mistress, can you?"), \
-            (bjarn, 1, "Theft by a high born like Lady Silverhair would have been considered a grave insult by the clan elders."), \
-            (bjarn, 1, "Had she been convicted, they might have chosen to cease trading with her people. And that probably for many years!"), \
-            (silverhair, 1, "I feared as much and I feared the consequences."), \
-            (silverhair, 1, "Without the arcane arts my kind would soon succumb to the human tides."), \
-            (silverhair, 1, "But without gems and ores purchased from the small folk we cannot create magic."), \
-            (jelom, 1, "Who would have thought that?"), \
-            (jelom, 1, "Seems you owe " + player.get_name() + " here a big favour, if I may say so, Lady."), \
-            (silverhair, 1, "Rest assured that " + player.get_name() + "'s deeds will not be forgotten, good man."), \
-            (jelom, 1, "Well, this is settled then. What remains now are the whereabouts of the gems."), \
-            (jelom, 1, "Master Fingolson!"), \
-            (None, 1, "They were here all the time, safe from thieving hands, ..."), \
-            (None, 1, "... well hidden in a niche I carved during my previous visits."), \
-            (None, 1, "Here."), \
-            (None, 1, "But ..."), \
-            (None, 1, "... they are gone!"), \
-            (talan, 1, "Sir, sir! To the gate! Quick! The thief is loose!"), \
-            (bjarn, 0, "My jewels, oh my jewels!"), \
-            (player, 1, "By Andomiel's Tree! What happened to you, Talan?!"), \
-            (talan, 1, "It was the mercenary, sir! He sneaked upon me and hit me over the head."), \
-            (silverhair, 0, "O sweet irony."), \
-            (jelom, 1, "Then the gems have been stolen after all?!"), \
-            (jelom, 1, "By that scum, Alek!? Now that's funny."), \
-            (bjarn, 1, "How can you say that? And why are you still here?"), \
-            (bjarn, 1, "Will nobody go after my gems!?"), \
-            (jelom, 1, "What for?"), \
-            (jelom, 1, "Where you are going you won't need them any more. Besides, Alek is probably long gone by now ...")]
+        self.text = [(bjarn, "There is no denying it. Yes, I feigned the theft."), \
+            (jelom, "But why? And where are the gems then?"), \
+            (bjarn, "Why? Haven't I made myself clear already?"), \
+            (bjarn, "I despise those Elves and their uncanny ways."), \
+            (bjarn, "Their ... meddling with reality contradicts all principles I learned to hold true."), \
+            (bjarn, "And yet, I had to provide them with the reagents they need to perform their dark art."), \
+            (bjarn, "I felt so ... ashamed!"), \
+            (player, "And you believe that justifies the discomfort you caused my mistress?"), \
+            (bjarn, "You cannot think further than your mistress, can you?"), \
+            (bjarn, "Theft by a high born like Lady Silverhair would have been considered a grave insult by the clan elders."), \
+            (bjarn, "Had she been convicted, they might have chosen to cease trading with her people. And that probably for many years!"), \
+            (silverhair, "I feared as much and I feared the consequences."), \
+            (silverhair, "Without the arcane arts my kind would soon succumb to the human tides."), \
+            (silverhair, "But without gems and ores purchased from the small folk we cannot create magic."), \
+            (jelom, "Who would have thought that?"), \
+            (jelom, "Seems you owe " + player.get_name() + " here a big favour, if I may say so, Lady."), \
+            (silverhair, "Rest assured that " + player.get_name() + "'s deeds will not be forgotten, good man."), \
+            (jelom, "Well, this is settled then. What remains now are the whereabouts of the gems."), \
+            (jelom, "Master Fingolson!"), \
+            (None, "They were here all the time, safe from thieving hands, ..."), \
+            (None, "... well hidden in a niche I carved during my previous visits."), \
+            (None, "Here."), \
+            (None, "But ..."), \
+            (None, "... they are gone!"), \
+            (talan, "Sir, sir! To the gate! Quick! The thief is loose!"), \
+            (bjarn, "My jewels, oh my jewels!"), \
+            (player, "By Andomiel's Tree! What happened to you, Talan?!"), \
+            (talan, "It was the mercenary, sir! He sneaked upon me and hit me over the head."), \
+            (silverhair, "O sweet irony."), \
+            (jelom, "Then the gems have been stolen after all?!"), \
+            (jelom, "By that scum, Alek!? Now that's funny."), \
+            (bjarn, "How can you say that? And why are you still here?"), \
+            (bjarn, "Will nobody go after my gems!?"), \
+            (jelom, "What for?"), \
+            (jelom, "Where you are going you won't need them any more. Besides, Alek is probably long gone by now ...")]
 
         # -- the typeover text
         self.typeover = ["And so Alek Endhelm escaped into the\nNorth, where he spent his newly gained\nwealth for Ale and other pleasures.", \
@@ -74,7 +74,8 @@ class extro:
             "Soon after his return, young Erek\naccomplished the Rite of Passage and\njoined adult society. To his surprise, he\nwas sent to the Elvish Council at the\nHigh City of Elgilad, as an ambassador\nfor his people."]
 
         # -- the credits
-        self.credits = [("Adonthell", 3), \
+        self.credits = [("Adonthell", 1), \
+            ("- Waste's Edge -", 3), \
             ("directed by:", 1), \
             ("Alexandre Courbot", 1), \
             ("Kai Sterker", 3), \
@@ -94,7 +95,7 @@ class extro:
             ("Imoen Silverhair - herself", 1), \
             ("Bjarn Fingolson - himself", 1), \
             ("Erek Stonebreaker - himself", 1), \
-            ("Orloth Redewyne - himself", 1), \
+            ("Orloth Redwyne - himself", 1), \
             ("Alek Endhelm - himself", 1), \
             ("Oliver Redwyne - himself", 1), \
             ("Talan Wendth - himself", 1), \
@@ -119,10 +120,10 @@ class extro:
             ("Benjamin Walther-Franks", 2), \
             ("props masters:", 1), \
             ("James Nash", 1), \
-            ("Kai Sterker", 3), \
+            ("Kai Sterker", 2), \
             ("location managers:", 1), \
             ("Alexandre Courbot", 1), \
-            ("James Nash", 3), \
+            ("James Nash", 2), \
             ("grip:", 1), \
             ("Alexandre Courbot", 5), \
             ("\"Window\" unit:", 2), \
@@ -140,10 +141,9 @@ class extro:
             ("Joseph Toscano", 2), \
             ("title design:", 1), \
             ("John Havard", 1), \
-            ("James Nash", 5), \
+            ("James Nash", 3), \
             ("soundtrack available on:", 1), \
-            ("http://www.zhaytee.com/...", 3), \
-            ("No Yetis were harmed during\n the production of this game", 3), \
+            ("http://www.zhaytee.com/...", 5), \
             ("the Adonthell team whishes to thank:", 2), \
             ("Al Koskelin", 1), \
             ("Andrew Henderson", 1), \
@@ -151,13 +151,20 @@ class extro:
             ("Mark Howson", 1), \
             ("Dave Peticolas", 1), \
             ("Josh's friend doing the CVS", 1), \
-            ("Deniz Oezsen", 1), \
-            ("Python crew", 5), \
+            ("Meandus", 1), \
+            ("Deniz Oezsen", 2), \
+            ("The people behind SDL, Ogg Vorbis,", 1), \
+            ("Python and all the other Free", 1), \
+            ("Software developers whose work", 1), \
+            ("made Adonthell possible", 3), \
+            ("career portal:", 1), \
+            ("http://adonthell.linuxgames.com/development/", 3), \
+            ("No Yetis were harmed during\n the production of this game", 5), \
             ("presented in", 2), \
-            ("Ogg Vorbis Stereo", 2), \
+            ("Ogg Vorbis Stereo", 1), \
             ("(where available)", 7), \
             ("The END", 13), \
-            ("Joel, you're fired!", 7)]
+            ("Joel, you're fired!", -1)]
 
         # -- text colors
         self.colors = ["white", "yellow", "red", "violet", "blue", "green"]
@@ -241,7 +248,7 @@ class extro:
 
     # -- create the text bubbles
     def make_bubble (self):
-        (npc, wait, text) = self.text[self.index]
+        (npc, text) = self.text[self.index]
         length = len(text) + 100
         
         if npc != None:
@@ -279,11 +286,8 @@ class extro:
         bubble.set_visible (1)
         adonthell.win_manager_get_active ().add (bubble)
         
-        # if wait == 1:
         bubble.py_signal_connect (self.on_close_bubble, adonthell.win_event_CLOSE)
         return bubble
-            
-        # else: return None
 
     # -- bubble death callback
     def on_close_bubble (self, retval):
@@ -667,6 +671,7 @@ class extro:
             label = self.labels[idx]
             label.move (label.x (), label.y () - 1)
             
+            # -- remove label once it is through
             if label.y () + label.height () < -5:
                 self.labels.remove (label)
             else:
