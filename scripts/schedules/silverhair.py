@@ -15,57 +15,60 @@
 #    She will mainly stand still, but occasionally walk up to the
 #    window and make a remark about the weather.
 
-import schedules
-import random
-
 speech = ["In truth, Sarin, it is no bother. I am not offended.", \
           "Janesta, dear, worry not. I am content here.", \
           "Janesta, please bring my figurine. I wish to see it more closely.", \
           "It truly is a lovely day. I expect we will have time yet to enjoy it."]
 
-todo = myself.get_val ("say_something")
+todo = myself.get_val ("todo")
 
-# -- utter some remark
+# -- waiting
 if todo == 0:
+    delay = myself.get_val ("delay")
 
-    # -- get a random remark
-    index = random.randint (0, 3)
+    # If standing delay expired, move around next time
+    if delay == 0:
+        myself.set_val ("todo", 1)
+    else:
+        myself.set_val ("delay", delay - 1)
+
+# -- get movement target
+elif todo == 1:
+    from random import randint
 
     # -- goto the window
-    if index == 3:
-        delay = random.randint (33, 66) * 10
-        myself.set_val ("say_something", -delay)
+    if myself.posx () == 4:
+        # ... and speak about the weather
+        say = randint (33, 66) * 10
+        delay = randint (50, 75) * 15
+        myself.set_val ("say_something", say)
+        myself.set_goal (6, 4, STAND_EAST)
 
+    # -- go back to our normal position
     else:
-        # -- speak
-        schedules.speak (myself, speech[index])
+        delay = randint (100, 200) * 35
+        myself.set_goal (4, 5, STAND_SOUTH)
 
-        # -- wait a while before saying something else
-        delay = random.randint (50, 150) * 20
-        myself.set_val ("say_something", delay)
+    myself.set_val ("say_something", say)
+    myself.set_val ("delay", delay)
+    myself.set_val ("todo", 2)
 
-# -- walk up to the window and wait a little
-elif todo < 0:
-    if schedules.simple_goto_xy (myself, 6, 4) == 1:
-        myself.stand_east ()
+# -- move
+elif todo == 2:
+    if myself.follow_path () == 1:
+        myself.set_val ("todo", 0)
 
-        # -- speak
-        if todo == -250:
-            myself.stand_east ()
-            schedules.speak (myself, speech[3])
+# -- speak
+say = myself.get_val ("say_something")
+myself.set_val ("say_something", say - 1)
+if say == 0:
+    from schedules import speak
+    from random import randint
 
-        # -- leave the window
-        if todo == -1:
-            delay = random.randint (50, 150) * 10
-            myself.set_val ("say_something", delay)
-        # -- wait
-        else:
-            myself.set_val ("say_something", todo + 1)
+    if myself.posx () == 6:
+        speak (myself, speech[3])
+    else:
+        speak (myself, speech[randint (0, 2)])
 
-# -- leave the window
-else:
-    myself.set_val ("say_something", todo - 1)
-
-    # -- reached the middle of the room
-    if schedules.simple_goto_xy (myself, 4, 4) == 1:
-        myself.stand_south ()
+    say = randint (50, 150) * 20
+    myself.set_val ("say_something", say)

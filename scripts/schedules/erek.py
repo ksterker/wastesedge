@@ -15,8 +15,6 @@
 #    Erek will either be in the parlour or the common room.
 #    He'll also help the player to get into Bjarn's room.
 
-import schedules
-import random
 
 speech = ["How could they do that to the Master?", \
           "This place is so much different from home.", \
@@ -40,63 +38,89 @@ elif myself.get_val ("leave_bjarn") == 1:
 
     # -- in Bjarn's room
     if submap == 7:
-        schedules.simple_goto_xy (myself, 0, 7)
+        myself.set_goal (0, 7, STAND_WEST)
+        myself.set_val ("leave_bjarn", 2)
 
     # -- in the Cellar
     elif submap == 4:
-        schedules.simple_goto_xy (myself, 6, 1)
+        myself.set_goal (6, 1, STAND_NORTH)
+        myself.set_val ("leave_bjarn", 2)
 
     # -- hopefully in the common room
     else:
+        from random import randint
         myself.set_val ("leave_bjarn", 0)
-        myself.set_val ("goal", random.randint (0, 1))
+        x, y, dir = coords[randint (0, 1)]
+        myself.set_goal (x, y, dir)
+
+    myself.set_val ("todo", 2)
+
 
 # -- "normal" schedule
-else:
-    todo = myself.get_val ("goto_parlour")
+todo = myself.get_val ("todo")
 
-    # switch places
-    if todo == 0:
+# -- waiting
+if todo == 0:
+    delay = myself.get_val ("delay")
+
+    # If standing delay expired, move around next time
+    if delay == 0:
+        myself.set_val ("todo", 1)
+    else:
+        myself.set_val ("delay", delay - 1)
+
+# -- get movement target
+elif todo == 1:
+    # -- on our way back from bjarn's room
+    if myself.get_val ("leave_bjarn") == 2:
+        myself.set_val ("leave_bjarn", 1)
+
+    # -- switch places
+    else:
         # -- in common room -> goto parlour
-        if myself.submap () == 1 \
-        and schedules.simple_goto_xy (myself, 13, 4) == 1:
-            # since simple_goto_xy only returns 1 if the character
-            # completely occupies the tile, but the enter event is
-            # raised before, we have to do the last step manually.
-            myself.go_east ()
-            delay = random.randint (50, 150) * -30
-            myself.set_val ("goto_parlour", delay)
-            myself.set_val ("goal", random.randint (2, 3))
+        if myself.submap () == 1:
+            myself.set_goal (14, 4, STAND_EAST)
 
         # -- in parlour -> goto common room
-        elif schedules.simple_goto_xy (myself, 1, 4) == 1:
-            myself.go_west ()
-            delay = random.randint (50, 150) * 20
-            myself.set_val ("goto_parlour", delay)
-            myself.set_val ("goal", random.randint (0, 1))
-
-    # -- walk up to the new pos and stay there
-    else:
-        # -- In parlour
-        if todo < 0:
-            myself.set_val ("goto_parlour", todo + 1)
-        # -- In common room
         else:
-            myself.set_val ("goto_parlour", todo - 1)
+            myself.set_goal (0, 4, STAND_WEST)
 
-        goal = myself.get_val ("goal")
-        x, y, dir = coords[goal]
+    myself.set_val ("todo", 2)
 
-        if schedules.simple_goto_xy (myself, x, y) == 1:
-            if dir == STAND_NORTH: myself.stand_north ()
-            elif dir == STAND_EAST: myself.stand_east ()
-            elif dir == STAND_SOUTH: myself.stand_south ()
-            else: myself.stand_west ()
+# -- move
+elif todo == 2:
+    if myself.follow_path () == 1:
+        from random import randint
 
-    # -- do some random babbling
-    tmp = myself.get_val ("say_something")
-    myself.set_val ("say_something", tmp - 1)
-    if tmp == 0:
-        schedules.speak (myself, speech[random.randint (0, 2)])
-        delay = random.randint (60, 180) * 15
-        myself.set_val ("say_something", delay)
+        # -- reached common room
+        if myself.submap () == 1 and myself.posx () == 13:
+            x, y, dir = coords[randint (0, 1)]
+            myself.set_goal (x, y, dir)
+
+            delay = randint (50, 150) * 20
+            myself.set_val ("delay", delay)
+
+        # -- reached parlour
+        elif myself.submap () == 2 and myself.posx () == 1:
+            x, y, dir = coords[randint (2, 3)]
+            myself.set_goal (x, y, dir)
+
+            delay = randint (60, 180) * 30
+            myself.set_val ("delay", delay)
+
+        # -- reached our final destination
+        else:
+            myself.set_val ("todo", 0)
+
+
+# -- do some random babbling
+tmp = myself.get_val ("say_something")
+myself.set_val ("say_something", tmp - 1)
+
+if tmp == 0:
+    from schedules import speak
+    from random import randint
+
+    speak (myself, speech[randint (0, 2)])
+    delay = randint (60, 180) * 15
+    myself.set_val ("say_something", delay)

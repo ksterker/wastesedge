@@ -14,44 +14,51 @@
 #
 #    He'll walk between his table and the bar
 
-import schedules
-import random
 
-speech = ["   More Ale!", \
+speech = ["More Ale!", \
           "I'll cut 'em open like ripe fruits.", \
           "They should sort out this business like real men!"]
 
-todo = myself.get_val ("switch_direction")
+todo = myself.get_val ("todo")
 
-# -- calculate a new direction
+# -- waiting
 if todo == 0:
-    # -- the time we stay at the same place
-    delay = random.randint (60, 150) * 20
+    delay = myself.get_val ("delay")
+    # If standing delay expired, move around next time
+    if delay == 0:
+        myself.set_val ("todo", 1)
+    else:
+        myself.set_val ("delay", delay - 1)
 
+# -- engage a new movement
+elif todo == 1:
     # -- walk to table
     if myself.posx () == 1:
-        myself.set_val ("switch_direction", -delay)
-
+        myself.set_goal (12, 5, STAND_NORTH)
     # -- walk to bar
     else:
-        myself.set_val ("switch_direction", delay)
+        myself.set_goal (1, 3, STAND_SOUTH)
 
-# -- walk to table
-elif todo < 0:
-    myself.set_val ("switch_direction", todo + 1)
-    if schedules.simple_goto_xy (myself, 12, 5) == 1:
-        myself.stand_north ()
+    myself.set_val ("todo", 2)
 
-# -- walk to bar
-else:
-    myself.set_val ("switch_direction", todo - 1)
-    if schedules.simple_goto_xy (myself, 1, 3) == 1:
-        myself.stand_south ()
+# -- moving
+elif todo == 2:
+    if myself.follow_path () == 1:
+        # -- the time we stay at the same place
+        from random import randint
+        delay = randint (60, 150) * 20
+
+        myself.set_val ("delay", delay)
+        myself.set_val ("todo", 0)
+
 
 # -- utter a random remark
 tmp = myself.get_val ("say_something")
 myself.set_val ("say_something", tmp - 1)
 if tmp == 0:
-    schedules.speak (myself, speech[random.randint (0, 2)])
-    delay = random.randint (40, 80) * 25
+    from schedules import speak
+    from random import randint
+
+    speak (myself, speech[randint (0, 2)])
+    delay = randint (40, 80) * 25
     myself.set_val ("say_something", delay)
