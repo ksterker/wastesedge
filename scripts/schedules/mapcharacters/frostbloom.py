@@ -53,7 +53,7 @@ class frostbloom:
             x = randint (self.min_x, self.max_x)
             y = randint (self.min_y, self.max_y)
 
-            myself.set_goal (x, y, adonthell.NO_MOVE)
+            myself.set_goal (x, y)
 
             delay = randint (30, 90) * 30
             myself.set_val ("delay", delay)

@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.53 2001/09/23 15:09:56 adondev Exp $
+#  $Id: init.py,v 1.54 2001/09/29 12:47:38 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -239,6 +239,9 @@ class title_screen:
 
 
     def on_cs_close (self, retval):
+        # Launches the intro
+        import intro
+
         # Creates the map engine context for the game start
         gamedata_map_engine ().load_map ("test.map")
         lm = gamedata_map_engine ().get_landmap ()
