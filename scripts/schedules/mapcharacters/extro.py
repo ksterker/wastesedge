@@ -477,6 +477,18 @@ class extro:
         self.wood3.load_raw ("gfx/cutscene/forest1.img")
         self.wood3.set_mask (1)
 
+        self.alek_run = adonthell.animation ()
+        self.alek_run.load ("gfx/cutscene/running_alek.anim")
+        self.alek_run.play ()
+
+        while not adonthell.input_has_been_pushed (adonthell.SDLK_ESCAPE):
+            adonthell.screen_clear ()
+            self.alek_run.update ()
+            self.alek_run.draw (100,100)
+            adonthell.input_update ()
+            adonthell.screen_show ()
+            adonthell.gametime_update ()
+
         self.black = adonthell.win_image ()
         self.black.resize (320, 240)
         self.black.fillrect (0, 0, 320, 240, 0)
@@ -542,12 +554,15 @@ class extro:
         if self.anim % 4 == 0:
             update = 1
             self.x[0] = self.update_wood (self.wood1, self.x[0])
+
+        self.alek_run.update ()
         
         # -- draw
         if update == 1:
             self.draw_wood (self.wood1, self.x[0])
             self.draw_wood (self.wood2, self.x[1])
             self.draw_wood (self.wood3, self.x[2])
+            self.alek_run.draw (100, 100)
         
         # -- fade in
         if self.step == 0:
