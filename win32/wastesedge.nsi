@@ -32,6 +32,9 @@ Section "" ;
   SetOutPath "$INSTDIR"
 
   ; add files / whatever that need to be installed here.
+  
+  CreateShortCut "$INSTDIR\Waste's Edge.lnk" \
+                 "$INSTDIR\adonthell.exe" "wastesedge" "$INSTDIR\wastesedge.ico"
 
   FILE README.txt
   FILE PLAYING.txt
@@ -581,10 +584,18 @@ SectionEnd
 ; desktop shortcut
 Section "Desktop Shortcut"
   SectionIn 1
-  CreateShortCut "$DESKTOP\Waste's Edge.lnk" "$INSTDIR\adonthell.exe" "wastesedge" "$INSTDIR\wastesedge.ico"
+  CreateShortCut "$DESKTOP\Waste's Edge.lnk" "$INSTDIR\adonthell.exe" "wastesedge" "$INSTDIR\wastesedge.ico" "0"
 SectionEnd
 
+; show README.txt
 
+Function .onInstSuccess
+  MessageBox MB_YESNO|MB_ICONQUESTION \
+             "Waste's Edge has been installed successfully. Do you want to view the README file now?" \
+             IDNO NoReadme
+    ExecShell open '$INSTDIR\README.txt'
+  NoReadme:
+FunctionEnd
 
 ; begin uninstall settings/section
 UninstallText "This will uninstall Waste's Edge from your system"
@@ -617,6 +628,10 @@ Section Uninstall
   Delete "$INSTDIR\wastesedge.ico"
   Delete "$INSTDIR\stdout.txt"
   Delete "$INSTDIR\stderr.txt"
+  Delete "$INSTDIR\README.txt"
+  Delete "$INSTDIR\PLAYING.txt"
+
+  Delete "$INSTDIR\Waste's Edge.lnk"
 
   RMDir "$INSTDIR"
 
