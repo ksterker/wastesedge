@@ -39,6 +39,8 @@ if todo == 0:
     if delay == 0:
         myself.set_val ("todo", 1)
     else:
+        myself.set_val ("delay", delay - 1)
+
         # -- put/take the first mug
         if delay == 100:
             index = myself.get_val ("table_num")
@@ -65,8 +67,6 @@ if todo == 0:
                     map_engine.get_landmap ().put_mapobject (1,x,y,107)
                 else:
                     map_engine.get_landmap ().remove_mapobject (1,x,y,107)
-
-        myself.set_val ("delay", delay - 1)
 
 # -- engage a new movement
 elif todo == 1:
