@@ -550,6 +550,38 @@ if retval < 5:
         ev.set_script ("kitchen_to_cellar")
         lm.add_event (ev)
 
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 0
+        ev.x = 12
+        ev.y = 24
+        ev.set_script ("yard_to_guards")
+        lm.add_event (ev)
+
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 18
+        ev.x = 8
+        ev.y = 3
+        ev.set_script ("yard_to_guards")
+        lm.add_event (ev)
+
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 18
+        ev.x = 1
+        ev.y = 8
+        ev.set_script ("guards_ground_to_1st")
+        lm.add_event (ev)
+
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 19
+        ev.x = 1
+        ev.y = 8
+        ev.set_script ("guards_ground_to_1st")
+        lm.add_event (ev)
+
         # Now setup the characters
         lucia = characters ["Lucia Redwyne"]
         lucia.set_dialogue ("dialogues/lucia_start")
@@ -588,8 +620,6 @@ if retval < 5:
         talan.set_action ("action_talk")
         talan.stand_north ()
         talan.set_schedule ("talan")
-        talan.set_val ("say_something", 0)
-        talan.set_val ("delay", 0)
 
         # -- that's a clone for now
         jelom = characters ["Jelom Rasgar"]
