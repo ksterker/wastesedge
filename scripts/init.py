@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.79 2002/01/15 22:07:23 adondev Exp $
+#  $Id: init.py,v 1.80 2002/01/18 12:39:25 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -676,98 +676,62 @@ class title_screen:
         ev.set_script ("teleport", (18, 2, 8, STAND_EAST))
         lm.add_event (ev)
 
-#        # Make the barn disappear
-#        ev = enter_event ()
-#        ev.thisown = C
-#        ev.submap = 0
-#        ev.x = 24
-#        ev.y = 14
-#        ev.dir = WALK_EAST
-#        ev.set_script ("enter_barn")
-#        lm.add_event (ev)
-#        ev = enter_event ()
-#        ev.thisown = C
-#        ev.submap = 4
-#        ev.x = 12
-#        ev.y = 1
-#        ev.dir = WALK_NORTH
-#        ev.set_script ("enter_barn")
-#        lm.add_event (ev)
-
-#        # Make the barn appear
-#        ev = leave_event ()
-#        ev.thisown = C
-#        ev.submap = 0
-#        ev.x = 24
-#        ev.y = 14
-#        ev.dir = WALK_WEST
-#        ev.set_script ("enter_barn")
-#        lm.add_event (ev)
-#        ev = enter_event ()
-#        ev.thisown = C
-#        ev.submap = 0
-#        ev.x = 24
-#        ev.y = 9
-#        ev.dir = WALK_NORTH
-#        ev.set_script ("enter_barn")
-#        lm.add_event (ev)
-
         # From barn ext. to barn int.
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 0
         ev.x = 24
         ev.y = 13
-        ev.set_script ("teleport", (20, 0, 6, STAND_NORTH))
+        ev.set_script ("teleport", (20, 1, 6, STAND_NORTH))
         lm.add_event (ev)
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 0
         ev.x = 25
         ev.y = 13
-        ev.set_script ("teleport", (20, 1, 6, STAND_NORTH))
+        ev.set_script ("teleport", (20, 2, 6, STAND_NORTH))
         lm.add_event (ev)
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 0
         ev.x = 26
         ev.y = 13
-        ev.set_script ("teleport", (20, 2, 6, STAND_NORTH))
+        ev.set_script ("teleport", (20, 3, 6, STAND_NORTH))
         lm.add_event (ev)
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 0
         ev.x = 27
         ev.y = 13
-        ev.set_script ("teleport", (20, 3, 6, STAND_NORTH))
+        ev.set_script ("teleport", (20, 4, 6, STAND_NORTH))
         lm.add_event (ev)
 
         # From barn int. to barn ext.
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 20
-        ev.x = 0
+        ev.x = 1
         ev.y = 7
         ev.set_script ("teleport", (0, 24, 14, STAND_SOUTH))
         lm.add_event (ev)
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 20
-        ev.x = 1
+        ev.x = 2
         ev.y = 7
         ev.set_script ("teleport", (0, 25, 14, STAND_SOUTH))
         lm.add_event (ev)
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 20
-        ev.x = 2
+        ev.x = 3
         ev.y = 7
         ev.set_script ("teleport", (0, 26, 14, STAND_SOUTH))
         lm.add_event (ev)
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 20
-        ev.x = 3
+        ev.x = 4
         ev.y = 7
         ev.set_script ("teleport", (0, 27, 14, STAND_SOUTH))
         lm.add_event (ev)
@@ -778,14 +742,14 @@ class title_screen:
         ev.submap = 4
         ev.x = 12
         ev.y = 1
-        ev.set_script ("teleport", (20, 0, 3, STAND_SOUTH))
+        ev.set_script ("teleport", (20, 1, 3, STAND_SOUTH))
         lm.add_event (ev)
 
         # From barn to cellar
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 20
-        ev.x = 0
+        ev.x = 1
         ev.y = 2
         ev.set_script ("teleport", (4, 12, 2, STAND_SOUTH))
         lm.add_event (ev)
@@ -794,7 +758,7 @@ class title_screen:
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 20
-        ev.x = 2
+        ev.x = 3
         ev.y = 2
         ev.set_script ("teleport", (21, 1, 3, STAND_SOUTH))
         lm.add_event (ev)
@@ -805,15 +769,52 @@ class title_screen:
         ev.submap = 21
         ev.x = 1
         ev.y = 2
-        ev.set_script ("teleport", (20, 2, 3, STAND_SOUTH))
+        ev.set_script ("teleport", (20, 3, 3, STAND_SOUTH))
         lm.add_event (ev)
 
-        # From loft to silverhair
+        # From loft to veranda
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 21
         ev.x = 0
         ev.y = 7
+        ev.set_script ("teleport", (0, 23, 12, STAND_WEST))
+        lm.add_event (ev)
+
+        # From veranda to loft
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 0
+        ev.x = 23
+        ev.y = 12
+        ev.set_script ("teleport", (21, 1, 7, STAND_EAST))
+        lm.add_event (ev)
+
+        # From veranda right to veranda left
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 0
+        ev.x = 19
+        ev.y = 12
+        ev.set_script ("teleport", (0, 16, 12, STAND_WEST))
+        lm.add_event (ev)
+
+        # From veranda left to veranda right
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 0
+        ev.x = 17
+        ev.y = 12
+        ev.set_script ("teleport", (0, 20, 12, STAND_EAST))
+        lm.add_event (ev)
+
+
+        # From veranda to silverhair
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 0
+        ev.x = 11
+        ev.y = 12
         ev.set_script ("brn_to_silverhair", (13, 6, 4, STAND_WEST))
         lm.add_event (ev)
 
@@ -823,7 +824,7 @@ class title_screen:
         ev.submap = 13
         ev.x = 6
         ev.y = 4
-        ev.set_script ("silverhair_to_brn", (21, 1, 7, STAND_EAST))
+        ev.set_script ("silverhair_to_brn", (0, 12, 12, STAND_EAST))
         lm.add_event (ev)
 
         # Action events
