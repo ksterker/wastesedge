@@ -1,5 +1,5 @@
 #
-#  $Id: in_game.py,v 1.2 2001/12/31 18:08:37 adondev Exp $
+#  $Id: in_game.py,v 1.3 2002/01/15 22:07:24 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -18,16 +18,31 @@ import adonthell
 
 class in_game:
     def __init__ (self):
-        pass
-    
+        self.next_song = -1
+
     # -- method called everytime a song has finished playing
     #    load song before playing, as the mixer seems to discard it
     #    after it's been played once
     def music_finished (self, song):
-        if song == 0:
-            adonthell.audio_load_background (1, "audio/at-demo-6.ogg")
-            adonthell.audio_play_background (1)
+        # -- if we're in Silverhair's room, play special tune
+        if adonthell.gamedata_player ().submap () == 13:
+            # -- resume with the song that played before entering
+            if self.next_song != 2 and song != 2: self.next_song = song
+
+            adonthell.audio_load_background (2, "audio/at-demo-7.ogg")
+            adonthell.audio_play_background (2)
+
+        # -- right after leaving Silverhair's room
+        elif self.next_song >= 0:
+            adonthell.audio_fade_in_background (self.next_song, 500)
+            self.next_song = -1
+
+        # -- otherwise just loop at-demo-5 and at-demo-6
         else:
-            adonthell.audio_load_background (0, "audio/at-demo-5.ogg")
-            adonthell.audio_play_background (0)
+            if song == 0:
+                adonthell.audio_load_background (1, "audio/at-demo-6.ogg")
+                adonthell.audio_play_background (1)
+            else:
+                adonthell.audio_load_background (0, "audio/at-demo-5.ogg")
+                adonthell.audio_play_background (0)
             

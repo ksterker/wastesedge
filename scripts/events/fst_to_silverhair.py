@@ -47,3 +47,4 @@ class fst_to_silverhair:
             p.set_val ("at_silverhairs_door", 0)
         else:
             events.switch_submap (p, self.smdest, self.xdest, self.ydest, self.destdir)
+            adonthell.audio_fade_out_background (500)

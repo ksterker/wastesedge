@@ -34,3 +34,4 @@ class silverhair_to_brn:
         if p.get_val ("came_from_barn") == 1:
             p.set_val ("came_from_barn", 0)
             events.switch_submap (p, self.smdest, self.xdest, self.ydest, self.destdir)
+            adonthell.audio_fade_out_background (500)

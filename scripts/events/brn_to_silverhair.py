@@ -33,6 +33,7 @@ class brn_to_silverhair:
         p.set_val ("came_from_barn", 1)
 
         events.switch_submap (p, self.smdest, self.xdest, self.ydest, self.destdir)
+        adonthell.audio_fade_out_background (500)
         p.stand ()
         p.go_west ()
         adonthell.gamedata_get_character ("Imoen Silverhair").launch_action (p)

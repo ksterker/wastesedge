@@ -141,7 +141,7 @@ class extro:
             ("John Havard", 1), \
             ("James Nash", 3), \
             ("soundtrack available on:", 1), \
-            ("http://www.zhaytee.com/...", 3), \
+            ("http://zhaymusic.com/...", 3), \
             ("the Adonthell team whishes to thank:", 2), \
             ("Al Koskelin", 1), \
             ("Andrew Henderson", 1), \
@@ -522,7 +522,7 @@ class extro:
         # -- misc stuff
         self.step = 0       # -- for the extro control
         self.anim = 0       # -- for the forest animation control
-        self.index = 0      # -- index in the typeover array       
+        self.index = 0      # -- index in the typeover array
         self.delay = 0      # -- delay before adding new text
         self.cursor = 0     # -- cursor in the typeover text
         self.x = [0, 0, 0]  # -- offsets of the 3 forest pics
@@ -530,6 +530,7 @@ class extro:
         adonthell.gamedata_engine ().main (self.window, 'fmv')
         
         # -- quit!
+        adonthell.audio_fade_out_background (500)
         adonthell.gamedata_engine ().main_quit ()
         
     def forest_animation (self):
@@ -621,6 +622,11 @@ class extro:
 
     # -- prepare credits
     def make_credits (self):
+        # -- audio
+        adonthell.audio_fade_out_background (500)
+        adonthell.audio_load_background (0, "audio/at-demo-8.ogg")
+        adonthell.audio_play_background (0)
+
         # -- window
         self.window = adonthell.win_container ()
         self.window.move (0, 30)

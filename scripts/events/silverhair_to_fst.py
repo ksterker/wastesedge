@@ -38,3 +38,4 @@ class silverhair_to_fst:
             p.speak ("I better leave the way I came.")
         else:
             events.switch_submap (p, self.smdest, self.xdest, self.ydest, self.destdir)
+            adonthell.audio_fade_out_background (500)

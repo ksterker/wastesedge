@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.78 2002/01/03 23:29:04 adondev Exp $
+#  $Id: init.py,v 1.79 2002/01/15 22:07:23 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -209,7 +209,7 @@ class title_screen:
         del self.bag_c
         del self.bag_t
 
-        audio_pause_music ()
+        audio_fade_out_background (500)
         audio_unload_background (0)
 
 
