@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.73 2001/12/27 22:46:43 adondev Exp $
+#  $Id: init.py,v 1.74 2001/12/28 16:05:06 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -967,7 +967,7 @@ class title_screen:
         ev.y = 6
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-            "It's locked."))
+            "\"Property of Tristan Illig\"."))
         lm.add_event (ev)
 
         # -- Guard's house
@@ -978,7 +978,7 @@ class title_screen:
         ev.y = 5
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-            "Hm. There are plenty of books on singing inside."))
+            "\"Property of Talan Wendth\"\nHm. There are plenty of books on singing inside."))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -988,7 +988,7 @@ class title_screen:
         ev.y = 4
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-            "It's locked."))
+            "Locked."))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -998,7 +998,7 @@ class title_screen:
         ev.y = 8
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-            "It's locked."))
+            "\"Property of Jelom Rasgard\""))
         lm.add_event (ev)
 
         ev = action_event ()
@@ -1008,7 +1008,7 @@ class title_screen:
         ev.y = 4
         ev.dir = STAND_NORTH
         ev.set_script ("character_speak", (player.get_id (), \
-            "It's locked."))
+            "\"Property of Alek Endhelm\""))
         lm.add_event (ev)
 
         # -- Fingolson
