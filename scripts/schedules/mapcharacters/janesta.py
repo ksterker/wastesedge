@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -38,12 +38,6 @@ class janesta (schedule.speak):
                        (1, 5, adonthell.STAND_SOUTH), \
                        (4, 2, adonthell.STAND_WEST)]
 
-        delay = "%it" % random.randrange (10, 30)
-        walk_event = adonthell.time_event (delay)
-        walk_event.set_callback (self.walk)
-        walk_event.thisown = 0
-        self.myself.add_event (walk_event)
-
         self.myself.set_callback (self.goal_reached)
 
     def walk (self):
@@ -52,7 +46,4 @@ class janesta (schedule.speak):
     
     def goal_reached (self):
         delay = "%it" % random.randrange (10, 30)
-        walk_event = adonthell.time_event (delay)
-        walk_event.set_callback (self.walk)
-        walk_event.thisown = 0
-        self.myself.add_event (walk_event)
+        self.myself.time_callback (delay, self.walk)

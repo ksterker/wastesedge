@@ -1,5 +1,5 @@
 #
-#  $Id: intro.py,v 1.6 2001/12/31 18:08:38 adondev Exp $
+#  $Id: intro.py,v 1.7 2002/08/19 19:59:06 ksterker Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -55,10 +55,11 @@ class intro:
                 myself.set_schedule ("keyboard_control")
                 self.close_gate ()
                 myself.go_east ()
-                
+                talan = adonthell.gamedata_get_character ("Talan Wendth")
+                talan.time_callback_string ("3t", "walk")
 
 
-    # -- Opens the gate
+    # -- open the gate
     def open_gate (self):
         # Get the mapobjects
         gate_fore = adonthell.gamedata_engine ().get_landmap ().get_mapobject (90)

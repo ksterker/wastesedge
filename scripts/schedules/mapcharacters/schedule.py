@@ -42,20 +42,10 @@ class speak:
             
         # -- member initialization
         self.speech_length = len (self.speech)
-        
-        # -- register first speech
-        delay = "%it" % random.randrange (self.speech_delay[0], self.speech_delay[1])
-        speak_event = adonthell.time_event (delay)
-        speak_event.thisown = 0
-        speak_event.set_callback (self.speak)
-        self.myself.add_event (speak_event)
-        
+               
     # -- make remark and set delay for the next one
     def speak (self):
         self.myself.speak (self.speech[random.randrange (0, self.speech_length)])
 
         delay = "%it" % random.randrange (self.speech_delay[0], self.speech_delay[1])
-        speak_event = adonthell.time_event (delay)
-        speak_event.thisown = 0
-        speak_event.set_callback (self.speak)
-        self.myself.add_event (speak_event)
+        self.myself.time_callback (delay, self.speak)

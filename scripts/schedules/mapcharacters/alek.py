@@ -32,12 +32,6 @@ class alek (schedule.speak):
         self.speech_delay = (20, 40)
         schedule.speak.__init__(self)
     
-        delay = "%it" % random.randrange (65, 90)
-        walk_event = adonthell.time_event (delay)
-        walk_event.set_callback (self.walk)
-        walk_event.thisown = 0
-        self.myself.add_event (walk_event)
-
         self.myself.set_callback (self.goal_reached)
        
     def walk (self):
@@ -50,7 +44,4 @@ class alek (schedule.speak):
 
     def goal_reached (self):
         delay = "%it" % random.randrange (65, 90)
-        walk_event = adonthell.time_event (delay)
-        walk_event.set_callback (self.walk)
-        walk_event.thisown = 0
-        self.myself.add_event (walk_event)
+        self.myself.time_callback (delay, self.walk)

@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -33,14 +33,7 @@ class tristan (schedule.speak):
         self.speech_delay = (20, 55)
         schedule.speak.__init__(self)
         
-        self.walk_delay = "30t"
-        
-        # -- walking
-        walk_event = adonthell.time_event (self.walk_delay)
-        walk_event.set_callback (self.walk)
-        walk_event.thisown = 0
-        self.myself.add_event (walk_event)
-
+        self.walk_delay = "75t"
         self.myself.set_callback (self.goal_reached)
         
     def walk (self):
@@ -64,7 +57,4 @@ class tristan (schedule.speak):
             self.myself.set_goal (12, 18, adonthell.STAND_WEST)
         # -- reached our final destination
         else:
-            walk_event = adonthell.time_event (self.walk_delay)
-            walk_event.set_callback (self.walk)
-            walk_event.thisown = 0
-            self.myself.add_event (walk_event)
+            self.myself.time_callback (self.walk_delay, self.walk)

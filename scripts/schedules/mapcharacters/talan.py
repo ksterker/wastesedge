@@ -32,12 +32,6 @@ class talan (schedule.speak):
         self.speech_delay = (30, 60)
         schedule.speak.__init__(self)
         
-        # -- walking stuff
-        walk_event = adonthell.time_event ("5t")
-        walk_event.set_callback (self.walk)
-        walk_event.thisown = 0
-        self.myself.add_event (walk_event)
-
         self.myself.set_callback (self.goal_reached)
         
     def walk (self):
@@ -48,7 +42,5 @@ class talan (schedule.speak):
         
     def goal_reached (self):
         delay = "%it" % random.randrange (10, 20)
-        walk_event = adonthell.time_event (delay)
-        walk_event.set_callback (self.walk)
-        walk_event.thisown = 0
-        self.myself.add_event (walk_event)
+        self.myself.time_callback (delay, self.walk)
+

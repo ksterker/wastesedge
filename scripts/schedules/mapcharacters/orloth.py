@@ -43,8 +43,6 @@ class orloth (schedule.speak):
                   (12, 5, 0), \
                   (6, 5, 0)]
         
-        # -- improve that!!!
-        self.goal_reached ()
         self.myself.set_callback (self.goal_reached)
         
     def walk (self):
@@ -73,20 +71,11 @@ class orloth (schedule.speak):
         else:
             delay = "3t"
             # -- put/take first mug
-            frst_mug = adonthell.time_event ("1t")
-            frst_mug.set_callback (self.put_object, (106, 0))
-            frst_mug.thisown = 0
-            self.myself.add_event (frst_mug)
+            self.myself.time_callback ("1t", self.put_object, (106, 0))
             # -- put/take second mug
-            scnd_mug = adonthell.time_event ("2t")
-            scnd_mug.set_callback (self.put_object, (107, 1))
-            scnd_mug.thisown = 0
-            self.myself.add_event (scnd_mug)
+            self.myself.time_callback ("2t", self.put_object, (107, 1))
             
-        walk_event = adonthell.time_event (delay)
-        walk_event.set_callback (self.walk)
-        walk_event.thisown = 0
-        self.myself.add_event (walk_event)
+        self.myself.time_callback (delay, self.walk)
 
     # -- put/remove something from the table we're standing next to
     def put_object (self, args):

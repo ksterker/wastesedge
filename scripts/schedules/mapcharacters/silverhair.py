@@ -33,12 +33,6 @@ class silverhair (schedule.speak):
         self.speech_delay = (20, 72)
         schedule.speak.__init__(self)
 
-        delay = "%it" % random.randrange (70, 140)
-        walk_event = adonthell.time_event (delay)
-        walk_event.set_callback (self.walk)
-        walk_event.thisown = 0
-        self.myself.add_event (walk_event)
-
         self.myself.set_callback (self.goal_reached)
 
     def walk (self):
@@ -59,7 +53,4 @@ class silverhair (schedule.speak):
         if self.myself.posx () == 6:
             self.myself.speak (self.speech[3])
         
-        walk_event = adonthell.time_event (self.delay)
-        walk_event.set_callback (self.walk)
-        walk_event.thisown = 0
-        self.myself.add_event (walk_event)
+        self.myself.time_callback (self.delay, self.walk)
