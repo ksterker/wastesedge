@@ -7,24 +7,8 @@ rm -f `find . -name 'Makefile'`
 
 # Regenerate everything
 
-#
-# use aclocal v1.6 if available
-#
-if test "x`which aclocal-1.6`" = "x" ; then
-  aclocal -I .
-else
-  aclocal-1.6 -I .
-fi
-
-#
-# use Autmake v1.6 if available
-#
-if test "x`which automake-1.6`" = "x" ; then
-  automake --add-missing --gnu --copy
-else
-  automake-1.6 --add-missing --gnu --copy
-fi
-
+aclocal -I m4
+automake --add-missing --gnu --copy
 autoconf 
 
 echo
