@@ -44,7 +44,7 @@ class fellnir_start:
 
 			self.player.append (6)
 			self.cont.append (5)
-		elif adonthell.gamedata_get_quest("demo").get_val ("told_on_talan") == 1:
+		elif adonthell.gamedata_get_character("Lucia Redwyne").get_val ("refuses_key") == 1 and adonthell.gamedata_get_quest("demo").get_val ("pantry_locked") != 2:
 
 			self.player.append (5)
 			self.cont.append (4)
