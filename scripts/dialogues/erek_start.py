@@ -12,7 +12,7 @@ class erek_start:
         pass
 
     def __init__(self):
-        self.dialogue = [self.start, self.answer1, self.answer3, self.answer4, self.answer7, self.answer8, self.answer11, self.answer12, self.answer13, self.answer14, self.answer16, self.answer19, self.answer20, self.answer22, self.answer23, self.answer24, self.answer25, self.answer26, self.answer27, self.answer28, self.answer29, self.answer30, self.answer32, self.answer33, self.answer34, self.answer37, self.answer38, self.answer40, self.answer41, self.answer42, self.answer43, self.answer45, self.answer48, self.answer49, self.answer50, self.answer52, self.answer53, self.answer56, self.answer57, self.answer58, self.answer60, self.answer61, self.answer63, self.answer64, self.answer66, self.answer67, self.answer69, self.answer70, self.answer71, self.answer75, self.answer76, self.answer80, self.answer82, self.answer84, self.answer88, self.answer89, self.answer90, self.answer91, self.answer94, self.answer96, self.answer204, None]
+        self.dialogue = [self.start, self.answer1, self.answer3, self.answer4, self.answer7, self.answer8, self.answer11, self.answer12, self.answer13, self.answer14, self.answer16, self.answer19, self.answer20, self.answer22, self.answer23, self.answer24, self.answer25, self.answer26, self.answer27, self.answer28, self.answer29, self.answer30, self.answer32, self.answer33, self.answer34, self.answer37, self.answer38, self.answer40, self.answer41, self.answer42, self.answer43, self.answer45, self.answer48, self.answer49, self.answer50, self.answer52, self.answer53, self.answer56, self.answer57, self.answer58, self.answer60, self.answer61, self.answer63, self.answer64, self.answer66, self.answer67, self.answer69, self.answer70, self.answer71, self.answer75, self.answer76, self.answer80, self.answer82, self.answer84, self.answer88, self.answer89, self.answer90, self.answer91, self.answer94, self.answer96, self.answer99, None]
 
     def clear (self):
         del self.dialogue
@@ -240,6 +240,8 @@ class erek_start:
         self.color = characters["Imoen Silverhair"].get_color()
         self.npc.append (26)
         self.cont.append (17)
+        quests["demo"].set_val ("know_low_quality" , 1)
+
         self.player.append (-1)
 
     def answer26 (self):
@@ -538,7 +540,7 @@ class erek_start:
         self.cont.append (60)
         self.player.append (-1)
 
-    def answer204 (self):
+    def answer99 (self):
         self.color = the_npc.get_color()
         self.npc.append (21)
         self.cont.append (-1)
