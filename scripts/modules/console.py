@@ -1,12 +1,26 @@
+#
+#  $Id: console.py,v 1.8 2001/09/23 15:09:57 adondev Exp $
+#
+#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  Part of the Adonthell Project http://adonthell.linuxgames.com
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License.
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY.
+#
+#  See the COPYING file for more details
+#
+
 import sys
-from adonthell import *
+import adonthell
 
 # -- A simple python console with command history
-class console (win_container):
+class console (adonthell.win_container):
 
     # -- Constructor
     def __init__(self, ns):	
-        win_container.__init__(self)
+        adonthell.win_container.__init__(self)
 
         self.namespace = ns
         self.history = []
@@ -17,12 +31,12 @@ class console (win_container):
         # read the old history
         self.read_history ()
 
-        self.py_signal_connect (self.on_destroy, win_event_DESTROY)
-        self.py_signal_connect (self.on_update, win_event_UPDATE)
+        self.py_signal_connect (self.on_destroy, adonthell.win_event_DESTROY)
+        self.py_signal_connect (self.on_update, adonthell.win_event_UPDATE)
         
         # -- get font and theme
-        self.font = win_manager_get_font ("silverleaf")
-        self.theme = win_manager_get_theme ("silverleaf")
+        self.font = adonthell.win_manager_get_font ("silverleaf")
+        self.theme = adonthell.win_manager_get_theme ("silverleaf")
         
         self.move (10, 150)	
         self.resize (300, 80)
@@ -30,10 +44,10 @@ class console (win_container):
         self.set_background (self.theme)
         self.set_trans_background (1)
         
-        self.entry = win_write ()
+        self.entry = adonthell.win_write ()
         self.entry.thisown = 0
 
-        self.entry.py_signal_connect (self.on_execute, win_event_ACTIVATE_KEY)
+        self.entry.py_signal_connect (self.on_execute, adonthell.win_event_ACTIVATE_KEY)
         self.entry.move (5, 5)
         self.entry.resize (290, 70)
         # -- causes a crash:
@@ -62,8 +76,7 @@ class console (win_container):
     # -- callback for command execution
     def on_execute (self):
         text = self.entry.text_char ()
-        # print "Execute", text
- 
+
         # -- if we have a command ...
         if text != None:
             
@@ -88,32 +101,28 @@ class console (win_container):
     # -- catch relevant keypresses 
     def on_update (self):
         # -- quit
-        if input_has_been_pushed (SDLK_TAB):
-            # print "Quitting ..."
+        if adonthell.input_has_been_pushed (adonthell.SDLK_TAB):
             self.quit = 0
         
         # -- clear screen
-        elif input_has_been_pushed (SDLK_DELETE):
-            # print "Deleting ..."
+        elif adonthell.input_has_been_pushed (adonthell.SDLK_DELETE):
             self.entry.set_text ("")
         
         # -- previous command
-        elif input_has_been_pushed (SDLK_UP):
-            # print "Up ..."
+        elif adonthell.input_has_been_pushed (adonthell.SDLK_UP):
             if self.hist_idx > 0:
                 self.hist_idx = self.hist_idx - 1
                 self.entry.set_text (self.history[ self.hist_idx ][:-1])
         
         # -- next command
-        elif input_has_been_pushed (SDLK_DOWN):
-            # print "Down ..."
+        elif adonthell.input_has_been_pushed (adonthell.SDLK_DOWN):
             if self.hist_idx < len (self.history) - 1:
                 self.hist_idx = self.hist_idx + 1
                 self.entry.set_text (self.history[ self.hist_idx ][:-1])
 
     # -- Read the old history from ~/.adonthell/history
     def read_history (self):
-        dir = gamedata_user_data_dir ()
+        dir = adonthell.gamedata_user_data_dir ()
         dir = dir + "/history"
 
         # -- try to open the file
@@ -129,7 +138,7 @@ class console (win_container):
 
     # -- Write the last 50 commands to ~/.adonthell/history
     def write_history (self):
-        dir = gamedata_user_data_dir ()
+        dir = adonthell.gamedata_user_data_dir ()
         dir = dir + "/history"
 
         # -- try to open the file
