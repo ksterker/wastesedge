@@ -29,28 +29,26 @@ if todo == 0:
     else:
         myself.set_val ("delay", delay - 1)
 
-# Moving, follow the path until it is reached.
-elif todo == 2:
-    # Reached the goal? Wait a while then...
-    if myself.follow_path ():
-        if myself.posy () == 17: myself.stand_south ()
-        else: myself.stand_north ()
-        import random
-        myself.set_val ("delay", random.randint (25, 50) * 20)
-        myself.set_val ("todo", 0)
-        
-        
 # Engage a new movement
 elif todo == 1:
     # Choose where to move, if destination is already occupied we'll
     # fall into the wait state (0) again automatically next time
     if myself.posy () == 17:
-        myself.set_goal (11, 20)
+        myself.set_goal (11, 20, STAND_NORTH)
     else:
-        myself.set_goal (11, 17)
+        myself.set_goal (11, 17, STAND_SOUTH)
         
     # Next time we'll actually move!
     myself.set_val ("todo", 2)
+
+# Moving, follow the path until it is reached.
+elif todo == 2:
+    # Reached the goal? Wait a while then...
+    if myself.follow_path ():
+        import random
+        myself.set_val ("delay", random.randint (25, 50) * 20)
+        myself.set_val ("todo", 0)
+
 
 # -- utter a random remark
 tmp = myself.get_val ("say_something")

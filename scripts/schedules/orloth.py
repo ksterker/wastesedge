@@ -15,9 +15,6 @@
 #    He'll walk up to a table occasionally and either set or clean it
 #    From time to time he'll complain about the grandfather clock
 
-import schedules
-import random
-
 speech = ["I gotta clean this mug!", \
           "That barrel is leaking.", \
           "I hope they'll find the thief!"]
@@ -28,49 +25,58 @@ coords = [(3, 5, STAND_SOUTH), \
           (7, 4, STAND_WEST), \
           (10, 3, STAND_NORTH)]
 
-todo = myself.get_val ("wait_behind_bar")
+todo = myself.get_val ("todo")
 
-# -- leave the bar
+# -- waiting
 if todo == 0:
-    # -- get the position we want to reach
-    goal = myself.get_val ("goal")
-    x, y, dir = coords[goal]
+    delay = myself.get_val ("delay")
 
-    if schedules.simple_goto_xy (myself, x, y) == 1:
-        # -- wait a little
-        myself.set_val ("wait_behind_bar", -150)
+    # -- If standing delay expired, move around next time
+    if delay == 0:
+        myself.set_val ("todo", 1)
+    else:
+        myself.set_val ("delay", delay - 1)
 
-        if dir == STAND_NORTH: myself.stand_north ()
-        elif dir == STAND_EAST: myself.stand_east ()
-        elif dir == STAND_SOUTH: myself.stand_south ()
-        else: myself.stand_west ()
+# -- engage a new movement
+elif todo == 1:
+    from random import randint
 
+    # -- when we are at the bar, then wait a while before
+    #    moving again
+    if myself.posx () == 2:
+        x, y, dir = coords[randint (0, 4)]
+        myself.set_goal (x, y, dir)
+        myself.set_val ("delay", 150)
+
+    # -- otherwise only wait a little
+    else:
+        delay = randint (40, 120) * 20
+        myself.set_val ("delay", delay)
+        myself.set_goal (2, 2, STAND_SOUTH)
+
+    myself.set_val ("todo", 2)
+
+# -- moving
+elif todo == 2:
+    if myself.follow_path () == 1:
         # -- standing in front of the clock
-        if goal == 4:
-            schedules.speak (myself, "That clock is late again!")
+        if myself.posx () == 10:
+            from schedules import speak
+            speak (myself, "That clock is late again!")
+
+            tmp = myself.get_val ("say_something")
+            myself.set_val ("say_something", tmp + 75)
+
+        myself.set_val ("todo", 0)
 
 
-# -- stand still
-elif todo < 0:
-    myself.set_val ("wait_behind_bar", todo + 1)
-    if todo == -1:
-        # -- calculate the next move
-        delay = random.randint (40, 120) * 20
-        myself.set_val ("wait_behind_bar", delay)
-        myself.set_val ("goal", random.randint (0, 4))
+# -- utter a random remark
+tmp = myself.get_val ("say_something")
+myself.set_val ("say_something", tmp - 1)
+if tmp == 0:
+    from schedules import speak
+    from random import randint
 
-# -- go to/stay behind bar
-else:
-    myself.set_val ("wait_behind_bar", todo - 1)
-
-    # -- reached the bar
-    if schedules.simple_goto_xy (myself, 2, 2) == 1:
-        myself.stand_south ()
-
-    # -- utter a random remark
-    tmp = myself.get_val ("say_something")
-    myself.set_val ("say_something", tmp - 1)
-    if tmp == 0:
-        schedules.speak (myself, speech[random.randint (0, 2)])
-        delay = random.randint (50, 150) * 20
-        myself.set_val ("say_something", delay)
+    speak (myself, speech[randint (0, 2)])
+    delay = randint (50, 150) * 20
+    myself.set_val ("say_something", delay)
