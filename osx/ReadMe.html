@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+	<title>Read Me</title>
+</head>
+<body>
+<center><h2>Adonthell - Waste's Edge</h2></center>
+
+<center><table border="0" cellspacing="0" cellpadding="0"><tr><td>
+<p>This program is free software; you can redistribute it and/or<br>
+modify it under the terms of the GNU General Public License<br>
+as published by the Free Software Foundation; either version 2<br>
+of the License, or (at your option) any later version.</p>
+
+<p>This program is distributed in the hope that it will be useful,<br>
+but WITHOUT ANY WARRANTY; without even the implied warranty<br>
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br>
+See the <a href="Copying.html">Copying.html</a> file for more details.<br>&nbsp;</p>
+</td></tr></table></center>
+
+<h3>Synopsis</h3>
+
+<p>Below you will find a description of Adonthell's configuration options,
+release notes and contact informations. If you need help with playing
+Adonthell - Waste's Edge, please refer to the <a href="Playing.html">Playing.html</a> file.<br>&nbsp;<p>
+
+<h3>Philosophy</h3>
+
+<p>Adonthell was (and still is) primarily developed for GNU/Linux, but runs on
+many UNiX flavours and various hardware platforms. This is the first
+official release for Mac OS X.</p>
+
+<p>Adonthell is free software, which means its source code is available for
+everybody to modify and distribute, as long as those modifications
+are open to everybody as well. See the <a href="Copying.html">Copying.html</a> file for the exact terms and conditions.</p>
+
+<p>In turn, Adonthell itself depends on various projects that are sharing
+the same philosophy, like SDL, Ogg Vorbis, Python and SWIG to name
+just a few. Without these fundamental works of dozens of developers,
+we wouldn't be where we are today.</p>
+</P>
+
+<p>The same is true for the many individuals that contributed bugfixes or
+larger portions of the code. Something that would be unthinkable with
+closed source software.</p>
+
+<p>In brief: &quot;Use the Source, Luke!&quot;<br>&nbsp;</p>
+
+
+<h3>Configuring Adonthell</h3>
+
+<p>The Adonthell configuration file is called 'adonthellrc' and located
+inside the Adonthell.app package. You can modify it with your favorite
+text editor. The available options and what they do are:</p>
+
+<ul>
+<li><b>Screen-mode</b><br>
+Whether Adonthell should run fullscreen or in windowed mode<br>
+0 = Windowed mode, 1 = Fullscreen mode<br>&nbsp;</li>
+
+<li><b>Double-size</b><br>
+Whether resolution should be scaled to 640x480 or not<br>
+0 = disable, 1 = enable<br>
+<br>
+Enabling double-size mode significantly increases CPU usage. On 
+old hardware you should consider turning this option off and run
+Adonthell in fullscreen mode instead.<br>&nbsp;</li>
+
+<li><b>Language [locale]</b><br>
+Specifies which language to use. As long as this option is unset,
+the language is determined by one of the following environment
+variables: LANG, LC_ALL or LC_MESSAGES. Once the option is
+set, it overrides any environment variable.
+ 
+<p>Of course, the game you run has to provide the translation you 
+chose here, otherwise you'll get the default (i.e. English) text.</p>
+
+As of today, no translation are available, but French, German and Russian 
+are underway. If you are interested in translating Waste's Edge to your 
+native language (which is as simple as taking the English sentences and 
+writing their translation below them), please contact us!<br>&nbsp;</li>
+
+<li><b>Quick-load</b><br>
+Whether the last saved game should be automatically continued at
+startup. Only works if at least one saved game exists.<br>
+0 = disable, 1 = enable<br>&nbsp;</li>
+ 
+<li><b>Audio-channels</b><br>
+Whether sound should be mono or stereo<br>
+0 = Mono, 1 = Stereo<br>&nbsp;</li>
+
+<li><b>Audio-resolution</b><br>
+Whether audio output should be 8 or 16 bit<br>
+0 = 8 bit, 1 = 16 bit<br>&nbsp;</li>
+
+<li><b>Audio-sample-rate</b><br>
+0 = 11025 Hz, 1 = 22050 Hz, 2 = 44100 Hz<br>&nbsp;</li>
+
+<li><b>Audio-volume</b><br>
+The mixer setting, 0 - 100 %<br><br>
+Note that a value of 0 will turn audio completely off.<br>&nbsp;</li>
+</ul>
+
+<h3>Release Notes</h3>
+<p>The main purpose of this release is to attract new programmers, artists
+and writers in order to shorten the time until the next version.  So
+if you have experience in C++ (and optionally Python), or if you are
+good at computer graphics or writing we would like to hear from you. 
+Please have a look at our developer's corner</p>
+  
+<p style="margin-left:1cm"><a href="http://adonthell.linuxgames.com/development/">http://adonthell.linuxgames.com/development/</a></p>
+
+<p>for further details.</p>
+
+<p>Adonthell - Waste's Edge, or v0.3 for short is no complete RPG. As the v0.3
+implies, the engine is far from being finished, although it should be
+free of severe bugs.  Missing features include combat, items and
+magic.  But you can interact with NPCs and the game world, and the
+internals enable us to create a basic plot, so v0.3 is actually
+playable!</p>
+
+<p>You're greatly invited to report us bugs, problems, or anything you 
+think we should know. Any feedback is appreciated, so don't hesitate!
+<br>&nbsp;</p>
+
+<h3>Contact</h3>
+
+<p>You can reach us in various ways:</p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td>Email:</td>
+<td><a href="mailto:adonthell@linuxgames.com">adonthell@linuxgames.com</a></td>
+</tr>
+<tr>
+<td>Mailing List:</td>
+<td><a href="mailto:adonthell-general@nongnu.org">adonthell-general@nongnu.org</a></td>
+</tr>
+<tr>
+<td>Website:</td>
+<td><a href="http://adonthell.linuxgames.com">http://adonthell.linuxgames.com</a></td>
+</tr>
+<tr>
+<td>Tech Support:</td>
+<td><a href="http://savannah.nongnu.org/support/?group_id=702">http://savannah.nongnu.org/support/?group_id=702</a></td>
+</tr>
+</table>
+
+<p>There is a Message Board for user to user discussion at</p>
+
+<p style="margin-left:1cm"><a href="http://www.3dforums.com/?action=forumpage&loc=49&forum_id=158">http://www.3dforums.com/?action=forumpage&loc=49&forum_id=158</a></p>
+
+<p>If you want to rate or comment on Adonthell, feel free to do so at</p>
+
+<p style="margin-left:1cm"><a href="http://www.happypenguin.org/show?Adonthell">http://www.happypenguin.org/show?Adonthell</a><br>
+<a href="http://www.happypenguin.org/show?Adonthell">http://www.freshmeat.net/projects/adonthell</a><br>&nbsp;</p>
+
+
+<h3>Reporting Bugs</h3>
+
+<p>We hope you'll never have to, but if you discover a problem, we would
+like to hear about it. In that case, the files stdout.txt and
+stderr.txt might contain further details to locate the source of
+error. Please use the <a href="mailto:adonthell-devel@nongnu.org">Development mailing list</a> to contact us. Information on this and other mailing lists 
+is available at</p>
+
+<p style="margin-left:1cm"><a href="http://adonthell.linuxgames.com/contact/mailinglist.shtml">http://adonthell.linuxgames.com/contact/mailinglist.shtml</a></p>
+
+<hr>
+Thank you for trying this software.<br>
+- The Adonthell team.
+</body>
+</html>
