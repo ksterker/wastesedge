@@ -10,15 +10,19 @@
 #  See the COPYING file for more details
 #
 
-# -- Map Event to open / close the inn door.
+# -- Map Event to make a character say something.
 
 import adonthell
 
-class open_inn_door:
+class character_speak:
 
-    def __init__ (self, eventinstance):
-        pass
+    # Parameters:
+    # name: name of the character that should speak when the event is triggered
+    # sentence: sentence to say when the event is triggered
+    def __init__ (self, eventinstance, name, sentence):
+        self.myself = eventinstance
+        self.mapchar = adonthell.gamedata_get_character (name)
+        self.sentence = sentence
 
     def run (self, submap, x, y, dir, name):
-        adonthell.gamedata_map_engine ().get_landmap ().get_mapobject (0).\
-                                      get_animation (0).next_frame ()
+        self.mapchar.speak (self.sentence)

@@ -1,17 +1,3 @@
-#
-#  $Id: console.py,v 1.6 2001/09/04 19:34:29 adondev Exp $
-#
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
-#  Part of the Adonthell Project http://adonthell.linuxgames.com
-#
-#  This program is free software; you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License.
-#  This program is distributed in the hope that it will be useful,
-#  but WITHOUT ANY WARRANTY.
-#
-#  See the COPYING file for more details
-#
-
 import sys
 from adonthell import *
 
@@ -76,14 +62,15 @@ class console (win_container):
     # -- callback for command execution
     def on_execute (self):
         text = self.entry.text_char ()
-
+        # print "Execute", text
+ 
         # -- if we have a command ...
         if text != None:
+            
             # -- ... add it to command history ...
-            if self.hist_idx == 0 or text + '\n' != self.history[-1]:
+            if self.hist_idx == 0 or text != self.history[-1]:
                 self.history.append (text + '\n')
-
-            self.hist_idx = len (self.history)
+                self.hist_idx = len (self.history)
     
             # -- ... and try to execute it
             try:

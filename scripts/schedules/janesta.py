@@ -14,49 +14,58 @@
 #
 #    She'll busy herself in Silverhair's room
 
+from adonthell import STAND_NORTH, STAND_SOUTH, STAND_WEST, STAND_EAST
+from random import randint
 
-speech = ["Oh, dear. Oh, dear.", \
-          "What will happen to us if they take the Mistress?", \
-          "I must do something about this awful room.", \
-          "Oh, how do they expect us to live decently in a place like this?"]
+class janesta:
 
-coords = [(1, 3, STAND_NORTH), \
-          (6, 3, STAND_NORTH), \
-          (1, 5, STAND_SOUTH), \
-          (4, 2, STAND_WEST)]
+    def __init__ (self, mapcharacterinstance):
+        self.myself = mapcharacterinstance
+        self.speech = ["Oh, dear. Oh, dear.", \
+                       "What will happen to us if they take the Mistress?", \
+                       "I must do something about this awful room.", \
+                       "Oh, how do they expect us to live decently in a place like this?"]
 
-todo = myself.get_val ("todo")
+        self.coords = [(1, 3, STAND_NORTH), \
+                       (6, 3, STAND_NORTH), \
+                       (1, 5, STAND_SOUTH), \
+                       (4, 2, STAND_WEST)]
 
-# -- waiting
-if todo == 0:
-    delay = myself.get_val ("delay")
-    # If standing delay expired, move around next time
-    if delay == 0:
-        myself.set_val ("todo", 1)
-    else:
-        myself.set_val ("delay", delay - 1)
+    def run (self):
+        myself = self.myself
+        
+        todo = myself.get_val ("todo")
 
-# -- engage a new movement
-elif todo == 1:
-    x, y, dir = coords[randint (0, 3)]
+        # -- waiting
+        if todo == 0:
+            delay = myself.get_val ("delay")
+            # If standing delay expired, move around next time
+            if delay == 0:
+                myself.set_val ("todo", 1)
+            else:
+                myself.set_val ("delay", delay - 1)
 
-    myself.set_goal (x, y, dir)
-    myself.set_val ("todo", 2)
+        # -- engage a new movement
+        elif todo == 1:
+            x, y, dir = self.coords[randint (0, 3)]
 
-# -- moving
-elif todo == 2:
-    if myself.follow_path () == 1:
-        # -- the time we stay at the same place
-        delay = randint (20, 60) * 10
+            myself.set_goal (x, y, dir)
+            myself.set_val ("todo", 2)
 
-        myself.set_val ("delay", delay)
-        myself.set_val ("todo", 0)
+        # -- moving
+        elif todo == 2:
+            if myself.follow_path () == 1:
+                # -- the time we stay at the same place
+                delay = randint (20, 60) * 10
+
+                myself.set_val ("delay", delay)
+                myself.set_val ("todo", 0)
 
 
-# -- utter a random remark
-tmp = myself.get_val ("say_something")
-myself.set_val ("say_something", tmp - 1)
-if tmp == 0:
-    myself.speak (speech[randint (0, 3)])
-    delay = randint (50, 75) * 35
-    myself.set_val ("say_something", delay)
+        # -- utter a random remark
+        tmp = myself.get_val ("say_something")
+        myself.set_val ("say_something", tmp - 1)
+        if tmp <= 0:
+            myself.speak (self.speech[randint (0, 3)])
+            delay = randint (50, 75) * 35
+            myself.set_val ("say_something", delay)
