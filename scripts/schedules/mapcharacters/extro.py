@@ -17,9 +17,6 @@ import events
 
 class extro:
     def __init__(self, mapchar):
-        # -- deactivate game controls
-        adonthell.gamedata_engine ().set_control_active (0)
-        
         # -- grab the character's we need
         bjarn = adonthell.gamedata_get_character ("Bjarn Fingolson")
         erek = adonthell.gamedata_get_character ("Erek Stonebreaker")
@@ -143,14 +140,14 @@ class extro:
             ("John Havard", 1), \
             ("James Nash", 3), \
             ("soundtrack available on:", 1), \
-            ("http://www.zhaytee.com/...", 5), \
+            ("http://www.zhaytee.com/...", 3), \
             ("the Adonthell team whishes to thank:", 2), \
             ("Al Koskelin", 1), \
             ("Andrew Henderson", 1), \
             ("Chris Harris", 1), \
             ("Mark Howson", 1), \
             ("Dave Peticolas", 1), \
-            ("Josh's friend doing the CVS", 1), \
+            ("Ryan O'Neil", 1), \
             ("Meandus", 1), \
             ("Deniz Oezsen", 2), \
             ("The people behind SDL, Ogg Vorbis,", 1), \
@@ -170,7 +167,7 @@ class extro:
         self.colors = ["white", "yellow", "red", "violet", "blue", "green"]
          
         # -- misc stuff
-        self.index = 34
+        self.index = 0
         self.bubble = self.make_bubble ()
         self.done = 0
         
@@ -204,8 +201,12 @@ class extro:
 
 
     def run (self):
+        # -- deactivate game controls
+        if self.index == 0:
+            adonthell.gamedata_engine ().set_control_active (0)
+
         # -- Bjarn walks up to chest
-        if self.index == 18:
+        elif self.index == 18:
             bjarn = self.text[2][0]
             if self.done == 0:
                 bjarn.set_schedule_active (0)
@@ -516,7 +517,7 @@ class extro:
         # -- misc stuff
         self.step = 0       # -- for the extro control
         self.anim = 0       # -- for the forest animation control
-        self.index = 3      # -- index in the typeover array       
+        self.index = 0      # -- index in the typeover array       
         self.delay = 0      # -- delay before adding new text
         self.cursor = 0     # -- cursor in the typeover text
         self.x = [0, 0, 0]  # -- offsets of the 3 forest pics
