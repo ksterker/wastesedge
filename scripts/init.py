@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.55 2001/10/10 19:50:55 adondev Exp $
+#  $Id: init.py,v 1.56 2001/10/12 09:49:41 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -790,6 +790,11 @@ class title_screen:
         lm.add_event (ev)
 
         # Now setup the characters
+        player = gamedata_player ()
+        player.jump_to (0, 4, 18)
+        player.stand_east ()
+        player.set_schedule ("intro")
+
         lucia = gamedata_get_character ("Lucia Redwyne")
         lucia.set_dialogue ("dialogues/lucia_start")
         lucia.load ("lucia.mchar")
@@ -822,12 +827,12 @@ class title_screen:
         erek.set_portrait ("erek.pnm")
 
         talan = gamedata_get_character ("Talan Wendth")
-        talan.set_dialogue ("dialogues/talan_start")
+        talan.set_dialogue ("dialogues/demo_intro_1")
         talan.load ("talan.mchar")
         talan.set_map (gamedata_map_engine ().get_landmap ())
-        talan.jump_to (0, 11, 19)
+        talan.jump_to (0, 7, 17)
         talan.set_action ("talk")
-        talan.stand_north ()
+        talan.stand_west ()
         talan.set_schedule ("talan")
         talan.set_portrait ("talan.pnm")
 

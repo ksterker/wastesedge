@@ -1,0 +1,90 @@
+#
+#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  Part of the Adonthell Project http://adonthell.linuxgames.com
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License.
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY.
+#
+#  See the COPYING file for more details
+#
+
+# -- Schedule for the player to get into the Inn after the intro
+
+import adonthell
+
+class intro:
+
+    def __init__ (self, mapcharacterinstance):
+        self.myself = mapcharacterinstance
+
+        self.myself.set_val ("talk_to_talan", 1)
+
+
+    def run (self):
+        myself = self.myself
+        talk = myself.get_val ("talk_to_talan")
+
+        # -- first talk to talan to get into the inn
+        if talk == 1:
+            talan = adonthell.gamedata_get_character ("Talan Wendth")
+            talan.launch_action (myself)
+
+            myself.set_val ("talk_to_talan", 2)
+
+        # -- open the gate
+        elif talk == 2:
+            self.open_gate ()
+
+            myself.set_val ("talk_to_talan", 0)
+            myself.set_goal (10, 18, adonthell.STAND_EAST)
+
+        # -- move in and finally enable keyboard control
+        else:
+            if myself.follow_path () == 1:
+                myself.set_schedule ("keyboard_control")
+                self.close_gate ()
+                myself.go_east ()
+
+
+    # -- Opens the gate
+    def open_gate (self):
+        # Get the mapobjects
+        gate_fore = adonthell.gamedata_map_engine ().get_landmap ().get_mapobject (90)
+        gate_back = adonthell.gamedata_map_engine ().get_landmap ().get_mapobject (89)
+
+        # Only open the gate if it's closed...
+        if (gate_fore.get_animation (0).currentframe () == 0):
+            # Plays the gate back animation
+            gate_back.get_animation (0).next_frame ()
+            # Plays the gate fore animation
+            gate_fore.get_animation (0).next_frame ()
+
+            # Update squares walkability
+            sm = adonthell.gamedata_map_engine ().get_landmap ().get_submap (0)
+            sm.get_square (6, 17).set_walkable_south (0)
+            sm.get_square (7, 17).set_walkable_south (0)
+            sm.get_square (6, 18).set_walkable_west (1)
+            sm.get_square (6, 19).set_walkable_west (1)
+
+    # Close the gate
+    def close_gate (self):
+        # Get the mapobjects
+        gate_fore = adonthell.gamedata_map_engine ().get_landmap ().get_mapobject (90)
+        gate_back = adonthell.gamedata_map_engine ().get_landmap ().get_mapobject (89)
+
+        # Only close the gate if it's opened
+        if (gate_fore.get_animation (0).currentframe () == 4):
+            # Plays the gate back animation
+            gate_back.get_animation (0).next_frame ()
+            # Plays the gate fore animation
+            gate_fore.get_animation (0).next_frame ()
+
+            # Update squares walkability
+            sm = adonthell.gamedata_map_engine ().get_landmap ().get_submap (0)
+            sm.get_square (6, 17).set_walkable_south (1)
+            sm.get_square (7, 17).set_walkable_south (1)
+            sm.get_square (6, 18).set_walkable_west (0)
+            sm.get_square (6, 19).set_walkable_west (0)
+            sm.get_square (6, 20).set_walkable_west (0)
