@@ -37,6 +37,8 @@ if myself.get_val ("goto_players_room") == 1:
 elif myself.get_val ("goto_players_room") == 2:
     # -- start talking to the player
     myself.launch_action (the_player)
+    # -- does not make a change
+    myself.set_schedule_active (0)
 
 # -- leave the player's room and goto the barn
 elif myself.get_val ("goto_barn") == 1:

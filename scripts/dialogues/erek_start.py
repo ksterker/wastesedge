@@ -17,17 +17,14 @@ class erek_start:
     def clear (self):
         del self.dialogue
 
-        self.demo = quests["demo"]
-
-
     # Returns whom the Player told about his connection
     # with Lady Silverhair
     
     def get_right_npc (self):
-        if self.demo.get_val ("work_4_shair") & 1 == 1:
+        if quests["demo"].get_val ("work_4_shair") & 1 == 1:
             return "Master Orloth"
     
-        elif self.demo.get_val ("work_4_shair") & 2 == 2:
+        elif quests["demo"].get_val ("work_4_shair") & 2 == 2:
             return "the mercenary"
     
         else:
@@ -51,7 +48,7 @@ class erek_start:
             self.cont.append (-1)
             the_npc.set_val ("talked_to", 1)
 
-            if self.demo.get_val ("know_erek") == 1:
+            if quests["demo"].get_val ("know_erek") == 1:
 
                 self.player.append (1)
                 self.cont.append (1)
@@ -60,7 +57,7 @@ class erek_start:
                 self.player.append (43)
                 self.cont.append (30)
             self.player.append (-1)
-        elif the_npc.get_val ("work_4_shair") == 0 and self.get_val ("demo").get_val ("work_4_shair") > 0:
+        elif the_npc.get_val ("work_4_shair") == 0 and quests["demo"].get_val ("work_4_shair") > 0:
 
             self.color = 0
             self.npc.append (50)
@@ -464,7 +461,7 @@ class erek_start:
         self.cont.append (11)
         self.player.append (20)
         self.cont.append (12)
-        if self.demo.get_val ("know_argument") != 0:
+        if quests["demo"].get_val ("know_argument") != 0:
 
             self.player.append (38)
             self.cont.append (26)
@@ -488,9 +485,9 @@ class erek_start:
         self.color = the_npc.get_color()
         self.npc.append (21)
         self.cont.append (-1)
-        self.demo.set_val ("know_alek_eavesdrop", 1)
+        quests["demo"].set_val ("know_alek_eavesdrop" , 1)
 
-        if self.demo.get_val ("know_argument") == 0:
+        if quests["demo"].get_val ("know_argument") == 0:
 
             self.player.append (22)
             self.cont.append (13)
@@ -540,14 +537,14 @@ class erek_start:
 
         self.player.append (19)
         self.cont.append (11)
-        if self.demo.get_val ("know_argument") != 0:
+        if quests["demo"].get_val ("know_argument") != 0:
 
             self.player.append (38)
             self.cont.append (26)
         self.player.append (-1)
 
     def answer3 (self):
-        if self.demo.get_val ("work_4_shair") != 0:
+        if quests["demo"].get_val ("work_4_shair") != 0:
 
             self.color = the_npc.get_color()
             self.npc.append (6)

@@ -470,13 +470,15 @@ if retval < 5:
         orloth.stand_south ()
         orloth.set_schedule ("orloth")
 
-        # erek = characters ["Erek Stonebreaker"]
-        # erek.set_dialogue ("dialogues/erek_start")
-        # erek.load ("erek.mchar")
-        # erek.set_map (map_engine.get_landmap ())
-        # erek.jump_to (1, 5, 5)
-        # erek.set_action ("action_talk")
-        # erek.stand_north ()
+        # -- that's a clone for now
+        erek = characters ["Erek Stonebreaker"]
+        erek.set_dialogue ("dialogues/erek_start")
+        erek.load ("bjarn.mchar")
+        erek.set_map (map_engine.get_landmap ())
+        erek.jump_to (1, 5, 5)
+        erek.set_action ("action_talk")
+        erek.stand_north ()
+        erek.set_schedule ("erek")
 
         oliver = characters ["Oliver Redwyne"]
         oliver.set_dialogue ("dialogues/oliver_start")
