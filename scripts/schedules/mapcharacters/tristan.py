@@ -33,12 +33,16 @@ class tristan (schedule.speak):
         self.speech_delay = (20, 55)
         schedule.speak.__init__(self)
         
+        self.walk_delay = "30t"
+        
         # -- walking
-        self.walk_event = adonthell.time_event ("35t")
-        self.walk_event.set_callback (self.walk)
-        adonthell.event_handler_register_event (self.walk_event)
-        self.myself.set_callback (self.goal_reached)
+        walk_event = adonthell.time_event (self.walk_delay)
+        walk_event.set_callback (self.walk)
+        walk_event.thisown = 0
+        self.myself.add_event (walk_event)
 
+        self.myself.set_callback (self.goal_reached)
+        
     def walk (self):
         # -- in common room -> go outside
         if self.myself.submap () == 1 and \
@@ -60,6 +64,7 @@ class tristan (schedule.speak):
             self.myself.set_goal (12, 18, adonthell.STAND_WEST)
         # -- reached our final destination
         else:
-            self.walk_event = adonthell.time_event (self.walk_delay)
-            self.walk_event.set_callback (self.walk)
-            adonthell.event_handler_register_event (self.walk_event)
+            walk_event = adonthell.time_event (self.walk_delay)
+            walk_event.set_callback (self.walk)
+            walk_event.thisown = 0
+            self.myself.add_event (walk_event)

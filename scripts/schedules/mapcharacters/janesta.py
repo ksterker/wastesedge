@@ -39,9 +39,11 @@ class janesta (schedule.speak):
                        (4, 2, adonthell.STAND_WEST)]
 
         delay = "%it" % random.randrange (10, 30)
-        self.walk_event = adonthell.time_event (delay)
-        self.walk_event.set_callback (self.walk)
-        adonthell.event_handler_register_event (self.walk_event)
+        walk_event = adonthell.time_event (delay)
+        walk_event.set_callback (self.walk)
+        walk_event.thisown = 0
+        self.myself.add_event (walk_event)
+
         self.myself.set_callback (self.goal_reached)
 
     def walk (self):
@@ -50,6 +52,7 @@ class janesta (schedule.speak):
     
     def goal_reached (self):
         delay = "%it" % random.randrange (10, 30)
-        self.walk_event = adonthell.time_event (delay)
-        self.walk_event.set_callback (self.walk)
-        adonthell.event_handler_register_event (self.walk_event)
+        walk_event = adonthell.time_event (delay)
+        walk_event.set_callback (self.walk)
+        walk_event.thisown = 0
+        self.myself.add_event (walk_event)

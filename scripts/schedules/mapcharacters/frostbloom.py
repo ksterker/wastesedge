@@ -39,11 +39,13 @@ class frostbloom (schedule.speak):
         schedule.speak.__init__(self)
         
         delay = "%it" % random.randrange (20, 50)
-        self.walk_event = adonthell.time_event (delay)
-        self.walk_event.set_callback (self.walk)
-        adonthell.event_handler_register_event (self.walk_event)
-        self.myself.set_callback (self.goal_reached)
+        walk_event = adonthell.time_event (delay)
+        walk_event.set_callback (self.walk)
+        walk_event.thisown = 0
+        self.myself.add_event (walk_event)
 
+        self.myself.set_callback (self.goal_reached)
+        
     def walk (self):
         # -- the position we want to reach
         x = random.randrange (self.min_x, self.max_x)
@@ -53,6 +55,7 @@ class frostbloom (schedule.speak):
     
     def goal_reached (self):
         delay = "%it" % random.randrange (20, 50)
-        self.walk_event = adonthell.time_event (delay)
-        self.walk_event.set_callback (self.walk)
-        adonthell.event_handler_register_event (self.walk_event)
+        walk_event = adonthell.time_event (delay)
+        walk_event.set_callback (self.walk)
+        walk_event.thisown = 0
+        self.myself.add_event (walk_event)

@@ -43,28 +43,31 @@ class sarin (schedule.speak):
         schedule.speak.__init__(self)
 
         delay = "%it" % random.randrange (3, 6)
-        self.walk_event = adonthell.time_event (delay)
-        self.walk_event.set_callback (self.walk)
-        adonthell.event_handler_register_event (self.walk_event)
+        walk_event = adonthell.time_event (delay)
+        walk_event.set_callback (self.walk)
+        walk_event.thisown = 0
+        self.myself.add_event (walk_event)
         
         self.myself.set_callback (self.goal_reached)
 
-        #delay = "%it" % random.randrange (13, 16)
-        #self.switch_event = adonthell.time_event (delay)
-        #self.switch_event.set_callback (self.switch_direction)
-        #adonthell.event_handler_register_event (self.switch_event)
+        delay = "%it" % random.randrange (30, 60)
+        switch_event = adonthell.time_event (delay)
+        switch_event.set_callback (self.switch_direction)
+        switch_event.thisown = 0
+        self.myself.add_event (switch_event)
 
-    def switch_direction (self):        
+    def switch_direction (self):
         # -- ... and set the new one accordingly
         if self.direction == adonthell.WALK_EAST or self.direction == adonthell.WALK_WEST:
             self.direction = random.randrange (adonthell.WALK_NORTH, adonthell.WALK_SOUTH + 1)
         else:
             self.direction = random.randrange (adonthell.WALK_WEST, adonthell.WALK_EAST + 1)
         
-        delay = "%it" % random.randrange (13, 16)
-        self.switch_event = adonthell.time_event (delay)
-        self.switch_event.set_callback (self.switch_direction)
-        adonthell.event_handler_register_event (self.switch_event)
+        delay = "%it" % random.randrange (30, 60)
+        switch_event = adonthell.time_event (delay)
+        switch_event.set_callback (self.switch_direction)
+        switch_event.thisown = 0
+        self.myself.add_event (switch_event)
 
         self.walk ()
     
@@ -89,6 +92,7 @@ class sarin (schedule.speak):
 
     def goal_reached (self):
         delay = "%it" % random.randrange (3, 6)
-        self.walk_event = adonthell.time_event (delay)
-        self.walk_event.set_callback (self.walk)
-        adonthell.event_handler_register_event (self.walk_event)
+        walk_event = adonthell.time_event (delay)
+        walk_event.set_callback (self.walk)
+        walk_event.thisown = 0
+        self.myself.add_event (walk_event)

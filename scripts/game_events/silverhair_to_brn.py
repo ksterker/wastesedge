@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -10,7 +10,7 @@
 #  See the COPYING file for more details
 #
 
-# -- Map Event to teleport a character from the barn into Silverhair's room
+# -- Map Event to teleport a character from Silverhair's room onto veranda
 
 import adonthell
 import events
@@ -29,6 +29,9 @@ class silverhair_to_brn:
         self.destdir = destdir
 
     def run (self, submap, x, y, dir, name):
+        # -- just arrived -> do nothing
+        if dir == adonthell.STAND_WEST: return
+        
         p = adonthell.gamedata_get_character (name)
 
         if p.get_val ("came_from_barn") == 1:

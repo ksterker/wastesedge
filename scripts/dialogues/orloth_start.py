@@ -165,7 +165,7 @@ class orloth_start (dialogue.base):
 		"adonthell.gamedata_get_quest(\"demo\").set_val (\"know_erek\" , 1)\n",\
 		"adonthell.gamedata_get_quest(\"demo\").set_val (\"know_bjarns_insult\" , 1)\n",\
 		"self.the_npc.set_val (\"told_about_shair\", 1)\n\nmyvar = adonthell.gamedata_get_quest(\"demo\").get_val (\"work_4_shair\")\nmyvar = myvar | 1\nadonthell.gamedata_get_quest(\"demo\").set_val (\"work_4_shair\" , myvar)\n\n",\
-		"adonthell.gamedata_get_character(\"Oliver Redwyne\").set_val (\"goto_players_room\" , 1)\n",\
+		"adonthell.gamedata_get_character(\"Oliver Redwyne\").do_stuff (\"goto_common_room\")\nself.goto_players_room = 1\n",\
 		"self.the_npc.set_val (\"explain_events\" , 1)\n",\
 		"adonthell.gamedata_get_quest(\"demo\").set_val (\"know_argument\" , 1)\n",\
 		"adonthell.gamedata_get_quest(\"demo\").set_val (\"soothe_lucia\" , 1)\n"]
@@ -316,12 +316,11 @@ class orloth_start (dialogue.base):
 
 	def __del__(self):
 		oliver = adonthell.gamedata_get_character ("Oliver Redwyne")
-		if oliver.get_val ("goto_players_room") == 2:
+		if self.goto_players_room == 1:
 		    import events
 		    events.switch_submap (self.the_player, 12, 5, 3, 1)
+		    oliver.stop_moving ()
 		    oliver.set_offset (0, 0)
-		    oliver.set_val ("goto_players_room", 3)
-		    oliver.set_val ("todo", 0)
 		    events.switch_submap (oliver, 12, 5, 4, 0)
 		
 

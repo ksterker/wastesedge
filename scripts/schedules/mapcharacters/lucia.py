@@ -37,9 +37,11 @@ class lucia (schedule.speak):
                   (6, 3, adonthell.STAND_EAST)]
 
         delay = "%it" % random.randrange (20, 40)
-        self.walk_event = adonthell.time_event (delay)
-        self.walk_event.set_callback (self.walk)
-        adonthell.event_handler_register_event (self.walk_event)
+        walk_event = adonthell.time_event (delay)
+        walk_event.set_callback (self.walk)
+        walk_event.thisown = 0
+        self.myself.add_event (walk_event)
+        
         self.myself.set_callback (self.goal_reached)
 
     def walk (self):
@@ -57,6 +59,7 @@ class lucia (schedule.speak):
         else:
             delay = "%it" % random.randrange (20, 40)
         
-        self.walk_event = adonthell.time_event (delay)
-        self.walk_event.set_callback (self.walk)
-        adonthell.event_handler_register_event (self.walk_event)
+        walk_event = adonthell.time_event (delay)
+        walk_event.set_callback (self.walk)
+        walk_event.thisown = 0
+        self.myself.add_event (walk_event)

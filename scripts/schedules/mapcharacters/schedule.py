@@ -19,6 +19,7 @@ import types
 # -- let NPC utter random remarks
 #    requires the NPC schedule to have the members 
 #
+#    myself, a pointer to the mapcharacter
 #    speech, an array of remarks for the NPC, and 
 #    speech_delay, a tuple with the minimum and maximum delay 
 #        between two remarks
@@ -28,11 +29,15 @@ import types
 class speak:
     def __init__ (self):
         # -- sanity checks
-        if type (self.speech) != types.ListType:
+        if not hasattr (self, "myself"):
+            print "*** speak::__init__: character 'myself' not found!"
+        if not hasattr (self, "speech") and \
+            type (self.speech) != types.ListType:
             print "*** speak::__init__: 'speech' list not found!"
-        if type (self.speech_delay) != types.TupleType:
+        if not hasattr (self, "speech_delay") and \
+            type (self.speech_delay) != types.TupleType:
             print "*** speak::__init__: 'speech_delay' tuple not found!"
-        if len (self.speech_delay) != 2:
+        elif len (self.speech_delay) != 2:
             print "*** speak::__init__: 'speech_delay' has wrong size!"
             
         # -- member initialization
@@ -40,16 +45,17 @@ class speak:
         
         # -- register first speech
         delay = "%it" % random.randrange (self.speech_delay[0], self.speech_delay[1])
-        self.speak_event = adonthell.time_event (delay)
-        self.speak_event.set_callback (self.speak)
-        adonthell.event_handler_register_event (self.speak_event)
-
+        speak_event = adonthell.time_event (delay)
+        speak_event.thisown = 0
+        speak_event.set_callback (self.speak)
+        self.myself.add_event (speak_event)
         
     # -- make remark and set delay for the next one
     def speak (self):
         self.myself.speak (self.speech[random.randrange (0, self.speech_length)])
 
         delay = "%it" % random.randrange (self.speech_delay[0], self.speech_delay[1])
-        self.speak_event = adonthell.time_event (delay)
-        self.speak_event.set_callback (self.speak)
-        adonthell.event_handler_register_event (self.speak_event)
+        speak_event = adonthell.time_event (delay)
+        speak_event.thisown = 0
+        speak_event.set_callback (self.speak)
+        self.myself.add_event (speak_event)

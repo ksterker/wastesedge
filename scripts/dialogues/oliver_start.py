@@ -45,12 +45,12 @@ class oliver_start (dialogue.base):
 
 	cond = [\
 		"self.the_npc.get_val (\"talked_to\") == 0\n",\
-		"self.the_npc.get_val (\"goto_players_room\") == 3\n"]
+		"adonthell.gamedata_get_character (\"Oliver Redwyne\").submap () == 12\n"]
 
 	code = [\
 		"self.the_npc.set_val (\"talked_to\" , 1)\n",\
 		"adonthell.gamedata_get_quest(\"demo\").set_val (\"know_olivers_noise\" , 1)\n",\
-		"self.the_npc.set_val (\"goto_players_room\" , 0)\nself.the_npc.set_val (\"talked_to\" , 1)\nself.the_npc.set_val (\"goto_barn\" , 1)\n"]
+		"self.the_npc.set_val (\"talked_to\" , 1)\nself.the_npc.set_val (\"goto_barn\" , 1)\n"]
 
 	# -- (speaker, code, ((text, operation, condition), ...))
 	dlg = [\
@@ -97,3 +97,8 @@ class oliver_start (dialogue.base):
 		self.namespace = globals ()
 		self.the_player = p
 		self.the_npc = n
+
+	def __del__(self):
+		if self.the_npc.get_val ("goto_barn") == 1:
+		    adonthell.gamedata_get_character("Oliver Redwyne").do_stuff ("goto_barn")
+

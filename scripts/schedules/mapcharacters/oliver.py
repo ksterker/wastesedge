@@ -35,83 +35,47 @@ class oliver (schedule.speak):
         # -- the tiles around Orloth
         self.offsets = [(1,1),(1,-1),(-1,1),(-1,-1),(1,0),(0,1),(-1,0),(0,-1)]
 
-
-    def run_old (self):
-        myself = self.myself
+        self.myself.set_callback (self.goal_reached)
+    
+    # -- summoned to the common room player to his room
+    def goto_common_room (self):
+        # -- beam directly to common room, as it is faster that way
+        self.myself.jump_to (1, 13, 7, adonthell.STAND_NORTH)
         
-        # -- Oliver summoned to common room
-        if myself.get_val ("goto_players_room") == 1:
-            # -- beam him directly there, as it is faster that way
-            if myself.submap () != 1:
-                myself.jump_to (1, 13, 7, adonthell.STAND_NORTH)
+        # -- find a free spot near Orloth and the player
+        orloth = adonthell.gamedata_get_character ("Orloth Redwyne")
+        for (x, y) in self.offsets:
+            x = x + orloth.posx ()
+            y = y + orloth.posy ()
+            
+            if self.myself.set_goal (x, y): 
+                break
+        
+    # -- leave the player's room and goto the barn
+    def goto_barn (self):
+        location = self.myself.submap ()
 
-            # -- find a free spot near Orloth and the player
-            i = 0
-            orloth = adonthell.gamedata_get_character ("Orloth Redwyne")
-            while i < 7:
-                x, y = self.offsets[i][:2]
-                x = x + orloth.posx ()
-                y = y + orloth.posy ()
-                if myself.set_goal (x, y): break
-                i = i + 1
+        # -- Player's room
+        if location == 12:
+            self.myself.set_goal (5, 1)
 
-            myself.set_val ("goto_players_room", 2)
-            myself.set_val ("todo", 2)
+        # -- First floor
+        elif location == 9:
+            self.myself.set_goal (8, 1)
 
-        # -- in the player's room
-        elif myself.get_val ("goto_players_room") == 3:
-            # -- start talking to the player
-            myself.launch_action (adonthell.gamedata_player ())
+        # -- Second floor (this shouldn't happen, but it once did ...)
+        elif location == 14:
+            self.myself.set_goal (4, 1)
 
-        # -- leave the player's room and goto the barn
-        elif myself.get_val ("goto_barn") == 1:
-            location = myself.submap ()
-            myself.set_val ("goto_barn", 2)
+        # -- Common Room
+        elif location == 1:
+            self.myself.set_goal (13, 8)
 
-            # -- Player's room
-            if location == 12:
-                myself.set_goal (5, 1)
-
-            # -- First floor
-            elif location == 9:
-                myself.set_goal (8, 1)
-
-            # -- Second floor (this shouldn't happen, but it once did ...)
-            elif location == 14:
-                myself.set_goal (4, 1)
-
-            # -- Common Room
-            elif location == 1:
-                myself.set_goal (13, 8)
-
-            # -- Yard, our final goal (for now)
-            elif location == 0:
-                myself.set_goal (25, 15)
-                myself.set_val ("goto_barn", 0)
-
-            myself.set_val ("todo", 2)
-
-
-        # -- "normal" schedule
-        todo = myself.get_val ("todo")
-
-        # -- waiting
-        if todo == 0:
-            delay = myself.get_val ("delay")
-
-            # If standing delay expired, move around next time
-            if delay == 0:
-                myself.set_val ("todo", 1)
-            else:
-                myself.set_val ("delay", delay - 1)
-
-        # -- get movement target
-        elif todo == 1:
-            # -- on our way back from bjarn's room
-            if myself.get_val ("goto_barn") == 2:
-                myself.set_val ("goto_barn", 1)
-
-        # -- move
-        elif todo == 2:
-            if myself.follow_path () == 1:
-                myself.set_val ("todo", 0)
+        # -- Yard, our final goal (for now)
+        elif location == 0:
+            self.myself.set_goal (25, 15)
+            self.myself.goto_barn = 0
+            
+    def goal_reached (self):
+        if self.myself.get_val ("goto_barn") == 1:
+            self.goto_barn ()

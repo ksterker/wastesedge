@@ -42,78 +42,67 @@ class orloth (schedule.speak):
                   (9, 7, 0), \
                   (12, 5, 0), \
                   (6, 5, 0)]
+        
+        # -- improve that!!!
+        self.goal_reached ()
+        self.myself.set_callback (self.goal_reached)
+        
+    def walk (self):
+        # -- return to bar
+        if self.myself.posx () != 2:
+            self.myself.set_goal (2, 2, adonthell.STAND_SOUTH)
+            self.myself.set_val ("table_num", 0)
 
-    def run_old (self):
-        myself = self.myself
-        todo = myself.get_val ("todo")
-
-        # -- waiting
-        if todo == 0:
-            delay = myself.get_val ("delay")
-
-            # -- If standing delay expired, move around next time
-            if delay == 0:
-                myself.set_val ("todo", 1)
-            else:
-                myself.set_val ("delay", delay - 1)
-
-                # -- put/take the first mug
-                if delay == 100:
-                    self.put_object (106, 0)
-                    
-                # -- put/take the second mug
-                elif delay == 50:
-                    self.put_object (107, 1)
-
-        # -- engage a new movement
-        elif todo == 1:
-            # -- when we are at the bar, then wait a while before
-            #    moving again
-            if myself.posx () != 2:
-                delay = random.randrange (40, 120) * 20
-                myself.set_val ("delay", delay)
-                myself.set_goal (2, 2, adonthell.STAND_SOUTH)
-                myself.set_val ("table_num", 0)
-
-            # -- otherwise only wait a little
-            else:
-                index = random.randrange (0, 5)
-                x, y, dir = self.coords[index]
-                myself.set_goal (x, y, dir)
-                myself.set_val ("delay", 150)
-                myself.set_val ("table_num", index)
-
-            myself.set_val ("todo", 2)
-
-        # -- moving
-        elif todo == 2:
-            if myself.follow_path () == 1:
-                # -- standing in front of the clock
-                if myself.posx () == 10:
-                    myself.speak (_("That clock is late again!"))
-
-                    tmp = myself.get_val ("say_something")
-                    myself.set_val ("say_something", tmp + 75)
-
-                myself.set_val ("todo", 0)
-
+        # -- when we are at the bar, then wait a while before
+        #    moving again
+        else:
+            index = random.randrange (0, 5)
+            x, y, dir = self.coords[index]
+            self.myself.set_goal (x, y, dir)
+            self.myself.set_val ("table_num", index)
+        
+    def goal_reached (self):
+        # -- standing in front of the clock
+        if self.myself.posx () == 10:
+            self.myself.speak (_("That clock is late again!"))
+            delay = "%it" % random.randrange (3, 6)
+        # -- standing at the bar 
+        elif self.myself.posx () == 2:
+            delay = "%it" % random.randrange (16, 48)
+        # -- standing at a table
+        else:
+            delay = "3t"
+            # -- put/take first mug
+            frst_mug = adonthell.time_event ("1t")
+            frst_mug.set_callback (self.put_object, (106, 0))
+            frst_mug.thisown = 0
+            self.myself.add_event (frst_mug)
+            # -- put/take second mug
+            scnd_mug = adonthell.time_event ("2t")
+            scnd_mug.set_callback (self.put_object, (107, 1))
+            scnd_mug.thisown = 0
+            self.myself.add_event (scnd_mug)
+            
+        walk_event = adonthell.time_event (delay)
+        walk_event.set_callback (self.walk)
+        walk_event.thisown = 0
+        self.myself.add_event (walk_event)
 
     # -- put/remove something from the table we're standing next to
-    def put_object (self, object, update):
-        myself = self.myself
+    def put_object (self, args):
+        object, update = args[:]
         
         # -- the table we're next to
-        index = myself.get_val ("table_num")
+        index = self.myself.get_val ("table_num")
         if index > 0:
             # -- see whether table is laid or not
             key = "table%i_set" % index
-            val = myself.get_val (key)
+            val = self.myself.get_val (key)
 
             x, y = self.coords[index+4][:2]
             if val == 0:
                 adonthell.gamedata_engine ().get_landmap ().put_mapobject (1, x, y, object)
-                if update == 1: myself.set_val (key, 1)
+                if update == 1: self.myself.set_val (key, 1)
             else:
                 adonthell.gamedata_engine ().get_landmap ().remove_mapobject (1, x, y, object)
-                if update == 1: myself.set_val (key, 0)
-    
+                if update == 1: self.myself.set_val (key, 0)
