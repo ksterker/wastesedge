@@ -1,5 +1,5 @@
 #
-#  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
+#  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 #  This program is free software; you can redistribute it and/or modify
@@ -16,12 +16,13 @@
 #    window and make a remark about the weather.
 
 import adonthell
+import schedule
 import random
 
 # -- pygettext support
 def _(message): return message
 
-class silverhair:
+class silverhair (schedule.speak):
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
@@ -29,56 +30,33 @@ class silverhair:
                        _("Janesta, dear, worry not. I am content here."), \
                        _("Janesta, please bring my figurine. I wish to see it more closely."), \
                        _("It truly is a lovely day. I expect we will have time yet to enjoy it.")]
+        self.speech_delay = (20, 72)
+        schedule.speak.__init__(self)
 
-    def run (self):
-        myself = self.myself
+        delay = "%it" % random.randrange (70, 140)
+        self.walk_event = adonthell.time_event (delay)
+        self.walk_event.set_callback (self.walk)
+        adonthell.event_handler_register_event (self.walk_event)
+        self.myself.set_callback (self.goal_reached)
 
-        todo = myself.get_val ("todo")
+    def walk (self):
+        # -- goto the window
+        if self.myself.posx () == 4:
+            # ... and speak about the weather
+            self.delay = "%it" % random.randrange (15, 22)
+            self.myself.set_goal (6, 4, adonthell.STAND_EAST)
 
-        # -- waiting
-        if todo == 0:
-            delay = myself.get_val ("delay")
-
-            # If standing delay expired, move around next time
-            if delay == 0:
-                myself.set_val ("todo", 1)
-            else:
-                myself.set_val ("delay", delay - 1)
-
-        # -- get movement target
-        elif todo == 1:
-            # -- goto the window
-            if myself.posx () == 4:
-                # ... and speak about the weather
-                say = random.randrange (33, 66) * 10
-                delay = random.randrange (50, 75) * 15
-                myself.set_val ("say_something", say)
-                myself.set_goal (6, 4, adonthell.STAND_EAST)
-
-            # -- go back to our normal position
-            else:
-                say = random.randrange (33, 66) * 10
-                delay = random.randrange (100, 200) * 35
-                if myself.set_goal (4, 4, adonthell.STAND_SOUTH) == 0:
-                    return
-
-            myself.set_val ("say_something", say)
-            myself.set_val ("delay", delay)
-            myself.set_val ("todo", 2)
-
-        # -- move
-        elif todo == 2:
-            if myself.follow_path () == 1:
-                myself.set_val ("todo", 0)
-
-        # -- speak
-        say = myself.get_val ("say_something")
-        myself.set_val ("say_something", say - 1)
-        if say == 0:
-            if myself.posx () == 6:
-                myself.speak (self.speech[3])
-            else:
-                myself.speak (self.speech[random.randrange (0, 3)])
-
-            say = random.randrange (60, 180) * 20
-            myself.set_val ("say_something", say)
+        # -- go back to our normal position
+        else:
+            self.delay = "%it" % random.randrange (70, 140)
+            if self.myself.set_goal (4, 4, adonthell.STAND_SOUTH) == 0:
+                self.myself.go_north ()
+                                
+    def goal_reached (self):
+        # -- standing in front of the window
+        if self.myself.posx () == 6:
+            self.myself.speak (self.speech[3])
+        
+        self.walk_event = adonthell.time_event (self.delay)
+        self.walk_event.set_callback (self.walk)
+        adonthell.event_handler_register_event (self.walk_event)

@@ -41,7 +41,11 @@ class sarin (schedule.speak):
         self.speech_delay = (20, 40)
         schedule.speak.__init__(self)
         
-    def run (self):
+    def walk (self):
+        pass
+    def goal_reached (self):
+        pass
+    def run_old (self):
         myself = self.myself
 
         # -- delay for orientation change

@@ -36,42 +36,27 @@ class lucia (schedule.speak):
         self.coords = [(3, 3, adonthell.STAND_NORTH), \
                   (6, 3, adonthell.STAND_EAST)]
 
-    def run (self):
-        myself = self.myself
-        todo = myself.get_val ("todo")
+        delay = "%it" % random.randrange (20, 40)
+        self.walk_event = adonthell.time_event (delay)
+        self.walk_event.set_callback (self.walk)
+        adonthell.event_handler_register_event (self.walk_event)
+        self.myself.set_callback (self.goal_reached)
 
-        # -- waiting
-        if todo == 0:
-            delay = myself.get_val ("delay")
-
-            # -- If standing delay expired, move around next time
-            if delay == 0:
-                myself.set_val ("todo", 1)
-            else:
-                myself.set_val ("delay", delay - 1)
-
-
-        # -- engage a new movement
-        elif todo == 1:
-            if myself.posx () != 3:
-                x, y, dir = self.coords[0]
-            else:
-                x, y, dir = self.coords[random.randrange(0, 2)]
-            myself.set_goal (x, y, dir)
-            myself.set_val ("todo", 2)
-
-        # -- moving
-        elif todo == 2:
-            if myself.follow_path () == 1:
-                # -- standing in front of the exit
-                if myself.posx () == 6:
-                    myself.speak (_("Ah, some fresh air!"))
-
-                    tmp = myself.get_val ("say_something")
-                    myself.set_val ("say_something", tmp + 75)
-                    myself.set_val ("delay", 300)
-
-                else:
-                    myself.set_val ("delay", 1000 + random.randrange (0, 2000))
-                                    
-                myself.set_val ("todo", 0)
+    def walk (self):
+        if self.myself.posx () != 3:
+            x, y, dir = self.coords[0]
+        else:
+            x, y, dir = self.coords[random.randrange(0, 2)]
+        self.myself.set_goal (x, y, dir)
+    
+    def goal_reached (self):
+        # -- standing in front of the exit
+        if self.myself.posx () == 6:
+            self.myself.speak (_("Ah, some fresh air!"))
+            delay = "8t"
+        else:
+            delay = "%it" % random.randrange (20, 40)
+        
+        self.walk_event = adonthell.time_event (delay)
+        self.walk_event.set_callback (self.walk)
+        adonthell.event_handler_register_event (self.walk_event)

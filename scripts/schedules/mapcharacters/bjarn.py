@@ -37,7 +37,7 @@ class bjarn (schedule.speak):
                        (7, 3, adonthell.STAND_NORTH), \
                        (3, 6, adonthell.STAND_WEST)]
 
-    def run (self):
+    def run_old (self):
         myself = self.myself
 
         # -- Get at the proper place when Erek lets the player into the room

@@ -32,48 +32,34 @@ class tristan (schedule.speak):
                        _("Ye gods! It cannot be that hard to find the thief!")]
         self.speech_delay = (20, 55)
         schedule.speak.__init__(self)
+        
+        # -- walking
+        self.walk_event = adonthell.time_event ("35t")
+        self.walk_event.set_callback (self.walk)
+        adonthell.event_handler_register_event (self.walk_event)
+        self.myself.set_callback (self.goal_reached)
 
-    def run (self):
-        myself = self.myself
-        todo = myself.get_val ("todo")
+    def walk (self):
+        # -- in common room -> go outside
+        if self.myself.submap () == 1 and \
+            adonthell.gamedata_get_quest ("demo").get_val ("intro_on") == 0:
+            self.myself.set_goal (13, 8, adonthell.STAND_SOUTH)
+            self.walk_delay = "%it" % random.randint (60, 90)
 
-        # -- waiting
-        if todo == 0:
-            delay = myself.get_val ("delay")
-
-            # If standing delay expired, move around next time
-            if delay == 0:
-                myself.set_val ("todo", 1)
-            else:
-                myself.set_val ("delay", delay - 1)
-
-        # -- get movement target
-        elif todo == 1:
-            # -- in common room -> go outside
-            if myself.submap () == 1 and \
-                adonthell.gamedata_get_quest ("demo").get_val ("intro_on") == 0:
-                myself.set_goal (13, 8, adonthell.STAND_SOUTH)
-                delay = random.randint (100, 150) * 30
-
-            # -- outside -> goto common room
-            else:
-                myself.set_goal (18, 13, adonthell.STAND_NORTH)
-                delay = random.randint (75, 150) * 30
-
-            myself.set_val ("delay", delay)
-            myself.set_val ("todo", 2)
-
-        # -- move
-        elif todo == 2:
-            if myself.follow_path () == 1:
-                # -- reached common room
-                if myself.submap () == 1 and myself.posx () == 13:
-                    myself.set_goal (4, 6, adonthell.STAND_WEST)
-
-                # -- reached yard
-                elif myself.submap () == 0 and myself.posx () == 18:
-                    myself.set_goal (12, 18, adonthell.STAND_WEST)
-
-                # -- reached our final destination
-                else:
-                    myself.set_val ("todo", 0)
+        # -- outside -> goto common room
+        else:
+            self.myself.set_goal (18, 13, adonthell.STAND_NORTH)
+            self.walk_delay = "%it" % random.randint (45, 90)
+    
+    def goal_reached (self):
+        # -- reached common room
+        if self.myself.submap () == 1 and self.myself.posx () == 13:
+            self.myself.set_goal (4, 6, adonthell.STAND_WEST)
+        # -- reached yard
+        elif self.myself.submap () == 0 and self.myself.posx () == 18:
+            self.myself.set_goal (12, 18, adonthell.STAND_WEST)
+        # -- reached our final destination
+        else:
+            self.walk_event = adonthell.time_event (self.walk_delay)
+            self.walk_event.set_callback (self.walk)
+            adonthell.event_handler_register_event (self.walk_event)

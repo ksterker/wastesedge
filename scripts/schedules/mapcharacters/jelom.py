@@ -33,35 +33,20 @@ class jelom (schedule.speak):
         self.speech_delay = (30, 60)
         schedule.speak.__init__(self)
         
-    def run (self):
-        myself = self.myself
-        
-        todo = myself.get_val ("todo")
+        delay = "%it" % random.randrange (20, 65)
+        self.walk_event = adonthell.time_event (delay)
+        self.walk_event.set_callback (self.walk)
+        adonthell.event_handler_register_event (self.walk_event)
+        self.myself.set_callback (self.goal_reached)
 
-        # If standing
-        if todo == 0:
-            delay = myself.get_val ("delay")
-            # If standing delay expired, move around next time
-            if delay == 0:
-                myself.set_val ("todo", 1)
-            else:
-                myself.set_val ("delay", delay - 1)
-
-        # Engage a new movement
-        elif todo == 1:
-            # Choose where to move, if destination is already occupied we'll
-            # fall into the wait state (0) again automatically next time
-            if myself.posy () == 3:
-                myself.set_goal (2, 6, adonthell.STAND_NORTH)
-            else:
-                myself.set_goal (2, 3, adonthell.STAND_SOUTH)
-
-            # Next time we'll actually move!
-            myself.set_val ("todo", 2)
-
-        # Moving, follow the path until it is reached.
-        elif todo == 2:
-            # Reached the goal? Wait a while then...
-            if myself.follow_path ():
-                myself.set_val ("delay", random.randrange (30, 60) * 20)
-                myself.set_val ("todo", 0)
+    def walk (self):
+        if self.myself.posy () == 3:
+            self.myself.set_goal (2, 6, adonthell.STAND_NORTH)
+        else:
+            self.myself.set_goal (2, 3, adonthell.STAND_SOUTH)
+    
+    def goal_reached (self):
+        delay = "%it" % random.randrange (20, 65)
+        self.walk_event = adonthell.time_event (delay)
+        self.walk_event.set_callback (self.walk)
+        adonthell.event_handler_register_event (self.walk_event)

@@ -31,37 +31,23 @@ class alek (schedule.speak):
                        _("They should sort out this business like real men!")]
         self.speech_delay = (20, 40)
         schedule.speak.__init__(self)
-        
-    def run (self):
-        myself = self.myself
+    
+        delay = "%it" % random.randrange (65, 90)
+        self.walk_event = adonthell.time_event (delay)
+        self.walk_event.set_callback (self.walk)
+        adonthell.event_handler_register_event (self.walk_event)
+        self.myself.set_callback (self.goal_reached)
 
-        todo = myself.get_val ("todo")
+    def walk (self):
+        # -- walk to table
+        if self.myself.posx () == 1:
+            self.myself.set_goal (12, 5, adonthell.STAND_NORTH)
+        # -- walk to bar
+        else:
+            self.myself.set_goal (1, 3, adonthell.STAND_SOUTH)
 
-        # -- waiting
-        if todo == 0:
-            delay = myself.get_val ("delay")
-            # If standing delay expired, move around next time
-            if delay == 0:
-                myself.set_val ("todo", 1)
-            else:
-                myself.set_val ("delay", delay - 1)
-
-        # -- engage a new movement
-        elif todo == 1:
-            # -- walk to table
-            if myself.posx () == 1:
-                myself.set_goal (12, 5, adonthell.STAND_NORTH)
-            # -- walk to bar
-            else:
-                myself.set_goal (1, 3, adonthell.STAND_SOUTH)
-
-            myself.set_val ("todo", 2)
-
-        # -- moving
-        elif todo == 2:
-            if myself.follow_path () == 1:
-                # -- the time we stay at the same place
-                delay = random.randrange (60, 150) * 20
-
-                myself.set_val ("delay", delay)
-                myself.set_val ("todo", 0)
+    def goal_reached (self):
+        delay = "%it" % random.randrange (65, 90)
+        self.walk_event = adonthell.time_event (delay)
+        self.walk_event.set_callback (self.walk)
+        adonthell.event_handler_register_event (self.walk_event)

@@ -36,7 +36,7 @@ class oliver (schedule.speak):
         self.offsets = [(1,1),(1,-1),(-1,1),(-1,-1),(1,0),(0,1),(-1,0),(0,-1)]
 
 
-    def run (self):
+    def run_old (self):
         myself = self.myself
         
         # -- Oliver summoned to common room

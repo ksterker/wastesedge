@@ -54,7 +54,7 @@ class erek (schedule.speak):
 
         self.index = 0
 
-    def run (self):
+    def run_old (self):
         myself = self.myself
         
         # -- lead the player into bjarn's room

@@ -43,7 +43,7 @@ class orloth (schedule.speak):
                   (12, 5, 0), \
                   (6, 5, 0)]
 
-    def run (self):
+    def run_old (self):
         myself = self.myself
         todo = myself.get_val ("todo")
 

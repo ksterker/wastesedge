@@ -38,32 +38,18 @@ class janesta (schedule.speak):
                        (1, 5, adonthell.STAND_SOUTH), \
                        (4, 2, adonthell.STAND_WEST)]
 
-    def run (self):
-        myself = self.myself
-        
-        todo = myself.get_val ("todo")
+        delay = "%it" % random.randrange (10, 30)
+        self.walk_event = adonthell.time_event (delay)
+        self.walk_event.set_callback (self.walk)
+        adonthell.event_handler_register_event (self.walk_event)
+        self.myself.set_callback (self.goal_reached)
 
-        # -- waiting
-        if todo == 0:
-            delay = myself.get_val ("delay")
-            # If standing delay expired, move around next time
-            if delay == 0:
-                myself.set_val ("todo", 1)
-            else:
-                myself.set_val ("delay", delay - 1)
-
-        # -- engage a new movement
-        elif todo == 1:
-            x, y, dir = self.coords[random.randrange (0, 4)]
-
-            myself.set_goal (x, y, dir)
-            myself.set_val ("todo", 2)
-
-        # -- moving
-        elif todo == 2:
-            if myself.follow_path () == 1:
-                # -- the time we stay at the same place
-                delay = random.randrange (20, 60) * 10
-
-                myself.set_val ("delay", delay)
-                myself.set_val ("todo", 0)
+    def walk (self):
+        x, y, dir = self.coords[random.randrange (0, 4)]
+        self.myself.set_goal (x, y, dir)
+    
+    def goal_reached (self):
+        delay = "%it" % random.randrange (10, 30)
+        self.walk_event = adonthell.time_event (delay)
+        self.walk_event.set_callback (self.walk)
+        adonthell.event_handler_register_event (self.walk_event)
