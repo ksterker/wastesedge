@@ -238,6 +238,7 @@ class jelom_start:
 		self.npc.append (48)
 		self.cont.append (-1)
 		adonthell.gamedata_get_quest("demo").set_val ("silverhair_free" , 1)
+		self.the_npc.set_dialogue ("dialogues/jelom_2nd")
 
 		self.player.append (-1)
 
@@ -373,4 +374,6 @@ class jelom_start:
 		self.cont.append (-1)
 		self.player.append (10)
 		self.cont.append (5)
+		self.player.append (31)
+		self.cont.append (17)
 		self.player.append (-1)

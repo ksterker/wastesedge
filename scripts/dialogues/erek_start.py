@@ -126,13 +126,15 @@ class erek_start:
 
 		self.player.append (106)
 		self.cont.append (-1)
-		if convince_jelom == 1:
+		if adonthell.gamedata_get_quest("demo").get_val ("convince_jelom") == 1:
 
 			self.player.append (105)
 			self.cont.append (-1)
 		self.player.append (-1)
 
 	def answer105 (self):
+		adonthell.gamedata_get_quest("demo").set_val ("convince_jelom" , 2)
+
 		pass
 
 	def answer106 (self):
@@ -421,7 +423,7 @@ class erek_start:
 		self.cont.append (64)
 		self.player.append (-1)
 
-	def answer238 (self):
+	def answer116 (self):
 		pass
 
 	def answer47 (self):
