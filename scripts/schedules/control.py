@@ -1,5 +1,5 @@
 #
-#  $Id: control.py,v 1.2 2002/08/25 15:35:53 ksterker Exp $
+#  $Id: control.py,v 1.3 2002/09/29 16:09:22 ksterker Exp $
 #
 #  (C) Copyright 2001/2002 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -40,7 +40,9 @@ class control:
                 # -- continue
                 gamedata_player ().set_schedule_active (1)
                 gamedata_engine ().set_control_active (1)
-           
+
+            win_container.__del__ (menu)
+
 
         # -- shortcut to the load screen
         elif input_has_been_pushed (SDLK_l):

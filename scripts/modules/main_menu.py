@@ -1,5 +1,5 @@
 #
-#  $Id: main_menu.py,v 1.18 2002/05/06 13:47:18 ksterker Exp $
+#  $Id: main_menu.py,v 1.19 2002/09/29 16:09:22 ksterker Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -26,7 +26,7 @@ class main_menu (win_container):
     #   enable_b turns background/border on (1) or off (0)
     def __init__ (self, startup, enable_s, enable_b = 0):	
         win_container.__init__(self)
-
+        
         # -- Init Position
         self.move (0, 0)	
         self.resize (320, 240)
@@ -168,7 +168,10 @@ class main_menu (win_container):
             label.move (label.x () - 70, label.y () - 10)
             self.select.add (label)
 
-        # add the title
+        # -- cleanup
+        del self.labels
+        
+        # -- add the title
         self.set_align (win_base_ALIGN_CENTER)
         self.add (self.a_title)
         self.add (self.title)
@@ -186,6 +189,8 @@ class main_menu (win_container):
         if self.startup > 0:
             if self.create_menu (self.moves, self.goals) == 0:
                 self.add_to_select ()
+                del self.moves
+                del self.goals
                 self.startup = 0
                 
         # -- pressing ESC will close the menu if it's open
@@ -194,7 +199,7 @@ class main_menu (win_container):
             if self.enable_save == 0: self.retval = 5
             else: self.retval = 0
             gamedata_engine ().main_quit ()
-                    
+
 
     # -- Callback to get informed of the player's choice
     def on_select (self):
@@ -207,7 +212,7 @@ class main_menu (win_container):
         # -- Load Game
         if self.retval == 2:
             lg = data_screen (LOAD_SCREEN)
-            lg.set_activate (1)	
+            lg.set_activate (1)
             
             # -- hide the game menu if we are not on the title screen
             if self.enable_save == 1:
@@ -258,3 +263,6 @@ class main_menu (win_container):
             label.move (label.x () + j*mod, label.y ())
 
         return done
+
+    def __del__ (self):
+        pass

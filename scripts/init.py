@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.92 2002/09/02 10:59:50 ksterker Exp $
+#  $Id: init.py,v 1.93 2002/09/29 16:09:22 ksterker Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -84,8 +84,7 @@ class title_screen:
 
 
     def __del__ (self):
-        print "Destructor called"
-        adonthell.gamedata_engine ().main_quit ()
+        print "init: destructor called"
 
     # -- catch ESC key
     def on_update (self):
@@ -161,7 +160,7 @@ class title_screen:
         
         # -- once the menu is closed, see what we got
         retval = menu.get_result ()
-
+        
         # -- start new game
         if retval == 1:
             # -- let the player chose a name for his character
@@ -192,6 +191,8 @@ class title_screen:
         # -- quit the game
         else:
             adonthell.gamedata_engine ().main_quit ()
+            
+        adonthell.win_container.__del__ (menu)
 
     # -- cleanup
     def cleanup (self):
