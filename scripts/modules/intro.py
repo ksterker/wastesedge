@@ -102,7 +102,7 @@ the harshness of the road.",
            \nEventually you find the Redwyne Inn,\nwhich seems to be the main building\nhere.",
            "The heavy wooden doors are closed,\nand no one is there \
 to let you in. As you\napproach the gate, you suddenly hear a voice from within.",
-           "                      \nSuddently, it looked like the day would\nbe harder than you thought...")
+           "                      \nSuddenly, it looked like the day would\nbe harder than I thought ...")
 
 cont.set_visible_background (0);
 cont.set_visible_border (0);
