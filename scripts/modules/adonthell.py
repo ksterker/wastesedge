@@ -1,5 +1,101 @@
 # This file was created automatically by SWIG.
 import adonthellc
+class gz_file:
+    def __init__(self,*args):
+        self.this = apply(adonthellc.new_gz_file,args)
+        self.thisown = 1
+
+    def __del__(self,adonthellc=adonthellc):
+        if getattr(self,'thisown',0):
+            adonthellc.delete_gz_file(self)
+    def open(*args):
+        val = apply(adonthellc.gz_file_open,args)
+        return val
+    def close(*args):
+        val = apply(adonthellc.gz_file_close,args)
+        return val
+    def is_open(*args):
+        val = apply(adonthellc.gz_file_is_open,args)
+        return val
+    def eof(*args):
+        val = apply(adonthellc.gz_file_eof,args)
+        return val
+    def __repr__(self):
+        return "<C gz_file instance at %s>" % (self.this,)
+class gz_filePtr(gz_file):
+    def __init__(self,this):
+        self.this = this
+        self.thisown = 0
+        self.__class__ = gz_file
+
+
+
+class igzstream(gz_file):
+    def __init__(self,*args):
+        self.this = apply(adonthellc.new_igzstream,args)
+        self.thisown = 1
+
+    def __del__(self,adonthellc=adonthellc):
+        if getattr(self,'thisown',0):
+            adonthellc.delete_igzstream(self)
+    def open(*args):
+        val = apply(adonthellc.igzstream_open,args)
+        return val
+    def get_block(*args):
+        val = apply(adonthellc.igzstream_get_block,args)
+        return val
+    def __repr__(self):
+        return "<C igzstream instance at %s>" % (self.this,)
+class igzstreamPtr(igzstream):
+    def __init__(self,this):
+        self.this = this
+        self.thisown = 0
+        self.__class__ = igzstream
+
+
+
+class ogzstream(gz_file):
+    def __init__(self,*args):
+        self.this = apply(adonthellc.new_ogzstream,args)
+        self.thisown = 1
+
+    def __del__(self,adonthellc=adonthellc):
+        if getattr(self,'thisown',0):
+            adonthellc.delete_ogzstream(self)
+    def open(*args):
+        val = apply(adonthellc.ogzstream_open,args)
+        return val
+    def put_block(*args):
+        val = apply(adonthellc.ogzstream_put_block,args)
+        return val
+    def __repr__(self):
+        return "<C ogzstream instance at %s>" % (self.this,)
+class ogzstreamPtr(ogzstream):
+    def __init__(self,this):
+        self.this = this
+        self.thisown = 0
+        self.__class__ = ogzstream
+
+
+
+class fileops:
+    def __init__(self,*args):
+        self.this = apply(adonthellc.new_fileops,args)
+        self.thisown = 1
+
+    def __del__(self,adonthellc=adonthellc):
+        if getattr(self,'thisown',0):
+            adonthellc.delete_fileops(self)
+    def __repr__(self):
+        return "<C fileops instance at %s>" % (self.this,)
+class fileopsPtr(fileops):
+    def __init__(self,this):
+        self.this = this
+        self.thisown = 0
+        self.__class__ = fileops
+
+
+
 class storage:
     def __init__(self,*args):
         self.this = apply(adonthellc.new_storage,args)
@@ -645,6 +741,12 @@ class animation(drawable):
     def load(*args):
         val = apply(adonthellc.animation_load,args)
         return val
+    def put(*args):
+        val = apply(adonthellc.animation_put,args)
+        return val
+    def save(*args):
+        val = apply(adonthellc.animation_save,args)
+        return val
     def nbr_of_frames(*args):
         val = apply(adonthellc.animation_nbr_of_frames,args)
         return val
@@ -835,6 +937,12 @@ class mapobject(mapsquare_walkable_area):
         return val
     def load(*args):
         val = apply(adonthellc.mapobject_load,args)
+        return val
+    def put(*args):
+        val = apply(adonthellc.mapobject_put,args)
+        return val
+    def save(*args):
+        val = apply(adonthellc.mapobject_save,args)
         return val
     def nbr_of_animations(*args):
         val = apply(adonthellc.mapobject_nbr_of_animations,args)
@@ -2037,6 +2145,10 @@ class gamePtr(game):
 
 #-------------- FUNCTION WRAPPERS ------------------
 
+fileops_put_version = adonthellc.fileops_put_version
+
+fileops_get_version = adonthellc.fileops_get_version
+
 event_list_register_event = adonthellc.event_list_register_event
 
 event_handler_register_event = adonthellc.event_handler_register_event
@@ -2185,6 +2297,8 @@ game_cleanup = adonthellc.game_cleanup
 
 Python = adonthellc.Python
 C = adonthellc.C
+READ = adonthellc.READ
+WRITE = adonthellc.WRITE
 EVENTS_DIR = adonthellc.EVENTS_DIR
 ENTER_EVENT = adonthellc.ENTER_EVENT
 LEAVE_EVENT = adonthellc.LEAVE_EVENT

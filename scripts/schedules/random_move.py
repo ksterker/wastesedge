@@ -1,5 +1,5 @@
-move=randint(0,30)
-if move>=30:
+move=randint(10,30)
+if move>=10:
   dir=randint(0,3)
 
   if dir==0: myself.go_north();

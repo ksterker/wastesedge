@@ -1,3 +1,11 @@
+##import time
+
+##while 1:
+##    gamedata_load (0)
+##    time.sleep (1)
+##    print "ok"
+##    map_engine.run ()
+
 from main_menu import *
 import time
 
@@ -30,6 +38,13 @@ def fade (*args):
  
 alpha = 0
 
+audio_load_background (0, "audio/at-menu-full.ogg")
+audio_load_background (1, "audio/at-dummy-1.ogg")
+audio_load_wave (0, "audio/select.wav")
+audio_load_wave (1, "audio/switch.wav")
+audio_load_wave (2, "audio/unselect.wav")
+
+audio_play_background (0)
 gametime_start_action ()
 
 k=0
@@ -118,7 +133,7 @@ class title_screen:
           gametime_update()
 
 
-### -- Main --
+# -- Main --
 title = title_screen (bag_o)
 title.loop ()
 retval = title.quit
@@ -126,4 +141,5 @@ del bag_o
 
 if retval < 5: 
     if retval == 1: gamedata_load(0)
+    audio_play_background (1)
     map_engine.run()
