@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.69 2001/12/12 21:51:51 adondev Exp $
+#  $Id: init.py,v 1.70 2001/12/13 00:02:53 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -510,7 +510,7 @@ class title_screen:
         ev.submap = 13
         ev.x = 5
         ev.y = 1
-        ev.set_script ("teleport", (9, 1, 6, STAND_NORTH))
+        ev.set_script ("silverhair_to_fst", (9, 1, 6, STAND_NORTH))
         lm.add_event (ev)
 
         # From 2nd to Redwyne's
@@ -813,19 +813,19 @@ class title_screen:
         ev.submap = 21
         ev.x = 0
         ev.y = 7
-        ev.set_script ("teleport", (13, 6, 4, STAND_WEST))
+        ev.set_script ("brn_to_silverhair", (13, 6, 4, STAND_WEST))
         lm.add_event (ev)
 
-        # Action events
         # From silverhair to loft
-        ev = action_event ()
+        ev = enter_event ()
         ev.thisown = C
         ev.submap = 13
         ev.x = 6
         ev.y = 4
-        ev.dir = STAND_EAST
-        ev.set_script ("teleport", (21, 1, 7, STAND_EAST))
+        ev.set_script ("silverhair_to_brn", (21, 1, 7, STAND_EAST))
         lm.add_event (ev)
+
+        # Action events
 
         # -- Common room
         ev = action_event ()
