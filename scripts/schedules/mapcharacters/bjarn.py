@@ -23,7 +23,7 @@ class bjarn:
         self.myself = mapcharacterinstance
         self.speech = ["Ha! A tradesman is an honourable person, they say!", \
                        "Why don't they just take that Silverhair woman to prison!?", \
-                       "Elves! Their heads in the sky and their minds full of clouds!"]
+                       "Elves! The head in the sky and the mind full of clouds!"]
 
         self.coords = [(7, 5, adonthell.STAND_WEST), \
                        (2, 4, adonthell.STAND_SOUTH), \
