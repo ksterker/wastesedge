@@ -103,19 +103,15 @@ class jelom_2nd:
 			self.color = self.the_npc.get_color()
 			self.npc.append (37)
 			self.cont.append (-1)
-			self.player.append (33)
-			self.cont.append (19)
 			if adonthell.gamedata_get_quest("demo").get_val ("bjarn_door_open") < 3:
 
 				self.player.append (38)
 				self.cont.append (22)
-			self.player.append (-1)
+			if bjarn_lies == 1:
 
-	def answer38 (self):
-		self.color = self.the_npc.get_color()
-		self.npc.append (39)
-		self.cont.append (-1)
-		self.player.append (-1)
+				self.player.append (33)
+				self.cont.append (19)
+			self.player.append (-1)
 
 	def answer33 (self):
 		self.color = self.the_npc.get_color()
@@ -138,6 +134,12 @@ class jelom_2nd:
 		# make all dudes go down to Bjarn
 		adonthell.gamedata_get_quest("demo").set_val ("the_end" , 1)
 
+		self.player.append (-1)
+
+	def answer38 (self):
+		self.color = self.the_npc.get_color()
+		self.npc.append (39)
+		self.cont.append (-1)
 		self.player.append (-1)
 
 	def answer23 (self):
@@ -164,8 +166,10 @@ class jelom_2nd:
 		self.cont.append (-1)
 		self.player.append (31)
 		self.cont.append (18)
-		self.player.append (33)
-		self.cont.append (19)
+		if bjarn_lies == 1:
+
+			self.player.append (33)
+			self.cont.append (19)
 		self.player.append (-1)
 
 	def answer31 (self):
@@ -186,8 +190,10 @@ class jelom_2nd:
 		self.cont.append (-1)
 		self.player.append (31)
 		self.cont.append (18)
-		self.player.append (33)
-		self.cont.append (19)
+		if bjarn_lies == 1:
+
+			self.player.append (33)
+			self.cont.append (19)
 		self.player.append (-1)
 
 	def answer12 (self):

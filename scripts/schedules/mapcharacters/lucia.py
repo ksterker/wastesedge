@@ -16,20 +16,19 @@
 # complaining about her life.
 
 import adonthell
-from adonthell import STAND_NORTH, STAND_SOUTH, STAND_WEST, STAND_EAST
-from random import randint
+import random
 
 class lucia:
 
     def __init__ (self, mapcharacterinstance):
         self.myself = mapcharacterinstance
         
-        self.speech = ["When could I finally rest a bit?", \
-                       "I told Orloth this place would bring us problems!", \
+        self.speech = ["When can I finally rest a bit?", \
+                       "I told Orloth this place would bring us nothing but trouble!", \
                        "This smoke! I'm dying!"]
 
-        self.coords = [(3, 3, STAND_NORTH), \
-                  (6, 3, STAND_EAST)]
+        self.coords = [(3, 3, adonthell.STAND_NORTH), \
+                  (6, 3, adonthell.STAND_EAST)]
 
     def run (self):
         myself = self.myself
@@ -51,7 +50,7 @@ class lucia:
             if myself.posx () != 3:
                 x, y, dir = self.coords[0]
             else:
-                x, y, dir = self.coords[randint(0, 1)]
+                x, y, dir = self.coords[random.randint(0, 1)]
             myself.set_goal (x, y, dir)
             myself.set_val ("todo", 2)
 
@@ -67,7 +66,7 @@ class lucia:
                     myself.set_val ("delay", 300)
 
                 else:
-                    myself.set_val ("delay", 1000 + randint (0, 2000))
+                    myself.set_val ("delay", 1000 + random.randint (0, 2000))
                                     
                 myself.set_val ("todo", 0)
 
@@ -77,6 +76,6 @@ class lucia:
         tmp = myself.get_val ("say_something")
         myself.set_val ("say_something", tmp - 1)
         if tmp == 0:
-            myself.speak (self.speech[randint (0, 2)])
-            delay = randint (50, 100) * 20
+            myself.speak (self.speech[random.randint (0, 2)])
+            delay = random.randint (50, 100) * 20
             myself.set_val ("say_something", delay)
