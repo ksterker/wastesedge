@@ -1,4 +1,4 @@
-SUBDIRS = . audio gfx intl maps pixmaps po scripts 
+SUBDIRS = . audio gfx m4 maps pixmaps po scripts 
 
 pkgdatadir = $(gamedatadir)
 
@@ -27,3 +27,5 @@ adonthell-wastesedge: Makefile
 uninstall-local:
 	rm -rf $DESTDIR$(gamedatadir)
 
+
+ACLOCAL_AMFLAGS = -I m4
