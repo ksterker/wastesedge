@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.63 2001/10/30 01:45:54 adondev Exp $
+#  $Id: init.py,v 1.64 2001/11/01 22:05:11 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -164,11 +164,7 @@ class title_screen:
         
         # -- once the menu is closed, see what we got
         retval = menu.get_result ()
-        print "Main menu closed with retval", retval
 
-        audio_pause_music ()
-        audio_unload_background (0)
-        
         # -- start new game
         if retval == 1:
             # -- let the player chose a name for his character
@@ -193,6 +189,7 @@ class title_screen:
             self.window.set_visible (0)
             self.cleanup ()
             gamedata_engine ().mapview_start ()
+            gamedata_engine ().set_control_active (1)
             gamedata_engine ().fade_in ()
 
         # -- quit the game

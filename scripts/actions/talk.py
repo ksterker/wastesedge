@@ -25,11 +25,16 @@ class talk:
         args[0].set_schedule_active (1)
         args[1].set_schedule_active (1)
 
+        adonthell.gamedata_engine ().set_control_active (1)
+
     def run (self, requester):
         if requester.get_name() == adonthell.gamedata_player ().get_name():
             # -- deactivate the schedule of the characters involved
             self.myself.set_schedule_active (0)
             requester.set_schedule_active (0)
+            
+            # -- don't allow access to main menu and stuff
+            adonthell.gamedata_engine ().set_control_active (0)
 
             # -- look into the player's face
             self.myself.look_invert (requester.currentmove ())

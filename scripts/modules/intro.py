@@ -67,11 +67,11 @@ cont.add (lab)
 wintext = ("One week out of Cirdanth, the trail had\nbecome hard. I had begun to wonder\ndays ago whether \
 it could still be called\na trail, but it was the only way the\ncaravans had.",
            "There were no caravans now, only me,\nand I had seen few others on the road.\nEven those had \
-become more scarce the\nfurther I went.",
+become more scarce\nthe further I went.",
            "It was easy to see why.",
            "The Lady Silverhair, intent on her\nmission, had gone on ahead while I was\nleft to complete \
 business in her name,\ntrusting me to follow in good speed.",
-           "A lone Half-Elf, may travel with much\nmore speed than an Elven lady and her\nservants, so she \
+           "A lone Half-Elf may travel with much\nmore speed than an Elven lady and her\nservants, so she \
 was now only a day\nahead.  The thought nearly caused me\nto forget \
 the harshness of the road.",
            "Still, Waste's Edge was a welcome sight.",
@@ -101,9 +101,9 @@ post of Waste's Edge?", "yellow", 130, 5, 500, 2),
            ("That it is, but this is all you'll see of it.", "red", 25, 5, 300, 1),
            ("If you turn now and make haste, you should be able to make safe camping \
 before dark.", "red", 25, 5, 400, 1),
-           ("Turn back?  Whatever for?  And why is the gate of a free trading post locked \
+           ("Turn back?  Whatever for?  And why is the gate of a free Inn locked \
 against a footsore traveller?", "yellow", 130, 5, 500, 0),
-           ("I am sorry, traveller, but the post is barred and you must be off.", "red", 25, 5, 300, 0),
+           ("I am sorry, traveller, but the Inn is barred and you must be off.", "red", 25, 5, 300, 0),
            ("There has been trouble inside and I have instructions to turn away all who \
 need not be here.", "red", 25, 5, 400, 0),
            ("Trouble?  Why then, I must get inside.  My employer will need me close at \
