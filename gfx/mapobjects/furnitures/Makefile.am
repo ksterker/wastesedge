@@ -10,6 +10,7 @@ pkgdata_DATA = bar.mobj barrel_wooden_with-tap.mobj clock.mobj cupboard.mobj ove
 	silverhair_basin.mobj silverhair_chest.mobj stone_bed.mobj stone_v.mobj \
 	crate.mobj barrel_wooden.mobj crate2.mobj barrel_wooden2.mobj dwarf_chest.mobj \
 	normal-cupboard.mobj chest-wooden.mobj silverhair_rug-1.mobj silverhair_rug-2.mobj \
-	silverhair_rug-3.mobj silverhair_rug-4.mobj
+	silverhair_rug-3.mobj silverhair_rug-4.mobj terracotta-trans.mobj \
+	woodenplanks_2_trans_1.mobj woodenplanks_2_trans_2.mobj woodenplanks_trans.mobj
 
 EXTRA_DIST = $(pkgdata_DATA)
