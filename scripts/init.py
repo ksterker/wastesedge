@@ -346,7 +346,7 @@ if retval < 5:
         ev.thisown = C
         ev.submap = 9
         ev.x = 8
-        ev.y = 3
+        ev.y = 2
         ev.set_script ("1st_to_fellnir")
         lm.add_event (ev)
 
@@ -362,7 +362,7 @@ if retval < 5:
         ev.thisown = C
         ev.submap = 9
         ev.x = 0
-        ev.y = 3
+        ev.y = 2
         ev.set_script ("1st_to_frostbloom")
         lm.add_event (ev)
 
@@ -378,7 +378,7 @@ if retval < 5:
         ev.thisown = C
         ev.submap = 9
         ev.x = 6
-        ev.y = 5
+        ev.y = 4
         ev.set_script ("1st_to_player")
         lm.add_event (ev)
 
@@ -394,14 +394,14 @@ if retval < 5:
         ev.thisown = C
         ev.submap = 9
         ev.x = 1
-        ev.y = 8
+        ev.y = 7
         ev.set_script ("1st_to_silverhair")
         lm.add_event (ev)
 
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 13
-        ev.x = 7
+        ev.x = 6
         ev.y = 1
         ev.set_script ("1st_to_silverhair")
         lm.add_event (ev)
@@ -433,7 +433,7 @@ if retval < 5:
         ev = enter_event ()
         ev.thisown = C
         ev.submap = 16
-        ev.x = 6
+        ev.x = 7
         ev.y = 5
         ev.set_script ("2nd_to_oliver")
         lm.add_event (ev)
@@ -452,6 +452,86 @@ if retval < 5:
         ev.x = 6
         ev.y = 1
         ev.set_script ("2nd_to_illig")
+        lm.add_event (ev)
+
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 1
+        ev.x = 12
+        ev.y = 1
+        ev.set_script ("common_to_1st")
+        lm.add_event (ev)
+
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 9
+        ev.x = 7
+        ev.y = 1
+        ev.set_script ("common_to_1st")
+        lm.add_event (ev)
+
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 9
+        ev.x = 5
+        ev.y = 1
+        ev.set_script ("1st_to_2nd")
+        lm.add_event (ev)
+
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 14
+        ev.x = 4
+        ev.y = 1
+        ev.set_script ("1st_to_2nd")
+        lm.add_event (ev)
+
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 1
+        ev.x = 9
+        ev.y = 1
+        ev.set_script ("common_to_cellar")
+        lm.add_event (ev)
+
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 4
+        ev.x = 6
+        ev.y = 1
+        ev.set_script ("common_to_cellar")
+        lm.add_event (ev)
+
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 4
+        ev.x = 12
+        ev.y = 1
+        ev.set_script ("barn_to_cellar")
+        lm.add_event (ev)
+
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 0
+        ev.x = 24
+        ev.y = 10
+        ev.set_script ("barn_to_cellar")
+        lm.add_event (ev)
+
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 3
+        ev.x = 6
+        ev.y = 6
+        ev.set_script ("kitchen_to_cellar")
+        lm.add_event (ev)
+
+        ev = enter_event ()
+        ev.thisown = C
+        ev.submap = 4
+        ev.x = 3
+        ev.y = 13
+        ev.set_script ("kitchen_to_cellar")
         lm.add_event (ev)
 
         # Now setup the characters
@@ -540,7 +620,7 @@ if retval < 5:
         sarin.set_dialogue ("dialogues/sarin_start")
         sarin.load ("servant2.mchar")
         sarin.set_map (map_engine.get_landmap ())
-        sarin.jump_to (13, 7, 3)
+        sarin.jump_to (13, 5, 3)
         sarin.set_action ("action_talk")
         sarin.stand_west ()
         sarin.set_schedule ("sarin")
