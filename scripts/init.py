@@ -1,5 +1,5 @@
 #
-#  $Id: init.py,v 1.71 2001/12/13 00:45:29 adondev Exp $
+#  $Id: init.py,v 1.72 2001/12/13 14:26:19 adondev Exp $
 #
 #  (C) Copyright 2001 Kai Sterker <kaisterker@linuxgames.com>
 #  Part of the Adonthell Project http://adonthell.linuxgames.com
@@ -116,12 +116,12 @@ class title_screen:
         if self.alpha == 255:
             # -- display "Adonthell v0.3"
             self.bag_t.set_visible (1)
-            self.wait_time = 30
+            self.wait_time = 35
             self.draw_func = self.wait
 
         else:
             # -- fade in
-            self.alpha = self.alpha + gametime_frames_to_skip()
+            self.alpha = self.alpha + gametime_frames_to_skip() + 1
             if self.alpha > 255: self.alpha = 255
             self.bag_c.set_alpha (self.alpha)
 

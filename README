@@ -64,7 +64,7 @@ You can reach us in various ways:
 
 Email:         adonthell@linuxgames.com
 Message Board: http://www.3dforums.com/?action=forumpage&loc=49&forum_id=158
-Mailing list:  adonthell-general@lists.sourceforge.net
+Mailing list:  adonthell-general@mail.freesoftware.fsf.org
 Web site:      http://adonthell.linuxgames.com
 
 
@@ -72,12 +72,10 @@ Reporting Bugs:
 ===============
 
 We hope you'll never have to, but if you discover a problem, we
-would like to hear about it.  The prefered way is to use the
-Sourceforge Bugtracker at 
-  http://sourceforge.net/tracker/?atid=101051&group_id=1051&func=browse
-
-Please make sure that your problem isn't already listed. As an
-alternative  you may also write an email or post to the mailing list.
+would like to hear about it. Please use the Development mailing list
+(adonthell-devel@mail.freesoftware.fsf.org) for that. You can 
+subscribe to the mailing lists at 
+http://savannah.gnu.org/mail/?group_id=702
 
 
 Thank you for trying this software.

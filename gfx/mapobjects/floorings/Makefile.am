@@ -5,7 +5,6 @@ pkgdata_DATA = woodenplanks.mobj bath-floor2b.mobj bath-floor2a.mobj \
 	terracotta-tiles-2.mobj terracotta-tiles-3.mobj woodenplanks_2_1.mobj \
 	woodenplanks_2_2.mobj terracotta-trans.mobj \
 	woodenplanks_2_trans_1.mobj woodenplanks_2_trans_2.mobj woodenplanks_trans.mobj \
-	behind-window.mobj barn_ground_inside.mobj barn_loft_main.mobj barn_loft_front.mobj \
-
+	behind-window.mobj barn_ground_inside.mobj barn_loft_main.mobj barn_loft_front.mobj
 
 EXTRA_DIST = $(pkgdata_DATA)
