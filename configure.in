@@ -45,6 +45,7 @@ AC_SUBST(gamedatadir)
 AC_SUBST(adonthell_binary)
 
 AC_OUTPUT([
+wastesedge.spec
 Makefile
 audio/Makefile
 gfx/cutscene/Makefile
