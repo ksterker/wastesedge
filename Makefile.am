@@ -11,7 +11,7 @@ EXTRA_DIST = config.rpath mkinstalldirs  config.rpath  $(pkgdata_DATA) PLAYING a
 	win32/COPYING win32/PLAYING.txt win32/prepare.bat win32/README.txt \
 	win32/wastesedge.ico win32/wastesedge.nsi \
 	pixmaps/wastesedge_16x16.xpm pixmaps/wastesedge_32x32.xpm \
-        osx/Copying.html osx/Install.html osx/Playing.html osx/Readme.html \
+        osx/Copying.html osx/Install.html osx/Playing.html osx/ReadMe.html \
 	osx/adonthell.icns
 
 bin_SCRIPTS = adonthell-wastesedge
