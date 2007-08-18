@@ -1,0 +1,1699 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: lucia_start.adlg,v 1.1 2007/08/18 03:17:27 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+Func §def who_heard_noise (self):
+    n = demo.know_noise
+    if n == 1:
+        return _("Lady Silverhair has")
+    elif n == 2:
+        return _("Lady Frostbloom has")
+    else:
+        return _("both Lady Silverhair and Lady Frostbloom have")§
+
+Circle
+  Type 5
+  Pos 200 20
+  Text §There is little doubt that this busy-looking woman is the unchallenged mistress of the Redwyne household. As she spots you, a look of resignation flashes across her face.§
+  Cond §if the_npc.get_val ("talked_to") == 0:§
+End
+
+Circle
+  Type 2
+  Pos 200 60
+  Text §You young people never learn to keep out of my kitchen, do you?§
+End
+
+Circle
+  Type 1
+  Pos 160 100
+  Text §Sorry madam, I did not mean to trespass, but I need to talk to you.§
+  Vars §the_npc.set_val ("talked_to", 1)§
+End
+
+Circle
+  Type 1
+  Pos 260 100
+  Text §I have no time for this, woman! I have some questions for you.§
+  Vars §the_npc.set_val ("talked_to", 1)§
+End
+
+Circle
+  Type 2
+  Pos 260 140
+  Text §What questions? Don't you see I'm busy? Who's going to put the food on the table, if I'm going to chat with you? Now out of my sight with you!§
+End
+
+Circle
+  Type 1
+  Pos 280 60
+  Text §My apologies. Must have been the wrong door ...§
+End
+
+Circle
+  Type 1
+  Pos 240 160
+  Text §Calm down, please. This is important. I'm investigating the theft.§
+End
+
+Circle
+  Type 2
+  Pos 160 140
+  Text §It's always the same. I can never do my work without interruptions. But you won't hear me complaining. So what is it you want?§
+End
+
+Circle
+  Type 1
+  Pos 140 160
+  Text §I am $name, Lady Silverhair's clerk. I'm investigating the theft.§
+  Vars §the_npc.set_val ("know_shairs_clerk", 1)§
+End
+
+Circle
+  Type 2
+  Pos 100 200
+  Text §The Elven Lady you say? Then you must be from Cirdanth, ain't you?§
+End
+
+Circle
+  Type 1
+  Pos 120 240
+  Text §Yes I am from Cirdanth.§
+End
+
+Circle
+  Type 1
+  Pos 80 240
+  Text §Listen madam ...§
+End
+
+Circle
+  Type 2
+  Pos 100 320
+  Text §Ah, the city. What would I give to live there! But no, Orloth had to buy the Inn from his scoundrel brother. The deal of his life he said!§
+  Vars §demo.complain_about_wastesedge = 1§
+End
+
+Circle
+  Type 2
+  Pos 80 160
+  Text §Do you? Oh what an awful thing to happen! But I'm not surprised. Out here, in the middle of nowhere, something like this was bound to happen one day.§
+End
+
+Circle
+  Type 2
+  Pos 20 160
+  Text §I told Orloth. \"If you're going to buy this inn, you'll end up with trouble\", I said. But would he listen to me?§
+  Vars §demo.complain_about_wastesedge = 1§
+End
+
+Circle
+  Type 1
+  Pos -20 200
+  Text §Sorry to interrupt, but did you notice anything odd during the night of the theft?§
+End
+
+Circle
+  Type 2
+  Pos -20 240
+  Text §Something unusual? How should I? We're sleeping under the roof, whereas poor Master Fingolson has his room downstairs, in the cellar. Just as his kind likes it the most.§
+  Vars §self.talked_about_fingolson = 1
+self.asked_about_noise = 1
+the_npc.set_val ("talked_about_theft", 1)§
+End
+
+Circle
+  Type 2
+  Pos -20 300
+  Text §He is such a regular and welcome guest, and of all people he gets robbed in our house. What a shame!§
+  Cond §if self.talked_about_fingolson == 1:§
+End
+
+Circle
+  Type 1
+  Pos -20 340
+  Text §So you know Fingolson?§
+End
+
+Circle
+  Type 1
+  Pos 0 380
+  Text §The Dwarf, madam! Do you know him?§
+End
+
+Circle
+  Type 2
+  Pos 20 340
+  Text §In Cirdanth that wouldn't have happened. And even if it had, there would be proper guards to track the thief down. But whom do I tell? Surely, you are from Cirdanth, ain't you?§
+  Vars §self.asked_about_theft = 1§
+End
+
+Circle
+  Type 1
+  Pos 40 380
+  Text §What about the guards here?§
+End
+
+Circle
+  Type 2
+  Pos -20 440
+  Text §He stays here quite often, and has done that for many years. I wouldn't say that I know him well, though. He behaves quite retained and formal, but he is a pleasant character. Not like the other types we get here usually.§
+End
+
+Circle
+  Type 2
+  Pos 40 440
+  Text §Oh, you mean Jelom and Talan. They are good men, no doubt. Their task is to keep the peace, and usually they are well up to it.§
+End
+
+Circle
+  Type 1
+  Pos 200 160
+  Text §My name is $name. I am investigating the theft.§
+End
+
+Circle
+  Type 2
+  Pos 220 220
+  Text §You should have said so! It is about time that something is going to happen. I tell you, in Cirdanth, everything would have been solved by now.§
+End
+
+Circle
+  Type 2
+  Pos 220 260
+  Text §But here, in the middle of nowhere, they hold an Elven Lady responsible and nobody seems interested in finding poor Master Fingolson's gems.§
+  Vars §self.talked_about_fingolson = 1§
+End
+
+Circle
+  Type 1
+  Pos 180 300
+  Text §I am Lady Silverhair's clerk, madam, and I'm going to find the real thief, if you'd only let me ask you some questions!§
+  Vars §the_npc.set_val ("know_shairs_clerk", 1)§
+End
+
+Circle
+  Type 2
+  Pos 140 320
+  Text §Then you are from Cirdanth? What would I give to live there! But no! Orloth had to buy the Inn from his scoundrel brother. As if it'd bring him anything but trouble.§
+  Vars §demo.complain_about_wastesedge = 1§
+End
+
+Circle
+  Type 1
+  Pos 100 380
+  Text §True, Waste's Edge is quite a remote place, but ...§
+End
+
+Circle
+  Type 1
+  Pos 140 380
+  Text §Could we perhaps return to more pressing matters?§
+End
+
+Circle
+  Type 2
+  Pos -20 480
+  Text §Just take a look at that mercenary. What a dreadful man! You wouldn't find people like him in the city!§
+End
+
+Circle
+  Type 1
+  Pos 260 300
+  Text §What about the guards you have here?§
+End
+
+Circle
+  Type 2
+  Pos 220 340
+  Text §Oh forgive me. Orloth always says I'm talking too much, but actually, he never keeps his mouth shut. He always denies when I tell him, but I'm sure you have noticed yourself.§
+End
+
+Circle
+  Type 2
+  Pos 220 380
+  Text §Now don't keep me off my work. Ask what you want to know and then out with you!§
+End
+
+Circle
+  Type 1
+  Pos 20 240
+  Text §Yes, madam. Did you notice anything unusual during the night of the theft?§
+End
+
+Circle
+  Type 2
+  Pos 100 440
+  Text §Remote!? The edge of the world couldn't be more remote! Mind you, I'm not complaining. It's just...§
+End
+
+Circle
+  Type 2
+  Pos 60 480
+  Text §All these filthy types we get here. Like that Endhelm fellow. I don't think you'd meet people like him in Cirdanth.§
+End
+
+Circle
+  Type 1
+  Pos 60 520
+  Text §What about him? Do you think he is involved into the theft?§
+End
+
+Circle
+  Type 2
+  Pos 200 420
+  Text §Oh, forgive me. I am sure you have more important things on your mind than listening to the sorrows of a woman.§
+End
+
+Circle
+  Type 2
+  Pos -200 280
+  Text §But perhaps you should ask Talan, as he was on duty that night. If somebody noticed something, then it was him.§
+End
+
+Circle
+  Type 1
+  Pos 180 480
+  Text §You said Master Fingolson is a regular guest. What can you tell me about him?§
+  Cond §if self.asked_about_theft == 1:§
+End
+
+Circle
+  Type 1
+  Pos 260 460
+  Text §I was wondering whether you noticed anything unusual during the night of the theft.§
+  Cond §else:§
+End
+
+Circle
+  Type 2
+  Pos 60 560
+  Text §How should I know? But he does look suspicious to me. More than any others of our guests.§
+End
+
+Circle
+  Type 1
+  Pos 40 600
+  Text §Can you tell me a little more about them?§
+End
+
+Circle
+  Type 1
+  Pos 100 600
+  Text §Well, you were very ... helpful, madam. But if you'll excuse me now, I've got a thief to catch.§
+End
+
+Circle
+  Type 2
+  Pos 180 520
+  Text §I am afraid there is only little I know about him. He is so retained and formal, a calm and pleasant character. But he stays here regularly.§
+End
+
+Circle
+  Type 2
+  Pos 180 560
+  Text §Which is no surprise; much of the trade with the mines of Uzdun'kal is done here, and Master Fingolson is one of the few tradesmen the Dwarfs have.§
+End
+
+Circle
+  Type 1
+  Pos 180 600
+  Text §I didn't know that much trade with the Dwarfs runs through Waste's Edge.§
+End
+
+Circle
+  Type 1
+  Pos 280 160
+  Text §Lunch can wait, but if you don't help with my investigation, the thief might get away!§
+End
+
+Circle
+  Type 2
+  Pos 280 220
+  Text §You are looking for the thief!? My apologies then, sir. It is about time that somebody takes an interest into this unlucky incident.§
+End
+
+Circle
+  Type 2
+  Pos 260 260
+  Text §Can you imagine they suspect the fair Lady Silverhair!? And bad types like that dreadful Endhelm are walking around unnoticed.§
+End
+
+Circle
+  Type 2
+  Pos 320 260
+  Text §I say, in a city like Cirdanth the true thief would have been tracked down by now. But out here, in the middle of nowhere, law and order are just hollow phrases.§
+End
+
+Circle
+  Type 1
+  Pos 320 320
+  Text §Rest assured that I will find out the truth, madam. But to do so I need to know whether you noticed anything unusual during the night of the theft.§
+End
+
+Circle
+  Type 2
+  Pos 260 500
+  Text §I fear I haven't. See, our rooms are under the roof, while Master Fingolson sleeps below ground, like his kind is used to. Any noise hearable in our chamber would have woken up the whole house.§
+  Vars §self.asked_about_noise = 1
+the_npc.set_val ("talked_about_theft", 1) §
+End
+
+Circle
+  Type 2
+  Pos 260 540
+  Text §But as far as I know, none of our guests noticed anything suspicious. It is really a shame, theft beneath our roof. And of all people, the good Master Fingolson is the victim.§
+End
+
+Circle
+  Type 1
+  Pos 260 580
+  Text §So you know the Dwarf well?§
+End
+
+Circle
+  Type 2
+  Pos 40 640
+  Text §I hardly get out of the kitchen during the day. Best you talk to my husband. He usually knows more about people than they know themselves.§
+End
+
+Circle
+  Type 2
+  Pos 0 480
+  Text §But a situation like this exceeds their abilities. Not that I'd blame them. Convicting this thief is no job for simple people. I hope you understand, sir.§
+End
+
+Circle
+  Type 2
+  Pos 120 480
+  Text §We're days from the next settlement out here. Were it not for all the trade passing through we couldn't even buy the most basic things we need for our living.§
+End
+
+Circle
+  Type 2
+  Pos 120 540
+  Text §Although without the trade, Waste's Edge wouldn't even exist and we might run an Inn in Cirdanth instead. But as long as the mines of Uzdun'kal are there, there is little chance to get Orloth away from here.§
+End
+
+Circle
+  Type 2
+  Pos 180 640
+  Text §Well, upwards from here the river gets treacherous, therefore most boats go no further. The way remaining is covered by caravans. So everything that comes along the river runs past our gates.§
+End
+
+Circle
+  Type 2
+  Pos 180 740
+  Text §There is also an ancient road that leads north towards Elgilad and the human cities. A lot of spice comes along that way, from Elminscourt and beyond.§
+End
+
+Circle
+  Type 2
+  Pos 180 780
+  Text §But enough chatting. This food won't prepare itself, and you still have a thief to catch.§
+End
+
+Circle
+  Type 2
+  Pos -200 320
+  Text §Just don't blame him, if he hasn't, sir. He is a good lad and I don't want any harm coming to him.§
+End
+
+Circle
+  Type 1
+  Pos -200 380
+  Text §Don't worry, madam. I won't trouble the guards more than they deserve.§
+End
+
+Circle
+  Type 2
+  Pos -280 380
+  Text §I'll take you at your word, $name sir. But if you'll excuse me now. I have to prepare the food, and you still have your thief to catch.§
+End
+
+Circle
+  Type 1
+  Pos -80 320
+  Text §What about your son? Oliver said he heard something that night.§
+  Cond §if demo.know_olivers_noise == 1 and self.asked_about_noise == 1:§
+End
+
+Circle
+  Type 2
+  Pos -80 380
+  Text §That boy! If I ever catch him outside when he should be sleeping in his bedroom ... . And if that's not enough, he starts spreading rumours.§
+End
+
+Circle
+  Type 1
+  Pos -40 420
+  Text §You don't believe him?§
+End
+
+Circle
+  Type 2
+  Pos -40 500
+  Text §Don't get me wrong. Oliver tells no lies. He'd better not! But he has an overactive imagination, so I would be careful with his \"observations\". Trust me, sir.§
+End
+
+Circle
+  Type 1
+  Pos -140 520
+  Text §Talan practising what?§
+  Cond §if demo.know_talan_singing == 0:§
+End
+
+Circle
+  Type 2
+  Pos -200 560
+  Text §I shouldn't have mentioned this at all! Telling on other people is not right. But if it helps to clear your mistress' guilt, I cannot keep it secret. But you mustn't tell anybody, do you understand!?§
+  Cond §if the_npc.get_val ("know_shairs_clerk") == 1:§
+End
+
+Circle
+  Type 1
+  Pos -240 600
+  Text §You have my word, Lucia. Now what is it?§
+End
+
+Circle
+  Type 2
+  Pos -240 700
+  Text §He is singing. Talan sometimes leaves his post to practice his voice where nobody hears him. That's nothing bad, but he'd be more than embarrassed if you tell it around. And I fear Jelom won't take it very well.§
+  Vars §demo.know_talan_singing = 1§
+End
+
+Circle
+  Type 1
+  Pos -240 740
+  Text §And he'd be right! Singing might not be bad, but leaving ones post during duty is! I think I'll have to have a serious word with Talan. If you'll excuse me, madam.§
+End
+
+Circle
+  Type 2
+  Pos -100 560
+  Text §I ... I cannot tell. I have said more than I should have already.§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos -140 600
+  Text §I can't promise anything before I don't know what you are talking about.§
+End
+
+Circle
+  Type 2
+  Pos -140 660
+  Text §I want no harm done to Talan, see. He is a good lad, and he deserves better than ending like Jelom. Don't destroy the chance to make something out of his life.§
+End
+
+Circle
+  Type 1
+  Pos -140 700
+  Text §I don't want anybody harm, but I will do what I must to find the thief.§
+End
+
+Circle
+  Type 1
+  Pos -100 620
+  Text §Please Lucia. If it has anything to do with the theft, I need to know! Don't you want the real thief caught?§
+End
+
+Circle
+  Type 2
+  Pos -140 740
+  Text §And that is the only reason why I'll tell you about Talan. But you'd better not disappoint me!§
+End
+
+Circle
+  Type 1
+  Pos -60 480
+  Text §What if it wasn't!? If that guard would do his duty instead of wandering off for a singsong at nights, we'd know for sure.§
+  Cond §else:§
+End
+
+Circle
+  Type 2
+  Pos -200 420
+  Text §Please sir, don't be too harsh with Talan. He is a good lad at heart, and I wouldn't like any harm coming to him.§
+End
+
+Circle
+  Type 1
+  Pos -140 360
+  Text §I know that {who_heard_noise} heard a noise outside the inn during that night.§
+  Cond §if demo.know_noise != 0 and self.asked_about_noise == 1:§
+End
+
+Circle
+  Type 2
+  Pos -140 480
+  Text §Outside the inn you say? I don't know anything about this, but I suspect that was rather Talan practising than the thief.§
+End
+
+Circle
+  Type 5
+  Pos 540 20
+  Text §Lucia seems busy as usual, but this time she actually smiles as she turns to you.§
+  Cond §else:§
+End
+
+Circle
+  Type 2
+  Pos -60 60
+  Text §Come back to hold me off my work again, did you?§
+End
+
+Circle
+  Type 1
+  Pos -60 100
+  Text §I'm afraid so. I'd like you to repeat what you've heard the night of the theft.§
+  Cond §if the_npc.talked_about_theft == 1:§
+End
+
+Circle
+  Type 2
+  Pos -60 140
+  Text §I already told you everything I know, but if you insist.§
+End
+
+Circle
+  Type 2
+  Pos -60 200
+  Text §As I said, we're sleeping under the roof, whereas poor Master Fingolson has his room down below ground. So if he hasn't heard anything, how should i?§
+  Vars §self.talked_about_fingolson = 1
+self.asked_about_noise = 1§
+End
+
+Circle
+  Type 5
+  Pos 440 20
+  Text §Lucia does not even bother to look up from her work as you approach her.§
+  Cond §elif demo.told_on_talan == 1 or demo.told_on_talan == 2:§
+End
+
+Circle
+  Type 1
+  Pos 480 60
+  Text §Excuse me Lucia, I have ...§
+  Cond §else:§
+End
+
+Circle
+  Type 2
+  Pos 480 100
+  Text §Don't even think of asking me for anything. The way you let Talan down, even though you gave your word not to, makes me sick.§
+End
+
+Circle
+  Type 1
+  Pos 400 140
+  Text §I'm sorry, but I had no other choice.§
+End
+
+Circle
+  Type 2
+  Pos 400 240
+  Text §I don't want to hear your lame excuses. You have broken your word and that is all that counts.§
+End
+
+Circle
+  Type 5
+  Pos 460 320
+  Text §With these words she turns her back on you and continues with her work.§
+End
+
+Circle
+  Type 1
+  Pos 20 100
+  Text §I am afraid so. I was wondering whether you noticed something unusual during the night of the theft?§
+  Cond §if the_npc.talked_about_theft != 1:§
+End
+
+Circle
+  Type 1
+  Pos -100 420
+  Text §But {who_heard_noise} heard something outside the inn as well.§
+  Cond §if demo.know_noise != 0:§
+End
+
+Circle
+  Type 1
+  Pos -20 520
+  Text §What mercenary?§
+  Cond §if Alek Endhelm.talked_to == 0:§
+End
+
+Circle
+  Type 2
+  Pos -20 560
+  Text §His name is Endhelm, I believe. You must have noticed him in the common room: he carries a sword and swears a lot. I'm sick of his likes, but out here we are getting to see plenty of them.§
+End
+
+Circle
+  Type 1
+  Pos 20 560
+  Text §Could he be involved into the theft?§
+End
+
+Circle
+  Type 2
+  Pos 180 680
+  Text §Besides, few Dwarves go further than Waste's Edge, so if you want to buy from them directly, this is the best place to meet.§
+End
+
+Circle
+  Type 1
+  Pos -160 100
+  Text §I need to fetch something for my mistress, but the pantry is locked.§
+  Cond §if demo.get_item == 1 and demo.pantry_locked == 1:§
+  Vars §demo.pantry_locked = 2§
+End
+
+Circle
+  Type 2
+  Pos -160 140
+  Text §Then you have spoken to your Lady? I was afraid that Jelom wouldn't allow you to see her. Even I was refused entry when I brought her some breakfast this morning! Can you imagine that?§
+End
+
+Circle
+  Type 1
+  Pos -160 200
+  Text §The key, Mrs. Redwyne ...§
+End
+
+Circle
+  Type 2
+  Pos -200 200
+  Text §What? Ah ... the key. Sorry, $name. I only hope it is not too uncomfortable for your mistress, being locked into that small chamber and all that.§
+End
+
+Circle
+  Type 5
+  Pos -260 200
+  Text §Lucia rambles on some more, but finally she reaches into her apron and hands you the key to the storeroom.§
+End
+
+Circle
+  Type 1
+  Pos 440 60
+  Text §Excuse me Lucia, I have to fetch something for Lady Silverhair from the pantry, and ...§
+  Cond §elif demo.get_item == 1 and demo.pantry_locked == 1:§
+End
+
+Circle
+  Type 2
+  Pos 440 100
+  Text §... and now you want my key!? You have nerves! Do you think I'd forget how you let Talan down, despite the word you've given me?§
+  Vars §the_npc.refuses_key = 1§
+End
+
+Circle
+  Type 1
+  Pos 500 140
+  Text §Please Lucia, I need the key.§
+End
+
+Circle
+  Type 2
+  Pos 500 200
+  Text §Spare me your false friendliness. You tricked me once with your charm, but a second time I won't fall for it!§
+End
+
+Circle
+  Type 1
+  Pos 460 240
+  Text §And what about my mistress?§
+End
+
+Circle
+  Type 2
+  Pos 460 280
+  Text §I pity the poor woman; held for theft and stuck with a sycophant like you.§
+End
+
+Circle
+  Type 1
+  Pos 540 240
+  Text §Just give me that key and I won't bother you again!§
+End
+
+Circle
+  Type 2
+  Pos 540 280
+  Text §And I'm not taking that tone either! You have used my confidence and must suffer the consequences.§
+End
+
+Circle
+  Type 1
+  Pos 360 60
+  Text §Look, Lucia, I spoke with Talan and he understands what I had to do.§
+  Cond §if demo.soothe_lucia == 1 and demo.told_on_talan == 2:§
+End
+
+Circle
+  Type 2
+  Pos 360 140
+  Text §He's not in terrible trouble then? Seems you are in luck, $name. I wouldn't have forgiven you if you brought any harm upon the lad.§
+End
+
+Circle
+  Type 1
+  Pos 360 240
+  Text §May I have the key then?§
+  Vars §demo.soothe_lucia = 0
+demo.told_on_talan = 3
+demo.pantry_locked = 2§
+End
+
+Circle
+  Type 5
+  Pos 360 320
+  Text §Without any further words, Lucia reaches into her apron and hands you the key to the storeroom.§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 1
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 97
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 90
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 18
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 56
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 32
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 51
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 29
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 29
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 22
+  Next 31
+End
+
+Arrow
+  Type 3
+  Prev 52
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 34
+End
+
+Arrow
+  Type 3
+  Prev 34
+  Next 35
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 36
+End
+
+Arrow
+  Type 3
+  Prev 36
+  Next 37
+End
+
+Arrow
+  Type 3
+  Prev 51
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 37
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 39
+End
+
+Arrow
+  Type 3
+  Prev 90
+  Next 40
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 40
+End
+
+Arrow
+  Type 3
+  Prev 39
+  Next 41
+End
+
+Arrow
+  Type 3
+  Prev 39
+  Next 42
+End
+
+Arrow
+  Type 3
+  Prev 38
+  Next 43
+End
+
+Arrow
+  Type 3
+  Prev 43
+  Next 44
+End
+
+Arrow
+  Type 3
+  Prev 47
+  Next 45
+End
+
+Arrow
+  Type 3
+  Prev 60
+  Next 45
+End
+
+Arrow
+  Type 3
+  Prev 43
+  Next 45
+End
+
+Arrow
+  Type 3
+  Prev 41
+  Next 46
+End
+
+Arrow
+  Type 3
+  Prev 46
+  Next 47
+End
+
+Arrow
+  Type 3
+  Prev 60
+  Next 48
+End
+
+Arrow
+  Type 3
+  Prev 47
+  Next 48
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 49
+End
+
+Arrow
+  Type 3
+  Prev 49
+  Next 50
+End
+
+Arrow
+  Type 3
+  Prev 50
+  Next 51
+End
+
+Arrow
+  Type 3
+  Prev 50
+  Next 52
+End
+
+Arrow
+  Type 3
+  Prev 52
+  Next 53
+End
+
+Arrow
+  Type 3
+  Prev 53
+  Next 54
+End
+
+Arrow
+  Type 3
+  Prev 42
+  Next 54
+End
+
+Arrow
+  Type 3
+  Prev 54
+  Next 55
+End
+
+Arrow
+  Type 3
+  Prev 55
+  Next 56
+End
+
+Arrow
+  Type 3
+  Prev 44
+  Next 57
+End
+
+Arrow
+  Type 3
+  Prev 23
+  Next 58
+End
+
+Arrow
+  Type 3
+  Prev 36
+  Next 59
+End
+
+Arrow
+  Type 3
+  Prev 59
+  Next 60
+End
+
+Arrow
+  Type 3
+  Prev 48
+  Next 61
+End
+
+Arrow
+  Type 3
+  Prev 57
+  Next 63
+End
+
+Arrow
+  Type 3
+  Prev 62
+  Next 63
+End
+
+Arrow
+  Type 3
+  Prev 40
+  Next 64
+End
+
+Arrow
+  Type 3
+  Prev 58
+  Next 65
+End
+
+Arrow
+  Type 3
+  Prev 83
+  Next 65
+End
+
+Arrow
+  Type 3
+  Prev 64
+  Next 65
+End
+
+Arrow
+  Type 3
+  Prev 65
+  Next 66
+End
+
+Arrow
+  Type 3
+  Prev 55
+  Next 67
+End
+
+Arrow
+  Type 3
+  Prev 64
+  Next 67
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 67
+End
+
+Arrow
+  Type 3
+  Prev 67
+  Next 68
+End
+
+Arrow
+  Type 3
+  Prev 68
+  Next 69
+End
+
+Arrow
+  Type 3
+  Prev 69
+  Next 70
+End
+
+Arrow
+  Type 3
+  Prev 71
+  Next 72
+End
+
+Arrow
+  Type 3
+  Prev 78
+  Next 73
+End
+
+Arrow
+  Type 3
+  Prev 72
+  Next 73
+End
+
+Arrow
+  Type 3
+  Prev 81
+  Next 74
+End
+
+Arrow
+  Type 3
+  Prev 73
+  Next 74
+End
+
+Arrow
+  Type 3
+  Prev 74
+  Next 75
+End
+
+Arrow
+  Type 3
+  Prev 71
+  Next 76
+End
+
+Arrow
+  Type 3
+  Prev 72
+  Next 77
+End
+
+Arrow
+  Type 3
+  Prev 77
+  Next 78
+End
+
+Arrow
+  Type 3
+  Prev 78
+  Next 79
+End
+
+Arrow
+  Type 3
+  Prev 76
+  Next 80
+End
+
+Arrow
+  Type 3
+  Prev 80
+  Next 78
+End
+
+Arrow
+  Type 3
+  Prev 79
+  Next 81
+End
+
+Arrow
+  Type 3
+  Prev 82
+  Next 83
+End
+
+Arrow
+  Type 3
+  Prev 64
+  Next 84
+End
+
+Arrow
+  Type 3
+  Prev 55
+  Next 84
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 84
+End
+
+Arrow
+  Type 3
+  Prev 84
+  Next 85
+End
+
+Arrow
+  Type 3
+  Prev 86
+  Next 87
+End
+
+Arrow
+  Type 3
+  Prev 87
+  Next 88
+End
+
+Arrow
+  Type 3
+  Prev 88
+  Next 89
+End
+
+Arrow
+  Type 3
+  Prev 89
+  Next 90
+End
+
+Arrow
+  Type 3
+  Prev 91
+  Next 92
+End
+
+Arrow
+  Type 3
+  Prev 92
+  Next 93
+End
+
+Arrow
+  Type 3
+  Prev 93
+  Next 94
+End
+
+Arrow
+  Type 3
+  Prev 94
+  Next 95
+End
+
+Arrow
+  Type 3
+  Prev 95
+  Next 96
+End
+
+Arrow
+  Type 3
+  Prev 87
+  Next 97
+End
+
+Arrow
+  Type 3
+  Prev 85
+  Next 71
+End
+
+Arrow
+  Type 3
+  Prev 85
+  Next 82
+End
+
+Arrow
+  Type 3
+  Prev 68
+  Next 98
+End
+
+Arrow
+  Type 3
+  Prev 98
+  Next 85
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 99
+End
+
+Arrow
+  Type 3
+  Prev 99
+  Next 100
+End
+
+Arrow
+  Type 3
+  Prev 100
+  Next 101
+End
+
+Arrow
+  Type 3
+  Prev 101
+  Next 43
+End
+
+Arrow
+  Type 3
+  Prev 61
+  Next 102
+End
+
+Arrow
+  Type 3
+  Prev 102
+  Next 62
+End
+
+Arrow
+  Type 3
+  Prev 87
+  Next 103
+End
+
+Arrow
+  Type 3
+  Prev 103
+  Next 104
+End
+
+Arrow
+  Type 3
+  Prev 104
+  Next 105
+End
+
+Arrow
+  Type 3
+  Prev 105
+  Next 106
+End
+
+Arrow
+  Type 3
+  Prev 106
+  Next 107
+End
+
+Arrow
+  Type 3
+  Prev 91
+  Next 108
+End
+
+Arrow
+  Type 3
+  Prev 108
+  Next 109
+End
+
+Arrow
+  Type 3
+  Prev 109
+  Next 94
+End
+
+Arrow
+  Type 3
+  Prev 109
+  Next 110
+End
+
+Arrow
+  Type 3
+  Prev 110
+  Next 111
+End
+
+Arrow
+  Type 3
+  Prev 111
+  Next 112
+End
+
+Arrow
+  Type 3
+  Prev 112
+  Next 113
+End
+
+Arrow
+  Type 3
+  Prev 113
+  Next 96
+End
+
+Arrow
+  Type 3
+  Prev 111
+  Next 114
+End
+
+Arrow
+  Type 3
+  Prev 114
+  Next 115
+End
+
+Arrow
+  Type 3
+  Prev 115
+  Next 96
+End
+
+Arrow
+  Type 3
+  Prev 91
+  Next 116
+End
+
+Arrow
+  Type 3
+  Prev 116
+  Next 117
+End
+
+Arrow
+  Type 3
+  Prev 117
+  Next 118
+End
+
+Arrow
+  Type 3
+  Prev 118
+  Next 119
+End

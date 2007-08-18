@@ -1,0 +1,805 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: silverhair_start.adlg,v 1.1 2007/08/18 03:17:28 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+
+Circle
+  Type 2
+  Pos 80 40
+  Note §First time player has entered Siverhair's room.§
+  Text §Oh!!§
+  NPC §Janesta Skywind§
+  Cond §if the_npc.talked_to == 0:§
+  Vars §the_npc.talked_to = 1§
+End
+
+Circle
+  Type 2
+  Pos 220 40
+  Note §Player has spoken to her once, but nobody else.§
+  Text §$name, have you found anything yet?  This confinement is intolerable, as you may well understand.§
+  NPC §Imoen Silverhair§
+  Cond §elif demo.silverhair_free != 1:§
+End
+
+Circle
+  Type 1
+  Pos 80 100
+  Text §Mistress!  Mistress!  $name has come!§
+End
+
+Circle
+  Type 2
+  Pos 80 140
+  Text §Yes, yes dear, I see him.  Please calm yourself.  $name, I am relieved to see you.  This situation has clearly gone beyond any civil control.§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 1
+  Pos 60 200
+  Text §That is certain, my lady.  I am told you are suspected of theft.§
+End
+
+Circle
+  Type 2
+  Pos 60 240
+  Text §Theft indeed, and theft most grave. This Fingolson may be uncouth, but he bears considerable influence. A theft from him would have dire consequences indeed. But you know I could not have done this thing.§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 1
+  Pos 100 280
+  Text §Of course.  Theft is not in you, my Lady, nor is deceit.  But these folk have not my confidence in you.  I fear that there is no one who will speak for your honour among them.§
+End
+
+Circle
+  Type 2
+  Pos 100 340
+  Text §I see.  Then it falls to you, $name, as my sole friend in this outpost, to make certain my name is clear of any stain.  May I trust you to do this for me?§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 1
+  Pos 100 420
+  Text §Of course, my Lady.  You may trust me to the end of the world.  What little I may do is yours to command.§
+End
+
+Circle
+  Type 1
+  Pos 20 280
+  Text §What do you know of Fingolson, Lady?  I have not met him before.§
+End
+
+Circle
+  Type 2
+  Pos 20 320
+  Text §Be glad of that, he is an uncouth lout at best. I should have known better than to deal fairly with such a rough and uncultured beast.§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 2
+  Pos 60 480
+  Text §I thank you for that.  Now you must go, lest they find you here and imprison you as well.  Free, you are my hope.§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 1
+  Pos 60 520
+  Text §I will try to be worthy of your trust, Lady.  I will return once I know more.§
+End
+
+Circle
+  Type 1
+  Pos 20 420
+  Text §Of course, Lady. I have believed nothing but your innocence since I arrived. You may trust me to act on your behalf.§
+End
+
+Circle
+  Type 1
+  Pos 220 100
+  Text §I understand, Lady.  Please be patient.§
+End
+
+Circle
+  Type 2
+  Pos 220 140
+  Text §I have little choice.  Do you have news?  Or questions?§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 1
+  Pos 140 180
+  Text §News?  I must disappoint you, Lady.  I have none.  I simply wished to know if there was anything you need.§
+End
+
+Circle
+  Type 2
+  Pos 140 540
+  Text §You must go.  The human at the door may not hear as well as you or I, but he hears well enough.  Leave before he discovers you.§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 1
+  Pos 200 180
+  Note §First mention of the figurine, unlocks Frostbloom's dialogue.  May only appear before Frostbloom mentions the sounds.§
+  Text §I am curious, Lady.  What of that figurine there?  I do not recall it.§
+  Cond §if demo.talked_about_yeti == 0 and demo.know_frostbloom == 1:§
+  Vars §demo.talked_about_yeti = 1§
+End
+
+Circle
+  Type 2
+  Pos 200 260
+  Text §The Yeti?  I bought that upon arriving here.  From a young lady of your breed, it was.§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 1
+  Pos 200 320
+  Text §The artist, then?  I must speak more with her.  I had not known you had been together.§
+End
+
+Circle
+  Type 2
+  Pos 200 380
+  Text §She is a very intelligent woman, and regards the Yeti highly.  Do not take her lightly.§
+End
+
+Circle
+  Type 2
+  Pos 440 20
+  Note §When player first enters room.§
+  Text §$name!  Thank the Powers!§
+  NPC §Imoen Silverhair§
+  Cond §elif demo.get_item == 0:§
+  Vars §demo.get_item = 1§
+End
+
+Circle
+  Type 1
+  Pos 240 180
+  Note §Only ask after Frostbloom mentions the sounds.§
+  Text §I have spoken with the artist, Frostbloom. She mentioned that she had heard some strange sounds in the night, when the theft must have taken place. Did you hear anything?§
+  Cond §if demo.know_noise & 2 == 2:§
+  Vars §demo.know_noise = demo.know_noise | 1 §
+End
+
+Circle
+  Type 1
+  Pos 340 180
+  Text §Lady, could you tell me more about the argument you had with the Dwarf?  It may be helpful.§
+  Cond §if demo.know_argument == 1:§
+End
+
+Circle
+  Type 2
+  Pos 140 260
+  Text §It is kind of you to ask.  Indeed my possessions, other than what you see, have been taken from me.  They are kept in the pantry below.§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 1
+  Pos 140 320
+  Text §Do you wish me to retrieve them for you, Lady?§
+End
+
+Circle
+  Type 2
+  Pos 140 380
+  Text §No, that would not be wise.  I have an item I need, but to fetch it now would be to invite trouble.  Better we wait.§
+End
+
+Circle
+  Type 1
+  Pos 140 440
+  Text §Very well, Lady.  I am yours to command.§
+End
+
+Circle
+  Type 1
+  Pos 200 440
+  Text §So I gathered.  I will do my best, Lady.§
+End
+
+Circle
+  Type 2
+  Pos 240 260
+  Text §In the night...? Yes.  Yes, I do recall a sound in the night.  How could I have forgotten such a thing?§
+End
+
+Circle
+  Type 1
+  Pos 240 320
+  Text §This may be important to your freedom.  What are you able to tell me of it?§
+End
+
+Circle
+  Type 2
+  Pos 240 380
+  Text §Little, I'm afraid.  I know it was a voice, of that I am certain.  But whose voice I was not able to tell, nor what was said.§
+End
+
+Circle
+  Type 1
+  Pos 240 440
+  Text §Then it must have been someone about after the theft.  Perhaps the thief itself.  Do you remember anything else?§
+End
+
+Circle
+  Type 1
+  Pos 300 380
+  Text §Are you certain you cannot recall the voice?  It would be helpful to the extreme if we could match a name to it.§
+End
+
+Circle
+  Type 5
+  Pos 280 420
+  Text §She thinks for a moment, her eyes distant.§
+End
+
+Circle
+  Type 2
+  Pos 280 440
+  Text §No, I am sorry.  The nature of the voice is a mystery to me still.§
+End
+
+Circle
+  Type 2
+  Pos 240 480
+  Text §Very little, I'm afraid.  Only that it seemed to come from a distance.  Past the wall, perhaps.  In the direction of the stables.§
+End
+
+Circle
+  Type 5
+  Pos 240 540
+  Text §The lady looks anxiously at the door.§
+End
+
+Circle
+  Type 2
+  Pos 340 240
+  Text §Argument?  An insult, it was.  That foul creature had the audacity to accuse me of ignorance!§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 1
+  Pos 340 280
+  Text §Ignorance?  But you are highly educated, Lady.  Anyone could see that.§
+End
+
+Circle
+  Type 2
+  Pos 340 320
+  Text §Not this beast.  He attempted to sell inferior gems to me, pretending that they were of a high grade.  As if I was nothing more than a child who could not tell one stone from another.§
+End
+
+Circle
+  Type 2
+  Pos 340 360
+  Text §You know it is my intent to enchant these stones.  Else why would I trek this far?  Awful stones like his would shatter in an instant.§
+End
+
+Circle
+  Type 1
+  Pos 340 400
+  Text §Yes, that's true.  When we set out, you told me of your intent.§
+End
+
+Circle
+  Type 2
+  Pos 340 440
+  Text §That rough animal! He went so far as to claim that I not only did not know the value of the stone, but that I hardly knew one gem from another! If I could have destroyed the filth on the spot, I certainly would have!§
+End
+
+Circle
+  Type 5
+  Pos 340 480
+  Text §Silverhair's eyes flash with remembered anger, but a scuffing sound by the door distracts her and her anger drains as suddenly as it rose.§
+End
+
+Circle
+  Type 1
+  Pos 440 80
+  Text §My Lady, I am glad to see you.  You will be free soon, I know it.§
+End
+
+Circle
+  Type 2
+  Pos 440 140
+  Text §I would ask a boon from you, now that it is safe.  I have personal articles that I need, but are kept with our packs.  I'm sure you know which articles I mean.§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 1
+  Pos 420 180
+  Text §Of course, Lady.  That would be the least I could do after what you have endured.  Rest assured, I will be back shortly.§
+End
+
+Circle
+  Type 2
+  Pos 640 20
+  Note §If player may enter the room, but has not gone to the pantry§
+  Text §$name, you have come back so soon?  But where are the articles I asked for?§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos 640 80
+  Text §I have yet to retrieve them, Lady.§
+End
+
+Circle
+  Type 2
+  Pos 640 120
+  Text §Then please do so at once.  I have been without them for too long.§
+End
+
+Circle
+  Type 1
+  Pos 640 180
+  Text §Very well, Lady.§
+End
+
+Circle
+  Type 2
+  Pos 580 20
+  Note §After the jewel has been found§
+  Text §Returned already?  But what is this?§
+  Cond §elif demo.have_gem == 1:§
+  Vars §demo.gem_worthless = demo.gem_worthless | 1
+
+§
+End
+
+Circle
+  Type 1
+  Pos 580 80
+  Text §A stone I found in the cellar, among your chests.  I hate to think such a thing, but is this one of the jewels that the Dwarf has lost?§
+End
+
+Circle
+  Type 5
+  Pos 580 120
+  Text §You show the jewel to Lady Silverhair, who frowns upon seeing it.  She inspects it more closely, but carefully avoids touching it.  She straightens then, a puzzled look on her features.§
+End
+
+Circle
+  Type 2
+  Pos 580 180
+  Text §You say this was found among my goods?  But this is not a stone of mine, and neither is it the stone I was shown before.  I have never seen this before.§
+End
+
+Circle
+  Type 1
+  Pos 580 220
+  Text §But is this not one of the Catseyes he claims to have lost?§
+End
+
+Circle
+  Type 2
+  Pos 580 260
+  Text §It cannot be. For this is no Catseye at all, and in fact is hardly worth a fraction of the other stones.§
+End
+
+Circle
+  Type 2
+  Pos 580 320
+  Text §I do not understand this at all.§
+End
+
+Circle
+  Type 2
+  Pos 20 380
+  Text §I admit he goaded me to rage earlier, to my shame. But I have done nothing more than voice my anger. You must believe that.§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 1
+  Pos 480 180
+  Text §And where are the packs kept, Lady?§
+End
+
+Circle
+  Type 2
+  Pos 460 240
+  Text §You will find them below, in the pantry.§
+  NPC §Imoen Silverhair§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 18
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 29
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 23
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 31
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 32
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 32
+  Next 34
+End
+
+Arrow
+  Type 3
+  Prev 34
+  Next 35
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 36
+End
+
+Arrow
+  Type 3
+  Prev 36
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 37
+End
+
+Arrow
+  Type 3
+  Prev 37
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 38
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 39
+End
+
+Arrow
+  Type 3
+  Prev 39
+  Next 40
+End
+
+Arrow
+  Type 3
+  Prev 40
+  Next 41
+End
+
+Arrow
+  Type 3
+  Prev 41
+  Next 42
+End
+
+Arrow
+  Type 3
+  Prev 42
+  Next 43
+End
+
+Arrow
+  Type 3
+  Prev 43
+  Next 44
+End
+
+Arrow
+  Type 3
+  Prev 44
+  Next 45
+End
+
+Arrow
+  Type 3
+  Prev 45
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 22
+  Next 46
+End
+
+Arrow
+  Type 3
+  Prev 46
+  Next 47
+End
+
+Arrow
+  Type 3
+  Prev 49
+  Next 50
+End
+
+Arrow
+  Type 3
+  Prev 50
+  Next 51
+End
+
+Arrow
+  Type 3
+  Prev 51
+  Next 52
+End
+
+Arrow
+  Type 3
+  Prev 53
+  Next 54
+End
+
+Arrow
+  Type 3
+  Prev 54
+  Next 55
+End
+
+Arrow
+  Type 3
+  Prev 55
+  Next 56
+End
+
+Arrow
+  Type 3
+  Prev 56
+  Next 57
+End
+
+Arrow
+  Type 3
+  Prev 57
+  Next 58
+End
+
+Arrow
+  Type 3
+  Prev 58
+  Next 59
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 60
+End
+
+Arrow
+  Type 3
+  Prev 60
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 47
+  Next 61
+End
+
+Arrow
+  Type 3
+  Prev 47
+  Next 48
+End
+
+Arrow
+  Type 3
+  Prev 61
+  Next 62
+End

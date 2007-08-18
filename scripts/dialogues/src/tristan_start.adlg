@@ -1,0 +1,382 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: tristan_start.adlg,v 1.1 2007/08/18 03:17:29 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+
+Circle
+  Type 2
+  Pos 300 20
+  Text §Yes?§
+End
+
+Circle
+  Type 1
+  Pos 240 60
+  Text §Hello, sir. My name is $name, and I am investigating the theft of Master Fingolson's gems.§
+  Cond §if demo.know_argument == 1:§
+End
+
+Circle
+  Type 2
+  Pos 240 120
+  Text §Well met then, $name! I am Tristan Illig, a merchant by trade, and currently stuck here at the Redwyne Inn until this business is cleared up. So may I ask you to continue your investigation?§
+End
+
+Circle
+  Type 2
+  Pos 180 220
+  Text §Well, $name, I would like to be of help, but I am afraid that I know nothing that will aid you. Your time would be better spent talking to those who are involved, I would imagine.§
+End
+
+Circle
+  Type 1
+  Pos 160 280
+  Text §All the same I would like to ask you a thing or two ...§
+End
+
+Circle
+  Type 2
+  Pos 120 320
+  Text §Listen, $name, I already told you! I know nothing, saw nothing, heard nothing. I would be quite pleased if you conducted your investigation efficiently so I can finally leave this place.§
+End
+
+Circle
+  Type 1
+  Pos 300 180
+  Text §Right then, sorry to bother you, Master Illig.§
+End
+
+Circle
+  Type 2
+  Pos 240 580
+  Text §Oh, now I understand! You are working for Silverhair! You are not really investigating anything then, are you? You are just trying to get her freed at any cost!§
+End
+
+Circle
+  Type 1
+  Pos 300 660
+  Text §Could it be that you have something to hide, what with all this blustering?§
+End
+
+Circle
+  Type 2
+  Pos 340 700
+  Text §You have the nerve to accuse me, Half-Elf?! I don't have to take this. Go! Go before I lose my temper!§
+End
+
+Circle
+  Type 5
+  Pos 300 0
+  Text §The small man before you wears a cold expression. Judging by his garments he is sort of a merchant, and a rather successful one by the looks of it.§
+  Cond §else:§
+  Vars §the_npc.talked_to = 1§
+End
+
+Circle
+  Type 1
+  Pos 360 60
+  Text §Greetings sir, I am $name. I wonder whether you know anything about that theft.§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos 180 180
+  Text §That is what I am doing, Master Illig. I have a few questions for you.§
+End
+
+Circle
+  Type 1
+  Pos 240 280
+  Text §And who says you are not amongst those?§
+End
+
+Circle
+  Type 2
+  Pos 240 320
+  Text §What? You cannot seriously consider that! Use your eyes, man! Do I look like a thief to you?§
+End
+
+Circle
+  Type 2
+  Pos 180 380
+  Text §There is a caravan with Saffron waiting for me, worth ten times the money that Dwarf claims to have lost. And if I cannot reach it in time ... I'll be ruined! Ruined!§
+End
+
+Circle
+  Type 2
+  Pos 240 440
+  Text §Nobody will buy any Saffron if those cutpurses from Elminscourt arrive with their cheap Achiote or Safflor before I have completed my business in Cirdanth.§
+End
+
+Circle
+  Type 1
+  Pos 340 540
+  Text §Who says you aren't broke already?§
+End
+
+Circle
+  Type 1
+  Pos 240 540
+  Text §Do you perhaps think my mistress is in need of stealing? Yet she is accused!§
+End
+
+Circle
+  Type 2
+  Pos 300 480
+  Text §Now leave me alone, please. I assure you that I know nothing about the theft, let alone have any part in it. Or do you think I would endanger my whole business for a few worthless pebbles?§
+End
+
+Circle
+  Type 2
+  Pos 240 620
+  Text §I warn you, Half-Elf, I am losing my patience with you and this whole affair. I am losing money by the hour, while you bumble around, bothering everyone with questions!§
+End
+
+Circle
+  Type 2
+  Pos 360 120
+  Text §My name is Tristan Illig and I'm a merchant by trade, no thieftaker. All I know is that they are making a big fuss about a few worthless gems stolen from that Dwarf, Fingolson.§
+End
+
+Circle
+  Type 1
+  Pos 420 180
+  Text §Who is \"they\"?§
+End
+
+Circle
+  Type 2
+  Pos 420 240
+  Text §Above all Fingolson himself. He seems to consider the theft a personal affront. And not to forget that excuse for a guard; Jelom by name I believe. He is responsible for locking us all in here.§
+End
+
+Circle
+  Type 1
+  Pos 240 740
+  Text §All right, all right! I'll leave you alone. But I shall be watching you!§
+End
+
+Circle
+  Type 5
+  Pos 120 0
+  Text §Tristan looks irritated as you approach him again.§
+  Cond §if the_npc.talked_to == 1:§
+End
+
+Circle
+  Type 2
+  Pos 420 340
+  Text §And it's not as if they would still be looking for the thief. As it turned out, it's been that Elf, Lady Silverhair. But so far they failed in retrieving the gems from her.§
+End
+
+Circle
+  Type 1
+  Pos 420 420
+  Text §As my mistress did certainly not steal them, they'll have a hard time in doing so I guess.§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 1
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 0
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 18
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 22
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 23
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 7
+End

@@ -1,0 +1,91 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: janesta_start.adlg,v 1.1 2007/08/18 03:17:27 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+
+Circle
+  Type 2
+  Pos 100 20
+  Text §Oh, $name, we've been so worried for the Mistress.  Can't you do something to set her free?§
+  NPC §Janesta Skywind§
+End
+
+Circle
+  Type 1
+  Pos 100 80
+  Text §I will try, Janesta.  But you must be brave.  This is a difficult time for Lady Silverhair, and she needs us all to help her though.§
+End
+
+Circle
+  Type 2
+  Pos 100 120
+  Text §I will try.  Thank you, $name.§
+  NPC §Janesta Skywind§
+End
+
+Circle
+  Type 1
+  Pos 160 80
+  Text §Perhaps.  Do you know anything about this dwarf, Fingolson?§
+End
+
+Circle
+  Type 2
+  Pos 160 120
+  Text §Nothing, I'm afraid.  This is my first time here, and I was brought straight to the Mistress' room to make it ready.  This room is so awful, I cannot see how they expect a High Born to stand it.§
+  NPC §Janesta Skywind§
+End
+
+Circle
+  Type 1
+  Pos 160 180
+  Text §I see.  Thank you, Janesta.  I'm glad you are here to care for our Lady.§
+End
+
+Circle
+  Type 2
+  Pos 160 220
+  Text §Oh, $name.  I pray that this will turn out right.§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 1
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 6
+End

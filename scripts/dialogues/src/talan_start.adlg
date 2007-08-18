@@ -1,0 +1,1094 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: talan_start.adlg,v 1.1 2007/08/18 03:17:29 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+
+Circle
+  Type 2
+  Pos 140 0
+  Text §Oh, hullo again, $name.§
+  Cond §elif demo.silverhair_free != 1:§
+End
+
+Circle
+  Type 2
+  Pos 40 -40
+  Text §Listen, I really am sorry about that fuss at the gate. I hope you will not hold it against me.§
+  Cond §if the_npc.apologised != 1:§
+  Vars §the_npc.apologised = 1§
+End
+
+Circle
+  Type 1
+  Pos 40 0
+  Text §Please do not mention it again. I assure you that I hold no grudge against you.§
+End
+
+Circle
+  Type 2
+  Pos 140 120
+  Text §Oh... that. Yes, how may I help you?§
+End
+
+Circle
+  Type 1
+  Pos 200 60
+  Text §Hello, Talan. Look, I have a couple more questions about the theft.§
+  Cond §else:§
+End
+
+Circle
+  Type 2
+  Pos 40 160
+  Text §In the morning, of course, I heard that Master Fingolson's gems had been stolen and that Lady Silverhair was suspected of the theft.§
+End
+
+Circle
+  Type 1
+  Pos 80 220
+  Text §So you did not see or hear anything out of place that night?§
+End
+
+Circle
+  Type 2
+  Pos 80 280
+  Text §No... no, not at all.§
+  Vars §the_npc.heard_nothing = 1§
+End
+
+Circle
+  Type 2
+  Pos 80 360
+  Text §If you do not have any more questions ...§
+End
+
+Circle
+  Type 1
+  Pos 120 420
+  Text §No, thank you, I have a lot of work to do. You have been most helpful.§
+End
+
+Circle
+  Type 1
+  Pos 180 180
+  Text §I hear that Alek Endhelm was very interested in Fingolsons business. Have you noticed him doing anything suspicious?§
+  Cond §if demo.know_alek_eavesdrop == 1:§
+End
+
+Circle
+  Type 2
+  Pos 180 260
+  Text §Oh, he's a nasty sort, he is, sir. But other than being a busybody, I haven't noticed him doing anything that would lead me to believe that he is the thief.§
+End
+
+Circle
+  Type 2
+  Pos 180 360
+  Text §Now, if you don't have any more questions...§
+End
+
+Circle
+  Type 1
+  Pos 140 60
+  Text §I wish you had not lied to me about the night of the theft.§
+  Cond §if demo.know_talan_singing == 1 and the_npc.heard_nothing == 1:§
+End
+
+Circle
+  Type 2
+  Pos 260 120
+  Text §Wh... what do you mean?§
+End
+
+Circle
+  Type 1
+  Pos 300 180
+  Text §You were not, as you told me, manning your post the whole night.§
+End
+
+Circle
+  Type 2
+  Pos 300 240
+  Text §Now you look here! I was, and I do not appreciate you calling me a liar.§
+End
+
+Circle
+  Type 2
+  Pos 300 380
+  Text §Oh. So you do know ... ?§
+End
+
+Circle
+  Type 1
+  Pos 300 440
+  Text §Yes I do. And I believe you left your post that night, did you not, Talan?§
+End
+
+Circle
+  Type 2
+  Pos 300 500
+  Text §Yes, I did. But please do not tell Jelom, sir! He will have my hide for sure if he finds out! Please, I beg you!§
+End
+
+Circle
+  Type 1
+  Pos 180 420
+  Text §No, you missed it. Because you were off singing, weren't you?§
+  Cond §if demo.know_talan_singing == 1:§
+End
+
+Circle
+  Type 2
+  Pos 180 480
+  Text §I'm afraid I was. Oh what terrible mistake! I am so sorry, $name. I did not know about the noise! It is my fault that Lady Silverhair is being held in her room!§
+  Vars §demo.know_talan_singing = 2§
+End
+
+Circle
+  Type 1
+  Pos 180 540
+  Text §Calm down, Talan. Now I can prove that something strange happened that night at least.§
+End
+
+Circle
+  Type 1
+  Pos 0 220
+  Text §And why was Lady Silverhair accused?§
+End
+
+Circle
+  Type 2
+  Pos 0 280
+  Text §Well, the most obvious reason is of course that she was interested in the gems, and made a trip here just to buy them.§
+End
+
+Circle
+  Type 1
+  Pos 20 320
+  Text §But she felt the quality of the gems was too low, and she is hardly pressed for money, so why would she turn around and steal the gems?§
+  Cond §if demo.know_low_quality == 1:§
+End
+
+Circle
+  Type 2
+  Pos 20 360
+  Text §Well, according to Jelom, what better way to throw suspicion off yourself then to claim that the stones are of low quality?§
+End
+
+Circle
+  Type 1
+  Pos 60 420
+  Text §Ah, Jelom said that, did he? What else did he say?§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos -60 420
+  Text §Who is Jelom? Your superiour?§
+  Cond §if demo.know_jelom != 2:§
+End
+
+Circle
+  Type 2
+  Pos 0 460
+  Text §He is the other guard here. He is not exactly my superiour, but he is older than me and has been here much longer, so he is kind of in charge.§
+  Vars §demo.know_jelom = 1§
+End
+
+Circle
+  Type 2
+  Pos 0 540
+  Text §He found her behaviour suspicious. I mean, she is all high and mighty, acting above the rest of us, and she obviously doesn't like dwarves ...§
+End
+
+Circle
+  Type 1
+  Pos 0 580
+  Text §Wait! Why does everybody believe that she has an aversion to dwarves?§
+End
+
+Circle
+  Type 1
+  Pos -40 700
+  Text §Well, the way I heard the story, Bjarn made a point of insulting the entire elven race, loudly and publicly, upon her arrival!§
+  Cond §if demo.know_bjarns_insult == 1:§
+End
+
+Circle
+  Type 2
+  Pos 0 640
+  Text §Well, as I heard it told, she had quite an argument with Master Fingolson in which she insulted the quality of his gems and then the dwarven race!§
+End
+
+Circle
+  Type 2
+  Pos -40 760
+  Text §Well, Master Fingolson can be, um ... blunt, I guess, at times, but ...§
+End
+
+Circle
+  Type 1
+  Pos -60 800
+  Text §Wasn't the argument rather Fingolson's fault, then?§
+End
+
+Circle
+  Type 2
+  Pos 40 800
+  Text §Well, I... ah, perhaps...§
+End
+
+Circle
+  Type 2
+  Pos 180 800
+  Text §Maybe you should speak to Jelom. He knows more about the theft and his reasons for suspecting her than I do...§
+  Cond §if demo.know_jelom != 2:§
+End
+
+Circle
+  Type 2
+  Pos 200 880
+  Text §Well, you've talked to Jelom. You know what he thinks...§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos 240 760
+  Text §And so I shall. Where is he?§
+End
+
+Circle
+  Type 1
+  Pos 360 880
+  Text §Yes. I do know what he thinks. That, however, does not help me too much.§
+End
+
+Circle
+  Type 2
+  Pos 320 760
+  Text §He is guarding the hallway leading to Lady Silverhair's room.§
+End
+
+Circle
+  Type 1
+  Pos 360 800
+  Text §Well, I shall go and talk to him, then. Thank you and good day.§
+End
+
+Circle
+  Type 2
+  Pos 360 0
+  Text §Ah, $name, hello.§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos 360 40
+  Text §Hi there, Talan. Look, I am sorry that ...§
+End
+
+Circle
+  Type 2
+  Pos 320 100
+  Text §No, you did what you had to do, and it was only right that I got in trouble for leaving my post. And I owe you a big favour for covering for me!§
+  Cond §if demo.told_on_talan < 1:§
+End
+
+Circle
+  Type 2
+  Pos 400 100
+  Text §No, I understand. It was because of me shirking my duty that I did not see what happened that night. You had no choice, and I do not hold a grudge against you for doing your duty.§
+  Cond §else:§
+  Vars §demo.told_on_talan = 2§
+End
+
+Circle
+  Type 1
+  Pos 400 160
+  Text §All the same, I am still sorry for getting you into trouble with Jelom. Thank you for understanding.§
+End
+
+Circle
+  Type 1
+  Pos 360 160
+  Text §No, it was the least I could do. Do not worry about the favour.§
+End
+
+Circle
+  Type 2
+  Pos 320 300
+  Text §I don't know if there is any coincidence, but this visit of Master Fingolson is very unusual. You see, he is quite a regular here. He comes every other month or so, and usually stays for a week before going back.§
+End
+
+Circle
+  Type 2
+  Pos 320 380
+  Text §Usually he shows up a few days before the client, just to relax, I guess. Until about a year ago, he would spend this time in the common room, drinking ale and talking with Erek, his apprentice.§
+End
+
+Circle
+  Type 2
+  Pos 320 440
+  Text §About a year ago, things changed. When he came, he came alone. He still showed up a couple of days ahead of the client, but he no longer visited the common room much. He just stayed down in his room.§
+End
+
+Circle
+  Type 2
+  Pos 320 500
+  Text §But at this most recent visit, Bjarn got here the morning of Lady Silverhair's arrival, which was a little strange. What's more, he brought Erek again, although I thought he had finished his apprenticeship and moved on long ago.§
+End
+
+Circle
+  Type 1
+  Pos 400 500
+  Text §I see ... that is strange. Thanks for telling me, Talan!§
+End
+
+Circle
+  Type 1
+  Pos 180 120
+  Text §Couldn't it be that you missed what there was to see or hear?§
+  Cond §if demo.know_talan_singing == 1 and demo.know_olivers_noise != 1:§
+End
+
+Circle
+  Type 1
+  Pos 40 700
+  Text §You think this argument is enough to prove Lady Silverhair's guilt?§
+End
+
+Circle
+  Type 2
+  Pos -60 880
+  Text §I ... I don't know.§
+End
+
+Circle
+  Type 1
+  Pos 0 800
+  Text §And you say Lady Silverhair was accused because she \"obviously doesn't like dwarves\"!?§
+End
+
+Circle
+  Type 1
+  Pos -40 320
+  Text §True, but practically anyone at the Inn could have thrown an eye on the stones.§
+End
+
+Circle
+  Type 2
+  Pos -40 360
+  Text §According to Jelom there is no doubt that Lady Silverhair is the thief.§
+End
+
+Circle
+  Type 1
+  Pos -20 420
+  Text §I'm anxious to hear his reasoning, then.§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos 320 180
+  Text §I should think so Talan, considering the discomfort you caused my mistress.§
+End
+
+Circle
+  Type 2
+  Pos 320 240
+  Text §What has happened cannot be undone, I fear. But perhaps there is a little detail that might help to clear the Lady's reputation.§
+End
+
+Circle
+  Type 1
+  Pos 240 180
+  Text §I've been told about a noise that night, but you say you heard nothing.§
+End
+
+Circle
+  Type 1
+  Pos 300 300
+  Text §Should I rather call you a bard then?§
+End
+
+Circle
+  Type 2
+  Pos 240 240
+  Text §A ... noise? What noise?§
+End
+
+Circle
+  Type 1
+  Pos 260 300
+  Text §The noise of someone singing, Talan.§
+End
+
+Circle
+  Type 1
+  Pos 200 300
+  Text §According to Oliver, somebody must have been in the stables that night.§
+  Cond §if demo.know_olivers_noise == 1:§
+End
+
+Circle
+  Type 2
+  Pos 200 360
+  Text §Well, I did not notice anything, $name. That's the truth!§
+End
+
+Circle
+  Type 1
+  Pos 240 420
+  Text §It had better be, my friend..§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos 300 580
+  Text §If I want to prove Lady Silverhair's innocence, I have little other choice, I fear.§
+End
+
+Circle
+  Type 2
+  Pos 400 580
+  Text §I, I understand. I am very sorry, $name ...§
+  Vars §demo.know_talan_singing = 2§
+End
+
+Circle
+  Type 2
+  Pos 40 120
+  Text §Sure, but there is not much to tell. I was out here, making my rounds, walking around the yard like every other night.§
+End
+
+Circle
+  Type 2
+  Pos 40 40
+  Text §Thank you sir. By the way, I am Talan.§
+End
+
+Circle
+  Type 1
+  Pos 40 80
+  Text §I am $name, and I'd like to learn a little more about the theft.§
+End
+
+Circle
+  Type 1
+  Pos 80 180
+  Text §Why was the Lady Silverhair accused?§
+End
+
+Circle
+  Type 1
+  Pos 140 160
+  Text §Are you sure you haven't noticed anything out of place that night?§
+  Cond §if demo.know_talan_singing != 2:§
+End
+
+Circle
+  Type 1
+  Pos 80 460
+  Text §But Lady Frostbloom told me about a noise she heard.§
+  Cond §if demo.know_noise & 2 == 2:§
+End
+
+Circle
+  Type 2
+  Pos 80 520
+  Text §Frostbloom? Then it must have been a Yeti, I suppose.§
+End
+
+Circle
+  Type 2
+  Pos 80 580
+  Text §But seriously, I did not notice anything. I'm sorry, $name.§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 18
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 23
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 29
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 31
+End
+
+Arrow
+  Type 3
+  Prev 32
+  Next 34
+End
+
+Arrow
+  Type 3
+  Prev 36
+  Next 37
+End
+
+Arrow
+  Type 3
+  Prev 36
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 37
+  Next 39
+End
+
+Arrow
+  Type 3
+  Prev 38
+  Next 40
+End
+
+Arrow
+  Type 3
+  Prev 39
+  Next 41
+End
+
+Arrow
+  Type 3
+  Prev 41
+  Next 42
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 43
+  Next 44
+End
+
+Arrow
+  Type 3
+  Prev 44
+  Next 45
+End
+
+Arrow
+  Type 3
+  Prev 44
+  Next 46
+End
+
+Arrow
+  Type 3
+  Prev 46
+  Next 47
+End
+
+Arrow
+  Type 3
+  Prev 45
+  Next 48
+End
+
+Arrow
+  Type 3
+  Prev 50
+  Next 51
+End
+
+Arrow
+  Type 3
+  Prev 52
+  Next 53
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 54
+End
+
+Arrow
+  Type 3
+  Prev 54
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 37
+  Next 42
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 55
+End
+
+Arrow
+  Type 3
+  Prev 55
+  Next 36
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 56
+End
+
+Arrow
+  Type 3
+  Prev 34
+  Next 57
+End
+
+Arrow
+  Type 3
+  Prev 57
+  Next 36
+End
+
+Arrow
+  Type 3
+  Prev 34
+  Next 35
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 58
+End
+
+Arrow
+  Type 3
+  Prev 58
+  Next 59
+End
+
+Arrow
+  Type 3
+  Prev 59
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 59
+  Next 60
+End
+
+Arrow
+  Type 3
+  Prev 60
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 56
+  Next 37
+End
+
+Arrow
+  Type 3
+  Prev 56
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 45
+  Next 61
+End
+
+Arrow
+  Type 3
+  Prev 61
+  Next 62
+End
+
+Arrow
+  Type 3
+  Prev 62
+  Next 49
+End
+
+Arrow
+  Type 3
+  Prev 49
+  Next 50
+End
+
+Arrow
+  Type 3
+  Prev 51
+  Next 52
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 63
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 64
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 63
+End
+
+Arrow
+  Type 3
+  Prev 64
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 63
+  Next 65
+End
+
+Arrow
+  Type 3
+  Prev 65
+  Next 66
+End
+
+Arrow
+  Type 3
+  Prev 66
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 65
+  Next 67
+End
+
+Arrow
+  Type 3
+  Prev 67
+  Next 68
+End
+
+Arrow
+  Type 3
+  Prev 68
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 67
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 68
+  Next 69
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 70
+End
+
+Arrow
+  Type 3
+  Prev 70
+  Next 71
+End
+
+Arrow
+  Type 3
+  Prev 72
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 73
+End
+
+Arrow
+  Type 3
+  Prev 73
+  Next 74
+End
+
+Arrow
+  Type 3
+  Prev 74
+  Next 72
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 75
+End
+
+Arrow
+  Type 3
+  Prev 75
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 76
+End
+
+Arrow
+  Type 3
+  Prev 76
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 75
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 76
+End
+
+Arrow
+  Type 3
+  Prev 77
+  Next 78
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 77
+End
+
+Arrow
+  Type 3
+  Prev 78
+  Next 79
+End
+
+Arrow
+  Type 3
+  Prev 79
+  Next 20
+End

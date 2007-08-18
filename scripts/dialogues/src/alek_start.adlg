@@ -1,0 +1,982 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: alek_start.adlg,v 1.1 2007/08/18 03:17:26 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+
+Circle
+  Type 2
+  Pos 220 40
+  Text §And who do we have here? A damn freak Half-Elf I say!§
+End
+
+Circle
+  Type 1
+  Pos 120 80
+  Text §That's $name, you ass! I'm working for Lady Silverhair.§
+End
+
+Circle
+  Type 2
+  Pos 120 120
+  Text §For Lady Silverhair, eh? Now that scares the shit out of me, Half-Elf. Go and bother somebody else!§
+  Vars §work = demo.work_4_shair
+work = work | 2
+demo.work_4_shair = work§
+End
+
+Circle
+  Type 2
+  Pos 20 40
+  Text §I'll be damned if that's not our freakish Half-Elf! Still pokin' your nose in other peoples business?§
+End
+
+Circle
+  Type 1
+  Pos 20 140
+  Text §Listen! Need we really go through all this crap again?§
+End
+
+Circle
+  Type 2
+  Pos 20 240
+  Text §You're getting on my nerves, Half-Elf. Go ahead then, ask your stupid questions.§
+End
+
+Circle
+  Type 1
+  Pos 300 80
+  Text §I don't like you either, friend. But unfortunately, I need to talk to you.§
+End
+
+Circle
+  Type 2
+  Pos 300 120
+  Text §You? Tell me, what would one of your sort want from Alek Endhelm?§
+End
+
+Circle
+  Type 1
+  Pos 260 160
+  Text §I need some questions answered, concerning the theft.§
+End
+
+Circle
+  Type 1
+  Pos 340 160
+  Text §I'm just wondering what someone like you is doing at Waste's Edge.§
+End
+
+Circle
+  Type 2
+  Pos 340 200
+  Text §That's none of your business Half-Elf. Don't waste my time, will ya!?§
+End
+
+Circle
+  Type 1
+  Pos 340 240
+  Text §So it's none of my business if valuables disappear around here and my mistress is held responsible?§
+End
+
+Circle
+  Type 2
+  Pos 340 280
+  Text §I don't like the implication. It's not wise going around, calling other people thieves.§
+End
+
+Circle
+  Type 1
+  Pos 300 280
+  Text §So far, I've called you nothing. But if you don't help me with a few answers, I might change my mind.§
+End
+
+Circle
+  Type 1
+  Pos 400 320
+  Note §If the player heard about that from Erek.§
+  Text §I daresay being caught eavesdropping on the victim just before his gems are stolen is unwise as well.§
+  Cond §if demo.know_alek_eavesdrop:§
+  Vars §self.eavesdrop = 1§
+End
+
+Circle
+  Type 2
+  Pos 420 360
+  Text §Who told you? The little gritsucker? He'll say what his master tells him to say, haven't you noticed?§
+End
+
+Circle
+  Type 2
+  Pos 380 400
+  Text §Come on, don't make a face like that, Half-Elf. Of course I was there. I was on my way to see what all the shouting was about. Looked like my skills might have been needed.§
+End
+
+Circle
+  Type 2
+  Pos 260 200
+  Text §Not so quick! Who do you think you are, walking around pestering other people?§
+End
+
+Circle
+  Type 1
+  Pos 200 160
+  Text §If you must know, I'm working for Lady Silverhair.§
+End
+
+Circle
+  Type 1
+  Pos 120 240
+  Text §I'm here to get to the bottom of the matter. So if you don't want to share Silverhair's fate, you had better answer my questions.§
+End
+
+Circle
+  Type 2
+  Pos 120 280
+  Text §To hell with you, Half-Elf. What do you want to know?§
+End
+
+Circle
+  Type 2
+  Pos 340 400
+  Text §Next moment, the door's burstin' open and your lovely mistress rushes past ... - I don't think you could call that eavesdropping.§
+End
+
+Circle
+  Type 1
+  Pos 280 340
+  Text §Leave the thinking to me and simply answer my questions, will you?§
+End
+
+Circle
+  Type 1
+  Pos 20 280
+  Text §What is your business here, then?§
+End
+
+Circle
+  Type 2
+  Pos 300 580
+  Text §If you don't believe me, why don't you ask Fingolson himself? Oh, I forgot. He doesn't want to talk with people of your kind, does he? Well, I cannot blame him for that.§
+End
+
+Circle
+  Type 2
+  Pos -20 280
+  Text §What on earth has my business to do with the theft? You're just wasting my time with your bloody questions.§
+End
+
+Circle
+  Type 2
+  Pos -120 280
+  Text §I fear you do not understand, Half-Elf. If you keep asking for irrelevant details you'll accomplish nothing. But I might know a thing or two, were you only asking the right questions.§
+End
+
+Circle
+  Type 1
+  Pos -160 320
+  Text §Listen, man. I am not interested into your gossip.§
+End
+
+Circle
+  Type 1
+  Pos -180 280
+  Text §So what questions should I ask, in your opinion?§
+End
+
+Circle
+  Type 1
+  Pos -200 360
+  Text §I don't see how *that* could get me any further.§
+End
+
+Circle
+  Type 2
+  Pos -160 380
+  Text §Just tryin' to help. But a smartass like you doesn't need any help, do you?§
+End
+
+Circle
+  Type 2
+  Pos -120 440
+  Text §Even if I was, I bet you could never prove it, Half-Elf. You wouldn't recognise a clue if someone pushed your pretty nose into it.§
+End
+
+Circle
+  Type 1
+  Pos -160 420
+  Text §I certainly don't need yours. For all I know, you may well be the thief.§
+End
+
+Circle
+  Type 2
+  Pos -60 440
+  Text §Now do you have any dumb questions left, or can I go back to my drink?§
+End
+
+Circle
+  Type 1
+  Pos -120 400
+  Text §Simply answering my questions would be help enough!§
+End
+
+Circle
+  Type 2
+  Pos -60 400
+  Note §This node must be repeatable. (see "Actions")§
+  Text §If you say so. Then go on, ask what you want, even if it's not getting you anywhere.§
+End
+
+Circle
+  Type 1
+  Pos -60 280
+  Text §Who's wasting whose time here? The sooner you answer my questions, the sooner I leave you to yourself. Even you should understand this!§
+End
+
+Circle
+  Type 1
+  Pos 120 160
+  Text §Not before I get some answers out of you. You don't have something to hide, do you?§
+End
+
+Circle
+  Type 1
+  Pos 0 460
+  Text §So what is your business here, then?§
+End
+
+Circle
+  Type 2
+  Pos 0 540
+  Text §If it makes you happy; I made camp here on my way back from Limebruck where I had an ... appointment, which is absolutely none of your concern. I'm just an innocent traveller caught in this bloody mess.§
+End
+
+Circle
+  Type 1
+  Pos 100 340
+  Note §If talked to Orloth about this§
+  Text §Master Orloth says your chamber is below ground, next to the Dwarf's. So did you hear anything unusual in the night of the theft?§
+  Cond §if demo.know_aleks_room == 1:§
+End
+
+Circle
+  Type 2
+  Pos 100 380
+  Text §No I didn't. But perhaps there wasn't anything unusual to hear that night.§
+End
+
+Circle
+  Type 1
+  Pos 100 420
+  Text §What do you mean?§
+End
+
+Circle
+  Type 2
+  Pos 100 460
+  Text §You're a slow thinker, eh Half-Elf!? Hasn't it occurred to you that the theft might've already been committed by the time Fingolson went to bed?§
+End
+
+Circle
+  Type 1
+  Pos 40 500
+  Text §Don't make me laugh. That's the most ridiculous thing I ever heard.§
+End
+
+Circle
+  Type 1
+  Pos 100 560
+  Text §Do you have any proof of this?§
+End
+
+Circle
+  Type 1
+  Pos 160 460
+  Note §if talked to Orloth§
+  Text §That's impossible. Fingolson had the gems on him during the negotiations. And afterwards, either he or Erek were down in their room.§
+End
+
+Circle
+  Type 2
+  Pos 200 480
+  Text §Well, that would rule out quite a few possible thieves, wouldn't it?§
+End
+
+Circle
+  Type 1
+  Pos 200 520
+  Text §You want to tell me that Erek has taken the gems?§
+End
+
+Circle
+  Type 2
+  Pos 140 520
+  Text §You don't believe me? Perhaps you should ask Erek who has packed them then!§
+  Vars §demo.ask_packed_gems = 1§
+End
+
+Circle
+  Type 2
+  Pos 100 600
+  Text §I don't. But since you are so good in finding stuff out, this shouldn't be a problem for you!§
+End
+
+Circle
+  Type 2
+  Pos -80 500
+  Text §If you don't like what you hear from me, why don't you look for different company, Half-Elf?§
+End
+
+Circle
+  Type 2
+  Pos 0 600
+  Text §So? Was that of any help? I shouldn't think so. A waste of time it was!§
+End
+
+Circle
+  Type 1
+  Pos 300 440
+  Text §For what would they have needed your skills?§
+End
+
+Circle
+  Type 1
+  Pos 180 360
+  Note §If told by Erek or possibly Fellnir§
+  Text §What were you doing outside the parlour during negotiations? Trying to spy on Master Fingolson?§
+  Cond §if not self.eavesdrop and demo.know_alek_eavesdrop:§
+End
+
+Circle
+  Type 2
+  Pos -220 320
+  Text §Perhaps it's just me, but I'd ask myself why the ... thief hasn't left Waste's Edge.§
+End
+
+Circle
+  Type 5
+  Pos 220 0
+  Text §The muscular fellow in front of you has the air of a troublemaker about him. Scars all over his body are evidence of his readiness to use the sword he is carrying. He eyes you with undisguised distaste as you approach.§
+  Cond §else:§
+  Vars §the_npc.talked_to = 1§
+End
+
+Circle
+  Type 1
+  Pos -260 360
+  Text §Well, why hasn't he?§
+End
+
+Circle
+  Type 2
+  Pos -260 420
+  Text §Good question, isn't it! Now if I were you, Half-Elf, I'd be off to a quiet corner and made some use of what brain I had.§
+End
+
+Circle
+  Type 1
+  Pos -260 500
+  Text §Perhaps you are right. Any further conversation would be useless anyway. So I'll leave you ... for now!§
+End
+
+Circle
+  Type 1
+  Pos -200 420
+  Text §Very funny! Should I ever need a fool, I'll send for you.§
+End
+
+Circle
+  Type 2
+  Pos 240 400
+  Text §Why should I \"spy\" on a conversation that could be heard up to Erinsford. Nah, I was about to look whether my skills might be needed.§
+End
+
+Circle
+  Type 2
+  Pos 300 500
+  Text §You disappoint me, Half-Elf. The poor Dwarfs were practically attacked by that furious woman. How should I know she wasn't about to turn them into toads or something?§
+End
+
+Circle
+  Type 1
+  Pos 300 540
+  Text §Don't tell me you thought Fingolson would enrol you as his guard?§
+End
+
+Circle
+  Type 1
+  Pos 300 640
+  Text §He wasn't very enthusiastic about you, am I right?§
+  Cond §if demo.bjarn_door_open == 3:§
+End
+
+Circle
+  Type 2
+  Pos 300 680
+  Text §So what? You think I stole his gems because he didn't accept my offer?§
+End
+
+Circle
+  Type 1
+  Pos 100 660
+  Text §Well, that's it! I have enough of your useless blather. But I shall be watching you!§
+End
+
+Circle
+  Type 1
+  Pos 300 720
+  Text §I think you wouldn't need any reason at all. However, until I find a clue as to your guilt, I'll have to leave you to yourself.§
+End
+
+Circle
+  Type 5
+  Pos 20 0
+  Text §Endhelm puts a threatening grin on his face as he sees you walking towards him.§
+  Cond §if the_npc.talked_to != 0:§
+End
+
+Circle
+  Type 1
+  Pos -40 240
+  Text §Actually, there is nothing you could possibly tell me.§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 1
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 37
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 18
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 22
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 32
+  Next 31
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 34
+End
+
+Arrow
+  Type 3
+  Prev 34
+  Next 35
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 36
+End
+
+Arrow
+  Type 3
+  Prev 36
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 37
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 23
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 40
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 40
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 40
+End
+
+Arrow
+  Type 3
+  Prev 40
+  Next 41
+End
+
+Arrow
+  Type 3
+  Prev 41
+  Next 42
+End
+
+Arrow
+  Type 3
+  Prev 42
+  Next 43
+End
+
+Arrow
+  Type 3
+  Prev 49
+  Next 44
+End
+
+Arrow
+  Type 3
+  Prev 43
+  Next 44
+End
+
+Arrow
+  Type 3
+  Prev 49
+  Next 45
+End
+
+Arrow
+  Type 3
+  Prev 43
+  Next 45
+End
+
+Arrow
+  Type 3
+  Prev 43
+  Next 46
+End
+
+Arrow
+  Type 3
+  Prev 46
+  Next 47
+End
+
+Arrow
+  Type 3
+  Prev 47
+  Next 48
+End
+
+Arrow
+  Type 3
+  Prev 48
+  Next 49
+End
+
+Arrow
+  Type 3
+  Prev 45
+  Next 50
+End
+
+Arrow
+  Type 3
+  Prev 44
+  Next 51
+End
+
+Arrow
+  Type 3
+  Prev 38
+  Next 39
+End
+
+Arrow
+  Type 3
+  Prev 39
+  Next 52
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 53
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 54
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 54
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 54
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 55
+End
+
+Arrow
+  Type 3
+  Prev 55
+  Next 29
+End
+
+Arrow
+  Type 3
+  Prev 56
+  Next 0
+End
+
+Arrow
+  Type 3
+  Prev 55
+  Next 57
+End
+
+Arrow
+  Type 3
+  Prev 57
+  Next 58
+End
+
+Arrow
+  Type 3
+  Prev 58
+  Next 59
+End
+
+Arrow
+  Type 3
+  Prev 58
+  Next 60
+End
+
+Arrow
+  Type 3
+  Prev 60
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 51
+  Next 59
+End
+
+Arrow
+  Type 3
+  Prev 54
+  Next 61
+End
+
+Arrow
+  Type 3
+  Prev 61
+  Next 53
+End
+
+Arrow
+  Type 3
+  Prev 53
+  Next 62
+End
+
+Arrow
+  Type 3
+  Prev 62
+  Next 63
+End
+
+Arrow
+  Type 3
+  Prev 63
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 64
+End
+
+Arrow
+  Type 3
+  Prev 62
+  Next 44
+End
+
+Arrow
+  Type 3
+  Prev 64
+  Next 65
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 66
+End
+
+Arrow
+  Type 3
+  Prev 50
+  Next 66
+End
+
+Arrow
+  Type 3
+  Prev 52
+  Next 66
+End
+
+Arrow
+  Type 3
+  Prev 65
+  Next 67
+End
+
+Arrow
+  Type 3
+  Prev 68
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 40
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 54
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 69
+End

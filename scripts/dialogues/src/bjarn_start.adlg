@@ -1,0 +1,653 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: bjarn_start.adlg,v 1.1 2007/08/18 03:17:26 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+
+Circle
+  Type 5
+  Pos 140 20
+  Text §You try the door, but find it locked. From within the room you hear a deep voice.§
+  Cond §if demo.bjarn_door_open == 0 or demo.bjarn_door_open == 1:§
+  Vars §demo.bjarn_door_open = 1§
+End
+
+Circle
+  Type 5
+  Pos 260 20
+  Text §At the door to their room, Erek produces a key and unlocks it.§
+  Cond §if demo.bjarn_door_open == 2:§
+  Vars §demo.bjarn_door_open = 3§
+End
+
+Circle
+  Type 2
+  Pos 180 80
+  Text §Maybe I should not be doing this, but I do want my master to get his stones back.§
+  NPC §Erek Stonebreaker§
+End
+
+Circle
+  Type 2
+  Pos 60 80
+  Text §I do not wish to be disturbed right now, so please go away! First I am burgled, and now I can get no peace with all the busybodies running around, making my tragedy their business!§
+End
+
+Circle
+  Type 2
+  Pos 120 120
+  Text §Erek, who is this, and why have you let him in?§
+End
+
+Circle
+  Type 2
+  Pos 60 160
+  Text §This is $name, master, and he is investigating the theft of your gems. He wanted to talk to you, and I thought that maybe he could help.§
+  NPC §Erek Stonebreaker§
+End
+
+Circle
+  Type 1
+  Pos 60 220
+  Text §Yes, sir, that is correct. I am here on the behalf of Lady Silverhair, trying to get to the bottom of the disappearance of your stones.§
+End
+
+Circle
+  Type 2
+  Pos 120 220
+  Text §I think that \"theft\" is a better word for it than disappearance.§
+End
+
+Circle
+  Type 1
+  Pos 160 180
+  Text §Theft, then, if you prefer. Call it what you may, I would like to recover the gems and clear Lady Silverhair's name. Would you mind answering a question or two?§
+End
+
+Circle
+  Type 2
+  Pos 220 160
+  Text §Actually, I would mind. I am sure that you already know what happened, so nothing can be gained from bothering me. I would rather you \"recover\" the gems from your mistress and return them to me!§
+  Vars §Erek Stonebreaker.leave_bjarn = 1
+Erek Stonebreaker.set_schedule_active (1)§
+End
+
+Circle
+  Type 1
+  Pos 260 120
+  Text §Sir, please try to be reasonable. Have you even considered the possibility that Lady Silverhair is not the thief?§
+End
+
+Circle
+  Type 2
+  Pos 320 80
+  Text §What, and ignore all the evidence to the contrary? She came here specifically to buy my gems, insulted their quality to weasel out of paying for them, and then stole them when the first opportunity presented itself!§
+End
+
+Circle
+  Type 5
+  Pos 500 20
+  Text §Bjarn looks you up and down with a stern expression on his face; obviously he is not happy with the disturbance.§
+  Cond §if demo.bjarn_door_open == 3:§
+End
+
+Circle
+  Type 2
+  Pos 500 80
+  Text §Look, Half-Elf, I told you that I do not want to be bothered!§
+End
+
+Circle
+  Type 1
+  Pos 300 120
+  Text §I'm just wondering whether Erek might have taken the gems.§
+  Cond §if demo.ask_packed_gems == 1 or demo.ask_packed_gems == 2:§
+End
+
+Circle
+  Type 1
+  Pos 440 120
+  Text §Why did you insult Lady Silverhair upon her arrival? You set her on edge, even before the negotiations started!§
+  Cond §if demo.know_bjarns_insult == 1:§
+End
+
+Circle
+  Type 1
+  Pos 580 120
+  Text §Don't you think that Alek Endhelm might be more likely a thief than Lady Silverhair?§
+  Cond §if demo.know_alek_eavesdrop == 1:§
+End
+
+Circle
+  Type 2
+  Pos 300 180
+  Text §You cannot possibly suspect Erek! He is so honest and idealistic that even if he had stolen the gems, he would confess the crime immediately! Do not waste my time with such ridiculous accusations!§
+End
+
+Circle
+  Type 1
+  Pos 340 220
+  Text §But Alek Endhelm leads me to believe that the theft may have been committed before you went to bed.§
+End
+
+Circle
+  Type 2
+  Pos 340 260
+  Text §Ha! That sounds just like Alek Endhelm. You are a fool to be taken in by that scoundrel's words. The truth is that I personally packed the gems after Erek went to bed. That is, the theft has been committed later that night.§
+End
+
+Circle
+  Type 2
+  Pos 440 180
+  Text §You blame me for your mistress' absence of humour? All I wanted was to liven up the atmosphere before turning to business. I can see nothing wrong with that. Now please stop wasting my time!§
+End
+
+Circle
+  Type 2
+  Pos 580 180
+  Text §Alek Endhelm? That shifty-looking mercenary? He is surely up to no good, but I doubt you can pin the crime on him to clear your mistress.§
+End
+
+Circle
+  Type 1
+  Pos 540 220
+  Text §But he was seen snooping around the parlour during negotiations.§
+End
+
+Circle
+  Type 2
+  Pos 540 260
+  Text §Well, it is true. He was really interested in my business as soon as I got here! He was snooping around, poking his nose into my affairs. Then he offered me his service as a guard.§
+End
+
+Circle
+  Type 2
+  Pos 540 320
+  Text §The roads have been getting more and more dangerous recently, that's for sure. But they would be even more dangerous with the likes of him \"guarding\" me! So I told him, in no uncertain terms, that I didn't like his looks!§
+End
+
+Circle
+  Type 1
+  Pos 600 220
+  Text §What makes you so sure that he is innocent, if you think so poorly of him?§
+End
+
+Circle
+  Type 2
+  Pos 600 400
+  Text §Come on, a clumsy, lumbering human sneaking into my room while I am asleep and stealing my gems! An ogre would be a more likely sneak thief than Alek Endhelm! He couldn't pick a lock if he had the key!§
+End
+
+Circle
+  Type 2
+  Pos 320 20
+  Text §I cannot believe that you have the audacity to ask me questions about this! Please leave!§
+End
+
+Circle
+  Type 2
+  Pos 600 440
+  Text §No, it had to have been one of your kind or a real Elf, that is for sure. Now, I am a busy man, so please stop wasting my time!§
+End
+
+Circle
+  Type 1
+  Pos 580 360
+  Text §And you don't think he stole your gems in an act of revenge?§
+End
+
+Circle
+  Type 1
+  Pos 500 360
+  Text §To me it seems as if Alek was just curious about your gems.§
+End
+
+Circle
+  Type 2
+  Pos 500 400
+  Text §And so was your Lady Silverhair! Listen, I don't know why I should be speaking with you, if all you care about is freeing your mistress. If you want to make yourself useful you better go and retrieve my Chrysoberyls.§
+End
+
+Circle
+  Type 1
+  Pos 260 220
+  Text §Well, you know Erek best, I guess.§
+End
+
+Circle
+  Type 1
+  Pos 340 300
+  Text §Really? According to Erek, you were asleep already when he started packing.§
+  Cond §if demo.ask_packed_gems == 2:§
+End
+
+Circle
+  Type 2
+  Pos 340 360
+  Text §Asleep? I? Certainly not! I was just taking a rest, perhaps. Later I put the pouch with the gems into our luggage, from where the thief - your fine mistress - stole it during the night!§
+End
+
+Circle
+  Type 2
+  Pos 340 400
+  Text §I can't believe I am justifying myself in front of the thief's servant! Why am I talking to you at all! You are not doing anything to retrieve my Chrysoberyls. All you care about is freeing your mistress!§
+End
+
+Circle
+  Type 2
+  Pos 340 440
+  Text §You are but wasting my time! Out of my sight you go!§
+  Vars §demo.ask_packed_gems = 3§
+End
+
+Circle
+  Type 1
+  Pos 700 120
+  Text §Not even if I've found one of your \"Catseyes\"!§
+  Cond §if demo.gem_worthless > 0:§
+End
+
+Circle
+  Type 2
+  Pos 700 180
+  Text §Really? I ... I am impressed. Let me see! And tell me where you found it.§
+End
+
+Circle
+  Type 1
+  Pos 660 220
+  Text §In the pantry.§
+End
+
+Circle
+  Type 1
+  Pos 740 220
+  Text §In Lady Silverhair's luggage.§
+End
+
+Circle
+  Type 2
+  Pos 740 360
+  Text §Ha, I knew it! Who else but Silverhair had reasons and the skills to steal my gems? I'm glad you are finally seeing the truth. Now there can be no more doubt about her guilt. Come, we must inform the guards!§
+End
+
+Circle
+  Type 1
+  Pos 700 420
+  Text §Not so fast! According to Erek, this gem is no Catseye.§
+  Cond §if demo.gem_worthless & 2 == 2:§
+End
+
+Circle
+  Type 1
+  Pos 760 420
+  Text §But Lady Silverhair swears that this is no Catseye.§
+  Cond §if demo.gem_worthless & 1 == 1:§
+End
+
+Circle
+  Type 2
+  Pos 700 460
+  Text §Huh? Erek is young and has much to learn yet, so please excuse his mistake. But this gem is a Chrysoberyl Catseye, no doubt. Now hand it over, so I may take it to Jelom.§
+End
+
+Circle
+  Type 2
+  Pos 760 460
+  Text §The thief? Of course she would say that! Even you cannot be that foolish to take her word over mine. I tell you that this gem is a Chrysoberyl Catseye. Now hand it over, so I can take it to Jelom.§
+End
+
+Circle
+  Type 1
+  Pos 760 520
+  Text §Don't worry Master Fingolson, I will take care of that myself.§
+End
+
+Circle
+  Type 1
+  Pos 700 520
+  Text §I'm sorry, but I won't give this piece of evidence out of my hands.§
+End
+
+Circle
+  Type 2
+  Pos 740 560
+  Text §Oh well, it's not as if you could run off with the gem I suppose. You may keep it for now, as long as you see to it that Silverhair gets what she deserves. Now be on your way!§
+  Vars §demo.bjarn_lies = 1§
+End
+
+Circle
+  Type 2
+  Pos 660 260
+  Text §In the pantry? Can't you precise that some more? After all, the place you found the gem might give us a clue about the thief.§
+End
+
+Circle
+  Type 1
+  Pos 700 320
+  Text §It was hidden in Lady Silverhair's luggage.§
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 18
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 22
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 23
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 29
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 31
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 34
+End
+
+Arrow
+  Type 3
+  Prev 34
+  Next 35
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 36
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 37
+End
+
+Arrow
+  Type 3
+  Prev 37
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 38
+  Next 39
+End
+
+Arrow
+  Type 3
+  Prev 38
+  Next 40
+End
+
+Arrow
+  Type 3
+  Prev 40
+  Next 41
+End
+
+Arrow
+  Type 3
+  Prev 41
+  Next 42
+End
+
+Arrow
+  Type 3
+  Prev 41
+  Next 43
+End
+
+Arrow
+  Type 3
+  Prev 42
+  Next 44
+End
+
+Arrow
+  Type 3
+  Prev 43
+  Next 45
+End
+
+Arrow
+  Type 3
+  Prev 44
+  Next 46
+End
+
+Arrow
+  Type 3
+  Prev 45
+  Next 46
+End
+
+Arrow
+  Type 3
+  Prev 44
+  Next 47
+End
+
+Arrow
+  Type 3
+  Prev 45
+  Next 47
+End
+
+Arrow
+  Type 3
+  Prev 47
+  Next 48
+End
+
+Arrow
+  Type 3
+  Prev 46
+  Next 48
+End
+
+Arrow
+  Type 3
+  Prev 39
+  Next 49
+End
+
+Arrow
+  Type 3
+  Prev 49
+  Next 50
+End
+
+Arrow
+  Type 3
+  Prev 50
+  Next 41
+End

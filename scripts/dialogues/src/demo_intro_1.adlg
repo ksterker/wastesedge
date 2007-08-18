@@ -1,0 +1,432 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: demo_intro_1.adlg,v 1.1 2007/08/18 03:17:26 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+
+Circle
+  Type 2
+  Pos 220 -320
+  Text §Your employer, eh? Who might that be?§
+End
+
+Circle
+  Type 1
+  Pos 180 -280
+  Text §The Lady Silverhair, and she must have great need of me, so let me pass!§
+End
+
+Circle
+  Type 2
+  Pos 180 -140
+  Text §Nay, if you are Silverhair's man, then I shall not let you pass. That one is the source of all this mess, and I'll be switched if I let her accomplice in to free her. Be on your way!§
+End
+
+Circle
+  Type 1
+  Pos 180 -80
+  Text §What sort of mess, man? If my Lady is in trouble, I must know!§
+End
+
+Circle
+  Type 1
+  Pos 300 400
+  Text §Don't be foolish! I must see my Lady at once. Open this gate!§
+End
+
+Circle
+  Type 2
+  Pos 180 -40
+  Text §The sort of trouble we have no wish to put up with, that's certain. The Lady is being held for theft, and a grievous theft it was.§
+End
+
+Circle
+  Type 1
+  Pos 180 0
+  Text §Theft? But that cannot be, the Lady Silverhair is a wealthy noble in her own right. She need not stoop to theft.§
+End
+
+Circle
+  Type 1
+  Pos 300 0
+  Text §You speak madness, man! There can have been no theft. Allow me in, and I shall prove to you the Lady is innocent.§
+End
+
+Circle
+  Type 1
+  Pos 240 180
+  Text §But I must! If my Lady is in need of me I cannot simply walk away! Please, I beg you to open the gate so I may aid her.§
+End
+
+Circle
+  Type 1
+  Pos 260 -280
+  Text §That is none of your concern. All you need know is that she is within your walls and will need me close if there is trouble at hand.§
+End
+
+Circle
+  Type 2
+  Pos 260 -240
+  Text §She, eh? Your employer wouldn't be an elven lady named Silverhair, would she?§
+End
+
+Circle
+  Type 1
+  Pos 220 -180
+  Text §Of course she is, you fool! Who else would it be? Are you going to open this gate or not?§
+End
+
+Circle
+  Type 1
+  Pos 300 -180
+  Text §Er, no. No, it is not. In fact, my employer is no lady at all.§
+End
+
+Circle
+  Type 2
+  Pos 300 -140
+  Text §Huh! You won't get in these doors by lying to me. You said your employer was a lady and there's only one in here who'd employ one of your sort.§
+End
+
+Circle
+  Type 1
+  Pos 300 -80
+  Text §Very well then, my employer is Lady Silverhair. What of it?§
+End
+
+Circle
+  Type 2
+  Pos 300 -40
+  Text §Your Lady is being held for theft, and a grievous theft it was! And you'll certainly not be coming in here to make the situation even worse.§
+End
+
+Circle
+  Type 2
+  Pos 180 40
+  Text §That's what you are saying. But fact is, she first argued with the victim over his goods and the other morning they were gone. Now he demands justice and Silverhair is known to need them badly. So what would you say the truth is?§
+End
+
+Circle
+  Type 1
+  Pos 240 80
+  Text §I cannot tell you the truth unless you let me see for myself.§
+End
+
+Circle
+  Type 2
+  Pos 300 40
+  Text §You'll have a damned hard time doing that. The lady is guilty and has been seen to be guilty. The truth is that she is the thief and that is all there is to it.§
+End
+
+Circle
+  Type 2
+  Pos 240 140
+  Text §I tell you again, you shall not come in.§
+End
+
+Circle
+  Type 2
+  Pos 300 460
+  Text §I tell you, I cannot. My orders...§
+End
+
+Circle
+  Type 1
+  Pos 180 520
+  Text §I am sick of arguing with you. Are you about to let me in, or will I be forced to take action? And believe me, you would not enjoy it.§
+End
+
+Circle
+  Type 5
+  Pos 240 560
+  Text §The guard hesitates for a bit, and even from where you stand you can see he is uncertain.§
+End
+
+Circle
+  Type 1
+  Pos 300 500
+  Text §You'll be in more trouble for not opening that gate than you will for letting me in, I assure you of that. Now do as I say!§
+End
+
+Circle
+  Type 5
+  Pos 240 620
+  Note §Guard then proceeds to open the gate.§
+  Text §But finally he seems to reach a conclusion, and after carefully scanning the surroundings, he beckons you in.§
+  Vars §the_npc.set_dialogue ("dialogues.talan_start")§
+End
+
+Circle
+  Type 2
+  Pos 240 220
+  Text §Aid her? That is why you can't be allowed in. If you aid her too much, she might escape.§
+End
+
+Circle
+  Type 1
+  Pos 160 300
+  Text §I promise, please. I am becoming sick with worry. Can you not help me?§
+End
+
+Circle
+  Type 1
+  Pos 240 300
+  Text §How could she escape from a guarded camp, even if I did help? Now let me in!§
+End
+
+Circle
+  Type 2
+  Pos 240 340
+  Text §I wish I could, friend. But If I were to open this gate, I would be in terrible trouble.§
+End
+
+Circle
+  Type 1
+  Pos 180 400
+  Text §I am beginning to lose my patience, man. I don't wish you trouble, but I must be allowed in.§
+End
+
+Circle
+  Type 2
+  Pos 180 460
+  Text §I tell you I can't allow you in.§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 1
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 18
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 22
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 29
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 23
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 6
+End

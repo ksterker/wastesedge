@@ -1,0 +1,185 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: sarin_start.adlg,v 1.1 2007/08/18 03:17:28 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+
+Circle
+  Type 2
+  Pos 260 20
+  Text §What insolence! $name, do you believe the depths of what they have done to our Lady? To accuse her of common theft, as if she was a human! And to lock her away in this tiny, dirty room! I tell you, I cannot bear it.§
+  NPC §Sarin Trailfollower§
+End
+
+Circle
+  Type 1
+  Pos 260 80
+  Text §I understand, Sarin, but we must bear this for now. At least until I have been able to uncover the truth.§
+End
+
+Circle
+  Type 2
+  Pos 260 120
+  Text §The truth? The truth is that our Lady is innocent and that, that Dwarf ruffian, he's a liar.§
+  NPC §Sarin Trailfollower§
+End
+
+Circle
+  Type 1
+  Pos 220 180
+  Text §Perhaps so. Hopefully, we shall see whether he is. What do you know of him?§
+End
+
+Circle
+  Type 2
+  Pos 220 220
+  Text §Very little, I'm happy to say. I was in the common room downstairs, arranging for dinner, when the Lady came out of the room they were in, as angry as I have ever seen her.§
+  NPC §Sarin Trailfollower§
+End
+
+Circle
+  Type 1
+  Pos 220 280
+  Text §I gather he is always difficult. Do you know anything else? About the other people at the inn, perhaps?§
+End
+
+Circle
+  Type 2
+  Pos 220 320
+  Text §Nay, not a thing. An uncouth lot, save for the one. An artist, I think. Lady Silverhair had words with her when we arrived, but Janesta and I were too busy to learn her name.§
+  NPC §Sarin Trailfollower§
+End
+
+Circle
+  Type 1
+  Pos 220 360
+  Note §If player has not yet spoken to Frostbloom.§
+  Text §I'll have to speak to her. Perhaps she may know something. Thank you, Sarin. I'm glad you are here to watch over the Lady during this trouble.§
+End
+
+Circle
+  Type 2
+  Pos 220 420
+  Text §I wish I could do more, $name. Good luck to you.§
+  NPC §Sarin Trailfollower§
+End
+
+Circle
+  Type 1
+  Pos 160 360
+  Note §If player has spoken with Frostbloom already.§
+  Text §Her name is Frostbloom. Not terribly friendly, but the Lady thinks highly of her talents. She went so far as to buy that figurine on the mantle.§
+  Cond §if demo.talked_about_yeti == 1:§
+End
+
+Circle
+  Type 2
+  Pos 140 420
+  Text §Is that one of hers? She is indeed talented. I may only hope you are as talented in ending this trouble. Good luck to you, $name.§
+  NPC §Sarin Trailfollower§
+End
+
+Circle
+  Type 1
+  Pos 320 180
+  Text §He seems to be telling the truth about the theft. But I cannot believe that our Lady did the deed. There must be a true thief about.§
+  Cond §if demo.bjarn_door_open >= 3:§
+End
+
+Circle
+  Type 2
+  Pos 320 220
+  Text §I beg you hurry and find him, then. For every minute you do not, is one minute closer our Lady is to peril.§
+  NPC §Sarin Trailfollower§
+End
+
+Circle
+  Type 2
+  Pos 180 240
+  Text §That barbarian must have done something terrible to put her in such a state.§
+  NPC §Sarin Trailfollower§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 1
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 13
+End

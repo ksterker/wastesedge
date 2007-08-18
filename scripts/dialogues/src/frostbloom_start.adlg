@@ -1,0 +1,609 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: frostbloom_start.adlg,v 1.1 2007/08/18 03:17:27 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+
+Circle
+  Type 2
+  Pos -200 0
+  Note §If player has not spoken to her before.§
+  Text §Hm?  What do you want?§
+  NPC §Rhayne Frostbloom§
+  Cond §if the_npc.talked_to == 0:§
+  Vars §the_npc.talked_to = 1
+demo.know_frostbloom = 1§
+End
+
+Circle
+  Type 1
+  Pos -200 60
+  Text §I am a servant of Lady Imoen Silverhair, and I'd like to ask ...§
+End
+
+Circle
+  Type 2
+  Pos -200 100
+  Text §I know who you are, and I do not care what you wish to ask.  Now go away.  The Yeti of my soul must have silence.§
+  NPC §Rhayne Frostbloom§
+End
+
+Circle
+  Type 2
+  Pos -140 0
+  Note §If player has not spoken to Silverhair, but has spoken to Frostbloom at least once.§
+  Text §You again?  I thought I told you to leave me alone.§
+  NPC §Rhayne Frostbloom§
+  Cond §if the_npc.talked_to == 1 and demo.talked_about_yeti == 0:§
+End
+
+Circle
+  Type 1
+  Pos -140 60
+  Text §But lady, I must ask you about the theft...§
+End
+
+Circle
+  Type 2
+  Pos -140 100
+  Text §The theft?  You mean your theft of my precious time, when I could be receiving inspiration?  I've lost enough of that already, thank you.  Now be gone, silly servant, you begin to annoy me.§
+  NPC §Rhayne Frostbloom§
+End
+
+Circle
+  Type 1
+  Pos -160 140
+  Text §But, lady...§
+End
+
+Circle
+  Type 2
+  Pos -160 180
+  Text §Off, I say!  I have no patience for this chatter!§
+  NPC §Rhayne Frostbloom§
+End
+
+Circle
+  Type 1
+  Pos -120 140
+  Text §I will go, but I will return to ask my questions.  I must have what you know of my Lady.§
+End
+
+Circle
+  Type 5
+  Pos -120 180
+  Text §The half-elf fixes you with a withering gaze.  For a moment, you feel as if you had been skewered.  Her voice is full of sarcasm.§
+End
+
+Circle
+  Type 2
+  Pos -120 220
+  Text §I look forward to it with all my heart.  For now, just go away.§
+  NPC §Rhayne Frostbloom§
+End
+
+Circle
+  Type 2
+  Pos 20 0
+  Note §If player has spoken to Silverhair about the Yeti.§
+  Text §Back again, eh?  You do hunger for punishment, don't you.§
+  NPC §Rhayne Frostbloom§
+  Cond §if demo.talked_about_yeti == 1 and the_npc.flattered == 0:§
+End
+
+Circle
+  Type 1
+  Pos 20 60
+  Text §I try to be diligent, lady.§
+End
+
+Circle
+  Type 2
+  Pos 20 100
+  Text §Well, I must admit that such devotion deserves a reward.  Very well, you may stay for a while.  A short while.  My name is Rhayne Frostbloom.  Take care you remember it.§
+  NPC §Rhayne Frostbloom§
+End
+
+Circle
+  Type 1
+  Pos -20 140
+  Text §Thank you, lady.  I would ask you about the theft, if I may.§
+End
+
+Circle
+  Type 2
+  Pos -20 180
+  Text §For goodness sake, do not bother me with that nonsense.  It's been all anyone speaks about here, and I for one am sick of it.§
+  NPC §Rhayne Frostbloom§
+End
+
+Circle
+  Type 1
+  Pos 40 140
+  Text §I have seen the lovely Yeti you carved for my mistress.  It is quite impressive.§
+End
+
+Circle
+  Type 2
+  Pos 40 180
+  Text §Do you really think so?  I tried to make it worthy of the noble beast, but I always wonder if I have given it enough life.§
+  NPC §Rhayne Frostbloom§
+End
+
+Circle
+  Type 1
+  Pos 40 220
+  Text §I'm hardly an expert, lady, but to my eye it is excellent.§
+End
+
+Circle
+  Type 1
+  Pos -20 220
+  Text §It is important.  The Lady Silverhair is in terrible danger.§
+End
+
+Circle
+  Type 2
+  Pos -20 280
+  Text §I know, I know.  And even if she is not hung, the Dwarves will be outraged.  What a foolish noise over such a little thing.  Gems are showy trash.  They cannot comprehend the complex soul of a Yeti.§
+End
+
+Circle
+  Type 1
+  Pos -20 320
+  Text §But this is hardly foolish, you must understand that.§
+End
+
+Circle
+  Type 5
+  Pos -20 360
+  Text §Frostbloom doesn't appear to hear you.  She stares off into space, occasionally whispering something about Yetis and souls, but you can make little sense of it.§
+End
+
+Circle
+  Type 1
+  Pos 100 220
+  Text §It is a masterpiece, my lady.  A true achievement that does credit to its model.§
+End
+
+Circle
+  Type 5
+  Pos 100 280
+  Text §Frostbloom eyes you suspiciously for a moment, then smiles.§
+End
+
+Circle
+  Type 2
+  Pos 80 320
+  Text §False flattery, eh?  I would wager my next commission you know nothing about the Yeti and their ways, yet would use this praise to loosen my tongue.  Well, have I spoken truth?§
+End
+
+Circle
+  Type 1
+  Pos 100 360
+  Note §Player lies to Frostbloom.§
+  Text §No, lady, I honestly appreciate the talent in your piece.  That is, you are honestly talented.§
+End
+
+Circle
+  Type 1
+  Pos 160 360
+  Note §Player tells Frostbloom the truth.§
+  Text §My lady, you have a keen eye and a keener wit.  That is precisely why I gave you praise, although you truly do deserve it.§
+End
+
+Circle
+  Type 2
+  Pos 100 420
+  Text §Huh! Off with you, I'll not waste time listening to your prattle. If you have a mind to be more honest, come back again.  Otherwise, take your foolishness elsewhere.§
+  Vars §the_npc.flattered = 1§
+End
+
+Circle
+  Type 2
+  Pos 160 420
+  Text §Very good answer.  I believe you'll do.  Ask of me what you will.§
+  Vars §the_npc.flattered = 2§
+End
+
+Circle
+  Type 2
+  Pos 40 280
+  Text §Flattery will get you nowhere, so long as you pretend it is nothing more.  I have no time for such idiocy.§
+End
+
+Circle
+  Type 2
+  Pos 260 0
+  Note §If player has told Frostbloom the truth earlier.§
+  Text §Ah, the persistent young servant.  Do you wish to ask me something more?§
+  NPC §Rhayne Frostbloom§
+  Cond §if the_npc.flattered == 2:§
+End
+
+Circle
+  Type 1
+  Pos 200 480
+  Text §Did anything unusual happen last night?§
+End
+
+Circle
+  Type 1
+  Pos 280 500
+  Text §What do you know of the dwarf, Bjarn?§
+End
+
+Circle
+  Type 1
+  Pos 320 500
+  Text §Do you know anything of the people staying here at Waste's Edge?§
+End
+
+Circle
+  Type 2
+  Pos 160 0
+  Note §If player had lied to Frostbloom.§
+  Text §Back to try again?  Then tell me whether you offered false flattery!  Then we'll see what you're made of.§
+  NPC §Rhayne Frostbloom§
+  Cond §if the_npc.flattered == 1:§
+End
+
+Circle
+  Type 2
+  Pos 220 540
+  Note §If sound has not been mentioned yet.§
+  Text §Unusual?  It was a warm night, which I am told is quite odd for this time of year.  Is that what you had in mind?§
+  Cond §else:§
+  Vars §demo.know_noise = demo.know_noise | 2§
+End
+
+Circle
+  Type 1
+  Pos 220 600
+  Text §Of course not!  Please, my Lady's very life may be in danger!§
+End
+
+Circle
+  Type 2
+  Pos 220 660
+  Note §First mention of sound.  Player may now approach Silverhair for confirmation.§
+  Text §It is such fun to tease you, do you realize that?  But there was something odd about the night.  There was a sound, which went on for a short time.§
+End
+
+Circle
+  Type 2
+  Pos 160 540
+  Note §If sounds have already been mentioned.§
+  Text §Has your lady told you any more about the sounds I heard?  I cannot recall anything else of note.§
+  Cond §if demo.know_noise != 0:§
+End
+
+Circle
+  Type 2
+  Pos 280 540
+  Text §A rough little creature.  No trace of creativity in the man at all.  I only noticed him long enough to ignore him, and we were both the better for it.§
+End
+
+Circle
+  Type 2
+  Pos 320 540
+  Text §The family who serves the travellers are good folk.  There is a trace of the yeti's spirit in them, deep inside.§
+End
+
+Circle
+  Type 2
+  Pos 320 600
+  Text §But the rest are barely forth a speck of dust in the wind.  Dull minds, every one.  Your lady seems the sole exception, I am sorry to say.  But at least the rest leave me in peace.§
+End
+
+Circle
+  Type 2
+  Pos 220 720
+  Text §I could not tell you what it was, but I doubt very much these humans would have heard it.  You might ask your fair lady about it, her ears should be keener than mine.  Although she may have been too preoccupied to notice.§
+End
+
+Circle
+  Type 1
+  Pos 140 380
+  Text §I may not have an educated taste, but I do know talent when standing in front of me.§
+End
+
+Circle
+  Type 2
+  Pos 100 480
+  Text §I must pursue my inspiration, even in this dismal place. Alone, if you please.§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 1
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 18
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 23
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 29
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 34
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 32
+  Next 36
+End
+
+Arrow
+  Type 3
+  Prev 36
+  Next 37
+End
+
+Arrow
+  Type 3
+  Prev 37
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 32
+  Next 39
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 40
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 34
+End
+
+Arrow
+  Type 3
+  Prev 34
+  Next 41
+End
+
+Arrow
+  Type 3
+  Prev 41
+  Next 42
+End
+
+Arrow
+  Type 3
+  Prev 38
+  Next 43
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 44
+End
+
+Arrow
+  Type 3
+  Prev 44
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 44
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 45
+End

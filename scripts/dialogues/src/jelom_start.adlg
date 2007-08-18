@@ -1,0 +1,783 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: jelom_start.adlg,v 1.1 2007/08/18 03:17:27 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+
+Circle
+  Type 2
+  Pos 80 40
+  Text §Halt there! No-one is allowed into the prisoner's room!§
+  Cond §if the_player.at_silverhairs_door == 1 and demo.know_jelom != 2:§
+End
+
+Circle
+  Type 2
+  Pos 240 40
+  Text §Stop right there, Half-Elf! You know that you are not allowed in there!§
+  Cond §elif the_player.at_silverhairs_door == 1:§
+End
+
+Circle
+  Type 2
+  Pos 160 40
+  Text §No-one is allowed into the prisoner's room, so please leave this hallway!§
+  Cond §elif the_player.at_silverhairs_door != 1 and demo.know_jelom != 2:§
+End
+
+Circle
+  Type 2
+  Pos 340 40
+  Text §You again, Half-Elf? What do you want this time?§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos 160 120
+  Text §Ah, you must be Jelom. Talan told me that I could find you here.§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos 80 120
+  Text §And just who are you to prevent me from entering, sir?§
+  Cond §if demo.know_jelom == 0:§
+End
+
+Circle
+  Type 1
+  Pos 380 120
+  Text §Nice to see you again, Jelom. Look, I have some more questions regarding the theft.§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos 280 120
+  Text §Look, Jelom, I found out something that will cast some serious doubt on Lady Silverhair having committed the theft!§
+  Cond §if demo.know_olivers_noise == 1 and the_npc.not_convinced == 0 and the_npc.allows_meddling == 1:§
+End
+
+Circle
+  Type 2
+  Pos 80 180
+  Text §My name is Jelom, and I am the chief of the guard at Waste's Edge! Who the hell are you?§
+End
+
+Circle
+  Type 2
+  Pos 160 180
+  Text §Who are you, and why were you looking for me?§
+End
+
+Circle
+  Type 1
+  Pos 160 240
+  Text §My name is $name. I'm investigating the theft and I have a few questions for you.§
+End
+
+Circle
+  Type 2
+  Pos 240 180
+  Text §And what might those questions be, Half-Elf?§
+  Cond §else:§
+End
+
+Circle
+  Type 2
+  Pos 520 120
+  Text §I doubt that, but since I won't get any peace from your pestering until you tell me, go ahead.§
+End
+
+Circle
+  Type 2
+  Pos 520 260
+  Text §You trust in the overactive imagination of some little kid? I know from Talan that everything was quiet during the night.  And I take the word of my own guard over Oliver's!§
+End
+
+Circle
+  Type 1
+  Pos 500 320
+  Text §Talan did not hear anything that night, because he was not at his post.§
+  Cond §if demo.know_talan_singing == 2:§
+End
+
+Circle
+  Type 2
+  Pos 500 380
+  Text §What do you mean? Why wasn't he at his post?§
+End
+
+Circle
+  Type 1
+  Pos 440 460
+  Text §He sneaked away to take a nap.§
+End
+
+Circle
+  Type 1
+  Pos 500 460
+  Text §He wandered off to practise singing, of all things!§
+  Vars §demo.told_on_talan = 1§
+End
+
+Circle
+  Type 2
+  Pos 440 520
+  Text §A nap? I knew it! I had suspected that he caught some shuteye on duty from time to time, but have never caught him at it! He is in big trouble, this time!§
+End
+
+Circle
+  Type 2
+  Pos 500 520
+  Text §Singing? What, does the fool want to be a bard now? He is in big trouble now!§
+End
+
+Circle
+  Type 2
+  Pos 460 580
+  Text §But regardless of that, how do you know that it was not Silverhair herself who went to the stables and caused the noise? After stealing Master Fingolson's gems!§
+End
+
+Circle
+  Type 1
+  Pos 320 300
+  Text §Erek actually packed the gems, according to Alek. Do you think he could be mixed up in this?§
+  Cond §if demo.ask_packed_gems == 1 and demo.know_talan_singing != 2:§
+End
+
+Circle
+  Type 1
+  Pos 280 300
+  Text §Alek Endhelm was eavesdropping outside the room during the negotiations, according to Erek. Do you think he could be mixed up in this?§
+  Cond §if demo.know_alek_eavesdrop == 1 and demo.know_talan_singing != 2:§
+End
+
+Circle
+  Type 2
+  Pos 320 360
+  Text §Erek? Come on, don't be stupid. You are a more likely thief than Erek, and you weren't even here! It is just like Alek to tell you things like that!§
+End
+
+Circle
+  Type 1
+  Pos 320 400
+  Text §Why do you say that?§
+End
+
+Circle
+  Type 2
+  Pos 280 440
+  Text §Don't get excited, half-elf. Alek looks like scum, and probably is, being a mercenary, but there is no reason to suspect him of the theft. In fact, I hear that he offered his services to Bjarn as a guard.§
+End
+
+Circle
+  Type 1
+  Pos 280 500
+  Text §You don't think that is a little suspicious?§
+End
+
+Circle
+  Type 2
+  Pos 280 560
+  Text §Look, Half-Elf, I am getting pretty damn tired of you and your questions. This investigation has nothing to do with you, so why don't you keep your nose out of it? Now get the hell out of here!§
+End
+
+Circle
+  Type 1
+  Pos 380 300
+  Text §Can you tell me what happened on the night of the theft?§
+  Cond §if demo.know_talan_singing != 2:§
+End
+
+Circle
+  Type 2
+  Pos 380 380
+  Text §No, I can't. Talan was on guard duty. Go bother him.§
+End
+
+Circle
+  Type 1
+  Pos 380 440
+  Text §You won't tell me anything about your own investigation, then?§
+End
+
+Circle
+  Type 1
+  Pos 80 260
+  Text §I am Lady Silverhair's clerk. I demand to see her immediately!§
+End
+
+Circle
+  Type 2
+  Pos 80 300
+  Text §It does not matter who you are. None may leave this room and none may enter. 'Tis as simple as that.§
+End
+
+Circle
+  Type 1
+  Pos 40 340
+  Text §Who's order is this?§
+End
+
+Circle
+  Type 1
+  Pos 120 340
+  Text §What harm could it do if I spoke to my mistress?§
+End
+
+Circle
+  Type 2
+  Pos 40 400
+  Text §Mine! As long as Silverhair does not give in and hands out Master Fingolson's gems she's staying where she is. On her own!§
+End
+
+Circle
+  Type 1
+  Pos 40 440
+  Text §I assure you, Lady Silverhair is innocent.§
+End
+
+Circle
+  Type 2
+  Pos 40 480
+  Text §Really? Too bad then, that all the facts I know prove the opposite.§
+End
+
+Circle
+  Type 2
+  Pos 60 520
+  Text §Now get lost!§
+  Vars §demo.know_jelom = 2§
+End
+
+Circle
+  Type 2
+  Pos 120 440
+  Text §How should I know!? But I'm not taking any risk.§
+End
+
+Circle
+  Type 1
+  Pos 520 200
+  Text §The stableboy, Oliver, heard a noise in the stables, well after everyone had gone to sleep.§
+End
+
+Circle
+  Type 1
+  Pos 560 320
+  Text §But that noise might have been caused by the real thief!§
+End
+
+Circle
+  Type 2
+  Pos 560 380
+  Text §I say this is crap. You'll need better arguments then mere fantasies of a child to convince me. Now don't hold me off my duty!§
+  Vars §the_npc.not_convinced = 1     §
+End
+
+Circle
+  Type 1
+  Pos 340 180
+  Text §Did you know that Talan left his post during the night of the theft?§
+  Cond §elif demo.know_talan_singing == 2 and the_npc.not_convinced == 1:§
+End
+
+Circle
+  Type 1
+  Pos 420 640
+  Text §Her servants could certainly confirm that she did not leave the room that night.§
+End
+
+Circle
+  Type 2
+  Pos 420 700
+  Text §Ha! They'd do everything to please their mistress. I wouldn't trust in any of their words.§
+End
+
+Circle
+  Type 1
+  Pos 500 640
+  Text §Well, everybody knows that Elves can move with absolute silence.§
+End
+
+Circle
+  Type 2
+  Pos 500 720
+  Text §Hm ... yes, that's a fact. You are right, Half-Elf. Something strange is going on.§
+End
+
+Circle
+  Type 2
+  Pos 620 720
+  Text §Maybe you should go in and see if your mistress can shed some light on the whole affair. However, until we find a new suspect, I'll be keeping an eye on her.§
+  Vars §demo.silverhair_free = 1
+the_npc.set_dialogue ("dialogues.jelom_2nd")§
+End
+
+Circle
+  Type 2
+  Pos 440 320
+  Text §What!? Are you telling me the kid was right after all? I don't believe it! Can't I even trust my own men any more!? Tell me, what was he doing?§
+End
+
+Circle
+  Type 2
+  Pos 160 300
+  Text §You investigate the theft? You don't look at all like the officer I sent Bregon for. What makes you believe you could meddle in my affairs?§
+End
+
+Circle
+  Type 1
+  Pos 160 360
+  Text §My mistress has been wrongly accused, and I intend to clear her name.§
+End
+
+Circle
+  Type 2
+  Pos 160 400
+  Text §Listen, Half-Elf! The theft and any investigations are business of the guard and none of yours! But by the looks of it, the only way to keep your nose out would be to lock you up.§
+  Cond §if the_npc.allows_meddling == 0:§
+  Vars §the_npc.allows_meddling = 1
+demo.know_jelom = 2§
+End
+
+Circle
+  Type 2
+  Pos 160 460
+  Text §So I won't prevent you from pestering the folk at the Inn. But should you find out anything, you report to me, you understand! Now, what is it you want from me?§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 50
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 18
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 23
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 22
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 29
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 31
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 31
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 32
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 32
+  Next 34
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 35
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 34
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 36
+End
+
+Arrow
+  Type 3
+  Prev 36
+  Next 37
+End
+
+Arrow
+  Type 3
+  Prev 37
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 34
+  Next 39
+End
+
+Arrow
+  Type 3
+  Prev 39
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 40
+End
+
+Arrow
+  Type 3
+  Prev 40
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 41
+End
+
+Arrow
+  Type 3
+  Prev 41
+  Next 42
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 43
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 43
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 43
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 44
+End
+
+Arrow
+  Type 3
+  Prev 44
+  Next 45
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 46
+End
+
+Arrow
+  Type 3
+  Prev 46
+  Next 47
+End
+
+Arrow
+  Type 3
+  Prev 45
+  Next 46
+End
+
+Arrow
+  Type 3
+  Prev 47
+  Next 48
+End
+
+Arrow
+  Type 3
+  Prev 43
+  Next 49
+End
+
+Arrow
+  Type 3
+  Prev 49
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 49
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 31
+End
+
+Arrow
+  Type 3
+  Prev 50
+  Next 51
+End
+
+Arrow
+  Type 3
+  Prev 51
+  Next 52
+End
+
+Arrow
+  Type 3
+  Prev 52
+  Next 53
+End
+
+Arrow
+  Type 3
+  Prev 53
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 53
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 53
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 52
+End

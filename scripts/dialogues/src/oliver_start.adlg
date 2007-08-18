@@ -1,0 +1,469 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: oliver_start.adlg,v 1.1 2007/08/18 03:17:28 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+
+Circle
+  Type 5
+  Pos 140 40
+  Text §As he notices you, the boy stops whatever he's been doing. With a cheerful grin on his face, he turns towards you.§
+  Cond §elif the_npc.talked_to == 0:§
+  Vars §the_npc.talked_to = 1§
+End
+
+Circle
+  Type 2
+  Pos 140 80
+  Text §Hello sir! Welcome to Waste's Edge.§
+End
+
+Circle
+  Type 2
+  Pos 140 180
+  Text §Oh! I am Oliver, sir. I help Mum and Dad with the Inn. Looking after the stables and such.§
+End
+
+Circle
+  Type 2
+  Pos 80 240
+  Text §Why yes! Would you belive that we have an actual Elven Lady staying at the Inn?§
+End
+
+Circle
+  Type 1
+  Pos 120 300
+  Text §Really? An Elven Lady?§
+End
+
+Circle
+  Type 2
+  Pos 120 340
+  Text §Yes, sir. Lady Silverbeard. From Cirdanth. And her two servants! She frightened me a bit, but now she's locked up in her room.§
+End
+
+Circle
+  Type 1
+  Pos 140 120
+  Text §And who would you be?§
+End
+
+Circle
+  Type 1
+  Pos 80 200
+  Text §You can surely tell me something about Waste's Edge, then.§
+End
+
+Circle
+  Type 1
+  Pos 200 200
+  Text §Did something unusual happen here lately, Oliver?§
+End
+
+Circle
+  Type 2
+  Pos 200 240
+  Text §Have you heard about the theft, sir? Everybody speaks about it.§
+End
+
+Circle
+  Type 1
+  Pos 0 180
+  Text §Then I don't want to keep you off your work any longer.§
+End
+
+Circle
+  Type 1
+  Pos 40 300
+  Text §Are there other guests too?§
+End
+
+Circle
+  Type 2
+  Pos 40 340
+  Text §Yes, but they are just ordinary people. Merchants and such.§
+End
+
+Circle
+  Type 1
+  Pos 200 300
+  Text §What can you tell me about that?§
+End
+
+Circle
+  Type 2
+  Pos 200 340
+  Text §Can you imagine, sir? The Elven Lady robbed Master Fingolson in his sleep. And none of the adults noticed anything.§
+End
+
+Circle
+  Type 1
+  Pos 120 380
+  Text §Why would anyone want to lock her up?§
+End
+
+Circle
+  Type 1
+  Pos 40 380
+  Text §Then you better tell me about the Elven Lady, Oliver.§
+End
+
+Circle
+  Type 1
+  Pos -40 340
+  Text §Well, thank you for the information. Until later.§
+End
+
+Circle
+  Type 1
+  Pos 200 380
+  Text §Who is Master Fingolson?§
+End
+
+Circle
+  Type 1
+  Pos 260 380
+  Text §But you heard something that night?§
+End
+
+Circle
+  Type 2
+  Pos 200 420
+  Text §Just another Dwarf from Uzdun'kal. He sells jewels and such. We get a lot of them here, but none of them got robbed so far.§
+End
+
+Circle
+  Type 1
+  Pos 200 480
+  Text §Speaking of that, you say you noticed something that night?§
+End
+
+Circle
+  Type 2
+  Pos 260 420
+  Text §Yeah. Someone must have been in the stables. But when I went and had a look, they were gone.§
+  Vars §demo.know_olivers_noise = 1§
+End
+
+Circle
+  Type 1
+  Pos 260 520
+  Text §I see. Thank you for your help, Oliver. Until later.§
+End
+
+Circle
+  Type 5
+  Pos 340 100
+  Text §Oliver looks pleased as he sees you nearing.§
+  Cond §else:§
+End
+
+Circle
+  Type 2
+  Pos 340 160
+  Text §Uh, hello again sir. Do you have more questions?§
+End
+
+Circle
+  Type 1
+  Pos 220 160
+  Text §Can you tell me something about Waste's Edge, Oliver?§
+End
+
+Circle
+  Type 1
+  Pos 340 240
+  Text §What do you know about the theft?§
+End
+
+Circle
+  Type 5
+  Pos 20 40
+  Text §Oliver leads you to a room on the first floor.§
+  Cond §if the_npc.goto_players_room == 3:§
+  Vars §the_npc.goto_players_room = 0
+the_npc.talked_to = 1
+the_npc.goto_barn = 1§
+End
+
+Circle
+  Type 2
+  Pos 420 80
+  Text §I hope you like it, sir. All the other rooms are occupied.§
+End
+
+Circle
+  Type 1
+  Pos 420 140
+  Text §You have a lot of guests here at the moment, then?§
+End
+
+Circle
+  Type 1
+  Pos 480 120
+  Text §Don't worry Oliver. This one is fine.§
+End
+
+Circle
+  Type 2
+  Pos 420 180
+  Text §Yes sir. And with that theft, nobody can leave.§
+End
+
+Circle
+  Type 1
+  Pos 420 240
+  Text §Nobody can leave?§
+End
+
+Circle
+  Type 2
+  Pos 420 300
+  Text §No. As long as Master Fingolson's jewels are not found, the guards don't allow it.§
+End
+
+Circle
+  Type 1
+  Pos 420 340
+  Text §I see. Thank you Oliver. Until later.§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 1
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 18
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 22
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 29
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 31
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 32
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 32
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 34
+End
+
+Arrow
+  Type 3
+  Prev 34
+  Next 35
+End

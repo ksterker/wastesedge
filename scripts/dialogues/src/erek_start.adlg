@@ -1,0 +1,1685 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: erek_start.adlg,v 1.1 2007/08/18 03:17:26 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+Dtor §# -- 'teleport' to Bjarn's room
+if demo.bjarn_door_open == 2:
+    erek = adonthell.gamedata_get_character ("Erek Stonebreaker")
+    import events
+    erek.set_val ("goto", erek.submap ())
+    events.switch_submap (the_player, 7, 1, 6, 3)
+    events.switch_submap (erek, 7, 2, 7, 0)
+
+# -- Teleport to Jelom
+if demo.convince_jelom == 2:
+    erek = adonthell.gamedata_get_character ("Erek Stonebreaker")
+    erek.set_schedule_active (0)
+    import events
+    events.switch_submap (the_player, 9, 1, 3, 3)
+    events.switch_submap (erek, 9, 2, 4, 0)§
+Func §# Returns whom the Player told about his connection
+# with Lady Silverhair
+def get_right_npc (self):
+    if demo.work_4_shair & 1 == 1:
+        return _("Master Orloth")
+    elif demo.work_4_shair & 2 == 2:
+        return _("the mercenary")
+    else:
+        return _("Tristan the merchant")
+§
+
+Circle
+  Type 5
+  Pos 20 -20
+  Text §Before you stands a young Dwarf, with an open face and no sign of the traditional beard. His expression shows his intelligence and a trace of humour as he watches you expectantly.§
+  Cond §if the_npc.get_val ("talked_to") == 0:§
+  Vars §the_npc.set_val ("talked_to", 1)§
+End
+
+Circle
+  Type 1
+  Pos 0 60
+  Note §Only display if you know of Erek already!§
+  Text §You are Erek Stonebreaker, aren't you?§
+  Cond §if demo.know_erek == 1:§
+End
+
+Circle
+  Type 2
+  Pos 0 100
+  Text §That I am. Erek Stonebreaker, aspirant to the trading business and Master Fingolson's apprentice. But I seem to not remember you, $fm {madam/sir}.§
+End
+
+Circle
+  Type 1
+  Pos -20 140
+  Text §I am $name.§
+End
+
+Circle
+  Type 1
+  Pos 100 140
+  Text §I am $name, Lady Silverhair's man. I have some questions.§
+End
+
+Circle
+  Type 2
+  Pos -60 180
+  Note §If the player did mention his relation to Lady S. to nobody in the common room so far.§
+  Text §Well met then, $name. Only I fear that you would be better advised to talk to Master Fingolson, if you intend to do business.§
+  Cond §if demo.work_4_shair == 0:§
+End
+
+Circle
+  Type 2
+  Pos 0 180
+  Note §If the player talked about Lady S. already, Erek will have heard him. Should give the player a slight penalty.
+
+get_right_npc should return the name of the npc to whom the player has talked about his occupation.
+
+e.g:
+def get_right_npc (self):
+	x = quests["get_infos"].get_val["heard_occupation"]
+	if x == 1:
+		return "Master Redwyne"
+	if x == 2:
+		return "Alek Endhelm"
+	if x == 3:
+		return "Tristan Illig"§
+  Text §Forgive me, but I couldn't help but hear you telling {get_right_npc} of your connection with that Silverhair woman.§
+  Cond §else:§
+  Vars §the_npc.set_val ("insulted", 1)§
+End
+
+Circle
+  Type 1
+  Pos -60 220
+  Text §Actually, that isn't the case. I would like to speak to you about Lady Silverhair.§
+End
+
+Circle
+  Type 1
+  Pos 0 220
+  Text §Oh ... well, she's the reason why I want to talk to you, if you don't mind.§
+End
+
+Circle
+  Type 2
+  Pos 100 180
+  Text §I understand. You have learned of the ... incident, but as I can see, you fail to believe it.§
+End
+
+Circle
+  Type 2
+  Pos -60 280
+  Note §Erek, politely, tells the player that he sees no reason to tell him more about the theft.§
+  Text §Lady Silverhair, hm? There seems to be hardly any other topic since that ... incident. I'm sorry, but I don't think I can satisfy your curiosity.§
+End
+
+Circle
+  Type 1
+  Pos -40 300
+  Text §See Erek, I know Lady Silverhair well, and I want to find out what really happened here.§
+End
+
+Circle
+  Type 1
+  Pos -120 300
+  Note §Erek certainly doesn't like this tone -> penalty§
+  Text §You don't understand Erek. I am investigating this matter, and therefore you'd better tell me what you know.§
+  Vars §the_npc.set_val ("insulted", 1)§
+End
+
+Circle
+  Type 1
+  Pos 60 220
+  Text §Of course. The Lady Silverhair is a wealthy noble; she'd never stoop to theft!§
+End
+
+Circle
+  Type 5
+  Pos -120 360
+  Text §Erek stiffens for a moment, and it seems that he is about to turn you away, but finally he relaxes.§
+End
+
+Circle
+  Type 2
+  Pos 0 280
+  Text §You believe Lady Silverhair is innocent then?§
+End
+
+Circle
+  Type 1
+  Pos 140 220
+  Text §Well, what do you believe, Erek?§
+End
+
+Circle
+  Type 2
+  Pos 140 280
+  Note §Whatever the player said so far, Erek will know that he works for Lady Silverhair, so set that.§
+  Text §Master Fingolson says her guilt is proven beyond doubt, and there are indeed facts that support his opinion. But I ... am not sure.§
+  Vars §the_npc.set_val ("work_4_shair", 1)§
+End
+
+Circle
+  Type 2
+  Pos 60 280
+  Note §Whatever the player said so far, Erek will have found out that he works for Silverhair, so set this.§
+  Text §She said as much herself.  But that alone is not enough to prove her innocence when you consider what stands against her.§
+  Vars §the_npc.set_val ("work_4_shair", 1)§
+End
+
+Circle
+  Type 1
+  Pos 100 300
+  Text §I know of nothing that could possibly support such claims. I really would know what has happened!§
+End
+
+Circle
+  Type 1
+  Pos 180 300
+  Text §You suspect somebody else?§
+End
+
+Circle
+  Type 2
+  Pos 180 400
+  Text §This unpleasant fellow must have eavesdropped on us. Not that he had to. A good deal of the conversation must have been audible in the common room as well.§
+  Vars §demo.know_alek_eavesdrop = 1§
+End
+
+Circle
+  Type 1
+  Pos 160 440
+  Text §Hold on Erek! There was an argument between Fingolson and my mistress?§
+  Cond §if demo.know_argument == 0:§
+End
+
+Circle
+  Type 2
+  Pos 100 360
+  Text §Very well then. It was yesterday, in the evening, when Lady Silverhair met my Master and me in the parlour next to the common room.§
+End
+
+Circle
+  Type 2
+  Pos 100 440
+  Note §// Here comes some sort of flashback of the conversation between Silverhair and Bjarn.§
+  Text §Why, Master Fingolson, this is outrageous.  'Tis twice as much as I would spend for stones of a superior quality. Do you believe I have never traded for Chrysoberyls before?§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 2
+  Pos 100 480
+  Text §My Lady, these Catseyes are very rare. I doubt that you could aquire anything of that quality for the price I'm willing to grant you.§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 100 520
+  Note §Look at http://www.minerals.net/gemstone/gemstone/chrysobe/chrysobe.htm for the termini§
+  Text §Now Master Fingolson, you call these Catseyes? They are mere Cymophanes. Good gods! I am no Dwarf, but I do know my gems. My offer is 200, for all the good they will be to me as reagents.§
+  NPC §Imoen Silverhair§
+  Vars §demo.know_low_quality = 1
+demo.know_argument = 1§
+End
+
+Circle
+  Type 2
+  Pos 100 560
+  Text §You call me a liar? As if I couldn't tell a Catseye and a Cymophane apart. Even young Erek here can. 700 and no less. Take it or leave it.§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 100 620
+  Text §Ha! A liar and a thief you are indeed, Master Fingolson. But, I need the stones far more than justice against a Dwarven cheat. 300 is my final offer, and that is more than this rubbish deserves!§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 2
+  Pos 100 660
+  Text §Do not try to charm me, Mistress Silverhair. My prize is set. Think about it.§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 100 700
+  Text §You are but making profit off my need. I will think about it, but to be frank, you deserve not a single gold piece!§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 2
+  Pos 100 740
+  Text §And with that, she left us alone.§
+End
+
+Circle
+  Type 2
+  Pos 180 500
+  Text §Indeed. She intended to buy some rare gems, but it seemed she had underestimated their value. She was quite surprised by my Master's offer:§
+End
+
+Circle
+  Type 1
+  Pos 60 740
+  Text §Wait a moment! What exactly is a \"Catseye\"?§
+End
+
+Circle
+  Type 1
+  Pos 160 740
+  Text §Tell me Erek. Were those gems truly Catseyes?§
+End
+
+Circle
+  Type 2
+  Pos 160 800
+  Text §Well ... yes ... when looked at in a certain way, under the right light. No wonder your mistress mistook them for Cymophanes.§
+End
+
+Circle
+  Type 2
+  Pos 60 800
+  Text §Sometimes, a thin narrow band runs across the length of a gem, glowing in the light, see? That gives them the appearance of a cat's eye, hence the name.§
+End
+
+Circle
+  Type 1
+  Pos 100 800
+  Text §I see. And Fingolson's stones were truly of such nature?§
+End
+
+Circle
+  Type 1
+  Pos 20 300
+  Text §You refer to the argument she had with your master?§
+  Cond §if demo.know_argument != 0:§
+End
+
+Circle
+  Type 2
+  Pos 20 360
+  Text §Why yes! She said herself that the master deserves no payment. And the next day, his gems are gone. Who wouldn't deem her guilty after that?§
+End
+
+Circle
+  Type 1
+  Pos 20 400
+  Text §I think Lady Silverhair might have had a reason to utter such words. Perhaps you could recount the conversation she had with your master?§
+End
+
+Circle
+  Type 2
+  Pos 20 440
+  Text §Sure. The three of us sat together in the parlour next to the common room. There wasn't much talk while Lady Silverhair examined the gems. The argument started when she asked for the price, which obviously wasn't to her liking:§
+End
+
+Circle
+  Type 1
+  Pos 200 440
+  Text §I've been told that Fingolson and my mistress had quite an argument.§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos 60 60
+  Text §Can I have a word with you, uh... what was the name?§
+  Cond §else:§
+End
+
+Circle
+  Type 2
+  Pos 60 100
+  Text §I am Erek Stonebreaker, aspirant to the trading business, at your service $fm{madam/sir}.§
+End
+
+Circle
+  Type 5
+  Pos 280 -20
+  Note §This gets displayed if the player already talked to Erek once.§
+  Text §Erek gives you a welcoming nod as you approach.§
+  Cond §else:§
+End
+
+Circle
+  Type 2
+  Pos -360 700
+  Text §Ho there, $name. What is it this time?§
+End
+
+Circle
+  Type 1
+  Pos -180 440
+  Text §Could you please repeat what you told me about the argument between your master and Lady Silverhair?§
+End
+
+Circle
+  Type 1
+  Pos -300 700
+  Text §Master Orloth told me of an impolite remark Fingolson made towards Lady Silverhair on her arrival.§
+  Cond §if demo.know_bjarns_insult == 1:§
+End
+
+Circle
+  Type 5
+  Pos 100 -20
+  Note §Erek complains if the player hasn't told him of his connection to Silverhair§
+  Text §Erek makes a face as he sees you and raises his finger accusingly.§
+  Cond §elif the_npc.work_4_shair == 0 and demo.work_4_shair > 0:§
+  Vars §the_npc.work_4_shair = 1§
+End
+
+Circle
+  Type 2
+  Pos -260 20
+  Text §Why haven't you told me that you work for Lady Silverhair!?§
+End
+
+Circle
+  Type 1
+  Pos -300 60
+  Text §Why should I? You figured it out by yourself just the same.§
+End
+
+Circle
+  Type 1
+  Pos -220 60
+  Text §I did not know that this was of any importance to you, Erek.§
+End
+
+Circle
+  Type 2
+  Pos -300 100
+  Text §But only by chance: I heard you talking to {get_right_npc}! It's simply not right, $name! You are familiar with the prime suspect, but you make me believe that your inquiry is for the best of us all.§
+End
+
+Circle
+  Type 2
+  Pos -220 100
+  Text §You ..., you ... didn't know!? It's the truth! Of course it is important to me! You are familiar with the prime suspect, but you deem it unnecessary to tell me!§
+End
+
+Circle
+  Type 1
+  Pos -260 140
+  Text §And you are familiar with the victim. Had I told you, you might have refused your help.§
+End
+
+Circle
+  Type 1
+  Pos -180 120
+  Text §Look Erek, I'm sorry that I said nothing about being Lady Silverhair's man. But believe me, I just want to find out the truth, nothing else.§
+End
+
+Circle
+  Type 2
+  Pos -180 180
+  Text §The truth! How do you expect to uncover the truth, if you don't carry it within yourself!? Every evil begins with a lie, and as long as you conceal the truth, you are no better than the thief.§
+End
+
+Circle
+  Type 2
+  Pos -220 220
+  Text §You should know that to a Dwarf, the truth is a virtue; it is practically carved into his bones. The day a lie parts the lips of a Dwarf is the day the world comes to its end!§
+End
+
+Circle
+  Type 1
+  Pos -180 260
+  Text §I don't understand much of dwarvish philosophy, but if the truth is so important to you, Erek, then I am sorry.§
+End
+
+Circle
+  Type 2
+  Pos -180 300
+  Text §I hope you don't think poorly of me now, $name. I didn't mean to insult you. But to say nothing about it would have meant to hide the truth. And by now you should know how I think about that.§
+End
+
+Circle
+  Type 2
+  Pos -180 360
+  Text §But no more of this. I don't want to keep you from more important business.§
+End
+
+Circle
+  Type 2
+  Pos -260 180
+  Text §That are the thoughts of people living in a world of lies and deceptions. I would have helped you more readily, had you told me the truth right from the beginning.§
+End
+
+Circle
+  Type 1
+  Pos -240 260
+  Text §I don't know in what world you are living, Erek, but I doubt that it is the real one.§
+End
+
+Circle
+  Type 2
+  Pos -300 260
+  Text §Ha! The Master is right, then. Elves and their likes are no company for an upright Dwarf! All you care for is worthless knowledge and useless trinkets.§
+End
+
+Circle
+  Type 1
+  Pos -420 260
+  Text §Is that what Fingolson says?§
+End
+
+Circle
+  Type 2
+  Pos -420 300
+  Text §That are his very words. First I thought he was too extreme in his judgement, but the more I get to see of the world, the more I can see the truth behind his words.§
+End
+
+Circle
+  Type 2
+  Pos -420 360
+  Text §Although my feelings tell me that you do not fit into this scheme, $name. Perhaps I spoke too fast.§
+End
+
+Circle
+  Type 1
+  Pos -360 360
+  Text §Perhaps you just shouldn't listen to everything Master Fingolson says. How did he become a tradesman anyway, if he despises the people he has to deal with that much?§
+End
+
+Circle
+  Type 2
+  Pos -300 360
+  Text §Usually, the Elders decide what occupation a young Dwarf will practise. They'll take his talents and also their needs into account, but seldom what the individual likes.§
+End
+
+Circle
+  Type 2
+  Pos -240 360
+  Text §Master Fingolson is a skilled merchant, but it is easy to see that this is not what he wanted to be.§
+End
+
+Circle
+  Type 1
+  Pos -360 780
+  Text §Nothing really. Until later, Erek.§
+End
+
+Circle
+  Type 2
+  Pos -240 700
+  Text §I ..., I'm sorry, but that is news to me. It must have happened while I was unpacking our luggage. Although to tell the truth, it does not sound like Master Fingolson at all.§
+End
+
+Circle
+  Type 2
+  Pos -160 700
+  Text §He can be tough when it gets down to business, but why would he want to insult Lady Silverhair before? This makes no sense to me.§
+End
+
+Circle
+  Type 2
+  Pos -100 700
+  Text §I really cannot say why he would do that, but perhaps I can help you with something else instead?§
+End
+
+Circle
+  Type 1
+  Pos -60 700
+  Text §That was all for now, Erek. Until later.§
+End
+
+Circle
+  Type 1
+  Pos 120 840
+  Text §I see. Thank you Erek, you've been most helpful.§
+End
+
+Circle
+  Type 1
+  Pos 180 840
+  Text §Is that your opinion, or that of Master Fingolson?§
+End
+
+Circle
+  Type 2
+  Pos 180 880
+  Text §What do you mean? You are not suggesting that my Master tried to deceive Lady Silverhair?§
+End
+
+Circle
+  Type 1
+  Pos 180 920
+  Text §That's not important now. But if the gems were of poor quality, they'd be worthless to her and she'd have no reason to steal them.§
+End
+
+Circle
+  Type 2
+  Pos 180 980
+  Text §I am sorry, but I haven't seen them up close, so I have to rely on my Master's word. I would know the difference if I had them in my hand, but that's unlikely.§
+End
+
+Circle
+  Type 1
+  Pos -240 560
+  Text §I tried to talk with Master Fingolson, but he would not open the door. Could you have a word with him perhaps?§
+  Cond §if demo.bjarn_door_open == 1:§
+End
+
+Circle
+  Type 2
+  Pos -180 560
+  Text §I fear this is no good idea. He is still very upset about the theft and it is better not to bother him while he is in that mood.§
+End
+
+Circle
+  Type 2
+  Pos -60 540
+  Text §I'm sorry, $name. Master Fingolson is not very sociable at best, but right now he wants nobody to disturb him in his misery.§
+End
+
+Circle
+  Type 1
+  Pos -120 600
+  Text §Well, in that I case I will leave him alone.§
+End
+
+Circle
+  Type 1
+  Pos -120 540
+  Text §I am trying to find his gems and he is not even willing to see me!?§
+End
+
+Circle
+  Type 1
+  Pos 0 600
+  Text §Stubborn Dwarf! But if he is in no hurry to get his gems back, what can I do about it?§
+End
+
+Circle
+  Type 1
+  Pos 0 540
+  Text §I am trying to help here, Erek!§
+End
+
+Circle
+  Type 2
+  Pos 60 600
+  Text §I ... I'll see what I can do. But should you talk with him, you will have to watch your words. I surely won't be able to change his mind a second time.§
+End
+
+Circle
+  Type 5
+  Pos 160 600
+  Text §Seemingly reluctant, Erek beckons you to follow him down into the cellar.§
+  Vars §demo.bjarn_door_open = 2§
+End
+
+Circle
+  Type 2
+  Pos -60 600
+  Text §You surely do. But Master Fingolson made it clear that he wants to be on his own and who am I to disobey his wishes?§
+End
+
+Circle
+  Type 1
+  Pos -300 780
+  Text §Did you pack Master Fingolson's gems that evening, Erek?§
+  Cond §if demo.ask_packed_gems == 1:§
+End
+
+Circle
+  Type 2
+  Pos -240 780
+  Text §Me? What a curious idea! My master wouldn't give them out of his hands. I only packed our clothes and other equipment; after the master went to bed.§
+End
+
+Circle
+  Type 1
+  Pos -180 780
+  Text §And the gems were not in your luggage when you packed, right?§
+End
+
+Circle
+  Type 2
+  Pos -140 780
+  Text §What do you mean? No ... they weren't. Of course not!§
+  Vars §demo.ask_packed_gems = 2§
+End
+
+Circle
+  Type 1
+  Pos -80 780
+  Text §Thank you Erek.§
+End
+
+Circle
+  Type 2
+  Pos 180 360
+  Text §Between you and me $fm{madam/sir}, this mercenary, Alek, was creeping outside the parlour during negotiations. Lady Silverhair nearly bumped into him when she rushed out.§
+End
+
+Circle
+  Type 1
+  Pos 40 980
+  Text §Unlikely perhaps, but not impossible. What do you make of this one, Erek?§
+  Cond §if demo.have_gem == 1:§
+End
+
+Circle
+  Type 2
+  Pos -40 980
+  Text §That ... - it's one of the Master's. It must be. Where did you get that, $name?§
+End
+
+Circle
+  Type 1
+  Pos -80 1020
+  Text §I found it in the pantry.§
+End
+
+Circle
+  Type 1
+  Pos 0 1020
+  Text §It was hidden in Lady Silverhair's luggage.§
+End
+
+Circle
+  Type 2
+  Pos 0 1080
+  Text §Then your mistress is not as innocent as you thought, no? Let me see the gem, please.§
+End
+
+Circle
+  Type 5
+  Pos 0 1120
+  Text §Carefully, Erek takes the gem and examines it closely for a while. Suddenly, he tosses it high into the air, a sparkling green star, gleaming in the light of the fire.§
+End
+
+Circle
+  Type 5
+  Pos 0 1180
+  Text §Once caught again, the young Dwarf shakes his head and starts to smile. Finally, he returns the gem.§
+End
+
+Circle
+  Type 2
+  Pos 0 1220
+  Text §This is a fine example of a Chrysoberyl. Perfectly suitable for a Lady's ring, were that your Mistress' intention. However, it is no Catseye and as such it is of no use in the workings of magic she had in mind, if I recall correctly.§
+  Vars §if demo.gem_worthless < 2:
+    demo.gem_worthless = demo.gem_worthless + 2§
+End
+
+Circle
+  Type 1
+  Pos 40 1260
+  Text §Could you repeat that for Jelom? He would not believe me.§
+  Cond §if demo.convince_jelom == 1:§
+  Vars §demo.convince_jelom = 2§
+End
+
+Circle
+  Type 1
+  Pos -40 1260
+  Text §Thank you Erek. That's all I need to know.§
+End
+
+Circle
+  Type 2
+  Pos -80 1080
+  Text §But certainly it was not lying openly on the ground, was it?§
+End
+
+Circle
+  Type 1
+  Pos -40 1080
+  Text §No. It was hidden in Lady Silverhair's luggage.§
+End
+
+Circle
+  Type 1
+  Pos -80 1120
+  Text §Obviously not. Now would you like to see it?§
+End
+
+Circle
+  Type 2
+  Pos -80 1180
+  Text §You don't trust me, $name? In that case I'm sorry. Unless I do not know the truth about the gem, I cannot help you.§
+  Vars §the_npc.apologise = 1§
+End
+
+Circle
+  Type 1
+  Pos -180 860
+  Text §Erek, I'd like to hear your opinion about the gem I have here.§
+  Cond §if demo.have_gem == 1:§
+End
+
+Circle
+  Type 5
+  Pos 180 -20
+  Text §Erek tries to keep a straight face, but he fails to hide his grin as you address him.§
+  Cond §elif the_npc.apologise == 1:§
+  Vars §the_npc.apologise = 0§
+End
+
+Circle
+  Type 2
+  Pos -280 1120
+  Text §Well, $name, I was almost certain that it wouldn't take long to change your mind. I'm ready for the truth.§
+End
+
+Circle
+  Type 2
+  Pos -140 1120
+  Text §Judging by your behaviour I thought as much. But don't worry, $name. I also know that the obvious is not necessarily the truth. Now show me that gem.§
+End
+
+Circle
+  Type 1
+  Pos -200 1120
+  Text §So it be. The gem was hidden in Lady Silverhair's luggage.§
+End
+
+Circle
+  Type 1
+  Pos -320 860
+  Text §Jelom will not believe that the gem I have would be worthless to my mistress. But perhaps you could convince him.§
+  Cond §if demo.convince_jelom == 1 and demo.gem_worthless >= 2:§
+End
+
+Circle
+  Type 2
+  Pos 40 1320
+  Text §Of course, $name. Let's go and see him.§
+End
+
+Circle
+  Type 2
+  Pos 100 400
+  Text §She intended to buy some rare gems, but it seemed she had underestimated their value. She was quite surprised by my Master's offer:§
+End
+
+Circle
+  Type 2
+  Pos -320 920
+  Text §If you think so. Let's go and see him, then.§
+  Vars §demo.convince_jelom = 2§
+End
+
+Circle
+  Type 2
+  Pos -360 260
+  Text §And those illusions you call magic; they are perversions of anything lawful and good!§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 1
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 44
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 44
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 18
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 32
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 41
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 118
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 29
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 31
+End
+
+Arrow
+  Type 3
+  Prev 22
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 34
+End
+
+Arrow
+  Type 3
+  Prev 37
+  Next 35
+End
+
+Arrow
+  Type 3
+  Prev 34
+  Next 35
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 36
+End
+
+Arrow
+  Type 3
+  Prev 36
+  Next 37
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 38
+  Next 39
+End
+
+Arrow
+  Type 3
+  Prev 39
+  Next 40
+End
+
+Arrow
+  Type 3
+  Prev 47
+  Next 41
+End
+
+Arrow
+  Type 3
+  Prev 40
+  Next 41
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 42
+End
+
+Arrow
+  Type 3
+  Prev 42
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 43
+End
+
+Arrow
+  Type 3
+  Prev 43
+  Next 44
+End
+
+Arrow
+  Type 3
+  Prev 45
+  Next 46
+End
+
+Arrow
+  Type 3
+  Prev 49
+  Next 50
+End
+
+Arrow
+  Type 3
+  Prev 50
+  Next 51
+End
+
+Arrow
+  Type 3
+  Prev 50
+  Next 52
+End
+
+Arrow
+  Type 3
+  Prev 51
+  Next 53
+End
+
+Arrow
+  Type 3
+  Prev 52
+  Next 54
+End
+
+Arrow
+  Type 3
+  Prev 53
+  Next 55
+End
+
+Arrow
+  Type 3
+  Prev 54
+  Next 55
+End
+
+Arrow
+  Type 3
+  Prev 54
+  Next 56
+End
+
+Arrow
+  Type 3
+  Prev 56
+  Next 57
+End
+
+Arrow
+  Type 3
+  Prev 57
+  Next 58
+End
+
+Arrow
+  Type 3
+  Prev 58
+  Next 59
+End
+
+Arrow
+  Type 3
+  Prev 59
+  Next 60
+End
+
+Arrow
+  Type 3
+  Prev 60
+  Next 61
+End
+
+Arrow
+  Type 3
+  Prev 55
+  Next 62
+End
+
+Arrow
+  Type 3
+  Prev 62
+  Next 58
+End
+
+Arrow
+  Type 3
+  Prev 58
+  Next 63
+End
+
+Arrow
+  Type 3
+  Prev 63
+  Next 64
+End
+
+Arrow
+  Type 3
+  Prev 65
+  Next 66
+End
+
+Arrow
+  Type 3
+  Prev 66
+  Next 67
+End
+
+Arrow
+  Type 3
+  Prev 67
+  Next 68
+End
+
+Arrow
+  Type 3
+  Prev 68
+  Next 69
+End
+
+Arrow
+  Type 3
+  Prev 69
+  Next 70
+End
+
+Arrow
+  Type 3
+  Prev 48
+  Next 72
+End
+
+Arrow
+  Type 3
+  Prev 72
+  Next 73
+End
+
+Arrow
+  Type 3
+  Prev 73
+  Next 74
+End
+
+Arrow
+  Type 3
+  Prev 74
+  Next 47
+End
+
+Arrow
+  Type 3
+  Prev 80
+  Next 76
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 76
+End
+
+Arrow
+  Type 3
+  Prev 36
+  Next 76
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 76
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 77
+End
+
+Arrow
+  Type 3
+  Prev 77
+  Next 78
+End
+
+Arrow
+  Type 3
+  Prev 78
+  Next 79
+End
+
+Arrow
+  Type 3
+  Prev 79
+  Next 80
+End
+
+Arrow
+  Type 3
+  Prev 74
+  Next 81
+End
+
+Arrow
+  Type 3
+  Prev 74
+  Next 75
+End
+
+Arrow
+  Type 3
+  Prev 81
+  Next 82
+End
+
+Arrow
+  Type 3
+  Prev 90
+  Next 84
+End
+
+Arrow
+  Type 3
+  Prev 82
+  Next 84
+End
+
+Arrow
+  Type 3
+  Prev 82
+  Next 85
+End
+
+Arrow
+  Type 3
+  Prev 85
+  Next 83
+End
+
+Arrow
+  Type 3
+  Prev 83
+  Next 87
+End
+
+Arrow
+  Type 3
+  Prev 90
+  Next 86
+End
+
+Arrow
+  Type 3
+  Prev 83
+  Next 86
+End
+
+Arrow
+  Type 3
+  Prev 86
+  Next 88
+End
+
+Arrow
+  Type 3
+  Prev 88
+  Next 89
+End
+
+Arrow
+  Type 3
+  Prev 87
+  Next 90
+End
+
+Arrow
+  Type 3
+  Prev 91
+  Next 92
+End
+
+Arrow
+  Type 3
+  Prev 92
+  Next 93
+End
+
+Arrow
+  Type 3
+  Prev 93
+  Next 94
+End
+
+Arrow
+  Type 3
+  Prev 94
+  Next 95
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 96
+End
+
+Arrow
+  Type 3
+  Prev 96
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 80
+  Next 97
+End
+
+Arrow
+  Type 3
+  Prev 97
+  Next 98
+End
+
+Arrow
+  Type 3
+  Prev 98
+  Next 99
+End
+
+Arrow
+  Type 3
+  Prev 98
+  Next 100
+End
+
+Arrow
+  Type 3
+  Prev 100
+  Next 101
+End
+
+Arrow
+  Type 3
+  Prev 101
+  Next 102
+End
+
+Arrow
+  Type 3
+  Prev 102
+  Next 103
+End
+
+Arrow
+  Type 3
+  Prev 103
+  Next 104
+End
+
+Arrow
+  Type 3
+  Prev 104
+  Next 105
+End
+
+Arrow
+  Type 3
+  Prev 104
+  Next 106
+End
+
+Arrow
+  Type 3
+  Prev 99
+  Next 107
+End
+
+Arrow
+  Type 3
+  Prev 107
+  Next 108
+End
+
+Arrow
+  Type 3
+  Prev 108
+  Next 101
+End
+
+Arrow
+  Type 3
+  Prev 107
+  Next 109
+End
+
+Arrow
+  Type 3
+  Prev 109
+  Next 110
+End
+
+Arrow
+  Type 3
+  Prev 111
+  Next 98
+End
+
+Arrow
+  Type 3
+  Prev 70
+  Next 61
+End
+
+Arrow
+  Type 3
+  Prev 46
+  Next 47
+End
+
+Arrow
+  Type 3
+  Prev 46
+  Next 48
+End
+
+Arrow
+  Type 3
+  Prev 46
+  Next 91
+End
+
+Arrow
+  Type 3
+  Prev 46
+  Next 81
+End
+
+Arrow
+  Type 3
+  Prev 46
+  Next 71
+End
+
+Arrow
+  Type 3
+  Prev 46
+  Next 111
+End
+
+Arrow
+  Type 3
+  Prev 112
+  Next 113
+End
+
+Arrow
+  Type 3
+  Prev 114
+  Next 102
+End
+
+Arrow
+  Type 3
+  Prev 113
+  Next 115
+End
+
+Arrow
+  Type 3
+  Prev 115
+  Next 114
+End
+
+Arrow
+  Type 3
+  Prev 46
+  Next 116
+End
+
+Arrow
+  Type 3
+  Prev 105
+  Next 117
+End
+
+Arrow
+  Type 3
+  Prev 23
+  Next 118
+End
+
+Arrow
+  Type 3
+  Prev 116
+  Next 119
+End
+
+Arrow
+  Type 3
+  Prev 64
+  Next 120
+End
+
+Arrow
+  Type 3
+  Prev 120
+  Next 65
+End

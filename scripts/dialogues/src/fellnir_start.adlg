@@ -1,0 +1,266 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: fellnir_start.adlg,v 1.1 2007/08/18 03:17:27 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+
+Circle
+  Type 2
+  Pos 440 20
+  Text §What do you want from me?  I don't know anything.§
+  NPC §Fellnir Kezular§
+End
+
+Circle
+  Type 1
+  Pos 0 100
+  Note §First time player has spoken to him.§
+  Text §I am with Lady Silverhair, and I am trying to prove her innocence.  Do you know what happened here?§
+  Cond §if the_npc.talked_to == 0:§
+  Vars §the_npc.talked_to = 1§
+End
+
+Circle
+  Type 5
+  Pos 60 180
+  Text §Fellnir looks suspiciously at you.  He absently jots something down in a notebook and shifts one of his beakers slightly.§
+End
+
+Circle
+  Type 2
+  Pos 60 280
+  Text §Ask somebody else.  Anybody.  I just keep to myself and I don't know anything.§
+End
+
+Circle
+  Type 5
+  Pos 440 360
+  Text §He turns his attention back to his work, poring over the array of steaming liquids and decanters of unknown origin.  You cannot seem to get his attention again.§
+End
+
+Circle
+  Type 1
+  Pos 580 100
+  Note §If player told Jelom about Talan's singing first and now cannot get key to pantry§
+  Text §You've been such a great help sir, I hate to bother you again.  But I seem to have angered the innkeeper's wife, and I need her help.  Have you any advice?§
+  Cond §elif Lucia Redwyne.refuses_key == 1 and demo.pantry_locked != 2:§
+End
+
+Circle
+  Type 1
+  Pos 220 100
+  Note §If player has not seen Silverhair yet, but has tried to get in her door.
+§
+  Text §Excuse me? I realize you know nothing of the theft, but you must know the people of this inn well enough. Is there any way the guard could be convinced to allow me into my Lady's room?§
+  Cond §elif demo.know_jelom == 2 and Imoen Silverhair.talked_to == 0:§
+End
+
+Circle
+  Type 1
+  Pos 360 80
+  Note §If player has tried Fingolson's door, but not gotten Erek to talk to him.§
+  Text §Pardon me, good sir?  I hate to trouble you, but do you know this Fingolson well?  I need to enter his room but he will not allow me.§
+  Cond §elif demo.bjarn_door_open == 1:§
+End
+
+Circle
+  Type 1
+  Pos 640 60
+  Note §If no other puzzles are active.§
+  Text §I'm still trying to find information that may help my employer.  Are you certain you cannot help?§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos 480 80
+  Note §First time player speaks to Fellnir after hearing about the singing from Frostbloom.§
+  Text §Do you know anything about strange noises the night of the theft?§
+  Cond §elif demo.know_noise != 0 and demo.know_talan_singing == 0:§
+End
+
+Circle
+  Type 2
+  Pos 480 260
+  Text §I have better things to do than pay attention to what idle people do with their time.§
+End
+
+Circle
+  Type 5
+  Pos 580 180
+  Text §Fellnir doesn't even look up at you as you speak.  He mutters a little, \"Take equal parts of vitriol, nitre and sal ammoniac ...\"  Then he speaks more clearly to you.§
+End
+
+Circle
+  Type 2
+  Pos 220 260
+  Text §I would have thought elves and their sort would be more creative.  There's more than one way into a room, you know.  Now leave me be.§
+End
+
+Circle
+  Type 5
+  Pos 360 160
+  Text §Fellnir picks up a decanter and puts it down, then peers through a length of piping.  He blows into it, then inserts the end into the bottle.  After a while, he turns to you.§
+End
+
+Circle
+  Type 2
+  Pos 360 260
+  Text §I wouldn't open my door either to someone as nosy as you.  Try asking someone he likes.  Erek, maybe.  So long as you're not talking to me.  I don't know anything, so I wish you'd stop bothering me.§
+End
+
+Circle
+  Type 5
+  Pos 220 180
+  Text §Fellnir pours a blueish liquid into one primarily red, and the resulting mixture turns inexplicably green. He swirls it before his eyes for a moment, then takes a sip. By the look on his face, it doesn't taste very good.§
+End
+
+Circle
+  Type 2
+  Pos 580 260
+  Text §Well, of course she's upset.  You got a friend of hers in trouble.  I don't want anything to do with it, you straighten it out with the young guard yourself.  I'm just keeping to myself here.§
+End
+
+Circle
+  Type 5
+  Pos 480 160
+  Text §As you finish your question, bubbles begin appearing in a bottle that has no visible flame under it.  It boils for a few moments, until suddenly there is a puff of steam and half the liquid vanishes.  Fellnir is not impressed at this.§
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 1
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 16
+End

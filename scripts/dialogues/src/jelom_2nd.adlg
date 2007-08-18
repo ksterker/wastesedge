@@ -1,0 +1,559 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: jelom_2nd.adlg,v 1.1 2007/08/18 03:17:27 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+Dtor §if demo.the_end == 1:
+    # make all dudes go down to Bjarn
+    shair = adonthell.gamedata_get_character("Imoen Silverhair")
+    shair.set_schedule ("to_cellar")
+    shair.set_val ("delay", 5)
+
+    jelom = adonthell.gamedata_get_character("Jelom Rasgar")
+    jelom.set_val ("delay", 20)
+    jelom.set_schedule ("to_cellar")
+		
+    player = adonthell.gamedata_player ()
+    player.set_val ("delay", 35)
+    player.set_schedule ("to_cellar")
+		
+    erek = adonthell.gamedata_get_character("Erek Stonebreaker")
+    erek.set_schedule_active (1)
+    erek.set_schedule ("to_cellar")
+    erek.set_val ("delay", 45)
+		
+    fnir = adonthell.gamedata_get_character("Fellnir Kezular")
+    fnir.set_schedule ("to_cellar")
+    fnir.set_val ("delay", 130)
+		
+    illig = adonthell.gamedata_get_character("Tristan Illig")
+    illig.set_schedule ("to_cellar")
+    illig.set_val ("delay", 300)
+§
+
+Circle
+  Type 2
+  Pos 260 20
+  Text §Back again, Half-Elf? Have you learned anything of importance from your mistress?§
+  Cond §if demo.convince_jelom == 0:§
+End
+
+Circle
+  Type 1
+  Pos 220 60
+  Text §Nothing you'd be interested in, Jelom.§
+End
+
+Circle
+  Type 1
+  Pos 320 60
+  Text §It seems that Fingolson's gems are worthless to her.§
+  Cond §if demo.gem_worthless > 0:§
+End
+
+Circle
+  Type 2
+  Pos 320 120
+  Text §Really? I imagine you have some sort of proof for this, then?§
+End
+
+Circle
+  Type 1
+  Pos 440 160
+  Text §I have this Chrysoberyl. Apparently it is no Catseye, so why should Lady Silverhair have stolen it?§
+  Cond §if demo.have_gem == 1:§
+End
+
+Circle
+  Type 2
+  Pos 440 200
+  Text §You mean this is one of the stolen gems? How in hell did you come across that? And where are the others?§
+End
+
+Circle
+  Type 1
+  Pos 400 260
+  Text §I don't know where the others are, but this one was hidden in Lady Silverhair's luggage.§
+End
+
+Circle
+  Type 2
+  Pos 400 300
+  Text §Slow down! Didn't you just claim that your mistress had no use for the gems? And now you're telling me that you found that one amongst her stuff. That makes no sense!§
+End
+
+Circle
+  Type 2
+  Pos 400 340
+  Text §Unless the ... \"real\" thief wanted to direct all suspicion to your mistress. Ha! Nice idea, Half-elf. But why should I believe that your gem really belongs to Fingolson?§
+End
+
+Circle
+  Type 2
+  Pos 440 380
+  Text §Oh no! You are Silverhair's loyal servant. And as long as there is no other suspect I cannot possibly trust in anything you say. Now take your gem and leave me alone!§
+  Vars §demo.convince_jelom = 1§
+End
+
+Circle
+  Type 1
+  Pos 180 160
+  Text §Lady Silverhair said so.§
+  Cond §if demo.gem_worthless & 1 == 1:§
+End
+
+Circle
+  Type 2
+  Pos 180 200
+  Text §Oh! *The Lady Silverhair said so.* I assure you Half-Elf, the Lady Silverhair said quite a lot when we put her under arrest, and it wasn't very lady-like. Come back once you have something more substantial!§
+End
+
+Circle
+  Type 1
+  Pos 320 160
+  Text §I'm just repeating Erek Stonebreaker's words.§
+  Cond §if demo.gem_worthless & 2 == 2:§
+End
+
+Circle
+  Type 2
+  Pos 320 200
+  Text §Now I'm surprised. What makes him believe all of a sudden that his Master is selling crap? That doesn't sound at all like the Erek I know.§
+End
+
+Circle
+  Type 1
+  Pos 340 260
+  Text §I showed him one of Fingolson's gems I found.§
+End
+
+Circle
+  Type 2
+  Pos 340 300
+  Text §What? One of the stolen gems? Tell me Half-Elf, where have you found that?§
+End
+
+Circle
+  Type 1
+  Pos 340 340
+  Text §It was hidden in Lady Silverhair's luggage.§
+End
+
+Circle
+  Type 1
+  Pos 280 260
+  Text §If you don't believe me, go ask him yourself!§
+End
+
+Circle
+  Type 2
+  Pos 280 300
+  Text §And leave my post? Unlike Talan I do know my duty. Now go and don't bother me again before you can't prove your words.§
+  Vars §demo.convince_jelom = 1§
+End
+
+Circle
+  Type 1
+  Pos 480 260
+  Text §That's not important. The important thing is that this gem is of poor quality. See?§
+End
+
+Circle
+  Type 2
+  Pos 480 300
+  Text §Well, to me it looks valuable enough. Of course I am no expert in these matters, and I doubt that you are.§
+End
+
+Circle
+  Type 2
+  Pos 440 20
+  Text §Not you again, Half-Elf? Are you still trying to make me believe that your Mistress has no use for the gems?§
+  Cond §elif demo.convince_jelom == 1:§
+End
+
+Circle
+  Type 1
+  Pos 520 80
+  Text §I'd be just wasting my breath on you!§
+End
+
+Circle
+  Type 2
+  Pos 520 20
+  Text §What's going on now? What are you doing here, Erek Stonebreaker?§
+  Cond §elif demo.convince_jelom == 2:§
+  Vars §demo.convince_jelom = 3§
+End
+
+Circle
+  Type 2
+  Pos 700 80
+  Text §I'm here on behalf of $name, master Rasgar. I can testify that his gem belongs to my Master, and that it is of insufficient quality to be of any use for the Lady Silverhair.§
+  NPC §Erek Stonebreaker§
+End
+
+Circle
+  Type 2
+  Pos 700 120
+  Text §I should have known it! Believe me Erek, these Half-Elves are  talking you into things you will regret later on. Is it not so, Half-Elf?§
+End
+
+Circle
+  Type 1
+  Pos 640 160
+  Text §Listen Jelom, I am getting sick of you. What is it you want?§
+End
+
+Circle
+  Type 2
+  Pos 640 200
+  Text §I want to be sure, that's all. I told you that I don't trust you in this matter. And you Erek, you might think that you know the truth, but perhaps it's just what your friend here made you believe.§
+End
+
+Circle
+  Type 2
+  Pos 640 260
+  Text §If this gem really belongs to Master Fingolson, why don't I hear what he has to say about it?§
+End
+
+Circle
+  Type 1
+  Pos 740 160
+  Text §You think that I deceived Erek?§
+End
+
+Circle
+  Type 2
+  Pos 740 260
+  Text §I wouldn't be surprised. And I find it more than suspicious that I heard nothing from the gem's owner yet. If it really belongs to Master Fingolson, he should be able to give reliable information.§
+End
+
+Circle
+  Type 1
+  Pos 740 300
+  Text §Uh, I haven't asked him yet.§
+End
+
+Circle
+  Type 2
+  Pos 800 300
+  Text §Perhaps you should do that then, Half-Elf. I'll be waiting here.§
+End
+
+Circle
+  Type 1
+  Pos 640 300
+  Text §Well, Master Fingolson is pretending that this gem is a valuable Catseye, despite the fact that it isn't.§
+  Cond §if demo.bjarn_lies == 1:§
+End
+
+Circle
+  Type 2
+  Pos 640 340
+  Text §Is that true, Erek?§
+End
+
+Circle
+  Type 2
+  Pos 640 400
+  Text §$name's gem is definitely no Catseye, master Rasgar. I hate to admit, but Master Fingolson appears to be ... lying!§
+  NPC §Erek Stonebreaker§
+End
+
+Circle
+  Type 2
+  Pos 640 440
+  Text §Now I understand nothing at all. Listen you both, I have enough of this! We are going to see this Dwarf. And Lady Silverhair is coming with us. I want to hear what she has to say to all of this.§
+  Vars §# make all dudes go down to Bjarn
+demo.the_end = 1§
+End
+
+Circle
+  Type 2
+  Pos 580 260
+  Text §It's about time you return, Half-Elf! Tell me, what does Master Fingolson say about this gem of yours?§
+  Cond §else:§
+End
+
+Circle
+  Type 1
+  Pos 580 300
+  Text §Nothing. He refused to talk with me!§
+  Cond §if demo.bjarn_door_open < 3:§
+End
+
+Circle
+  Type 2
+  Pos 580 360
+  Text §Ha, that's laughable. You want to solve this matter, and don't even manage to speak to Master Fingolson!? Out of my sight, and don't even think about coming back before you haven't talked to the Dwarf!§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 1
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 18
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 23
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 29
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 31
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 31
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 34
+End
+
+Arrow
+  Type 3
+  Prev 34
+  Next 35
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 36
+End
+
+Arrow
+  Type 3
+  Prev 37
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 37
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 38
+  Next 39
+End

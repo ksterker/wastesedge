@@ -1,0 +1,910 @@
+# Dlgedit File Format 1
+#
+# Produced by Adonthell Dlgedit v0.8pre1
+# (C) 2000/2001/2002 Kai Sterker
+#
+# $Id: extro.adlg,v 1.1 2007/08/18 03:17:26 ksterker Exp $
+
+Note §New Dialogue§
+
+Proj §wastesedge§
+Inc  §import adonthell§
+Dtor §the_player.set_schedule ("extro")§
+
+Circle
+  Type 2
+  Pos 460 40
+  Text §What is going on here? What are all these people doing in my room? Are you behind this, Half-Elf? I demand an explanation!§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 460 80
+  Text §Please calm down Master Fingolson. We are here to sort out this business once and for all.§
+  NPC §Jelom Rasgar§
+End
+
+Circle
+  Type 2
+  Pos 460 140
+  Text §Sort this business out? Good ... good! It's about time, I'd say! So ... will that foul Elf finally return my Catseyes? I hear one was found amongst her belongings. And where there is one, the others shouldn't be far.§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 460 180
+  Text §I fear you are mistaken my good Dwarf. Neither were any Catseyes amongst your merchandise, nor am I in possession of your \"precious\" gems.§
+  NPC §Imoen Silverhair§
+End
+
+Circle
+  Type 2
+  Pos 460 240
+  Text §As if an ignorant like you could tell the difference! I ...§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 460 280
+  Text §Silence! I have enough of your endless quarrel! I assume that $name here has poked around long enough in this pile of crap to produce the thief. He better had! So Half-Elf, go on, do your duty! End this bloody foolery!§
+  NPC §Jelom Rasgar§
+End
+
+Circle
+  Type 1
+  Pos 280 340
+  Text §Well, it's a fact that Lady Silverhair cannot be the thief.§
+End
+
+Circle
+  Type 1
+  Pos 460 340
+  Text §It's obvious that the thief tried to frame Lady Silverhair.§
+End
+
+Circle
+  Type 1
+  Pos 660 340
+  Text §I'm sorry, I have no idea as to who the thief might be.§
+End
+
+Circle
+  Type 2
+  Pos 660 380
+  Text §There you have it! I daresay it'll be extremely difficult to find a thief other than the Elf over there. Who if not she would have wanted to steal my Catseyes!?§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 1
+  Pos 600 440
+  Text §I wonder whether you really want your gems back, or just the Lady Silverhair convicted!§
+End
+
+Circle
+  Type 1
+  Pos 700 440
+  Text §Catseyes? You call those worthless shards of yours Catseyes!?§
+End
+
+Circle
+  Type 2
+  Pos 700 480
+  Text §You doubt my word and expertise? You're truly your mistress' servant! Erek, be so kind and tell our friend here of the stolen gems' nature.§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 700 520
+  Text §Master?§
+  NPC §Erek Stonebreaker§
+End
+
+Circle
+  Type 2
+  Pos 700 580
+  Text §Do as I say!§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 700 620
+  Text §Very well. I ... - I am not sure about the other gems, but the stone $name has discovered is undoubtedly a Chrysoberyl. However, a Catseye it is not.§
+  NPC §Erek Stonebreaker§
+End
+
+Circle
+  Type 2
+  Pos 700 680
+  Text §I'd say this calls for an explanation, don't you think so Master Fingolson?§
+  NPC §Jelom Rasgar§
+End
+
+Circle
+  Type 2
+  Pos 700 720
+  Text §Erek, this is not the right time for any of your childish pranks! Master Rasgar, you mustn't believe that ..., that impertinent youth!§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 700 820
+  Text §Deceit! What is deceit compared to the unsound creations our precious stones are turned into, I ask? Foul workings of magic that contradict anything lawful and good! I wonder who's side you're on, Erek?§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 700 780
+  Text §But you said I was nearly ready for the Rite of Passage, Master! Please return to reason; stop twisting the truth. Have you not taught me that deceit is wrong? Yet you are spreading lies!§
+  NPC §Erek Stonebreaker§
+End
+
+Circle
+  Type 1
+  Pos 640 860
+  Text §Then you took advantage of the theft to discredit my mistress, because you despise the arcane arts?§
+  Cond §if self.guess_deceit == 0:§
+  Vars §self.guess_deceit = 1§
+End
+
+Circle
+  Type 1
+  Pos 740 860
+  Text §If your gems are no Catseyes, you have to see that it is unlikely for my mistress to steal them.§
+  Vars §self.guess_deceit = 1
+§
+End
+
+Circle
+  Type 2
+  Pos 740 920
+  Text §Foolish Half-Elf! Don't you think I'd know best how unlikely it is for anyone, including your fine mistress, to steal these gems? Were it not for Erek, that betrayer, you'd never know!§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 600 480
+  Text §So what? I'd gladly go without the stones if only the thief was put to her just punishment. Is this so wrong?§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 1
+  Pos 580 520
+  Text §But my mistress has been wrongly accused!§
+  Cond §if self.not_guilty != 1:§
+End
+
+Circle
+  Type 1
+  Pos 640 520
+  Text §You are obsessed by your aversion to Lady Silverhair!§
+End
+
+Circle
+  Type 2
+  Pos 640 580
+  Text §You understand nothing, Half-Elf! I couldn't care less for your mistress, may she rot in the dungeon! But I do care for the fruits of my peoples work, for the jewels and ores brought forth from the bones of the earth.§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 640 640
+  Text §They are spoilt by the likes of her. Turned into useless trinkets and poisoned with foul enchantments! The thought alone sickens me.§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 1
+  Pos 600 680
+  Text §If you think like that, why do you sell anything to the Elves at all?§
+End
+
+Circle
+  Type 2
+  Pos 600 720
+  Text §Are you making fun of me? Do you believe I asked for this? I've been chosen for this trade, whether I like it or not. But even the lowest Dwarf has more discipline than you lot together, so I fulfilled my duty without complaint.§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 1
+  Pos 600 780
+  Text §Until you couldn't bear it any more, am I right?§
+End
+
+Circle
+  Type 1
+  Pos 740 680
+  Text §I doubt that selling mere Chrysoberylls as Catseyes falls under your duty!§
+End
+
+Circle
+  Type 2
+  Pos 740 580
+  Text §What would a Half-Elf know of these matters? You couldn't tell one gem from the other! Erek, you have seen the stones; tell our friend whether they are Catseyes or not!§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 640 920
+  Text §You call tinkering with the supernatural an art!? It is an insult to any upright Dwarf. But what could I do against it? My people have no use for ornaments or luxuries, but we cannot live of rocks alone. We need to trade.§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 640 960
+  Text §So I couldn't simply refuse selling to those filthy Elves. But if one of their nobles turns out to be a thief, who knows what the elders would decide.§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 2
+  Pos 460 380
+  Text §You mean the thief expected to escape unnoticed while your mistress would have been held responsible?§
+  NPC §Jelom Rasgar§
+End
+
+Circle
+  Type 1
+  Pos 520 440
+  Text §That I would imagine.§
+End
+
+Circle
+  Type 1
+  Pos 440 440
+  Text §No. I mean the theft's sole purpose was to discredit my mistress.§
+End
+
+Circle
+  Type 2
+  Pos 440 480
+  Text §That's a grave accusation, $name! Who would do such a thing, and why, I wonder?§
+  NPC §Jelom Rasgar§
+End
+
+Circle
+  Type 2
+  Pos 440 520
+  Text §This is ridiculous! My business with the Elf was only known to the both of us. Besides, who amongst the attendees holds any grudge against her?§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 1
+  Pos 440 580
+  Text §You do! And you knew of her business.§
+End
+
+Circle
+  Type 2
+  Pos 440 640
+  Text §That ... I ... - Master Rasgar, you are not going to believe in this ..., this infamy, are you? Since my arrival at this depraved place I am being continously insulted!§
+  NPC §Bjarn Fingolson§
+  Vars §self.guess_deceit = 1§
+End
+
+Circle
+  Type 2
+  Pos 440 680
+  Text §First Silverhair disparages the quality of my stones, only to steal them later on. And as if that wouldn't be enough, that servant of her now tries to pin the crime on me!§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 1
+  Pos 440 720
+  Text §Master Fingolson, were it not you who set my Mistress at edge right after her arrival?§
+  Cond §if demo.know_bjarns_insult == 1:§
+End
+
+Circle
+  Type 1
+  Pos 540 680
+  Text §But your stones are of poor quality indeed!§
+End
+
+Circle
+  Type 2
+  Pos 540 620
+  Text §You doubt my word and expertise, Half-Elf? Perhaps you have more faith in my apprentice then. Erek, please tell those ignorants how valuable these Catseyes are.§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 1
+  Pos 700 1000
+  Text §Then you confess that the theft was just pretended?§
+  Cond §if self.guess_deceit == 1:§
+End
+
+Circle
+  Type 2
+  Pos 600 820
+  Text §What do you mean?§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 1
+  Pos 600 860
+  Text §You feigned the theft, as an act of revenge.§
+End
+
+Circle
+  Type 2
+  Pos 580 580
+  Text §Why? It's a fact that she was in need of my gems. And she said herself that I deserved no payment for them. Even without that Catseye appearing in her luggage, this should be proof enough!§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 1
+  Pos 580 640
+  Text §But this gem is no Catseye, and therefore worthless to her.§
+End
+
+Circle
+  Type 2
+  Pos 440 780
+  Text §You think I did that deliberately?§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 1
+  Pos 440 820
+  Text §Yes. And afterwards you offered her worthless gems to enrage her even more!§
+End
+
+Circle
+  Type 2
+  Pos 520 480
+  Text §Rubbish I say! There can be no doubt that the Elf is responsible!§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 1
+  Pos 520 520
+  Text §Why do you keep insisting on my mistress' guilt?§
+End
+
+Circle
+  Type 2
+  Pos 280 380
+  Text §Really? Now that is news to me. If you don't mind I would like to know your reasoning, Half-Elf!§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 1
+  Pos 340 440
+  Text §Whoever planted that gem in the mistress' chest, it was not her.§
+End
+
+Circle
+  Type 2
+  Pos 340 480
+  Text §What makes you so sure about that? And why would a thief other than Lady Silverhair hide something in her luggage?§
+  NPC §Jelom Rasgar§
+End
+
+Circle
+  Type 1
+  Pos 240 440
+  Text §The gems the Lady is accused of stealing are worthless to her.§
+End
+
+Circle
+  Type 1
+  Pos 340 520
+  Text §To conceal his trail, and to direct all suspicion towards Lady Silverhair, of course.§
+End
+
+Circle
+  Type 2
+  Pos 240 480
+  Text §What do you mean? Why would my gems be suddenly worthless to her?§
+  NPC §Bjarn Fingolson§
+End
+
+Circle
+  Type 1
+  Pos 240 520
+  Text §My mistress intended to buy Catseyes, but as it turned out, your gems are none.§
+End
+
+Circle
+  Type 2
+  Pos 340 640
+  Text §I don't believe this! Lady Silverhair intended to buy my gems, and when she didn't find my conditions to her liking, she simply stole them! There is no other thief!§
+  NPC §Bjarn Fingolson§
+  Vars §self.not_guilty = 1§
+End
+
+Circle
+  Type 1
+  Pos 340 680
+  Text §Lady Silverhair intended to buy Catseyes, not these worthless shards you tried to sell her!§
+End
+
+Arrow
+  Type 3
+  Prev 0
+  Next 1
+End
+
+Arrow
+  Type 3
+  Prev 1
+  Next 2
+End
+
+Arrow
+  Type 3
+  Prev 2
+  Next 3
+End
+
+Arrow
+  Type 3
+  Prev 3
+  Next 4
+End
+
+Arrow
+  Type 3
+  Prev 4
+  Next 5
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 6
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 7
+End
+
+Arrow
+  Type 3
+  Prev 5
+  Next 8
+End
+
+Arrow
+  Type 3
+  Prev 8
+  Next 9
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 9
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 11
+  Next 12
+End
+
+Arrow
+  Type 3
+  Prev 12
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 13
+  Next 14
+End
+
+Arrow
+  Type 3
+  Prev 14
+  Next 15
+End
+
+Arrow
+  Type 3
+  Prev 15
+  Next 16
+End
+
+Arrow
+  Type 3
+  Prev 16
+  Next 17
+End
+
+Arrow
+  Type 3
+  Prev 19
+  Next 18
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 21
+End
+
+Arrow
+  Type 3
+  Prev 21
+  Next 22
+End
+
+Arrow
+  Type 3
+  Prev 17
+  Next 19
+End
+
+Arrow
+  Type 3
+  Prev 10
+  Next 23
+End
+
+Arrow
+  Type 3
+  Prev 23
+  Next 24
+End
+
+Arrow
+  Type 3
+  Prev 23
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 25
+  Next 26
+End
+
+Arrow
+  Type 3
+  Prev 26
+  Next 27
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 20
+End
+
+Arrow
+  Type 3
+  Prev 27
+  Next 28
+End
+
+Arrow
+  Type 3
+  Prev 28
+  Next 29
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 30
+End
+
+Arrow
+  Type 3
+  Prev 29
+  Next 31
+End
+
+Arrow
+  Type 3
+  Prev 31
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 32
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 20
+  Next 33
+End
+
+Arrow
+  Type 3
+  Prev 33
+  Next 34
+End
+
+Arrow
+  Type 3
+  Prev 7
+  Next 35
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 36
+End
+
+Arrow
+  Type 3
+  Prev 35
+  Next 37
+End
+
+Arrow
+  Type 3
+  Prev 37
+  Next 38
+End
+
+Arrow
+  Type 3
+  Prev 38
+  Next 39
+End
+
+Arrow
+  Type 3
+  Prev 39
+  Next 40
+End
+
+Arrow
+  Type 3
+  Prev 40
+  Next 41
+End
+
+Arrow
+  Type 3
+  Prev 41
+  Next 42
+End
+
+Arrow
+  Type 3
+  Prev 42
+  Next 43
+End
+
+Arrow
+  Type 3
+  Prev 42
+  Next 44
+End
+
+Arrow
+  Type 3
+  Prev 44
+  Next 45
+End
+
+Arrow
+  Type 3
+  Prev 45
+  Next 13
+End
+
+Arrow
+  Type 3
+  Prev 18
+  Next 46
+End
+
+Arrow
+  Type 3
+  Prev 34
+  Next 46
+End
+
+Arrow
+  Type 3
+  Prev 22
+  Next 46
+End
+
+Arrow
+  Type 3
+  Prev 30
+  Next 47
+End
+
+Arrow
+  Type 3
+  Prev 47
+  Next 48
+End
+
+Arrow
+  Type 3
+  Prev 48
+  Next 41
+End
+
+Arrow
+  Type 3
+  Prev 24
+  Next 49
+End
+
+Arrow
+  Type 3
+  Prev 43
+  Next 51
+End
+
+Arrow
+  Type 3
+  Prev 51
+  Next 52
+End
+
+Arrow
+  Type 3
+  Prev 52
+  Next 45
+End
+
+Arrow
+  Type 3
+  Prev 36
+  Next 53
+End
+
+Arrow
+  Type 3
+  Prev 53
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 53
+  Next 54
+End
+
+Arrow
+  Type 3
+  Prev 54
+  Next 49
+End
+
+Arrow
+  Type 3
+  Prev 49
+  Next 25
+End
+
+Arrow
+  Type 3
+  Prev 50
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 49
+  Next 50
+End
+
+Arrow
+  Type 3
+  Prev 49
+  Next 11
+End
+
+Arrow
+  Type 3
+  Prev 6
+  Next 55
+End
+
+Arrow
+  Type 3
+  Prev 55
+  Next 56
+End
+
+Arrow
+  Type 3
+  Prev 56
+  Next 57
+End
+
+Arrow
+  Type 3
+  Prev 55
+  Next 58
+End
+
+Arrow
+  Type 3
+  Prev 57
+  Next 59
+End
+
+Arrow
+  Type 3
+  Prev 58
+  Next 60
+End
+
+Arrow
+  Type 3
+  Prev 60
+  Next 61
+End
+
+Arrow
+  Type 3
+  Prev 61
+  Next 32
+End
+
+Arrow
+  Type 3
+  Prev 59
+  Next 62
+End
+
+Arrow
+  Type 3
+  Prev 62
+  Next 10
+End
+
+Arrow
+  Type 3
+  Prev 62
+  Next 63
+End
+
+Arrow
+  Type 3
+  Prev 63
+  Next 32
+End
