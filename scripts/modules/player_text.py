@@ -1,4 +1,4 @@
- _("That clock seems to be late!")
+_("That clock seems to be late!")
 _("Aw, a midget yeti, how cute!")
 _("I'd better not touch this ... What if it explodes??")
 _("Closed. We are all imprisoned here ...")
