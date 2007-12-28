@@ -43,4 +43,5 @@ scripts/modules/character_screen.py
 scripts/modules/intro.py
 scripts/modules/main_menu.py
 scripts/game_events/search_chest.py
+scripts/game_events/to_storage.py
 
