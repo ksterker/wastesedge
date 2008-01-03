@@ -7213,7 +7213,7 @@ msgid "That clock is late again!"
 msgstr "Quell'orologio è ancora indietro."
 
 #: scripts/schedules/mapcharacters/sarin.py:38
-msgid "Ruffinans, the lot of them!"
+msgid "Ruffians, the lot of them!"
 msgstr "Ruffiani dal primo all'ultimo!"
 
 #: scripts/schedules/mapcharacters/sarin.py:39

@@ -35,7 +35,7 @@ class sarin (schedule.speak):
         self.direction = self.myself.get_val ("direction")
 
         # -- make random remarks
-        self.speech = [_("Ruffinans, the lot of them!"), \
+        self.speech = [_("Ruffians, the lot of them!"), \
                        _("How dare they imprison one better than they?"), \
                        _("This is an insult to all of the High Born."), \
                        _("I cannot believe such disrespect. Barbarians!")]

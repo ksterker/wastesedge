@@ -44,4 +44,5 @@ scripts/modules/intro.py
 scripts/modules/main_menu.py
 scripts/game_events/search_chest.py
 scripts/game_events/to_storage.py
+scripts/game_events/silverhair_to_fst.py
 

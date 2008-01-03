@@ -7354,7 +7354,7 @@ msgid "That clock is late again!"
 msgstr "Die klok loopt weer achter!"
 
 #: scripts/schedules/mapcharacters/sarin.py:38
-msgid "Ruffinans, the lot of them!"
+msgid "Ruffians, the lot of them!"
 msgstr "Ruffinans, het meeste van hun!"
 
 #: scripts/schedules/mapcharacters/sarin.py:39
