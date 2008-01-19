@@ -3,8 +3,8 @@ dnl Process this file with autoconf to produce a configure script.
 dnl **************************************************************
 
 AC_PREREQ(2.50)
-AC_INIT(watesedge, 0.3.4, adonthell-project@linuxgames.com, wastesedge)
-AM_INIT_AUTOMAKE(wastesedge, 0.3.4)
+AC_INIT(wastesedge, 0.3.5, adonthell-devel@nongnu.org, wastesedge)
+AM_INIT_AUTOMAKE(wastesedge, 0.3.5)
 
 dnl ***************
 dnl gettext support
@@ -26,7 +26,7 @@ AC_ARG_WITH(adonthell-binary,
 
 dnl Checking for Adonthell
 if test x$adonthelldatadir = xnone; then
-   AC_PATH_PROG(adonthell_binary, adonthell)
+   AC_PATH_PROG(adonthell_binary, adonthell-0.3)
    if test x$adonthell_binary = x ; then
        echo "*** Waste's Edge requires the Adonthell game engine. Exiting ..."
        exit 1
@@ -51,13 +51,13 @@ adonthellver="$adonthell_major_ver.$adonthell_minor_ver.$adonthell_micro_ver"
 
 AC_MSG_RESULT($adonthellver)
 
-if test $adonthell_major_ver -eq 0 -a $adonthell_minor_ver -eq 3 -a $adonthell_micro_ver -gt 2 ;
+if test $adonthell_major_ver -eq 0 -a $adonthell_minor_ver -eq 3 -a $adonthell_micro_ver -gt 4 ;
 then
     haveadonthell=yes
 fi
 
 if test x$haveadonthell != xyes ; then
-   echo "*** This version of Waste's Edge requires Adonthell v0.3.3 or greater!"
+   echo "*** This version of Waste's Edge requires Adonthell v0.3.5 or greater!"
    exit 1
 fi
 
