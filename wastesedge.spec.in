@@ -13,7 +13,7 @@ Summary: Official game package for Adonthell %ver
 Name: %name
 Version: %ver
 Release: %rel
-Copyright: GPL
+License: GPL
 Group: Amusements/Games
 Source: http://freesoftware.fsf.org/download/adonthell/%{name}-%{ver}.tar.gz
 URL: http://adonthell.linuxgames.com
