@@ -77,6 +77,7 @@ AC_SUBST(gamedatadir)
 AC_SUBST(adonthell_binary)
 
 AC_OUTPUT([ 
+wastesedge.desktop
 wastesedge.spec
 Makefile
 audio/Makefile

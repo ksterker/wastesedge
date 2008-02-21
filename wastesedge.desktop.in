@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Waste's Edge
+GenericName=Waste's Edge
+Comment=A 2D graphical RPG
+Exec=adonthell-wastesedge
+Icon=wastesedge_32x32
+Terminal=false
+Type=Application
+Categories=Game;RolePlaying;
+Version=@VERSION@
