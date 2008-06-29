@@ -40,9 +40,9 @@ AC_MSG_CHECKING(for Adonthell's version)
 $adonthell_binary -v &> adonthell.ver
 
 changequote(<<, >>)
-adonthell_major_ver=`more adonthell.ver | sed 's/\([0-9]*\)\.[0-9]*\.[0-9]*/\1/p; d'`
-adonthell_minor_ver=`more adonthell.ver | sed 's/[0-9]*\.\([0-9]*\)\.[0-9]*/\1/p; d'`
-adonthell_micro_ver=`more adonthell.ver | sed 's/[0-9]*\.[0-9]*\.\([0-9]*\)/\1/p; d'`
+adonthell_major_ver=`sed 's/\([0-9]*\)\.[0-9]*\.[0-9]*/\1/p; d' adonthell.ver`
+adonthell_minor_ver=`sed 's/[0-9]*\.\([0-9]*\)\.[0-9]*/\1/p; d' adonthell.ver`
+adonthell_micro_ver=`sed 's/[0-9]*\.[0-9]*\.\([0-9]*\)/\1/p; d' adonthell.ver` 
 changequote([, ])
 
 rm -f adonthell.ver
