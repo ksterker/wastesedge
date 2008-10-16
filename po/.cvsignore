@@ -1,3 +1,5 @@
 Makefile
 Makefile.in
 POTFILES
+wastesedge.pot
+*.gmo
