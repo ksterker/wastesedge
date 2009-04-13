@@ -5,7 +5,7 @@ def _(message): return message
 class janesta_start (dialogue.base):
 	text = [None,\
 		_("Oh, $name, we've been so worried for the Mistress.  Can't you do something to set her free?"),\
-		_("I will try, Janesta.  But you must be brave.  This is a difficult time for Lady Silverhair, and she needs us all to help her though."),\
+		_("I will try, Janesta.  But you must be brave.  This is a difficult time for Lady Silverhair, and she needs us all to help her through."),\
 		_("I will try.  Thank you, $name."),\
 		_("Perhaps.  Do you know anything about this dwarf, Fingolson?"),\
 		_("Nothing, I'm afraid.  This is my first time here, and I was brought straight to the Mistress' room to make it ready.  This room is so awful, I cannot see how they expect a High Born to stand it."),\

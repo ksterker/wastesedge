@@ -3,7 +3,7 @@
 # Produced by Adonthell Dlgedit v0.8pre1
 # (C) 2000/2001/2002 Kai Sterker
 #
-# $Id: janesta_start.adlg,v 1.1 2007/08/18 03:17:27 ksterker Exp $
+# $Id: janesta_start.adlg,v 1.2 2009/04/13 18:56:42 ksterker Exp $
 
 Note §New Dialogue§
 
@@ -19,7 +19,7 @@ End
 Circle
   Type 1
   Pos 100 80
-  Text §I will try, Janesta.  But you must be brave.  This is a difficult time for Lady Silverhair, and she needs us all to help her though.§
+  Text §I will try, Janesta.  But you must be brave.  This is a difficult time for Lady Silverhair, and she needs us all to help her through.§
 End
 
 Circle
