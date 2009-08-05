@@ -1,0 +1,7 @@
+Makefile.in
+aclocal.m4
+audio/Makefile.in
+autom4te.cache/
+config.guess
+config.sub
+configure
