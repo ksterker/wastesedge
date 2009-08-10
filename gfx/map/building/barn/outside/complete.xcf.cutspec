@@ -1,0 +1,6 @@
+cutspec = [
+        ((  0,   0, 320, 384), "roof.png"),
+        ((  0, 384, 320, 832), "bottom.png"),
+        ((  0,  64+384,  64, 192+384), "roof_entrance.png")
+# doesn't fit:  ((  0,  , 320, 0), "front.png"),
+]
