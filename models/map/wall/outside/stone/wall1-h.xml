@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
-<Data>
+<Data cs="37e54339">
   <list id="entity">
     <string id="state">default</string>
-  <list id="model">
-    <list id="default">
-      <list id="shape">
-        <u_int16 id="num">1</u_int16>
-        <list id="cube">
-          <string id="p3d">[0, 0, 0]</string>
-          <string id="p3d">[196, 0, 0]</string>
-          <string id="p3d">[196, 10, 0]</string>
-          <string id="p3d">[0, 10, 0]</string>
-          <string id="p3d">[0, 0, 118]</string>
-          <string id="p3d">[196, 0, 118]</string>
-          <string id="p3d">[196, 10, 118]</string>
-          <string id="p3d">[0, 10, 118]</string>
+    <list id="model">
+      <list id="default">
+        <list id="shape">
+          <u_int16 id="num">1</u_int16>
+          <list id="cube">
+            <string id="p3d">[0, 5, 0]</string>
+            <string id="p3d">[196, 5, 0]</string>
+            <string id="p3d">[196, 19, 0]</string>
+            <string id="p3d">[0, 19, 0]</string>
+            <string id="p3d">[0, 5, 109]</string>
+            <string id="p3d">[196, 5, 109]</string>
+            <string id="p3d">[196, 19, 109]</string>
+            <string id="p3d">[0, 19, 109]</string>
+          </list>
         </list>
       </list>
+      <string id="sprite">gfx/map/wall/outside/stone/wall1-h.xml</string>
     </list>
-    <string id="sprite">gfx/map/wall/outside/stone/wall2-h.xml</string>
-  </list>
   </list>
 </Data>

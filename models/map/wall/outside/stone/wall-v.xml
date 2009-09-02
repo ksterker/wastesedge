@@ -1,25 +1,24 @@
 <?xml version="1.0"?>
-<Data>
+<Data cs="c2d941ea">
   <list id="entity">
     <string id="state">default</string>
-  <list id="model">
-    <list id="default">
-      <list id="shape">
-        <string id="offset">[0, 0, 118]</string>
-        <u_int16 id="num">1</u_int16>
-        <list id="cube">
-          <string id="p3d">[0, 0, 0]</string>
-          <string id="p3d">[40, 0, 0]</string>
-          <string id="p3d">[40, 64, 0]</string>
-          <string id="p3d">[0, 64, 0]</string>
-          <string id="p3d">[0, 0, 118]</string>
-          <string id="p3d">[40, 0, 118]</string>
-          <string id="p3d">[40, 64, 118]</string>
-          <string id="p3d">[0, 64, 118]</string>
+    <list id="model">
+      <list id="default">
+        <list id="shape">
+          <u_int16 id="num">1</u_int16>
+          <list id="cube">
+            <string id="p3d">[0, 0, 0]</string>
+            <string id="p3d">[40, 0, 0]</string>
+            <string id="p3d">[40, 64, 0]</string>
+            <string id="p3d">[0, 64, 0]</string>
+            <string id="p3d">[0, 0, 109]</string>
+            <string id="p3d">[40, 0, 109]</string>
+            <string id="p3d">[40, 64, 109]</string>
+            <string id="p3d">[0, 64, 109]</string>
+          </list>
         </list>
       </list>
+      <string id="sprite">gfx/map/wall/outside/stone/wall-v.png</string>
     </list>
-    <string id="sprite">gfx/map/wall/outside/stone/wall-v.png</string>
-  </list>
   </list>
 </Data>
