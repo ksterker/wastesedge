@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Data cs="ae7b3ce8">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <string id="offset">[-3, 0, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[8, 0, 0]</string>
+          <string id="p3d">[8, 64, 0]</string>
+          <string id="p3d">[0, 64, 0]</string>
+          <string id="p3d">[0, 0, 128]</string>
+          <string id="p3d">[8, 0, 128]</string>
+          <string id="p3d">[8, 64, 128]</string>
+          <string id="p3d">[0, 64, 128]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/clay/wall-v.png</string>
+  </list>
+</Data>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Data cs="2f2548bf">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <string id="offset">[0, 10, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, -10, 0]</string>
+          <string id="p3d">[384, -10, 0]</string>
+          <string id="p3d">[384, 0, 0]</string>
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[0, -10, 128]</string>
+          <string id="p3d">[384, -10, 128]</string>
+          <string id="p3d">[384, 0, 128]</string>
+          <string id="p3d">[0, 0, 128]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/building/redwyne-inn/wall/guard-house-1st-floor.png</string>
+  </list>
+</Data>

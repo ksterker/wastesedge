@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<Data cs="8849d67e">
+  <list id="objects">
+    <list id="0">
+      <s_int8 id="type">1</s_int8>
+      <string id="model">models/map/ground/outside/yard/stone.xml</string>
+    </list>
+    <list id="1">
+      <s_int8 id="type">1</s_int8>
+      <string id="model">models/map/building/redwyne-inn/wall/mainwing-window.xml</string>
+    </list>
+    <list id="2">
+      <s_int8 id="type">1</s_int8>
+      <string id="model">models/map/ground/inside/terracotta1.xml</string>
+    </list>
+    <list id="3">
+      <s_int8 id="type">1</s_int8>
+      <string id="model">models/map/ground/inside/terracotta2.xml</string>
+    </list>
+    <list id="4">
+      <s_int8 id="type">1</s_int8>
+      <string id="model">models/map/ground/inside/terracotta3.xml</string>
+    </list>
+    <list id="5">
+      <s_int8 id="type">1</s_int8>
+      <string id="model">models/map/ground/inside/wood1.xml</string>
+    </list>
+    <list id="6">
+      <s_int8 id="type">1</s_int8>
+      <string id="model">models/map/wall/inside/clay/wall-h.xml</string>
+    </list>
+    <list id="7">
+      <s_int8 id="type">1</s_int8>
+      <string id="model">models/map/wall/inside/clay/wall-v.xml</string>
+    </list>
+  </list>
+  <list id="entities">
+    <list id="0">
+      <list id="anonym">
+        <string id="p3d">[-128, 768, 0]</string>
+        <string id="p3d">[-256, 768, 0]</string>
+        <string id="p3d">[0, 768, 0]</string>
+        <string id="p3d">[256, 480, 0]</string>
+        <string id="p3d">[256, 624, 0]</string>
+        <string id="p3d">[256, 768, 0]</string>
+        <string id="p3d">[512, 768, 0]</string>
+        <string id="p3d">[512, 624, 0]</string>
+        <string id="p3d">[512, 480, 0]</string>
+        <string id="p3d">[640, 480, 0]</string>
+        <string id="p3d">[640, 624, 0]</string>
+        <string id="p3d">[640, 768, 0]</string>
+        <string id="p3d">[768, 768, 0]</string>
+        <string id="p3d">[768, 624, 0]</string>
+        <string id="p3d">[768, 480, 0]</string>
+        <string id="p3d">[896, 480, 0]</string>
+        <string id="p3d">[896, 624, 0]</string>
+        <string id="p3d">[896, 768, 0]</string>
+        <string id="p3d">[384, 480, 0]</string>
+        <string id="p3d">[384, 624, 0]</string>
+        <string id="p3d">[384, 768, 0]</string>
+        <string id="p3d">[128, 768, 0]</string>
+        <string id="p3d">[128, 624, 0]</string>
+        <string id="p3d">[128, 480, 0]</string>
+      </list>
+    </list>
+    <list id="1">
+      <list id="anonym">
+        <string id="p3d">[-256, 768, 5]</string>
+        <string id="p3d">[-128, 768, 5]</string>
+        <string id="p3d">[0, 768, 5]</string>
+        <string id="p3d">[256, 472, 5]</string>
+        <string id="p3d">[384, 472, 5]</string>
+        <string id="p3d">[128, 472, 5]</string>
+      </list>
+    </list>
+    <list id="2">
+      <list id="anonym">
+        <string id="p3d">[-192, 480, 0]</string>
+        <string id="p3d">[-256, 576, 0]</string>
+        <string id="p3d">[-192, 672, 0]</string>
+        <string id="p3d">[-64, 672, 0]</string>
+        <string id="p3d">[64, 480, 0]</string>
+      </list>
+    </list>
+    <list id="3">
+      <list id="anonym">
+        <string id="p3d">[-128, 576, 0]</string>
+        <string id="p3d">[-256, 480, 0]</string>
+        <string id="p3d">[-64, 480, 0]</string>
+        <string id="p3d">[0, 480, 0]</string>
+        <string id="p3d">[0, 576, 0]</string>
+        <string id="p3d">[64, 672, 0]</string>
+      </list>
+    </list>
+    <list id="4">
+      <list id="anonym">
+        <string id="p3d">[-192, 576, 0]</string>
+        <string id="p3d">[-64, 576, 0]</string>
+        <string id="p3d">[-128, 480, 0]</string>
+        <string id="p3d">[-256, 672, 0]</string>
+        <string id="p3d">[-128, 672, 0]</string>
+        <string id="p3d">[64, 576, 0]</string>
+        <string id="p3d">[0, 672, 0]</string>
+      </list>
+    </list>
+    <list id="5">
+      <list id="anonym">
+        <string id="p3d">[-256, 96, 0]</string>
+        <string id="p3d">[-256, 0, 0]</string>
+        <string id="p3d">[-128, 0, 0]</string>
+        <string id="p3d">[-128, 96, 0]</string>
+        <string id="p3d">[0, 96, 0]</string>
+        <string id="p3d">[0, 0, 0]</string>
+        <string id="p3d">[256, 96, 0]</string>
+        <string id="p3d">[256, 0, 0]</string>
+        <string id="p3d">[512, 96, 0]</string>
+        <string id="p3d">[512, 0, 0]</string>
+        <string id="p3d">[640, 0, 0]</string>
+        <string id="p3d">[768, 0, 0]</string>
+        <string id="p3d">[768, 96, 0]</string>
+        <string id="p3d">[640, 96, 0]</string>
+        <string id="p3d">[896, 0, 0]</string>
+        <string id="p3d">[896, 96, 0]</string>
+        <string id="p3d">[384, 0, 0]</string>
+        <string id="p3d">[384, 96, 0]</string>
+        <string id="p3d">[-128, 288, 0]</string>
+        <string id="p3d">[-128, 384, 0]</string>
+        <string id="p3d">[-256, 288, 0]</string>
+        <string id="p3d">[-256, 384, 0]</string>
+        <string id="p3d">[0, 288, 0]</string>
+        <string id="p3d">[0, 384, 0]</string>
+        <string id="p3d">[256, 288, 0]</string>
+        <string id="p3d">[256, 384, 0]</string>
+        <string id="p3d">[512, 288, 0]</string>
+        <string id="p3d">[512, 384, 0]</string>
+        <string id="p3d">[640, 384, 0]</string>
+        <string id="p3d">[640, 288, 0]</string>
+        <string id="p3d">[768, 288, 0]</string>
+        <string id="p3d">[768, 384, 0]</string>
+        <string id="p3d">[896, 288, 0]</string>
+        <string id="p3d">[896, 384, 0]</string>
+        <string id="p3d">[384, 288, 0]</string>
+        <string id="p3d">[384, 384, 0]</string>
+        <string id="p3d">[128, 192, 0]</string>
+        <string id="p3d">[256, 192, 0]</string>
+        <string id="p3d">[384, 192, 0]</string>
+        <string id="p3d">[128, 288, 0]</string>
+        <string id="p3d">[128, 384, 0]</string>
+        <string id="p3d">[0, 192, 0]</string>
+        <string id="p3d">[-128, 192, 0]</string>
+        <string id="p3d">[-256, 192, 0]</string>
+        <string id="p3d">[640, 192, 0]</string>
+        <string id="p3d">[512, 192, 0]</string>
+        <string id="p3d">[768, 192, 0]</string>
+        <string id="p3d">[128, 96, 0]</string>
+        <string id="p3d">[128, 0, 0]</string>
+        <string id="p3d">[896, 192, 0]</string>
+      </list>
+    </list>
+    <list id="6">
+      <list id="anonym">
+        <string id="p3d">[-256, -8, 5]</string>
+        <string id="p3d">[-128, -8, 5]</string>
+        <string id="p3d">[0, -8, 5]</string>
+        <string id="p3d">[256, -8, 5]</string>
+        <string id="p3d">[512, -8, 5]</string>
+        <string id="p3d">[640, -8, 5]</string>
+        <string id="p3d">[768, -8, 5]</string>
+        <string id="p3d">[896, -8, 5]</string>
+        <string id="p3d">[384, -8, 5]</string>
+        <string id="p3d">[-128, 472, 5]</string>
+        <string id="p3d">[0, 472, 5]</string>
+        <string id="p3d">[128, -8, 5]</string>
+      </list>
+    </list>
+    <list id="7">
+      <list id="anonym">
+        <string id="p3d">[-256, 128, 5]</string>
+        <string id="p3d">[-256, 0, 5]</string>
+        <string id="p3d">[-256, 256, 5]</string>
+        <string id="p3d">[-256, 320, 5]</string>
+        <string id="p3d">[-256, 384, 5]</string>
+        <string id="p3d">[-256, 512, 5]</string>
+        <string id="p3d">[-256, 576, 5]</string>
+        <string id="p3d">[-256, 640, 0]</string>
+        <string id="p3d">[-256, 704, 0]</string>
+        <string id="p3d">[120, 704, 5]</string>
+        <string id="p3d">[120, 576, 5]</string>
+        <string id="p3d">[120, 640, 5]</string>
+        <string id="p3d">[-256, 448, 5]</string>
+        <string id="p3d">[-256, 192, 5]</string>
+      </list>
+    </list>
+  </list>
+  <list id="states">
+    <list id="0">
+      <string id="state">default</string>
+    </list>
+    <list id="1">
+      <string id="state">default</string>
+    </list>
+    <list id="2">
+      <string id="state">default</string>
+    </list>
+    <list id="3">
+      <string id="state">default</string>
+    </list>
+    <list id="4">
+      <string id="state">default</string>
+    </list>
+    <list id="5">
+      <string id="state">default</string>
+    </list>
+    <list id="6">
+      <string id="state">default</string>
+    </list>
+    <list id="7">
+      <string id="state">default</string>
+    </list>
+  </list>
+  <list id="zones"/>
+</Data>
