@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
-<Data cs="6ad609e2">
+<Data cs="703d3f65">
   <list id="objects">
     <list id="0">
       <s_int8 id="type">1</s_int8>
-      <string id="model">models/map/ground/inside/terracotta1.xml</string>
+      <string id="model">models/map/wall/inside/clay/wall-h.xml</string>
     </list>
     <list id="1">
       <s_int8 id="type">1</s_int8>
-      <string id="model">models/map/wall/inside/clay/wall-h.xml</string>
+      <string id="model">models/map/ground/inside/terracotta1.xml</string>
     </list>
     <list id="2">
       <s_int8 id="type">1</s_int8>
@@ -37,18 +37,13 @@
       <s_int8 id="type">1</s_int8>
       <string id="model">models/map/wall/inside/clay/wall-v.xml</string>
     </list>
+    <list id="9">
+      <s_int8 id="type">1</s_int8>
+      <string id="model">models/map/ground/inside/wood-stairs1.xml</string>
+    </list>
   </list>
   <list id="entities">
     <list id="0">
-      <list id="anonym">
-        <string id="p3d">[-192, 480, 0]</string>
-        <string id="p3d">[-256, 576, 0]</string>
-        <string id="p3d">[-128, 528, 0]</string>
-        <string id="p3d">[64, 480, 0]</string>
-        <string id="p3d">[64, 528, 0]</string>
-      </list>
-    </list>
-    <list id="1">
       <list id="anonym">
         <string id="p3d">[0, 184, 0]</string>
         <string id="p3d">[-128, 184, 0]</string>
@@ -57,11 +52,23 @@
         <string id="p3d">[768, 184, 0]</string>
         <string id="p3d">[640, 184, 0]</string>
         <string id="p3d">[512, 184, 0]</string>
-        <string id="p3d">[384, 184, 0]</string>
         <string id="p3d">[256, 184, 0]</string>
+        <string id="p3d">[384, 180, -128]</string>
+        <string id="p3d">[512, 180, -128]</string>
+        <string id="p3d">[384, 184, 0]</string>
         <string id="p3d">[0, 472, 0]</string>
         <string id="p3d">[-128, 472, 0]</string>
+        <string id="p3d">[384, 288, -128]</string>
         <string id="p3d">[128, 184, 0]</string>
+      </list>
+    </list>
+    <list id="1">
+      <list id="anonym">
+        <string id="p3d">[-192, 480, 0]</string>
+        <string id="p3d">[-256, 576, 0]</string>
+        <string id="p3d">[-128, 528, 0]</string>
+        <string id="p3d">[64, 480, 0]</string>
+        <string id="p3d">[64, 528, 0]</string>
       </list>
     </list>
     <list id="2">
@@ -89,16 +96,16 @@
         <string id="p3d">[0, 768, 0]</string>
         <string id="p3d">[0, 624, 0]</string>
         <string id="p3d">[256, 480, 0]</string>
-        <string id="p3d">[256, 768, 0]</string>
-        <string id="p3d">[256, 624, 0]</string>
         <string id="p3d">[512, 480, 0]</string>
         <string id="p3d">[768, 480, 0]</string>
         <string id="p3d">[896, 480, 0]</string>
         <string id="p3d">[640, 480, 0]</string>
+        <string id="p3d">[256, 768, 0]</string>
         <string id="p3d">[512, 768, 0]</string>
         <string id="p3d">[640, 768, 0]</string>
         <string id="p3d">[768, 768, 0]</string>
         <string id="p3d">[896, 768, 0]</string>
+        <string id="p3d">[256, 624, 0]</string>
         <string id="p3d">[512, 624, 0]</string>
         <string id="p3d">[640, 624, 0]</string>
         <string id="p3d">[768, 624, 0]</string>
@@ -151,7 +158,6 @@
         <string id="p3d">[384, 384, 0]</string>
         <string id="p3d">[128, 192, 0]</string>
         <string id="p3d">[256, 192, 0]</string>
-        <string id="p3d">[384, 192, 0]</string>
         <string id="p3d">[128, 288, 0]</string>
         <string id="p3d">[128, 384, 0]</string>
         <string id="p3d">[0, 192, 0]</string>
@@ -161,6 +167,7 @@
         <string id="p3d">[512, 192, 0]</string>
         <string id="p3d">[768, 192, 0]</string>
         <string id="p3d">[896, 192, 0]</string>
+        <string id="p3d">[512, 192, -128]</string>
       </list>
     </list>
     <list id="7">
@@ -202,6 +209,12 @@
         <string id="p3d">[1008, 432, 0]</string>
       </list>
     </list>
+    <list id="9">
+      <list id="anonym">
+        <string id="p3d">[384, 192, -128]</string>
+        <string id="p3d">[384, 238, -128]</string>
+      </list>
+    </list>
   </list>
   <list id="states">
     <list id="0">
@@ -229,6 +242,9 @@
       <string id="state">default</string>
     </list>
     <list id="8">
+      <string id="state">default</string>
+    </list>
+    <list id="9">
       <string id="state">default</string>
     </list>
   </list>

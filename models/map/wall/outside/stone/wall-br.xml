@@ -1,34 +1,31 @@
 <?xml version="1.0"?>
 <Data cs="964b6220">
-  <list id="entity">
-    <string id="state">default</string>
-    <list id="model">
-      <list id="default">
-        <list id="shape">
-          <u_int16 id="num">2</u_int16>
-          <list id="cube">
-            <string id="p3d">[0, 45, 0]</string>
-            <string id="p3d">[44, 45, 0]</string>
-            <string id="p3d">[44, 59, 0]</string>
-            <string id="p3d">[0, 59, 0]</string>
-            <string id="p3d">[0, 45, 109]</string>
-            <string id="p3d">[44, 45, 109]</string>
-            <string id="p3d">[44, 59, 109]</string>
-            <string id="p3d">[0, 59, 109]</string>
-          </list>
-          <list id="cube">
-            <string id="p3d">[4, 0, 0]</string>
-            <string id="p3d">[44, 0, 0]</string>
-            <string id="p3d">[44, 45, 0]</string>
-            <string id="p3d">[4, 45, 0]</string>
-            <string id="p3d">[4, 0, 109]</string>
-            <string id="p3d">[44, 0, 109]</string>
-            <string id="p3d">[44, 45, 109]</string>
-            <string id="p3d">[4, 45, 109]</string>
-          </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">2</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 45, 0]</string>
+          <string id="p3d">[44, 45, 0]</string>
+          <string id="p3d">[44, 59, 0]</string>
+          <string id="p3d">[0, 59, 0]</string>
+          <string id="p3d">[0, 45, 109]</string>
+          <string id="p3d">[44, 45, 109]</string>
+          <string id="p3d">[44, 59, 109]</string>
+          <string id="p3d">[0, 59, 109]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[4, 0, 0]</string>
+          <string id="p3d">[44, 0, 0]</string>
+          <string id="p3d">[44, 45, 0]</string>
+          <string id="p3d">[4, 45, 0]</string>
+          <string id="p3d">[4, 0, 109]</string>
+          <string id="p3d">[44, 0, 109]</string>
+          <string id="p3d">[44, 45, 109]</string>
+          <string id="p3d">[4, 45, 109]</string>
         </list>
       </list>
-      <string id="sprite">gfx/map/wall/outside/stone/wall-br.png</string>
     </list>
+    <string id="sprite">gfx/map/wall/outside/stone/wall-br.png</string>
   </list>
 </Data>
