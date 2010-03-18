@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Data cs="71c51579">
+  <list id="grp">
+    <string id="gnm">Human</string>
+    <string id="pcp">./groups/species/human.pathfinding</string>
+    <string id="gcn">specie</string>
+    <string id="pgpn">Human</string>
+    <list id="gTerr">
+      <s_int8 id="Swamp">-10</s_int8>
+      <s_int8 id="Wood">10</s_int8>
+    </list>
+  </list>
+</Data>

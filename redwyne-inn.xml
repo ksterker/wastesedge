@@ -1,29 +1,29 @@
 <?xml version="1.0"?>
-<Data cs="703d3f65">
+<Data cs="60b878ec">
   <list id="objects">
     <list id="0">
       <s_int8 id="type">1</s_int8>
-      <string id="model">models/map/wall/inside/clay/wall-h.xml</string>
+      <string id="model">models/map/ground/outside/yard/stone.xml</string>
     </list>
     <list id="1">
       <s_int8 id="type">1</s_int8>
-      <string id="model">models/map/ground/inside/terracotta1.xml</string>
+      <string id="model">models/map/wall/inside/clay/wall-h.xml</string>
     </list>
     <list id="2">
       <s_int8 id="type">1</s_int8>
-      <string id="model">models/map/ground/inside/terracotta2.xml</string>
+      <string id="model">models/map/wall/inside/clay/doorway-h.xml</string>
     </list>
     <list id="3">
       <s_int8 id="type">1</s_int8>
-      <string id="model">models/map/ground/outside/yard/stone.xml</string>
+      <string id="model">models/map/ground/inside/terracotta2.xml</string>
     </list>
     <list id="4">
       <s_int8 id="type">1</s_int8>
-      <string id="model">models/map/building/redwyne-inn/wall/mainwing-window.xml</string>
+      <string id="model">models/map/ground/inside/terracotta1.xml</string>
     </list>
     <list id="5">
       <s_int8 id="type">1</s_int8>
-      <string id="model">models/map/wall/inside/clay/doorway-h.xml</string>
+      <string id="model">models/map/building/redwyne-inn/wall/mainwing-window.xml</string>
     </list>
     <list id="6">
       <s_int8 id="type">1</s_int8>
@@ -34,60 +34,20 @@
       <string id="model">models/map/ground/inside/terracotta3.xml</string>
     </list>
     <list id="8">
+      <s_int8 id="type">2</s_int8>
+      <string id="model">models/char/npc/ng.xml</string>
+    </list>
+    <list id="9">
       <s_int8 id="type">1</s_int8>
       <string id="model">models/map/wall/inside/clay/wall-v.xml</string>
     </list>
-    <list id="9">
+    <list id="10">
       <s_int8 id="type">1</s_int8>
       <string id="model">models/map/ground/inside/wood-stairs1.xml</string>
     </list>
   </list>
   <list id="entities">
     <list id="0">
-      <list id="anonym">
-        <string id="p3d">[0, 184, 0]</string>
-        <string id="p3d">[-128, 184, 0]</string>
-        <string id="p3d">[-256, 184, 0]</string>
-        <string id="p3d">[896, 184, 0]</string>
-        <string id="p3d">[768, 184, 0]</string>
-        <string id="p3d">[640, 184, 0]</string>
-        <string id="p3d">[512, 184, 0]</string>
-        <string id="p3d">[256, 184, 0]</string>
-        <string id="p3d">[384, 180, -128]</string>
-        <string id="p3d">[512, 180, -128]</string>
-        <string id="p3d">[384, 184, 0]</string>
-        <string id="p3d">[0, 472, 0]</string>
-        <string id="p3d">[-128, 472, 0]</string>
-        <string id="p3d">[384, 288, -128]</string>
-        <string id="p3d">[128, 184, 0]</string>
-      </list>
-    </list>
-    <list id="1">
-      <list id="anonym">
-        <string id="p3d">[-192, 480, 0]</string>
-        <string id="p3d">[-256, 576, 0]</string>
-        <string id="p3d">[-128, 528, 0]</string>
-        <string id="p3d">[64, 480, 0]</string>
-        <string id="p3d">[64, 528, 0]</string>
-      </list>
-    </list>
-    <list id="2">
-      <list id="anonym">
-        <string id="p3d">[-128, 576, 0]</string>
-        <string id="p3d">[-256, 480, 0]</string>
-        <string id="p3d">[-64, 480, 0]</string>
-        <string id="p3d">[-256, 528, 0]</string>
-        <string id="p3d">[-192, 624, 0]</string>
-        <string id="p3d">[-128, 624, 0]</string>
-        <string id="p3d">[-64, 528, 0]</string>
-        <string id="p3d">[-192, 528, 0]</string>
-        <string id="p3d">[-256, 624, 0]</string>
-        <string id="p3d">[0, 480, 0]</string>
-        <string id="p3d">[0, 576, 0]</string>
-        <string id="p3d">[0, 528, 0]</string>
-      </list>
-    </list>
-    <list id="3">
       <list id="anonym">
         <string id="p3d">[-128, 768, 0]</string>
         <string id="p3d">[-256, 768, 0]</string>
@@ -118,7 +78,56 @@
         <string id="p3d">[128, 480, 0]</string>
       </list>
     </list>
+    <list id="1">
+      <list id="anonym">
+        <string id="p3d">[384, 180, -128]</string>
+        <string id="p3d">[512, 180, -128]</string>
+        <string id="p3d">[384, 288, -128]</string>
+        <string id="p3d">[0, 184, 0]</string>
+        <string id="p3d">[-128, 184, 0]</string>
+        <string id="p3d">[-256, 184, 0]</string>
+        <string id="p3d">[896, 184, 0]</string>
+        <string id="p3d">[768, 184, 0]</string>
+        <string id="p3d">[640, 184, 0]</string>
+        <string id="p3d">[512, 184, 0]</string>
+        <string id="p3d">[256, 184, 0]</string>
+        <string id="p3d">[384, 184, 0]</string>
+        <string id="p3d">[0, 472, 0]</string>
+        <string id="p3d">[-128, 472, 0]</string>
+        <string id="p3d">[128, 184, 0]</string>
+      </list>
+    </list>
+    <list id="2">
+      <list id="anonym">
+        <string id="p3d">[-256, 472, 0]</string>
+      </list>
+    </list>
+    <list id="3">
+      <list id="anonym">
+        <string id="p3d">[-128, 576, 0]</string>
+        <string id="p3d">[-256, 480, 0]</string>
+        <string id="p3d">[-64, 480, 0]</string>
+        <string id="p3d">[-256, 528, 0]</string>
+        <string id="p3d">[-192, 624, 0]</string>
+        <string id="p3d">[-128, 624, 0]</string>
+        <string id="p3d">[-64, 528, 0]</string>
+        <string id="p3d">[-192, 528, 0]</string>
+        <string id="p3d">[-256, 624, 0]</string>
+        <string id="p3d">[0, 480, 0]</string>
+        <string id="p3d">[0, 576, 0]</string>
+        <string id="p3d">[0, 528, 0]</string>
+      </list>
+    </list>
     <list id="4">
+      <list id="anonym">
+        <string id="p3d">[-192, 480, 0]</string>
+        <string id="p3d">[-256, 576, 0]</string>
+        <string id="p3d">[-128, 528, 0]</string>
+        <string id="p3d">[64, 480, 0]</string>
+        <string id="p3d">[64, 528, 0]</string>
+      </list>
+    </list>
+    <list id="5">
       <list id="anonym">
         <string id="p3d">[-256, 664, 0]</string>
         <string id="p3d">[-128, 664, 0]</string>
@@ -129,11 +138,6 @@
         <string id="p3d">[640, 472, 0]</string>
         <string id="p3d">[384, 472, 0]</string>
         <string id="p3d">[128, 472, 0]</string>
-      </list>
-    </list>
-    <list id="5">
-      <list id="anonym">
-        <string id="p3d">[-256, 472, 0]</string>
       </list>
     </list>
     <list id="6">
@@ -182,6 +186,12 @@
       </list>
     </list>
     <list id="8">
+      <list id="named">
+        <string id="id">Player</string>
+        <string id="p3d">[280, 525, 5]</string>
+      </list>
+    </list>
+    <list id="9">
       <list id="anonym">
         <string id="p3d">[-258, 192, 0]</string>
         <string id="p3d">[756, 192, 0]</string>
@@ -209,7 +219,7 @@
         <string id="p3d">[1008, 432, 0]</string>
       </list>
     </list>
-    <list id="9">
+    <list id="10">
       <list id="anonym">
         <string id="p3d">[384, 192, -128]</string>
         <string id="p3d">[384, 238, -128]</string>
@@ -242,9 +252,25 @@
       <string id="state">default</string>
     </list>
     <list id="8">
-      <string id="state">default</string>
+      <string id="state">s_stand</string>
+      <string id="pos">[280, 525, 5]</string>
+      <s_int32 id="dir">0</s_int32>
+      <float id="vspeed">0.000000000000</float>
+      <list id="schedule">
+        <u_int16 id="spa">0</u_int16>
+        <bool id="scr">0</bool>
+        <list id="mgr">
+          <string id="script">player</string>
+          <u_int16 id="pln">0</u_int16>
+        </list>
+        <u_int16 id="fps">0</u_int16>
+        <list id="fls"/>
+      </list>
     </list>
     <list id="9">
+      <string id="state">default</string>
+    </list>
+    <list id="10">
       <string id="state">default</string>
     </list>
   </list>
