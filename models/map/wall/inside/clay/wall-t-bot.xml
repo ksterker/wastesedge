@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Data cs="db1894cb">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">2</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 43, 0]</string>
+          <string id="p3d">[128, 43, 0]</string>
+          <string id="p3d">[128, 53, 0]</string>
+          <string id="p3d">[0, 53, 0]</string>
+          <string id="p3d">[0, 43, 100]</string>
+          <string id="p3d">[128, 43, 100]</string>
+          <string id="p3d">[128, 53, 100]</string>
+          <string id="p3d">[0, 53, 100]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[0, 43, 0]</string>
+          <string id="p3d">[128, 43, 0]</string>
+          <string id="p3d">[128, 57, 0]</string>
+          <string id="p3d">[0, 57, 0]</string>
+          <string id="p3d">[0, 43, 4]</string>
+          <string id="p3d">[128, 43, 4]</string>
+          <string id="p3d">[128, 57, 4]</string>
+          <string id="p3d">[0, 57, 4]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/clay/wall-t-bot.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[58, 0, 0]</string>
+          <string id="p3d">[70, 0, 0]</string>
+          <string id="p3d">[70, 43, 0]</string>
+          <string id="p3d">[58, 43, 0]</string>
+          <string id="p3d">[58, 0, 100]</string>
+          <string id="p3d">[70, 0, 100]</string>
+          <string id="p3d">[70, 43, 100]</string>
+          <string id="p3d">[58, 43, 100]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/clay/wall-v-bot.png</string>
+  </list>
+</Data>

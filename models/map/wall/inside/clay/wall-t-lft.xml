@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Data cs="ee757fd7">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">3</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[12, 0, 0]</string>
+          <string id="p3d">[12, 96, 0]</string>
+          <string id="p3d">[0, 96, 0]</string>
+          <string id="p3d">[0, 0, 100]</string>
+          <string id="p3d">[12, 0, 100]</string>
+          <string id="p3d">[12, 96, 100]</string>
+          <string id="p3d">[0, 96, 100]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[15, 0, 0]</string>
+          <string id="p3d">[15, 96, 0]</string>
+          <string id="p3d">[0, 96, 0]</string>
+          <string id="p3d">[0, 0, 6]</string>
+          <string id="p3d">[15, 0, 6]</string>
+          <string id="p3d">[15, 96, 6]</string>
+          <string id="p3d">[0, 96, 6]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[12, 43, 0]</string>
+          <string id="p3d">[70, 43, 0]</string>
+          <string id="p3d">[70, 53, 0]</string>
+          <string id="p3d">[12, 53, 0]</string>
+          <string id="p3d">[12, 43, 100]</string>
+          <string id="p3d">[70, 43, 100]</string>
+          <string id="p3d">[70, 53, 100]</string>
+          <string id="p3d">[12, 53, 100]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/clay/wall-t-lft.png</string>
+  </list>
+</Data>

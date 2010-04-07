@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Data cs="ff4c9461">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">2</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[12, 0, 0]</string>
+          <string id="p3d">[12, 96, 0]</string>
+          <string id="p3d">[0, 96, 0]</string>
+          <string id="p3d">[0, 0, 100]</string>
+          <string id="p3d">[12, 0, 100]</string>
+          <string id="p3d">[12, 96, 100]</string>
+          <string id="p3d">[0, 96, 100]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[15, 0, 0]</string>
+          <string id="p3d">[15, 96, 0]</string>
+          <string id="p3d">[0, 96, 0]</string>
+          <string id="p3d">[0, 0, 6]</string>
+          <string id="p3d">[15, 0, 6]</string>
+          <string id="p3d">[15, 96, 6]</string>
+          <string id="p3d">[0, 96, 6]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/clay/wall-v-lft.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <bool id="non_solid">1</bool>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[15, 0, 0]</string>
+          <string id="p3d">[36, 0, 0]</string>
+          <string id="p3d">[36, 96, 0]</string>
+          <string id="p3d">[15, 96, 0]</string>
+          <string id="p3d">[15, 0, 2]</string>
+          <string id="p3d">[36, 0, 2]</string>
+          <string id="p3d">[36, 96, 2]</string>
+          <string id="p3d">[15, 96, 2]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/wall-v-shadow.png</string>
+  </list>
+</Data>

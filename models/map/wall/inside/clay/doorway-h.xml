@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Data cs="fc7fb256">
+<Data cs="786db352">
   <list id="model">
     <list id="default">
       <list id="shape">
@@ -7,52 +7,52 @@
         <list id="cube">
           <string id="p3d">[0, 0, 0]</string>
           <string id="p3d">[33, 0, 0]</string>
-          <string id="p3d">[33, 8, 0]</string>
-          <string id="p3d">[0, 8, 0]</string>
-          <string id="p3d">[0, 0, 128]</string>
-          <string id="p3d">[33, 0, 128]</string>
-          <string id="p3d">[33, 8, 128]</string>
-          <string id="p3d">[0, 8, 128]</string>
+          <string id="p3d">[33, 10, 0]</string>
+          <string id="p3d">[0, 10, 0]</string>
+          <string id="p3d">[0, 0, 100]</string>
+          <string id="p3d">[33, 0, 100]</string>
+          <string id="p3d">[33, 10, 100]</string>
+          <string id="p3d">[0, 10, 100]</string>
         </list>
         <list id="cube">
           <string id="p3d">[95, 0, 0]</string>
           <string id="p3d">[128, 0, 0]</string>
-          <string id="p3d">[128, 8, 0]</string>
-          <string id="p3d">[95, 8, 0]</string>
-          <string id="p3d">[95, 0, 128]</string>
-          <string id="p3d">[128, 0, 128]</string>
-          <string id="p3d">[128, 8, 128]</string>
-          <string id="p3d">[95, 8, 128]</string>
+          <string id="p3d">[128, 10, 0]</string>
+          <string id="p3d">[95, 10, 0]</string>
+          <string id="p3d">[95, 0, 100]</string>
+          <string id="p3d">[128, 0, 100]</string>
+          <string id="p3d">[128, 10, 100]</string>
+          <string id="p3d">[95, 10, 100]</string>
         </list>
         <list id="cube">
-          <string id="p3d">[33, 0, 106]</string>
-          <string id="p3d">[95, 0, 106]</string>
-          <string id="p3d">[95, 8, 106]</string>
-          <string id="p3d">[33, 8, 106]</string>
-          <string id="p3d">[33, 0, 128]</string>
-          <string id="p3d">[95, 0, 128]</string>
-          <string id="p3d">[95, 8, 128]</string>
-          <string id="p3d">[33, 8, 128]</string>
+          <string id="p3d">[33, 0, 90]</string>
+          <string id="p3d">[95, 0, 90]</string>
+          <string id="p3d">[95, 10, 90]</string>
+          <string id="p3d">[33, 10, 90]</string>
+          <string id="p3d">[33, 0, 100]</string>
+          <string id="p3d">[95, 0, 100]</string>
+          <string id="p3d">[95, 10, 100]</string>
+          <string id="p3d">[33, 10, 100]</string>
         </list>
         <list id="cube">
           <string id="p3d">[0, 0, 0]</string>
           <string id="p3d">[40, 0, 0]</string>
-          <string id="p3d">[40, 12, 0]</string>
-          <string id="p3d">[0, 12, 0]</string>
-          <string id="p3d">[0, 0, 5]</string>
-          <string id="p3d">[40, 0, 5]</string>
-          <string id="p3d">[40, 12, 5]</string>
-          <string id="p3d">[0, 12, 5]</string>
+          <string id="p3d">[40, 14, 0]</string>
+          <string id="p3d">[0, 14, 0]</string>
+          <string id="p3d">[0, 0, 6]</string>
+          <string id="p3d">[40, 0, 6]</string>
+          <string id="p3d">[40, 14, 6]</string>
+          <string id="p3d">[0, 14, 6]</string>
         </list>
         <list id="cube">
           <string id="p3d">[88, 0, 0]</string>
           <string id="p3d">[128, 0, 0]</string>
-          <string id="p3d">[128, 12, 0]</string>
-          <string id="p3d">[88, 12, 0]</string>
-          <string id="p3d">[88, 0, 5]</string>
-          <string id="p3d">[128, 0, 5]</string>
-          <string id="p3d">[128, 12, 5]</string>
-          <string id="p3d">[88, 12, 5]</string>
+          <string id="p3d">[128, 14, 0]</string>
+          <string id="p3d">[88, 14, 0]</string>
+          <string id="p3d">[88, 0, 6]</string>
+          <string id="p3d">[128, 0, 6]</string>
+          <string id="p3d">[128, 14, 6]</string>
+          <string id="p3d">[88, 14, 6]</string>
         </list>
       </list>
     </list>

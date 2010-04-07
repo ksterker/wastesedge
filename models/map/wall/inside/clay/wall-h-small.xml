@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Data cs="22bb56fb">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">2</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[64, 0, 0]</string>
+          <string id="p3d">[64, 10, 0]</string>
+          <string id="p3d">[0, 10, 0]</string>
+          <string id="p3d">[0, 0, 100]</string>
+          <string id="p3d">[64, 0, 100]</string>
+          <string id="p3d">[64, 10, 100]</string>
+          <string id="p3d">[0, 10, 100]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[64, 0, 0]</string>
+          <string id="p3d">[64, 14, 0]</string>
+          <string id="p3d">[0, 14, 0]</string>
+          <string id="p3d">[0, 0, 4]</string>
+          <string id="p3d">[64, 0, 4]</string>
+          <string id="p3d">[64, 14, 4]</string>
+          <string id="p3d">[0, 14, 4]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/clay/wall-h-small.png</string>
+  </list>
+</Data>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Data cs="f6feb275">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">3</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[70, 0, 0]</string>
+          <string id="p3d">[70, 10, 0]</string>
+          <string id="p3d">[0, 10, 0]</string>
+          <string id="p3d">[0, 0, 100]</string>
+          <string id="p3d">[70, 0, 100]</string>
+          <string id="p3d">[70, 10, 100]</string>
+          <string id="p3d">[0, 10, 100]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[70, 0, 0]</string>
+          <string id="p3d">[70, 14, 0]</string>
+          <string id="p3d">[0, 14, 0]</string>
+          <string id="p3d">[0, 0, 6]</string>
+          <string id="p3d">[70, 0, 6]</string>
+          <string id="p3d">[70, 14, 6]</string>
+          <string id="p3d">[0, 14, 6]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[58, 10, 0]</string>
+          <string id="p3d">[70, 10, 0]</string>
+          <string id="p3d">[70, 53, 0]</string>
+          <string id="p3d">[58, 53, 0]</string>
+          <string id="p3d">[58, 10, 100]</string>
+          <string id="p3d">[70, 10, 100]</string>
+          <string id="p3d">[70, 53, 100]</string>
+          <string id="p3d">[58, 53, 100]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/clay/wall-tr.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <bool id="non_solid">1</bool>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[70, 0, 0]</string>
+          <string id="p3d">[91, 0, 0]</string>
+          <string id="p3d">[91, 48, 0]</string>
+          <string id="p3d">[70, 48, 0]</string>
+          <string id="p3d">[70, 0, 2]</string>
+          <string id="p3d">[91, 0, 2]</string>
+          <string id="p3d">[91, 48, 2]</string>
+          <string id="p3d">[70, 48, 2]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/wall-corner-shadow.png</string>
+  </list>
+</Data>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Data cs="fb0674a3">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 43, 0]</string>
+          <string id="p3d">[70, 43, 0]</string>
+          <string id="p3d">[70, 53, 0]</string>
+          <string id="p3d">[0, 53, 0]</string>
+          <string id="p3d">[0, 43, 100]</string>
+          <string id="p3d">[70, 43, 100]</string>
+          <string id="p3d">[70, 53, 100]</string>
+          <string id="p3d">[0, 53, 100]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/stone/wall-bl.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[12, 0, 0]</string>
+          <string id="p3d">[12, 43, 0]</string>
+          <string id="p3d">[0, 43, 0]</string>
+          <string id="p3d">[0, 0, 100]</string>
+          <string id="p3d">[12, 0, 100]</string>
+          <string id="p3d">[12, 43, 100]</string>
+          <string id="p3d">[0, 43, 100]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/stone/wall-v-bot.png</string>
+  </list>
+</Data>

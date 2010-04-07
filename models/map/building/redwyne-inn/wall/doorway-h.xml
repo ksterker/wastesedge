@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Data cs="828f7bbe">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">3</u_int16>
+        <list id="cube">
+          <string id="p3d">[34, 0, 90]</string>
+          <string id="p3d">[94, 0, 90]</string>
+          <string id="p3d">[94, 10, 90]</string>
+          <string id="p3d">[34, 10, 90]</string>
+          <string id="p3d">[34, 0, 100]</string>
+          <string id="p3d">[94, 0, 100]</string>
+          <string id="p3d">[94, 10, 100]</string>
+          <string id="p3d">[34, 10, 100]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[34, 0, 0]</string>
+          <string id="p3d">[34, 10, 0]</string>
+          <string id="p3d">[0, 10, 0]</string>
+          <string id="p3d">[0, 0, 100]</string>
+          <string id="p3d">[34, 0, 100]</string>
+          <string id="p3d">[34, 10, 100]</string>
+          <string id="p3d">[0, 10, 100]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[94, 0, 0]</string>
+          <string id="p3d">[128, 0, 0]</string>
+          <string id="p3d">[128, 10, 0]</string>
+          <string id="p3d">[94, 10, 0]</string>
+          <string id="p3d">[94, 0, 100]</string>
+          <string id="p3d">[128, 0, 100]</string>
+          <string id="p3d">[128, 10, 100]</string>
+          <string id="p3d">[94, 10, 100]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/building/redwyne-inn/wall/doorway-h.png</string>
+  </list>
+</Data>
