@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Data cs="17193e34">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, -5]</string>
+          <string id="p3d">[128, 0, -5]</string>
+          <string id="p3d">[128, 96, -5]</string>
+          <string id="p3d">[0, 96, -5]</string>
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[128, 0, 0]</string>
+          <string id="p3d">[128, 96, 0]</string>
+          <string id="p3d">[0, 96, 0]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/building/barn/ground/straw-stone-bot.png</string>
+  </list>
+</Data>

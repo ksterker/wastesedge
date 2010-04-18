@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Data cs="d9687ab4">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">3</u_int16>
+        <list id="cube">
+          <string id="p3d">[67, 0, 89]</string>
+          <string id="p3d">[113, 0, 89]</string>
+          <string id="p3d">[113, 10, 89]</string>
+          <string id="p3d">[67, 10, 89]</string>
+          <string id="p3d">[67, 0, 100]</string>
+          <string id="p3d">[113, 0, 100]</string>
+          <string id="p3d">[113, 10, 100]</string>
+          <string id="p3d">[67, 10, 100]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[67, 0, 0]</string>
+          <string id="p3d">[67, 10, 0]</string>
+          <string id="p3d">[0, 10, 0]</string>
+          <string id="p3d">[0, 0, 100]</string>
+          <string id="p3d">[67, 0, 100]</string>
+          <string id="p3d">[67, 10, 100]</string>
+          <string id="p3d">[0, 10, 100]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[113, 0, 0]</string>
+          <string id="p3d">[180, 0, 0]</string>
+          <string id="p3d">[180, 10, 0]</string>
+          <string id="p3d">[113, 10, 0]</string>
+          <string id="p3d">[113, 0, 100]</string>
+          <string id="p3d">[180, 0, 100]</string>
+          <string id="p3d">[180, 10, 100]</string>
+          <string id="p3d">[113, 10, 100]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/stone/doorway-h-2.xml</string>
+  </list>
+</Data>

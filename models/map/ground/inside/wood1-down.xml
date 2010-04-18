@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Data cs="fd13927c">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">2</u_int16>
+        <list id="cube">
+          <string id="p3d">[123, 0, -5]</string>
+          <string id="p3d">[128, 0, -5]</string>
+          <string id="p3d">[128, 58, -5]</string>
+          <string id="p3d">[123, 58, -5]</string>
+          <string id="p3d">[123, 0, 0]</string>
+          <string id="p3d">[128, 0, 0]</string>
+          <string id="p3d">[128, 58, 0]</string>
+          <string id="p3d">[123, 58, 0]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[0, 0, -5]</string>
+          <string id="p3d">[5, 0, -5]</string>
+          <string id="p3d">[5, 58, -5]</string>
+          <string id="p3d">[0, 58, -5]</string>
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[5, 0, 0]</string>
+          <string id="p3d">[5, 58, 0]</string>
+          <string id="p3d">[0, 58, 0]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/ground/inside/wood1-down-a.xml</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 58, -5]</string>
+          <string id="p3d">[128, 58, -5]</string>
+          <string id="p3d">[128, 96, -5]</string>
+          <string id="p3d">[0, 96, -5]</string>
+          <string id="p3d">[0, 58, 0]</string>
+          <string id="p3d">[128, 58, 0]</string>
+          <string id="p3d">[128, 96, 0]</string>
+          <string id="p3d">[0, 96, 0]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/ground/inside/wood1-down-b.png</string>
+  </list>
+</Data>

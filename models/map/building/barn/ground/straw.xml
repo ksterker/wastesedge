@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Data cs="c0ba3974">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, -5]</string>
+          <string id="p3d">[64, 0, -5]</string>
+          <string id="p3d">[64, 48, -5]</string>
+          <string id="p3d">[0, 48, -5]</string>
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[64, 0, 0]</string>
+          <string id="p3d">[64, 48, 0]</string>
+          <string id="p3d">[0, 48, 0]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/building/barn/ground/straw.png</string>
+  </list>
+</Data>

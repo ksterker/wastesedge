@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Data cs="f72b75c1">
+<Data cs="a401b472">
   <list id="model">
     <list id="default">
       <list id="shape">
@@ -35,5 +35,24 @@
       </list>
     </list>
     <string id="sprite">gfx/map/wall/inside/stone/wall-v-bot.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <bool id="non_solid">1</bool>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[70, 0, 0]</string>
+          <string id="p3d">[91, 0, 0]</string>
+          <string id="p3d">[91, 48, 0]</string>
+          <string id="p3d">[70, 48, 0]</string>
+          <string id="p3d">[70, 0, 2]</string>
+          <string id="p3d">[91, 0, 2]</string>
+          <string id="p3d">[91, 48, 2]</string>
+          <string id="p3d">[70, 48, 2]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/wall-corner-shadow.png</string>
   </list>
 </Data>

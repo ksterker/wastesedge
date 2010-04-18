@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Data cs="b5f6b5aa">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">3</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[12, 0, 0]</string>
+          <string id="p3d">[12, 24, 0]</string>
+          <string id="p3d">[0, 24, 0]</string>
+          <string id="p3d">[0, 0, 100]</string>
+          <string id="p3d">[12, 0, 100]</string>
+          <string id="p3d">[12, 24, 100]</string>
+          <string id="p3d">[0, 24, 100]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[0, 72, 0]</string>
+          <string id="p3d">[12, 72, 0]</string>
+          <string id="p3d">[12, 96, 0]</string>
+          <string id="p3d">[0, 96, 0]</string>
+          <string id="p3d">[0, 72, 100]</string>
+          <string id="p3d">[12, 72, 100]</string>
+          <string id="p3d">[12, 96, 100]</string>
+          <string id="p3d">[0, 96, 100]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[0, 24, 90]</string>
+          <string id="p3d">[12, 24, 90]</string>
+          <string id="p3d">[12, 72, 90]</string>
+          <string id="p3d">[0, 72, 90]</string>
+          <string id="p3d">[0, 24, 100]</string>
+          <string id="p3d">[12, 24, 100]</string>
+          <string id="p3d">[12, 72, 100]</string>
+          <string id="p3d">[0, 72, 100]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/stone/doorway-v.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <bool id="non_solid">1</bool>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[12, 0, 0]</string>
+          <string id="p3d">[33, 0, 0]</string>
+          <string id="p3d">[33, 96, 0]</string>
+          <string id="p3d">[12, 96, 0]</string>
+          <string id="p3d">[12, 0, 2]</string>
+          <string id="p3d">[33, 0, 2]</string>
+          <string id="p3d">[33, 96, 2]</string>
+          <string id="p3d">[12, 96, 2]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/doorway-v-shadow.png</string>
+  </list>
+</Data>
