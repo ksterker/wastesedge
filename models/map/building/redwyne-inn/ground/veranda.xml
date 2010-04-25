@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Data cs="df1c3cff">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[128, 0, 0]</string>
+          <string id="p3d">[128, 44, 0]</string>
+          <string id="p3d">[0, 44, 0]</string>
+          <string id="p3d">[0, 0, 4]</string>
+          <string id="p3d">[128, 0, 4]</string>
+          <string id="p3d">[128, 44, 4]</string>
+          <string id="p3d">[0, 44, 4]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/building/redwyne-inn/ground/veranda.png</string>
+  </list>
+</Data>
