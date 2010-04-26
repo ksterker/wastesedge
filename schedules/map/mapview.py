@@ -36,5 +36,5 @@ class mapview (object):
         area = world.area_manager.get_map ()
         char = area.get_character (char_name)
         view.center_on (char.x() + char.length()/2, char.y() + char.width()/2)
-        if char.ground_pos() != view.get_z():
+        if char.ground_pos() + char.height()/2 != view.get_z():
             view.scroll_to_z (char.ground_pos() + char.height()/2, 2) # abs(int(character.vz())))
