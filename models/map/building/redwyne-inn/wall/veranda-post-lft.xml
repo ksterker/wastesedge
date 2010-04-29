@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Data cs="a1e65e0a">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">2</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[14, 0, 0]</string>
+          <string id="p3d">[14, 10, 0]</string>
+          <string id="p3d">[0, 10, 0]</string>
+          <string id="p3d">[0, 0, 70]</string>
+          <string id="p3d">[14, 0, 70]</string>
+          <string id="p3d">[14, 10, 70]</string>
+          <string id="p3d">[0, 10, 70]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[0, 0, 70]</string>
+          <string id="p3d">[14, 0, 70]</string>
+          <string id="p3d">[14, 10, 70]</string>
+          <string id="p3d">[0, 10, 70]</string>
+          <string id="p3d">[0, 0, 100]</string>
+          <string id="p3d">[43, 0, 100]</string>
+          <string id="p3d">[43, 10, 100]</string>
+          <string id="p3d">[0, 10, 100]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/building/redwyne-inn/wall/veranda-post-lft.png</string>
+  </list>
+</Data>

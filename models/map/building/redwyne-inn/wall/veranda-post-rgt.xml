@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Data cs="6dbf5f19">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">2</u_int16>
+        <list id="cube">
+          <string id="p3d">[29, 0, 0]</string>
+          <string id="p3d">[43, 0, 0]</string>
+          <string id="p3d">[43, 10, 0]</string>
+          <string id="p3d">[29, 10, 0]</string>
+          <string id="p3d">[29, 0, 70]</string>
+          <string id="p3d">[43, 0, 70]</string>
+          <string id="p3d">[43, 10, 70]</string>
+          <string id="p3d">[29, 10, 70]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[29, 0, 70]</string>
+          <string id="p3d">[43, 0, 70]</string>
+          <string id="p3d">[43, 10, 70]</string>
+          <string id="p3d">[29, 10, 70]</string>
+          <string id="p3d">[0, 0, 100]</string>
+          <string id="p3d">[43, 0, 100]</string>
+          <string id="p3d">[43, 10, 100]</string>
+          <string id="p3d">[0, 10, 100]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/building/redwyne-inn/wall/veranda-post-rgt.png</string>
+  </list>
+</Data>

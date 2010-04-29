@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
-<Data cs="d43c3ddb">
+<Data cs="880a3ee9">
   <list id="model">
     <list id="default">
       <list id="shape">
         <u_int16 id="num">1</u_int16>
         <list id="cube">
-          <string id="p3d">[0, 0, -5]</string>
-          <string id="p3d">[128, 0, -5]</string>
-          <string id="p3d">[128, 48, -5]</string>
-          <string id="p3d">[0, 48, -5]</string>
           <string id="p3d">[0, 0, 0]</string>
           <string id="p3d">[128, 0, 0]</string>
           <string id="p3d">[128, 48, 0]</string>
           <string id="p3d">[0, 48, 0]</string>
+          <string id="p3d">[0, 0, 12]</string>
+          <string id="p3d">[128, 0, 12]</string>
+          <string id="p3d">[128, 48, 1]</string>
+          <string id="p3d">[0, 48, 1]</string>
         </list>
       </list>
     </list>
-    <string id="sprite">gfx/map/building/redwyne-inn/ground/veranda.png</string>
+    <string id="sprite">gfx/map/building/redwyne-inn/wall/veranda-roof.png</string>
   </list>
 </Data>

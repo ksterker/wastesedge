@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Data cs="866a5ad5">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">2</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 8, 0]</string>
+          <string id="p3d">[32, 0, 0]</string>
+          <string id="p3d">[32, 24, 0]</string>
+          <string id="p3d">[0, 16, 0]</string>
+          <string id="p3d">[0, 8, 56]</string>
+          <string id="p3d">[32, 0, 56]</string>
+          <string id="p3d">[32, 24, 56]</string>
+          <string id="p3d">[0, 16, 56]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[32, 0, 0]</string>
+          <string id="p3d">[64, 8, 0]</string>
+          <string id="p3d">[64, 16, 0]</string>
+          <string id="p3d">[32, 24, 0]</string>
+          <string id="p3d">[32, 0, 56]</string>
+          <string id="p3d">[64, 8, 56]</string>
+          <string id="p3d">[64, 16, 56]</string>
+          <string id="p3d">[32, 24, 56]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/decoration/inside/furniture/barrel.png</string>
+  </list>
+</Data>
