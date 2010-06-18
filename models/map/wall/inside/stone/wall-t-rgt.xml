@@ -1,28 +1,18 @@
 <?xml version="1.0"?>
-<Data cs="b70c95c9">
+<Data cs="8333eeeb">
   <list id="model">
     <list id="default">
       <list id="shape">
-        <u_int16 id="num">2</u_int16>
+        <u_int16 id="num">1</u_int16>
         <list id="cube">
           <string id="p3d">[0, 43, 0]</string>
-          <string id="p3d">[58, 43, 0]</string>
-          <string id="p3d">[58, 53, 0]</string>
+          <string id="p3d">[70, 43, 0]</string>
+          <string id="p3d">[70, 53, 0]</string>
           <string id="p3d">[0, 53, 0]</string>
           <string id="p3d">[0, 43, 100]</string>
-          <string id="p3d">[58, 43, 100]</string>
-          <string id="p3d">[58, 53, 100]</string>
-          <string id="p3d">[0, 53, 100]</string>
-        </list>
-        <list id="cube">
-          <string id="p3d">[58, 43, 0]</string>
-          <string id="p3d">[70, 43, 0]</string>
-          <string id="p3d">[70, 96, 0]</string>
-          <string id="p3d">[58, 96, 0]</string>
-          <string id="p3d">[58, 43, 100]</string>
           <string id="p3d">[70, 43, 100]</string>
-          <string id="p3d">[70, 96, 100]</string>
-          <string id="p3d">[58, 96, 100]</string>
+          <string id="p3d">[70, 53, 100]</string>
+          <string id="p3d">[0, 53, 100]</string>
         </list>
       </list>
     </list>
@@ -45,5 +35,42 @@
       </list>
     </list>
     <string id="sprite">gfx/map/wall/inside/stone/wall-v-bot.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <bool id="non_solid">1</bool>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[70, 0, 0]</string>
+          <string id="p3d">[91, 0, 0]</string>
+          <string id="p3d">[91, 96, 0]</string>
+          <string id="p3d">[70, 96, 0]</string>
+          <string id="p3d">[70, 0, 2]</string>
+          <string id="p3d">[91, 0, 2]</string>
+          <string id="p3d">[91, 96, 2]</string>
+          <string id="p3d">[70, 96, 2]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/wall-v-shadow.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[58, 53, 0]</string>
+          <string id="p3d">[70, 53, 0]</string>
+          <string id="p3d">[70, 96, 0]</string>
+          <string id="p3d">[58, 96, 0]</string>
+          <string id="p3d">[58, 53, 100]</string>
+          <string id="p3d">[70, 53, 100]</string>
+          <string id="p3d">[70, 96, 100]</string>
+          <string id="p3d">[58, 96, 100]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx/map/wall/inside/stone/wall-v-top.png</string>
   </list>
 </Data>
