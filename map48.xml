@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Data cs="c1c77425">
+  <list id="objects">
+    <list id="0">
+      <s_int8 id="type">1</s_int8>
+      <string id="model">models48/map/wall/outside/white+plaster/h-wall-front.xml</string>
+    </list>
+    <list id="1">
+      <s_int8 id="type">1</s_int8>
+      <string id="model">models48/map/wall/outside/white+plaster/bl-wall-back.xml</string>
+    </list>
+  </list>
+  <list id="actions"/>
+  <list id="entities">
+    <list id="0">
+      <list id="anonym">
+        <string id="p3d">[192, 324, 0]</string>
+        <string id="p3d">[240, 324, 0]</string>
+        <string id="p3d">[288, 324, 0]</string>
+        <string id="p3d">[336, 324, 0]</string>
+        <string id="p3d">[384, 324, 0]</string>
+        <string id="p3d">[432, 324, 0]</string>
+      </list>
+    </list>
+    <list id="1">
+      <list id="anonym">
+        <string id="p3d">[164, 309, 0]</string>
+      </list>
+    </list>
+  </list>
+  <list id="states">
+    <list id="0">
+      <string id="state">default</string>
+    </list>
+    <list id="1">
+      <string id="state">default</string>
+    </list>
+  </list>
+  <list id="zones"/>
+</Data>
