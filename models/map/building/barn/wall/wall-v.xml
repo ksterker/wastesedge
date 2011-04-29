@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Data cs="9b075f5">
+<Data cs="a9d8764f">
   <list id="model">
     <list id="default">
       <list id="shape">
@@ -7,12 +7,12 @@
         <list id="cube">
           <string id="p3d">[0, 0, 0]</string>
           <string id="p3d">[12, 0, 0]</string>
-          <string id="p3d">[12, 96, 0]</string>
           <string id="p3d">[0, 96, 0]</string>
+          <string id="p3d">[12, 96, 0]</string>
           <string id="p3d">[0, 0, 100]</string>
           <string id="p3d">[12, 0, 100]</string>
-          <string id="p3d">[12, 96, 100]</string>
           <string id="p3d">[0, 96, 100]</string>
+          <string id="p3d">[12, 96, 100]</string>
         </list>
       </list>
     </list>
@@ -26,12 +26,12 @@
         <list id="cube">
           <string id="p3d">[12, 0, 0]</string>
           <string id="p3d">[33, 0, 0]</string>
-          <string id="p3d">[33, 96, 0]</string>
           <string id="p3d">[12, 96, 0]</string>
+          <string id="p3d">[33, 96, 0]</string>
           <string id="p3d">[12, 0, 2]</string>
           <string id="p3d">[33, 0, 2]</string>
-          <string id="p3d">[33, 96, 2]</string>
           <string id="p3d">[12, 96, 2]</string>
+          <string id="p3d">[33, 96, 2]</string>
         </list>
       </list>
     </list>

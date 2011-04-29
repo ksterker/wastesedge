@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
-<Data cs="6d2f5c4c">
+<Data cs="16f65c4c">
   <list id="model">
     <list id="default">
       <list id="shape">
         <u_int16 id="num">2</u_int16>
         <list id="cube">
-          <string id="p3d">[8, 15, 0]</string>
-          <string id="p3d">[28, 15, 0]</string>
-          <string id="p3d">[28, 21, 0]</string>
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[8, 0, 0]</string>
+          <string id="p3d">[0, 21, 0]</string>
           <string id="p3d">[8, 21, 0]</string>
-          <string id="p3d">[8, 15, 96]</string>
-          <string id="p3d">[28, 15, 96]</string>
-          <string id="p3d">[28, 21, 96]</string>
+          <string id="p3d">[0, 0, 96]</string>
+          <string id="p3d">[8, 0, 96]</string>
+          <string id="p3d">[0, 21, 96]</string>
           <string id="p3d">[8, 21, 96]</string>
         </list>
         <list id="cube">
-          <string id="p3d">[0, 0, 0]</string>
-          <string id="p3d">[8, 0, 0]</string>
+          <string id="p3d">[8, 15, 0]</string>
+          <string id="p3d">[28, 15, 0]</string>
           <string id="p3d">[8, 21, 0]</string>
-          <string id="p3d">[0, 21, 0]</string>
-          <string id="p3d">[0, 0, 96]</string>
-          <string id="p3d">[8, 0, 96]</string>
+          <string id="p3d">[28, 21, 0]</string>
+          <string id="p3d">[8, 15, 96]</string>
+          <string id="p3d">[28, 15, 96]</string>
           <string id="p3d">[8, 21, 96]</string>
-          <string id="p3d">[0, 21, 96]</string>
+          <string id="p3d">[28, 21, 96]</string>
         </list>
       </list>
     </list>
