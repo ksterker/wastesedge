@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<Data>
+  <list id="default">
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_top_f01.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">450000</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_top_f02.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">450000</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_top_f03.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">450000</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_top_f04.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">450000</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_top_f05.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">450000</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_top_f06.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">450000</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_top_f07.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">450000</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_top_f08.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">450000</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_top_f09.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">450000</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_top_f10.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">450000</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_top_f11.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">450000</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_top_f12.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">450000</u_int32>
+    </list>
+  </list>
+</Data>
+

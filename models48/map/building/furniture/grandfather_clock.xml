@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Data cs="749995c3">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <string id="offset">[0, 21, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[36, 0, 0]</string>
+          <string id="p3d">[0, 21, 0]</string>
+          <string id="p3d">[36, 21, 0]</string>
+          <string id="p3d">[0, 0, 45]</string>
+          <string id="p3d">[36, 0, 45]</string>
+          <string id="p3d">[0, 21, 45]</string>
+          <string id="p3d">[36, 21, 45]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/furniture/grandfather_clock/grandfather_clock_bottom.xml</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 45]</string>
+          <string id="p3d">[36, 0, 45]</string>
+          <string id="p3d">[0, 21, 45]</string>
+          <string id="p3d">[36, 21, 45]</string>
+          <string id="p3d">[0, 0, 65]</string>
+          <string id="p3d">[36, 0, 65]</string>
+          <string id="p3d">[0, 21, 65]</string>
+          <string id="p3d">[36, 21, 65]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/furniture/grandfather_clock/grandfather_clock_top.xml</string>
+  </list>
+</Data>

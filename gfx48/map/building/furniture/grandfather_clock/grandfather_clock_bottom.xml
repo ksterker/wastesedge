@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Data>
+  <list id="default">
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_bottom_f1.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">500</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_bottom_f2.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_bottom_f3.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">500</u_int32>
+    </list>
+    <list id="gfx48/map/building/furniture/grandfather_clock/grandfather_clock_bottom_f2.png">
+      <bool id="mask">0</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+  </list>
+</Data>
+
