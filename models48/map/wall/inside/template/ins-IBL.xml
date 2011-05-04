@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Data cs="efcc76bf">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[4, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[4, 3, 0]</string>
+          <string id="p3d">[24, 3, 0]</string>
+          <string id="p3d">[4, 0, 88]</string>
+          <string id="p3d">[24, 0, 88]</string>
+          <string id="p3d">[4, 3, 88]</string>
+          <string id="p3d">[24, 3, 88]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/wall/inside/template/ins-IBL_back.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[4, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[4, 18, 0]</string>
+          <string id="p3d">[0, 0, 88]</string>
+          <string id="p3d">[4, 0, 88]</string>
+          <string id="p3d">[0, 18, 88]</string>
+          <string id="p3d">[4, 18, 88]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/wall/inside/template/ins-IBL_left.png</string>
+  </list>
+</Data>
