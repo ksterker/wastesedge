@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Data cs="5b8a77f9">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[4, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[4, 3, 0]</string>
+          <string id="p3d">[24, 3, 0]</string>
+          <string id="p3d">[4, 0, 96]</string>
+          <string id="p3d">[24, 0, 96]</string>
+          <string id="p3d">[4, 3, 96]</string>
+          <string id="p3d">[24, 3, 96]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/wall/outside/template/out-OFR_back.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[4, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[4, 18, 0]</string>
+          <string id="p3d">[0, 0, 96]</string>
+          <string id="p3d">[4, 0, 96]</string>
+          <string id="p3d">[0, 18, 96]</string>
+          <string id="p3d">[4, 18, 96]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/wall/outside/template/out-OFR_left.png</string>
+  </list>
+</Data>
