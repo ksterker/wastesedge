@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Data cs="16fa78f8">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 3, 0]</string>
+          <string id="p3d">[24, 3, 0]</string>
+          <string id="p3d">[0, 0, 88]</string>
+          <string id="p3d">[24, 0, 88]</string>
+          <string id="p3d">[0, 3, 88]</string>
+          <string id="p3d">[24, 3, 88]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/wall/inside/plaster/ins-OFL_back.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[28, 0, 0]</string>
+          <string id="p3d">[24, 21, 0]</string>
+          <string id="p3d">[28, 21, 0]</string>
+          <string id="p3d">[24, 0, 88]</string>
+          <string id="p3d">[28, 0, 88]</string>
+          <string id="p3d">[24, 21, 88]</string>
+          <string id="p3d">[28, 21, 88]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/wall/inside/plaster/ins-OFL_right.png</string>
+  </list>
+</Data>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Data cs="f0cd78d8">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[20, 0, 0]</string>
+          <string id="p3d">[0, 3, 0]</string>
+          <string id="p3d">[20, 3, 0]</string>
+          <string id="p3d">[0, 0, 88]</string>
+          <string id="p3d">[20, 0, 88]</string>
+          <string id="p3d">[0, 3, 88]</string>
+          <string id="p3d">[20, 3, 88]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/wall/inside/plaster/ins-IBR_back.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[20, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[20, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[20, 0, 88]</string>
+          <string id="p3d">[24, 0, 88]</string>
+          <string id="p3d">[20, 18, 88]</string>
+          <string id="p3d">[24, 18, 88]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/wall/inside/plaster/ins-IBR_right.png</string>
+  </list>
+</Data>
