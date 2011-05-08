@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Data cs="29f87a3f">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[4, 18, 0]</string>
+          <string id="p3d">[28, 18, 0]</string>
+          <string id="p3d">[4, 21, 0]</string>
+          <string id="p3d">[28, 21, 0]</string>
+          <string id="p3d">[4, 18, 96]</string>
+          <string id="p3d">[28, 18, 96]</string>
+          <string id="p3d">[4, 21, 96]</string>
+          <string id="p3d">[28, 21, 96]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/wall/outside/white/out-IFL_front.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[4, 0, 0]</string>
+          <string id="p3d">[0, 21, 0]</string>
+          <string id="p3d">[4, 21, 0]</string>
+          <string id="p3d">[0, 0, 96]</string>
+          <string id="p3d">[4, 0, 96]</string>
+          <string id="p3d">[0, 21, 96]</string>
+          <string id="p3d">[4, 21, 96]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/wall/outside/white/out-IFL_left.png</string>
+  </list>
+</Data>

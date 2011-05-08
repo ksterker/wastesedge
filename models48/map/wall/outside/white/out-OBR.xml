@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Data cs="35797a63">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[4, 15, 0]</string>
+          <string id="p3d">[24, 15, 0]</string>
+          <string id="p3d">[4, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[4, 15, 96]</string>
+          <string id="p3d">[24, 15, 96]</string>
+          <string id="p3d">[4, 18, 96]</string>
+          <string id="p3d">[24, 18, 96]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/wall/outside/white/out-OBR_front.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[4, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[4, 18, 0]</string>
+          <string id="p3d">[0, 0, 96]</string>
+          <string id="p3d">[4, 0, 96]</string>
+          <string id="p3d">[0, 18, 96]</string>
+          <string id="p3d">[4, 18, 96]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/wall/outside/white/out-OBR_left.png</string>
+  </list>
+</Data>
