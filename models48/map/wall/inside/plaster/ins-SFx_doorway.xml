@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Data cs="cac7eac">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <string id="offset">[0, 64, 0]</string>
+        <u_int16 id="num">3</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 3, 0]</string>
+          <string id="p3d">[24, 3, 0]</string>
+          <string id="p3d">[0, 0, 88]</string>
+          <string id="p3d">[24, 0, 88]</string>
+          <string id="p3d">[0, 3, 88]</string>
+          <string id="p3d">[24, 3, 88]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[72, 0, 0]</string>
+          <string id="p3d">[96, 0, 0]</string>
+          <string id="p3d">[72, 3, 0]</string>
+          <string id="p3d">[96, 3, 0]</string>
+          <string id="p3d">[72, 0, 88]</string>
+          <string id="p3d">[96, 0, 88]</string>
+          <string id="p3d">[72, 3, 88]</string>
+          <string id="p3d">[96, 3, 88]</string>
+        </list>
+        <list id="cube">
+          <string id="p3d">[24, -64, 0]</string>
+          <string id="p3d">[72, -64, 0]</string>
+          <string id="p3d">[24, -61, 0]</string>
+          <string id="p3d">[72, -61, 0]</string>
+          <string id="p3d">[24, -64, 24]</string>
+          <string id="p3d">[72, -64, 24]</string>
+          <string id="p3d">[24, -61, 24]</string>
+          <string id="p3d">[72, -61, 24]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/wall/inside/plaster/ins-SFx_doorway.png</string>
+  </list>
+</Data>
