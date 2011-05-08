@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Data cs="67233c6f">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[48, 0, 0]</string>
+          <string id="p3d">[0, 72, 0]</string>
+          <string id="p3d">[48, 72, 0]</string>
+          <string id="p3d">[0, 0, 8]</string>
+          <string id="p3d">[48, 0, 8]</string>
+          <string id="p3d">[0, 72, 8]</string>
+          <string id="p3d">[48, 72, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/ground/inside/wood/tile_alt-double.png</string>
+  </list>
+</Data>
