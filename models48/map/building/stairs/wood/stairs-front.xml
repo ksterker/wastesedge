@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<Data cs="d54b0863">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[48, 0, 0]</string>
+          <string id="p3d">[0, 12, 0]</string>
+          <string id="p3d">[48, 12, 0]</string>
+          <string id="p3d">[0, 0, 8]</string>
+          <string id="p3d">[48, 0, 8]</string>
+          <string id="p3d">[0, 12, 8]</string>
+          <string id="p3d">[48, 12, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-front_1.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, -12, 8]</string>
+          <string id="p3d">[48, -12, 8]</string>
+          <string id="p3d">[0, 0, 8]</string>
+          <string id="p3d">[48, 0, 8]</string>
+          <string id="p3d">[0, -12, 16]</string>
+          <string id="p3d">[48, -12, 16]</string>
+          <string id="p3d">[0, 0, 16]</string>
+          <string id="p3d">[48, 0, 16]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-front_2.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, -24, 16]</string>
+          <string id="p3d">[48, -24, 16]</string>
+          <string id="p3d">[0, -12, 16]</string>
+          <string id="p3d">[48, -12, 16]</string>
+          <string id="p3d">[0, -24, 24]</string>
+          <string id="p3d">[48, -24, 24]</string>
+          <string id="p3d">[0, -12, 24]</string>
+          <string id="p3d">[48, -12, 24]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-front_3.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, -36, 24]</string>
+          <string id="p3d">[48, -36, 24]</string>
+          <string id="p3d">[0, -24, 24]</string>
+          <string id="p3d">[48, -24, 24]</string>
+          <string id="p3d">[0, -36, 32]</string>
+          <string id="p3d">[48, -36, 32]</string>
+          <string id="p3d">[0, -24, 32]</string>
+          <string id="p3d">[48, -24, 32]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-front_4.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, -48, 32]</string>
+          <string id="p3d">[48, -48, 32]</string>
+          <string id="p3d">[0, -36, 32]</string>
+          <string id="p3d">[48, -36, 32]</string>
+          <string id="p3d">[0, -48, 40]</string>
+          <string id="p3d">[48, -48, 40]</string>
+          <string id="p3d">[0, -36, 40]</string>
+          <string id="p3d">[48, -36, 40]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-front_5.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, -60, 40]</string>
+          <string id="p3d">[48, -60, 40]</string>
+          <string id="p3d">[0, -48, 40]</string>
+          <string id="p3d">[48, -48, 40]</string>
+          <string id="p3d">[0, -60, 48]</string>
+          <string id="p3d">[48, -60, 48]</string>
+          <string id="p3d">[0, -48, 48]</string>
+          <string id="p3d">[48, -48, 48]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-front_6.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, -72, 48]</string>
+          <string id="p3d">[48, -72, 48]</string>
+          <string id="p3d">[0, -60, 48]</string>
+          <string id="p3d">[48, -60, 48]</string>
+          <string id="p3d">[0, -72, 56]</string>
+          <string id="p3d">[48, -72, 56]</string>
+          <string id="p3d">[0, -60, 56]</string>
+          <string id="p3d">[48, -60, 56]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-front_7.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, -84, 56]</string>
+          <string id="p3d">[48, -84, 56]</string>
+          <string id="p3d">[0, -72, 56]</string>
+          <string id="p3d">[48, -72, 56]</string>
+          <string id="p3d">[0, -84, 64]</string>
+          <string id="p3d">[48, -84, 64]</string>
+          <string id="p3d">[0, -72, 64]</string>
+          <string id="p3d">[48, -72, 64]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-front_8.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, -96, 64]</string>
+          <string id="p3d">[48, -96, 64]</string>
+          <string id="p3d">[0, -84, 64]</string>
+          <string id="p3d">[48, -84, 64]</string>
+          <string id="p3d">[0, -96, 72]</string>
+          <string id="p3d">[48, -96, 72]</string>
+          <string id="p3d">[0, -84, 72]</string>
+          <string id="p3d">[48, -84, 72]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-front_9.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, -108, 72]</string>
+          <string id="p3d">[48, -108, 72]</string>
+          <string id="p3d">[0, -96, 72]</string>
+          <string id="p3d">[48, -96, 72]</string>
+          <string id="p3d">[0, -108, 80]</string>
+          <string id="p3d">[48, -108, 80]</string>
+          <string id="p3d">[0, -96, 80]</string>
+          <string id="p3d">[48, -96, 80]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-front_10.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, -120, 80]</string>
+          <string id="p3d">[48, -120, 80]</string>
+          <string id="p3d">[0, -108, 80]</string>
+          <string id="p3d">[48, -108, 80]</string>
+          <string id="p3d">[0, -120, 88]</string>
+          <string id="p3d">[48, -120, 88]</string>
+          <string id="p3d">[0, -108, 88]</string>
+          <string id="p3d">[48, -108, 88]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-front_11.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, -132, 88]</string>
+          <string id="p3d">[48, -132, 88]</string>
+          <string id="p3d">[0, -120, 88]</string>
+          <string id="p3d">[48, -120, 88]</string>
+          <string id="p3d">[0, -132, 96]</string>
+          <string id="p3d">[48, -132, 96]</string>
+          <string id="p3d">[0, -120, 96]</string>
+          <string id="p3d">[48, -120, 96]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-front_12.png</string>
+  </list>
+</Data>

@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<Data cs="b5a7f9f8">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[16, 0, 0]</string>
+          <string id="p3d">[0, 36, 0]</string>
+          <string id="p3d">[16, 36, 0]</string>
+          <string id="p3d">[0, 0, 8]</string>
+          <string id="p3d">[16, 0, 8]</string>
+          <string id="p3d">[0, 36, 8]</string>
+          <string id="p3d">[16, 36, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-side_1.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[16, -8, 0]</string>
+          <string id="p3d">[32, -8, 0]</string>
+          <string id="p3d">[16, 28, 0]</string>
+          <string id="p3d">[32, 28, 0]</string>
+          <string id="p3d">[16, -8, 8]</string>
+          <string id="p3d">[32, -8, 8]</string>
+          <string id="p3d">[16, 28, 8]</string>
+          <string id="p3d">[32, 28, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-side_2.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[32, -16, 0]</string>
+          <string id="p3d">[48, -16, 0]</string>
+          <string id="p3d">[32, 20, 0]</string>
+          <string id="p3d">[48, 20, 0]</string>
+          <string id="p3d">[32, -16, 8]</string>
+          <string id="p3d">[48, -16, 8]</string>
+          <string id="p3d">[32, 20, 8]</string>
+          <string id="p3d">[48, 20, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-side_3.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[48, -24, 0]</string>
+          <string id="p3d">[64, -24, 0]</string>
+          <string id="p3d">[48, 12, 0]</string>
+          <string id="p3d">[64, 12, 0]</string>
+          <string id="p3d">[48, -24, 8]</string>
+          <string id="p3d">[64, -24, 8]</string>
+          <string id="p3d">[48, 12, 8]</string>
+          <string id="p3d">[64, 12, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-side_4.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[64, -32, 0]</string>
+          <string id="p3d">[80, -32, 0]</string>
+          <string id="p3d">[64, 4, 0]</string>
+          <string id="p3d">[80, 4, 0]</string>
+          <string id="p3d">[64, -32, 8]</string>
+          <string id="p3d">[80, -32, 8]</string>
+          <string id="p3d">[64, 4, 8]</string>
+          <string id="p3d">[80, 4, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-side_5.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[80, -40, 0]</string>
+          <string id="p3d">[96, -40, 0]</string>
+          <string id="p3d">[80, -4, 0]</string>
+          <string id="p3d">[96, -4, 0]</string>
+          <string id="p3d">[80, -40, 8]</string>
+          <string id="p3d">[96, -40, 8]</string>
+          <string id="p3d">[80, -4, 8]</string>
+          <string id="p3d">[96, -4, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-side_6.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[96, -48, 0]</string>
+          <string id="p3d">[112, -48, 0]</string>
+          <string id="p3d">[96, -12, 0]</string>
+          <string id="p3d">[112, -12, 0]</string>
+          <string id="p3d">[96, -48, 8]</string>
+          <string id="p3d">[112, -48, 8]</string>
+          <string id="p3d">[96, -12, 8]</string>
+          <string id="p3d">[112, -12, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-side_7.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[112, -56, 0]</string>
+          <string id="p3d">[128, -56, 0]</string>
+          <string id="p3d">[112, -20, 0]</string>
+          <string id="p3d">[128, -20, 0]</string>
+          <string id="p3d">[112, -56, 8]</string>
+          <string id="p3d">[128, -56, 8]</string>
+          <string id="p3d">[112, -20, 8]</string>
+          <string id="p3d">[128, -20, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-side_8.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[128, -64, 0]</string>
+          <string id="p3d">[144, -64, 0]</string>
+          <string id="p3d">[128, -28, 0]</string>
+          <string id="p3d">[144, -28, 0]</string>
+          <string id="p3d">[128, -64, 8]</string>
+          <string id="p3d">[144, -64, 8]</string>
+          <string id="p3d">[128, -28, 8]</string>
+          <string id="p3d">[144, -28, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-side_9.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[144, -72, 0]</string>
+          <string id="p3d">[160, -72, 0]</string>
+          <string id="p3d">[144, -36, 0]</string>
+          <string id="p3d">[160, -36, 0]</string>
+          <string id="p3d">[144, -72, 8]</string>
+          <string id="p3d">[160, -72, 8]</string>
+          <string id="p3d">[144, -36, 8]</string>
+          <string id="p3d">[160, -36, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-side_10.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[160, -80, 0]</string>
+          <string id="p3d">[176, -80, 0]</string>
+          <string id="p3d">[160, -44, 0]</string>
+          <string id="p3d">[176, -44, 0]</string>
+          <string id="p3d">[160, -80, 8]</string>
+          <string id="p3d">[176, -80, 8]</string>
+          <string id="p3d">[160, -44, 8]</string>
+          <string id="p3d">[176, -44, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-side_11.png</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[176, -88, 0]</string>
+          <string id="p3d">[192, -88, 0]</string>
+          <string id="p3d">[176, -52, 0]</string>
+          <string id="p3d">[192, -52, 0]</string>
+          <string id="p3d">[176, -88, 8]</string>
+          <string id="p3d">[192, -88, 8]</string>
+          <string id="p3d">[176, -52, 8]</string>
+          <string id="p3d">[192, -52, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-side_12.png</string>
+  </list>
+</Data>
