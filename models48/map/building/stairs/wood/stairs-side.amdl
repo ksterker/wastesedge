@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Data cs="b5a7f9f8">
+<Data cs="6f43f77c">
   <list id="model">
     <list id="default">
       <list id="shape">
@@ -23,14 +23,14 @@
       <list id="shape">
         <u_int16 id="num">1</u_int16>
         <list id="cube">
-          <string id="p3d">[16, -8, 0]</string>
-          <string id="p3d">[32, -8, 0]</string>
-          <string id="p3d">[16, 28, 0]</string>
-          <string id="p3d">[32, 28, 0]</string>
-          <string id="p3d">[16, -8, 8]</string>
-          <string id="p3d">[32, -8, 8]</string>
-          <string id="p3d">[16, 28, 8]</string>
-          <string id="p3d">[32, 28, 8]</string>
+          <string id="p3d">[16, 0, 8]</string>
+          <string id="p3d">[32, 0, 8]</string>
+          <string id="p3d">[16, 36, 8]</string>
+          <string id="p3d">[32, 36, 8]</string>
+          <string id="p3d">[16, 0, 16]</string>
+          <string id="p3d">[32, 0, 16]</string>
+          <string id="p3d">[16, 36, 16]</string>
+          <string id="p3d">[32, 36, 16]</string>
         </list>
       </list>
     </list>
@@ -41,14 +41,14 @@
       <list id="shape">
         <u_int16 id="num">1</u_int16>
         <list id="cube">
-          <string id="p3d">[32, -16, 0]</string>
-          <string id="p3d">[48, -16, 0]</string>
-          <string id="p3d">[32, 20, 0]</string>
-          <string id="p3d">[48, 20, 0]</string>
-          <string id="p3d">[32, -16, 8]</string>
-          <string id="p3d">[48, -16, 8]</string>
-          <string id="p3d">[32, 20, 8]</string>
-          <string id="p3d">[48, 20, 8]</string>
+          <string id="p3d">[32, 0, 16]</string>
+          <string id="p3d">[48, 0, 16]</string>
+          <string id="p3d">[32, 36, 16]</string>
+          <string id="p3d">[48, 36, 16]</string>
+          <string id="p3d">[32, 0, 24]</string>
+          <string id="p3d">[48, 0, 24]</string>
+          <string id="p3d">[32, 36, 24]</string>
+          <string id="p3d">[48, 36, 24]</string>
         </list>
       </list>
     </list>
@@ -59,14 +59,14 @@
       <list id="shape">
         <u_int16 id="num">1</u_int16>
         <list id="cube">
-          <string id="p3d">[48, -24, 0]</string>
-          <string id="p3d">[64, -24, 0]</string>
-          <string id="p3d">[48, 12, 0]</string>
-          <string id="p3d">[64, 12, 0]</string>
-          <string id="p3d">[48, -24, 8]</string>
-          <string id="p3d">[64, -24, 8]</string>
-          <string id="p3d">[48, 12, 8]</string>
-          <string id="p3d">[64, 12, 8]</string>
+          <string id="p3d">[48, 0, 24]</string>
+          <string id="p3d">[64, 0, 24]</string>
+          <string id="p3d">[48, 36, 24]</string>
+          <string id="p3d">[64, 36, 24]</string>
+          <string id="p3d">[48, 0, 32]</string>
+          <string id="p3d">[64, 0, 32]</string>
+          <string id="p3d">[48, 36, 32]</string>
+          <string id="p3d">[64, 36, 32]</string>
         </list>
       </list>
     </list>
@@ -77,14 +77,14 @@
       <list id="shape">
         <u_int16 id="num">1</u_int16>
         <list id="cube">
-          <string id="p3d">[64, -32, 0]</string>
-          <string id="p3d">[80, -32, 0]</string>
-          <string id="p3d">[64, 4, 0]</string>
-          <string id="p3d">[80, 4, 0]</string>
-          <string id="p3d">[64, -32, 8]</string>
-          <string id="p3d">[80, -32, 8]</string>
-          <string id="p3d">[64, 4, 8]</string>
-          <string id="p3d">[80, 4, 8]</string>
+          <string id="p3d">[64, 0, 32]</string>
+          <string id="p3d">[80, 0, 32]</string>
+          <string id="p3d">[64, 36, 32]</string>
+          <string id="p3d">[80, 36, 32]</string>
+          <string id="p3d">[64, 0, 40]</string>
+          <string id="p3d">[80, 0, 40]</string>
+          <string id="p3d">[64, 36, 40]</string>
+          <string id="p3d">[80, 36, 40]</string>
         </list>
       </list>
     </list>
@@ -95,14 +95,14 @@
       <list id="shape">
         <u_int16 id="num">1</u_int16>
         <list id="cube">
-          <string id="p3d">[80, -40, 0]</string>
-          <string id="p3d">[96, -40, 0]</string>
-          <string id="p3d">[80, -4, 0]</string>
-          <string id="p3d">[96, -4, 0]</string>
-          <string id="p3d">[80, -40, 8]</string>
-          <string id="p3d">[96, -40, 8]</string>
-          <string id="p3d">[80, -4, 8]</string>
-          <string id="p3d">[96, -4, 8]</string>
+          <string id="p3d">[80, 0, 40]</string>
+          <string id="p3d">[96, 0, 40]</string>
+          <string id="p3d">[80, 36, 40]</string>
+          <string id="p3d">[96, 36, 40]</string>
+          <string id="p3d">[80, 0, 48]</string>
+          <string id="p3d">[96, 0, 48]</string>
+          <string id="p3d">[80, 36, 48]</string>
+          <string id="p3d">[96, 36, 48]</string>
         </list>
       </list>
     </list>
@@ -113,14 +113,14 @@
       <list id="shape">
         <u_int16 id="num">1</u_int16>
         <list id="cube">
-          <string id="p3d">[96, -48, 0]</string>
-          <string id="p3d">[112, -48, 0]</string>
-          <string id="p3d">[96, -12, 0]</string>
-          <string id="p3d">[112, -12, 0]</string>
-          <string id="p3d">[96, -48, 8]</string>
-          <string id="p3d">[112, -48, 8]</string>
-          <string id="p3d">[96, -12, 8]</string>
-          <string id="p3d">[112, -12, 8]</string>
+          <string id="p3d">[96, 0, 48]</string>
+          <string id="p3d">[112, 0, 48]</string>
+          <string id="p3d">[96, 36, 48]</string>
+          <string id="p3d">[112, 36, 48]</string>
+          <string id="p3d">[96, 0, 56]</string>
+          <string id="p3d">[112, 0, 56]</string>
+          <string id="p3d">[96, 36, 56]</string>
+          <string id="p3d">[112, 36, 56]</string>
         </list>
       </list>
     </list>
@@ -131,14 +131,14 @@
       <list id="shape">
         <u_int16 id="num">1</u_int16>
         <list id="cube">
-          <string id="p3d">[112, -56, 0]</string>
-          <string id="p3d">[128, -56, 0]</string>
-          <string id="p3d">[112, -20, 0]</string>
-          <string id="p3d">[128, -20, 0]</string>
-          <string id="p3d">[112, -56, 8]</string>
-          <string id="p3d">[128, -56, 8]</string>
-          <string id="p3d">[112, -20, 8]</string>
-          <string id="p3d">[128, -20, 8]</string>
+          <string id="p3d">[112, 0, 56]</string>
+          <string id="p3d">[128, 0, 56]</string>
+          <string id="p3d">[112, 36, 56]</string>
+          <string id="p3d">[128, 36, 56]</string>
+          <string id="p3d">[112, 0, 64]</string>
+          <string id="p3d">[128, 0, 64]</string>
+          <string id="p3d">[112, 36, 64]</string>
+          <string id="p3d">[128, 36, 64]</string>
         </list>
       </list>
     </list>
@@ -149,14 +149,14 @@
       <list id="shape">
         <u_int16 id="num">1</u_int16>
         <list id="cube">
-          <string id="p3d">[128, -64, 0]</string>
-          <string id="p3d">[144, -64, 0]</string>
-          <string id="p3d">[128, -28, 0]</string>
-          <string id="p3d">[144, -28, 0]</string>
-          <string id="p3d">[128, -64, 8]</string>
-          <string id="p3d">[144, -64, 8]</string>
-          <string id="p3d">[128, -28, 8]</string>
-          <string id="p3d">[144, -28, 8]</string>
+          <string id="p3d">[128, 0, 64]</string>
+          <string id="p3d">[144, 0, 64]</string>
+          <string id="p3d">[128, 36, 64]</string>
+          <string id="p3d">[144, 36, 64]</string>
+          <string id="p3d">[128, 0, 72]</string>
+          <string id="p3d">[144, 0, 72]</string>
+          <string id="p3d">[128, 36, 72]</string>
+          <string id="p3d">[144, 36, 72]</string>
         </list>
       </list>
     </list>
@@ -167,14 +167,14 @@
       <list id="shape">
         <u_int16 id="num">1</u_int16>
         <list id="cube">
-          <string id="p3d">[144, -72, 0]</string>
-          <string id="p3d">[160, -72, 0]</string>
-          <string id="p3d">[144, -36, 0]</string>
-          <string id="p3d">[160, -36, 0]</string>
-          <string id="p3d">[144, -72, 8]</string>
-          <string id="p3d">[160, -72, 8]</string>
-          <string id="p3d">[144, -36, 8]</string>
-          <string id="p3d">[160, -36, 8]</string>
+          <string id="p3d">[144, 0, 72]</string>
+          <string id="p3d">[160, 0, 72]</string>
+          <string id="p3d">[144, 36, 72]</string>
+          <string id="p3d">[160, 36, 72]</string>
+          <string id="p3d">[144, 0, 80]</string>
+          <string id="p3d">[160, 0, 80]</string>
+          <string id="p3d">[144, 36, 80]</string>
+          <string id="p3d">[160, 36, 80]</string>
         </list>
       </list>
     </list>
@@ -185,14 +185,14 @@
       <list id="shape">
         <u_int16 id="num">1</u_int16>
         <list id="cube">
-          <string id="p3d">[160, -80, 0]</string>
-          <string id="p3d">[176, -80, 0]</string>
-          <string id="p3d">[160, -44, 0]</string>
-          <string id="p3d">[176, -44, 0]</string>
-          <string id="p3d">[160, -80, 8]</string>
-          <string id="p3d">[176, -80, 8]</string>
-          <string id="p3d">[160, -44, 8]</string>
-          <string id="p3d">[176, -44, 8]</string>
+          <string id="p3d">[160, 0, 80]</string>
+          <string id="p3d">[176, 0, 80]</string>
+          <string id="p3d">[160, 36, 80]</string>
+          <string id="p3d">[176, 36, 80]</string>
+          <string id="p3d">[160, 0, 88]</string>
+          <string id="p3d">[176, 0, 88]</string>
+          <string id="p3d">[160, 36, 88]</string>
+          <string id="p3d">[176, 36, 88]</string>
         </list>
       </list>
     </list>
@@ -203,14 +203,14 @@
       <list id="shape">
         <u_int16 id="num">1</u_int16>
         <list id="cube">
-          <string id="p3d">[176, -88, 0]</string>
-          <string id="p3d">[192, -88, 0]</string>
-          <string id="p3d">[176, -52, 0]</string>
-          <string id="p3d">[192, -52, 0]</string>
-          <string id="p3d">[176, -88, 8]</string>
-          <string id="p3d">[192, -88, 8]</string>
-          <string id="p3d">[176, -52, 8]</string>
-          <string id="p3d">[192, -52, 8]</string>
+          <string id="p3d">[176, 0, 88]</string>
+          <string id="p3d">[192, 0, 88]</string>
+          <string id="p3d">[176, 36, 88]</string>
+          <string id="p3d">[192, 36, 88]</string>
+          <string id="p3d">[176, 0, 96]</string>
+          <string id="p3d">[192, 0, 96]</string>
+          <string id="p3d">[176, 36, 96]</string>
+          <string id="p3d">[192, 36, 96]</string>
         </list>
       </list>
     </list>
