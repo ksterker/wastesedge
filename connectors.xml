@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Data cs="386cc3ae">
+<Data cs="8c63b1f0">
   <list>
     <string id="uid">cb0cab92</string>
     <string id="name">wood_tile</string>
@@ -14,62 +14,50 @@
   </list>
   <list>
     <string id="uid">cb0cab94</string>
-    <string id="name">wall_small_io</string>
-    <u_int16 id="length">48</u_int16>
-    <u_int16 id="width">36</u_int16>
+    <string id="name">wall-plaster-ins-xFx</string>
+    <u_int16 id="length">4</u_int16>
+    <u_int16 id="width">3</u_int16>
   </list>
   <list>
     <string id="uid">cb0cab95</string>
-    <string id="name">wall_io</string>
-    <u_int16 id="length">96</u_int16>
-    <u_int16 id="width">72</u_int16>
+    <string id="name">wall-plaster-ins-xBx</string>
+    <u_int16 id="length">4</u_int16>
+    <u_int16 id="width">3</u_int16>
   </list>
   <list>
     <string id="uid">cb0cab96</string>
-    <string id="name">plaster_wall_i</string>
-    <u_int16 id="length">48</u_int16>
+    <string id="name">wall-plaster-ins-xxL</string>
+    <u_int16 id="length">4</u_int16>
+    <u_int16 id="width">3</u_int16>
+  </list>
+  <list>
+    <string id="uid">cb0cab97</string>
+    <string id="name">wall-plaster-ins-xxR</string>
+    <u_int16 id="length">4</u_int16>
     <u_int16 id="width">3</u_int16>
   </list>
   <list>
     <string id="uid">cb0cab98</string>
-    <string id="name">doorway_io</string>
-    <u_int16 id="length">96</u_int16>
+    <string id="name">wall-white-out-xFx</string>
+    <u_int16 id="length">4</u_int16>
     <u_int16 id="width">3</u_int16>
   </list>
   <list>
     <string id="uid">cb0cab99</string>
-    <string id="name">window_io</string>
-    <u_int16 id="length">96</u_int16>
+    <string id="name">wall-white-out-xBx</string>
+    <u_int16 id="length">4</u_int16>
     <u_int16 id="width">3</u_int16>
   </list>
   <list>
     <string id="uid">cb0cab9a</string>
-    <string id="name">whilte_wall_i</string>
-    <u_int16 id="length">48</u_int16>
+    <string id="name">wall-white-out-xxL</string>
+    <u_int16 id="length">4</u_int16>
     <u_int16 id="width">3</u_int16>
   </list>
   <list>
     <string id="uid">cb0cab9b</string>
-    <string id="name">white_wall_o</string>
-    <u_int16 id="length">48</u_int16>
-    <u_int16 id="width">3</u_int16>
-  </list>
-  <list>
-    <string id="uid">cb0cab9c</string>
-    <string id="name">plaster_wall_o</string>
-    <u_int16 id="length">48</u_int16>
-    <u_int16 id="width">3</u_int16>
-  </list>
-  <list>
-    <string id="uid">cb0cab9d</string>
-    <string id="name">plaster_wall_v_l</string>
+    <string id="name">wall-white-out-xxR</string>
     <u_int16 id="length">4</u_int16>
-    <u_int16 id="width">36</u_int16>
-  </list>
-  <list>
-    <string id="uid">cb0cab9e</string>
-    <string id="name">plaster_wall_v_r</string>
-    <u_int16 id="length">4</u_int16>
-    <u_int16 id="width">36</u_int16>
+    <u_int16 id="width">3</u_int16>
   </list>
 </Data>

@@ -1,20 +1,15 @@
 <?xml version="1.0"?>
-<Data cs="a3781cc7">
+<Data cs="47f01534">
   <string id="dscr"></string>
   <list id="tags"/>
   <list id="ctrs">
     <list>
       <u_int32 id="tmpl">3406605208</u_int32>
-      <u_int8 id="side">3</u_int8>
-      <s_int16 id="pos">0</s_int16>
-    </list>
-    <list>
-      <u_int32 id="tmpl">3406605211</u_int32>
       <u_int8 id="side">0</u_int8>
       <s_int16 id="pos">0</s_int16>
     </list>
     <list>
-      <u_int32 id="tmpl">3406605211</u_int32>
+      <u_int32 id="tmpl">3406605208</u_int32>
       <u_int8 id="side">1</u_int8>
       <s_int16 id="pos">0</s_int16>
     </list>
