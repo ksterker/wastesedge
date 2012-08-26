@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Data>
+  <list id="default">
+    <list id="gfx48/map/building/stairs/wood/stairs-side_6.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">1</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">0</u_int32>
+    </list>
+  </list>
+</Data>

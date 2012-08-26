@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<Data cs="e1e6f0f8">
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[176, 0, 0]</string>
+          <string id="p3d">[192, 0, 0]</string>
+          <string id="p3d">[176, 36, 0]</string>
+          <string id="p3d">[192, 36, 0]</string>
+          <string id="p3d">[176, 0, 8]</string>
+          <string id="p3d">[192, 0, 8]</string>
+          <string id="p3d">[176, 36, 8]</string>
+          <string id="p3d">[192, 36, 8]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-r2l_1.xml</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[160, 0, 8]</string>
+          <string id="p3d">[176, 0, 8]</string>
+          <string id="p3d">[160, 36, 8]</string>
+          <string id="p3d">[176, 36, 8]</string>
+          <string id="p3d">[160, 0, 16]</string>
+          <string id="p3d">[176, 0, 16]</string>
+          <string id="p3d">[160, 36, 16]</string>
+          <string id="p3d">[176, 36, 16]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-r2l_2.xml</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[144, 0, 16]</string>
+          <string id="p3d">[160, 0, 16]</string>
+          <string id="p3d">[144, 36, 16]</string>
+          <string id="p3d">[160, 36, 16]</string>
+          <string id="p3d">[144, 0, 24]</string>
+          <string id="p3d">[160, 0, 24]</string>
+          <string id="p3d">[144, 36, 24]</string>
+          <string id="p3d">[160, 36, 24]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-r2l_3.xml</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[128, 0, 24]</string>
+          <string id="p3d">[144, 0, 24]</string>
+          <string id="p3d">[128, 36, 24]</string>
+          <string id="p3d">[144, 36, 24]</string>
+          <string id="p3d">[128, 0, 32]</string>
+          <string id="p3d">[144, 0, 32]</string>
+          <string id="p3d">[128, 36, 32]</string>
+          <string id="p3d">[144, 36, 32]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-r2l_4.xml</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[112, 0, 32]</string>
+          <string id="p3d">[128, 0, 32]</string>
+          <string id="p3d">[112, 36, 32]</string>
+          <string id="p3d">[128, 36, 32]</string>
+          <string id="p3d">[112, 0, 40]</string>
+          <string id="p3d">[128, 0, 40]</string>
+          <string id="p3d">[112, 36, 40]</string>
+          <string id="p3d">[128, 36, 40]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-r2l_5.xml</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[96, 0, 40]</string>
+          <string id="p3d">[112, 0, 40]</string>
+          <string id="p3d">[96, 36, 40]</string>
+          <string id="p3d">[112, 36, 40]</string>
+          <string id="p3d">[96, 0, 48]</string>
+          <string id="p3d">[112, 0, 48]</string>
+          <string id="p3d">[96, 36, 48]</string>
+          <string id="p3d">[112, 36, 48]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-r2l_6.xml</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[80, 0, 48]</string>
+          <string id="p3d">[96, 0, 48]</string>
+          <string id="p3d">[80, 36, 48]</string>
+          <string id="p3d">[96, 36, 48]</string>
+          <string id="p3d">[80, 0, 56]</string>
+          <string id="p3d">[96, 0, 56]</string>
+          <string id="p3d">[80, 36, 56]</string>
+          <string id="p3d">[96, 36, 56]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-r2l_7.xml</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[64, 0, 56]</string>
+          <string id="p3d">[80, 0, 56]</string>
+          <string id="p3d">[64, 36, 56]</string>
+          <string id="p3d">[80, 36, 56]</string>
+          <string id="p3d">[64, 0, 64]</string>
+          <string id="p3d">[80, 0, 64]</string>
+          <string id="p3d">[64, 36, 64]</string>
+          <string id="p3d">[80, 36, 64]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-r2l_8.xml</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[48, 0, 64]</string>
+          <string id="p3d">[64, 0, 64]</string>
+          <string id="p3d">[48, 36, 64]</string>
+          <string id="p3d">[64, 36, 64]</string>
+          <string id="p3d">[48, 0, 72]</string>
+          <string id="p3d">[64, 0, 72]</string>
+          <string id="p3d">[48, 36, 72]</string>
+          <string id="p3d">[64, 36, 72]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-r2l_9.xml</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[32, 0, 72]</string>
+          <string id="p3d">[48, 0, 72]</string>
+          <string id="p3d">[32, 36, 72]</string>
+          <string id="p3d">[48, 36, 72]</string>
+          <string id="p3d">[32, 0, 80]</string>
+          <string id="p3d">[48, 0, 80]</string>
+          <string id="p3d">[32, 36, 80]</string>
+          <string id="p3d">[48, 36, 80]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-r2l_10.xml</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[16, 0, 80]</string>
+          <string id="p3d">[32, 0, 80]</string>
+          <string id="p3d">[16, 36, 80]</string>
+          <string id="p3d">[32, 36, 80]</string>
+          <string id="p3d">[16, 0, 88]</string>
+          <string id="p3d">[32, 0, 88]</string>
+          <string id="p3d">[16, 36, 88]</string>
+          <string id="p3d">[32, 36, 88]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-r2l_11.xml</string>
+  </list>
+  <list id="model">
+    <list id="default">
+      <list id="shape">
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 88]</string>
+          <string id="p3d">[16, 0, 88]</string>
+          <string id="p3d">[0, 36, 88]</string>
+          <string id="p3d">[16, 36, 88]</string>
+          <string id="p3d">[0, 0, 96]</string>
+          <string id="p3d">[16, 0, 96]</string>
+          <string id="p3d">[0, 36, 96]</string>
+          <string id="p3d">[16, 36, 96]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/map/building/stairs/wood/stairs-r2l_12.xml</string>
+  </list>
+</Data>
