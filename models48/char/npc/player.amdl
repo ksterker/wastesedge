@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<Data cs="8fc607e1">
+  <list id="model">
+    <list id="e_run">
+      <list id="shape">
+        <string id="offset">[0, 9, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[0, 0, 54]</string>
+          <string id="p3d">[24, 0, 54]</string>
+          <string id="p3d">[0, 18, 54]</string>
+          <string id="p3d">[24, 18, 54]</string>
+        </list>
+      </list>
+    </list>
+    <list id="e_stand">
+      <list id="shape">
+        <string id="offset">[0, 9, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[0, 0, 54]</string>
+          <string id="p3d">[24, 0, 54]</string>
+          <string id="p3d">[0, 18, 54]</string>
+          <string id="p3d">[24, 18, 54]</string>
+        </list>
+      </list>
+    </list>
+    <list id="e_walk">
+      <list id="shape">
+        <string id="offset">[0, 9, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[0, 0, 54]</string>
+          <string id="p3d">[24, 0, 54]</string>
+          <string id="p3d">[0, 18, 54]</string>
+          <string id="p3d">[24, 18, 54]</string>
+        </list>
+      </list>
+    </list>
+    <list id="n_run">
+      <list id="shape">
+        <string id="offset">[0, 9, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[0, 0, 54]</string>
+          <string id="p3d">[24, 0, 54]</string>
+          <string id="p3d">[0, 18, 54]</string>
+          <string id="p3d">[24, 18, 54]</string>
+        </list>
+      </list>
+    </list>
+    <list id="n_stand">
+      <list id="shape">
+        <string id="offset">[0, 9, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[0, 0, 54]</string>
+          <string id="p3d">[24, 0, 54]</string>
+          <string id="p3d">[0, 18, 54]</string>
+          <string id="p3d">[24, 18, 54]</string>
+        </list>
+      </list>
+    </list>
+    <list id="n_walk">
+      <list id="shape">
+        <string id="offset">[0, 9, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[0, 0, 54]</string>
+          <string id="p3d">[24, 0, 54]</string>
+          <string id="p3d">[0, 18, 54]</string>
+          <string id="p3d">[24, 18, 54]</string>
+        </list>
+      </list>
+    </list>
+    <list id="s_run">
+      <list id="shape">
+        <string id="offset">[0, 9, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[0, 0, 54]</string>
+          <string id="p3d">[24, 0, 54]</string>
+          <string id="p3d">[0, 18, 54]</string>
+          <string id="p3d">[24, 18, 54]</string>
+        </list>
+      </list>
+    </list>
+    <list id="s_stand">
+      <list id="shape">
+        <string id="offset">[0, 9, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[0, 0, 54]</string>
+          <string id="p3d">[24, 0, 54]</string>
+          <string id="p3d">[0, 18, 54]</string>
+          <string id="p3d">[24, 18, 54]</string>
+        </list>
+      </list>
+    </list>
+    <list id="s_walk">
+      <list id="shape">
+        <string id="offset">[0, 9, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[0, 0, 54]</string>
+          <string id="p3d">[24, 0, 54]</string>
+          <string id="p3d">[0, 18, 54]</string>
+          <string id="p3d">[24, 18, 54]</string>
+        </list>
+      </list>
+    </list>
+    <list id="w_run">
+      <list id="shape">
+        <string id="offset">[0, 9, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[0, 0, 54]</string>
+          <string id="p3d">[24, 0, 54]</string>
+          <string id="p3d">[0, 18, 54]</string>
+          <string id="p3d">[24, 18, 54]</string>
+        </list>
+      </list>
+    </list>
+    <list id="w_stand">
+      <list id="shape">
+        <string id="offset">[0, 9, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[0, 0, 54]</string>
+          <string id="p3d">[24, 0, 54]</string>
+          <string id="p3d">[0, 18, 54]</string>
+          <string id="p3d">[24, 18, 54]</string>
+        </list>
+      </list>
+    </list>
+    <list id="w_walk">
+      <list id="shape">
+        <string id="offset">[0, 9, 0]</string>
+        <u_int16 id="num">1</u_int16>
+        <list id="cube">
+          <string id="p3d">[0, 0, 0]</string>
+          <string id="p3d">[24, 0, 0]</string>
+          <string id="p3d">[0, 18, 0]</string>
+          <string id="p3d">[24, 18, 0]</string>
+          <string id="p3d">[0, 0, 54]</string>
+          <string id="p3d">[24, 0, 54]</string>
+          <string id="p3d">[0, 18, 54]</string>
+          <string id="p3d">[24, 18, 54]</string>
+        </list>
+      </list>
+    </list>
+    <string id="sprite">gfx48/char/npc/player/player.xml</string>
+  </list>
+  <string id="shadow">gfx48/char/npc/shadow-24x18.png</string>
+</Data>

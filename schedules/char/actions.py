@@ -1,5 +1,7 @@
+#
+# $Id: actions.py,v 1.2 2009/05/03 16:26:01 ksterker Exp $
 #   
-# Copyright (C) 2009/2010 Kai Sterker <kaisterker@linuxgames.com>
+# Copyright (C) 2009 Kai Sterker <kaisterker@linuxgames.com>
 # Part of the Adonthell Project http://adonthell.linuxgames.com
 #
 # Adonthell is free software; you can redistribute it and/or modify
@@ -46,7 +48,7 @@ def perform_action (chr, action):
     #    with the character at the center
     radius, arc = py_rpg_char.get_area_of_effect (action)
 
-    # -- characters and items in the area of effect have precedence
+    # -- the objects in the area of effect
     object_list = get_objects (chr, radius, arc, world.CHARACTER | world.ITEM)
     
     # -- any objects found at all?
@@ -67,17 +69,6 @@ def perform_action (chr, action):
             py_rpg_obj = rpg_obj.get_instance ()
             # -- execute the action
             py_rpg_obj.perform_action (action, chr, other_char)
-    else:
-        # -- check if there are scenery objects we can interact with
-        object_list = get_objects (chr, radius, arc, world.OBJECT)
-
-        # -- any objects found at all?
-        for chunk_data in object_list:
-            # -- use the first object we can interact with
-            if chunk_data.has_action():
-                # -- perform the action
-                chunk_data.get_action().execute (chr, chunk_data.get_object())
-                break
 
 
 _opposite_direction = {
@@ -150,7 +141,7 @@ def get_objects (chr, radius, arc, type):
     min = world.vector3i (chr_x - radius, chr_y - radius, chr.z())
     max = world.vector3i (chr_x + radius, chr_y + radius, chr.z() + chr.height())
         
-    # -- get list of characters and items enclosed be bbox
+    # -- get list of characters and items enclosed by bbox
     object_list = chr.map().objects_in_bbox (min, max, type)
 
     # -- get start and end of the area of effect

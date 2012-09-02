@@ -17,6 +17,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 from adonthell.base import flat
+from schedules.char import actions
+# import gc
 
 class group (object):
     """
@@ -46,6 +48,7 @@ class group (object):
 
     def estimate_speed (self, terrain):
         try:
+            # gc.collect()
             return self.Dic[terrain]
         except: return 0
 

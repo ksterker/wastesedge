@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<Data>
+  <list id="e_stand">
+    <list id="gfx48/char/npc/orloth/east_0.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">0</u_int32>
+    </list>
+  </list>
+  <list id="n_stand">
+    <list id="gfx48/char/npc/orloth/north_0.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">0</u_int32>
+    </list>
+  </list>
+  <list id="s_stand">
+    <list id="gfx48/char/npc/orloth/south_0.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">0</u_int32>
+    </list>
+  </list>
+  <list id="w_stand">
+    <list id="gfx48/char/npc/orloth/east_0.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">1</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">0</u_int32>
+    </list>
+  </list>
+
+  <!-- walking -->
+  <list id="e_walk">
+    <list id="gfx48/char/npc/orloth/east_mov_0.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/east_mov_1.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/east_mov_2.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/east_mov_3.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+  </list>
+  <list id="n_walk">
+    <list id="gfx48/char/npc/orloth/north_mov_0.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/north_mov_1.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/north_mov_2.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/north_mov_3.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+  </list>
+  <list id="s_walk">
+    <list id="gfx48/char/npc/orloth/south_mov_0.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/south_mov_1.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/south_mov_2.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/south_mov_3.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+  </list>
+  <list id="w_walk">
+    <list id="gfx48/char/npc/orloth/east_mov_0.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">1</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/east_mov_1.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">1</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/east_mov_2.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">1</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/east_mov_3.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">1</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">250</u_int32>
+    </list>
+  </list>
+
+  <!-- running -->
+  <list id="e_run">
+    <list id="gfx48/char/npc/orloth/east_mov_0.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/east_mov_1.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/east_mov_2.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/east_mov_3.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+  </list>
+  <list id="n_run">
+    <list id="gfx48/char/npc/orloth/north_mov_0.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/north_mov_1.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/north_mov_2.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/north_mov_3.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+  </list>
+  <list id="s_run">
+    <list id="gfx48/char/npc/orloth/south_mov_0.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/south_mov_1.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/south_mov_2.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/south_mov_3.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">0</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+  </list>
+  <list id="w_run">
+    <list id="gfx48/char/npc/orloth/east_mov_0.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">1</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/east_mov_1.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">1</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/east_mov_2.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">1</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+    <list id="gfx48/char/npc/orloth/east_mov_3.png">
+      <bool id="mask">1</bool>
+      <bool id="mirrored_x">1</bool>
+      <bool id="mirrored_y">0</bool>
+      <u_int32 id="delay">125</u_int32>
+    </list>
+  </list>
+</Data>

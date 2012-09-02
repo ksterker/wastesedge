@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Data cs="d6f2716a">
+<Data cs="ee036979">
   <list id="objects">
     <list id="10342032">
       <s_int8 id="type">1</s_int8>
@@ -109,9 +109,17 @@
       <s_int8 id="type">1</s_int8>
       <string id="model">models48/map/ground/inside/wood/tile.amdl</string>
     </list>
+    <list id="ebbd8abf">
+      <s_int8 id="type">2</s_int8>
+      <string id="model">models48/char/npc/orloth.amdl</string>
+    </list>
     <list id="f1057ce2">
       <s_int8 id="type">1</s_int8>
       <string id="model">models48/map/wall/outside/white/out-SxA.amdl</string>
+    </list>
+    <list id="f1cb832">
+      <s_int8 id="type">2</s_int8>
+      <string id="model">models48/char/npc/player.amdl</string>
     </list>
     <list id="f904d6f8">
       <s_int8 id="type">1</s_int8>
@@ -276,14 +284,15 @@
         <string id="p3d">[1080, 285, -88]</string>
         <string id="p3d">[1128, 285, -88]</string>
         <string id="p3d">[936, 465, -88]</string>
-        <string id="p3d">[696, 465, -88]</string>
         <string id="p3d">[264, 645, -88]</string>
         <string id="p3d">[408, 645, -88]</string>
         <string id="p3d">[312, 645, -88]</string>
+        <string id="p3d">[456, 645, -88]</string>
         <string id="p3d">[312, 465, 8]</string>
         <string id="p3d">[360, 465, 8]</string>
         <string id="p3d">[408, 465, 8]</string>
         <string id="p3d">[264, 429, 104]</string>
+        <string id="p3d">[456, 465, 8]</string>
         <string id="p3d">[792, 465, 8]</string>
         <string id="p3d">[888, 465, 104]</string>
         <string id="p3d">[792, 465, 104]</string>
@@ -296,8 +305,7 @@
         <string id="p3d">[312, 645, 104]</string>
         <string id="p3d">[360, 645, 104]</string>
         <string id="p3d">[408, 645, 104]</string>
-        <string id="p3d">[456, 465, 8]</string>
-        <string id="p3d">[456, 645, -88]</string>
+        <string id="p3d">[696, 465, -88]</string>
         <string id="p3d">[216, 645, 8]</string>
         <string id="p3d">[216, 645, -88]</string>
         <string id="p3d">[216, 465, -88]</string>
@@ -473,9 +481,9 @@
     </list>
     <list id="566c981f">
       <list id="anonym">
+        <string id="p3d">[408, 357, -88]</string>
         <string id="p3d">[360, 429, 104]</string>
         <string id="p3d">[840, 465, 8]</string>
-        <string id="p3d">[408, 357, -88]</string>
         <string id="p3d">[216, 465, 8]</string>
       </list>
     </list>
@@ -652,8 +660,8 @@
     </list>
     <list id="b81ea279">
       <list id="anonym">
-        <string id="p3d">[360, 432, 104]</string>
         <string id="p3d">[408, 360, -88]</string>
+        <string id="p3d">[360, 432, 104]</string>
         <string id="p3d">[216, 468, 8]</string>
       </list>
     </list>
@@ -874,7 +882,6 @@
         <string id="p3d">[336, 504, 0]</string>
         <string id="p3d">[384, 612, 0]</string>
         <string id="p3d">[432, 612, 0]</string>
-        <string id="p3d">[432, 504, 0]</string>
         <string id="p3d">[240, 504, 96]</string>
         <string id="p3d">[240, 540, 96]</string>
         <string id="p3d">[336, 540, 96]</string>
@@ -927,6 +934,12 @@
         <string id="p3d">[336, 216, 96]</string>
       </list>
     </list>
+    <list id="ebbd8abf">
+      <list id="named">
+        <string id="id">NPC</string>
+        <string id="p3d">[240, 234, 8]</string>
+      </list>
+    </list>
     <list id="f1057ce2">
       <list id="anonym">
         <string id="p3d">[188, 594, 8]</string>
@@ -967,6 +980,12 @@
         <string id="p3d">[1200, 234, 8]</string>
         <string id="p3d">[188, 234, 104]</string>
         <string id="p3d">[1200, 234, 104]</string>
+      </list>
+    </list>
+    <list id="f1cb832">
+      <list id="named">
+        <string id="id">Player</string>
+        <string id="p3d">[864, 450, 8]</string>
       </list>
     </list>
     <list id="f904d6f8">
@@ -1066,12 +1085,79 @@
     <list id="e9234dbd">
       <string id="state">default</string>
     </list>
+    <list id="ebbd8abf">
+      <string id="state">s_stand</string>
+      <string id="pos">[240, 234, 8]</string>
+      <s_int32 id="dir">0</s_int32>
+      <float id="vspeed">0.000000000000</float>
+      <list id="schedule">
+        <u_int16 id="spa">0</u_int16>
+        <bool id="scr">0</bool>
+        <list id="mgr">
+          <string id="script"></string>
+          <u_int16 id="pln">65535</u_int16>
+        </list>
+        <u_int16 id="fps">0</u_int16>
+        <list id="fls"/>
+      </list>
+    </list>
     <list id="f1057ce2">
       <string id="state">default</string>
+    </list>
+    <list id="f1cb832">
+      <string id="state">e_stand</string>
+      <string id="pos">[864, 450, 8]</string>
+      <s_int32 id="dir">0</s_int32>
+      <float id="vspeed">0.000000000000</float>
+      <list id="schedule">
+        <u_int16 id="spa">0</u_int16>
+        <bool id="scr">1</bool>
+        <list id="mgr">
+          <string id="script">player</string>
+          <u_int16 id="pln">0</u_int16>
+        </list>
+        <list id="sdl">
+          <string id="script">player</string>
+          <u_int16 id="pln">0</u_int16>
+        </list>
+        <u_int16 id="fps">0</u_int16>
+        <list id="fls"/>
+      </list>
     </list>
     <list id="f904d6f8">
       <string id="state">default</string>
     </list>
   </list>
-  <list id="zones"/>
+  <list id="zones">
+    <list id="redwyne_inn_parlor">
+      <u_int32 id="type">3</u_int32>
+      <string id="min">[961, 216, -8]</string>
+      <string id="max">[1196, 466, 88]</string>
+    </list>
+    <list id="redwyne_inn_common">
+      <u_int32 id="type">3</u_int32>
+      <string id="min">[479, 216, -8]</string>
+      <string id="max">[960, 466, 88]</string>
+    </list>
+    <list id="redwyne_inn_bar">
+      <u_int32 id="type">3</u_int32>
+      <string id="min">[193, 216, -8]</string>
+      <string id="max">[478, 466, 88]</string>
+    </list>
+    <list id="redwyne_inn_kitchen">
+      <u_int32 id="type">3</u_int32>
+      <string id="min">[192, 465, -8]</string>
+      <string id="max">[479, 647, 88]</string>
+    </list>
+    <list id="redwyne_inn_pantry">
+      <u_int32 id="type">3</u_int32>
+      <string id="min">[194, 465, -96]</string>
+      <string id="max">[525, 647, -8]</string>
+    </list>
+    <list id="redwyne_inn_cellar">
+      <u_int32 id="type">3</u_int32>
+      <string id="min">[193, 216, -96]</string>
+      <string id="max">[1196, 466, -8]</string>
+    </list>
+  </list>
 </Data>
