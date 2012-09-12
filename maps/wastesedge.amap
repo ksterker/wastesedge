@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Data cs="ee036979">
+<Data cs="ed990544">
   <list id="objects">
     <list id="10342032">
       <s_int8 id="type">1</s_int8>
@@ -408,11 +408,11 @@
         <string id="p3d">[768, 324, 0]</string>
         <string id="p3d">[768, 396, 0]</string>
         <string id="p3d">[816, 252, 0]</string>
-        <string id="p3d">[816, 324, 0]</string>
         <string id="p3d">[720, 396, 0]</string>
         <string id="p3d">[864, 252, 0]</string>
         <string id="p3d">[912, 324, 0]</string>
         <string id="p3d">[864, 396, 0]</string>
+        <string id="p3d">[816, 324, 0]</string>
         <string id="p3d">[1008, 396, 0]</string>
         <string id="p3d">[1008, 324, 0]</string>
         <string id="p3d">[960, 360, 0]</string>
@@ -495,10 +495,10 @@
     </list>
     <list id="5a7077a1">
       <list id="anonym">
-        <string id="p3d">[792, 468, 8]</string>
         <string id="p3d">[792, 468, 104]</string>
         <string id="p3d">[840, 468, 104]</string>
         <string id="p3d">[888, 468, 104]</string>
+        <string id="p3d">[792, 468, 8]</string>
         <string id="p3d">[936, 468, 8]</string>
         <string id="p3d">[936, 468, 104]</string>
         <string id="p3d">[408, 648, 8]</string>
@@ -859,6 +859,7 @@
         <string id="p3d">[864, 252, 96]</string>
         <string id="p3d">[816, 252, 96]</string>
         <string id="p3d">[720, 252, 96]</string>
+        <string id="p3d">[816, 360, 8]</string>
         <string id="p3d">[960, 288, 0]</string>
         <string id="p3d">[960, 324, 0]</string>
         <string id="p3d">[1008, 288, 0]</string>
@@ -985,7 +986,7 @@
     <list id="f1cb832">
       <list id="named">
         <string id="id">Player</string>
-        <string id="p3d">[864, 450, 8]</string>
+        <string id="p3d">[756, 346, 8]</string>
       </list>
     </list>
     <list id="f904d6f8">
@@ -1106,7 +1107,7 @@
     </list>
     <list id="f1cb832">
       <string id="state">e_stand</string>
-      <string id="pos">[864, 450, 8]</string>
+      <string id="pos">[756, 346, 8]</string>
       <s_int32 id="dir">0</s_int32>
       <float id="vspeed">0.000000000000</float>
       <list id="schedule">
@@ -1129,35 +1130,90 @@
     </list>
   </list>
   <list id="zones">
-    <list id="redwyne_inn_parlor">
-      <u_int32 id="type">3</u_int32>
-      <string id="min">[961, 216, -8]</string>
-      <string id="max">[1196, 466, 88]</string>
+    <list id="stair-2">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[504, 386, 200]</string>
+      <string id="max">[552, 422, 208]</string>
     </list>
-    <list id="redwyne_inn_common">
-      <u_int32 id="type">3</u_int32>
-      <string id="min">[479, 216, -8]</string>
-      <string id="max">[960, 466, 88]</string>
+    <list id="stair-1">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[1283, 233, 8]</string>
+      <string id="max">[1331, 269, 16]</string>
     </list>
-    <list id="redwyne_inn_bar">
+    <list id="air-3">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[1048, 316, 104]</string>
+      <string id="max">[1096, 352, 112]</string>
+    </list>
+    <list id="air-2">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[663, 235, 104]</string>
+      <string id="max">[711, 271, 112]</string>
+    </list>
+    <list id="air-1">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[272, 495, 104]</string>
+      <string id="max">[320, 531, 112]</string>
+    </list>
+    <list id="ground-3">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[1093, 286, 8]</string>
+      <string id="max">[1141, 322, 16]</string>
+    </list>
+    <list id="ground-2">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[298, 507, 8]</string>
+      <string id="max">[346, 543, 16]</string>
+    </list>
+    <list id="ground-1">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[388, 301, 8]</string>
+      <string id="max">[436, 337, 16]</string>
+    </list>
+    <list id="cellar-3">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[583, 238, -88]</string>
+      <string id="max">[631, 274, -80]</string>
+    </list>
+    <list id="cellar-2">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[1063, 331, -88]</string>
+      <string id="max">[1111, 367, -80]</string>
+    </list>
+    <list id="cellar-1">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[253, 511, -88]</string>
+      <string id="max">[301, 547, -80]</string>
+    </list>
+    <list id="redwyne_inn_cellar">
       <u_int32 id="type">3</u_int32>
-      <string id="min">[193, 216, -8]</string>
-      <string id="max">[478, 466, 88]</string>
+      <string id="min">[193, 216, -96]</string>
+      <string id="max">[1196, 466, -8]</string>
+    </list>
+    <list id="redwyne_inn_pantry">
+      <u_int32 id="type">3</u_int32>
+      <string id="min">[194, 463, -96]</string>
+      <string id="max">[525, 646, -8]</string>
     </list>
     <list id="redwyne_inn_kitchen">
       <u_int32 id="type">3</u_int32>
       <string id="min">[192, 465, -8]</string>
       <string id="max">[479, 647, 88]</string>
     </list>
-    <list id="redwyne_inn_pantry">
+    <list id="redwyne_inn_bar">
       <u_int32 id="type">3</u_int32>
-      <string id="min">[194, 465, -96]</string>
-      <string id="max">[525, 647, -8]</string>
+      <string id="min">[193, 216, -8]</string>
+      <string id="max">[478, 466, 88]</string>
     </list>
-    <list id="redwyne_inn_cellar">
+    <list id="redwyne_inn_common">
       <u_int32 id="type">3</u_int32>
-      <string id="min">[193, 216, -96]</string>
-      <string id="max">[1196, 466, -8]</string>
+      <string id="min">[479, 216, -8]</string>
+      <string id="max">[960, 466, 88]</string>
+    </list>
+    <list id="redwyne_inn_parlor">
+      <u_int32 id="type">3</u_int32>
+      <string id="min">[961, 216, -8]</string>
+      <string id="max">[1196, 466, 88]</string>
     </list>
   </list>
 </Data>
