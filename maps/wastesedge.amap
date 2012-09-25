@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Data cs="ed990544">
+<Data cs="6aff0122">
   <list id="objects">
     <list id="10342032">
       <s_int8 id="type">1</s_int8>
@@ -859,7 +859,6 @@
         <string id="p3d">[864, 252, 96]</string>
         <string id="p3d">[816, 252, 96]</string>
         <string id="p3d">[720, 252, 96]</string>
-        <string id="p3d">[816, 360, 8]</string>
         <string id="p3d">[960, 288, 0]</string>
         <string id="p3d">[960, 324, 0]</string>
         <string id="p3d">[1008, 288, 0]</string>
@@ -1130,90 +1129,90 @@
     </list>
   </list>
   <list id="zones">
-    <list id="stair-2">
-      <u_int32 id="type">1</u_int32>
-      <string id="min">[504, 386, 200]</string>
-      <string id="max">[552, 422, 208]</string>
-    </list>
-    <list id="stair-1">
-      <u_int32 id="type">1</u_int32>
-      <string id="min">[1283, 233, 8]</string>
-      <string id="max">[1331, 269, 16]</string>
-    </list>
-    <list id="air-3">
-      <u_int32 id="type">1</u_int32>
-      <string id="min">[1048, 316, 104]</string>
-      <string id="max">[1096, 352, 112]</string>
-    </list>
-    <list id="air-2">
-      <u_int32 id="type">1</u_int32>
-      <string id="min">[663, 235, 104]</string>
-      <string id="max">[711, 271, 112]</string>
-    </list>
-    <list id="air-1">
-      <u_int32 id="type">1</u_int32>
-      <string id="min">[272, 495, 104]</string>
-      <string id="max">[320, 531, 112]</string>
-    </list>
-    <list id="ground-3">
-      <u_int32 id="type">1</u_int32>
-      <string id="min">[1093, 286, 8]</string>
-      <string id="max">[1141, 322, 16]</string>
-    </list>
-    <list id="ground-2">
-      <u_int32 id="type">1</u_int32>
-      <string id="min">[298, 507, 8]</string>
-      <string id="max">[346, 543, 16]</string>
-    </list>
-    <list id="ground-1">
-      <u_int32 id="type">1</u_int32>
-      <string id="min">[388, 301, 8]</string>
-      <string id="max">[436, 337, 16]</string>
-    </list>
-    <list id="cellar-3">
-      <u_int32 id="type">1</u_int32>
-      <string id="min">[583, 238, -88]</string>
-      <string id="max">[631, 274, -80]</string>
-    </list>
-    <list id="cellar-2">
-      <u_int32 id="type">1</u_int32>
-      <string id="min">[1063, 331, -88]</string>
-      <string id="max">[1111, 367, -80]</string>
-    </list>
-    <list id="cellar-1">
-      <u_int32 id="type">1</u_int32>
-      <string id="min">[253, 511, -88]</string>
-      <string id="max">[301, 547, -80]</string>
-    </list>
-    <list id="redwyne_inn_cellar">
+    <list id="redwyne_inn_parlor">
       <u_int32 id="type">3</u_int32>
-      <string id="min">[193, 216, -96]</string>
-      <string id="max">[1196, 466, -8]</string>
-    </list>
-    <list id="redwyne_inn_pantry">
-      <u_int32 id="type">3</u_int32>
-      <string id="min">[194, 463, -96]</string>
-      <string id="max">[525, 646, -8]</string>
-    </list>
-    <list id="redwyne_inn_kitchen">
-      <u_int32 id="type">3</u_int32>
-      <string id="min">[192, 465, -8]</string>
-      <string id="max">[479, 647, 88]</string>
-    </list>
-    <list id="redwyne_inn_bar">
-      <u_int32 id="type">3</u_int32>
-      <string id="min">[193, 216, -8]</string>
-      <string id="max">[478, 466, 88]</string>
+      <string id="min">[961, 216, -8]</string>
+      <string id="max">[1196, 466, 88]</string>
     </list>
     <list id="redwyne_inn_common">
       <u_int32 id="type">3</u_int32>
       <string id="min">[479, 216, -8]</string>
       <string id="max">[960, 466, 88]</string>
     </list>
-    <list id="redwyne_inn_parlor">
+    <list id="redwyne_inn_bar">
       <u_int32 id="type">3</u_int32>
-      <string id="min">[961, 216, -8]</string>
-      <string id="max">[1196, 466, 88]</string>
+      <string id="min">[193, 216, -8]</string>
+      <string id="max">[478, 466, 88]</string>
+    </list>
+    <list id="redwyne_inn_kitchen">
+      <u_int32 id="type">3</u_int32>
+      <string id="min">[192, 465, -8]</string>
+      <string id="max">[479, 647, 88]</string>
+    </list>
+    <list id="redwyne_inn_pantry">
+      <u_int32 id="type">3</u_int32>
+      <string id="min">[194, 463, -96]</string>
+      <string id="max">[525, 646, -8]</string>
+    </list>
+    <list id="redwyne_inn_cellar">
+      <u_int32 id="type">3</u_int32>
+      <string id="min">[193, 216, -96]</string>
+      <string id="max">[1196, 466, -8]</string>
+    </list>
+    <list id="cellar-1">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[253, 511, -88]</string>
+      <string id="max">[301, 547, -80]</string>
+    </list>
+    <list id="cellar-2">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[1063, 331, -88]</string>
+      <string id="max">[1111, 367, -80]</string>
+    </list>
+    <list id="cellar-3">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[583, 238, -88]</string>
+      <string id="max">[631, 274, -80]</string>
+    </list>
+    <list id="ground-1">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[388, 301, 8]</string>
+      <string id="max">[436, 337, 16]</string>
+    </list>
+    <list id="ground-2">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[298, 507, 8]</string>
+      <string id="max">[346, 543, 16]</string>
+    </list>
+    <list id="ground-3">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[1093, 286, 8]</string>
+      <string id="max">[1141, 322, 16]</string>
+    </list>
+    <list id="air-1">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[272, 495, 104]</string>
+      <string id="max">[320, 531, 112]</string>
+    </list>
+    <list id="air-2">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[663, 235, 104]</string>
+      <string id="max">[711, 271, 112]</string>
+    </list>
+    <list id="air-3">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[1048, 316, 104]</string>
+      <string id="max">[1096, 352, 112]</string>
+    </list>
+    <list id="stair-1">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[1283, 233, 8]</string>
+      <string id="max">[1331, 269, 16]</string>
+    </list>
+    <list id="stair-2">
+      <u_int32 id="type">1</u_int32>
+      <string id="min">[504, 386, 200]</string>
+      <string id="max">[552, 422, 208]</string>
     </list>
   </list>
 </Data>
